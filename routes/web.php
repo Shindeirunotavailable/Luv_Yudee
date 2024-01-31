@@ -32,35 +32,20 @@ Route::get('/profile', function () { // หน้าแสดงโปรไฟ�
 });
 
 Route::get('/content', function () { // หน้าแสดง  content
-    return view('home.content');
-});
-
-Route::get('/login', function () { // แสดงหน้า login
-    return view('home.login');
+    return view('login.content');
 });
 
 
+ // -----------------------------------main function  route non ------------------------------------
+route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
+route::any('content','App\Http\Controllers\LoginController@content'); // เปิดหน้า content
+route::any('details','App\Http\Controllers\LoginController@details'); // เปิดหน้า details
 
-Route::get('/basenav', function () { //แสดงหน้า login
-    return view('basenav');
-});
+route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน
+route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
+route::any('content','App\Http\Controllers\LoginController@indextcontent');  // Content
 
-
-
-
- // -----------------------------------main function ------------------------------------
-route::post('login',[HomeController::class,'login']); // ส่งค่า login
-
-route::any('createaccount','App\Http\Controllers\HomeController@createaccount'); //modal สร้างรหัสผ่าน
-route::any('register','App\Http\Controllers\HomeController@register');  //สมัครสมาชิก
-
-route::any('Forgetpassword','App\Http\Controllers\HomeController@Forgetpassword');  //modal กู้รหัสผ่าน
-route::any('lostpassword','App\Http\Controllers\HomeController@lostpassword');  //กู้รหัสผ่าน
-
-route::any('content','App\Http\Controllers\HomeController@indextcontent');  // Content
-route::any('contentstone','App\Http\Controllers\HomeController@contentstone');  // save Content
-
-Route::any('details' , 'App\Http\Controllers\HomeController@details');
+Route::any('details' , 'App\Http\Controllers\LoginController@details');
 
 
  // -----------------------------------function test Route ------------------------------------

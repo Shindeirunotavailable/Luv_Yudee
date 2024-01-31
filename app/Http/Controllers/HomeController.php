@@ -32,11 +32,11 @@ class HomeController extends Controller
 
     public function Forgetpassword(){ // แสดงหน้า modal ลืมรหัสผ่าน
         return view("modal.Forgetpassword");
-
+        
     }
     // ------------------------------------- หน้าเข้าสู่ระบบ -------------------
 
-    // public function login (Request $request){
+    // public function login (Request $request){ 
         // $request->validate(
         //     [
         //         'Email'=>'required | Email',
@@ -65,7 +65,7 @@ class HomeController extends Controller
     //     $username = $request->input('username');
     //     $password = $request->input('password');
     //     $confirmpassword = $request->input('confirmpassword');
-
+    
     //     if (empty($username) || empty($password) || empty($confirmpassword)) {
     //         // ถ้ามีค่าว่าง
     //         // return 'กรุณากรอกข้อมูลให้ครบทุกช่อง';
@@ -78,7 +78,7 @@ class HomeController extends Controller
     //     elseif (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
     //         // ถ้า email ไม่ถูกต้อง
     //         $errorMessage ='กรุณากรอก E-mail ในรูปแบบที่ถูกต้อง';
-    //     }
+    //     } 
     //     else {
     //         // ถ้ามี email ส่งมาและถูกต้อง
     //         $data = [
@@ -92,14 +92,14 @@ class HomeController extends Controller
     //     return $errorMessage; // return ค่า
 
     // }
-
+    
 
     public function register(Request $request)
     {
         $username = $request->input('username');
         $password = $request->input('password');
         $confirmpassword = $request->input('confirmpassword');
-
+    
         $errorMessages = [];
             // ตรวจสอบว่ามีอีเมล์ซ้ำกันในฐานข้อมูลหรือไม่
             $existingUser = DB::table('createaccounts')->where('username', $username)->first();
@@ -115,16 +115,16 @@ class HomeController extends Controller
                 DB::table('createaccounts')->insert($data);
                 return redirect('login');
             }
-
+        
         return implode("<br>", $errorMessages);
     }
-
+    
 
 // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
-    public function lostpassword(Request $request){
+    public function lostpassword(Request $request){ 
         $email = $request->input('email');
-
+    
         if (empty($email)) {
             // ถ้า email เป็นค่าว่าง
             return 'กรุณากรอกข้อมูล';
@@ -143,14 +143,14 @@ class HomeController extends Controller
             }
         }
     }
-
+    
 
 // ---------------------------------------------- หน้า Content -------------------------------------------------
 
-
+    
 public function indextcontent(){ // แสดงหน้า modal ลืมรหัสผ่าน
     return view("home.content");
-
+    
 }
 
     public function contentstone (Request $request){
@@ -181,7 +181,7 @@ public function indextcontent(){ // แสดงหน้า modal ลืมร�
     //     return view("home.slider");
     // }
 
-    // earth xdfjklnfjklnsdfdffdjkljklsdfjsdffasdfsdfjklf
+    // earth
     public function sidebar(){
         return view("dashboard.sidebar");
     }

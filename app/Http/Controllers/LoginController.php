@@ -17,8 +17,8 @@ class LoginController extends Controller
     }
 
 
-    public function Forgetpassword(){ // แสดงหน้า modal ลืมรหัสผ่าน
-        return view("modal.Forgetpassword");
+    public function forgetPassword(){ // แสดงหน้า modal ลืมรหัสผ่าน
+        return view("login.forgetPassword");
         
     }
     
@@ -106,10 +106,6 @@ public function indextcontent(){ // แสดงหน้า modal ลืมร�
 
 
     }
-    // public function slider(){
-    //     return view("home.slider");
-    // }
-
 
 }
 
