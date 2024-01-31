@@ -181,7 +181,7 @@ public function indextcontent(){ // แสดงหน้า modal ลืมร�
     //     return view("home.slider");
     // }
 
-    // earth XD
+    // earth xd
     public function sidebar(){
         return view("dashboard.sidebar");
     }
