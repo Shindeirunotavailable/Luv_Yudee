@@ -26,7 +26,9 @@
                                                     <input type="file" class="custom-file-input" hidden="" id="customFile" name="file">
                                                     <button type="submit" class="ud-btn btn-white btn-t-white" >Upload profile image</button>
                                                 </div>
-
+                                                <p class="mb-0 mt-2">
+                                                    *minimum 500px x 500px
+                                                </p>
 
                                             </div>
 
