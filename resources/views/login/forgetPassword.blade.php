@@ -13,7 +13,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="label-700">Email</label>
-                        <input type="Email" name="username" id="Email" class="form-control h-40"
+                        <input type="Email" name="username" id="Email" class="form-control height-40"
                             id="exampleInputEmail1" placeholder="Enter Username" required>
                         <div class="invalid-feedback">
                             <a> กรุณากรอก Email</a>
