@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    @include('layout.menu')
+    {{-- @include('layout.menu') --}}
     @yield('content')
     @include('layout.footer')
 
