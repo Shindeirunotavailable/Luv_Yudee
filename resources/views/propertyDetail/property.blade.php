@@ -934,7 +934,7 @@
                     <div class="make-me-sticky hide-all ">
                         <div class="card border-0 widget-request-tour">
 
-                            <div class="card-body px-sm-6 shadow-xxs-2 pb-5 pt-0">
+                            <div class="card-body pr-sm-6 pl-sm-6 shadow-xxs-2 pb-5 pt-0">
                                 <form>
                                     <div class="tab-content pt-1 pb-0 px-0 shadow-none">
                                         {{-- Request Info ID --}}

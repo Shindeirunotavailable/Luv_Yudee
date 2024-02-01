@@ -1757,6 +1757,12 @@
     .px-sm-6 {
         padding-right: 0.575rem!important
     }
+    .pr-sm-6 {
+        padding-right: 0.575rem!important
+    }
+    .pl-sm-6 {
+        padding-left: 0.575rem!important
+    }
   }
 
   @media(min-width: 1200px) {
@@ -3060,4 +3066,12 @@ border-radius: .25rem;
 .agent-icon{
     width: 60px!important;
     height: 60px!important;
+}
+@media(max-width: 321px) {
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0rem;
+}
 }
