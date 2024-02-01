@@ -1,10 +1,6 @@
  
       /* ----------------------------non------------------------------------------ */
 
-      .height-40{
-        height: 40px;
-      }
-
       .colorBlue{
         color: #0071bc;
       }
@@ -72,8 +68,8 @@
       }
 
       .imagbackground{
-        margin: 0;
-        padding: 0;
+        /* margin: 0; */
+        /* padding: 0; */
         height: 70vh ;
         overflow: hidden;
         background-image: url("https://homebay.com/wp-content/uploads/2023/03/05576c60-fe35-11ec-80af-7b759f730b93-shutterstock1756356731-1024x1024.jpg");
@@ -86,6 +82,8 @@
 
         
       }
+
+
 
       @media (max-width: 768px) {
         .imagbackground {
