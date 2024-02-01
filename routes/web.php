@@ -33,6 +33,9 @@ route::any('details','App\Http\Controllers\LoginController@details'); // เป�
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
 
+Route::get('navber', function () {
+    return view('navber');
+});
 
 
  // -----------------------------------function test Route ------------------------------------
