@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\DB;
 class LoginController extends Controller
 {
 
+    
+    public function navbar(){ //แสดงหน้า modal สร้างรหัสผ่าน
+        return view("navbar");
+    }
+
+
     public function createAccount(){ //แสดงหน้า modal สร้างรหัสผ่าน
         return view("login.createAccount");
     }
@@ -20,6 +26,10 @@ class LoginController extends Controller
     public function forgetPassword(){ // แสดงหน้า modal ลืมรหัสผ่าน
         return view("login.forgetPassword");
         
+    }
+
+    public function content(){ //แสดงหน้า modal สร้างรหัสผ่าน
+        return view("home.content");
     }
     
 
