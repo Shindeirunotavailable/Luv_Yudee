@@ -104,7 +104,7 @@
                             <span class="d-xl-block">Login / Register</span>
                         </a>
                         <a class="user-btn btn-yuudee add-propertys bdr60 mrl-2 mrl-xl-4 text-a " href="/dashboard-add-property">Add Property
-                                    <i class="fal fa-arrow-right-long" aria-hidden="true"></i>
+                                    
                         </a>
                 </div>
             </div>
