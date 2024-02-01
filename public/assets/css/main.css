@@ -894,7 +894,7 @@ body .menuActive {
 }
 .fa-arrow-right-long:before {
     /* content: "" */
-    content: "→"
+    content: "→" !important
 }
 .fa-user-circle:before {
     content: ""
@@ -1025,14 +1025,5 @@ p {
         max-width:1320px
     }
 }
-
-
-
-
-
-
-
-
-
 /* ------------------------------------------------------------------------- */
 
