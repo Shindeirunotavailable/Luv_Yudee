@@ -111,8 +111,8 @@
         </div>
     </nav>
 </header>
-
-{{-- <div class="mobile-header-nav stylehome">
+{{-- 
+<div class="mobile-header-nav stylehome">
     <div class="mobile-menus">
         <div class="header innerpage-style">
             <div class="menu_and_widgets">
