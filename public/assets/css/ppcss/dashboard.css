@@ -2104,3 +2104,45 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     max-width: 56.333333%;
     }
 }
+@media (max-width: 1025px){
+    .img {
+        max-width: 130px;
+        height: auto;
+    }
+    .ud-btn {
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width: 321px){
+
+    .ud-btn {
+        font-weight: 600;
+        font-size: 15px;
+        padding: 10px 10px;
+    }
+}
+
+.col-lg-10{
+    flex: 0 0 83.333333%;
+    max-width: 100%;
+}
+
+.fs-mp-h {
+    font-size: 22px!important
+  }
+.fs-mp {
+    font-size: 14px!important
+  }
+@media (max-width: 1025px){
+    .fs-mp-h {
+        font-size: 18px!important
+      }
+    .fs-mp {
+        font-size: 13px!important
+      }
+    .lh-15 {
+        line-height: 1.5!important
+      }
+}
+

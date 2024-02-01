@@ -337,7 +337,7 @@
                                                     <p class="text mb-d-25">Photos must be JPEG or PNG formatand at least
                                                         2048x768</p>
                                                     {{-- เอาbtn-t-white ออก --}}
-                                                    <label class="ud-btn btn-white btn-t-white">Browse Files
+                                                    <label class="ud-btn btn-yd btn-t-white">Browse Files
                                                         <input id="fileInput" type="file" multiple=""
                                                             class="ud-btn btn-white" style="display: none;">
                                                     </label>
@@ -721,69 +721,87 @@
                                     <h4 class="title fs-17 mb-6">Listing Details</h4>
                                     <form class="form-style1">
                                         <div class="row">
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Size in
-                                                        ft
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property ID
                                                         (only numbers)</label><input type="text"
-                                                        class="form-control-ap" placeholder="Your Name">
+                                                        class="form-control-ap" placeholder="Your ID">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Lot
-                                                        size in ft
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property type
                                                         (only numbers)</label><input type="text"
-                                                        class="form-control-ap" placeholder="Your Name">
+                                                        class="form-control-ap" placeholder="Your Property type">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
+                                                <div class="mb-d-20"><label
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property status</label><input
+                                                        type="text" class="form-control-ap"
+                                                        placeholder="Status"></div>
+                                            </div>
+                                            <div class="col-sm-5 col-xl-4">
+                                                <div class="mb-d-20"><label
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Price</label><input
+                                                        type="text" class="form-control-ap"
+                                                        placeholder="Price"></div>
+                                            </div>
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Rooms</label><input
                                                         type="text" class="form-control-ap"
-                                                        placeholder="Your Name"></div>
+                                                        placeholder="Rooms"></div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Bedrooms</label><input
-                                                        type="text" class="form-control-ap"
-                                                        placeholder="Your Name"></div>
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Bedrooms
+                                                        </label><input type="text" class="form-control-ap"
+                                                        placeholder="Rooms">
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Bathrooms</label><input
                                                         type="text" class="form-control-ap"
-                                                        placeholder="Your Name"></div>
+                                                        placeholder="Rooms"></div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Custom
-                                                        ID
-                                                        (text)</label><input type="text" class="form-control-ap"
-                                                        placeholder="Your Name">
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Size
+                                                        size</label><input type="text" class="form-control-ap"
+                                                        placeholder="SqFt">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Garages</label><input
-                                                        type="text" class="form-control-ap"
-                                                        placeholder="Your Name"></div>
-                                            </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Garage
-                                                        size</label><input type="text" class="form-control-ap"
+                                                        </label><input type="text" class="form-control-ap"
+                                                        placeholder="Garage">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 col-xl-4">
+                                                <div class="mb-d-20"><label
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Garage size
+                                                        </label><input type="text" class="form-control-ap"
+                                                        placeholder="SqFt">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 col-xl-4">
+                                                <div class="mb-d-20"><label
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Exterior
+                                                        Material</label><input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Year
-                                                        built
-                                                        (numeric)</label><input type="text"
-                                                        class="form-control-ap"></div>
+                                                    class="heading-color ff-heading font-weight-600 mb-d-10">TYPE
+                                                    </label><input type="text" class="form-control-ap"
+                                                    placeholder="Family">
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Available
                                                         from
@@ -791,100 +809,32 @@
                                                         placeholder="99.aa.yyyy">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Basement</label><input
-                                                        type="text" class="form-control-ap"
-                                                        placeholder="Your Name"></div>
-                                            </div>
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Extra
-                                                        details</label><input type="text" class="form-control-ap"
-                                                        placeholder="Your Name">
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Year build
+                                                        </label><input type="text" class="form-control-ap"
+                                                        placeholder="Year">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Roofing</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Label</label><input
                                                         type="text" class="form-control-ap"
-                                                        placeholder="Your Name"></div>
-                                            </div>
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Exterior
-                                                        Material</label><input type="text" class="form-control-ap"
-                                                        placeholder="Your Name">
-                                                </div>
+                                                        placeholder="status"></div>
                                             </div>
 
                                         </div>
+
                                         <div class="row">
-                                            <div class="col-sm-6 col-xl-4">
+                                            {{-- ยังไงม่แน่ใจ --}}
+                                            {{-- <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Floors
                                                         no</label>
                                                     <div class="location-area">
-
-                                                        {{-- <div
-                                                            class="select-custom pl-0 css-b62m3t-container">
-                                                            <span id="react-select-12-live-region"
-                                                                class="css-7pg0cj-a11yText"></span><span
-                                                                aria-live="polite" aria-atomic="false"
-                                                                aria-relevant="additions text"
-                                                                class="css-7pg0cj-a11yText"></span>
-                                                            <div
-                                                                class="select__control css-13cymwt-control">
-                                                                <div
-                                                                    class="select__value-container select__value-container--is-multi css-hlgwow">
-                                                                    <div class="select__placeholder css-1jqq78o-placeholder"
-                                                                        id="react-select-12-placeholder">
-                                                                        Select...
-                                                                    </div>
-                                                                    <div class="select__input-container css-19bb58m"
-                                                                        data-value=""><input
-                                                                            class="select__input"
-                                                                            autocapitalize="none"
-                                                                            autocomplete="off"
-                                                                            autocorrect="off"
-                                                                            id="react-select-12-input"
-                                                                            spellcheck="false"
-                                                                            tabindex="0"
-                                                                            type="text"
-                                                                            aria-autocomplete="list"
-                                                                            aria-expanded="false"
-                                                                            aria-haspopup="true"
-                                                                            aria-required="true"
-                                                                            role="combobox"
-                                                                            aria-describedby="react-select-12-placeholder"
-                                                                            value=""
-                                                                            style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="select__indicators css-1wy0on6">
-                                                                    <span
-                                                                        class="select__indicator-separator css-1u9des2-indicatorSeparator"></span>
-                                                                    <div class="select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer"
-                                                                        aria-hidden="true"><svg
-                                                                            height="20"
-                                                                            width="20"
-                                                                            viewBox="0 0 20 20"
-                                                                            aria-hidden="true"
-                                                                            focusable="false"
-                                                                            class="css-8mmkcg">
-                                                                            <path
-                                                                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                                            </path>
-                                                                        </svg></div>
-                                                                </div>
-                                                            </div><input required="" tabindex="-1"
-                                                                aria-hidden="true"
-                                                                class="css-1a0ro4n-requiredInput"
-                                                                value="">
-                                                        </div> --}}
                                                         <select id="select9" name="select9" class="form-select  "
-                                                            style="width: 100%; height: 55px;"" multiple>
+                                                            style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
                                                                 <option value="AK">Alaska</option>
                                                                 <option value="HI">Hawaii</option>
@@ -1028,63 +978,6 @@
                                                         Class</label>
                                                     <div class="location-area">
 
-                                                        {{-- <div
-                                                            class="select-custom pl-0 css-b62m3t-container">
-                                                            <span id="react-select-13-live-region"
-                                                                class="css-7pg0cj-a11yText"></span><span
-                                                                aria-live="polite" aria-atomic="false"
-                                                                aria-relevant="additions text"
-                                                                class="css-7pg0cj-a11yText"></span>
-                                                            <div
-                                                                class="select__control css-13cymwt-control">
-                                                                <div
-                                                                    class="select__value-container select__value-container--is-multi css-hlgwow">
-                                                                    <div class="select__placeholder css-1jqq78o-placeholder"
-                                                                        id="react-select-13-placeholder">
-                                                                        Select...
-                                                                    </div>
-                                                                    <div class="select__input-container css-19bb58m"
-                                                                        data-value=""><input
-                                                                            class="select__input"
-                                                                            autocapitalize="none"
-                                                                            autocomplete="off"
-                                                                            autocorrect="off"
-                                                                            id="react-select-13-input"
-                                                                            spellcheck="false"
-                                                                            tabindex="0"
-                                                                            type="text"
-                                                                            aria-autocomplete="list"
-                                                                            aria-expanded="false"
-                                                                            aria-haspopup="true"
-                                                                            aria-required="true"
-                                                                            role="combobox"
-                                                                            aria-describedby="react-select-13-placeholder"
-                                                                            value=""
-                                                                            style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="select__indicators css-1wy0on6">
-                                                                    <span
-                                                                        class="select__indicator-separator css-1u9des2-indicatorSeparator"></span>
-                                                                    <div class="select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer"
-                                                                        aria-hidden="true"><svg
-                                                                            height="20"
-                                                                            width="20"
-                                                                            viewBox="0 0 20 20"
-                                                                            aria-hidden="true"
-                                                                            focusable="false"
-                                                                            class="css-8mmkcg">
-                                                                            <path
-                                                                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                                            </path>
-                                                                        </svg></div>
-                                                                </div>
-                                                            </div><input required="" tabindex="-1"
-                                                                aria-hidden="true"
-                                                                class="css-1a0ro4n-requiredInput"
-                                                                value="">
-                                                        </div> --}}
                                                         <select id="select10" name="select10" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -1224,7 +1117,8 @@
 
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
+
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Owner/
@@ -1234,6 +1128,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                     </form>
                                 </div>
                             </div>
