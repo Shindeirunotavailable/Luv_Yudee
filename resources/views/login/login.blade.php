@@ -16,7 +16,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="label-700">Email</label>
-                                    <input type="Email" name="Email" id="Email" class="form-control h-40"
+                                    <input type="Email" name="Email" id="Email" class="form-control height-40"
                                         id="exampleInputEmail1" placeholder="Enter Username" required>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอก Email</a>
@@ -25,7 +25,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="label-700">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control h-40"
+                                    <input type="password" name="password" id="password" class="form-control height-40"
                                         id="exampleInputEmail1" placeholder="Enter Password" required>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอกPassword</a>
