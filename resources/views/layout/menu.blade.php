@@ -127,8 +127,7 @@
             </div>
         </div>
     </div>
-    <div class="offcanvas offcanvas-start mobile_menu-canvas" tabindex="-1" id="mobileMenu"
-        aria-labelledby="mobileMenuLabel" data-bs-scroll="true">
+    <div class="offcanvas offcanvas-start mobile_menu-canvas" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel" data-bs-scroll="true">
         <div class="rightside-hidden-bar">
             <div class="hsidebar-header">
                 <div class="sidebar-close-icon" data-bs-dismiss="offcanvas" aria-label="Close"><span
