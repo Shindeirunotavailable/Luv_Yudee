@@ -101,7 +101,7 @@
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
                         <a href="#" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button"><i class="far fa-user-circle fz16 mr-2" aria-hidden="true"></i>
-                            <span class="d-none d-xl-block">Login / Register</span>
+                            <span class="d-xl-block">Login / Register</span>
                         </a>
                         <a class="user-btn btn-yuudee add-propertys bdr60 mrl-2 mrl-xl-4 text-a " href="/dashboard-add-property">Add Property
                                     <i class="fal fa-arrow-right-long" aria-hidden="true"></i>

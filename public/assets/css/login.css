@@ -1,12 +1,5 @@
  
       /* ----------------------------non------------------------------------------ */
-      .boxContainer{
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-      }
 
       .colorBlue{
         color: #0071bc;
@@ -95,6 +88,13 @@
         }
         .logo-sm{
           width:50%;
+        }
+        .boxContainer {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+        .cardBox{
+          border:0 !important;
         }
       }
 

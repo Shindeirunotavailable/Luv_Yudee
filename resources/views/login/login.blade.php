@@ -5,7 +5,7 @@
         <div class="imagbackground ">
             <div class="row pt-13 ">
                 <div class="col-12 col-lg-6 ">
-                    <div class="card rounded">
+                    <div class="card cardBox">
                         <div class="card-body">
                             <div class="text-center">
                                 <img src="https://img5.pic.in.th/file/secure-sv1/YuuDee2.png" class="logo-sm logo-md">
