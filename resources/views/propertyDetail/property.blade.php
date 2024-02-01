@@ -2,19 +2,6 @@
 @section('content')
     <main>
         <section>
-            <div class="container list-head">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb pt-lg-0">
-                        <li class="breadcrumb-item fs-12 letter-spacing-087">
-                            <a href=".">Home</a>
-                        </li>
-                        <li class="breadcrumb-item fs-12 letter-spacing-087">
-                            <a href="listing-grid-with-left-filter.html">Listing</a>
-                        </li>
-                        <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood Boulevard</li>
-                    </ol>
-                </nav>
-            </div>
             <div class="container-fluid">
                 <div class="position-relative zoomIn ">
 
@@ -145,7 +132,19 @@
                     </div>
                 </div>
             </div>
-
+            <div class="container list-head">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb pb-0 bg-white">
+                        <li class="breadcrumb-item fs-12 letter-spacing-087">
+                            <a href=".">Home</a>
+                        </li>
+                        <li class="breadcrumb-item fs-12 letter-spacing-087">
+                            <a href="listing-grid-with-left-filter.html">Listing</a>
+                        </li>
+                        <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood Boulevard</li>
+                    </ol>
+                </nav>
+            </div>
         </section>
 
         <div class="container-md-ga ">
@@ -377,8 +376,9 @@
                                 <dd>Bestseller</dd>
                             </dl>
 
-
                         </div>
+                        <div class="container list-head">
+            </div>
                     </section>
 
                     <section class="pt-6 border-bottom-ga">
@@ -631,11 +631,11 @@
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
                                     <img src="{{ asset('/assets/imagesPropetry/review-1.jpg') }}"
-                                        alt="Danny Fox" class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                        alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
                                     <div class="media-body">
                                         <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0">
+                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0 ">
                                                 <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
                                             </div>
 
@@ -677,12 +677,12 @@
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
-                                    <img src="{{ URL('https://templates.g5plus.net/homeid/images/review-08.jpg') }}"
-                                        alt="Viola Austin" class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                    <img src="{{ asset('/assets/imagesPropetry/review-2.jpg') }}"
+                                        alt="Viola Austin" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
                                     <div class="media-body">
                                         <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0">
+                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                 <h4 class="mb-0 text-heading fs-14">Viola Austin</h4>
                                             </div>
 
@@ -724,12 +724,12 @@
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                    <img src="{{ URL('https://templates.g5plus.net/homeid/images/review-09.jpg') }}"
-                                        alt="Nettie Singleton" class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                    <img src="{{ asset('/assets/imagesPropetry/review-3.jpg') }}"
+                                        alt="Nettie Singleton" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
                                     <div class="media-body">
                                         <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0">
+                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                 <h4 class="mb-0 text-heading fs-14">Nettie Singleton</h4>
                                             </div>
 
@@ -771,12 +771,12 @@
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                    <img src="{{ URL('https://templates.g5plus.net/homeid/images/review-07.jpg') }}"
-                                        alt="Vernon Fisher" class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                    <img src="{{ asset('/assets/imagesPropetry/review-1.jpg') }}"
+                                        alt="Vernon Fisher" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
                                     <div class="media-body">
                                         <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0">
+                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                 <h4 class="mb-0 text-heading fs-14">Vernon Fisher</h4>
                                             </div>
 
@@ -818,12 +818,12 @@
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                    <img src="{{ URL('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW2i5SncdIRQskLGrrby3HxDzdvQ35H6S6wpQZ_X4mKkEUF8_r') }}"
-                                        alt="Harry Iglesias" class=" rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                    <img src="{{ asset('/assets/imagesPropetry/review-4.png') }}"
+                                        alt="Harry Iglesias" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
                                     <div class="media-body">
                                         <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0">
+                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                 <h4 class="mb-0 text-heading fs-14">Harry Iglesias</h4>
                                             </div>
 
@@ -919,7 +919,7 @@
                                     </div>
                                     {{-- เอา btn-t-white ออก btn-block--}}
 
-                                        <button type="submit" class="ud-btn btn-yd   btn-t-white btn-block-sb "  >Submit</button>
+                                        <button type="submit" class="ud-btn btn-yd btn-t-white btn-block-sb "  >Submit</button>
 
 
                                 </form>
@@ -946,8 +946,8 @@
                                                         value="option1">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center mt-3">
-                                                            <a href="agent-details-1.html" class="d-block w-60px h-60 mr-3">
-                                                                <img src="https://templates.g5plus.net/homeid/images/agent-2.jpg"
+                                                            <a href="agent-details-1.html" class="d-block agent-icon mr-3">
+                                                                <img src="{{ asset('/assets/imagesPropetry/agent-1.jpg') }}"
                                                                     class="rounded-circle" alt="agent-2">
                                                             </a>
                                                             <div>
@@ -988,8 +988,8 @@
                                                         id="inlineRadio2" value="option2">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center">
-                                                            <a href="agent-details-1.html" class="d-block w-60px h-60 mr-3">
-                                                                <img src="https://templates.g5plus.net/homeid/images/agent-1.jpg"
+                                                            <a href="agent-details-1.html" class="d-block agent-icon mr-3">
+                                                                <img src="{{ asset('/assets/imagesPropetry/agent-2.jpg') }}"
                                                                     class="rounded-circle" alt="agent-1">
                                                             </a>
                                                             <div>
@@ -1048,7 +1048,7 @@
                                                 <textarea class="form-control-ga border-0" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
                                             </div>
                                             {{-- เอา btn-t-white ออก--}}
-                                            <button type="submit" class="ud-btn btn-yd btn-lg btn-block rounded btn-t-white">Request Info</button>
+                                            <button type="submit" class="ud-btn btn-yd btn-t-white btn-block  ">Request Info</button>
                                             <div class="form-group form-check mt-2 mb-0">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label fs-13" for="exampleCheck2">Egestas
@@ -1082,7 +1082,7 @@
                                     style="width: 400px;" tabindex="0" data-slick-index="2" aria-hidden="false">
                                     <div class="card  shadow-hover-2 mr-2">
                                         <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
-                                            <img src="https://templates.g5plus.net/homeid/images/properties-grid-38.jpg"
+                                            <img src="{{ asset('/assets/imagesPropetry/properties-1.jpg') }}"
                                                 alt="Affordable Urban House">
                                             <div class="card-img-ga-overlay p-2 d-flex flex-column">
                                                 <div>
@@ -1162,7 +1162,7 @@
                                     style="width: 400px;" tabindex="0" data-slick-index="1" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
                                         <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
-                                            <img src="https://templates.g5plus.net/homeid/images/properties-grid-01.jpg"
+                                            <img src="{{ asset('/assets/imagesPropetry/properties-2.jpg') }}"
                                                 alt="Garden Gingerbread House">
                                             <div class="card-img-ga-overlay p-2 d-flex flex-column">
                                                 <div>
@@ -1245,7 +1245,7 @@
                                     style="width: 400px;" tabindex="0" data-slick-index="2" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
                                         <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
-                                            <img src="https://templates.g5plus.net/homeid/images/properties-grid-02.jpg"
+                                            <img src="{{ asset('/assets/imagesPropetry/properties-3.jpg') }}"
                                                 alt="Affordable Urban House">
                                             <div class="card-img-ga-overlay p-2 d-flex flex-column">
                                                 <div>
@@ -1326,7 +1326,7 @@
                                     style="width: 400px;" tabindex="0" data-slick-index="3" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
                                         <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
-                                            <img src="https://templates.g5plus.net/homeid/images/properties-grid-07.jpg"
+                                            <img src="{{ asset('/assets/imagesPropetry/properties-4.jpg') }}"
                                                 alt="Affordable Urban House">
                                             <div class="card-img-ga-overlay p-2 d-flex flex-column">
                                                 <div>
@@ -1407,7 +1407,7 @@
                                     style="width: 400px;" tabindex="0" data-slick-index="4" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
                                         <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
-                                            <img src="https://templates.g5plus.net/homeid/images/properties-grid-05.jpg"
+                                            <img src="{{ asset('/assets/imagesPropetry/properties-5.jpg') }}"
                                                 alt="Affordable Urban House">
                                             <div class="card-img-ga-overlay p-2 d-flex flex-column">
                                                 <div>
@@ -1488,7 +1488,7 @@
                                     style="width: 400px;" tabindex="0" data-slick-index="5" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
                                         <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
-                                            <img src="https://templates.g5plus.net/homeid/images/properties-grid-06.jpg"
+                                            <img src="{{ asset('/assets/imagesPropetry/properties-6.jpg') }}"
                                                 alt="Affordable Urban House">
                                             <div class="card-img-ga-overlay p-2 d-flex flex-column">
                                                 <div>
@@ -1575,7 +1575,8 @@
             <div class="d-flex bottom-bar-action bottom-bar-action-01 con-t bg-gray-01 align-items-center position-fixed fixed-bottom d-sm-none"
                 style="">
                 <div class="media align-items-center">
-                    <img src="{{ URL('https://templates.g5plus.net/homeid/images/irene-wallace.png') }}"
+                    <img src="{{ asset('/assets/imagesPropetry/agent-3.png') }}"
+
                         alt="Irene Wallace" class="mr-4 rounded-circle">
                     <div class="media-body">
                         <a href="#" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
