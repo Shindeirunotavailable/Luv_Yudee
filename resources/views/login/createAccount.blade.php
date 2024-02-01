@@ -36,7 +36,6 @@
 
             <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" id="submitModalBtn">Submit</button>
           </form>
-        
       </div>
     </div>
   </div>
