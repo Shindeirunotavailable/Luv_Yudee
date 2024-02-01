@@ -70,12 +70,11 @@
       .imagbackground{
         /* margin: 0; */
         /* padding: 0; */
-        height: 70vh ;
+        height: 75vh ;
         overflow: hidden;
         background-image: url("https://homebay.com/wp-content/uploads/2023/03/05576c60-fe35-11ec-80af-7b759f730b93-shutterstock1756356731-1024x1024.jpg");
         background-color: #ffffff;
         background-position: right;
-        /* background-size: 60% 100%; 50% ของความกว้างของหน้าจอ */
         background-repeat: no-repeat;
         font-family: Arial, Helvetica, sans-serif;
         background-size:60% 100%; /* ทำให้ภาพไม่ยืด */

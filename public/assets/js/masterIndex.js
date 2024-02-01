@@ -276,9 +276,9 @@ document.addEventListener('DOMContentLoaded', function() {
      sidebarPanel.classList.add('show');
   });
 
-  sidebarCloseIcon.addEventListener('click', function() {
-     sidebarPanel.classList.remove('show');
-  });
+  // sidebarCloseIcon.addEventListener('click', function() {
+  //    sidebarPanel.classList.remove('show');
+  // });
 });
 
 // $('#id').click(function () {

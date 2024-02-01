@@ -3,7 +3,7 @@
     
     <div class="container ">
         <div class="imagbackground ">
-            <div class="row pt-10">
+            <div class="row pt-13 ">
                 <div class="col-12 col-lg-6 ">
                     <div class="card rounded">
                         <div class="card-body">
