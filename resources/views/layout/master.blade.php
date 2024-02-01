@@ -20,12 +20,12 @@
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" />
          <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/propertycss/property.css') }}" rel="stylesheet" type="text/css"/>
-         {{-- <link href="{{ asset('/assets/css/hometest.css') }}" rel="stylesheet" type="text/css" /> --}}
+         <link href="{{ asset('/assets/css/masterIndex.css') }}" rel="stylesheet" type="text/css" />
          <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    {{-- @include('layout.menu') --}}
+    @include('layout.menu')
     @yield('content')
     @include('layout.footer')
 
@@ -40,7 +40,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/script.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
-    <script src="{{ asset('/assets/js/indextest.js') }}"></script>
+    <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
     <script src="{{ asset('/assets/js/login.js') }}"></script>
 </body>
 </html>
