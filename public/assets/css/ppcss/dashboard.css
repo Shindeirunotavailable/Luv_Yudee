@@ -2097,3 +2097,10 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
         top: 15px
     }
 } */
+@media (min-width: 576px){
+    .col-sm-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 1 0 33.333333%;
+    max-width: 56.333333%;
+    }
+}
