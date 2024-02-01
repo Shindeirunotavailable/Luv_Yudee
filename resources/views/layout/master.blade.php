@@ -20,7 +20,7 @@
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" />
          <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/propertycss/property.css') }}" rel="stylesheet" type="text/css"/>
-         <link href="{{ asset('/assets/css/masterIndex.css') }}" rel="stylesheet" type="text/css" />
+         <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet" type="text/css" />
          <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />
 </head>
 

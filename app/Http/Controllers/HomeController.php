@@ -34,9 +34,6 @@ class HomeController extends Controller
     public function property(){
         return view(".propertyDetail.property");
     }
-    public function trialrun(){
-        return view(".trialrun");
-    }
 }
 
 
