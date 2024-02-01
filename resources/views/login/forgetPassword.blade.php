@@ -4,25 +4,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Lost your password?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent; border: 0;">
+        <button type="button" class="close bg-transparent" data-dismiss="modal" aria-label="Close" >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="center">
 
+      <div class="modal-body">
           <form class="needs-validation" novalidate>
             @csrf
-            <div class="form-outline mb-4 text-start text-left">
-              <label class="form-label" for="typeEmailX-2">Email</label>
-              <input type="email" id="Email" name="username" placeholder="Enter Email" class="form-control form-control-lg" required>
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="label-700">Email</label>
+              <input type="Email" name="username" id="Email" class="form-control h-40" id="exampleInputEmail1" placeholder="Enter Username" required>
               <div class="invalid-feedback">
-                กรุณากรอก E-mail
+                  <a> กรุณากรอก Email</a>
               </div>
             </div>
-            <button type="submit" class="fourth1 create" id="submitModalBtn">Submit</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block fourth1 button1">Sing in </button>
           </form>
-        </div>
       </div>
     </div>
   </div>

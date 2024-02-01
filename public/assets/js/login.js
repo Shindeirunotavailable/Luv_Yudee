@@ -20,8 +20,8 @@ $('.register').click(function(){ //$.register คือชื่อ class ขอ
             });
 })
 
-// กู้รหัสผ่าน
 
+// กู้รหัสผ่าน
 $('.Forgetpassword').click(function(){ //$.register คือชื่อ class ของปุ่มที่เราจะกด ถ้าเป็น ID จะต้อง #register
     console.log(csrf)
     $.ajax({
