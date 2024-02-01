@@ -40,7 +40,6 @@ route::any('forget-password','App\Http\Controllers\LoginController@forgetPasswor
 // earth
 Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
-Route::any('trialrun' , 'App\Http\Controllers\HomeController@trialrun');
 
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
