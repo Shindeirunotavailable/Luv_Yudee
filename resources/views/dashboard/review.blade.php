@@ -35,13 +35,13 @@
 
                                 <div class="col-md-12">
 
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ URL('https://templates.g5plus.net/homeid/images/review-07.jpg') }}"
-                                            alt="Danny Fox" class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
+                                        <img src="{{ asset('/assets/imagesPropetry/review-1.jpg') }}"
+                                            alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0">
+                                                <div class="col-sm-6 mb-2 mb-sm-0 pl-0 ">
                                                     <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
                                                 </div>
 
@@ -84,13 +84,13 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ URL('https://templates.g5plus.net/homeid/images/review-08.jpg') }}"
-                                            alt="Viola Austin" class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
+                                        <img src="{{ asset('/assets/imagesPropetry/review-2.jpg') }}"
+                                            alt="Viola Austin" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0">
+                                                <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                     <h4 class="mb-0 text-heading fs-14">Viola Austin</h4>
                                                 </div>
 
@@ -134,13 +134,12 @@
 
                                 <div class="col-md-12">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ URL('https://templates.g5plus.net/homeid/images/review-09.jpg') }}"
-                                            alt="Nettie Singleton"
-                                            class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                        <img src="{{ asset('/assets/imagesPropetry/review-3.jpg') }}"
+                                            alt="Nettie Singleton" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0">
+                                                <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                     <h4 class="mb-0 text-heading fs-14">Nettie Singleton</h4>
                                                 </div>
 
@@ -184,13 +183,12 @@
 
                                 <div class="col-md-12">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ URL('https://templates.g5plus.net/homeid/images/review-07.jpg') }}"
-                                            alt="Vernon Fisher"
-                                            class="rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                        <img src="{{ asset('/assets/imagesPropetry/review-1.jpg') }}"
+                                            alt="Vernon Fisher" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0">
+                                                <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                     <h4 class="mb-0 text-heading fs-14">Vernon Fisher</h4>
                                                 </div>
 
@@ -234,13 +232,12 @@
 
                                 <div class="col-md-12 ">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ URL('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW2i5SncdIRQskLGrrby3HxDzdvQ35H6S6wpQZ_X4mKkEUF8_r') }}"
-                                            alt="Harry Iglesias"
-                                            class=" rounded-circle mr-sm-8 mb-4 mb-sm-0 fs-14 img-fluid"
+                                        <img src="{{ asset('/assets/imagesPropetry/review-4.png') }}"
+                                            alt="Harry Iglesias" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0">
+                                                <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
                                                     <h4 class="mb-0 text-heading fs-14">Harry Iglesias</h4>
                                                 </div>
 
@@ -276,7 +273,7 @@
                                                 <div class="d-flex justify-content-center justify-content-sm-start">
                                                     <p class="mb-0 text-muted fs-13 lh-1"> 02 Dec 2020 at 2:40 </p>
                                                     <a href="#"
-                                                        class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2  ">Reply</a>
+                                                        class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2">Reply</a>
                                                 </div>
                                             </div>
                                         </div>
