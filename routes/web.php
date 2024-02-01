@@ -23,21 +23,9 @@ Route::any('hometest' , 'App\Http\Controllers\HomeController@hometest');
 Route::any('test' , 'App\Http\Controllers\HomeController@test');
 Route::any('non' , 'App\Http\Controllers\HomeController@non');
 
-// Route::any('slider' , 'App\Http\Controllers\HomeController@slider'); 
-
-<<<<<<< HEAD
- // -----------------------------------main function route non ------------------------------------
-=======
-Route::get('/profile', function () { // หน้าแสดงโปรไฟล์
-    return view('profile');
-});
-
-Route::get('/content', function () { // หน้าแสดง  content
-    return view('login.content');
-});
+// Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
 
  // -----------------------------------main function  route non ------------------------------------
->>>>>>> non
 route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
 route::any('content','App\Http\Controllers\LoginController@content'); // เปิดหน้า content
 route::any('details','App\Http\Controllers\LoginController@details'); // เปิดหน้า details
