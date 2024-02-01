@@ -2146,3 +2146,22 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
       }
 }
 
+input[type="file"].form-control-ap {
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+}
+
+input[type="submit"] {
+
+    color: rgb(4, 4, 4);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+

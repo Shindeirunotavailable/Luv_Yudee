@@ -349,97 +349,16 @@
                                         </div>
                                         <h4 class="title fs-17 mb-6">Video Option</h4>
                                         <div class="row">
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Video
-                                                        from</label>
-                                                    <div class="location-area">
-                                                        <select id="select4" name="select4" class="form-select  "
-                                                            style="width: 100%; height: 55px;" multiple>
-                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                            </optgroup>
-                                                            <optgroup label="Pacific Time Zone">
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
-                                                            </optgroup>
-                                                            <optgroup label="Mountain Time Zone">
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="ID">Idaho</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </optgroup>
-                                                            <optgroup label="Central Time Zone">
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="IL">Illinois</option>
-                                                                <option value="IA">Iowa</option>
-                                                                <option value="KS">Kansas</option>
-                                                                <option value="KY">Kentucky</option>
-                                                                <option value="LA">Louisiana</option>
-                                                                <option value="MN">Minnesota</option>
-                                                                <option value="MS">Mississippi</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                            </optgroup>
-                                                            <optgroup label="Eastern Time Zone">
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DE">Delaware</option>
-                                                                <option value="FL">Florida</option>
-                                                                <option value="GA">Georgia</option>
-                                                                <option value="IN">Indiana</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MA">Massachusetts</option>
-                                                                <option value="MI">Michigan</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WV">West Virginia</option>
-                                                            </optgroup>
-                                                        </select>
 
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Embed
-                                                        Video id</label><input type="text" class="form-control-ap"
+                                                {{-- <div class="mb-6">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
-                                                </div>
+                                                </div> --}}
+                                                <input type="file" class="form-control-ap" id="customFile" />
                                             </div>
-                                        </div>
-                                        <h4 class="title fs-17 mb-6">Virtual Tour</h4>
-                                        <div class="row">
-                                            <div class="col-sm-6 col-xl-12">
-                                                <div class="mb-6">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Virtual
-                                                        Tour</label>
-                                                    <input type="text" class="form-control-ap"
-                                                        placeholder="Virtual Tour">
-                                                </div>
-                                            </div>
+
+                                            <input type="submit">
                                         </div>
                                     </form>
                                 </div>
@@ -789,9 +708,9 @@
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Exterior
-                                                        Material</label><input type="text" class="form-control-ap"
-                                                        placeholder="Your Name">
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">PSM / sqm
+                                                        </label><input type="text" class="form-control-ap"
+                                                        placeholder="SqFt">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
