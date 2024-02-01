@@ -14,7 +14,6 @@
                                 <h2 class="mb-3">Sign in</h2>
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
                             </div>
-
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
                             <form class="needs-validation" novalidate>
                                 @csrf
@@ -34,22 +33,16 @@
                                         <a> กรุณากรอกPassword</a>
                                     </div>
                                   </div>
-
-
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="text-right">
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your password?</button>
                                 </div>
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block fourth1 button1">Sing in </button>
-                            </form>                            
-                            
+                                <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill afterButton fourthAfterButton" id="submitModalBtn">Submit</button>
+                            </form>                           
                                 <div class="text-center mt-3"> 
                                     <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up? <span style="color: blue">Create an account. </span>  </a>
                                 </div>
 
-                                    {{-- <button type="button" class="btn registe" id="myBtn">
-                                        <label class="d-inline-block container">Not signed up? Create an account.
-                                    </button> --}}
                         </div>
                     </div>
                 </div>

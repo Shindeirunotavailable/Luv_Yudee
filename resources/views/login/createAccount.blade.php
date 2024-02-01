@@ -34,9 +34,8 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block fourth1 button1">Sing in </button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill afterButton fourthAfterButton" id="submitModalBtn">Submit</button>
           </form>
-        
       </div>
     </div>
   </div>
