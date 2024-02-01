@@ -1,7 +1,9 @@
 @extends('layout.master')
 @section('content')
-        <div class="imagbackground container pt-20">
-            <div class="row pt-25">
+    
+    <div class="container ">
+        <div class="imagbackground ">
+            <div class="row pt-10">
                 <div class="col-12 col-lg-6 ">
                     <div class="card rounded">
                         <div class="card-body">
@@ -13,10 +15,9 @@
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
                             <form class="needs-validation" novalidate>
                                 @csrf
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="label-700">Email</label>
-                                    <input type="Email" name="Email" id="Email" class="form-control height-40"
+                                    <input type="Email" name="Email" id="Email" class="form-control "
                                         id="exampleInputEmail1" placeholder="Enter Username" required>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอก Email</a>
@@ -25,7 +26,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="label-700">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control height-40"
+                                    <input type="password" name="password" id="password" class="form-control "
                                         id="exampleInputEmail1" placeholder="Enter Password" required>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอกPassword</a>
@@ -51,6 +52,6 @@
             <div class="popupmodal" id="modal-data"></div>
 
         </div>
-
+    </div>
 
 @endsection

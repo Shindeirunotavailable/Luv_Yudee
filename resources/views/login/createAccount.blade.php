@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="label-700">Email</label>
                         <input type="Email" id="modal_email" name="modal_email" placeholder="Enter Username"
-                            class="form-control form-control-lg height-40" required>
+                            class="form-control form-control-lg" required>
                         <div class="invalid-feedback">
                             กรุณากรอก E-mail
                         </div>
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <label class="label-700">Password</label>
                         <input type="password" id="modal_password" name="modal_password" placeholder="Enter Password"
-                            class="form-control form-control-lg height-40" required>
+                            class="form-control form-control-lg" required>
                         <div class="invalid-feedback">
                             กรุณากรอก Password
                         </div>
@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label class="label-700" for="typePasswordX-2">Confirm Password</label>
                         <input type="password" id="modal_confirmPassword" name="modal_confirmPassword" placeholder="Enter Password"
-                            class="form-control form-control-lg height-40" required>
+                            class="form-control form-control-lg" required>
                         <div class="invalid-feedback">
                             กรุณากรอก Password
                         </div>
