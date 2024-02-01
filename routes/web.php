@@ -35,7 +35,6 @@ Route::get('/content', function () { // หน้าแสดง  content
     return view('login.content');
 });
 
-
  // -----------------------------------main function  route non ------------------------------------
 route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
 route::any('content','App\Http\Controllers\LoginController@content'); // เปิดหน้า content

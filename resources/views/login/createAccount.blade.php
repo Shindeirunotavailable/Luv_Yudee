@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Create Account</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: transparent; border: 0;">
+        <button type="button" class="close bg-transparent" data-dismiss="modal" aria-label="Close" >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -27,14 +27,14 @@
                 </div>
             </div>
             <div class="form-group">
-              <label class="form-label" for="typePasswordX-2">Confirm Password</label>
+              <label class="label-700" for="typePasswordX-2">Confirm Password</label>
               <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Enter Password" class="form-control form-control-lg" required>
               <div class="invalid-feedback">
                 กรุณากรอก Password
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" id="submitModalBtn">Submit</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill afterButton fourthAfterButton" id="submitModalBtn">Submit</button>
           </form>
       </div>
     </div>

@@ -21,6 +21,8 @@
      {{-- --CSS-- --}}
      <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" />
      <link href="{{ asset('/assets/css/hometest.css') }}" rel="stylesheet" type="text/css" />
+     <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />
+
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </head>
