@@ -23,7 +23,6 @@
                                         <a> กรุณากรอก Email</a>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="label-700">Password</label>
                                     <input type="password" name="password" id="password" class="form-control "
