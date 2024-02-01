@@ -1,9 +1,13 @@
  
       /* ----------------------------non------------------------------------------ */
-      .container{
-        padding: 0;
-
+      .boxContainer{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
       }
+
       .colorBlue{
         color: #0071bc;
       }
@@ -92,7 +96,6 @@
         .logo-sm{
           width:50%;
         }
-        
       }
 
       @media (max-width: 425px) {
