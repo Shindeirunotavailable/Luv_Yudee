@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\ThaiProvince;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +44,7 @@ Route::get('navber', function () {
 Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
+// Route::get('/fetch-data', [ThaiProvince::class, 'fetchData']);
 // Route::get('editor' , 'App\Http\Controllers\CKEditor@editor');
 // Route::post('store' , 'App\Http\Controllers\CKEditor@store');
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');

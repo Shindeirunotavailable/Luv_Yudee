@@ -1589,7 +1589,7 @@ html {
 }
 
 .nav-tabs .nav-link-ap {
-    margin-bottom: 0
+    margin-bottom: 10px;
 }
 
 .dropdown-menu {
@@ -1959,7 +1959,7 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
 
 }
 
-.row-ad {
+.row-ap {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
@@ -1967,6 +1967,10 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     padding-left: 5rem * .5;
     margin-top: 0px;
     display: flex;
+}
+.col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 @media (min-width: 576px) {
@@ -2187,21 +2191,43 @@ input[type="submit"] {
 @media (max-width: 426px) and (min-width: 376px){
 
     .ck-editor {
-        width: 185px !important;
+        width: 345px !important;
     }
 }
 @media (max-width: 376px) and (min-width: 321px){
 
     .ck-editor {
-        width: 135px !important;
+        width: 295px !important;
     }
 }
 @media (max-width: 320px) {
 
     .ck-editor {
-        width: 111px !important;
+        width: 240px !important;
     }
 }
 
+.tab-content>.tab-pane {
+    display: none
+  }
 
+  .tab-content>.active {
+    display: block
+  }
+
+  .tab-content {
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(51,51,51,.1);
+    border-radius: 0 .3125rem .3125rem .3125rem
+  }
+
+@media (max-width: 426px) {
+
+    .tab-content {
+        padding: 0px !important ;
+    }
+    .p-d-30 {
+        padding: 10px!important;
+    }
+}
 

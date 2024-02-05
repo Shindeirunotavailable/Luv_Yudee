@@ -929,14 +929,6 @@
     border-color: #dee2e6 #dee2e6 #fff
   }
 
-  .tab-content>.tab-pane {
-    display: none
-  }
-
-  .tab-content>.active {
-    display: block
-  }
-
   .card {
     position: relative;
     display: -ms-flexbox;
@@ -1926,11 +1918,6 @@
     margin-left: 3px
   }
 
-  .tab-content {
-    padding: 30px;
-    box-shadow: 0 0 10px 0 rgba(51,51,51,.1);
-    border-radius: 0 .3125rem .3125rem .3125rem
-  }
 
   /* .main-header.navbar-dark .btn {
     border-color: rgba(255,255,255,.5)
