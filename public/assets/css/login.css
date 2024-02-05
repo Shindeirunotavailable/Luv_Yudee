@@ -9,7 +9,6 @@
         font-weight: 700;
       }
 
-      
       .afterButton {
         cursor: pointer !important;
         display: inline-block !important;
@@ -68,29 +67,34 @@
       }
 
       .imagbackground{
-        /* margin: 0; */
-        /* padding: 0; */
-        height: 75vh ;
-        overflow: hidden;
+        margin: 0;
+         padding: 0;
+        padding-bottom: 30px;
+        /* height: 75vh ; */
         background-image: url("https://homebay.com/wp-content/uploads/2023/03/05576c60-fe35-11ec-80af-7b759f730b93-shutterstock1756356731-1024x1024.jpg");
         background-color: #ffffff;
         background-position: right;
         background-repeat: no-repeat;
-        font-family: Arial, Helvetica, sans-serif;
         background-size:60% 100%; /* ทำให้ภาพไม่ยืด */
 
         
       }
 
-
-
       @media (max-width: 768px) {
         .imagbackground {
           background-size: cover;
           background-position: center;
+          background-image:none;
         }
         .logo-sm{
           width:50%;
+        }
+        .boxContainer {
+          padding: 0 !important;
+          max-width: 100% !important;
+        }
+        .cardBox{
+          border:0 !important;
         }
       }
 

@@ -17,10 +17,11 @@
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
          {{-- --CSS-- --}}
-         <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />
-         <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" />
+         <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/propertycss/property.css') }}" rel="stylesheet" type="text/css"/>
+         <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet" type="text/css" />
+         <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />
 
 </head>
 
