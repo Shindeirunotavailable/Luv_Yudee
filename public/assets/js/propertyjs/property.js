@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.card-img-ga').magnificPopup({
+    $('.card-img-pp').magnificPopup({
         type: 'image',
         gallery: {
             enabled: true
