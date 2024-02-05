@@ -2163,5 +2163,45 @@ input[type="submit"] {
 
 }
 
+/* CKEditor */
+
+.ck-editor {
+    width: 100% !important;
+}
+.ck-editor__editable {
+    height: 200px;
+}
+
+@media (max-width: 1025px) and (min-width: 769px){
+
+    .ck-editor {
+        width: 454px !important;
+    }
+}
+@media (max-width: 769px) and (min-width: 426px){
+
+    .ck-editor {
+        width: 528px !important;
+    }
+}
+@media (max-width: 426px) and (min-width: 376px){
+
+    .ck-editor {
+        width: 185px !important;
+    }
+}
+@media (max-width: 376px) and (min-width: 321px){
+
+    .ck-editor {
+        width: 135px !important;
+    }
+}
+@media (max-width: 320px) {
+
+    .ck-editor {
+        width: 111px !important;
+    }
+}
+
 
 

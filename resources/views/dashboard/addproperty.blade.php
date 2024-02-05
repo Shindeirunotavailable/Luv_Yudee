@@ -58,8 +58,15 @@
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
-                                                    <textarea cols="30" rows="5" placeholder="There are many variations of passages."></textarea>
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Description
+                                                    </label>
+                                                    @include('CKEditor.editor')
+                                                    {{-- <form method="POST" action={{ url('store') }}>
+                                                        <p><textarea name="editor" id="editor"></textarea></p>
+                                                        {{ csrf_field() }}
+                                                        <input type="submit" name="submit" value="submit"/>
+                                                    </form> --}}
+
                                                 </div>
                                             </div>
 
@@ -1152,4 +1159,19 @@
             </div>
         </div>
     </footer>
+
+
 </div>
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+           .create(document.querySelector('#editor'), {
+           })
+           .then(editor => {
+               console.log(editor);
+           })
+           .catch(error => {
+               console.error(error);
+           });
+    </script> --}}
+
