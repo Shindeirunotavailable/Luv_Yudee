@@ -44,5 +44,7 @@ Route::get('navber', function () {
 Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
-
+Route::get('/index', function () {
+    return view('index');
+});
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
