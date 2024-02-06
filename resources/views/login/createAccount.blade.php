@@ -12,31 +12,41 @@
                 <form class="needs-validation" novalidate>
                     @csrf
                     <div class="form-group">
-                        <label class="label-700">Email</label>
-                        <input type="Email" id="modal_email" name="modal_email" placeholder="Enter Username"
-                            class="form-control form-control-lg" required>
+                        <label for="exampleInputEmail1" class="label-700">Email</label>
+                        <input type="Email" name="modal_email" id="modal_email" class="form-control "
+                            id="exampleInputEmail1" placeholder="Enter Email" required>
                         <div class="invalid-feedback">
-                            กรุณากรอก E-mail
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="label-700">Password</label>
-                        <input type="password" id="modal_password" name="modal_password" placeholder="Enter Password"
-                            class="form-control form-control-lg" required>
-                        <div class="invalid-feedback">
-                            กรุณากรอก Password
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="label-700" for="typePasswordX-2">Confirm Password</label>
-                        <input type="password" id="modal_confirmPassword" name="modal_confirmPassword" placeholder="Enter Password"
-                            class="form-control form-control-lg" required>
-                        <div class="invalid-feedback">
-                            กรุณากรอก Password
+                            <a> กรุณากรอก E-mail</a>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill afterButton fourthAfterButton" id="submitModalBtn">Submit</button>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="label-700">Password</label>
+                        <input type="password" name="modal_password" id="modal_password" class="form-control "
+                            id="exampleInputEmail1" placeholder="Enter Password" required>
+                        <div class="invalid-feedback">
+                            <a> กรุณากรอกPassword</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="label-700">Confirm Password</label>
+                        <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
+                            class="form-control " id="exampleInputEmail1" placeholder="Enter Password" required>
+                        <div class="invalid-feedback">
+                            <a> กรุณากรอกPassword</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-20 pb-20 text-center">
+                        <input type="checkbox" id="modalStart" />
+                        <button type="submit"
+                            class="buttonPlan btn btn-primary afterButton w-300 "
+                            id="submitModal"> 
+                            <i class="fa-regular fa-paper-plane "></i> Submit 
+                        </button>
+                    </div>
+
                 </form>
             </div>
         </div>

@@ -1,6 +1,5 @@
 @extends('layout.master')
 @section('content')
-    
     <div class="container ">
         <div class="imagbackground ">
             <div class="row pt-13 ">
@@ -23,6 +22,7 @@
                                         <a> กรุณากรอก Email</a>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="label-700">Password</label>
                                     <input type="password" name="password" id="password" class="form-control "
@@ -36,9 +36,16 @@
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your
                                         password?</button>
                                 </div>
-                                <button type="submit"
-                                    class="btn btn-primary btn-lg btn-block rounded-pill afterButton fourthAfterButton"
-                                    id="submitModalBtn">Submit</button>
+
+                                <div class="pt-10 pb-10">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-lg btn-block afterButton"
+                                        id="submitModalBtn">
+                                        <i class="fa-regular fa-paper-plane "></i> Submit 
+                                    </button>
+                                </div>
+
+
                             </form>
                             <div class="text-center mt-3">
                                 <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up? <span
@@ -52,5 +59,4 @@
 
         </div>
     </div>
-
 @endsection
