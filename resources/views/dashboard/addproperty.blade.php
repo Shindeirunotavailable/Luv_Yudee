@@ -384,69 +384,11 @@
                                                         State</label>
                                                     <div class="location-area">
 
-                                                        <select id="select5" name="select5" class="form-select  "
-                                                            style="width: 100%; height: 55px;" multiple>
-                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                            </optgroup>
-                                                            <optgroup label="Pacific Time Zone">
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
-                                                            </optgroup>
-                                                            <optgroup label="Mountain Time Zone">
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="ID">Idaho</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </optgroup>
-                                                            <optgroup label="Central Time Zone">
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="IL">Illinois</option>
-                                                                <option value="IA">Iowa</option>
-                                                                <option value="KS">Kansas</option>
-                                                                <option value="KY">Kentucky</option>
-                                                                <option value="LA">Louisiana</option>
-                                                                <option value="MN">Minnesota</option>
-                                                                <option value="MS">Mississippi</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                            </optgroup>
-                                                            <optgroup label="Eastern Time Zone">
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DE">Delaware</option>
-                                                                <option value="FL">Florida</option>
-                                                                <option value="GA">Georgia</option>
-                                                                <option value="IN">Indiana</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MA">Massachusetts</option>
-                                                                <option value="MI">Michigan</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WV">West Virginia</option>
-                                                            </optgroup>
-                                                        </select>
+                                                        <div>
+                                                            <select id="input_province" class="form-control-ap">
+                                                            <option value="">กรุณาเลือกจังหวัด</option>
+                                                            </select>
+                                                        </div>
 
                                                     </div>
                                                 </div>
@@ -1169,3 +1111,128 @@
            });
     </script> --}}
 
+<script>
+        function showProvinces() {
+        let input_province = document.querySelector("#input_province");
+        let url = "https://ckartisan.com/api/provinces";
+        console.log(url);
+        // if(input_province.value == "") return;
+        fetch(url)
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result);
+            //UPDATE SELECT OPTION
+            let input_province = document.querySelector("#input_province");
+            input_province.innerHTML =
+            '<option value="">กรุณาเลือกจังหวัด</option>';
+            for (let item of result) {
+            let option = document.createElement("option");
+            option.text = item.province;
+            option.value = item.province;
+            input_province.appendChild(option);
+            }
+            //QUERY AMPHOES
+            showAmphoes();
+        });
+    }
+
+    function showAmphoes() {
+        let input_province = document.querySelector("#input_province");
+        let url =
+        "https://ckartisan.com/api/amphoes?province=" + input_province.value;
+        console.log(url);
+        // if(input_province.value == "") return;
+        fetch(url)
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result);
+            //UPDATE SELECT OPTION
+            let input_amphoe = document.querySelector("#input_amphoe");
+            input_amphoe.innerHTML =
+            '<option value="">กรุณาเลือกเขต/อำเภอ</option>';
+            for (let item of result) {
+            let option = document.createElement("option");
+            option.text = item.amphoe;
+            option.value = item.amphoe;
+            input_amphoe.appendChild(option);
+            }
+            //QUERY AMPHOES
+            showTambons();
+        });
+    }
+    function showTambons() {
+        let input_province = document.querySelector("#input_province");
+        let input_amphoe = document.querySelector("#input_amphoe");
+        let url =
+        "https://ckartisan.com/api/tambons?province=" +
+        input_province.value +
+        "&amphoe=" +
+        input_amphoe.value;
+        console.log(url);
+        // if(input_province.value == "") return;
+        // if(input_amphoe.value == "") return;
+        fetch(url)
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result);
+            //UPDATE SELECT OPTION
+            let input_tambon = document.querySelector("#input_tambon");
+            input_tambon.innerHTML =
+            '<option value="">กรุณาเลือกแขวง/ตำบล</option>';
+            for (let item of result) {
+            let option = document.createElement("option");
+            option.text = item.tambon;
+            option.value = item.tambon;
+            input_tambon.appendChild(option);
+            }
+            //QUERY AMPHOES
+            showZipcode();
+        });
+    }
+    function showZipcode() {
+        let input_province = document.querySelector("#input_province");
+        let input_amphoe = document.querySelector("#input_amphoe");
+        let input_tambon = document.querySelector("#input_tambon");
+        let url =
+        "https://ckartisan.com/api/zipcodes?province=" +
+        input_province.value +
+        "&amphoe=" +
+        input_amphoe.value +
+        "&tambon=" +
+        input_tambon.value;
+        console.log(url);
+        // if(input_province.value == "") return;
+        // if(input_amphoe.value == "") return;
+        // if(input_tambon.value == "") return;
+        fetch(url)
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result);
+            //UPDATE SELECT OPTION
+            let input_zipcode = document.querySelector("#input_zipcode");
+            input_zipcode.value = "";
+            for (let item of result) {
+            input_zipcode.value = item.zipcode;
+            break;
+            }
+        });
+    }
+    //EVENTS
+    document
+        .querySelector("#input_province")
+        .addEventListener("change", (event) => {
+        showAmphoes();
+        });
+    document
+        .querySelector("#input_amphoe")
+        .addEventListener("change", (event) => {
+        showTambons();
+        });
+    document
+        .querySelector("#input_tambon")
+        .addEventListener("change", (event) => {
+        showZipcode();
+        });
+
+    showProvinces();
+</script>

@@ -685,15 +685,6 @@ a,.btn {
     transition: all ease .4s
 }
 
-/* a:hover,.btn:hover {
-    color: #eb6753
-}
-
-a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visited {
-    text-decoration: none;
-    outline: none
-} */
-
 button,.btn {
     -webkit-transition: all ease .4s;
     -o-transition: all ease .4s;
@@ -1275,26 +1266,6 @@ section {
     }
 }
 
-/* .ud-btn:before,.btn-gray:before,.btn-dark:before,.btn-thm:before,.btn-thm2:before,.btn-thm3:before,.btn-thm-border:before,.btn-yd:before,.btn-red2:before,.btn-light-gray:before,.btn-transparent:before,.btn-transparent2:before {
-    background-color:#2596be;
-    content: "";
-    height: 100%;
-    left: -100%;
-    position: absolute;
-    top: 0;
-    width: 0;
-    z-index: -1;
-    -webkit-transform: skew(50deg);
-    -ms-transform: skew(50deg);
-    transform: skew(50deg);
-    -webkit-transition: width .6s;
-    -o-transition: width .6s;
-    transition: width .6s;
-    -webkit-transform-origin: top left;
-    -ms-transform-origin: top left;
-    transform-origin: top left
-} */
-
 .ud-btn:hover,.btn-yd:hover {
     color: #fff !important
 }
@@ -1308,10 +1279,6 @@ section {
     background-color: #0071bc;
     border: 1px solid #000000
 }
-/* ปิดไว้ */
-/* .btn-yd:hover,.btn-yd2:hover {
-    border: 1px solid #eb6753
-} */
 
 .checkbox-style1 {
     position: relative
@@ -1367,12 +1334,6 @@ section {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg)
 }
-
-/* .btn:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    outline: none
-} */
 
 header.nav-homepage-style {
     background-color: transparent;
@@ -1720,50 +1681,6 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     background: #333
 }
 
-/* body .menuActive {
-    text-decoration: none;
-    color: #eb6753!important
-} */
-
-/* @keyframes modal-video {
-    0% {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes modal-video-inner {
-    0% {
-        transform: translateY(100px)
-    }
-
-    to {
-        transform: translate(0)
-    }
-}
-
-@font-face {
-    font-family: swiper-icons;
-    src: url(data:application/font-woff;charset=utf-8;base64,\ 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);
-    font-weight: 400;
-    font-style: normal
-}
-
-! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com
-
-@keyframes pswp-clockwise {
-    0% {
-        transform: rotate(0)
-    }
-
-    to {
-        transform: rotate(360deg)
-    }
-} */
-
 /* ______________________________________________ */
 /* แก้ไขล่าสุด */
 
@@ -2075,30 +1992,6 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     }
 }
 
-
-/* @media (max-width: 575.98px) {
-    .cta-btns-style1 .ud-btn {
-        width:100%
-    }
-
-    .cta-btns-style1 .ud-btn:first-child {
-        margin-bottom: 12px
-    }
-}
-.listing-style13 .list-content .ud-btn {
-    border-radius: 0;
-    position: absolute;
-    right: 30px;
-    top: 30px
-}
-
-@media (max-width: 767.98px) {
-    .listing-style13 .list-content .ud-btn {
-        position:relative;
-        right: auto;
-        top: 15px
-    }
-} */
 @media (min-width: 576px){
     .col-sm-4 {
     -ms-flex: 0 0 33.333333%;
