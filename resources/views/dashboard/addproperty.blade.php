@@ -51,7 +51,7 @@
                                                 <div class="mb-d-20">
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                    <input type="text" class="form-control"
+                                                    <input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div>
                                             </div>
@@ -294,7 +294,7 @@
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Price
                                                         in $</label>
-                                                    <input type="text" class="form-control"
+                                                    <input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div>
                                             </div>
@@ -303,7 +303,7 @@
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Yearly
                                                         Tax Rate</label>
-                                                    <input type="text" class="form-control"
+                                                    <input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div>
                                             </div>
@@ -312,7 +312,7 @@
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">After
                                                         Price Label</label>
-                                                    <input type="text"class="form-control"
+                                                    <input type="text"class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div>
                                             </div>
@@ -353,10 +353,10 @@
 
                                             <div class="col-sm-12 col-xl-4 mb-4">
                                                 {{-- <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control"
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div> --}}
-                                                <input type="file" class="form-control-ap" id="customFile" />
+                                                <input type="file" class="form-control-ap-ap" id="customFile" />
                                             </div>
 
                                             {{-- <input type="submit"> --}}
@@ -374,7 +374,7 @@
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Address</label><input
-                                                        type="text" class="form-control"
+                                                        type="text" class="form-control-ap"
                                                         placeholder="Your Name"></div>
                                             </div>
                                             <div class="col-sm-6 col-xl-4">
@@ -598,12 +598,12 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label><input
-                                                        type="text" class="form-control"></div>
+                                                        type="text" class="form-control-ap"></div>
                                             </div>
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Neighborhood</label><input
-                                                        type="text" class="form-control"
+                                                        type="text" class="form-control-ap"
                                                         placeholder="Neighborhood"></div>
                                             </div>
                                             <div class="col-sm-12">
@@ -623,12 +623,12 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label><input
-                                                        type="text" class="form-control"></div>
+                                                        type="text" class="form-control-ap"></div>
                                             </div>
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label><input
-                                                        type="text" class="form-control"></div>
+                                                        type="text" class="form-control-ap"></div>
                                             </div>
                                         </div>
                                     </form>
@@ -645,79 +645,79 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property ID
                                                         (only numbers)</label><input type="text"
-                                                        class="form-control" placeholder="Your ID">
+                                                        class="form-control-ap" placeholder="Your ID">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property type
                                                         (only numbers)</label><input type="text"
-                                                        class="form-control" placeholder="Your Property type">
+                                                        class="form-control-ap" placeholder="Your Property type">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property status</label><input
-                                                        type="text" class="form-control"
+                                                        type="text" class="form-control-ap"
                                                         placeholder="Status"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Price</label><input
-                                                        type="text" class="form-control"
+                                                        type="text" class="form-control-ap"
                                                         placeholder="Price"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Rooms</label><input
-                                                        type="text" class="form-control"
+                                                        type="text" class="form-control-ap"
                                                         placeholder="Rooms"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Bedrooms
-                                                        </label><input type="text" class="form-control"
+                                                        </label><input type="text" class="form-control-ap"
                                                         placeholder="Rooms">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Bathrooms</label><input
-                                                        type="text" class="form-control"
+                                                        type="text" class="form-control-ap"
                                                         placeholder="Rooms"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Size
-                                                        size</label><input type="text" class="form-control"
+                                                        size</label><input type="text" class="form-control-ap"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Garage
-                                                        </label><input type="text" class="form-control"
+                                                        </label><input type="text" class="form-control-ap"
                                                         placeholder="Garage">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Garage size
-                                                        </label><input type="text" class="form-control"
+                                                        </label><input type="text" class="form-control-ap"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">PSM / sqm
-                                                        </label><input type="text" class="form-control"
+                                                        </label><input type="text" class="form-control-ap"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                     class="heading-color ff-heading font-weight-600 mb-d-10">TYPE
-                                                    </label><input type="text" class="form-control"
+                                                    </label><input type="text" class="form-control-ap"
                                                     placeholder="Family">
                                                 </div>
                                             </div>
@@ -725,7 +725,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Available
                                                         from
-                                                        (date)</label><input type="text" class="form-control"
+                                                        (date)</label><input type="text" class="form-control-ap"
                                                         placeholder="99.aa.yyyy">
                                                 </div>
                                             </div>
@@ -733,14 +733,14 @@
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Year build
-                                                        </label><input type="text" class="form-control"
+                                                        </label><input type="text" class="form-control-ap"
                                                         placeholder="Year">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Label</label><input
-                                                        type="text" class="form-control"
+                                                        type="text" class="form-control-ap"
                                                         placeholder="status"></div>
                                             </div>
 
