@@ -49,10 +49,10 @@
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent
   }
-
-  article,aside,main,nav,section {
+/* ปิดไว้ */
+  /* article,aside,main,nav,section {
     display: block
-  }
+  } */
 
   body {
     margin: 0;

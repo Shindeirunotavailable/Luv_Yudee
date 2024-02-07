@@ -947,7 +947,8 @@ li {
     color: #ddd
 }
 
-section {
+/* ปิดไว้ */
+/* section {
     padding: 120px 0;
     position: relative
 }
@@ -956,7 +957,7 @@ section {
     section {
         padding:60px 0
     }
-}
+} */
 
 .form-style1 {
     position: relative

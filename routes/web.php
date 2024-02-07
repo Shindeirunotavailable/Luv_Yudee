@@ -54,7 +54,6 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
 //     }
 // });
-
 Route::get('provinces', function () {
     return view('provinces');
 });
