@@ -75,11 +75,12 @@
     margin-bottom: .5rem
   } */
 
-  p {
+  /* ปิดไว้ก่อน */
+  /* p {
     color: #727375;
     margin-top: 0;
     margin-bottom: 1rem
-  }
+  } */
 
   ul,dl {
     margin-top: 0;
@@ -130,15 +131,17 @@
     border-style: none
   } */
 
+  .img-angent {
+    max-width: 100%;
+    height: auto
+  }
+
   svg {
     overflow: hidden;
     vertical-align: middle
   }
 
-  label {
-    display: inline-block;
-    margin-bottom: .5rem
-  }
+
 
   button {
     border-radius: 0
@@ -332,14 +335,14 @@
     }
   }*/
 
-  .row {
+  /* .row {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-  }
+  } */
 
   .col-6,.col-sm-3,.col-sm-6,.col-md-6,.col-md-12,.col-lg-3,.col-lg-4,.col-lg-6,.col-lg-8 {
     position: relative;
@@ -502,10 +505,6 @@
 
   textarea.form-control-pp {
     height: auto
-  }
-
-  .form-group {
-    margin-bottom: 1rem
   }
 
   .form-check {
@@ -1494,9 +1493,9 @@
     color: #696969!important
   }
 
-  .text-muted {
+  /* .text-muted {
     color: #ababab!important
-  }
+  } */
 
   @media print {
     *,*::before,*::after {
@@ -2192,10 +2191,7 @@
     text-decoration: none
   }
 
-  img {
-    max-width: 100%;
-    height: auto
-  }
+
 
   svg.icon {
     display: inline-block;
@@ -2555,5 +2551,11 @@ border-radius: .25rem;
     flex: 1 1 auto;
     min-height: 1px;
     padding: 0rem;
+ }
 }
+
+@media(max-width: 426px) {
+    .m-mb-3 {
+        margin: 1rem!important;
+    }
 }

@@ -63,10 +63,10 @@ ul ul {
     margin-bottom: 0
 }
 
-a {
+/* a {
     color: 13,110,253 ,1;
     text-decoration: underline
-}
+} */
 
 /* a:hover {
     --bs-link-color-rgb: var(--bs-link-hover-color-rgb)
@@ -94,10 +94,6 @@ a>code {
 
 img,svg {
     vertical-align: middle
-}
-
-label {
-    display: inline-block
 }
 
 button {
@@ -684,12 +680,12 @@ iframe {
     line-height: 1.5
 }
 
-p {
+/* p {
     margin: 0 0 15px;
     color: #000000;
     line-height: 1.85;
     font-weight: 400
-}
+} */
 
 h2 a,h4 a,p a,span a {
     font-size: inherit;

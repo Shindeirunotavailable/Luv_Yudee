@@ -151,8 +151,8 @@
 
         <div class="container-md-pp ">
             <div class="row">
-                <article class="col-lg-8  pr-xl-7">
-                    <section class="m-top border-bottom-pp section-pp">
+                <article class="col-lg-8  pr-xl-7 section-pp">
+                    <section class="m-top border-bottom-pp">
                         <ul class="list-inline d-sm-flex align-items-sm-center">
                             <li class="list-inline-item badge badge-orange">Featured</li>
                             <li class="list-inline-item badge badge-primary">For Sale</li>
@@ -175,7 +175,7 @@
                             </div>
                         </div>
                         <h2 class="fs-22 text-heading font-bold mb-0">Description</h2>
-                        <p class="mb-0 lh-md pt-2 ">Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus
+                        <p class="mb-6 lh-md pt-2 ">Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus
                             faucibus
                             scelerisque eleifend donec.
                             Porta nibh venenatis cras sed felis eget velit aliquet. Neque volutpat ac tincidunt vitae
@@ -663,7 +663,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -710,7 +710,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -757,7 +757,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -804,7 +804,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -852,7 +852,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -949,7 +949,7 @@
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center mt-3">
                                                             <a href="agent-details-1.html" class="d-block agent-icon mr-3">
-                                                                <img src="{{ asset('/assets/ImagesPropetry/agent-1.jpg') }}"
+                                                                <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-1.jpg') }}"
                                                                     class="rounded-circle" alt="agent-2">
                                                             </a>
                                                             <div>
@@ -991,7 +991,7 @@
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center">
                                                             <a href="agent-details-1.html" class="d-block agent-icon mr-3">
-                                                                <img src="{{ asset('/assets/ImagesPropetry/agent-2.jpg') }}"
+                                                                <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-2.jpg') }}"
                                                                     class="rounded-circle" alt="agent-1">
                                                             </a>
                                                             <div>
@@ -1577,7 +1577,7 @@
             <div class="d-flex bottom-bar-action bottom-bar-action-01 con-t bg-gray-01 align-items-center position-fixed fixed-bottom d-sm-none"
                 style="">
                 <div class="media align-items-center">
-                    <img src="{{ asset('/assets/ImagesPropetry/agent-3.png') }}"
+                    <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-3.png') }}"
 
                         alt="Irene Wallace" class="mr-4 rounded-circle">
                     <div class="media-body">
