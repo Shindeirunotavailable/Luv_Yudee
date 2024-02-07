@@ -1,0 +1,53 @@
+.content-map{
+    position:absolute;
+}
+
+.cardBox{
+    border-radius: 15px !important;
+    border: 1px solid #dddd !important;
+}
+
+@media (max-width: 768px) {
+    .content-map {
+        position: relative;
+    }
+    .cardBox{
+      border:0 !important;
+    }
+    .icon-lg{
+        width: 10% !important;
+    }
+
+  }
+
+  @media (max-width: 425px) {
+    .icon-sm{
+      width: 75%;
+    }
+  }
+
+
+
+
+.background-grey{
+    background-color: #f7f7f7
+}
+
+.background-transparent{
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+  
+  .cards-effect:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+  }
+
+  
+  /*/////////////////////////////////*/
+            /* ต้องลบทึ้ง */
+  /*/////////////////////////////////*/
+
+
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/

@@ -16,6 +16,8 @@
 
          {{-- --CSS-- --}}
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" />
+         <link href="{{ asset('/assets/css/content/content.css') }}" rel="stylesheet" type="text/css" />
+
          <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/propertycss/property.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet" type="text/css" />
@@ -25,7 +27,7 @@
 
 <body>
     @include('layout.menu')
-    @yield('content')
+    @yield('content')   
     @include('layout.footer')
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
