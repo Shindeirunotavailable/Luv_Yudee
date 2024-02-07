@@ -1,7 +1,9 @@
 @extends('layout.master')
 @section('content')
+
+</div>
     <main>
-        <section>
+        <section class="section-pp">
             <div class="container-pp-fluid">
                 <div class="position-relative zoomIn ">
 
@@ -150,7 +152,7 @@
         <div class="container-md-pp ">
             <div class="row">
                 <article class="col-lg-8  pr-xl-7">
-                    <section class="m-top border-bottom-pp">
+                    <section class="m-top border-bottom-pp section-pp">
                         <ul class="list-inline d-sm-flex align-items-sm-center">
                             <li class="list-inline-item badge badge-orange">Featured</li>
                             <li class="list-inline-item badge badge-primary">For Sale</li>
@@ -186,7 +188,7 @@
                         </p>
                     </section>
 
-                    <section class="pt-6 border-bottom-pp">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Facts and Features</h2>
                         <div class="row pt-3">
                                 <div class="col-lg-3 col-6 mt-4 ">
@@ -319,7 +321,7 @@
                         </div>
                     </section>
 
-                    <section class="pt-6 border-bottom-pp ">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Additional Details</h2>
                         <div class="row pt-2">
                             <dl class="col-sm-6 mb-0 d-flex">
@@ -381,7 +383,7 @@
             </div>
                     </section>
 
-                    <section class="pt-6 border-bottom-pp">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Offices Amenities</h2>
                         <ul class="list-unstyled mb-0 row pt-2 ">
                             <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Balcony
@@ -412,7 +414,7 @@
 
                     </section>
 
-                    <section class="pt-6 border-bottom-pp">
+                    <section class="pt-6 border-bottom-pp section-pp">
 
                         <h4 class="fs-30 text-heading font-bold mb-3">Virtual Tour</h4>
                         <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
@@ -421,7 +423,7 @@
 
                     </section>
 
-                    <section class="pt-6 border-bottom-pp">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold mb-3">Location</h2>
                         <div class="d-flex justify-content-center ">
                             <iframe
@@ -432,7 +434,7 @@
 
                     </section>
 
-                    <section class="pt-6 ">
+                    <section class="pt-6 section-pp">
                         <h4 class="fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
                         <div class="card border-0 ">
                             <div class="card-body p-0">
@@ -623,7 +625,7 @@
 
                     </section>
 
-                    <section class="pt-6 border-bottom-pp">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0 ">
                             <div class="card-body p-0">
                                 <h3 class="fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
@@ -868,7 +870,7 @@
                         </div>
                     </section>
 
-                    <section class="pt-6 border-bottom-pp">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0">
                             <div class="card-body pt-0 ">
                                 <h3 class="fs-16 lh-2 text-heading mb-4">Write A Review</h3>
@@ -919,7 +921,7 @@
                                     </div>
                                     {{-- เอา btn-t-white ออก btn-block--}}
 
-                                        <button type="submit" class="ud-btn btn-yd btn-t-white btn-block-sb "  >Submit</button>
+                                        <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block-sb "  >Submit</button>
 
 
                                 </form>
@@ -1048,7 +1050,7 @@
                                                 <textarea class="form-control-pp border-0" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
                                             </div>
                                             {{-- เอา btn-t-white ออก--}}
-                                            <button type="submit" class="ud-btn btn-yd btn-t-white btn-block  ">Request Info</button>
+                                            <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block  ">Request Info</button>
                                             <div class="form-group form-check mt-2 mb-0">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label fs-13" for="exampleCheck2">Egestas
@@ -1070,7 +1072,7 @@
             </div>
         </div>
 
-        <section>
+        <section class="section-pp">
             <div class="container-pp ">
                 <h4 class="fs-22 text-heading ">Similar Homes You May Like</h4>
                 <div class="slick-list draggable" style="height: 100%;">

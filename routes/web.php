@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ThaiProvince;
+use App\Http\Controllers\ProvincesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +40,23 @@ route::any('forget-password','App\Http\Controllers\LoginController@forgetPasswor
 Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
-// Route::get('/fetch-data', [ThaiProvince::class, 'fetchData']);
+
 // Route::get('editor' , 'App\Http\Controllers\CKEditor@editor');
 // Route::post('store' , 'App\Http\Controllers\CKEditor@store');
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
+
+
+// Route::get('/test-database', function () {
+//     try {
+//         DB::connection()->getPdo();
+//         return "เชื่อมต่อฐานข้อมูลสำเร็จ!";
+//     } catch (\Exception $e) {
+//         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
+//     }
+// });
+Route::get('provinces', function () {
+    return view('provinces');
+});
+
+
+Route::get('/provinces', [ProvincesController::class, 'index']);

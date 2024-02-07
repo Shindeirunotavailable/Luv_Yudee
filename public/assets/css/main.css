@@ -73,7 +73,7 @@ header.nav-homepage .responsive-menu .s-menus li {
 /*้hover เมนู*/
 header.nav-homepage .responsive-menu .s-menus li:hover {
     background-color: #99d2f8;
-    /* background-color: #0071bc; */ 
+    /* background-color: #0071bc; */
 }
 header.nav-homepage .responsive-menu .s-menus a {
     color:white;
@@ -1027,9 +1027,9 @@ p {
 .w-300{
     width: 300px;
   }
-  
+
     /* button plan */
-    
+
     .buttonPlan {
       &:hover {
           border-width: 4px;
@@ -1038,21 +1038,21 @@ p {
           }
       }
   }
-  
-  
+
+
   #start ,#modalStart  {
       display: none;
   }
-  
+
   #start:checked ~ button .plane {
       animation: fly 0.4s ease both;
   }
-  
+
   #start:checked ~ button .button1 {
       font-size: 0;
       animation: moveButton 0.6s ease;
   }
-  
+
   #start:checked ~ button .button1:before {
       font-size: 28px;
       padding-left: 28px;
@@ -1076,19 +1076,19 @@ p {
 }
 
 
-  
+
   @keyframes fly {
       100% {
           transform: translate(200px, -100px);
           opacity: 0;
       }
   }
-  
+
   .plane {
       font-size: 20px;
       left: 155px;
   }
-  
+
   @keyframes vibrate {
       0% {
           transform: translate(0) rotate(10deg);
@@ -1109,20 +1109,15 @@ p {
           transform: translate(0, 1px) rotate(10deg);
       }
   }
-  
+
   @keyframes moveButton {
       50% {
           margin-right: 60px;
       }
   }
 
- 
-      /* ----------------------------non------------------------------------------ */
-    
-      .colorBlue{
-        color: #0071bc;
-      }
 
+      /* ----------------------------non------------------------------------------ */
       .label-700{
         font-weight: 700;
       }
@@ -1137,7 +1132,7 @@ p {
         background-size: 400% !important;  /* ต่ำแหน่งสีพื้นหลัง */
         transition-duration: 1.5s !important;  /* เวลาการเคลื่อนทีสีพิ้นหลัง */
       }
-      
+
       .afterButton:hover {
         background-image: linear-gradient(45deg, #3a9ad9 50%, transparent 50%) !important; /* สีตอนกำลังจะเปลี่ยนพื้นหลัง */
         background-position: 0 !important; /* ต่ำแหน่งสีพื้นหลัง */

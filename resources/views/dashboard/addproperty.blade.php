@@ -68,7 +68,7 @@
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Select
                                                         Category</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <div id="result-container "></div>
                                                         <div>
                                                             <select id="select1" name="select1" class="form-select "
@@ -144,7 +144,7 @@
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Listed
                                                         in</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
 
                                                         <select id="select2" name="select2" class="form-select  "
@@ -220,7 +220,7 @@
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property
                                                         Status</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
                                                         <select id="select3" name="select3" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -338,7 +338,7 @@
                                                     <p class="text mb-d-25">Photos must be JPEG or PNG formatand at least
                                                         2048x768</p>
                                                     {{-- เอาbtn-t-white ออก --}}
-                                                    <label class="ud-btn btn-yd btn-t-white">Browse Files
+                                                    <label class="btn btn-primary afterButton btn-t-white">Browse Files
                                                         <input id="fileInput" type="file" multiple=""
                                                             class="ud-btn btn-white" style="display: none;">
                                                     </label>
@@ -356,7 +356,7 @@
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div> --}}
-                                                <input type="file" class="form-control-ap-ap" id="customFile" />
+                                                <input type="file" class="form-control-ap" id="customFile" />
                                             </div>
 
                                             {{-- <input type="submit"> --}}
@@ -382,71 +382,13 @@
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country /
                                                         State</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
-                                                        <select id="select5" name="select5" class="form-select  "
-                                                            style="width: 100%; height: 55px;" multiple>
-                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                            </optgroup>
-                                                            <optgroup label="Pacific Time Zone">
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
-                                                            </optgroup>
-                                                            <optgroup label="Mountain Time Zone">
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="ID">Idaho</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </optgroup>
-                                                            <optgroup label="Central Time Zone">
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="IL">Illinois</option>
-                                                                <option value="IA">Iowa</option>
-                                                                <option value="KS">Kansas</option>
-                                                                <option value="KY">Kentucky</option>
-                                                                <option value="LA">Louisiana</option>
-                                                                <option value="MN">Minnesota</option>
-                                                                <option value="MS">Mississippi</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                            </optgroup>
-                                                            <optgroup label="Eastern Time Zone">
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DE">Delaware</option>
-                                                                <option value="FL">Florida</option>
-                                                                <option value="GA">Georgia</option>
-                                                                <option value="IN">Indiana</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MA">Massachusetts</option>
-                                                                <option value="MI">Michigan</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WV">West Virginia</option>
-                                                            </optgroup>
-                                                        </select>
+                                                        <div>
+                                                            <select id="input_province" name="input_province"class="form-control-ap">
+                                                            <option value="">กรุณาเลือกจังหวัด</option>
+                                                            </select>
+                                                        </div>
 
                                                     </div>
                                                 </div>
@@ -454,7 +396,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">City</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
                                                         <select id="select6" name="select6" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -526,7 +468,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
-                                                    <div class="location-area ">
+                                                    <div class=" ">
 
                                                         <select id="select7" name="select7" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -752,7 +694,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Floors
                                                         no</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <select id="select9" name="select9" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -824,7 +766,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Structure
                                                         type</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <select id="select8" name="select8" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -896,7 +838,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Energy
                                                         Class</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
                                                         <select id="select10" name="select10" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -970,7 +912,7 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Energy
                                                         index in
                                                         kWh/m2a</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <select id="select11" name="select11" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -1155,6 +1097,7 @@
     </footer>
 
 
+
 </div>
 {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
     <script>
@@ -1168,4 +1111,3 @@
                console.error(error);
            });
     </script> --}}
-
