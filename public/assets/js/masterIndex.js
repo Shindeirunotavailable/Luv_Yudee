@@ -12,12 +12,12 @@ window.onscroll = function () {
   this.scrollY >= 500 ? scrolls.classList.add("show") : scrolls.classList.remove("show");
 };
 
-scrolls.onclick = function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  })
-}
+// scrolls.onclick = function () {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   })
+// }
 /*------------------------------------------------------------------------ */
 
 /*slide cycle */
@@ -272,9 +272,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var sidebarPanel = document.getElementById('SidebarPanel');
   var sidebarCloseIcon = document.querySelector('.sidebar-close-icon');
 
-  toggleSidebarBtn.addEventListener('click', function() {
-     sidebarPanel.classList.add('show');
-  });
+  // toggleSidebarBtn.addEventListener('click', function() {
+  //    sidebarPanel.classList.add('show');
+  // });
 
   // sidebarCloseIcon.addEventListener('click', function() {
   //    sidebarPanel.classList.remove('show');
@@ -327,3 +327,21 @@ $(document).ready(function() {
     });
 
 });
+
+
+
+// button plan //
+
+    $('#submitModalBtn').on('click', function () {
+      $('#start').prop('checked', true);
+    });
+
+    $('body').on('click', '#exampleModal', function() {
+      $('#submitModal').on('click', function () {
+        $('#modalStart').prop('checked', true);
+      });
+  });
+  
+  
+
+

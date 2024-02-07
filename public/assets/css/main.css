@@ -1022,5 +1022,123 @@ p {
         max-width:1320px
     }
 }
-/* ------------------------------------------------------------------------- */
+/* -----------------------------อนิเมะชั่นปุ่ม-------------------------------------------- */
 
+.w-300{
+    width: 300px;
+  }
+  
+    /* button plan */
+    
+    .buttonPlan {
+      &:hover {
+          border-width: 4px;
+          .plane {
+              animation: vibrate 0.3s infinite 0.3s both;
+          }
+      }
+  }
+  
+  
+  #start ,#modalStart  {
+      display: none;
+  }
+  
+  #start:checked ~ button .plane {
+      animation: fly 0.4s ease both;
+  }
+  
+  #start:checked ~ button .button1 {
+      font-size: 0;
+      animation: moveButton 0.6s ease;
+  }
+  
+  #start:checked ~ button .button1:before {
+      font-size: 28px;
+      padding-left: 28px;
+  }
+
+
+
+
+#modalStart:checked ~ button .plane {
+    animation: fly 0.4s ease both;
+}
+
+#modalStart:checked ~ button .button1 {
+    font-size: 0;
+    animation: moveButton 0.6s ease;
+}
+
+#modalStart:checked ~ button .button1:before {
+    font-size: 28px;
+    padding-left: 28px;
+}
+
+
+  
+  @keyframes fly {
+      100% {
+          transform: translate(200px, -100px);
+          opacity: 0;
+      }
+  }
+  
+  .plane {
+      font-size: 20px;
+      left: 155px;
+  }
+  
+  @keyframes vibrate {
+      0% {
+          transform: translate(0) rotate(10deg);
+      }
+      20% {
+          transform: translate(-1px, 1px) rotate(10deg);
+      }
+      40% {
+          transform: translate(0px, 0px) rotate(10deg);
+      }
+      60% {
+          transform: translate(-1px, 1px);
+      }
+      80% {
+          transform: translate(0px, 0px) rotate(10deg);
+      }
+      100% {
+          transform: translate(0, 1px) rotate(10deg);
+      }
+  }
+  
+  @keyframes moveButton {
+      50% {
+          margin-right: 60px;
+      }
+  }
+
+ 
+      /* ----------------------------non------------------------------------------ */
+    
+      .colorBlue{
+        color: #0071bc;
+      }
+
+      .label-700{
+        font-weight: 700;
+      }
+
+      .afterButton {
+        background-color: #0071bc !important; /* สีพื้นหลัง */
+        border-radius: 10px !important; /* ปรับมุมกรอบไม่ให้เป็นสี่เหลี่ยม */
+        border: none !important; /* ไม่ให้ปุ่มขยายเวลาเอาเม้าส์ไปชี้ */
+        color: rgb(234, 234, 238) !important; /* สีตัวอักษา */
+        font-size: 18px !important; /* ขนาด */
+        background-position: 100% !important; /* ต่ำแหน่งสีพื้นหลัง */
+        background-size: 400% !important;  /* ต่ำแหน่งสีพื้นหลัง */
+        transition-duration: 1.5s !important;  /* เวลาการเคลื่อนทีสีพิ้นหลัง */
+      }
+      
+      .afterButton:hover {
+        background-image: linear-gradient(45deg, #3a9ad9 50%, transparent 50%) !important; /* สีตอนกำลังจะเปลี่ยนพื้นหลัง */
+        background-position: 0 !important; /* ต่ำแหน่งสีพื้นหลัง */
+      }
