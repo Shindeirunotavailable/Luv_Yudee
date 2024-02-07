@@ -54,7 +54,8 @@
     display: block
   } */
 
-  body {
+  /* ปิด body ไว้ก่อน */
+  /* body {
     margin: 0;
     font-family: poppins,sans-serif;
     font-size: .875rem;
@@ -63,7 +64,7 @@
     color: #696969;
     text-align: left;
     background-color: #fff
-  }
+  } */
 
   [tabindex="-1"]:focus:not(:focus-visible) {
     outline: 0!important

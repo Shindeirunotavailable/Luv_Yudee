@@ -666,7 +666,7 @@ html,body {
     scroll-behavior: auto!important
 }
 
-body {
+/* body {
     background-color: #fff;
     font-size: 14px;
     font-weight: 400;
@@ -674,7 +674,7 @@ body {
     line-height: 26px;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased
-}
+} */
 
 iframe {
     border: none;

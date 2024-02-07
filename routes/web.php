@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ThaiProvince;
+use App\Http\Controllers\ProvincesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,16 +57,6 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 Route::get('provinces', function () {
     return view('provinces');
 });
-// Route::get('provinces',function(){
-//     $path = url('/raw_database.json');
-//     $data = json_decode(file_get_contents($path), false);
-//     $provinces = array_map(function ($item) {
-//         return $item->province;
-//     }, $data);
-//     $provinces = array_unique($provinces);
-//     $provinces = array_values($provinces);
 
-//     $amphoes = [];
-//     $tambons = [];
-// return view('provinces' ,compact('provinces','amphoes','tambons'));
-// });
+
+Route::get('/provinces', [ProvincesController::class, 'index']);
