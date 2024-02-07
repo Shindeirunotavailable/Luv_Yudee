@@ -7,7 +7,7 @@
     border: 1px solid #dddd !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .content-map {
         position: relative;
     }
@@ -15,18 +15,29 @@
       border:0 !important;
     }
     .icon-lg{
-        width: 10% !important;
+        width: 75% !important;
+    }
+    .section-120{
+      padding: 30px 0 !important;
+      position: relative !important;
     }
 
   }
 
   @media (max-width: 425px) {
     .icon-sm{
-      width: 75%;
+      width: 65% !important;
     }
   }
 
+  .icom-xl{
+    width: 45%;
+  }
 
+  .section-120{
+    padding: 120px 0;
+    position: relative;
+  }
 
 
 .background-grey{
@@ -43,11 +54,5 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
   }
 
+ 
   
-  /*/////////////////////////////////*/
-            /* ต้องลบทึ้ง */
-  /*/////////////////////////////////*/
-
-
-/*/////////////////////////////////*/
-/*/////////////////////////////////*/

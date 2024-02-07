@@ -7,10 +7,10 @@
         </iframe>
     </section>
 
-    <section>
+    <section class="section-120">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-5">
                     <div class="card cardBox">
                         <div class="card-body ">
                             <div class="pb-10 pt-10">
@@ -69,7 +69,7 @@
         </div>
     </section>
 
-    <section class="background-grey">
+    <section class="background-grey pt-30">
         <div class="container">
             <div class="row mb-20">
                 <div class="col-lg-12">
@@ -79,10 +79,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card-deck text-center pt-60">
-                <div class="card cards-effect background-transparent pt-30">
+            <div class="card-deck text-center pt-40 pb-30 ">
+                <div class="card cards-effect background-transparent pt-30 cardBox">
                     <div class="text-center">
-                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="rounded-circle w-50 icon-lg icon-sm">
+                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="rounded-circle icon-lg icon-sm icom-xl">
                     </div>
                     <div class="card-body mt-15">
                         <h3 class="card-title">Paris</h3>
@@ -92,9 +92,9 @@
                     <a href="javascript:void(0)" class="text-muted pb-30">
                         <span class="colorBlue">open google map. </span></a>
                 </div>
-                <div class="card cards-effect background-transparent pt-30">
+                <div class="card cards-effect background-transparent pt-30 cardBox">
                     <div class="text-center">
-                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="rounded-circle w-50 icon-lg icon-sm">
+                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="rounded-circle icon-lg icon-sm icom-xl">
                     </div>
                     <div class="card-body mt-15">
                         <h3 class="card-title">Paris</h3>
@@ -104,9 +104,9 @@
                     <a href="javascript:void(0)" class="text-muted pb-30">
                         <span class="colorBlue ">open google map. </span></a>
                 </div>
-                <div class="card cards-effect background-transparent pt-30">
+                <div class="card cards-effect background-transparent pt-30 cardBox">
                     <div class="text-center">
-                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="rounded-circle w-50 icon-lg icon-sm">
+                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="rounded-circle icon-lg icon-sm icom-xl">
                     </div>
                     <div class="card-body mt-15">
                         <h3 class="card-title">Paris</h3>
