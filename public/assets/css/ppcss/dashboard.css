@@ -552,10 +552,6 @@ textarea.form-control-ap {
     padding-left: .5rem!important
 }
 
-.text-center {
-    text-align: center!important
-}
-
 /* .text-primary {
     --bs-text-opacity: 1;
     color: 13,110,253,1!important
@@ -1811,13 +1807,13 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
         width: 50%
         }
 }
-
-@media (min-width: 992px) {
+/* ปิดไว้ */
+/* @media (min-width: 992px) {
     .col-lg-4 {
         flex: 0 0 auto;
         width: 33.33333333%
         }
-}
+} */
 
 @media (min-width: 576px){
     .col-sm-4 {
@@ -1826,13 +1822,14 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     max-width: 56.333333%;
     }
 }
-@media (max-width: 1025px){
+/* ปิดไว้ */
+/* @media (max-width: 1025px){
     .img {
         max-width: 130px;
         height: auto;
     }
 
-}
+} */
 
 .col-lg-10{
     flex: 0 0 83.333333%;

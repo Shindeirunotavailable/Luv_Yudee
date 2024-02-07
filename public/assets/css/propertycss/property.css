@@ -124,11 +124,11 @@
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;
     font-size: 1em
   }
-
-  img {
+/* ปิดไว้ */
+  /* img {
     vertical-align: middle;
     border-style: none
-  }
+  } */
 
   svg {
     overflow: hidden;
@@ -395,12 +395,12 @@
         flex: 0 0 25%;
         max-width: 25%
     }
-
-    .col-lg-4 {
+/* ปิดไว้ก่อน */
+    /* .col-lg-4 {
         -ms-flex: 0 0 33.33333%;
         flex: 0 0 33.33333%;
         max-width: 33.33333%
-    }
+    } */
 
     .col-lg-6 {
         -ms-flex: 0 0 50%;
@@ -584,8 +584,8 @@
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff
   }
-
-  .card {
+/* ปิดไว้ก่อน */
+  /* .card {
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -604,7 +604,7 @@
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1.25rem
-  }
+  } */
 
   .card-title {
     margin-bottom: .75rem
@@ -1065,10 +1065,10 @@
   .rounded-lg {
     border-radius: 5px!important
   }
-
-  .rounded-circle {
+/* ปิดไว้ */
+  /* .rounded-circle {
     border-radius: 50%!important
-  }
+  } */
 
   .d-inline-block {
     display: inline-block!important
@@ -2302,9 +2302,6 @@
 .text-center-sm {
     text-align: center
   }
-.text-center {
-    text-align: center
-  }
 
   .media-fa{
     font-size: 30px;
@@ -2529,7 +2526,7 @@
     margin-bottom: 3.125rem!important
   }
 
-  section {
+  .section-pp {
     padding: 50px 0;
     position: relative;
 }
