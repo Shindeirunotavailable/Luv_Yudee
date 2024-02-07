@@ -44,7 +44,34 @@ Route::get('navber', function () {
 Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
-// Route::get('/fetch-data', [ThaiProvince::class, 'fetchData']);
+
 // Route::get('editor' , 'App\Http\Controllers\CKEditor@editor');
 // Route::post('store' , 'App\Http\Controllers\CKEditor@store');
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
+
+
+// Route::get('/test-database', function () {
+//     try {
+//         DB::connection()->getPdo();
+//         return "เชื่อมต่อฐานข้อมูลสำเร็จ!";
+//     } catch (\Exception $e) {
+//         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
+//     }
+// });
+
+Route::get('provinces', function () {
+    return view('provinces');
+});
+// Route::get('provinces',function(){
+//     $path = url('/raw_database.json');
+//     $data = json_decode(file_get_contents($path), false);
+//     $provinces = array_map(function ($item) {
+//         return $item->province;
+//     }, $data);
+//     $provinces = array_unique($provinces);
+//     $provinces = array_values($provinces);
+
+//     $amphoes = [];
+//     $tambons = [];
+// return view('provinces' ,compact('provinces','amphoes','tambons'));
+// });
