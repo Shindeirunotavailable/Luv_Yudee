@@ -68,7 +68,7 @@
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Select
                                                         Category</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <div id="result-container "></div>
                                                         <div>
                                                             <select id="select1" name="select1" class="form-select "
@@ -144,7 +144,7 @@
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Listed
                                                         in</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
 
                                                         <select id="select2" name="select2" class="form-select  "
@@ -220,7 +220,7 @@
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property
                                                         Status</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
                                                         <select id="select3" name="select3" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -338,7 +338,7 @@
                                                     <p class="text mb-d-25">Photos must be JPEG or PNG formatand at least
                                                         2048x768</p>
                                                     {{-- เอาbtn-t-white ออก --}}
-                                                    <label class="ud-btn btn-yd btn-t-white">Browse Files
+                                                    <label class="btn btn-primary afterButton btn-t-white">Browse Files
                                                         <input id="fileInput" type="file" multiple=""
                                                             class="ud-btn btn-white" style="display: none;">
                                                     </label>
@@ -356,7 +356,7 @@
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control-ap"
                                                         placeholder="Your Name">
                                                 </div> --}}
-                                                <input type="file" class="form-control-ap-ap" id="customFile" />
+                                                <input type="file" class="form-control-ap" id="customFile" />
                                             </div>
 
                                             {{-- <input type="submit"> --}}
@@ -382,7 +382,7 @@
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country /
                                                         State</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
                                                         <div>
                                                             <select id="input_province" name="input_province"class="form-control-ap">
@@ -396,7 +396,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">City</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
                                                         <select id="select6" name="select6" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -468,7 +468,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
-                                                    <div class="location-area ">
+                                                    <div class=" ">
 
                                                         <select id="select7" name="select7" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -694,7 +694,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Floors
                                                         no</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <select id="select9" name="select9" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -766,7 +766,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Structure
                                                         type</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <select id="select8" name="select8" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -838,7 +838,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Energy
                                                         Class</label>
-                                                    <div class="location-area">
+                                                    <div class="">
 
                                                         <select id="select10" name="select10" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
@@ -912,7 +912,7 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Energy
                                                         index in
                                                         kWh/m2a</label>
-                                                    <div class="location-area">
+                                                    <div class="">
                                                         <select id="select11" name="select11" class="form-select  "
                                                             style="width: 100%; height: 55px;" multiple>
                                                             <optgroup label="Alaskan/Hawaiian Time Zone">

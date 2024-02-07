@@ -1,5 +1,7 @@
 @extends('layout.master')
 @section('content')
+
+</div>
     <main>
         <section>
             <div class="container-pp-fluid">
@@ -919,7 +921,7 @@
                                     </div>
                                     {{-- เอา btn-t-white ออก btn-block--}}
 
-                                        <button type="submit" class="ud-btn btn-yd btn-t-white btn-block-sb "  >Submit</button>
+                                        <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block-sb "  >Submit</button>
 
 
                                 </form>
@@ -1048,7 +1050,7 @@
                                                 <textarea class="form-control-pp border-0" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
                                             </div>
                                             {{-- เอา btn-t-white ออก--}}
-                                            <button type="submit" class="ud-btn btn-yd btn-t-white btn-block  ">Request Info</button>
+                                            <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block  ">Request Info</button>
                                             <div class="form-group form-check mt-2 mb-0">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label fs-13" for="exampleCheck2">Egestas
