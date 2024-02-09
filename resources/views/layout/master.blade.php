@@ -20,7 +20,7 @@
 
          <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/propertycss/property.css') }}" rel="stylesheet" type="text/css"/>
-         <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet" type="text/css" />
+         {{-- <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet" type="text/css" /> --}}
          <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />
 
 </head>
@@ -41,7 +41,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
-    <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
+    {{-- <script src="{{ asset('/assets/js/masterIndex.js') }}"></script> --}}
     <script src="{{ asset('/assets/js/login.js') }}"></script>
 
 

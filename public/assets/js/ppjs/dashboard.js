@@ -72,6 +72,12 @@ $(document).ready(function() {
 
 
 // db_provinces
+        var getUrl = window.location;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+        var csrf = $('meta[name="csrf-token"]').attr('content');
+        var lang = document.documentElement.lang;
+        // console.log(lang,getUrl,baseUrl,csrf);
+
         var url = '/dashboard.db_provinces';
         $('#provinces').change(function() {
             var id_provinces = $(this).val();
@@ -85,7 +91,7 @@ $(document).ready(function() {
 
                     id: id_provinces,
                     function: 'provinces',
-                    '_token': $("input[name=_token]").val()
+                    '_token': csrf
                 },
                 success: function(response) {
                     console.log(response)
@@ -104,7 +110,7 @@ $(document).ready(function() {
                 data: {
                     id: id_amphures,
                     function: 'amphures',
-                    '_token': $("input[name=_token]").val()
+                    '_token': csrf
                 },
                 success: function(response) {
                     $('#districts').html(response.options);
@@ -120,7 +126,7 @@ $(document).ready(function() {
                 data: {
                     id: id_districts,
                     function: 'districts',
-                    '_token': $("input[name=_token]").val()
+                    '_token': csrf
                 },
                 success: function(response) {
                     $('#zipcode').val(response.zip_code);

@@ -145,7 +145,7 @@
                     </div>
                 </div>
 
-                <div class="tab-content" id="v-tabs-tabContent">
+                <div class="tab-content-ds" id="v-tabs-tabContent">
                     <div class="tab-pane fade" id="v-add-property" role="tabpanel"
                         aria-labelledby="v-add-property-tab" tabindex="0">
                         @include('dashboard.addproperty')
