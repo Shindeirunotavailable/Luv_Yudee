@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="pt-20 pb-20 text-center">
-                        <input type="checkbox" id="modalStart" />
+                      
                         <button type="submit"
                             class="buttonPlan btn btn-primary afterButton w-300 "
                             id="submitModal"> 

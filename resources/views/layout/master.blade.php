@@ -56,7 +56,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Include Select2 from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <script src="{{ asset('/assets/js/log-css.js') }}"></script>
 
     <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
