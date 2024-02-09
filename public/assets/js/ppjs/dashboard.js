@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 $(document).ready(function() {
-    $('#select1, #select2, #select3 , #select4, #select5, #select6, #select7, #select8, #select9, #select10, #select11').val('AK');
-    $('#select1, #select2, #select3 , #select4, #select5, #select6, #select7, #select8, #select9, #select10, #select11').select2({
+    $('#select1, #select2, #select3 , #select4, #select5').val('CD');
+    $('#select1, #select2, #select3 , #select4, #select5').select2({
         placeholder: "Select...",
         allowClear: true
     });

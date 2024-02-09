@@ -1879,7 +1879,7 @@ input[type="submit"] {
 @media (max-width: 1025px) and (min-width: 769px){
 
     .ck-editor {
-        width: 454px !important;
+        width: 514px !important;
     }
 }
 @media (max-width: 769px) and (min-width: 426px){
