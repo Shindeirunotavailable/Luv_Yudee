@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 success: function(response) {
                     $('#districts').html(response.options);
+                    $('#zipcode').val('');
                 }
             });
         });
@@ -123,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 success: function(response) {
                     $('#zipcode').val(response.zip_code);
+
                 }
             });
         });
