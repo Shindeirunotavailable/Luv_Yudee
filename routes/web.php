@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProvincesController;
 
+use App\Http\Controllers\DbProvincesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,10 +35,6 @@ route::any('details','App\Http\Controllers\LoginController@details'); // เป�
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
 
-Route::get('navber', function () {
-    return view('navber');
-});
-
 
  // -----------------------------------function test Route ------------------------------------
 
@@ -45,4 +43,27 @@ Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
 
+// Route::get('editor' , 'App\Http\Controllers\CKEditor@editor');
+// Route::post('store' , 'App\Http\Controllers\CKEditor@store');
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
+
+
+// Route::get('/test-database', function () {
+//     try {
+//         DB::connection()->getPdo();
+//         return "เชื่อมต่อฐานข้อมูลสำเร็จ!";
+//     } catch (\Exception $e) {
+//         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
+//     }
+// });
+// Route::get('provinces', function () {
+//     return view('provinces');
+// });
+
+
+// Route::get('provinces', [ProvincesController::class, 'provinces']);
+// Route::post('/db-provinces', [DbProvincesController::class, 'getData'])->name('db-provinces');
+
+route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
+route::any('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
+// route::any('db-provinces','App\Http\Controllers\DbProvincesController@getData')->name('db-provinces');

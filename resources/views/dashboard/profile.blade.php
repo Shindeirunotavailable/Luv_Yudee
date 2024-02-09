@@ -3,10 +3,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="mb-6">
-                        <h2 class="mb-0 text-heading fs-22 lh-15">My Profile</h2>
+                        <h2 class="mb-0 text-heading fs-mp-h">My Profile</h2>
                         <p class="">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
                     </div>
-
                     <div class="container">
                         <div class="row ">
                             <div class="col-md-6">
@@ -14,22 +13,20 @@
                                 <div class="card mb-6">
                                     <div class="card-body px-6 pt-6 pb-5">
                                         <div class="row">
-                                            <div class="col-sm-4 col-xl-12 col-xxl-7 ">
-                                                <h3 class="card-title mb-0 text-heading fs-22 lh-15">Photo</h3>
-                                                <p class="card-text mb-4 ">Upload your profile photo.</p>
+                                            <div class="col-sm-12 col-xl-12 col-xxl-7 ">
+                                                <h3 class="card-title mb-0 text-heading fs-mp-h">Photo</h3>
+                                                <p class=" fs-mp mb-4 ">Upload your profile photo.</p>
                                             </div>
-                                            {{-- ลบ col-sm-8 col-xl-12 col-xxl-5 ออกจาก class --}}
-                                            <div class=" text-center row">
-                                                <img src="https://homez-reactjs.ibthemespro.com/images/listings/profile-1.jpg" alt="My Profile" class="mx-auto d-block img-fluid">
+                                            <div class="col-sm-8 col-xl-12 col-xxl-5 text-center">
+                                                <img src="https://homez-reactjs.ibthemespro.com/images/listings/profile-1.jpg" alt="My Profile" class="mx-auto d-block img">
                                                 <div class="custom-file mt-4 h-auto">
-                                                    {{-- เอา btn-t-white ออก --}}
                                                     <input type="file" class="custom-file-input" hidden="" id="customFile" name="file">
-                                                    <button type="submit" class="ud-btn btn-white btn-t-white" >Upload profile image</button>
+                                                    <button type="submit" class="ud-btn btn-yd btn-t-white" >Upload profile image</button>
                                                 </div>
-
-
                                             </div>
-
+                                            <p class="col-sm-12 ">
+                                                *minimum 500px x 500px
+                                            </p>
 
                                         </div>
                                     </div>
@@ -38,8 +35,8 @@
 
                                 <div class="card mb-6">
                                     <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="card-title mb-0 text-heading fs-22 lh-15">Contact information</h3>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                        <h3 class="card-title mb-0 text-heading fs-mp-h">Contact information</h3>
+                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-row mx-n4">
                                             <div class="form-group col-md-6 px-4">
                                                 <label for="firstName" class="text-heading">First name</label>
@@ -81,8 +78,8 @@
 
                                 <div class="card mb-6 mb-lg-0">
                                     <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="card-title mb-0 text-heading fs-22 lh-15">User detail</h3>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                        <h3 class="card-title mb-0 text-heading fs-mp-h">User detail</h3>
+                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-group mb-0">
                                             <label for="title" class="text-heading">Title / Posittion</label>
                                             <input type="text" class="form-control-ap form-control-lg border-0"
@@ -99,9 +96,9 @@
 
 
                                 <div class="card mb-6 ">
-                                        <div class="card-body px-6 pt-6 pb-5">
-                                            <h3 class="card-title mb-0 text-heading fs-22 lh-15">User detail</h3>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                        <div class="card-body  pt-6 pb-5">
+                                            <h3 class="card-title mb-0 text-heading fs-mp-h">User detail</h3>
+                                            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                             </p>
                                             <div class="form-group">
                                                 <label for="facebook" class="text-heading">Facebook Url</label>
@@ -140,8 +137,8 @@
 
                                 <div class="card">
                                     <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="card-title mb-0 text-heading fs-22 lh-15">Change password</h3>
-                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                        <h3 class="card-title mb-0 text-heading fs-mp-h">Change password</h3>
+                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                         </p>
                                         <div class="form-group">
                                             <label for="oldPassword" class="text-heading">Old Password</label>
@@ -174,15 +171,15 @@
 
                         <div class="d-flex justify-content-end flex-wrap">
                             {{-- เอา btn-t-white ออก --}}
-                            <div class="position-relative  pt-d-30 pb20 mr-2 " ><a href="#"
-                                class="ud-btn btn-white  btn-t-white">Delete Profile
+                             <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
+                                class="ud-btn btn-yd btn-t-white">Delete Profile
                                 <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                             {{-- เอา btn-t-white ออก --}}
                             <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
-                                class="ud-btn btn-white btn-t-white">Update Profile
+                                class="ud-btn btn-yd btn-t-white">Update Profile
                                 <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
+                            </div>
 
                         </div>
 

@@ -2,9 +2,9 @@
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 
-    <div class="row pb-d-40 d-nav-none m-5">
+    <div class="container pb-d-40 d-nav-none ">
         <div class="col-lg-12">
-            <div class="dashboard-navigation d-block d-lg-none">
+            <div class="dashboard-navigation d-block">
                 <div>
                     <div id="v-tabs1-tab" role="tablist" >
                         <button class="dropbtn dashboard-navigation-header">
@@ -76,8 +76,6 @@
 
         </div>
     </div>
-
-
     <aside>
         <div class="dashboard_content_wrapper">
             <div class="dashboard dashboard_wrapper pr-d-30 pr-d-0-md">

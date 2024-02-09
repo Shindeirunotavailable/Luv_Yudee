@@ -1,4 +1,4 @@
-<section class="footer-style1 at-home4 pt60 pb-0">
+<section class="footer-style1 at-home4 pt60 pb-0" >
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-lg-3">
@@ -115,7 +115,7 @@
 
 </section>
 
-<section class="footer-style11 at-home4  pb-3 pt-3">
+<section class="footer-style11 at-home4  pb-3 pt-3" style="background-color: blue">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">

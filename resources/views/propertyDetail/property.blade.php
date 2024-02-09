@@ -1,8 +1,10 @@
 @extends('layout.master')
 @section('content')
+
+</div>
     <main>
-        <section>
-            <div class="container-fluid">
+        <section class="section-pp">
+            <div class="container-pp-fluid">
                 <div class="position-relative zoomIn ">
 
                     <div class="position-absolute pos-fixed-top-right z-index-2">
@@ -54,12 +56,12 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
+            <div class="container-pp-fluid">
                 <div class="row galleries m-n1 py-2">
                     <div class="col-lg-6 p-1 ">
                         <div class="item item-size-4-3">
                             <div class="card p-0 hover-zoom-in">
-                                <a href="{{ asset('/assets/ImagesPropetry/property-1.jpg') }}"  class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                <a href="{{ asset('/assets/ImagesPropetry/property-1.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                     <img src="{{ asset('/assets/ImagesPropetry/property-1.jpg') }}"  >
                                 </a>
                             </div>
@@ -70,7 +72,7 @@
                             <div class="col-md-6 p-1 ">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/ImagesPropetry/property-2.jpg') }}"  class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                        <a href="{{ asset('/assets/ImagesPropetry/property-2.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             <img src="{{ asset('/assets/ImagesPropetry/property-2.jpg') }}"  >
                                         </a>
                                     </div>
@@ -79,7 +81,7 @@
                             <div class="col-md-6 p-1">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/ImagesPropetry/property-3.jpg') }}"  class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                        <a href="{{ asset('/assets/ImagesPropetry/property-3.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             <img src="{{ asset('/assets/ImagesPropetry/property-3.jpg') }}"  >
                                         </a>
                                     </div>
@@ -88,7 +90,7 @@
                             <div class="col-md-6 p-1">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/ImagesPropetry/property-4.jpg') }}"  class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                        <a href="{{ asset('/assets/ImagesPropetry/property-4.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             <img src="{{ asset('/assets/ImagesPropetry/property-4.jpg') }}"  >
                                         </a>
                                     </div>
@@ -97,30 +99,30 @@
                             <div class="col-md-6 p-1">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/ImagesPropetry/property-5.jpg') }}"  class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                        <a href="{{ asset('/assets/ImagesPropetry/property-5.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             <img src="{{ asset('/assets/ImagesPropetry/property-5.jpg') }}"  >
                                         </a>
                                         <div class=" hidden">
                                             <a href="{{ asset('/assets/ImagesPropetry/noimg.jpg') }}"
-                                            class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
                                             <a href="{{ asset('/assets/ImagesPropetry/noimg.jpg') }}"
-                                            class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
                                             <a href="{{ asset('/assets/ImagesPropetry/noimg.jpg') }}"
-                                            class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
                                             <a href="{{ asset('/assets/ImagesPropetry/noimg.jpg') }}"
-                                            class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
                                             <a href="{{ asset('/assets/ImagesPropetry/noimg.jpg') }}"
-                                            class="card-img-ga" data-gtf-mfp="true" data-gallery-id="01">
+                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
 
                                         </div>
 
                                         <a href="#"
-                                            class="card-img-ga-overlay d-flex flex-column align-items-center justify-content-center hover-image bg-dark-opacity-04">
+                                            class="card-img-pp-overlay d-flex flex-column align-items-center justify-content-center hover-image bg-dark-opacity-04">
                                             <p class="fs-48 font-weight-600 text-white lh-1 mb-4">+12</p>
                                             <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase">
                                                 View more</p>
@@ -132,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container list-head">
+            <div class="container-pp list-head">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb pb-0 bg-white">
                         <li class="breadcrumb-item fs-12 letter-spacing-087">
@@ -147,10 +149,10 @@
             </div>
         </section>
 
-        <div class="container-md-ga ">
+        <div class="container-md-pp ">
             <div class="row">
-                <article class="col-lg-8  pr-xl-7">
-                    <section class="m-top border-bottom-ga">
+                <article class="col-lg-8  pr-xl-7 section-pp">
+                    <section class="m-top border-bottom-pp">
                         <ul class="list-inline d-sm-flex align-items-sm-center">
                             <li class="list-inline-item badge badge-orange">Featured</li>
                             <li class="list-inline-item badge badge-primary">For Sale</li>
@@ -173,7 +175,7 @@
                             </div>
                         </div>
                         <h2 class="fs-22 text-heading font-bold mb-0">Description</h2>
-                        <p class="mb-0 lh-md pt-2 ">Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus
+                        <p class="mb-6 lh-md pt-2 ">Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus
                             faucibus
                             scelerisque eleifend donec.
                             Porta nibh venenatis cras sed felis eget velit aliquet. Neque volutpat ac tincidunt vitae
@@ -186,7 +188,7 @@
                         </p>
                     </section>
 
-                    <section class="pt-6 border-bottom-ga">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Facts and Features</h2>
                         <div class="row pt-3">
                                 <div class="col-lg-3 col-6 mt-4 ">
@@ -319,7 +321,7 @@
                         </div>
                     </section>
 
-                    <section class="pt-6 border-bottom-ga ">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Additional Details</h2>
                         <div class="row pt-2">
                             <dl class="col-sm-6 mb-0 d-flex">
@@ -377,11 +379,11 @@
                             </dl>
 
                         </div>
-                        <div class="container list-head">
+                        <div class="container-pp list-head">
             </div>
                     </section>
 
-                    <section class="pt-6 border-bottom-ga">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Offices Amenities</h2>
                         <ul class="list-unstyled mb-0 row pt-2 ">
                             <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Balcony
@@ -412,7 +414,7 @@
 
                     </section>
 
-                    <section class="pt-6 border-bottom-ga">
+                    <section class="pt-6 border-bottom-pp section-pp">
 
                         <h4 class="fs-30 text-heading font-bold mb-3">Virtual Tour</h4>
                         <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
@@ -421,7 +423,7 @@
 
                     </section>
 
-                    <section class="pt-6 border-bottom-ga">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold mb-3">Location</h2>
                         <div class="d-flex justify-content-center ">
                             <iframe
@@ -432,7 +434,7 @@
 
                     </section>
 
-                    <section class="pt-6 ">
+                    <section class="pt-6 section-pp">
                         <h4 class="fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
                         <div class="card border-0 ">
                             <div class="card-body p-0">
@@ -623,10 +625,10 @@
 
                     </section>
 
-                    <section class="pt-6 border-bottom-ga">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0 ">
                             <div class="card-body p-0">
-                                <h3 class="fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-ga border-primary">
+                                <h3 class="fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
                                     5 Reviews</h3>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
@@ -661,7 +663,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -708,7 +710,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -755,7 +757,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -802,7 +804,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -850,7 +852,7 @@
                                                 </ul>
                                             </div>
 
-                                            <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
@@ -868,7 +870,7 @@
                         </div>
                     </section>
 
-                    <section class="pt-6 border-bottom-ga">
+                    <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0">
                             <div class="card-body pt-0 ">
                                 <h3 class="fs-16 lh-2 text-heading mb-4">Write A Review</h3>
@@ -903,23 +905,23 @@
                                         <div class="col-sm-6">
                                             <div class="form-group mb-4">
                                                 <input placeholder="Your Name"
-                                                    class="form-control-ga form-control-ga-lg border-0" type="text"
+                                                    class="form-control-pp form-control-pp-lg border-0" type="text"
                                                     name="name">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group mb-4">
                                                 <input type="email" placeholder="Email" name="email"
-                                                    class="form-control-ga form-control-ga-lg border-0">
+                                                    class="form-control-pp form-control-pp-lg border-0">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <textarea class="form-control-ga form-control-ga-lg border-0" placeholder="Your Review" name="message" rows="5"></textarea>
+                                        <textarea class="form-control-pp form-control-pp-lg border-0" placeholder="Your Review" name="message" rows="5"></textarea>
                                     </div>
                                     {{-- เอา btn-t-white ออก btn-block--}}
 
-                                        <button type="submit" class="ud-btn btn-yd btn-t-white btn-block-sb "  >Submit</button>
+                                        <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block-sb "  >Submit</button>
 
 
                                 </form>
@@ -934,20 +936,20 @@
                     <div class="make-me-sticky hide-all ">
                         <div class="card border-0 widget-request-tour">
 
-                            <div class="card-body px-sm-6 shadow-xxs-2 pb-5 pt-0">
+                            <div class="card-body pr-sm-6 pl-sm-6 shadow-xxs-2 pb-5 pt-0">
                                 <form>
                                     <div class="tab-content pt-1 pb-0 px-0 shadow-none">
                                         {{-- Request Info ID --}}
                                         <div class="tab-pane fade fade show active" id="request-info" role="tabpanel">
 
                                             <div class="hide-content">
-                                                <div class="form-check d-flex align-items-center border-bottom-ga pb-3 mb-3">
+                                                <div class="form-check d-flex align-items-center border-bottom-pp pb-3 mb-3">
                                                     <input class="form-check-input" type="radio" name="agent"
                                                         value="option1">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center mt-3">
                                                             <a href="agent-details-1.html" class="d-block agent-icon mr-3">
-                                                                <img src="{{ asset('/assets/ImagesPropetry/agent-1.jpg') }}"
+                                                                <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-1.jpg') }}"
                                                                     class="rounded-circle" alt="agent-2">
                                                             </a>
                                                             <div>
@@ -989,7 +991,7 @@
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center">
                                                             <a href="agent-details-1.html" class="d-block agent-icon mr-3">
-                                                                <img src="{{ asset('/assets/ImagesPropetry/agent-2.jpg') }}"
+                                                                <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-2.jpg') }}"
                                                                     class="rounded-circle" alt="agent-1">
                                                             </a>
                                                             <div>
@@ -1032,23 +1034,23 @@
                                             </div>
                                             <div class="mt-4">
                                                 <div class="form-group mb-2">
-                                                    <input type="text" class="form-control-ga form-control-ga-lg border-0"
+                                                    <input type="text" class="form-control-pp form-control-pp-lg border-0"
                                                         placeholder="First Name, Last Name">
                                                 </div>
                                                 <div class="form-group mb-2">
-                                                    <input type="email" class="form-control-ga form-control-ga-lg border-0"
+                                                    <input type="email" class="form-control-pp form-control-pp-lg border-0"
                                                         placeholder="Your Email">
                                                 </div>
                                                 <div class="form-group mb-2">
-                                                    <input type="tel" class="form-control-ga form-control-ga-lg border-0"
+                                                    <input type="tel" class="form-control-pp form-control-pp-lg border-0"
                                                         placeholder="Your phone">
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
-                                                <textarea class="form-control-ga border-0" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
+                                                <textarea class="form-control-pp border-0" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
                                             </div>
                                             {{-- เอา btn-t-white ออก--}}
-                                            <button type="submit" class="ud-btn btn-yd btn-t-white btn-block  ">Request Info</button>
+                                            <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block  ">Request Info</button>
                                             <div class="form-group form-check mt-2 mb-0">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label fs-13" for="exampleCheck2">Egestas
@@ -1070,8 +1072,8 @@
             </div>
         </div>
 
-        <section>
-            <div class="container ">
+        <section class="section-pp">
+            <div class="container-pp ">
                 <h4 class="fs-22 text-heading ">Similar Homes You May Like</h4>
                 <div class="slick-list draggable" style="height: 100%;">
                     <div class="slick-track sm-box">
@@ -1081,10 +1083,10 @@
                                 <div class=" slick-slide-box slick-active d-flex justify-content-between"
                                     style="width: 400px;" tabindex="0" data-slick-index="2" aria-hidden="false">
                                     <div class="card  shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
+                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
                                             <img src="{{ asset('/assets/ImagesPropetry/properties-1.jpg') }}"
                                                 alt="Affordable Urban House">
-                                            <div class="card-img-ga-overlay p-2 d-flex flex-column">
+                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
                                                     <span class="badge mr-2 badge-orange">featured</span>
                                                     <span class="badge mr-2 badge-indigo">for Sale</span>
@@ -1161,10 +1163,10 @@
                                 <div class=" slick-slide-box slick-active d-flex justify-content-between"
                                     style="width: 400px;" tabindex="0" data-slick-index="1" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
+                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
                                             <img src="{{ asset('/assets/ImagesPropetry/properties-2.jpg') }}"
                                                 alt="Garden Gingerbread House">
-                                            <div class="card-img-ga-overlay p-2 d-flex flex-column">
+                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
                                                     <span class="badge mr-2 badge-orange">featured</span>
                                                     <span class="badge mr-2 badge-indigo">for Sale</span>
@@ -1244,10 +1246,10 @@
                                 <div class=" slick-slide-box slick-active d-flex justify-content-between"
                                     style="width: 400px;" tabindex="0" data-slick-index="2" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
+                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
                                             <img src="{{ asset('/assets/ImagesPropetry/properties-3.jpg') }}"
                                                 alt="Affordable Urban House">
-                                            <div class="card-img-ga-overlay p-2 d-flex flex-column">
+                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
                                                     <span class="badge mr-2 badge-primary">for Sale</span>
                                                 </div>
@@ -1325,10 +1327,10 @@
                                 <div class=" slick-slide-box slick-active d-flex justify-content-between"
                                     style="width: 400px;" tabindex="0" data-slick-index="3" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
+                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
                                             <img src="{{ asset('/assets/ImagesPropetry/properties-4.jpg') }}"
                                                 alt="Affordable Urban House">
-                                            <div class="card-img-ga-overlay p-2 d-flex flex-column">
+                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
                                                     <span class="badge mr-2 badge-primary">for Sale</span>
                                                 </div>
@@ -1406,10 +1408,10 @@
                                 <div class=" slick-slide-box slick-active d-flex justify-content-between"
                                     style="width: 400px;" tabindex="0" data-slick-index="4" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
+                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
                                             <img src="{{ asset('/assets/ImagesPropetry/properties-5.jpg') }}"
                                                 alt="Affordable Urban House">
-                                            <div class="card-img-ga-overlay p-2 d-flex flex-column">
+                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
                                                     <span class="badge mr-2 badge-primary">for Sale</span>
                                                 </div>
@@ -1487,10 +1489,10 @@
                                 <div class=" slick-slide-box slick-active d-flex justify-content-between"
                                     style="width: 400px;" tabindex="0" data-slick-index="5" aria-hidden="false">
                                     <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-ga-top">
+                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
                                             <img src="{{ asset('/assets/ImagesPropetry/properties-6.jpg') }}"
                                                 alt="Affordable Urban House">
-                                            <div class="card-img-ga-overlay p-2 d-flex flex-column">
+                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
                                                     <span class="badge mr-2 badge-primary">for Sale</span>
                                                 </div>
@@ -1575,7 +1577,7 @@
             <div class="d-flex bottom-bar-action bottom-bar-action-01 con-t bg-gray-01 align-items-center position-fixed fixed-bottom d-sm-none"
                 style="">
                 <div class="media align-items-center">
-                    <img src="{{ asset('/assets/ImagesPropetry/agent-3.png') }}"
+                    <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-3.png') }}"
 
                         alt="Irene Wallace" class="mr-4 rounded-circle">
                     <div class="media-body">

@@ -38,3 +38,4 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
             });
 })
 
+
