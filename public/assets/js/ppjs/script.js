@@ -19,7 +19,7 @@
 //     });
 // });
 
-
+if ($('.dropbtn').length){
 
 document.addEventListener("DOMContentLoaded", function() {
     const dropdownBtn = document.querySelector(".dropbtn");
@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+}
 
 
 $(document).ready(function() {
