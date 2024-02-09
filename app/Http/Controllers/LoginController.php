@@ -8,30 +8,40 @@ use Illuminate\Support\Facades\DB;
 class LoginController extends Controller
 {
 
-    
-    public function navbar(){ //แสดงหน้า modal สร้างรหัสผ่าน
-        return view("navbar");
+
+    // public function __construct()
+    // {
+    //     // $this->middleware['css'] = ['login'];
+    //     $this->middleware('log')->only('login');
+    //     $ttt['ate'] = NULL;
+
+    // }
+    public $loginCss;
+    public $ContenrCss;
+
+    public function __construct()
+    {
+        $this->loginCss= ['main', 'login']; // ดึง LoginCss
+        $this->ContenrCss= ['main', 'content/content']; // ดึง ContenrCss
+ 
     }
 
 
+    public function login(){ //แสดงหน้า modal สร้างรหัสผ่าน
+        return view("login.login")->with('main',$this->loginCss);
+    }
+
+    
+    
     public function createAccount(){ //แสดงหน้า modal สร้างรหัสผ่าน
         return view("login.createAccount");
     }
-
-    public function login(){ //แสดงหน้า modal สร้างรหัสผ่าน
-        return view("login.login");
-    }
-
 
     public function forgetPassword(){ // แสดงหน้า modal ลืมรหัสผ่าน
         return view("login.forgetPassword");
         
     }
 
-    public function content(){ //แสดงหน้า modal สร้างรหัสผ่าน
-        return view("home.content");
-    }
-    
 
     public function register(Request $request)
     {
@@ -86,11 +96,11 @@ class LoginController extends Controller
 
 // ---------------------------------------------- หน้า Content -------------------------------------------------
 
-    
-public function indextcontent(){ // แสดงหน้า modal ลืมรหัสผ่าน
-    return view("home.content");
-    
+ 
+public function content(){ //แสดงหน้า content
+    return view("home.content")->with('main',$this->ContenrCss);
 }
+ 
 
     public function contentstone (Request $request){
         $email = $request->input('email');
@@ -117,6 +127,18 @@ public function indextcontent(){ // แสดงหน้า modal ลืมร�
 
     }
 
+    
+
+// ---------------------------------------------- หน้า Details -------------------------------------------------
+
+ 
+public function details(){ 
+    return view("home.details");
 }
+
+}
+
+
+
 
 

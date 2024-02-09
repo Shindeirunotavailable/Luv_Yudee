@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-    <div id="root">
+    {{-- <div id="root"> --}}
         <div class="wrapper ovh">
 
             <div class="signup-modal">
@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="SidebarPanel" aria-labelledby="SidebarPanelLabel">
+            {{-- <div class="offcanvas offcanvas-end" tabindex="-1" id="SidebarPanel" aria-labelledby="SidebarPanelLabel">
                 <div class="rightside-hidden-bar">
                     <div class="hsidebar-header">
                         <div class="sidebar-close-icon" data-bs-dismiss="offcanvas" aria-label="Close"><span
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
 
             <section class="home-banner-style4 p0 bgc-white">
@@ -389,7 +389,7 @@
                                                                         </div>
                                                                         <div class="d-flex align-items-center"><span
                                                                                 id="slider-range-value1">$20</span><i
-                                                                                class="fa-sharp fa-solid fa-minus mrl-2 dark-color icon"></i><span
+                                                                                class="fa-sharp fa-solid fa-minus mx-2 dark-color icon"></i><span
                                                                                 id="slider-range-value2">$48837</span>
                                                                         </div>
                                                                     </div>
@@ -909,16 +909,16 @@
                         </div>
                         <div class="col-lg-6 my-3">
                             <div class="home4-icon-style d-none d-sm-flex justify-content-start justify-content-lg-end">
-                                <a class="d-flex align-items-center dark-color ff-heading mr-2"
+                                <a class="d-flex align-items-center dark-color ff-heading me-2"
                                     href="/grid-full-4-col"><i class=" icons fa-solid fa-house"
                                         aria-hidden="true"></i> Houses</a>
-                                <a class="d-flex align-items-center dark-color ff-heading mr-2"
+                                <a class="d-flex align-items-center dark-color ff-heading me-2"
                                     href="/grid-full-4-col"><i class="icons fa-regular fa-building"
                                         aria-hidden="true"></i>Apartments</a>
-                                <a class="d-flex align-items-center dark-color ff-heading mr-2"
+                                <a class="d-flex align-items-center dark-color ff-heading me-2"
                                     href="/grid-full-4-col"><i class="icons fa-solid fa-house-laptop"
                                         aria-hidden="true"></i>Office</a>
-                                <a class="d-flex align-items-center dark-color ff-heading mr-2"
+                                <a class="d-flex align-items-center dark-color ff-heading me-2"
                                     href="/grid-full-4-col"><i class="icons fa-solid fa-house-flood-water"
                                         aria-hidden="true"></i>Villa</a>
                             </div>
@@ -942,7 +942,7 @@
                                                         alt="listings" style="height: 230px;">
                                                     <div class="sale-sticker-wrap">
                                                         <div class="list-tag fz12">
-                                                            <span class="fa-solid fa-baht-sign mr-2"></span>FEATURED
+                                                            <span class="fa-solid fa-baht-sign me-2"></span>FEATURED
                                                         </div>
                                                     </div>
                                                     <div class="list-price">$14,000 / <span>mo</span></div>
@@ -1235,7 +1235,7 @@
                                                         alt="listings" style="height: 230px;">
                                                     <div class="sale-sticker-wrap">
                                                         <div class="list-tag fz12">
-                                                            <span class="fa-solid fa-baht-sign mr-2"></span>FEATURED
+                                                            <span class="fa-solid fa-baht-sign me-2"></span>FEATURED
                                                         </div>
                                                     </div>
                                                     <div class="list-price">$14,000 / <span>mo</span></div>
@@ -1532,6 +1532,7 @@
                     </div>
                 </div>
             </section>
+           
             <section class="mb0-md pb30-md">
 
                 <div class="container">
@@ -1848,5 +1849,5 @@
                 </div>
             </section>
         </div>
-    </div>
+    {{-- </div> --}}
 @endsection

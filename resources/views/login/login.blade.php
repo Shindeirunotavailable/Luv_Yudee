@@ -1,5 +1,11 @@
 @extends('layout.master')
 @section('content')
+
+{{-- 
+@foreach ($count as $item)
+    {{ $item }}
+@endforeach --}}
+
     <div class="container ">
         <div class="imagbackground ">
             <div class="row pt-13 ">

@@ -36,6 +36,11 @@ route::any('create-account','App\Http\Controllers\LoginController@createAccount'
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
 
 
+Route::get('test', function () {
+    return view('home.test');
+});
+
+
  // -----------------------------------function test Route ------------------------------------
 
 // earth

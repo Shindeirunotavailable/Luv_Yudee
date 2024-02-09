@@ -1,10 +1,10 @@
 
 
-<div class="col-lg-4">
     <div class="list-sidebar-style1">
-        <div class="burger">
+        {{-- <div class="burger">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
-        </div>
+        </div> --}}
+
         <div class="widget-wrapper">
             <h6 class="list-title">Find your home</h6>
             <div class="search_area">
@@ -275,7 +275,8 @@
             <h6 class="list-title">Square Feet</h6>
             <div class="space-area">
                 <div class="d-flex align-items-center justify-content-between">
-                    <div class="form-style1"><input type="number" class="form-control filterInput" placeholder="Min."
+                    <div class="form-style1">
+                        <input type="number" class="form-control filterInput" placeholder="Min."
                             id="minFeet"></div><span class="dark-color">-</span>
                     <div class="form-style1"><input type="number" id="maxFeet" class="form-control filterInput"
                             placeholder="Max"></div>
@@ -354,4 +355,3 @@
             </div><a class="reset-button" href="#"><span class="fa fa-star"></span><u>Save Search</u></a>
         </div>
     </div>
-</div>
