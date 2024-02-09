@@ -1024,9 +1024,6 @@ p {
 }
 /* -----------------------------อนิเมะชั่นปุ่ม-------------------------------------------- */
 
-.w-300{
-    width: 300px;
-  }
 
     /* button plan */
 
@@ -1117,10 +1114,37 @@ p {
   }
 
 
-      /* ----------------------------non------------------------------------------ */
-      .label-700{
-        font-weight: 700;
-      }
+        /* ----------------------------ปรับขนาดและสีต่างๆ------------------------------------------ */
+        .label-700{
+            font-weight: 700;
+          }
+    
+        .w-300{
+            width: 300px;
+        }
+
+        .text-blue {
+            color: #0071bc
+        }
+
+        .link-effect:hover{
+            color: blue;
+          }
+        
+                
+        .background-grey{
+            background-color: #f7f7f7
+        }
+
+        .section-120{
+            padding: 120px 0;
+            position: relative;
+          }
+                
+
+
+
+      /* ----------------------------ปุ่ม button------------------------------------------ */
 
       .afterButton {
         background-color: #0071bc !important; /* สีพื้นหลัง */
@@ -1134,6 +1158,9 @@ p {
       }
 
       .afterButton:hover {
-        background-image: linear-gradient(45deg, #3a9ad9 50%, transparent 50%) !important; /* สีตอนกำลังจะเปลี่ยนพื้นหลัง */
+        background-image: linear-gradient(45deg, #3a9ad9 50%, transparent 50%) ; /* สีตอนกำลังจะเปลี่ยนพื้นหลัง */
         background-position: 0 !important; /* ต่ำแหน่งสีพื้นหลัง */
       }
+
+        
+   

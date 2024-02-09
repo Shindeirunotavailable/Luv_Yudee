@@ -21,6 +21,10 @@
       padding: 30px 0 !important;
       position: relative !important;
     }
+    .button-contact{
+      padding: 5px !important;
+      width: 100%;
+    }
 
   }
 
@@ -54,7 +58,15 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
   }
 
+  .link-effect:hover{
+    color: blue;
+  }
  
   .h-250{
     height: 250px;
+  }
+
+  .button-contact{
+    margin-bottom: 15px;
+    padding: 20px;
   }
