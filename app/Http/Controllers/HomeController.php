@@ -28,11 +28,8 @@ class HomeController extends Controller
 
 
     // earth
-    public function sidebar(){
-        return view("dashboard.sidebar");
-    }
-    // public function addproperty(){
-    //     return view("dashboard.addproperty");
+    // public function sidebar(){
+    //     return view("dashboard.sidebar");
     // }
 
     public function property(){

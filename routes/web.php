@@ -39,7 +39,7 @@ route::any('forget-password','App\Http\Controllers\LoginController@forgetPasswor
  // -----------------------------------function test Route ------------------------------------
 
 // earth
-Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
+// Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
 
@@ -60,7 +60,7 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 // Route::get('provinces', [ProvincesController::class, 'provinces']);
 // Route::post('/db_provinces', [ProvincesController::class, 'getData'])->name('db_provinces');
 
-Route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
-// Route::any('addproperty','App\Http\Controllers\ProvincesController@addproperty');
+Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
+// Route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
 Route::post('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
 

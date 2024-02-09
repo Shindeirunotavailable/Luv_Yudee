@@ -9,14 +9,23 @@ use App\Models\District;
 
 class ProvincesController extends Controller
 {
-    public function provinces()
+    // public function provinces()
+    // {
+    //     $provinces = Province::all(); // ดึงข้อมูลจังหวัดทั้งหมดจากฐานข้อมูล
+    //     $amphures = Amphure::all();
+    //     $districts = District::all();
+
+    //     return view('provinces', compact('provinces','districts','amphures'));
+    //     // return view('dashboard.addproperty', compact('provinces','districts','amphures')); // ส่งข้อมูลไปยัง provinces.blade.php
+    // }
+
+    public function sidebar()
     {
         $provinces = Province::all(); // ดึงข้อมูลจังหวัดทั้งหมดจากฐานข้อมูล
         $amphures = Amphure::all();
         $districts = District::all();
 
-        return view('provinces', compact('provinces','districts','amphures'));
-        // return view('dashboard.addproperty', compact('provinces','districts','amphures')); // ส่งข้อมูลไปยัง provinces.blade.php
+        return view('dashboard.sidebar', compact('provinces','districts','amphures'));
     }
 
     public function db_provinces(Request $request)

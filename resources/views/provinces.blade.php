@@ -32,7 +32,7 @@
     </select><br>
 
     <label>รหัสไปรษณีย์</label>
-    <input type="text" name="zipcode" id="zipcode" readonly>
+    <input  type="text" name="zipcode" id="zipcode" readonly>
 
 {{-- <input type="hidden" value="{{ route('db_provinces') }}" name="db_provinces" id="db_provinces"> --}}
 <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>
