@@ -29,14 +29,10 @@
 
     <label>ตำบล</label>
     <select name="districts" id="districts" class="form-control-ap">
-        {{-- <option value="">กรุณาเลือกตำบล</option>
-            @foreach ($districts as $value)
-                <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
-            @endforeach --}}
     </select><br>
 
     <label>รหัสไปรษณีย์</label>
-    <input type="text" name="zipcode" id="zipcode">
+    <input type="text" name="zipcode" id="zipcode" readonly>
 
 {{-- <input type="hidden" value="{{ route('db_provinces') }}" name="db_provinces" id="db_provinces"> --}}
 <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>

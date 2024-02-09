@@ -31,6 +31,10 @@ class HomeController extends Controller
     public function sidebar(){
         return view("dashboard.sidebar");
     }
+    // public function addproperty(){
+    //     return view("dashboard.addproperty");
+    // }
+
     public function property(){
         return view(".propertyDetail.property");
     }

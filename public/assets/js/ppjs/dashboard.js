@@ -74,8 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // db_provinces
         var url = '/db_provinces';
         $('#provinces').change(function() {
-
-            var id_province = $(this).val();
+            var id_provinces = $(this).val();
             // console.log($('#db_provinces').val())
             // console.log($("input[name=_token]").val())
             $.ajax({
@@ -84,29 +83,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 data: {
 
-                    id: id_province,
+                    id: id_provinces,
                     function: 'provinces',
                     '_token': $("input[name=_token]").val()
                 },
                 success: function(response) {
                     console.log(response)
                     $('#amphures').html(response.options);
+                    $('#districts').html('');
+                    $('#zipcode').val('');
                 }
             });
 
         });
         $('#amphures').change(function() {
-            var id_amphure = $(this).val();
+            var id_amphures = $(this).val();
             $.ajax({
                 type: "post",
                 url: url,
                 data: {
-                    id: id_amphure,
+                    id: id_amphures,
                     function: 'amphures',
                     '_token': $("input[name=_token]").val()
                 },
                 success: function(response) {
                     $('#districts').html(response.options);
+                }
+            });
+        });
+        $('#districts').change(function() {
+            var id_districts = $(this).val();
+            $.ajax({
+                type: "post",
+                url: url,
+                data: {
+                    id: id_districts,
+                    function: 'districts',
+                    '_token': $("input[name=_token]").val()
+                },
+                success: function(response) {
+                    $('#zipcode').val(response.zip_code);
                 }
             });
         });

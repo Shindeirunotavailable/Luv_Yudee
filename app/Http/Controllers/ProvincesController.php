@@ -53,7 +53,23 @@ class ProvincesController extends Controller
 
             return response()->json(['options' => $options]);
         }
+        if ($request->has('function') && $request->input('function') === 'districts') {
+            $id = $request->input('id');
+
+            // ค้นหาข้อมูลตำบลที่มี id ตรงกับที่ระบุ
+            $district = District::find($id);
+
+            // ตรวจสอบว่าพบข้อมูลตำบลหรือไม่
+            if ($district) {
+                // ส่งค่า zip code กลับไปให้กับ client
+                return response()->json(['zip_code' => $district->zip_code]);
+            } else {
+                // ถ้าไม่พบข้อมูลตำบลให้ส่งค่าว่างกลับไป
+                return response()->json(['zip_code' => '']);
+            }
+        }
 
         return response()->json(['options' => '']);
+
     }
 }
