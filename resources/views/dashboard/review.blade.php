@@ -67,7 +67,7 @@
                                                     </ul>
                                                 </div>
 
-                                                <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                                <p class="mb-3 m-mb-3">Very good and fast support during the week. Thanks for
                                                     always keeping your WordPress themes up to date. Your level of support
                                                     and
                                                     dedication
@@ -116,7 +116,7 @@
                                                     </ul>
                                                 </div>
 
-                                                <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                                <p class="mb-3 m-mb-3">Very good and fast support during the week. Thanks for
                                                     always keeping your WordPress themes up to date. Your level of support
                                                     and
                                                     dedication
@@ -165,7 +165,7 @@
                                                     </ul>
                                                 </div>
 
-                                                <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                                <p class="mb-3 m-mb-3">Very good and fast support during the week. Thanks for
                                                     always keeping your WordPress themes up to date. Your level of support
                                                     and
                                                     dedication
@@ -214,7 +214,7 @@
                                                     </ul>
                                                 </div>
 
-                                                <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                                <p class="mb-3 m-mb-3">Very good and fast support during the week. Thanks for
                                                     always keeping your WordPress themes up to date. Your level of support
                                                     and
                                                     dedication
@@ -264,7 +264,7 @@
                                                     </ul>
                                                 </div>
 
-                                                <p class="mb-3 ">Very good and fast support during the week. Thanks for
+                                                <p class="mb-3 m-mb-3">Very good and fast support during the week. Thanks for
                                                     always keeping your WordPress themes up to date. Your level of support
                                                     and
                                                     dedication

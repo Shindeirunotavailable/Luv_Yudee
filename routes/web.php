@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProvincesController;
+
+use App\Http\Controllers\DbProvincesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +44,7 @@ Route::get('test', function () {
  // -----------------------------------function test Route ------------------------------------
 
 // earth
-Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
+// Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
 
@@ -59,9 +61,7 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
 //     }
 // });
-Route::get('provinces', function () {
-    return view('provinces');
-});
+Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
+// Route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
+Route::post('dashboard.db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
 
-
-// Route::get('/provinces', [ProvincesController::class, 'index']);

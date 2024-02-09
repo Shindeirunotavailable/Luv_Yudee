@@ -36,7 +36,7 @@
 
 <body>
     {{-- @include('layout.menu') --}}
-    @yield('content')   
+    @yield('content')
     {{-- @include('layout.footer') --}}
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -52,7 +52,7 @@
 
     <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
-    <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
+    {{-- <script src="{{ asset('/assets/js/masterIndex.js') }}"></script> --}}
     <script src="{{ asset('/assets/js/login.js') }}"></script>
 
 
