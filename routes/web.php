@@ -36,10 +36,15 @@ route::any('create-account','App\Http\Controllers\LoginController@createAccount'
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
 
 
+Route::get('test', function () {
+    return view('home.test');
+});
+
+
  // -----------------------------------function test Route ------------------------------------
 
 // earth
-Route::any('    ' , 'App\Http\Controllers\HomeController@sidebar');
+// Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 
 
@@ -56,14 +61,7 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
 //     }
 // });
-// Route::get('provinces', function () {
-//     return view('provinces');
-// });
+Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
+// Route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
+Route::post('dashboard.db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
 
-
-// Route::get('provinces', [ProvincesController::class, 'provinces']);
-// Route::post('/db-provinces', [DbProvincesController::class, 'getData'])->name('db-provinces');
-
-route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
-route::any('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
-// route::any('db-provinces','App\Http\Controllers\DbProvincesController@getData')->name('db-provinces');

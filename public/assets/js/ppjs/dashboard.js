@@ -69,3 +69,68 @@ $(document).ready(function() {
         allowClear: true
     });
 });
+
+
+// db_provinces
+        var getUrl = window.location;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+        var csrf = $('meta[name="csrf-token"]').attr('content');
+        var lang = document.documentElement.lang;
+        // console.log(lang,getUrl,baseUrl,csrf);
+
+        var url = '/dashboard.db_provinces';
+        $('#provinces').change(function() {
+            var id_provinces = $(this).val();
+            // console.log($('#db_provinces').val())
+            // console.log($("input[name=_token]").val())
+            $.ajax({
+                type: "post",
+                url: url,
+
+                data: {
+
+                    id: id_provinces,
+                    function: 'provinces',
+                    '_token': csrf
+                },
+                success: function(response) {
+                    console.log(response)
+                    $('#amphures').html(response.options);
+                    $('#districts').html('');
+                    $('#zipcode').val('');
+                }
+            });
+
+        });
+        $('#amphures').change(function() {
+            var id_amphures = $(this).val();
+            $.ajax({
+                type: "post",
+                url: url,
+                data: {
+                    id: id_amphures,
+                    function: 'amphures',
+                    '_token': csrf
+                },
+                success: function(response) {
+                    $('#districts').html(response.options);
+                    $('#zipcode').val('');
+                }
+            });
+        });
+        $('#districts').change(function() {
+            var id_districts = $(this).val();
+            $.ajax({
+                type: "post",
+                url: url,
+                data: {
+                    id: id_districts,
+                    function: 'districts',
+                    '_token': csrf
+                },
+                success: function(response) {
+                    $('#zipcode').val(response.zip_code);
+
+                }
+            });
+        });

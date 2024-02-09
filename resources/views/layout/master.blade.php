@@ -15,14 +15,23 @@
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
          {{-- --CSS-- --}}
-         <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" />
-         <link href="{{ asset('/assets/css/content/content.css') }}" rel="stylesheet" type="text/css" />
+         <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
+         <link href="{{ asset('/assets/css/content/content.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า content -- --}}
+         <link href="{{ asset('/assets/css/details/details.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า details -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
          <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/propertycss/property.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet" type="text/css" />
-         <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />
+
+         <link href="{{ asset('/assets/css/re-spacing.css') }}" rel="stylesheet" type="text/css" />   {{-- -- Css re-pacing -- --}}
+
+         {{-- @if (isset($main))
+            @foreach ($main as $item)
+                <link href="{{ asset('/assets/css/'.$item.'.css') }}" rel="stylesheet" type="text/css" />
+            @endforeach
+         @endif --}}
+
 
          {{-- @if(isset($a['css']))
            @foreach ($a['css'] as $item)
@@ -47,6 +56,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Include Select2 from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="{{ asset('/assets/js/log-css.js') }}"></script>
+
     <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
     <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
