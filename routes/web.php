@@ -56,11 +56,7 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
 //     }
 // });
-
-// Route::get('provinces', [ProvincesController::class, 'provinces']);
-// Route::post('/db_provinces', [ProvincesController::class, 'getData'])->name('db_provinces');
-
 Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
 // Route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
-Route::post('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
+Route::post('dashboard.db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
 

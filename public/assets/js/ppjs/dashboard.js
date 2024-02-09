@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 
 // db_provinces
-        var url = '/db_provinces';
+        var url = '/dashboard.db_provinces';
         $('#provinces').change(function() {
             var id_provinces = $(this).val();
             // console.log($('#db_provinces').val())
