@@ -69,52 +69,57 @@
         </div>
     </section>
 
-    <section class="background-grey pt-30">
-        <div class="container">
-            <div class="row mb-20">
-                <div class="col-lg-12">
-                    <div class="text-center">
-                        <h2>Visit Our Office</h2>
-                        <p>Realton has more than 9,000 offices of all sizes and all potential of session.</p>
+    <section>
+        <div class=" background-grey pt-30">
+            <div class="container">
+                <div class="row mb-20">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <h2>Visit Our Office</h2>
+                            <p>Realton has more than 9,000 offices of all sizes and all potential of session.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-deck text-center pb-30 ">
-                <div class="card cards-effect bg-transparent border-0 pt-30 ">
-                    <div class="text-center">
-                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="icon-lg icon-sm icom-xl">
+                <div class="card-deck text-center pb-30 ">
+                    <div class="card cards-effect bg-transparent border-0 pt-30 ">
+                        <div class="text-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
+                                class="icon-lg icon-sm icom-xl">
+                        </div>
+                        <div class="card-body mt-15">
+                            <h3 class="card-title">Paris</h3>
+                            <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
+                            <h6 class="card-title">(315) 905-2321</h6>
+                        </div>
+                        <a href="javascript:void(0)" class="text-muted pb-30">
+                            <span class="text-blue link-effect">open google map. </span></a>
                     </div>
-                    <div class="card-body mt-15">
-                        <h3 class="card-title">Paris</h3>
-                        <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
-                        <h6 class="card-title">(315) 905-2321</h6>
+                    <div class="card cards-effect bg-transparent border-0 pt-30 ">
+                        <div class="text-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
+                                class="icon-lg icon-sm icom-xl">
+                        </div>
+                        <div class="card-body mt-15">
+                            <h3 class="card-title">Paris</h3>
+                            <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
+                            <h6 class="card-title">(315) 905-2321</h6>
+                        </div>
+                        <a href="javascript:void(0)" class="text-muted pb-30">
+                            <span class="text-blue link-effect">open google map. </span></a>
                     </div>
-                    <a href="javascript:void(0)" class="text-muted pb-30">
-                        <span class="text-blue link-effect">open google map. </span></a>
-                </div>
-                <div class="card cards-effect bg-transparent border-0 pt-30 ">
-                    <div class="text-center">
-                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="icon-lg icon-sm icom-xl">
+                    <div class="card cards-effect bg-transparent border-0 pt-30 ">
+                        <div class="text-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
+                                class="icon-lg icon-sm icom-xl">
+                        </div>
+                        <div class="card-body mt-15">
+                            <h3 class="card-title">Paris</h3>
+                            <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
+                            <h6 class="card-title">(315) 905-2321</h6>
+                        </div>
+                        <a href="javascript:void(0)" class="text-muted pb-30">
+                            <span class="text-blue link-effect">open google map. </span></a>
                     </div>
-                    <div class="card-body mt-15">
-                        <h3 class="card-title">Paris</h3>
-                        <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
-                        <h6 class="card-title">(315) 905-2321</h6>
-                    </div>
-                    <a href="javascript:void(0)" class="text-muted pb-30">
-                        <span class="text-blue link-effect">open google map. </span></a>
-                </div>
-                <div class="card cards-effect bg-transparent border-0 pt-30 ">
-                    <div class="text-center">
-                        <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png" class="icon-lg icon-sm icom-xl">
-                    </div>
-                    <div class="card-body mt-15">
-                        <h3 class="card-title">Paris</h3>
-                        <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
-                        <h6 class="card-title">(315) 905-2321</h6>
-                    </div>
-                    <a href="javascript:void(0)" class="text-muted pb-30">
-                        <span class="text-blue link-effect">open google map. </span></a>
                 </div>
             </div>
         </div>
@@ -130,17 +135,19 @@
                             <h2>Need help? Talk to our expert.</h2>
                             <p>Talk to our experts or Browse through more properties.</p>
                         </div>
-                            <div class="col-lg-5 text-center">
-                                <a href="javascript:void(0)" class="btn btn-primary btn-lg afterButton button-contact" role="button" aria-pressed="true">
-                                    <span>Contact Us</span> 
-                                    <i class="fa-solid fa-location-arrow"></i>
-                                  </a>
-                                  
-                                <a href="Tel:0915453939" class="btn btn-primary btn-lg afterButton  button-contact" role="button" aria-pressed="true">
-                                    <i class="fa-solid fa-phone"></i> 091-545-3939
-                                </a>
+                        <div class="col-lg-5 text-center">
+                            <a href="javascript:void(0)" class="btn btn-primary btn-lg afterButton button-contact"
+                                role="button" aria-pressed="true">
+                                <span>Contact Us</span>
+                                <i class="fa-solid fa-location-arrow"></i>
+                            </a>
 
-                            </div>
+                            <a href="Tel:0915453939" class="btn btn-primary btn-lg afterButton  button-contact"
+                                role="button" aria-pressed="true">
+                                <i class="fa-solid fa-phone"></i> 091-545-3939
+                            </a>
+
+                        </div>
                     </div>
                 </div>
             </div>
