@@ -21,13 +21,16 @@ class ProvincesController extends Controller
 
     public function db_provinces(Request $request)
     {
+        // dd($request->all());
         // ตรวจสอบว่ามีข้อมูล function และมีค่าเป็น 'provinces' หรือไม่
         if ($request->has('function') && $request->input('function') === 'provinces') {
+
             // ดึงค่า id จากคำขอ
             $id = $request->input('id');
 
             // ค้นหาอำเภอทั้งหมดที่ตรงกับจังหวัด id ที่ระบุ
             $amphures = Amphure::where('province_id', $id)->get();
+
 
             // สร้างตัวเลือกอำเภอที่สามารถเลือกได้
             $options = '<option selected disabled>กรุณาเลือกอำเภอ</option>';
@@ -38,9 +41,19 @@ class ProvincesController extends Controller
             // ส่งข้อมูลทั้งหมดกลับในรูปแบบ JSON
             return response()->json(['options' => $options]);
         }
+        if ($request->has('function') && $request->input('function') === 'amphures') {
+            $id = $request->input('id');
 
-        // ถ้าไม่ใช่ function 'provinces' หรือไม่มี function ในคำขอ
-        // ส่งค่าว่างกลับไป
+            $districts = District::where('amphure_id', $id)->get();
+
+            $options = '<option selected disabled>กรุณาเลือกตำบล</option>';
+            foreach ($districts as $value) {
+                $options .= '<option value="'.$value->id.'">'.$value->name_th.'</option>';
+            }
+
+            return response()->json(['options' => $options]);
+        }
+
         return response()->json(['options' => '']);
     }
 }

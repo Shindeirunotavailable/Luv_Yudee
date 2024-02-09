@@ -60,10 +60,9 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //     return view('provinces');
 // });
 
-
 // Route::get('provinces', [ProvincesController::class, 'provinces']);
-// Route::post('/db-provinces', [DbProvincesController::class, 'getData'])->name('db-provinces');
+// Route::post('/db_provinces', [ProvincesController::class, 'getData'])->name('db_provinces');
 
-route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
-route::any('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
-// route::any('db-provinces','App\Http\Controllers\DbProvincesController@getData')->name('db-provinces');
+Route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
+Route::post('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
+
