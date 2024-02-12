@@ -41,6 +41,7 @@
                         </nav>
 
                         <div class="tab-content-ds" id="nav-tabContent">
+
                             <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
                                 aria-labelledby="nav-item1-tab">
                                 <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
@@ -59,8 +60,12 @@
                                                 <div class="mb-d-20">
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Description
+
                                                     </label>
-                                                    @include('CKEditor.editor')
+                                                    <form method="POST" action={{ url('store') }}>
+                                                        <p><textarea name="editor" id="editor"></textarea></p>
+                                                        {{ csrf_field() }}
+                                                    </form>
                                                 </div>
                                             </div>
 
@@ -71,7 +76,7 @@
                                                     <div class="">
                                                         <div id="result-container "></div>
                                                         <div>
-                                                            <select id="select1" name="select1" class="form-select "
+                                                            <select id="selectcategory" name="selectcategory" class="form-select "
                                                                 style="width: 100%; height: 55px;" multiple>
                                                                     <option value="CD">คอนโด</option>
                                                                     <option value="DT">บ้นเดี่ยว</option>
@@ -88,6 +93,7 @@
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property
                                                         Status</label>
+<<<<<<< HEAD
                                                     <div class="">
 
                                                         <select id="select3" name="select3" class="form-select  "
@@ -154,6 +160,10 @@
                                                             </optgroup>
                                                         </select>
                                                         {{-- <select id="select3" name="select3" class="form-control  "
+=======
+                                                    <div class="mb-6">
+                                                        <select id="propertystatus" name="propertystatus" class="form-control "
+>>>>>>> earth
                                                             style="width: 100%; height: 38px;" multiple>
                                                                 <option value="FS">ขาย</option>
                                                                 <option value="HI">เช่า</option>
@@ -207,14 +217,8 @@
                                         <div class="row">
 
                                             <div class="col-sm-12 col-xl-4 mb-4">
-                                                {{-- <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control"
-                                                        placeholder="Your Name">
-                                                </div> --}}
                                                 <input type="file" class="form-control" id="customFile" />
                                             </div>
-
-                                            {{-- <input type="submit"> --}}
                                         </div>
                                     </form>
                                 </div>
@@ -275,12 +279,6 @@
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
                                                     <input type="text" name="zipcode" id="zipcode" readonly class="form-control"></div>
                                             </div>
-                                            {{-- <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Neighborhood</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="Neighborhood"></div>
-                                            </div> --}}
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20 mt30">
                                                     <label class="heading-color ff-heading font-weight-600 mb-6">Place
@@ -294,18 +292,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="row">
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label><input
-                                                        type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label><input
-                                                        type="text" class="form-control"></div>
-                                            </div>
-                                        </div> --}}
                                     </form>
                                 </div>
                             </div>
@@ -540,4 +526,3 @@
 
 
 </div>
-

@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 $(document).ready(function() {
+<<<<<<< HEAD
     $('#select1').val('CD');
     $('#select1').select2({
         placeholder: "Select...",
@@ -71,6 +72,15 @@ $(document).ready(function() {
 
     $('#select3 ').val('FS');
     $('#select3 ').select2({
+=======
+    $('#selectcategory').val('CD');
+    $('#selectcategory').select2({
+        placeholder: "Select...",
+        allowClear: true
+    });
+    $('#propertystatus').val('FS');
+    $('#propertystatus').select2({
+>>>>>>> earth
         placeholder: "Select...",
         allowClear: true
     });
@@ -140,3 +150,13 @@ $(document).ready(function() {
                 }
             });
         });
+
+ClassicEditor
+    .create(document.querySelector('#editor'), {
+    })
+    .then(editor => {
+        console.log(editor);
+    })
+    .catch(error => {
+        console.error(error);
+    });
