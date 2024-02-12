@@ -69,3 +69,5 @@ Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
 Route::post('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
 
 Route::post('store_property', 'App\Http\Controllers\PropertyController@store')->name('store_property');
+
+
