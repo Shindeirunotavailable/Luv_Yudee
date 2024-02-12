@@ -51,7 +51,7 @@
                                                 <div class="mb-d-20">
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                    <input type="text" class="form-control-ap"
+                                                    <input type="text" class="form-control"
                                                         placeholder="Your Name">
                                                 </div>
                                             </div>
@@ -83,151 +83,21 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Listed
-                                                        in</label>
-                                                    <div class="">
-
-
-                                                        <select id="select2" name="select2" class="form-select  "
-                                                            style="width: 100%; height: 55px;" multiple>
-                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                            </optgroup>
-                                                            <optgroup label="Pacific Time Zone">
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
-                                                            </optgroup>
-                                                            <optgroup label="Mountain Time Zone">
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="ID">Idaho</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </optgroup>
-                                                            <optgroup label="Central Time Zone">
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="IL">Illinois</option>
-                                                                <option value="IA">Iowa</option>
-                                                                <option value="KS">Kansas</option>
-                                                                <option value="KY">Kentucky</option>
-                                                                <option value="LA">Louisiana</option>
-                                                                <option value="MN">Minnesota</option>
-                                                                <option value="MS">Mississippi</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                            </optgroup>
-                                                            <optgroup label="Eastern Time Zone">
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DE">Delaware</option>
-                                                                <option value="FL">Florida</option>
-                                                                <option value="GA">Georgia</option>
-                                                                <option value="IN">Indiana</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MA">Massachusetts</option>
-                                                                <option value="MI">Michigan</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WV">West Virginia</option>
-                                                            </optgroup>
-                                                        </select>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property
                                                         Status</label>
-                                                    <div class="">
-
-                                                        <select id="select3" name="select3" class="form-select  "
-                                                            style="width: 100%; height: 55px;" multiple>
-                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="HI">Hawaii</option>
-                                                            </optgroup>
-                                                            <optgroup label="Pacific Time Zone">
-                                                                <option value="CA">California</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="WA">Washington</option>
-                                                            </optgroup>
-                                                            <optgroup label="Mountain Time Zone">
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="ID">Idaho</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </optgroup>
-                                                            <optgroup label="Central Time Zone">
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="IL">Illinois</option>
-                                                                <option value="IA">Iowa</option>
-                                                                <option value="KS">Kansas</option>
-                                                                <option value="KY">Kentucky</option>
-                                                                <option value="LA">Louisiana</option>
-                                                                <option value="MN">Minnesota</option>
-                                                                <option value="MS">Mississippi</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                            </optgroup>
-                                                            <optgroup label="Eastern Time Zone">
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DE">Delaware</option>
-                                                                <option value="FL">Florida</option>
-                                                                <option value="GA">Georgia</option>
-                                                                <option value="IN">Indiana</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MA">Massachusetts</option>
-                                                                <option value="MI">Michigan</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WV">West Virginia</option>
-                                                            </optgroup>
+                                                    <div class="mb-6">
+                                                        {{-- <select name="propertystatus" id="propertystatus" class="form-control">
+                                                        <option value="">Select</option>
+                                                            <option value="FS">ขาย</option>
+                                                            <option value="HI">เช่า</option>
+                                                        </select> --}}
+                                                        <select id="select3" name="select3" class="form-control "
+                                                            style="width: 100%; height: 38px;" multiple>
+                                                                <option value="FS">ขาย</option>
+                                                                <option value="HI">เช่า</option>
                                                         </select>
 
                                                     </div>
@@ -237,29 +107,12 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Price
-                                                        in $</label>
-                                                    <input type="text" class="form-control-ap"
-                                                        placeholder="Your Name">
+                                                        in baht</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Price">
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Yearly
-                                                        Tax Rate</label>
-                                                    <input type="text" class="form-control-ap"
-                                                        placeholder="Your Name">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">After
-                                                        Price Label</label>
-                                                    <input type="text"class="form-control-ap"
-                                                        placeholder="Your Name">
-                                                </div>
-                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -296,10 +149,10 @@
 
                                             <div class="col-sm-12 col-xl-4 mb-4">
                                                 {{-- <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control-ap"
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control"
                                                         placeholder="Your Name">
                                                 </div> --}}
-                                                <input type="file" class="form-control-ap" id="customFile" />
+                                                <input type="file" class="form-control" id="customFile" />
                                             </div>
 
                                             {{-- <input type="submit"> --}}
@@ -317,7 +170,7 @@
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Address</label><input
-                                                        type="text" class="form-control-ap"
+                                                        type="text" class="form-control"
                                                         placeholder="Your Name"></div>
                                             </div>
                                             <div class="col-sm-6 col-xl-4">
@@ -326,7 +179,7 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
                                                     <div class="">
 
-                                                        <select name="provinces" id="provinces" class="form-control-ap">
+                                                        <select name="provinces" id="provinces" class="form-control">
                                                             <option value="" selected disabled>กรุณาเลือกจังหวัด</option>
                                                             @foreach ($provinces as $value)
                                                                 <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
@@ -341,7 +194,7 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">City</label>
                                                     <div class="">
 
-                                                        <select name="amphures" id="amphures" class="form-control-ap">
+                                                        <select name="amphures" id="amphures" class="form-control">
                                                         </select>
 
                                                     </div>
@@ -352,7 +205,7 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
                                                     <div class=" ">
 
-                                                        <select name="districts" id="districts" class="form-control-ap">
+                                                        <select name="districts" id="districts" class="form-control">
                                                         </select><br>
 
                                                     </div>
@@ -361,14 +214,14 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
-                                                    <input type="text" name="zipcode" id="zipcode" readonly class="form-control-ap"></div>
+                                                    <input type="text" name="zipcode" id="zipcode" readonly class="form-control"></div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            {{-- <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Neighborhood</label><input
-                                                        type="text" class="form-control-ap"
+                                                        type="text" class="form-control"
                                                         placeholder="Neighborhood"></div>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20 mt30">
                                                     <label class="heading-color ff-heading font-weight-600 mb-6">Place
@@ -382,18 +235,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        {{-- <div class="row">
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label><input
-                                                        type="text" class="form-control-ap"></div>
+                                                        type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label><input
-                                                        type="text" class="form-control-ap"></div>
+                                                        type="text" class="form-control"></div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </form>
                                 </div>
                             </div>
@@ -408,79 +261,79 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property ID
                                                         (only numbers)</label><input type="text"
-                                                        class="form-control-ap" placeholder="Your ID">
+                                                        class="form-control" placeholder="Your ID">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property type
                                                         (only numbers)</label><input type="text"
-                                                        class="form-control-ap" placeholder="Your Property type">
+                                                        class="form-control" placeholder="Your Property type">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property status</label><input
-                                                        type="text" class="form-control-ap"
+                                                        type="text" class="form-control"
                                                         placeholder="Status"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Price</label><input
-                                                        type="text" class="form-control-ap"
+                                                        type="text" class="form-control"
                                                         placeholder="Price"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Rooms</label><input
-                                                        type="text" class="form-control-ap"
+                                                        type="text" class="form-control"
                                                         placeholder="Rooms"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Bedrooms
-                                                        </label><input type="text" class="form-control-ap"
+                                                        </label><input type="text" class="form-control"
                                                         placeholder="Rooms">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Bathrooms</label><input
-                                                        type="text" class="form-control-ap"
+                                                        type="text" class="form-control"
                                                         placeholder="Rooms"></div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Size
-                                                        size</label><input type="text" class="form-control-ap"
+                                                        </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Garage
-                                                        </label><input type="text" class="form-control-ap"
+                                                        </label><input type="text" class="form-control"
                                                         placeholder="Garage">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Garage size
-                                                        </label><input type="text" class="form-control-ap"
+                                                        </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">PSM / sqm
-                                                        </label><input type="text" class="form-control-ap"
+                                                        </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                     class="heading-color ff-heading font-weight-600 mb-d-10">TYPE
-                                                    </label><input type="text" class="form-control-ap"
+                                                    </label><input type="text" class="form-control"
                                                     placeholder="Family">
                                                 </div>
                                             </div>
@@ -488,7 +341,7 @@
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Available
                                                         from
-                                                        (date)</label><input type="text" class="form-control-ap"
+                                                        (date)</label><input type="text" class="form-control"
                                                         placeholder="99.aa.yyyy">
                                                 </div>
                                             </div>
@@ -496,14 +349,14 @@
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Year build
-                                                        </label><input type="text" class="form-control-ap"
+                                                        </label><input type="text" class="form-control"
                                                         placeholder="Year">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-xl-4">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Label</label><input
-                                                        type="text" class="form-control-ap"
+                                                        type="text" class="form-control"
                                                         placeholder="status"></div>
                                             </div>
 
