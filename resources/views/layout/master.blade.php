@@ -36,7 +36,7 @@
          {{-- @if(isset($a['css']))
            @foreach ($a['css'] as $item)
            <link href="{{ asset('/assets/css/ppcss/'.$item) }}" rel="stylesheet" type="text/css"/>
-           @endforeach  
+           @endforeach
          @endif --}}
 
 
@@ -56,6 +56,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Include Select2 from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <!-- Include CKeditor from CDN -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
 
     <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>

@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProvincesController;
 
-use App\Http\Controllers\DbProvincesController;
+use App\Http\Controllers\ProvincesController;
+use App\Http\Controllers\PropertyController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,7 +62,10 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
 //     }
 // });
-Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
-// Route::any('provinces','App\Http\Controllers\ProvincesController@provinces');
-Route::post('dashboard.db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
 
+// Route::post('/db_provinces', [ProvincesController::class, 'getData'])->name('db_provinces');
+//ด้นหลังของ @ คือชื่อเมธอดที่จะถูกเรียก
+Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
+Route::post('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
+
+Route::post('store_property', 'App\Http\Controllers\PropertyController@store')->name('store_property');

@@ -1,9 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-    {{-- <div id="root"> --}}
         <div class="wrapper ovh">
-
             <div class="signup-modal">
                 <div class="modal fade" id="loginSignupModal" tabindex="-1" aria-labelledby="loginSignupModalLabel"
                     aria-hidden="true">
@@ -1849,5 +1847,4 @@
                 </div>
             </section>
         </div>
-    {{-- </div> --}}
 @endsection

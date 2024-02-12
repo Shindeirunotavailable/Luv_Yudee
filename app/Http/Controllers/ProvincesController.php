@@ -9,16 +9,6 @@ use App\Models\District;
 
 class ProvincesController extends Controller
 {
-    // public function provinces()
-    // {
-    //     $provinces = Province::all(); // ดึงข้อมูลจังหวัดทั้งหมดจากฐานข้อมูล
-    //     $amphures = Amphure::all();
-    //     $districts = District::all();
-
-    //     return view('provinces', compact('provinces','districts','amphures'));
-    //     // return view('dashboard.addproperty', compact('provinces','districts','amphures')); // ส่งข้อมูลไปยัง provinces.blade.php
-    // }
-
     public function sidebar()
     {
         $provinces = Province::all(); // ดึงข้อมูลจังหวัดทั้งหมดจากฐานข้อมูล
@@ -73,7 +63,6 @@ class ProvincesController extends Controller
                 // ส่งค่า zip code กลับไปให้กับ client
                 return response()->json(['zip_code' => $district->zip_code]);
             } else {
-                // ถ้าไม่พบข้อมูลตำบลให้ส่งค่าว่างกลับไป
                 return response()->json(['zip_code' => '']);
             }
         }
