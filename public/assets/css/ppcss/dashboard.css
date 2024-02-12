@@ -104,12 +104,12 @@ button:focus:not(:focus-visible) {
     outline: 0
 }
 
-button,input,textarea {
+/* button,input,textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit
-}
+} */
 
 button {
     text-transform: none
@@ -1616,7 +1616,8 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
 .select2-container--default .select2-selection--multiple {
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
+    /* padding: .375rem .75rem; */
+    height: 38px ;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -1847,7 +1848,7 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
       }
 }
 
-input[type="file"].form-control-ap {
+input[type="file"].form-control {
     font-size: 16px;
     color: #333;
     width: 100%;
@@ -1928,3 +1929,12 @@ input[type="submit"] {
     }
 }
 
+/* .select2-selection__rendered {
+    line-height: 20px !important;
+}
+.select2-container .select2-selection--single {
+    height: 20px !important;
+}
+.select2-selection__arrow {
+    height: 20px !important;
+} */
