@@ -89,11 +89,6 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Property
                                                         Status</label>
                                                     <div class="mb-6">
-                                                        {{-- <select name="propertystatus" id="propertystatus" class="form-control">
-                                                        <option value="">Select</option>
-                                                            <option value="FS">ขาย</option>
-                                                            <option value="HI">เช่า</option>
-                                                        </select> --}}
                                                         <select id="select3" name="select3" class="form-control "
                                                             style="width: 100%; height: 38px;" multiple>
                                                                 <option value="FS">ขาย</option>
@@ -148,14 +143,8 @@
                                         <div class="row">
 
                                             <div class="col-sm-12 col-xl-4 mb-4">
-                                                {{-- <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Up Load</label><input type="text" class="form-control"
-                                                        placeholder="Your Name">
-                                                </div> --}}
                                                 <input type="file" class="form-control" id="customFile" />
                                             </div>
-
-                                            {{-- <input type="submit"> --}}
                                         </div>
                                     </form>
                                 </div>
@@ -216,12 +205,6 @@
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
                                                     <input type="text" name="zipcode" id="zipcode" readonly class="form-control"></div>
                                             </div>
-                                            {{-- <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Neighborhood</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="Neighborhood"></div>
-                                            </div> --}}
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20 mt30">
                                                     <label class="heading-color ff-heading font-weight-600 mb-6">Place
@@ -235,18 +218,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="row">
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label><input
-                                                        type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label><input
-                                                        type="text" class="form-control"></div>
-                                            </div>
-                                        </div> --}}
                                     </form>
                                 </div>
                             </div>
