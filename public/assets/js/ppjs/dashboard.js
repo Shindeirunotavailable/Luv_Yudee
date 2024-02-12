@@ -83,64 +83,62 @@ $(document).ready(function() {
         var lang = document.documentElement.lang;
         // console.log(lang,getUrl,baseUrl,csrf);
 
-        var url = '/dashboard.db_provinces';
-        $('#provinces').change(function() {
-            var id_provinces = $(this).val();
-            // console.log($('#db_provinces').val())
-            // console.log($("input[name=_token]").val())
-            $.ajax({
-                type: "post",
-                url: url,
-
-                data: {
-
-                    id: id_provinces,
-                    function: 'provinces',
-                    '_token': csrf
-                },
-                success: function(response) {
-                    console.log(response)
-                    $('#amphures').html(response.options);
-                    $('#districts').html('');
-                    $('#zipcode').val('');
-                }
-            });
-
-        });
-        $('#amphures').change(function() {
-            var id_amphures = $(this).val();
-            $.ajax({
-                type: "post",
-                url: url,
-                data: {
-                    id: id_amphures,
-                    function: 'amphures',
-                    '_token': csrf
-                },
-                success: function(response) {
-                    $('#districts').html(response.options);
-                    $('#zipcode').val('');
-                }
-            });
-        });
-        $('#districts').change(function() {
-            var id_districts = $(this).val();
-            $.ajax({
-                type: "post",
-                url: url,
-                data: {
-                    id: id_districts,
-                    function: 'districts',
-                    '_token': csrf
-                },
-                success: function(response) {
-                    $('#zipcode').val(response.zip_code);
-
-                }
-            });
+var url = '/db_provinces';
+    $('#provinces').change(function() {
+        var id_provinces = $(this).val();
+        // console.log($('#db_provinces').val())
+         // console.log($("input[name=_token]").val())
+         $.ajax({
+            type: "post",
+            url: url,
+            data: {
+                id: id_provinces,
+                function: 'provinces',
+                '_token': csrf
+            },
+            success: function(response) {
+                console.log(response)
+                $('#amphures').html(response.options);
+                $('#districts').html('');
+                $('#zipcode').val('');
+            }
         });
 
-ClassicEditor
+    });
+    $('#amphures').change(function() {
+        var id_amphures = $(this).val();
+        $.ajax({
+            type: "post",
+            url: url,
+            data: {
+                id: id_amphures,
+                function: 'amphures',
+                '_token': csrf
+            },
+            success: function(response) {
+                $('#districts').html(response.options);
+                $('#zipcode').val('');
+            }
+        });
+    });
+    $('#districts').change(function() {
+        var id_districts = $(this).val();
+        $.ajax({
+            type: "post",
+            url: url,
+            data: {
+                id: id_districts,
+                function: 'districts',
+                '_token': csrf
+            },
+            success: function(response) {
+                $('#zipcode').val(response.zip_code);
+
+            }
+        });
+    });
+
+        ClassicEditor
     .create(document.querySelector('#editor'), {
     })
     .then(editor => {
@@ -148,4 +146,32 @@ ClassicEditor
     })
     .catch(error => {
         console.error(error);
+    });
+    document.getElementById('customFile').addEventListener('change', function(e) {
+        var fileList = document.getElementById('fileList');
+
+        var files = e.target.files;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+
+            var colDiv = document.createElement('div');
+        colDiv.className = 'col-2';
+
+            // สร้าง Element <img> เพื่อแสดงภาพ
+            var img = document.createElement('img');
+            img.src = URL.createObjectURL(file); // กำหนด URL ของภาพ
+            img.style.marginRight = '15px'; // กำหนดระยะห่างขวาของภาพ
+            // img.style.marginLeft = '10px'; // กำหนดระยะห่างขวาของภาพ
+            img.style.maxHeight = '100px'; // กำหนดความสูงสูงสุดของภาพ
+            img.style.maxWidth = '100px'; // กำหนดความกว้างสูงสุดของภาพเพื่อให้รักษาสัดส่วน
+            fileList.appendChild(img);
+        }
+    });
+
+    document.getElementById('clearButton').addEventListener('click', function() {
+        var fileList = document.getElementById('fileList');
+        fileList.innerHTML = '';
+
+        // Clear input file
+        document.getElementById('customFile').value = '';
     });

@@ -125,8 +125,7 @@
                                     <form class="form-style1">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <div
-                                                    class="upload-img position-relative overflow-hidden bdrs12 text-center mb-6 px-2">
+                                                <div class="upload-img position-relative overflow-hidden bdrs12 text-center mb-6 px-2">
                                                     <div class="icon mb-6">
                                                         <i class="fa-solid fa-file-arrow-up"></i>
                                                     </div>
@@ -139,17 +138,20 @@
                                                             class="ud-btn btn-white" style="display: none;">
                                                     </label>
                                                 </div>
-                                                <div
-                                                    class="row profile-box position-relative d-md-flex align-items-end mb-8">
+                                                <div class="row position-relative d-md-flex align-items-end mb50"></div>
                                                 </div>
-                                            </div>
                                         </div>
                                         <h4 class="title fs-17 mb-6">Video Option</h4>
                                         <div class="row">
 
-                                            <div class="col-sm-12 col-xl-4 mb-4">
-                                                <input type="file" class="form-control" id="customFile" />
+                                            <div class="col-sm-6 col-xl-4 mb-4">
+                                                <input type="file" class="form-control " id="customFile" multiple accept="Choose Video" />
                                             </div>
+                                            <div class="col-sm-6 col-xl-4 mb-4">
+                                                <button id="clearButton" class="clearButton">Clear</button>
+                                            </div>
+                                            <div class="col-sm-12 mt-30"  id="fileList"></div>
+
                                         </div>
                                     </form>
                                 </div>
