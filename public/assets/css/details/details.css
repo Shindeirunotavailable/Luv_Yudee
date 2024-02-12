@@ -16,3 +16,78 @@
     border-radius: 12px;
     margin-bottom: 30px
 }
+
+.text-block {
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 10px;
+    position: absolute;
+    margin-top: 180px;
+    background-color: white;
+    color: black;
+    width: 90px;
+  }
+
+  .text-list {
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 25px;
+    position: absolute;
+    margin-top: 180px;
+    background-color: white;
+    color: black;
+    width: 90px;
+  }
+
+  .block-text{
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 10px;
+    position: absolute;
+    margin-top: 10px;
+    background-color: #0071bc;
+    color: rgb(255, 255, 255);
+    width: 100px;
+  }
+
+  .block-list{
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 25px;
+    position: absolute;
+    margin-top: 10px;
+    background-color: #0071bc;
+    color: rgb(255, 255, 255);
+    width: 100px;
+  }
+
+  
+
+  .font-label{
+    font-size: 13px;
+  }
+  
+  .img-block {
+    overflow: hidden;
+  }
+  
+  .img-sell {
+    position: relative;
+    transition: transform .4s ease;
+    height: 230px;
+  }
+  
+  .img-sell:hover {
+    transform: scale(1.1) rotate(-1deg);
+  }
+
+  .block-text:hover{
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  
+ 
+
+
+  

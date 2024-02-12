@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="search_area">
                     <h6 class="list-title">Find your home</h6>
-                    @include('details.search')
+                    {{-- @include('details.search') --}}
                 </div>
             </div>
         </div>
@@ -119,15 +119,15 @@
                                 <div class="row">
                                     <div class="col-lg-4">  
                                         <div class="" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                            @include('details.sitebar')
+                                            @include('del-details.sitebar')
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                            @include('details.gird')
+                                            @include('del-details.gird')
                                         </div>
                                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                            @include('details.list')
+                                            {{-- @include('details.list') --}}
                                         </div>
                                     </div>
                                 </div>
@@ -146,10 +146,10 @@
                         <div class="container">
                             <div class="row gx-xl-5">
                                 <div class="col-lg-4 d-none d-lg-block">
-                                    @include('details.sitebar')
+                                    {{-- @include('details.sitebar') --}}
                                 </div>
                                 <div class="col-lg-8">
-                                    @include('details.gird')
+                                    {{-- @include('details.gird') --}}
                                 </div>
                             </div>
                         </div>
