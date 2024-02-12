@@ -269,12 +269,13 @@ header.nav-homepage.sticky .header-logo.logo2 {
     background-color: transparent;
     width: 100%
 }
-
+/*จากตอนเเรกคือ .responsive-menu>li*/
 .responsive-menu li {
     list-style: none
 }
 
-.responsive-menu>li {
+/*จากตอนเเรกคือ .responsive-menu>li*/
+.responsive-menu>li { 
     border: 0px;
     display: inline-block;
     margin: 0 2px;
@@ -334,7 +335,6 @@ header.nav-homepage.sticky .header-logo.logo2 {
 .responsive-menu>li>a>.arrow:before {
     margin-left: 8px;
     font-size: 16px;
-    font-family: "Font Awesome 6 Pro";
     height: auto;
     content: "";
     font-weight: 300;
@@ -349,7 +349,6 @@ header.nav-homepage.sticky .header-logo.logo2 {
     margin-left: 8px;
     display: inline-block;
     font-size: 17px;
-    font-family: "Font Awesome 6 Pro";
     height: auto;
     text-shadow: none;
     width: 10px;
@@ -389,9 +388,9 @@ header.nav-homepage.sticky .header-logo.logo2 {
     height: auto
 }
 
-.responsive-menu li ul.sub-menus {
+/* .responsive-menu li ul.sub-menus {
     background: #333
-}
+} */
 
 .responsive-menu li ul.sub-menus>li {
     width: 185px
@@ -781,7 +780,7 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 .user-btn2:hover {
     outline: none
 }
-.advance-search-icon.user-btn.btn-dark.ms-4 i.fa-magnifying-glass {
+.advance-search-icon.user-btn.btn-search.ms-4 i.fa-magnifying-glass {
     margin-right: 10px; /* ตั้งค่า margin ตามที่คุณต้องการ */
 }
 .listing-style13 .list-content .user-btn {
@@ -850,7 +849,7 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
         padding:13px 25px
     }
 }
-.user-btn:before,.btn-gray:before,.btn-dark:before,.btn-thm:before,.btn-thm2:before,.btn-thm3:before,.btn-thm-border:before,.btn-yuudee:before,.btn-light-gray:before,.btn-transparent:before,.btn-transparent2:before {
+.user-btn:before,.btn-gray:before,.btn-search:before,.btn-thm:before,.btn-thm2:before,.btn-thm3:before,.btn-thm-border:before,.btn-yuudee:before,.btn-light-gray:before,.btn-transparent:before,.btn-transparent2:before {
     background-color:#2596be;
     content: "";
     height: 100%;
@@ -870,11 +869,11 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
     transform-origin: top left
 }
 
-.user-btn:hover,.btn-gray:hover,.btn-dark:hover,.btn-thm:hover,.btn-thm2:hover,.btn-thm3:hover,.btn-thm-border:hover,.btn-yuudee:hover,.btn-light-gray:hover,.btn-transparent:hover,.btn-transparent2:hover {
+.user-btn:hover,.btn-gray:hover,.btn-search:hover,.btn-thm:hover,.btn-thm2:hover,.btn-thm3:hover,.btn-thm-border:hover,.btn-yuudee:hover,.btn-light-gray:hover,.btn-transparent:hover,.btn-transparent2:hover {
     color: #fff
 }
 
-.user-btn:hover:before,.btn-gray:hover:before,.btn-dark:hover:before,.btn-thm:hover:before,.btn-thm2:hover:before,.btn-thm3:hover:before,.btn-thm-border:hover:before,.btn-yuudee:hover:before,.btn-light-gray:hover:before,.btn-transparent:hover:before,.btn-transparent2:hover:before {
+.user-btn:hover:before,.btn-gray:hover:before,.btn-search:hover:before,.btn-thm:hover:before,.btn-thm2:hover:before,.btn-thm3:hover:before,.btn-thm-border:hover:before,.btn-yuudee:hover:before,.btn-light-gray:hover:before,.btn-transparent:hover:before,.btn-transparent2:hover:before {
     height: 100%;
     width: 200%
 }
@@ -964,10 +963,6 @@ a:not([href]):not([class]),a:not([href]):not([class]):hover {
     color: inherit;
     text-decoration: none
 }
-.link-a{
-    color: #0071bc;
-    text-shadow: none
-}
 a {
     color: #0071bc;
     text-shadow: none
@@ -1012,10 +1007,7 @@ button,.btn {
 }
 .fa-arrow-right-long:before {
     /* content: "" */
-    content: "→" !important
-}
-.fa-times:before {
-    content: "×" !important
+    content: "→"
 }
 /* ----------------------------------End header nav--------------------------------------- */
 
@@ -1030,16 +1022,16 @@ button,.btn {
     color: #fff
 }
 
-.mobile_header_nav .my-custom-class {
+.mobile_header_nav .custom-class {
     margin-bottom: 35px
 }
 
-.mobile_header_nav .my-custom-class .ps-menu-root ul li {
+.mobile_header_nav .custom-class .menu-root ul li {
     font-size: 15px;
     font-weight: 600
 }
 /*เขียนเอง*/
-.css-x3jz15 > .ps-menu-button {
+.css-x3jz15 > .menu-button {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1051,7 +1043,7 @@ button,.btn {
     padding-right: 20px;
     padding-left: 60px;
 }
-.css-1ffbfs > .ps-menu-button {
+.css-1ffbfs > .menu-button {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1063,7 +1055,7 @@ button,.btn {
     padding-right: 20px;
     padding-left: 40px;
 }
-.css-16jesut > .ps-menu-button {
+.css-pw > .menu-button {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1079,7 +1071,7 @@ button,.btn {
     width: 100%;
     position: relative;
 }
-.css-z5rm24 {
+.css-submenu-content {
     display: none;
     overflow: hidden;
     z-index: 999;
@@ -1089,18 +1081,18 @@ button,.btn {
     position: static !important;
     transform: none !important;
 }
-.css-12w9als {
+.css-fotw {
     -webkit-box-flex: 1;
     flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.css-1tqrhto {
+.css-wp {
     width: 100%;
     position: relative;
 }
-.css-1tqrhto > .ps-menu-button {
+.css-wp > .menu-button {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1112,14 +1104,14 @@ button,.btn {
     padding-right: 20px;
     padding-left: 40px;
 }
-.css-1mb249p {
+.css-sidebar-container {
     position: relative;
     height: 100%;
     overflow: hidden auto;
     z-index: 3;
     background-color: rgb(255, 255, 255);
 }
-.css-ewdv3l {
+.css-pm {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
@@ -1128,11 +1120,11 @@ button,.btn {
     position: relative;
     width: 100%;
 }
-.css-16jesut {
+.css-pw {
     position: relative;
     width: 100%;
 }
-.css-honxw6 {
+.css-sub-icon {
     display: inline-block;
     transition: transform 0.3s ease 0s;
     border-right: 2px solid currentcolor;
@@ -1141,7 +1133,7 @@ button,.btn {
     height: 5px;
     transform: rotate(-45deg);
 }
-.css-np5i73 {
+.css-sidebar-root {
     position: relative;
     border-right: 1px solid rgb(239, 239, 239);
     border-top-color: rgb(239, 239, 239);
@@ -1159,38 +1151,38 @@ nav {
     display: block;
 }
 /*------------*/
-.mobile_header_nav .my-custom-class .ps-menu-root>ul>li>.ps-menu-button {
+.mobile_header_nav .custom-class .menu-root>ul>li>.menu-button {
     padding-left: 30px;
     padding-right: 30px
 }
 
-.mobile_header_nav .my-custom-class.ps-sidebar-root .css-honxw6,.mobile_header_nav .my-custom-class.ps-sidebar-root .css-jn69v9 {
+.mobile_header_nav .custom-class.ps-sidebar-root .css-sub-icon,.mobile_header_nav .custom-class.ps-sidebar-root .css-jn69v9 {
     width: 7px;
     height: 7px
 }
 
-.mobile_header_nav .my-custom-class.ps-sidebar-root .ps-menuitem-root.active>.ps-menu-button span {
+.mobile_header_nav .custom-class.ps-sidebar-root .menuitem-root.active>.menu-button span {
     color: #0071bc
 }
 
-.mobile_header_nav .my-custom-class .ps-menu-button.active {
+.mobile_header_nav .custom-class .menu-button.active {
     color: #0071bc
 }
 @media only screen and (max-width: 992px) {
-    .header.stylehome1.dashbord_pages:before {
+    .header.sthome1.dashbord_pages:before {
         background-image:-ms-linear-gradient(0deg,rgb(52,82,255) 0%,rgb(255,16,83) 100%)
     }
 
-    .stylehome1.dashbord_mobile_logo.dashbord_pages .nav_logo_img {
+    .sthome1.dashbord_mobile_logo.dashbord_pages .nav_logo_img {
         margin-left: 0!important
     }
 
-    .stylehome1.home2,.stylehome1.home2:before {
+    .sthome1.home2,.sthome1.home2:before {
         background-color: #141414!important;
         border-bottom: none
     }
 
-    .stylehome1.home3 .header.stylehome1 {
+    .sthome1.home3 .header.sthome1 {
         border-bottom: none!important
     }
 }
@@ -2118,11 +2110,11 @@ header.nav-innerpage-style.style2 {
     z-index: 0
 }
 @media (max-width: 575.98px) {
-    .mobile_menu-canvas {
+    .mobile_menus-canvas {
         width:300px!important
     }
 }
-.rightside-hidden-bar {
+.rside-hidden-bar {
     background-color: #fff;
     -webkit-box-shadow: 0px 10px 40px rgba(24,26,32,.05);
     -o-box-shadow: 0px 10px 40px rgba(24,26,32,.05);
@@ -2140,25 +2132,25 @@ header.nav-innerpage-style.style2 {
 }
 
 @media (max-width: 575.98px) {
-    .rightside-hidden-bar {
+    .rside-hidden-bar {
         max-width:300px
     }
 }
 
-.rightside-hidden-bar .hsidebar-header {
+.rside-hidden-bar .hsidebar-header {
     border-bottom: 1px solid #dddddd;
     padding: 25px 20px 15px 30px;
     display: block;
     position: relative
 }
 
-.rightside-hidden-bar .hsidebar-header .title {
+.rside-hidden-bar .hsidebar-header .title {
     color: #181a20;
     font-family: var(--title-font-family);
     font-weight: 600
 }
 
-.rightside-hidden-bar .hsidebar-header .sidebar-close-icon {
+.rside-hidden-bar .hsidebar-header .sidebar-close-icon {
     background-color: #f7f7f7;
     border-radius: 50%;
     cursor: pointer;
@@ -2177,27 +2169,27 @@ header.nav-innerpage-style.style2 {
 }
 
 @media (max-width: 575.98px) {
-    .rightside-hidden-bar .hsidebar-header .sidebar-close-icon {
+    .rside-hidden-bar .hsidebar-header .sidebar-close-icon {
         right:10px
     }
 }
 
-.rightside-hidden-bar::-webkit-scrollbar {
+.rside-hidden-bar::-webkit-scrollbar {
     width: 8px
 }
 
-.rightside-hidden-bar::-webkit-scrollbar-track {
+.rside-hidden-bar::-webkit-scrollbar-track {
     -webkit-box-shadow: 0px 10px 40px rgba(24,26,32,.05);
     -o-box-shadow: 0px 10px 40px rgba(24,26,32,.05);
     box-shadow: 0 10px 40px #181a200d;
     border-radius: 12px
 }
 
-.rightside-hidden-bar::-webkit-scrollbar-thumb {
+.rside-hidden-bar::-webkit-scrollbar-thumb {
     background-color: #ddd;
     border-radius: 12px
 }
-.rightside-hidden-bar .hsidebar-header .sidebar-close-icon:hover {
+.rside-hidden-bar .hsidebar-header .sidebar-close-icon:hover {
     background-color: #0071bc;
     color: #fff
 }
@@ -2231,7 +2223,7 @@ header.nav-innerpage-style.style2 {
 .far{ 
     margin-top: 5px;
 }
-.hsidebar-content {
+.hsidebar-contents {
     padding: 30px 0;
     position: relative
 }
@@ -2262,26 +2254,26 @@ header.nav-innerpage-style.style2 {
     width: 3px
 }
 
-.lefttside-hidden-bar .hsidebar-content {
+.lefttside-hidden-bar .hsidebar-contents {
     padding: 0 30px 30px;
     position: relative;
     max-height: 750px;
     overflow-y: scroll
 }
 
-.lefttside-hidden-bar .hsidebar-content::-webkit-scrollbar {
+.lefttside-hidden-bar .hsidebar-contents::-webkit-scrollbar {
     background: transparent;
     border-radius: 10px;
     padding-right: 10px;
     width: 10px
 }
 
-.lefttside-hidden-bar .hsidebar-content::-webkit-scrollbar-thumb {
+.lefttside-hidden-bar .hsidebar-contents::-webkit-scrollbar-thumb {
     background-color: #f1fcfa;
     border-radius: 10px
 }
 
-.lefttside-hidden-bar.map-page .hsidebar-content {
+.lefttside-hidden-bar.map-page .hsidebar-contents {
     max-height: 900px
 }
 
@@ -2299,12 +2291,33 @@ header.nav-innerpage-style.style2 {
 .bdrt1 {
     border-top: 1px solid #dddddd
 }
-.pl30 {
-    padding-left: 30px!important
+.fa-facebook-f:before {
+    content: ""
+}
+.fa-twitter:before {
+    content: ""
 }
 
-/* ----------------------------------End Mobile nav--------------------------------------- */
+.fa-twitter-square:before {
+    content: ""
+}
+.fa-instagram:before {
+    content: ""
+}
 
+.fa-instagram-square:before {
+    content: ""
+}
+.fa-linkedin-in:before {
+    content: ""
+}
+.me-3 {
+    margin-right: 1rem!important
+}
+.fa-times:before {
+    content: "×"
+}
+/* ----------------------------------End Mobile nav--------------------------------------- */
   
 
     /* ----------------------------ปรับขนาดและสีต่างๆ------------------------------------------ */
