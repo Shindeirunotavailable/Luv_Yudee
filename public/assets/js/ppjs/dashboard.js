@@ -63,8 +63,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 $(document).ready(function() {
-    $('#select1, #select2, #select3 , #select4, #select5').val('CD');
-    $('#select1, #select2, #select3 , #select4, #select5').select2({
+    $('#selectcategory').val('CD');
+    $('#selectcategory').select2({
+        placeholder: "Select...",
+        allowClear: true
+    });
+    $('#propertystatus').val('FS');
+    $('#propertystatus').select2({
         placeholder: "Select...",
         allowClear: true
     });
@@ -134,3 +139,13 @@ $(document).ready(function() {
                 }
             });
         });
+
+ClassicEditor
+    .create(document.querySelector('#editor'), {
+    })
+    .then(editor => {
+        console.log(editor);
+    })
+    .catch(error => {
+        console.error(error);
+    });
