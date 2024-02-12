@@ -9,6 +9,7 @@ use App\Models\District;
 
 class ProvincesController extends Controller
 {
+
     // public function provinces()
     // {
     //     $provinces = Province::all(); // ดึงข้อมูลจังหวัดทั้งหมดจากฐานข้อมูล
@@ -73,7 +74,6 @@ class ProvincesController extends Controller
                 // ส่งค่า zip code กลับไปให้กับ client
                 return response()->json(['zip_code' => $district->zip_code]);
             } else {
-                // ถ้าไม่พบข้อมูลตำบลให้ส่งค่าว่างกลับไป
                 return response()->json(['zip_code' => '']);
             }
         }
