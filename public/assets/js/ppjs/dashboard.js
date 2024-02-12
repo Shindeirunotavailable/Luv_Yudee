@@ -138,40 +138,80 @@ var url = '/db_provinces';
         });
     });
 
+    if (document.querySelector('#editor')) {
         ClassicEditor
-    .create(document.querySelector('#editor'), {
-    })
-    .then(editor => {
-        console.log(editor);
-    })
-    .catch(error => {
-        console.error(error);
-    });
-    document.getElementById('customFile').addEventListener('change', function(e) {
-        var fileList = document.getElementById('fileList');
+            .create(document.querySelector('#editor'), {})
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 
-        var files = e.target.files;
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
 
-            var colDiv = document.createElement('div');
-        colDiv.className = 'col-2';
+    //Upload Image
+    if (document.getElementById('customIMG')) {
+        document.getElementById('customIMG').addEventListener('change', function(e) {
+            var fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
 
-            // สร้าง Element <img> เพื่อแสดงภาพ
-            var img = document.createElement('img');
-            img.src = URL.createObjectURL(file); // กำหนด URL ของภาพ
-            img.style.marginRight = '15px'; // กำหนดระยะห่างขวาของภาพ
-            // img.style.marginLeft = '10px'; // กำหนดระยะห่างขวาของภาพ
-            img.style.maxHeight = '100px'; // กำหนดความสูงสูงสุดของภาพ
-            img.style.maxWidth = '100px'; // กำหนดความกว้างสูงสุดของภาพเพื่อให้รักษาสัดส่วน
-            fileList.appendChild(img);
-        }
-    });
+            var files = e.target.files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
 
-    document.getElementById('clearButton').addEventListener('click', function() {
-        var fileList = document.getElementById('fileList');
-        fileList.innerHTML = '';
+                // สร้าง Element <div class="col-2"> เพื่อแสดงภาพ
+                var colDiv = document.createElement('div');
+                colDiv.className = 'col-2';
 
-        // Clear input file
-        document.getElementById('customFile').value = '';
-    });
+                var img = document.createElement('img');
+                img.src = URL.createObjectURL(file); // กำหนด URL ของภาพ
+                img.style.width = '100%'; // กำหนดขนาดภาพ
+                img.style.marginBottom = '20px';
+                colDiv.appendChild(img);
+
+                fileList.appendChild(colDiv);
+            }
+        });
+
+        document.getElementById('clearButtonIMG').addEventListener('click', function() {
+            var fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+
+            // Clear input file
+            document.getElementById('customIMG').value = '';
+        });
+    }
+
+    if (document.getElementById('customVdo')) {
+        //Upload VDO
+        document.getElementById('customVdo').addEventListener('change', function(e) {
+            var VdoList = document.getElementById('VdoList');
+            VdoList.innerHTML = '';
+
+            var files = e.target.files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+
+                var colDiv = document.createElement('div');
+                colDiv.className = 'col-4';
+
+                var video = document.createElement('video');
+                video.src = URL.createObjectURL(file);
+                video.style.width = '100%';
+                video.style.marginBottom = '20px';
+                video.controls = true;
+                colDiv.appendChild(video);
+
+                VdoList.appendChild(colDiv);
+            }
+        });
+
+        document.getElementById('clearButtonVDO').addEventListener('click', function() {
+            var VdoList = document.getElementById('VdoList');
+            VdoList.innerHTML = '';
+
+            // Clear input file
+            document.getElementById('customVdo').value = '';
+        });
+    }
