@@ -1,9 +1,9 @@
 @extends('layout.master')
 @section('content')
     <section class="p-0">
-        <iframe class="content-map home8-map contact-page" loading="lazy"
+        <iframe class="content-map contact-page" loading="lazy"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.180657387966!2d100.52433797576472!3d13.828188095519033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1704780060715!5m2!1sth!2sth"
-            width="600" height="550" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     </section>
 
@@ -137,16 +137,6 @@
                             <p>Talk to our experts or Browse through more properties.</p>
                         </div>
                         <div class="col-lg-5 text-center">
-                            {{-- <a href="javascript:void(0)" class="btn btn-primary afterButton "
-                                role="button" aria-pressed="true">
-                                <span>Contact Us</span>
-                                <i class="fa-solid fa-location-arrow"></i>
-                            </a>
-
-                            <a href="Tel:0915453939" class="btn btn-primary afterButton "
-                                role="button" aria-pressed="true">
-                                <i class="fa-solid fa-phone"></i> 091-545-3939
-                            </a> --}}
                             <a class="user-btn btn-yuudee add-property rounded-pill text-a " href="javascript:void(0)">
                                 <i class="fa-solid fa-location-arrow"></i>  <span>Contact Us</span>
                             </a>
