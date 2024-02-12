@@ -1007,7 +1007,7 @@ button,.btn {
 }
 .fa-arrow-right-long:before {
     /* content: "" */
-    content: "→"
+    content: "→" !important
 }
 /* ----------------------------------End header nav--------------------------------------- */
 
@@ -2315,7 +2315,7 @@ header.nav-innerpage-style.style2 {
     margin-right: 1rem!important
 }
 .fa-times:before {
-    content: "×"
+    content: "×" !important
 }
 /* ----------------------------------End Mobile nav--------------------------------------- */
   
