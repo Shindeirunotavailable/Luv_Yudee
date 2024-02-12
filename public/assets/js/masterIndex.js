@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //============================ js non ==============================//
 
-// เช็คค่าว่างใน login
+// เช็คค่าว่างใน input
 $(document).ready(function() {
   'use strict';
   var forms = $('.needs-validation');
@@ -200,6 +200,7 @@ $(document).ready(function() {
   });
 });
 
+
 // ใช้เช็คว่าว่างใน modal
  $('body').on('click', '#exampleModal', function() {
     $('#exampleModal form').submit(function(event) {
@@ -214,8 +215,7 @@ $(document).ready(function() {
 
 
 
-// button plan //
-
+// อนิเมชั่น button เครื่องบิน //
     $('#submitModalBtn').on('click', function () {
       $('#start').prop('checked', true);
     });
