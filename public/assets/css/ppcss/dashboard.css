@@ -159,10 +159,6 @@ textarea {
     -webkit-appearance: button
 }
 
-iframe {
-    border: 0
-}
-
 [hidden] {
     display: none!important
 }
@@ -539,9 +535,9 @@ textarea.form-control-ap {
     margin-left: 1rem!important
 }
 
-.p-0 {
+/* .p-0 {
     padding: 0!important
-}
+} */
 
 .px-2 {
     padding-right: .5rem!important;
@@ -668,10 +664,11 @@ html,body {
     -webkit-font-smoothing: antialiased
 } */
 
-iframe {
+/* iframe {
     border: none;
     width: 100%
-}
+    border: 0
+} */
 
 .h2,h2,.h4,h4 {
     font-family: "Poppins", sans-serif;
