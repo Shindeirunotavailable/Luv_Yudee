@@ -19,13 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const sidebarItems = document.querySelectorAll(".sidebar_list_item");
     const items = document.querySelectorAll(".items-center");
-    const pitems = document.querySelectorAll(".page-item");
+    // const pitems = document.querySelectorAll(".page-item");
 
     sidebarItems.forEach(function(item) {
         item.addEventListener("click", function() {
@@ -48,16 +45,15 @@ document.addEventListener("DOMContentLoaded", function() {
             item.classList.add("-is-active");
         });
     });
+        //     // pitems.forEach(function(item) {
+        //     //     item.addEventListener("click", function() {
+        //     //         pitems.forEach(function(otherItem) {
+        //     //             otherItem.classList.remove("active");
+        //     //         });
 
-    pitems.forEach(function(item) {
-        item.addEventListener("click", function() {
-            pitems.forEach(function(otherItem) {
-                otherItem.classList.remove("active");
-            });
-
-            item.classList.add("active");
-        });
-    });
+        //     //         item.classList.add("active");
+        //     //     });
+        //     // });
 
 });
 
@@ -88,7 +84,7 @@ var url = '/db_provinces';
         var id_provinces = $(this).val();
         // console.log($('#db_provinces').val())
          // console.log($("input[name=_token]").val())
-         $.ajax({
+        $.ajax({
             type: "post",
             url: url,
             data: {

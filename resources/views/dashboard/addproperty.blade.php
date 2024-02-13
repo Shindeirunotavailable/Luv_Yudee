@@ -128,7 +128,8 @@
                                                 <div class="row">
 
                                                     <div class="col-sm-6 col-xl-4 mb-4">
-                                                        <input type="file" class="form-control " id="customIMG" multiple  />
+                                                        <label for="customIMG" class="upload-button btn-block">Select Image</label>
+                                                        <input type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
                                                     </div>
                                                     <div class="col-sm-6 col-xl-4 mb-4">
                                                         <button id="clearButtonIMG" class="clearButton">Clear</button>
@@ -141,12 +142,12 @@
                                         </div>
                                         <h4 class="title fs-17 mb-6">Video Option</h4>
                                         <div class="row">
-
                                             <div class="col-sm-6 col-xl-4 mb-4">
-                                                <input type="file" class="form-control " id="customVdo" multiple   />
+                                                <label for="customVdo" class="upload-button btn-block">Select Video</label>
+                                                <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                             </div>
                                             <div class="col-sm-6 col-xl-4 mb-4">
-                                                <button id="clearButtonVDO" class="clearButton">Clear</button>
+                                                <button id="clearButtonVDO" class="clearButton ">Clear</button>
                                             </div>
                                             <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
 
