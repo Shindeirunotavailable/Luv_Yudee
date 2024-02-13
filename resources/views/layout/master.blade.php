@@ -13,7 +13,8 @@
 
          {{-- --CSS SWIPER -- --}}
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+         <!-- Include Select2 from CDN -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
          {{-- --CSS-- --}}
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
          <link href="{{ asset('/assets/css/content/content.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า content -- --}}

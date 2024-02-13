@@ -134,14 +134,14 @@
                     </div>
                 </div>
             </div>
-            <div class="container-pp list-head">
-                <nav aria-label="breadcrumb">
+            <div class="container-pp ">
+                <nav aria-label="breadcrumb ">
                     <ol class="breadcrumb pb-0 bg-white">
                         <li class="breadcrumb-item fs-12 letter-spacing-087">
                             <a href=".">Home</a>
                         </li>
                         <li class="breadcrumb-item fs-12 letter-spacing-087">
-                            <a href="listing-grid-with-left-filter.html">Listing</a>
+                            <a href="#">Listing</a>
                         </li>
                         <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood Boulevard</li>
                     </ol>
@@ -194,7 +194,7 @@
                                 <div class="col-lg-3 col-6 mt-4 ">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-house-chimney-window text-yd"></i>
+                                            <i class="fa-solid fa-house-chimney-window text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -210,7 +210,7 @@
                                 <div class="col-lg-3 col-6 mt-4">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-trowel-bricks text-yd"></i>
+                                            <i class="fa-solid fa-trowel-bricks text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -225,7 +225,7 @@
                                 <div class="col-lg-3 col-6 mt-4">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-temperature-arrow-up text-yd"></i>
+                                            <i class="fa-solid fa-temperature-arrow-up text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -241,7 +241,7 @@
                                 <div class="col-lg-3 col-6 mt-4">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2  ">
-                                            <i class="fa-solid fa-bath text-yd"></i>
+                                            <i class="fa-solid fa-bath text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -257,7 +257,7 @@
                                 <div class="col-lg-3 col-6 mt-4">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-bed text-yd"></i>
+                                            <i class="fa-solid fa-bed text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -273,7 +273,7 @@
                                 <div class="col-lg-3 col-6 mt-4">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-house-flag text-yd"></i>
+                                            <i class="fa-solid fa-house-flag text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -289,7 +289,7 @@
                                 <div class="col-lg-3 col-6 mt-4">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-warehouse text-yd"></i>
+                                            <i class="fa-solid fa-warehouse text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -305,7 +305,7 @@
                                 <div class="col-lg-3 col-6 mt-4">
                                     <div class="media ">
                                         <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-scroll text-yd"></i>
+                                            <i class="fa-solid fa-scroll text-blue"></i>
                                         </div>
                                         <div class="media-body">
                                             <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
@@ -948,12 +948,12 @@
                                                         value="option1">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center mt-3">
-                                                            <a href="agent-details-1.html" class="d-block agent-icon mr-3">
+                                                            <a href="#" class="d-block agent-icon mr-3">
                                                                 <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-1.jpg') }}"
                                                                     class="rounded-circle" alt="agent-2">
                                                             </a>
                                                             <div>
-                                                                <a href="agent-details-1.html"
+                                                                <a href="#"
                                                                     class="d-block text-dark font-weight-500 lh-15 hover-primary">Oliver Beddows</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Sales Excutive</p>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">
@@ -974,7 +974,7 @@
 
                                                                     <li class="list-inline-item mr-2 ml-2 mb-0">
                                                                         <a href="tel:091-545-3939" target="_blank">
-                                                                            <i class="fa-solid fa-phone text-yd"></i>
+                                                                            <i class="fa-solid fa-phone text-blue"></i>
                                                                         </a>
                                                                     </li>
                                                                     </a>
@@ -990,12 +990,12 @@
                                                         id="inlineRadio2" value="option2">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center">
-                                                            <a href="agent-details-1.html" class="d-block agent-icon mr-3">
+                                                            <a href="#" class="d-block agent-icon mr-3">
                                                                 <img class="img-angent" src="{{ asset('/assets/ImagesPropetry/agent-2.jpg') }}"
                                                                     class="rounded-circle" alt="agent-1">
                                                             </a>
                                                             <div>
-                                                                <a href="agent-details-1.html"
+                                                                <a href="#"
                                                                     class="d-block text-dark font-weight-500 lh-15 hover-primary">Max Kordex</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Real estate broker</p>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">
@@ -1016,7 +1016,7 @@
 
                                                                     <li class="list-inline-item mr-2 ml-2 mb-0">
                                                                         <a href="tel:091-545-3939" target="_blank">
-                                                                            <i class="fa-solid fa-phone text-yd"></i>
+                                                                            <i class="fa-solid fa-phone text-blue"></i>
                                                                         </a>
                                                                     </li>
 
@@ -1111,7 +1111,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="single-property-1.html"
+                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Home in Metric Way</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
                                                 Los Angeles</p>
@@ -1144,7 +1144,7 @@
                                             <ul class="list-inline mb-0">
                                                 <li class="list-inline-item">
                                                     <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-yd bg-accent border-accent"
+                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-blue bg-accent border-accent"
                                                         data-toggle="tooltip" title="" tabindex="0"
                                                         data-original-title="Wishlist"><i class="fas fa-heart"></i></a>
                                                 </li>
@@ -1191,7 +1191,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="single-property-1.html"
+                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Garden Gingerbread
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1273,7 +1273,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="single-property-1.html"
+                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1354,7 +1354,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="single-property-1.html"
+                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1435,7 +1435,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="single-property-1.html"
+                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1516,7 +1516,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="single-property-1.html"
+                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1598,7 +1598,7 @@
 
                         <li class="list-inline-item mr-2 ml-2 mb-0">
                             <a href="tel:091-545-3939" target="_blank">
-                                <i class="fa-solid fa-phone text-yd"></i>
+                                <i class="fa-solid fa-phone text-blue"></i>
                             </a>
                         </li>
 

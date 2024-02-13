@@ -1,65 +1,37 @@
 
-document.addEventListener("DOMContentLoaded", function() {
-    const dropdownBtns = document.querySelectorAll(".dropbtn");
-
-    dropdownBtns.forEach(function(dropdownBtn) {
-        dropdownBtn.onclick = function() {
-            const dropdownContent = dropdownBtn.nextElementSibling;
-            dropdownContent.classList.toggle("show");
-        };
+$(document).ready(function() {
+    $(".dropbtn").click(function() {
+        var dropdownContent = $(this).next(".dropdown-content");
+        dropdownContent.toggleClass("show");
     });
 
-    document.onclick = function(event) {
-        const dropdowns = document.querySelectorAll(".dropdown-content");
-        dropdowns.forEach(function(openDropdown) {
-            if (!event.target.matches(".dropbtn")) {
-                openDropdown.classList.remove("show");
-            }
-        });
-    };
+    $(document).click(function(event) {
+        if (!$(event.target).hasClass("dropbtn")) {
+            $(".dropdown-content").removeClass("show");
+        }
+    });
 });
 
 
+$(document).ready(function() {
+    const sidebarItems = $(".sidebar_list_item");
+    const items = $(".items-center");
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    const sidebarItems = document.querySelectorAll(".sidebar_list_item");
-    const items = document.querySelectorAll(".items-center");
-    const pitems = document.querySelectorAll(".page-item");
-
-    sidebarItems.forEach(function(item) {
-        item.addEventListener("click", function() {
-            sidebarItems.forEach(function(otherItem) {
-                otherItem.classList.remove("-is-active");
-            });
-
-            item.classList.add("-is-active");
-
+    sidebarItems.each(function(index, item) {
+        $(item).on("click", function() {
+            sidebarItems.removeClass("-is-active");
+            $(this).addClass("-is-active");
         });
     });
 
-    items.forEach(function(item) {
-        item.addEventListener("click", function() {
-            items.forEach(function(otherItem) {
-                otherItem.classList.remove("-is-active");
-                otherItem.classList.remove("active");
-            });
-
-            item.classList.add("-is-active");
+    items.each(function(index, item) {
+        $(item).on("click", function() {
+            items.removeClass("-is-active active");
+            $(this).addClass("-is-active");
         });
     });
-
-    pitems.forEach(function(item) {
-        item.addEventListener("click", function() {
-            pitems.forEach(function(otherItem) {
-                otherItem.classList.remove("active");
-            });
-
-            item.classList.add("active");
-        });
-    });
-
 });
+
 
 
 $(document).ready(function() {
@@ -68,6 +40,7 @@ $(document).ready(function() {
         placeholder: "Select...",
         allowClear: true
     });
+
     $('#propertystatus').val('FS');
     $('#propertystatus').select2({
         placeholder: "Select...",
@@ -76,21 +49,24 @@ $(document).ready(function() {
 });
 
 
+
+
+
 // db_provinces
         var getUrl = window.location;
-        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-        var csrf = $('meta[name="csrf-token"]').attr('content');
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
+        // var csrf = $('meta[name="csrf-token"]').attr('content');
         var lang = document.documentElement.lang;
         // console.log(lang,getUrl,baseUrl,csrf);
+        // var url = '/db_provinces';
 
-var url = '/db_provinces';
     $('#provinces').change(function() {
         var id_provinces = $(this).val();
         // console.log($('#db_provinces').val())
          // console.log($("input[name=_token]").val())
-         $.ajax({
+        $.ajax({
             type: "post",
-            url: url,
+            url: baseUrl+"db_provinces",
             data: {
                 id: id_provinces,
                 function: 'provinces',
@@ -109,7 +85,7 @@ var url = '/db_provinces';
         var id_amphures = $(this).val();
         $.ajax({
             type: "post",
-            url: url,
+            url: baseUrl+"db_provinces",
             data: {
                 id: id_amphures,
                 function: 'amphures',
@@ -125,7 +101,7 @@ var url = '/db_provinces';
         var id_districts = $(this).val();
         $.ajax({
             type: "post",
-            url: url,
+            url: baseUrl+"db_provinces",
             data: {
                 id: id_districts,
                 function: 'districts',
@@ -142,76 +118,77 @@ var url = '/db_provinces';
         ClassicEditor
             .create(document.querySelector('#editor'), {})
             .then(editor => {
-                console.log(editor);
+                // console.log(editor);
             })
             .catch(error => {
-                console.error(error);
+                // console.error(error);
             });
     }
 
 
     //Upload Image
-    if (document.getElementById('customIMG')) {
-        document.getElementById('customIMG').addEventListener('change', function(e) {
-            var fileList = document.getElementById('fileList');
-            fileList.innerHTML = '';
 
-            var files = e.target.files;
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
+    $(document).ready(function() {
+        if ($('#customIMG').length) {
+            $('#customIMG').on('change', function(e) {
+                var fileList = $('#fileList');
+                fileList.html('');
 
-                // สร้าง Element <div class="col-2"> เพื่อแสดงภาพ
-                var colDiv = document.createElement('div');
-                colDiv.className = 'col-2';
+                var files = e.target.files;
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
 
-                var img = document.createElement('img');
-                img.src = URL.createObjectURL(file); // กำหนด URL ของภาพ
-                img.style.width = '100%'; // กำหนดขนาดภาพ
-                img.style.marginBottom = '20px';
-                colDiv.appendChild(img);
+                    var colDiv = $('<div></div>').addClass('col-2');
 
-                fileList.appendChild(colDiv);
-            }
-        });
+                    var img = $('<img />').attr('src', URL.createObjectURL(file)).css({
+                        'width': '100%',
+                        'margin-bottom': '20px'
+                    });
+                    colDiv.append(img);
 
-        document.getElementById('clearButtonIMG').addEventListener('click', function() {
-            var fileList = document.getElementById('fileList');
-            fileList.innerHTML = '';
+                    fileList.append(colDiv);
+                }
+            });
 
-            // Clear input file
-            document.getElementById('customIMG').value = '';
-        });
-    }
+            $('#clearButtonIMG').on('click', function() {
+                var fileList = $('#fileList');
+                fileList.html('');
 
-    if (document.getElementById('customVdo')) {
-        //Upload VDO
-        document.getElementById('customVdo').addEventListener('change', function(e) {
-            var VdoList = document.getElementById('VdoList');
-            VdoList.innerHTML = '';
+                // Clear input file
+                $('#customIMG').val('');
+            });
+        }
 
-            var files = e.target.files;
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
+        if ($('#customVdo').length) {
+            $('#customVdo').on('change', function(e) {
+                var VdoList = $('#VdoList');
+                VdoList.html('');
 
-                var colDiv = document.createElement('div');
-                colDiv.className = 'col-4';
+                var files = e.target.files;
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
 
-                var video = document.createElement('video');
-                video.src = URL.createObjectURL(file);
-                video.style.width = '100%';
-                video.style.marginBottom = '20px';
-                video.controls = true;
-                colDiv.appendChild(video);
+                    var colDiv = $('<div></div>').addClass('col-4');
 
-                VdoList.appendChild(colDiv);
-            }
-        });
+                    var video = $('<video></video>').attr({
+                        'src': URL.createObjectURL(file),
+                        'controls': true
+                    }).css({
+                        'width': '100%',
+                        'margin-bottom': '20px'
+                    });
+                    colDiv.append(video);
 
-        document.getElementById('clearButtonVDO').addEventListener('click', function() {
-            var VdoList = document.getElementById('VdoList');
-            VdoList.innerHTML = '';
+                    VdoList.append(colDiv);
+                }
+            });
 
-            // Clear input file
-            document.getElementById('customVdo').value = '';
-        });
-    }
+            $('#clearButtonVDO').on('click', function() {
+                var VdoList = $('#VdoList');
+                VdoList.html('');
+
+                // Clear input file
+                $('#customVdo').val('');
+            });
+        }
+    });

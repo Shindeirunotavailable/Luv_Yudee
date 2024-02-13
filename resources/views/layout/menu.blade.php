@@ -117,7 +117,7 @@
                 <div class="mobile_menus_bar d-flex justify-content-between align-items-center">
                     <a class="menusbar" href="#" id="menubarButton" data-bs-toggle="offcanvas"
                         data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                        <img src="https://img2.pic.in.th/pic/dark-nav-icon.png" alt="mobile icon"
+                        <img src="/assets/images/mobile-dark-nav-icon.jpg" alt="mobile icon"
                             width="30px"></a><a class="mobile_logo" href="/">
                         <img src="/assets/images/YuuDee2.png" alt="logo" width="120px"></a>
                     <a href="/login"><span class="icon fz18 far fa-user-circle "></span></a>

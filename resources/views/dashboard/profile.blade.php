@@ -21,7 +21,7 @@
                                                 <img src="https://homez-reactjs.ibthemespro.com/images/listings/profile-1.jpg" alt="My Profile" class="mx-auto d-block img">
                                                 <div class="custom-file mt-4 h-auto">
                                                     <input type="file" class="custom-file-input" hidden="" id="customFile" name="file">
-                                                    <button type="submit" class="ud-btn btn-yd btn-t-white" >Upload profile image</button>
+                                                    <button type="submit" class="ud-btn afterButton btn-t-white" >Upload profile image</button>
                                                 </div>
                                             </div>
                                             <p class="col-sm-12 ">
@@ -172,12 +172,12 @@
                         <div class="d-flex justify-content-end flex-wrap">
                             {{-- เอา btn-t-white ออก --}}
                              <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
-                                class="ud-btn btn-yd btn-t-white">Delete Profile
+                                class="ud-btn afterButton btn-t-white">Delete Profile
                                 <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                             {{-- เอา btn-t-white ออก --}}
                             <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
-                                class="ud-btn btn-yd btn-t-white">Update Profile
+                                class="ud-btn afterButton btn-t-white">Update Profile
                                 <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
 

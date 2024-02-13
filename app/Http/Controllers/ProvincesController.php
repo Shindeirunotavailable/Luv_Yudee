@@ -20,6 +20,7 @@ class ProvincesController extends Controller
 
     public function db_provinces(Request $request)
     {
+
         // dd($request->all());
         // ตรวจสอบว่ามีข้อมูล function และมีค่าเป็น 'provinces' หรือไม่
         if ($request->has('function') && $request->input('function') === 'provinces') {

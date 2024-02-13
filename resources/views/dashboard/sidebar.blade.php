@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"> --}}
 
     <div class="container pb-d-40 d-nav-none ">
         <div class="col-lg-12">
@@ -23,8 +23,8 @@
                             </div>
                             <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-d-30">MANAGE LISTINGS</p>
-                                <div class="sidebar_list_item">
-                                    <a class="items-center    " id="v-add-property-tab" data-toggle="tab"
+                                <div class="sidebar_list_item ">
+                                    <a class="items-center -is-active active" id="v-add-property-tab" data-toggle="tab"
                                     data-target="#v-add-property" role="tab" aria-controls="v-add-property"
                                     aria-selected="false" href="#v-add-property">
                                     <i class="fa-solid fa-file-circle-plus mr-d-15"></i>Add New Property</a>
@@ -62,18 +62,11 @@
                                 <div class="sidebar_list_item"><a class="items-center    " href="#"> <i
                                             class="fa-solid fa-right-from-bracket mr-d-15"></i>Logout</a>
                                 </div>
-
                             </div>
                         </ul>
                     </div>
-
                 </div>
-
-
             </div>
-
-
-
         </div>
     </div>
     <aside>
@@ -86,7 +79,7 @@
 
                             <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-0">MAIN</p>
-                                <div class="sidebar_list_item"><a class="items-center    " href="/">
+                                <div class="sidebar_list_item"><a class="items-center    " href="#">
                                         <i class="fa-solid fa-chart-line mr-d-15"></i>Dashboard</a>
                                 </div>
 
@@ -99,7 +92,7 @@
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30">MANAGE LISTINGS</p>
 
                                 <div class="sidebar_list_item ">
-                                    <a class="items-center " id="v-add-property-tab" data-toggle="tab"
+                                    <a class="items-center -is-active active" id="v-add-property-tab" data-toggle="tab"
                                         data-target="#v-add-property" role="tab" aria-controls="v-add-property"
                                         aria-selected="false" href="#v-add-property">
                                         <i class="fa-solid fa-file-circle-plus mr-d-15"></i>Add New Property
@@ -146,7 +139,8 @@
                 </div>
 
                 <div class="tab-content-ds" id="v-tabs-tabContent">
-                    <div class="tab-pane fade" id="v-add-property" role="tabpanel"
+
+                    <div class="tab-pane fade show active" id="v-add-property" role="tabpanel"
                         aria-labelledby="v-add-property-tab" tabindex="0">
                         @include('dashboard.addproperty')
                     </div>
@@ -167,7 +161,5 @@
             </div>
         </div>
     </aside>
-
-
 
 @endsection

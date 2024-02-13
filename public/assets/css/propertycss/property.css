@@ -39,9 +39,7 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
   }
 
-  *,*::before,*::after {
-    box-sizing: border-box
-  }
+
 
   html {
     font-family: sans-serif;
@@ -2290,10 +2288,6 @@
 .bg-yd {
     background-color: #0071bc
   }
-
-.text-yd {
-    color: #0071bc
-}
 
 .text-center-sm {
     text-align: center

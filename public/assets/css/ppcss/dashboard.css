@@ -481,9 +481,9 @@ textarea.form-control-ap {
     display: flex!important
 } */
 
-.d-none {
+/* .d-none {
     display: none!important
-}
+} */
 
 /* .shadow {
     box-shadow: var(--bs-box-shadow)!important
@@ -1795,10 +1795,17 @@ header.nav-homepage-style.light-header .ace-responsive-menu a {
     max-width: 100%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1024px) {
     .col-sm-6 {
         flex: 0 0 auto;
         width: 50%
+        }
+}
+
+@media (max-width: 1025px) {
+    .col-6-dt {
+        flex: 0 0 auto;
+        max-width: 50%!important
         }
 }
 /* ปิดไว้ */
@@ -1864,6 +1871,7 @@ input[type="submit"] {
     border-radius: 5px;
 
 }
+
 
 /* CKEditor */
 
@@ -1932,7 +1940,7 @@ input[type="submit"] {
 .clearButton{
     display: block;
     width: 100%;
-    height: 51px;
+    height: 38px;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -1943,4 +1951,36 @@ input[type="submit"] {
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
 
+}
+
+.upload-button {
+    color: #ffffff;
+    background-color: #0071bc !important;
+    background-position: 100% !important;
+    background-size: 400% !important;
+    transition-duration: 1.5s !important;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 3px !important;
+}
+
+.upload-button:hover {
+    background-image: linear-gradient(45deg, #3a9ad9 50%, transparent 50%) ; /* สีตอนกำลังจะเปลี่ยนพื้นหลัง */
+    background-position: 0 !important; /* ต่ำแหน่งสีพื้นหลัง */
+}
+.fs-dt{
+    font-size: 14px!important
+  }
+@media(max-width: 426px) {
+.fs-dt{
+    font-size: 13px!important
+  }
+}
+@media(max-width: 426px) {
+.ms-3 {
+    margin-left: 0rem!important
+}
 }

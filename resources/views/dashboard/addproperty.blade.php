@@ -46,75 +46,57 @@
                                 aria-labelledby="nav-item1-tab">
                                 <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="title fs-17 mb-6">Property Description</h4>
-                                    <form class="form-style1">
-                                        <div class="row ">
+
+                                    <form method="POST" action="{{ url('store') }}">
+                                        @csrf <!-- ใส่ CSRF token เพื่อความปลอดภัย -->
+
+                                        <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Your Name">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
+                                                    <input type="text" class="form-control" placeholder="Your Name" name="title">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Description
-
-                                                    </label>
-                                                    <form method="POST" action={{ url('store') }}>
-                                                        <p><textarea name="editor" id="editor"></textarea></p>
-                                                        {{ csrf_field() }}
-                                                    </form>
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
+                                                    <textarea name="description" id="editor"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Select
-                                                        Category</label>
-                                                    <div class="">
-                                                        <div id="result-container "></div>
-                                                        <div>
-                                                            <select id="selectcategory" name="selectcategory" class="form-select "
-                                                                style="width: 100%; height: 55px;" multiple>
-                                                                    <option value="CD">คอนโด</option>
-                                                                    <option value="DT">บ้นเดี่ยว</option>
-                                                                    <option value="TH">ทาวน์เฮาส์</option>
-                                                                    <option value="AP">อพาร์ทเมนท์</option>
-                                                            </select>
-                                                        </div>
-
-                                                    </div>
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
+                                                    <select id="selectcategory" name="selectcategory" class="form-select" style="width: 100%; height: 55px;" multiple>
+                                                        <option value="CD">คอนโด</option>
+                                                        <option value="DT">บ้นเดี่ยว</option>
+                                                        <option value="TH">ทาวน์เฮาส์</option>
+                                                        <option value="AP">อพาร์ทเมนท์</option>
+                                                    </select>
                                                 </div>
                                             </div>
+
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property
-                                                        Status</label>
-                                                    <div class="mb-6">
-                                                        <select id="propertystatus" name="propertystatus" class="form-control "
-                                                            style="width: 100%; height: 38px;" multiple>
-                                                                <option value="FS">ขาย</option>
-                                                                <option value="HI">เช่า</option>
-                                                        </select>
-
-                                                    </div>
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
+                                                    <select id="propertystatus" name="propertystatu" class="form-control" style="width: 100%; height: 38px;" multiple>
+                                                        <option value="FS">ขาย</option>
+                                                        <option value="HI">เช่า</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Price
-                                                        in baht</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Price">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
+                                                    <input type="text" class="form-control" placeholder="Price" name="price">
                                                 </div>
                                             </div>
-
                                         </div>
+
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
+
                                 </div>
                             </div>
 
@@ -128,7 +110,8 @@
                                                 <div class="row">
 
                                                     <div class="col-sm-6 col-xl-4 mb-4">
-                                                        <input type="file" class="form-control " id="customIMG" multiple  />
+                                                        <label for="customIMG" class="upload-button btn-block">Select Image</label>
+                                                        <input type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
                                                     </div>
                                                     <div class="col-sm-6 col-xl-4 mb-4">
                                                         <button id="clearButtonIMG" class="clearButton">Clear</button>
@@ -141,12 +124,12 @@
                                         </div>
                                         <h4 class="title fs-17 mb-6">Video Option</h4>
                                         <div class="row">
-
                                             <div class="col-sm-6 col-xl-4 mb-4">
-                                                <input type="file" class="form-control " id="customVdo" multiple   />
+                                                <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
+                                                <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                             </div>
                                             <div class="col-sm-6 col-xl-4 mb-4">
-                                                <button id="clearButtonVDO" class="clearButton">Clear</button>
+                                                <button id="clearButtonVDO" class="clearButton ">Clear</button>
                                             </div>
                                             <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
 
@@ -233,105 +216,105 @@
                                     <h4 class="title fs-17 mb-6">Listing Details</h4>
                                     <form class="form-style1">
                                         <div class="row">
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property ID
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property ID
                                                         (only numbers)</label><input type="text"
                                                         class="form-control" placeholder="Your ID">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property type
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property type
                                                         (only numbers)</label><input type="text"
                                                         class="form-control" placeholder="Your Property type">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property status</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property status</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Status"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Price</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Price</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Price"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Rooms</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Rooms"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Bedrooms
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms
                                                         </label><input type="text" class="form-control"
                                                         placeholder="Rooms">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Bathrooms</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Rooms"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Size
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Size
                                                         </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Garage
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage
                                                         </label><input type="text" class="form-control"
                                                         placeholder="Garage">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Garage size
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage size
                                                         </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">PSM / sqm
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">PSM / sqm
                                                         </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                    class="heading-color ff-heading font-weight-600 mb-d-10">TYPE
+                                                    class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">TYPE
                                                     </label><input type="text" class="form-control"
                                                     placeholder="Family">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Available
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Available
                                                         from
                                                         (date)</label><input type="text" class="form-control"
                                                         placeholder="99.aa.yyyy">
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Year build
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Year build
                                                         </label><input type="text" class="form-control"
                                                         placeholder="Year">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Label</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Label</label><input
                                                         type="text" class="form-control"
                                                         placeholder="status"></div>
                                             </div>
