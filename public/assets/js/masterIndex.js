@@ -329,5 +329,3 @@ $(document).ready(function() {
       });
   });
   
-  
-
