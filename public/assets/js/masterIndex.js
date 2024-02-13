@@ -329,3 +329,51 @@ $(document).ready(function() {
       });
   });
   
+  
+// เช็คราคา radio
+
+let minValue = $("#min-value");
+let maxValue = $("#max-value");
+
+const rangeFill = $(".range-fill");
+function validateRange() {
+  let minPrice = parseInt(inputElements[0].value);
+  let maxPrice = parseInt(inputElements[1].value);
+
+
+  if (minPrice > maxPrice) {
+    let tempValue = maxPrice;
+    maxPrice = minPrice;
+    minPrice = tempValue;
+  }
+
+  const minPercentage = ((minPrice - 10) / 490) * 100;
+  const maxPercentage = ((maxPrice - 10) / 490) * 100;
+ 
+
+  rangeFill.css({
+    
+    left: minPercentage + "%",
+    width: maxPercentage - minPercentage + "%"
+  });
+
+  minValue.html("$" + minPrice);
+  maxValue.html("$" + maxPrice);
+
+}
+
+const inputElements = $(".radioname");
+// inputElements.click(".radioname", validateRange);
+inputElements.click(".radioname", validateRange);
+
+validateRange();
+
+$(document).ready(function(){
+    
+  var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+     removeItemButton: true
+   }); 
+  
+  
+});
+
