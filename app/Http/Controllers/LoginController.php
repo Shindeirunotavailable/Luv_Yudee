@@ -133,7 +133,7 @@ public function content(){ //แสดงหน้า content
 
  
 public function details(){ 
-    return view("home.details");
+    return view("details.details");
 }
 
 }

@@ -759,8 +759,6 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 }
 .user-btn2 {
     font-family: var(--title-font-family);
-    
-    /* font-weight: 600; */
     font-size: 15px;
     position: relative;
     text-align: center;
@@ -780,7 +778,7 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 .user-btn2:hover {
     outline: none
 }
-.advance-search-icon.user-btn.btn-search.ms-4 i.fa-magnifying-glass {
+.advance-search-icon.user-btn.btn-dark.ms-4 i.fa-magnifying-glass {
     margin-right: 10px; /* ตั้งค่า margin ตามที่คุณต้องการ */
 }
 .listing-style13 .list-content .user-btn {
@@ -827,16 +825,21 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
     z-index: 0;
     -webkit-transition: all .4s ease;
     -o-transition: all .4s ease;
+    display: inline-block;
     transition: all .4s ease
+    
 }
 
-.user-btn i {
+/* .user-btn i {
     margin-left: 10px;
     font-size: 16px;
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg)
-}
+} */
+
+
+
 
 .user-btn:hover,.user-btn:focus,.user-btn:active {
     outline: none;
@@ -901,7 +904,7 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
     border: 1px solid #181a20
 }
 .add-property {
-    font-size: 14px;
+    font-size: 13px;
     height: 47px;
     padding: 9px 22px
 }
@@ -2330,12 +2333,12 @@ header.nav-innerpage-style.style2 {
      }
 
      .text-blue {
-         color: #0071bc
+         color: #2a97e0
      }
 
      .link-effect:hover{
-         color: blue;
-       }
+        color: #0071bc
+    }
      
              
      .background-grey{
@@ -2343,7 +2346,7 @@ header.nav-innerpage-style.style2 {
      }
 
      .section-120{
-         padding: 120px 0;
+         padding: 140px 0;
          position: relative;
        }
              
