@@ -74,19 +74,19 @@ $(document).ready(function() {
 
 // db_provinces
         var getUrl = window.location;
-        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-        var csrf = $('meta[name="csrf-token"]').attr('content');
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
+        // var csrf = $('meta[name="csrf-token"]').attr('content');
         var lang = document.documentElement.lang;
         // console.log(lang,getUrl,baseUrl,csrf);
+        // var url = '/db_provinces';
 
-var url = '/db_provinces';
     $('#provinces').change(function() {
         var id_provinces = $(this).val();
         // console.log($('#db_provinces').val())
          // console.log($("input[name=_token]").val())
         $.ajax({
             type: "post",
-            url: url,
+            url: baseUrl+"db_provinces",
             data: {
                 id: id_provinces,
                 function: 'provinces',
@@ -105,7 +105,7 @@ var url = '/db_provinces';
         var id_amphures = $(this).val();
         $.ajax({
             type: "post",
-            url: url,
+            url: baseUrl+"db_provinces",
             data: {
                 id: id_amphures,
                 function: 'amphures',
@@ -121,7 +121,7 @@ var url = '/db_provinces';
         var id_districts = $(this).val();
         $.ajax({
             type: "post",
-            url: url,
+            url: baseUrl+"db_provinces",
             data: {
                 id: id_districts,
                 function: 'districts',
