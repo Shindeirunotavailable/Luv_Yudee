@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"> --}}
 
     <div class="container pb-d-40 d-nav-none ">
         <div class="col-lg-12">
@@ -161,7 +161,5 @@
             </div>
         </div>
     </aside>
-
-
 
 @endsection

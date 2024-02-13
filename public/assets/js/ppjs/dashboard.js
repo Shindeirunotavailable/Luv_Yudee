@@ -40,12 +40,16 @@ $(document).ready(function() {
         placeholder: "Select...",
         allowClear: true
     });
+
     $('#propertystatus').val('FS');
     $('#propertystatus').select2({
         placeholder: "Select...",
         allowClear: true
     });
 });
+
+
+
 
 
 // db_provinces
