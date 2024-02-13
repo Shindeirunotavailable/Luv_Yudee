@@ -46,76 +46,57 @@
                                 aria-labelledby="nav-item1-tab">
                                 <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="title fs-17 mb-6">Property Description</h4>
-                                    <form class="form-style1">
-                                        <div class="row ">
+
+                                    <form method="POST" action="{{ url('store') }}">
+                                        @csrf <!-- ใส่ CSRF token เพื่อความปลอดภัย -->
+
+                                        <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Your Name">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
+                                                    <input type="text" class="form-control" placeholder="Your Name" name="title">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Description
-
-                                                    </label>
-                                                    <form method="POST" action={{ url('store') }}>
-                                                        <p><textarea name="editor" id="editor"></textarea></p>
-                                                        {{ csrf_field() }}
-                                                    </form>
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
+                                                    <textarea name="description" id="editor"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Select
-                                                        Category</label>
-                                                    <div class="">
-                                                        <div id="result-container "></div>
-                                                        <div>
-                                                            <select id="selectcategory" name="selectcategory" class="form-select "
-                                                                style="width: 100%; height: 55px;" multiple>
-                                                                    <option value="CD">คอนโด</option>
-                                                                    <option value="DT">บ้นเดี่ยว</option>
-                                                                    <option value="TH">ทาวน์เฮาส์</option>
-                                                                    <option value="AP">อพาร์ทเมนท์</option>
-                                                            </select>
-                                                        </div>
-
-                                                    </div>
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
+                                                    <select id="selectcategory" name="selectcategory" class="form-select" style="width: 100%; height: 55px;" multiple>
+                                                        <option value="CD">คอนโด</option>
+                                                        <option value="DT">บ้นเดี่ยว</option>
+                                                        <option value="TH">ทาวน์เฮาส์</option>
+                                                        <option value="AP">อพาร์ทเมนท์</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property
-                                                        Status</label>
-                                                    <div class="mb-6">
-                                                        <select id="propertystatus" name="propertystatus" class="form-control "
-                                                            style="width: 100%; height: 38px;" multiple>
-                                                                <option value="FS">ขาย</option>
-                                                                <option value="HI">เช่า</option>
-                                                        </select>
-
-                                                    </div>
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
+                                                    <select id="propertystatus" name="propertystatu" class="form-control" style="width: 100%; height: 38px;" multiple>
+                                                        <option value="FS">ขาย</option>
+                                                        <option value="HI">เช่า</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Price
-                                                        in baht</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Price">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
+                                                    <input type="text" class="form-control" placeholder="Price" name="price">
                                                 </div>
                                             </div>
-
                                         </div>
+
+                                        <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
+
                                 </div>
                             </div>
 
