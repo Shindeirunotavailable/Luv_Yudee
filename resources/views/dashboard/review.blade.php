@@ -289,13 +289,11 @@
                                     {{-- เอา btn-t-white ออก --}}
                                     <div class="position-relative bdrb1 pt-d-30 pb20"><a href="#"
                                             class="ud-btn afterButton btn-t-white">Show all 134 reviews
+
                                             <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- next page --}}
+
                     {{-- <div class="mt30">
                         <div class="mbp_pagination text-center">
                             <ul class="page_navigation">

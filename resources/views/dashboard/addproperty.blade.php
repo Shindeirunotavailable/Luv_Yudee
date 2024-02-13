@@ -143,7 +143,7 @@
                                         <h4 class="title fs-17 mb-6">Video Option</h4>
                                         <div class="row">
                                             <div class="col-sm-6 col-xl-4 mb-4">
-                                                <label for="customVdo" class="upload-button btn-block">Select Video</label>
+                                                <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
                                                 <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                             </div>
                                             <div class="col-sm-6 col-xl-4 mb-4">
@@ -234,105 +234,105 @@
                                     <h4 class="title fs-17 mb-6">Listing Details</h4>
                                     <form class="form-style1">
                                         <div class="row">
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property ID
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property ID
                                                         (only numbers)</label><input type="text"
                                                         class="form-control" placeholder="Your ID">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property type
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property type
                                                         (only numbers)</label><input type="text"
                                                         class="form-control" placeholder="Your Property type">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Property status</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property status</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Status"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Price</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Price</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Price"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Rooms</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Rooms"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Bedrooms
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms
                                                         </label><input type="text" class="form-control"
                                                         placeholder="Rooms">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Bathrooms</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label><input
                                                         type="text" class="form-control"
                                                         placeholder="Rooms"></div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Size
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Size
                                                         </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Garage
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage
                                                         </label><input type="text" class="form-control"
                                                         placeholder="Garage">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Garage size
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage size
                                                         </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">PSM / sqm
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">PSM / sqm
                                                         </label><input type="text" class="form-control"
                                                         placeholder="SqFt">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                    class="heading-color ff-heading font-weight-600 mb-d-10">TYPE
+                                                    class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">TYPE
                                                     </label><input type="text" class="form-control"
                                                     placeholder="Family">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Available
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Available
                                                         from
                                                         (date)</label><input type="text" class="form-control"
                                                         placeholder="99.aa.yyyy">
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Year build
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Year build
                                                         </label><input type="text" class="form-control"
                                                         placeholder="Year">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5 col-xl-4">
+                                            <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Label</label><input
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Label</label><input
                                                         type="text" class="form-control"
                                                         placeholder="status"></div>
                                             </div>
