@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-        <div class="wrapper ovh">
+        <div class="wrapper overhid">
 
             <div class="signup-modal">
                 <div class="modal fade" id="loginSignupModal" tabindex="-1" aria-labelledby="loginSignupModalLabel"

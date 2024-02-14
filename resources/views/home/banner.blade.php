@@ -331,36 +331,46 @@
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="widget-wrapper mb-20">
-                                                    <div class="checkbox-style1"><label
-                                                            class="custom_checkbox">TV Cable<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label><label
-                                                            class="custom_checkbox">Dryer<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label><label
-                                                            class="custom_checkbox">Outdoor Shower<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label><label
-                                                            class="custom_checkbox">Washer<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label></div>
+                                                    <div class="checkbox-style1">
+                                                        <label class="custom_checkbox">TV Cable
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="custom_checkbox">Dryer
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="custom_checkbox">Outdoor Shower
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="custom_checkbox">Washer
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="widget-wrapper mb-20">
-                                                    <div class="checkbox-style1"><label
-                                                            class="custom_checkbox">Lake view<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label><label
-                                                            class="custom_checkbox">Wine cellar<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label><label
-                                                            class="custom_checkbox">Front yard<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label><label
-                                                            class="custom_checkbox">Refrigerator<input
-                                                                type="checkbox"><span
-                                                                class="checkmark"></span></label></div>
+                                                    <div class="checkbox-style1">
+                                                        <label class="custom_checkbox">Lake view
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="custom_checkbox">Wine cellar
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="custom_checkbox">Front yard
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                        <label class="custom_checkbox">Refrigerator
+                                                            <input type="checkbox">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -381,17 +391,17 @@
                         </div>
                     </div>
                     <div class="home-icon-st mt-30 d-none d-sm-flex animation-up-4">
-                        <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
+                        <a class="d-flex align-items-center dark-color font-heading me-4"href="/grid-full-4-col">
                             <i class=" icon fa-solid fa-house mr-10"></i> Houses
                         </a>
-                        <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
-                            <i class="icon fa-regular fa-building  mr-10"></i>Apartments
+                        <a class="d-flex align-items-center dark-color font-heading me-4"href="/grid-full-4-col">
+                            <i class="icon fa-regular fa-building mr-10"></i>Apartments
                         </a>
-                        <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
-                            <i class="icon fa-solid fa-house-laptop  mr-10"></i>Office
+                        <a class="d-flex align-items-center dark-color font-heading me-4"href="/grid-full-4-col">
+                            <i class="icon fa-solid fa-house-laptop mr-10"></i>Office
                         </a>
-                        <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
-                            <i class="icon fa-solid fa-house-flood-water  mr-10"></i>Villa
+                        <a class="d-flex align-items-center dark-color font-heading me-4"href="/grid-full-4-col">
+                            <i class="icon fa-solid fa-house-flood-water mr-10"></i>Villa
                         </a>
                     </div>
                 </div>
