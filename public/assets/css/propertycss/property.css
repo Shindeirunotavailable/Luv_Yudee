@@ -1499,8 +1499,8 @@
   .nav-link {
     font-weight: 500
   }
-
-  .nav-tabs .nav-link {
+/* ปิดไว้ของpod */
+  /* .nav-tabs .nav-link {
     background-color: #eee;
     color: inherit;
     padding: .5rem 1.875rem
@@ -1521,7 +1521,7 @@
     width: 100%;
     background-color: #fff;
     z-index: 1
-  }
+  } */
 
   .nav-tabs .nav-item:not(.active)+.nav-item {
     margin-left: 3px
