@@ -2,45 +2,6 @@
 * Copyright 2011-2020 The Bootstrap Authors
 * Copyright 2011-2020 Twitter, Inc.
 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/
-:root {
-    --blue: #007bff;
-    --indigo: #6969eb;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #ff6935;
-    --yellow: #f6b500;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --accent: #eff6f7;
-    --primary: #0071bc;
-    --secondary: #1e1d85;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #f6b500;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #252525;
-    --accent: #eff6f7;
-    --orange: #ff6935;
-    --white: #fff;
-    --indigo: #6969eb;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --breakpoint-xxl: 1600px;
-    --font-family-sans-serif: "Poppins", sans-serif;
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
-  }
-
-
-
   html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -151,7 +112,7 @@
     /* -webkit-focus-ring-color */
   }
 
-  input,button,textarea {
+  /* input,button,textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
@@ -160,7 +121,7 @@
 
   button,input {
     overflow: visible
-  }
+  } */
 
   button {
     text-transform: none
@@ -180,10 +141,10 @@
     border-style: none
   }
 
-  input[type=radio],input[type=checkbox] {
+  /* input[type=radio],input[type=checkbox] {
     box-sizing: border-box;
     padding: 0;
-  }
+  } */
 
   textarea {
     overflow: auto;
@@ -505,7 +466,7 @@
     height: auto
   }
 
-  .form-check {
+  /* .form-check {
     position: relative;
     display: block;
     padding-left: 1.25rem
@@ -515,15 +476,15 @@
     position: absolute;
     margin-top: .3rem;
     margin-left: -1.25rem
-  }
+  } */
 
   .form-check-input:disabled~.form-check-label {
     color: #ababab
   }
 
-  .form-check-label {
+  /* .form-check-label {
     margin-bottom: 0
-  }
+  } */
 
   @media(prefers-reduced-motion:reduce) {
     .fade {
@@ -535,8 +496,8 @@
     opacity: 0
   }
 
-
-  .nav {
+  /* ปิดไว้ก่อน navbarของpod 14/2/24*/
+  /* .nav {
     --bs-nav-link-ap-padding-x: 1rem;
     --bs-nav-link-ap-padding-y: .5rem;
     --bs-nav-link-ap-font-weight: ;
@@ -547,11 +508,6 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none
-  }
-
-  .nav-link {
-    display: block;
-    padding: .5rem 1rem
   }
 
   .nav-link:hover,.nav-link:focus {
@@ -566,12 +522,6 @@
     margin-bottom: 0
   }
 
-  .nav-tabs .nav-link {
-    border: 0 solid transparent;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px
-  }
-
   .nav-tabs .nav-link:hover,.nav-tabs .nav-link:focus {
     border-color: #e9ecef #e9ecef #dee2e6
   }
@@ -581,6 +531,21 @@
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff
   }
+
+  .nav-tabs .nav-link {
+    border: 0 solid transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+  } */
+
+  .nav-link {
+    display: block;
+    padding: .5rem 1rem
+  }
+
+
+
+
 /* ปิดไว้ก่อน */
   /* .card {
     position: relative;

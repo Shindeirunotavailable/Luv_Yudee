@@ -1,10 +1,13 @@
 
-้.h-250{
+/* ปรับขนาดต่างๆ */
+.h-250{
     height: 250px;
 }
 .h-60{
     height: 60px;
 }
+
+/* gird-list box */
 
 .list-sidebar-style1 {
     background-color: #fff;
@@ -61,8 +64,6 @@
     width: 100px;
   }
 
-  
-
   .font-label{
     font-size: 13px;
   }
@@ -86,8 +87,137 @@
     transform: translateY(100%);
     opacity: 0;
   }
-  
- 
 
 
-  
+  /* ปุ่มค้นหา */
+  .search_area {
+      position: relative
+  }
+
+  .search_area .form-control-text {
+      padding-left: 42px
+  }
+
+  .search_area span {
+      font-size: 18px;
+      left: 12px;
+      position: absolute;
+      top: 5px
+  }
+
+  /* ปุ่ม radio */
+
+  .radio-style {
+    /* height: 30px; */
+    /* width: 30px; */
+    accent-color: #9d3035;
+  }
+
+
+/* checkbox */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color:red ;
+}
+
+
+
+/* radio */
+
+   /* radio */
+
+   .price-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+  }
+
+  .range-slider {
+    position: relative;
+    margin: 15px 0 30px 0;
+  }
+
+  .range-fill {
+    height: 6px;
+    background-color: #36b37e;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .input-range[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    left: 0;
+  }
+
+  .input-range[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;   /* กำหนดลักษณะที่ไม่ให้แสดงผลตามสไตล์ทั่วไปของระบบ */
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #36b37e;
+    cursor: pointer;
+    margin-top: -5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .input-range[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: #e8e8e8;
+    border-radius: 3px;
+    border: none;
+  }
+   
+/* secart */
+.choices__inner{
+  background-color: white !important;
+  border: 1px solid #0083B0 !important;
+}
+.choices__input {
+  background-color: transparent !important;
+}
+/* .choices__list{
+  border-radius: 25px !important;
+} */
+input:focus-visible{
+  border: transparent !important;
+}
+
+/* Bedrooms */
+
+
+.selection:first-child label {
+  border-radius: 12px 0 0 12px
+}
+
+.selection:last-child label {
+  border-radius: 0 12px 12px 0
+}
+
+.selection label {
+  background-color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  color: var(--headings-color);
+  font-family: var(--title-font-family);
+  font-weight: 600;
+  font-size: 13px;
+  outline: 1px solid #dddddd;
+  margin-right: 1px;
+  padding: 7px 12px
+}
+
+.selection input[type=radio] {
+  display: none
+}
+
+.selection input[type=radio]:checked~label {
+  border: 2px solid #181a20;
+  /* outlinie: transparent; */
+  z-index: 1
+}
