@@ -95,7 +95,7 @@
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
                         <a href="#" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
-                            <i class="far fa-user-circle fz16 mr-2"></i> 
+                            <i class="far fa-user-circle fz16 mr-2 pb-1"></i> 
                             <span class="d-none d-xl-block">Login / Register</span>
                         </a>
                         <a class="user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="/dashboard-add-property">

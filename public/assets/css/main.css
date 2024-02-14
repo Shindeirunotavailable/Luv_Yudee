@@ -4791,7 +4791,7 @@ header.nav-innerpage-style.style2 {
 }
 
 .nav-link:focus,.nav-link:hover {
-    color: var(--yuudee-nav-link-hover-color)
+    color: var(--yuudee-nav-link-hover-color) !important
 }
 
 .nav-link:focus-visible {
