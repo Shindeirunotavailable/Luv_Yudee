@@ -67,7 +67,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
-                                                    <select id="selectcategory" name="selectcategory" class="form-select" style="width: 100%; height: 55px;" multiple>
+                                                    <select id="selectcategory" name="category" class="form-select" style="width: 100%; height: 55px;" multiple>
                                                         <option value="CD">คอนโด</option>
                                                         <option value="DT">บ้นเดี่ยว</option>
                                                         <option value="TH">ทาวน์เฮาส์</option>
@@ -79,7 +79,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                    <select id="propertystatus" name="propertystatu" class="form-control" style="width: 100%; height: 38px;" multiple>
+                                                    <select id="propertystatus" name="status" class="form-control" style="width: 100%; height: 38px;" multiple>
                                                         <option value="FS">ขาย</option>
                                                         <option value="HI">เช่า</option>
                                                     </select>
