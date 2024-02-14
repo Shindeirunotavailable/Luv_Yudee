@@ -18,7 +18,7 @@
          {{-- --CSS-- --}}
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
          <link href="{{ asset('/assets/css/content/content.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า content -- --}}
-         <link href="{{ asset('/assets/css/details/details.css') }}" rel="stylesheet" type="text/css" /> 
+         <link href="{{ asset('/assets/css/details/details.css') }}" rel="stylesheet" type="text/css" />
          {{-- -- Css หน้า details -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
@@ -60,6 +60,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <!-- Include CKeditor from CDN -->
     <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+    <!-- Include slick from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
     integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
