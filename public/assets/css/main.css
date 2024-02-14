@@ -4,7 +4,9 @@
 html,body {
     scroll-behavior: auto!important
 }
-
+.overhid {
+    overflow: hidden
+}
 body {
     background-color: #fff;
     font-size: 14px;
