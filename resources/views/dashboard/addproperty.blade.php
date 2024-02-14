@@ -1,4 +1,9 @@
 @csrf
+@if(Session::has('property_created'))
+    <div class="alert alert-success">
+        {{ Session::get('property_created') }}
+    </div>
+@endif
 <div class="dashboard__main pl-d-0-md">
     <div class="dashboard__content property-page bgc-f7">
         <div class="row align-items-center pb-d-40">
@@ -47,7 +52,7 @@
                                 <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="title fs-17 mb-6">Property Description</h4>
 
-                                    <form method="POST" action="{{ url('store') }}">
+                                    <form method="POST" action="{{ route('properties') }}">
                                         @csrf <!-- ใส่ CSRF token เพื่อความปลอดภัย -->
 
                                         <div class="row">
@@ -67,11 +72,11 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
-                                                    <select id="selectcategory" name="category" class="form-select" style="width: 100%; height: 55px;" multiple>
-                                                        <option value="CD">คอนโด</option>
-                                                        <option value="DT">บ้นเดี่ยว</option>
-                                                        <option value="TH">ทาวน์เฮาส์</option>
-                                                        <option value="AP">อพาร์ทเมนท์</option>
+                                                    <select id="selectcategory" name="category[]" class="form-select" style="width: 100%; height: 55px;" multiple>
+                                                        <option value="คอนโด">คอนโด</option>
+                                                        <option value="บ้นเดี่ยว">บ้นเดี่ยว</option>
+                                                        <option value="ทาวน์เฮาส์">ทาวน์เฮาส์</option>
+                                                        <option value="อพาร์ทเมนท์">อพาร์ทเมนท์</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -79,9 +84,9 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                    <select id="propertystatus" name="status" class="form-control" style="width: 100%; height: 38px;" multiple>
-                                                        <option value="FS">ขาย</option>
-                                                        <option value="HI">เช่า</option>
+                                                    <select id="propertystatus" name="status[]" class="form-control" style="width: 100%; height: 38px;" multiple>
+                                                        <option value="ขาย">ขาย</option>
+                                                        <option value="เช่า">เช่า</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -96,7 +101,6 @@
 
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
-
                                 </div>
                             </div>
 
@@ -437,6 +441,30 @@
         </div>
     </footer>
 
+@if(session('property_data'))
+    <h1>Property Details</h1>
+    <p>Title: {{ session('property_data')['title'] }}</p>
+    <p>Description: {!! session('property_data')['description'] !!}</p>
+    <p>Category: {{ session('property_data')['category'] }}</p>
+    <p>Status: {{ session('property_data')['status'] }}</p>
+    <p>Price: {{ session('property_data')['price'] }}</p>
+@endif
 
 
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        // คำนวณค่าที่ป้อนใน input ทุกครั้งที่มีการเปลี่ยนแปลง
+        $('input[name="price"]').on('input', function() {
+            // แยกตัวแรกของตัวเลขออกมาเพื่อให้มีการคั่นหลักพันด้วย ','
+            $(this).val(function(index, value) {
+                return value.replace(/\D/g, '') // ลบทุกอักขระที่ไม่ใช่ตัวเลข
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ',') // เพิ่ม ',' เมื่อเป็นหลักพัน
+                            .replace(/(\d),(\d+)/, '$1'); // ลบ ',' ที่ไม่ใช่ตัวแรกของตัวเลข
+            });
+        });
+    });
+    </script>
+

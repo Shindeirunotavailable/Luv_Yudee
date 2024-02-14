@@ -35,13 +35,13 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    $('#selectcategory').val('CD');
+    $('#selectcategory').val('คอนโด');
     $('#selectcategory').select2({
         placeholder: "Select...",
         allowClear: true
     });
 
-    $('#propertystatus').val('FS');
+    $('#propertystatus').val('ขาย');
     $('#propertystatus').select2({
         placeholder: "Select...",
         allowClear: true
@@ -116,10 +116,16 @@ $(document).ready(function() {
 
     if (document.querySelector('#editor')) {
         ClassicEditor
-            .create(document.querySelector('#editor'), {})
-            .then(editor => {
-                // console.log(editor);
-            })
+            .create(document.querySelector('#editor'), {
+                 removePlugins: [ '' ],
+
+                 toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
+                 , 'NumberedList','fontSize' ]
+            } )
+            // .then(editor => {
+            //     // console.log(editor);
+            // })
+
             .catch(error => {
                 // console.error(error);
             });
