@@ -5210,7 +5210,7 @@ header.nav-innerpage-style.style2 {
     width: 100%;
     color: var(--yuudee-modal-color);
     pointer-events: auto;
-    background-color: var(--yuudee-modal-bg);
+    background-color: #fff;
     background-clip: padding-box;
     border: var(--yuudee-modal-border-width) solid var(--yuudee-modal-border-color);
     border-radius: var(--yuudee-modal-border-radius);
