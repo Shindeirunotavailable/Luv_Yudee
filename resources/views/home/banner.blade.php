@@ -27,7 +27,7 @@
                                                     <form class="form-search position-relative">
                                                         <div class="box-search" id="nav-buy">
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12" type="text" name="search" placeholder="Search Products for Buy" fdprocessedid="ufm989">
+                                                            <input class="form-controls background-f7 bdr12" type="text" name="search" placeholder="Search Products for Buy" fdprocessedid="ufm989">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -55,7 +55,7 @@
                                                         <div class="box-search" id="nav-rent">
                                                             {{-- <span class="icon flaticon-home-1"></span> --}}
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12" type="text" name="search" placeholder="Search Products for Rent">
+                                                            <input class="form-controls background-f7 bdr12" type="text" name="search" placeholder="Search Products for Rent">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -83,7 +83,7 @@
                                                         <div class="box-search" id="nav-sold">
                                                             {{-- <span class="icon flaticon-home-1"></span> --}}
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12" type="text" name="search" placeholder="Search Products for Sold">
+                                                            <input class="form-controls background-f7 bdr12" type="text" name="search" placeholder="Search Products for Sold">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -119,27 +119,27 @@
                                                     <h6 class="list-title mb-20">Price Range</h6>
                                                     <div class="range-slider-style modal-version">
                                                         <div class="range-wrapper">
-                                                            <div aria-disabled="false" class="input-range">
-                                                                <span class="input-range__label input-range__label--min">
-                                                                    <span class="input-range__label-container"></span>
+                                                            <div aria-disabled="false" class="input-ranges">
+                                                                <span class="input-ranges__label input-ranges__label--min">
+                                                                    <span class="input-ranges__label-container"></span>
                                                                 </span>
-                                                                <div class="input-range__track input-range__track--background">
-                                                                    <div class="input-range__track input-range__track--active" style="left: 0.02%; width: 48.817%;"></div>
-                                                                    <span class="input-range__slider-container" style="position: absolute; left: 0.02%;">
-                                                                        <span class="input-range__label input-range__label--value">
-                                                                            <span class="input-range__label-container"></span>
+                                                                <div class="input-ranges__track input-ranges__track--background">
+                                                                    <div class="input-ranges__track input-ranges__track--active" style="left: 0.02%; width: 48.817%;"></div>
+                                                                    <span class="input-ranges__slider-container" style="position: absolute; left: 0.02%;">
+                                                                        <span class="input-ranges__label input-ranges__label--value">
+                                                                            <span class="input-ranges__label-container"></span>
                                                                         </span>
-                                                                        <div aria-valuemax="48837"aria-valuemin="0"aria-valuenow="20"class="input-range__slider"draggable="false" role="slider"tabindex="0"></div>
+                                                                        <div aria-valuemax="48837"aria-valuemin="0"aria-valuenow="20"class="input-ranges__slider"draggable="false" role="slider"tabindex="0"></div>
                                                                     </span>
-                                                                    <span class="input-range__slider-container"style="position: absolute; left: 48.837%;">
-                                                                        <span class="input-range__label input-range__label--value">
-                                                                            <span class="input-range__label-container"></span>
+                                                                    <span class="input-ranges__slider-container"style="position: absolute; left: 48.837%;">
+                                                                        <span class="input-ranges__label input-ranges__label--value">
+                                                                            <span class="input-ranges__label-container"></span>
                                                                         </span>
-                                                                        <div aria-valuemax="100000"aria-valuemin="20"aria-valuenow="48837"class="input-range__slider"draggable="false" role="slider"tabindex="0"></div>
+                                                                        <div aria-valuemax="100000"aria-valuemin="20"aria-valuenow="48837"class="input-ranges__slider"draggable="false" role="slider"tabindex="0"></div>
                                                                     </span>
                                                                 </div>
-                                                                <span class="input-range__label input-range__label--max">
-                                                                    <span class="input-range__label-container"></span>
+                                                                <span class="input-ranges__label input-ranges__label--max">
+                                                                    <span class="input-ranges__label-container"></span>
                                                                 </span>
                                                             </div>
                                                             <div class="d-flex align-items-center">
@@ -186,7 +186,7 @@
                                                 <div class="widget-wrapper">
                                                     <h6 class="list-title">Property ID</h6>
                                                     <div class="form-style2">
-                                                        <input type="text" class="form-control" placeholder="RT04949213">
+                                                        <input type="text" class="form-controls" placeholder="RT04949213">
                                                     </div>
                                                 </div>
                                             </div>
@@ -290,11 +290,11 @@
                                                     <div class="space-area">
                                                         <div class="d-flex align-items-center justify-content-between">
                                                             <div class="form-style1">
-                                                                <input type="text" class="form-control" placeholder="Min.">
+                                                                <input type="text" class="form-controls" placeholder="Min.">
                                                             </div>
                                                             <span class="dark-color">-</span>
                                                             <div class="form-style1">
-                                                                <input type="text" class="form-control" placeholder="Max">
+                                                                <input type="text" class="form-controls" placeholder="Max">
                                                             </div>
                                                         </div>
                                                     </div>

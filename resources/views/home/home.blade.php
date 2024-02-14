@@ -27,11 +27,11 @@
                                                 <form class="form-style1">
                                                     <div class="mb25"><label
                                                             class="form-label fw600 dark-color">Email</label><input
-                                                            type="email" class="form-control" placeholder="Enter Email"
+                                                            type="email" class="form-controls" placeholder="Enter Email"
                                                             required=""></div>
                                                     <div class="mb15"><label
                                                             class="form-label fw600 dark-color">Password</label><input
-                                                            type="text" class="form-control" placeholder="Enter Password"
+                                                            type="text" class="form-controls" placeholder="Enter Password"
                                                             required=""></div>
                                                     <div
                                                         class="checkbox-style1 d-block d-sm-flex align-items-center justify-content-between mb10">
@@ -66,11 +66,11 @@
                                                 <form class="form-style1">
                                                     <div class="mb25"><label
                                                             class="form-label fw600 dark-color">Email</label><input
-                                                            type="email" class="form-control" placeholder="Enter Email"
+                                                            type="email" class="form-controls" placeholder="Enter Email"
                                                             required=""></div>
                                                     <div class="mb-20"><label
                                                             class="form-label fw600 dark-color">Password</label><input
-                                                            type="text" class="form-control"
+                                                            type="text" class="form-controls"
                                                             placeholder="Enter Password" required=""></div>
                                                     <div class="d-grid mb-20"><button class="user-btn btn-thm"
                                                             type="submit">Create account <i

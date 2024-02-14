@@ -4716,7 +4716,7 @@ header.nav-innerpage-style.style2 {
 }
 
 .advance-search .nav-items {
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative
 }
 
@@ -4791,7 +4791,7 @@ header.nav-innerpage-style.style2 {
 }
 
 .nav-link:focus,.nav-link:hover {
-    color: var(--yuudee-nav-link-hover-color) !important
+    color: var(--yuudee-nav-link-hover-color)
 }
 
 .nav-link:focus-visible {
@@ -4864,11 +4864,11 @@ header.nav-innerpage-style.style2 {
     display: none
 }
 
-.advance-content-st1 .form-control,.advance-content-style3 .form-control {
+.advance-content-st1 .form-controls,.advance-content-style3 .form-controls {
     border: none
 }
 
-.advance-content-st1 .form-control:focus,.advance-content-style3 .form-control:focus {
+.advance-content-st1 .form-controls:focus,.advance-content-style3 .form-controls:focus {
     background-color: #f7f7f7;
     border: 1px solid transparent;
     outline: none;
@@ -4893,7 +4893,7 @@ header.nav-innerpage-style.style2 {
 .bdr12 {
     border-radius: 12px
 }
-.form-control {
+.form-controls {
     border-radius: 8px;
     border: 1px solid #dddddd;
     -webkit-box-shadow: none;
@@ -4905,12 +4905,12 @@ header.nav-innerpage-style.style2 {
     padding-left: 15px
 }
 
-.form-control:placeholder {
+.form-controls:placeholder {
     color: #717171;
     /* font-family: var(--title-font-family) */
 }
 
-.form-control:focus {
+.form-controls:focus {
     border: 1px solid transparent;
     outline: 2px solid #181a20;
     -webkit-box-shadow: none;
@@ -5484,7 +5484,7 @@ header.nav-innerpage-style.style2 {
 .modal-version #slider-range-value1,.modal-version #slider-range-value2 {
     width: 48%
 }
-.input-range__slider {
+.input-ranges__slider {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -5503,26 +5503,26 @@ header.nav-innerpage-style.style2 {
     width: 1rem
 }
 
-.input-range__slider:active {
+.input-ranges__slider:active {
     transform: scale(1.3)
 }
 
-.input-range__slider:focus {
+.input-ranges__slider:focus {
     box-shadow: 0 0 0 5px #3f51b533
 }
 
-.input-range--disabled .input-range__slider {
+.input-ranges--disabled .input-ranges__slider {
     background: #cccccc;
     border: 1px solid #cccccc;
     box-shadow: none;
     transform: none
 }
 
-.input-range__slider-container {
+.input-ranges__slider-container {
     transition: left .3s ease-out
 }
 
-.input-range__label {
+.input-ranges__label {
     color: #aaa;
     font-family: Helvetica Neue,san-serif;
     font-size: .8rem;
@@ -5530,34 +5530,34 @@ header.nav-innerpage-style.style2 {
     white-space: nowrap
 }
 
-.input-range__label--min,.input-range__label--max {
+.input-ranges__label--min,.input-ranges__label--max {
     bottom: -1.4rem;
     position: absolute
 }
 
-.input-range__label--min {
+.input-ranges__label--min {
     left: 0
 }
 
-.input-range__label--max {
+.input-ranges__label--max {
     right: 0
 }
 
-.input-range__label--value {
+.input-ranges__label--value {
     position: absolute;
     top: -1.8rem
 }
 
-.input-range__label-container {
+.input-ranges__label-container {
     left: -50%;
     position: relative
 }
 
-.input-range__label--max .input-range__label-container {
+.input-ranges__label--max .input-ranges__label-container {
     left: 50%
 }
 
-.input-range__track {
+.input-ranges__track {
     background: #eeeeee;
     border-radius: .3rem;
     cursor: pointer;
@@ -5567,11 +5567,11 @@ header.nav-innerpage-style.style2 {
     transition: left .3s ease-out,width .3s ease-out
 }
 
-.input-range--disabled .input-range__track {
+.input-ranges--disabled .input-ranges__track {
     background: #eeeeee
 }
 
-.input-range__track--background {
+.input-ranges__track--background {
     left: 0;
     margin-top: -.15rem;
     position: absolute;
@@ -5579,11 +5579,11 @@ header.nav-innerpage-style.style2 {
     top: 50%
 }
 
-.input-range__track--active {
+.input-ranges__track--active {
     background: #3f51b5
 }
 
-.input-range {
+.input-ranges {
     height: 1rem;
     position: relative;
     width: 100%
@@ -5610,7 +5610,7 @@ header.nav-innerpage-style.style2 {
     position: relative
 }
 
-.form-st2 .form-control {
+.form-st2 .form-controls {
     border-radius: 8px;
     border: 1px solid #dddddd;
     -webkit-box-shadow: none;
@@ -5620,12 +5620,12 @@ header.nav-innerpage-style.style2 {
     padding-left: 15px
 }
 
-.form-st2 .form-control:placeholder {
+.form-st2 .form-controls:placeholder {
     color: #717171;
     /* font-family: var(--title-font-family) */
 }
 
-.form-st2 .form-control.active,.form-st2 .form-control:focus {
+.form-st2 .form-controls.active,.form-st2 .form-controls:focus {
     border: 1px solid transparent;
     outline: 2px solid #181a20
 }
@@ -5641,14 +5641,14 @@ header.nav-innerpage-style.style2 {
     width: 100%
 }
 
-.input-group>.form-control,.input-group>.form-floating,.input-group>.form-select {
+.input-group>.form-controls,.input-group>.form-floating,.input-group>.form-select {
     position: relative;
     flex: 1 1 auto;
     width: 1%;
     min-width: 0
 }
 
-.input-group>.form-control:focus,.input-group>.form-floating:focus-within,.input-group>.form-select:focus {
+.input-group>.form-controls:focus,.input-group>.form-floating:focus-within,.input-group>.form-select:focus {
     z-index: 5
 }
 
@@ -5676,13 +5676,13 @@ header.nav-innerpage-style.style2 {
     border-radius:.375rem
 }
 
-.input-group-lg>.btn,.input-group-lg>.form-control,.input-group-lg>.form-select,.input-group-lg>.input-group-text {
+.input-group-lg>.btn,.input-group-lg>.form-controls,.input-group-lg>.form-select,.input-group-lg>.input-group-text {
     padding: .5rem 1rem;
     font-size: 1.25rem;
     border-radius:.5rem
 }
 
-.input-group-sm>.btn,.input-group-sm>.form-control,.input-group-sm>.form-select,.input-group-sm>.input-group-text {
+.input-group-sm>.btn,.input-group-sm>.form-controls,.input-group-sm>.form-select,.input-group-sm>.input-group-text {
     padding: .25rem .5rem;
     font-size: .875rem;
     border-radius:.25rem
@@ -5692,12 +5692,12 @@ header.nav-innerpage-style.style2 {
     padding-right: 3rem
 }
 
-.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-controls,.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0
 }
 
-.input-group.has-validation>.dropdown-toggle:nth-last-child(n+4),.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-control,.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select,.input-group.has-validation>:nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.input-group.has-validation>.dropdown-toggle:nth-last-child(n+4),.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-controls,.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select,.input-group.has-validation>:nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0
 }
@@ -5708,14 +5708,14 @@ header.nav-innerpage-style.style2 {
     border-bottom-left-radius: 0
 }
 
-.input-group>.form-floating:not(:first-child)>.form-control,.input-group>.form-floating:not(:first-child)>.form-select {
+.input-group>.form-floating:not(:first-child)>.form-controls,.input-group>.form-floating:not(:first-child)>.form-select {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0
 }
-.input-group>.form-control:not(:focus).is-valid,.input-group>.form-floating:not(:focus-within).is-valid,.input-group>.form-select:not(:focus).is-valid,.was-validated .input-group>.form-control:not(:focus):valid,.was-validated .input-group>.form-floating:not(:focus-within):valid,.was-validated .input-group>.form-select:not(:focus):valid {
+.input-group>.form-controls:not(:focus).is-valid,.input-group>.form-floating:not(:focus-within).is-valid,.input-group>.form-select:not(:focus).is-valid,.was-validated .input-group>.form-controls:not(:focus):valid,.was-validated .input-group>.form-floating:not(:focus-within):valid,.was-validated .input-group>.form-select:not(:focus):valid {
     z-index: 3
 }
-.input-group>.form-control:not(:focus).is-invalid,.input-group>.form-floating:not(:focus-within).is-invalid,.input-group>.form-select:not(:focus).is-invalid,.was-validated .input-group>.form-control:not(:focus):invalid,.was-validated .input-group>.form-floating:not(:focus-within):invalid,.was-validated .input-group>.form-select:not(:focus):invalid {
+.input-group>.form-controls:not(:focus).is-invalid,.input-group>.form-floating:not(:focus-within).is-invalid,.input-group>.form-select:not(:focus).is-invalid,.was-validated .input-group>.form-controls:not(:focus):invalid,.was-validated .input-group>.form-floating:not(:focus-within):invalid,.was-validated .input-group>.form-select:not(:focus):invalid {
     z-index: 4
 }
 .btn-toolbar .input-group {
@@ -5834,7 +5834,7 @@ header.nav-innerpage-style.style2 {
     padding: 8px;
     box-sizing: border-box;
 }
-.form-control {
+.form-controls {
     display: block;
     width: 100%;
     padding: .375rem .75rem;
@@ -5853,20 +5853,20 @@ header.nav-innerpage-style.style2 {
 }
 
 @media (prefers-reduced-motion:reduce) {
-    .form-control {
+    .form-controls {
         transition: none
     }
 }
 
-.form-control[type=file] {
+.form-controls[type=file] {
     overflow: hidden
 }
 
-.form-control[type=file]:not(:disabled):not([readonly]) {
+.form-controls[type=file]:not(:disabled):not([readonly]) {
     cursor: pointer
 }
 
-.form-control:focus {
+.form-controls:focus {
     color: #343a40;
     background-color: var(--bs-body-bg);
     border-color: #86b7fe;
@@ -5874,33 +5874,33 @@ header.nav-innerpage-style.style2 {
     box-shadow: 0 0 0 .25rem #0d6efd40
 }
 
-.form-control::-webkit-date-and-time-value {
+.form-controls::-webkit-date-and-time-value {
     min-width: 85px;
     height: 1.5em;
     margin: 0
 }
 
-.form-control::-webkit-datetime-edit {
+.form-controls::-webkit-datetime-edit {
     display: block;
     padding: 0
 }
 
-.form-control::-moz-placeholder {
+.form-controls::-moz-placeholder {
     color: var(--bs-secondary-color);
     opacity: 1
 }
 
-.form-control::placeholder {
+.form-controls::placeholder {
     color: var(--bs-secondary-color);
     opacity: 1
 }
 
-.form-control:disabled {
+.form-controls:disabled {
     background-color: #343a40;
     opacity: 1
 }
 
-.form-control::-webkit-file-upload-button {
+.form-controls::-webkit-file-upload-button {
     padding: .375rem .75rem;
     margin: -.375rem -.75rem;
     -webkit-margin-end: .75rem;
@@ -5915,7 +5915,7 @@ header.nav-innerpage-style.style2 {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
 }
 
-.form-control::file-selector-button {
+.form-controls::file-selector-button {
     padding: .375rem .75rem;
     margin: -.375rem -.75rem;
     -webkit-margin-end: .75rem;
@@ -5930,25 +5930,25 @@ header.nav-innerpage-style.style2 {
 }
 
 @media (prefers-reduced-motion:reduce) {
-    .form-control::-webkit-file-upload-button {
+    .form-controls::-webkit-file-upload-button {
         -webkit-transition: none;
         transition: none
     }
 
-    .form-control::file-selector-button {
+    .form-controls::file-selector-button {
         transition: none
     }
 }
 
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+.form-controls:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
     background-color: #343a40
 }
 
-.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+.form-controls:hover:not(:disabled):not([readonly])::file-selector-button {
     background-color: #343a40
 }
 
-.form-control-plaintext {
+.form-controls-plaintext {
     display: block;
     width: 100%;
     padding: .375rem 0;
@@ -5960,90 +5960,90 @@ header.nav-innerpage-style.style2 {
     border-width: 1px 0
 }
 
-.form-control-plaintext:focus {
+.form-controls-plaintext:focus {
     outline: 0
 }
 
-.form-control-plaintext.form-control-lg,.form-control-plaintext.form-control-sm {
+.form-controls-plaintext.form-controls-lg,.form-controls-plaintext.form-controls-sm {
     padding-right: 0;
     padding-left: 0
 }
 
-.form-control-sm {
+.form-controls-sm {
     min-height: calc(1.5em + .5rem + calc(1px * 2));
     padding: .25rem .5rem;
     font-size: .875rem;
     border-radius:.25rem
 }
 
-.form-control-sm::-webkit-file-upload-button {
+.form-controls-sm::-webkit-file-upload-button {
     padding: .25rem .5rem;
     margin: -.25rem -.5rem;
     -webkit-margin-end: .5rem;
     margin-inline-end:.5rem}
 
-.form-control-sm::file-selector-button {
+.form-controls-sm::file-selector-button {
     padding: .25rem .5rem;
     margin: -.25rem -.5rem;
     -webkit-margin-end: .5rem;
     margin-inline-end:.5rem}
 
-.form-control-lg {
+.form-controls-lg {
     min-height: calc(1.5em + 1rem + calc(1px * 2));
     padding: .5rem 1rem;
     font-size: 1.25rem;
     border-radius:.5rem
 }
 
-.form-control-lg::-webkit-file-upload-button {
+.form-controls-lg::-webkit-file-upload-button {
     padding: .5rem 1rem;
     margin: -.5rem -1rem;
     -webkit-margin-end: 1rem;
     margin-inline-end:1rem}
 
-.form-control-lg::file-selector-button {
+.form-controls-lg::file-selector-button {
     padding: .5rem 1rem;
     margin: -.5rem -1rem;
     -webkit-margin-end: 1rem;
     margin-inline-end:1rem}
 
-textarea.form-control {
+textarea.form-controls {
     min-height: calc(1.5em + .75rem + calc(1px * 2))
 }
 
-textarea.form-control-sm {
+textarea.form-controls-sm {
     min-height: calc(1.5em + .5rem + calc(1px * 2))
 }
 
-textarea.form-control-lg {
+textarea.form-controls-lg {
     min-height: calc(1.5em + 1rem + calc(1px * 2))
 }
 
-.form-control-color {
+.form-controls-color {
     width: 3rem;
     height: calc(1.5em + .75rem + calc(1px * 2));
     padding: .375rem
 }
 
-.form-control-color:not(:disabled):not([readonly]) {
+.form-controls-color:not(:disabled):not([readonly]) {
     cursor: pointer
 }
 
-.form-control-color::-moz-color-swatch {
+.form-controls-color::-moz-color-swatch {
     border: 0!important;
     border-radius:.375rem
 }
 
-.form-control-color::-webkit-color-swatch {
+.form-controls-color::-webkit-color-swatch {
     border: 0!important;
     border-radius:.375rem
 }
 
-.form-control-color.form-control-sm {
+.form-controls-color.form-controls-sm {
     height: calc(1.5em + .5rem + calc(1px * 2))
 }
 
-.form-control-color.form-control-lg {
+.form-controls-color.form-controls-lg {
     height: calc(1.5em + 1rem + calc(1px * 2))
 }
 .selection:first-child label {
@@ -6095,7 +6095,7 @@ textarea.form-control-lg {
     stroke: currentcolor;
     stroke-width: 0;
 }
-.space-area .form-control {
+.space-area .form-controls {
     max-width: 130px;
     height: 50px
 }
@@ -6103,7 +6103,7 @@ textarea.form-control-lg {
     position: relative
 }
 
-.form-style1 .form-control {
+.form-style1 .form-controls {
     border-radius: 8px;
     border: 1px solid #dddddd;
     -webkit-box-shadow: none;
@@ -6114,32 +6114,32 @@ textarea.form-control-lg {
     padding-left: 15px
 }
 
-.form-style1 .form-control::-webkit-input-placeholder {
+.form-style1 .form-controls::-webkit-input-placeholder {
     color: #717171;
     /* font-family: var(--title-font-family) */
 }
 
-.form-style1 .form-control::-moz-placeholder {
+.form-style1 .form-controls::-moz-placeholder {
     color: #717171;
     /* font-family: var(--title-font-family) */
 }
 
-.form-style1 .form-control:-ms-input-placeholder {
+.form-style1 .form-controls:-ms-input-placeholder {
     color: #717171;
     /* font-family: var(--title-font-family) */
 }
 
-.form-style1 .form-control::-ms-input-placeholder {
+.form-style1 .form-controls::-ms-input-placeholder {
     color: #717171;
     /* font-family: var(--title-font-family) */
 }
 
-.form-style1 .form-control::placeholder {
+.form-style1 .form-controls::placeholder {
     color: #717171;
     /* font-family: var(--title-font-family) */
 }
 
-.form-style1 .form-control.active,.form-style1 .form-control:focus {
+.form-style1 .form-controls.active,.form-style1 .form-controls:focus {
     border: 1px solid transparent;
     outline: 2px solid #181a20;
     color: #181a20
@@ -6337,7 +6337,9 @@ textarea.form-control-lg {
 .ml-4 {
     margin-left: 1.5rem!important
 }
-
+.nav-tabs .nav-link {
+    margin-bottom: 0
+}
 
 
 /* ----------------------------------End Banner--------------------------------------- */
