@@ -496,8 +496,8 @@
     opacity: 0
   }
 
-
-  .nav {
+  /* ปิดไว้ก่อน navbaของpod 14/2/24*/
+  /* .nav {
     --bs-nav-link-ap-padding-x: 1rem;
     --bs-nav-link-ap-padding-y: .5rem;
     --bs-nav-link-ap-font-weight: ;
@@ -508,11 +508,6 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none
-  }
-
-  .nav-link {
-    display: block;
-    padding: .5rem 1rem
   }
 
   .nav-link:hover,.nav-link:focus {
@@ -527,12 +522,6 @@
     margin-bottom: 0
   }
 
-  .nav-tabs .nav-link {
-    border: 0 solid transparent;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px
-  }
-
   .nav-tabs .nav-link:hover,.nav-tabs .nav-link:focus {
     border-color: #e9ecef #e9ecef #dee2e6
   }
@@ -542,6 +531,21 @@
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff
   }
+
+  .nav-tabs .nav-link {
+    border: 0 solid transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+  } */
+
+  .nav-link {
+    display: block;
+    padding: .5rem 1rem
+  }
+
+
+
+
 /* ปิดไว้ก่อน */
   /* .card {
     position: relative;
