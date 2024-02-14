@@ -1,9 +1,5 @@
 @csrf
-@if(Session::has('property_created'))
-    <div class="alert alert-success">
-        {{ Session::get('property_created') }}
-    </div>
-@endif
+
 <div class="dashboard__main pl-d-0-md">
     <div class="dashboard__content property-page bgc-f7">
         <div class="row align-items-center pb-d-40">
@@ -50,22 +46,31 @@
                             <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
                                 aria-labelledby="nav-item1-tab">
                                 <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
+                                    @if(Session::has('property_created'))
+                                        <div class="alert alert-success">
+                                            {{ Session::get('property_created') }}
+                                        </div>
+                                    @endif
                                     <h4 class="title fs-17 mb-6">Property Description</h4>
-
                                     <form method="POST" action="{{ route('properties') }}">
-                                        @csrf <!-- ใส่ CSRF token เพื่อความปลอดภัย -->
+                                        @csrf <!-- ใส่ CSRF token -->
+
+                                        {{-- <input type="hidden" name="id_properties" value="{{$data['property']->id_properties}}"> --}}
+                                        {{-- <pre>{{print_r($data['property'])}}</pre> --}}
 
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                    <input type="text" class="form-control" placeholder="Your Name" name="title">
+                                                     <input type="text" class="form-control" placeholder="Your Name" name="title" >
+                                                     {{-- value="{{$data['property']->title}}" --}}
+
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
-                                                    <textarea name="description" id="editor"></textarea>
+                                                    <textarea name="description" id="editor">{{--{{json_decode($data['property']->description)}}--}}</textarea>
                                                 </div>
                                             </div>
 
@@ -94,7 +99,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                    <input type="text" class="form-control" placeholder="Price" name="price">
+                                                    <input type="number" class="form-control" placeholder="Price" name="price">
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +167,7 @@
 
                                                         <select name="provinces" id="provinces" class="form-control">
                                                             <option value="" selected disabled>กรุณาเลือกจังหวัด</option>
-                                                            @foreach ($provinces as $value)
+                                                            @foreach ($data['provinces'] as $value)
                                                                 <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
                                                             @endforeach
                                                         </select>

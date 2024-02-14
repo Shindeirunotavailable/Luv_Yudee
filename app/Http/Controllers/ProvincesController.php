@@ -9,15 +9,6 @@ use App\Models\District;
 
 class ProvincesController extends Controller
 {
-    public function sidebar()
-    {
-        $provinces = Province::all(); // ดึงข้อมูลจังหวัดทั้งหมดจากฐานข้อมูล
-        $amphures = Amphure::all();
-        $districts = District::all();
-
-        return view('dashboard.sidebar', compact('provinces','districts','amphures'));
-    }
-
     public function db_provinces(Request $request)
     {
 
