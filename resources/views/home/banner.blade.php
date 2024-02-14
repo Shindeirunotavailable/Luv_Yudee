@@ -382,16 +382,16 @@
                     </div>
                     <div class="home-icon-st mt-30 d-none d-sm-flex animation-up-4">
                         <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
-                            <i class=" icon fa-solid fa-house"></i> Houses
+                            <i class=" icon fa-solid fa-house mr-10"></i> Houses
                         </a>
                         <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
-                            <i class="icon fa-regular fa-building"></i>Apartments
+                            <i class="icon fa-regular fa-building  mr-10"></i>Apartments
                         </a>
                         <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
-                            <i class="icon fa-solid fa-house-laptop"></i>Office
+                            <i class="icon fa-solid fa-house-laptop  mr-10"></i>Office
                         </a>
                         <a class="d-flex align-items-center dark-color ff-heading me-4"href="/grid-full-4-col">
-                            <i class="icon fa-solid fa-house-flood-water"></i>Villa
+                            <i class="icon fa-solid fa-house-flood-water  mr-10"></i>Villa
                         </a>
                     </div>
                 </div>
