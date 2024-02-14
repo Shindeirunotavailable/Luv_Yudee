@@ -4716,7 +4716,7 @@ header.nav-innerpage-style.style2 {
 }
 
 .advance-search .nav-items {
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative
 }
 
