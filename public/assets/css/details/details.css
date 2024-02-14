@@ -1,13 +1,6 @@
 
-/* ปรับขนาดต่างๆ */
-.h-250{
-    height: 250px;
-}
-.h-60{
-    height: 60px;
-}
 
-/* gird-list box */
+      /* ---------------------------- ส่วน gird-list box  ------------------------------------------ */
 
 .list-sidebar-style1 {
     background-color: #fff;
@@ -29,6 +22,7 @@
     background-color: white;
     color: black;
     width: 90px;
+    z-index: 1;
   }
 
   .text-list {
@@ -51,6 +45,7 @@
     background-color: #0071bc;
     color: rgb(255, 255, 255);
     width: 100px;
+    z-index: 1;
   }
 
   .block-list{
@@ -74,22 +69,22 @@
   
   .img-sell {
     position: relative;
-    transition: transform .4s ease;
     height: 230px;
   }
   
   .img-sell:hover {
+    transition: transform .4s ease;
     transform: scale(1.1) rotate(-1deg);
   }
 
-  .block-text:hover{
+  /* .block-text:hover{
     transition: transform 0.4s ease, opacity 0.4s ease;
     transform: translateY(100%);
     opacity: 0;
-  }
+  } */
 
+      /* ---------------------------- ส่วน ปุ่มค้นหา ------------------------------------------ */
 
-  /* ปุ่มค้นหา */
   .search_area {
       position: relative
   }
@@ -105,25 +100,26 @@
       top: 5px
   }
 
-  /* ปุ่ม radio */
+    /* ---------------------------- ส่วน radio ------------------------------------------ */
 
   .radio-style {
-    /* height: 30px; */
-    /* width: 30px; */
-    accent-color: #9d3035;
+    bottom: 4px;
+    height: 20px;
+    width: 20px;
+    accent-color: #0071bc;
   }
 
 
-/* checkbox */
+    /* ---------------------------- ส่วน checkbox ------------------------------------------ */
+
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color:red ;
+
+  background-color:#0071bc ;
 }
 
 
 
-/* radio */
-
-   /* radio */
+    /* ---------------------------- ส่วน radio ------------------------------------------ */
 
    .price-content {
     display: flex;
@@ -139,7 +135,7 @@
 
   .range-fill {
     height: 6px;
-    background-color: #36b37e;
+    background-color: #0071bc;
     position: absolute;
     z-index: 1;
   }
@@ -157,7 +153,7 @@
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: #36b37e;
+    background: #0071bc;
     cursor: pointer;
     margin-top: -5px;
     position: relative;
@@ -175,7 +171,7 @@
 /* secart */
 .choices__inner{
   background-color: white !important;
-  border: 1px solid #0083B0 !important;
+  border: 1px solid #0071bc !important;
 }
 .choices__input {
   background-color: transparent !important;
@@ -187,7 +183,7 @@ input:focus-visible{
   border: transparent !important;
 }
 
-/* Bedrooms */
+    /* ---------------------------- ส่วน Bedrooms ------------------------------------------ */
 
 
 .selection:first-child label {
@@ -203,8 +199,7 @@ input:focus-visible{
   border: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
-  color: var(--headings-color);
-  font-family: var(--title-font-family);
+  color:#080808;
   font-weight: 600;
   font-size: 13px;
   outline: 1px solid #dddddd;
@@ -217,7 +212,110 @@ input:focus-visible{
 }
 
 .selection input[type=radio]:checked~label {
-  border: 2px solid #181a20;
+  border: 2px solid #0071bc !important;
   /* outlinie: transparent; */
   z-index: 1
+}
+
+    /* ----------------------------ปรับขนาดและสีต่างๆ------------------------------------------ */
+
+
+.font-style{
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 600;
+
+}
+
+.h-250{
+  height: 250px;
+}
+.h-60{
+  height: 60px;
+}
+
+.p-10{
+  padding: 10px;
+}
+
+
+
+/* side-bar-mobile */
+.sidebar {
+  z-index: 1000 !important; /* ค่า z-index ที่มากกว่าทุกองค์ประกอบที่อยู่ในหน้าเว็บ */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0; /* Change right to left */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 0px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  left: 195px; /* Change right to left */
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+element.style {
+  padding-top: 33px !important;
+}
+
+.mobile{
+  margin-right: 1rem;
+  padding-left: 11px;
+  padding-top: 3px;
+  height: 30px;
+  width: 100px;
+  background-color: red;
+  border-radius: 30px;
+  font-size: 13px;
+
+ }
+
+
+/* เมื่อขนาดจอใหญ่กว่า 770px จะไม่แสดง แต่ถ้าขนาดจอเล็กกว่า 770px จะแสดง */
+
+@media screen and (min-width: 770px) { 
+  .mobile-media {
+    display: none;
+  }
+}
+
+/* เมื่อขนาดจอใหญ่กว่า 770px จะแสดงผล แต่ถ้าขนาดจอเล็กกว่า 770px จะไม่แสดง */
+
+@media screen and (max-width: 770px) { 
+  .mobile-laptop {
+    display: none;
+  }
+}
+
+/* ดึงมา */
+.pcs_dropdown .form-select {
+  border: none;
+  font-size: 15px;
+  background-color: transparent
+}
+
+.border-right{
+  border-right: 1px solid #dddddd;
+}
+
+
+.border-left{
+  border-left: 1px solid #dddddd;
 }
