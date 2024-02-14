@@ -112,7 +112,7 @@
     /* -webkit-focus-ring-color */
   }
 
-  input,button,textarea {
+  /* input,button,textarea {
     margin: 0;
     font-family: inherit;
     font-size: inherit;
@@ -121,7 +121,7 @@
 
   button,input {
     overflow: visible
-  }
+  } */
 
   button {
     text-transform: none
@@ -141,10 +141,10 @@
     border-style: none
   }
 
-  input[type=radio],input[type=checkbox] {
+  /* input[type=radio],input[type=checkbox] {
     box-sizing: border-box;
     padding: 0;
-  }
+  } */
 
   textarea {
     overflow: auto;
@@ -466,7 +466,7 @@
     height: auto
   }
 
-  .form-check {
+  /* .form-check {
     position: relative;
     display: block;
     padding-left: 1.25rem
@@ -476,15 +476,15 @@
     position: absolute;
     margin-top: .3rem;
     margin-left: -1.25rem
-  }
+  } */
 
   .form-check-input:disabled~.form-check-label {
     color: #ababab
   }
 
-  .form-check-label {
+  /* .form-check-label {
     margin-bottom: 0
-  }
+  } */
 
   @media(prefers-reduced-motion:reduce) {
     .fade {
