@@ -67,7 +67,7 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 Route::any('sidebar','App\Http\Controllers\ProvincesController@sidebar');
 Route::post('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
 // Route::post('pp_addproperty','App\Http\Controllers\PropertyController@pp_addproperty');
-Route::post('/properties/store', [PropertyController::class, 'store'])->name('properties.store');
+// Route::post('/properties/store', [PropertyController::class, 'store'])->name('properties.store');
 
 Route::post('store_property', 'App\Http\Controllers\PropertyController@store')->name('store_property');
 
