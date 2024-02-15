@@ -52,25 +52,25 @@
                                         </div>
                                     @endif
                                     <h4 class="title fs-17 mb-6">Property Description</h4>
+
+                                    {{-- ใช้เพื่อทดสอบ --}}
                                     <form method="POST" action="{{ route('properties') }}">
-                                        @csrf <!-- ใส่ CSRF token -->
-
-                                        {{-- <input type="hidden" name="id_properties" value="{{$data['property']->id_properties}}"> --}}
-                                        {{-- <pre>{{print_r($data['property'])}}</pre> --}}
-
+                                        @csrf
+                                        @if (isset($data['id_properties']))
+                                            <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}">
+                                        @endif
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                     <input type="text" class="form-control" placeholder="Your Name" name="title" >
-                                                     {{-- value="{{$data['property']->title}}" --}}
+                                                     <input type="text" class="form-control" placeholder="Your Name" name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}} " >
 
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
-                                                    <textarea name="description" id="editor">{{--{{json_decode($data['property']->description)}}--}}</textarea>
+                                                    <textarea name="description" id="editor">{{isset($data['property']->description)? json_decode($data['property']->description) :"" }}</textarea>
                                                 </div>
                                             </div>
 
@@ -90,8 +90,8 @@
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
                                                     <select id="propertystatus" name="status[]" class="form-control" style="width: 100%; height: 38px;" multiple>
-                                                        <option value="ขาย">ขาย</option>
-                                                        <option value="เช่า">เช่า</option>
+                                                        <option value="ขาย"{{ isset($data['property']->status) && $data['property']->status=='ขาย' ? "selected" :""}} >ขาย</option>
+                                                        <option value="เช่า" {{ isset($data['property']->status) && $data['property']->status=='เช่า' ? "selected" :""}}>เช่า</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -99,13 +99,15 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                    <input type="number" class="form-control" placeholder="Price" name="price">
+                                                    <input type="text" class="form-control" placeholder="Price" name="price" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price : "" }}">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
+
+
                                 </div>
                             </div>
 
