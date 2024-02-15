@@ -50,14 +50,14 @@ p {
     margin-bottom: 1rem
 }
 
-ul {
+/* ul {
     padding-left: 2rem
 }
 
 ul {
     margin-top: 0;
     margin-bottom: 1rem
-}
+} */
 
 ul ul {
     margin-bottom: 0
@@ -699,9 +699,9 @@ h2 a,h4 a,p a,span a {
     font-size: 20px
 }
 
-li {
+/* li {
     list-style-type: none
-}
+} */
 
 @media (max-width: 575.98px) {
     .h2,h2 {

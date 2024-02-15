@@ -354,67 +354,76 @@
                                     <div class="row">
                                         <div class="row-ap flex-lg-row flex-wrap">
                                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                                <div class="checkbox-style1"><label
-                                                        class="custom_checkbox">Attic<input type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Basketball court<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Air Conditioning<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Lawn<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Swimming Pool<input
-                                                            type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Barbeque<input type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Microwave<input type="checkbox"><span
-                                                            class="checkmark"></span></label></div>
+                                                <div class="checkbox-style1">
+                                                    <label class="custom_checkbox">Attic<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Basketball court<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Air Conditioning<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Lawn<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Swimming Pool<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Barbeque<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Microwave<input type="checkbox">
+                                                    <span class="checkmark"></span></label></div>
                                             </div>
                                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                                <div class="checkbox-style1"><label class="custom_checkbox">TV
-                                                        Cable<input type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Dryer<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Outdoor Shower<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Washer<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Gym<input type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Ocean view<input
-                                                            type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Private space<input
-                                                            type="checkbox"><span class="checkmark"></span></label>
+                                                <div class="checkbox-style1">
+                                                    <label class="custom_checkbox">TV Cable<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Dryer<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Outdoor Shower<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Washer<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Gym<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Ocean view<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Private space<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-6 col-lg-4">
-                                                <div class="checkbox-style1"><label class="custom_checkbox">Lake
-                                                        view<input type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Wine cellar<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Front yard<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Refrigerator<input type="checkbox"
-                                                            checked=""><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">WiFi<input type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Laundry<input type="checkbox"><span
-                                                            class="checkmark"></span></label><label
-                                                        class="custom_checkbox">Sauna<input type="checkbox"><span
-                                                            class="checkmark"></span></label></div>
+                                                <div class="checkbox-style1">
+                                                    <label class="custom_checkbox">Lake view<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Wine cellar<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Front yard<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Refrigerator<input type="checkbox"
+                                                    checked=""><span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">WiFi<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Laundry<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+
+                                                    <label class="custom_checkbox">Sauna<input type="checkbox">
+                                                    <span class="checkmark"></span></label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

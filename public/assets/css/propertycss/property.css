@@ -1081,10 +1081,10 @@
     justify-content: space-between!important
   }
 
-  .align-items-center {
+  /* .align-items-center {
     -ms-flex-align: center!important;
     align-items: center!important
-  }
+  } */
 
   @media(min-width: 576px) {
 
