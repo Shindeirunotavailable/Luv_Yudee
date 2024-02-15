@@ -59,16 +59,16 @@
     margin-left: 0
   }
 
-  a {
+  /* a {
     color: #000000;
     text-decoration: none;
     background-color: transparent
-  }
+  } */
 
-  a:hover {
+  /* a:hover {
     color: #09838d;
     text-decoration: underline
-  }
+  } */
 
   a:not([href]) {
     color: inherit;
@@ -2146,13 +2146,13 @@
     color: #ababab
   }
 
-  a {
+  /* a {
     transition: all .2s
-  }
+  } */
 
-  a:hover {
+  /* a:hover {
     text-decoration: none
-  }
+  } */
 
 
 

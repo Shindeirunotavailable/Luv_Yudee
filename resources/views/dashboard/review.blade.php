@@ -36,7 +36,7 @@
                                 <div class="col-md-12">
 
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
-                                        <img src="{{ asset('/assets/imagesPropetry/review-1.jpg') }}"
+                                        <img src="{{ asset('/assets/images/review-1.jpg') }}"
                                             alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
@@ -85,7 +85,7 @@
 
                                 <div class="col-md-12">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
-                                        <img src="{{ asset('/assets/imagesPropetry/review-2.jpg') }}"
+                                        <img src="{{ asset('/assets/images/review-2.jpg') }}"
                                             alt="Viola Austin" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
@@ -134,7 +134,7 @@
 
                                 <div class="col-md-12">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ asset('/assets/imagesPropetry/review-3.jpg') }}"
+                                        <img src="{{ asset('/assets/images/review-3.jpg') }}"
                                             alt="Nettie Singleton" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
@@ -183,7 +183,7 @@
 
                                 <div class="col-md-12">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ asset('/assets/imagesPropetry/review-1.jpg') }}"
+                                        <img src="{{ asset('/assets/images/review-1.jpg') }}"
                                             alt="Vernon Fisher" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">
@@ -232,7 +232,7 @@
 
                                 <div class="col-md-12 ">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                        <img src="{{ asset('/assets/imagesPropetry/review-4.png') }}"
+                                        <img src="{{ asset('/assets/images/review-4.png') }}"
                                             alt="Harry Iglesias" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
                                         <div class="media-body">

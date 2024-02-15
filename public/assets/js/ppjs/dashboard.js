@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     const sidebarItems = $(".sidebar_list_item");
-    const items = $(".items-center");
+    const items = $(".items-center-db");
 
     sidebarItems.each(function(index, item) {
         $(item).on("click", function() {

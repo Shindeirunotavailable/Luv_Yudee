@@ -1985,3 +1985,7 @@ input[type="submit"] {
     margin-left: 0rem!important
 }
 }
+.items-center-db{
+    font-size: 14px;
+    align-items: center;
+}
