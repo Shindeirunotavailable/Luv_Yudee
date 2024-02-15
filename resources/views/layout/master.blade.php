@@ -69,6 +69,8 @@
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
     <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
     <script src="{{ asset('/assets/js/login.js') }}"></script>
+    <script src="{{ asset('/assets/js/details/details.js') }}"></script>
+
 
 
 </body>
