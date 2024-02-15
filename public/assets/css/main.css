@@ -5673,8 +5673,8 @@ header.nav-innerpage-style.style2 {
     color: #343a40;
     text-align: center;
     white-space: nowrap;
-    background-color: #2b3035;
-    border: 1px solid #495057;
+    /* background-color: #2b3035;
+    border: 1px solid #495057; */
     border-radius:.375rem
 }
 

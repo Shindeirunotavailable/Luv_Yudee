@@ -10,7 +10,7 @@
     -o-box-shadow: 0px 1px 4px rgba(24,26,32,.07);
     box-shadow: 0 1px 4px #181a2012;
     border-radius: 12px;
-    margin-bottom: 30px
+    /* margin-bottom: 30px */
 }
 
 .text-block {
@@ -168,20 +168,6 @@
     border: none;
   }
    
-/* secart */
-.choices__inner{
-  background-color: white !important;
-  border: 1px solid #0071bc !important;
-}
-.choices__input {
-  background-color: transparent !important;
-}
-/* .choices__list{
-  border-radius: 25px !important;
-} */
-input:focus-visible{
-  border: transparent !important;
-}
 
     /* ---------------------------- ส่วน Bedrooms ------------------------------------------ */
 
@@ -238,6 +224,9 @@ input:focus-visible{
   padding: 10px;
 }
 
+.mr-165{
+  margin-right: 165px;
+}
 
 
 /* side-bar-mobile */
@@ -281,24 +270,28 @@ element.style {
   padding-top: 3px;
   height: 30px;
   width: 100px;
-  background-color: red;
+  background-color: #0071bc;
+  color: #fff;
   border-radius: 30px;
   font-size: 13px;
 
  }
 
 
-/* เมื่อขนาดจอใหญ่กว่า 770px จะไม่แสดง แต่ถ้าขนาดจอเล็กกว่า 770px จะแสดง */
+/* เมื่อขนาดจอใหญ่กว่า 768px จะไม่แสดง แต่ถ้าขนาดจอเล็กกว่า 768px จะแสดง */
 
 @media screen and (min-width: 770px) { 
   .mobile-media {
     display: none;
   }
+  .list-mobile{
+    display: none;
+  }
 }
 
-/* เมื่อขนาดจอใหญ่กว่า 770px จะแสดงผล แต่ถ้าขนาดจอเล็กกว่า 770px จะไม่แสดง */
+/* เมื่อขนาดจอใหญ่กว่า 768px จะแสดงผล แต่ถ้าขนาดจอเล็กกว่า 768px จะไม่แสดง */
 
-@media screen and (max-width: 770px) { 
+@media screen and (max-width: 768px) { 
   .mobile-laptop {
     display: none;
   }
@@ -319,3 +312,52 @@ element.style {
 .border-left{
   border-left: 1px solid #dddddd;
 }
+
+
+
+
+/*/////////////////////////////////// secart ///////////////////////////////////  */
+
+.choices:last-child {
+  z-index: 10;
+  margin-bottom: 0;
+}
+
+.style-multiple{
+  border-radius: 30px;
+}
+.choices__inner{
+  border-radius: 10px !important;
+  background-color: white !important;
+  border: 1px solid #0071bc !important;
+}
+
+.choices__input {
+  background-color: transparent !important;
+}
+
+/* .choices__list{
+  border-radius: 25px !important;
+} */
+
+input:focus-visible{
+  border: transparent !important;
+}
+
+
+/* option {
+  z-index: 30;
+  background: #db0080;
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  min-height: 100vh
+} */
+
+/* 
+.choices__list{
+  border-radius: 25px !important;
+  width: 92%;
+}
+input:focus-visible{
+  border: transparent !important;
+} */
