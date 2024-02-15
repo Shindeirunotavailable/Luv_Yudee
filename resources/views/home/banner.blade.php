@@ -1,4 +1,4 @@
-<section class="home-banner-style4 p-0 background-white">
+<section class="home-banner p-0 background-white">
     <div class="home-st4 max-width1600 bdr-24 position-relative mr-auto ml-auto mx20-lg">
         <div class="container">
             <div class="row">
@@ -36,7 +36,7 @@
                                                 <div
                                                     class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
                                                     <button class="btn-advance-search" type="button" data-bs-toggle="modal" data-bs-target="#advanceSeachModal" fdprocessedid="13esg">
-                                                        <i class="fa-solid fa-list-ul"></i>Advanced
+                                                        <i class="fa-solid fa-list-ul pr-10"></i>Advanced
                                                     </button>
                                                     <button class="icon-advance-search user-btn btn-search ml-4" type="button" fdprocessedid="5isoj8">
                                                         <i class="fa-solid fa-magnifying-glass"></i>
