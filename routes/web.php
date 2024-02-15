@@ -65,7 +65,7 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 // Route::post('/db_provinces', [ProvincesController::class, 'getData'])->name('db_provinces');
 //ด้นหลังของ @ คือชื่อเมธอดที่จะถูกเรียก
 Route::any('sidebar','App\Http\Controllers\PropertyController@sidebar');
-Route::post('db_provinces','App\Http\Controllers\ProvincesController@db_provinces')->name('db_provinces');
+Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');;
 
 

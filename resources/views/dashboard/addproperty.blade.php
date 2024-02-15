@@ -446,14 +446,6 @@
         </div>
     </footer>
 
-@if(session('property_data'))
-    <h1>Property Details</h1>
-    <p>Title: {{ session('property_data')['title'] }}</p>
-    <p>Description: {!! session('property_data')['description'] !!}</p>
-    <p>Category: {{ session('property_data')['category'] }}</p>
-    <p>Status: {{ session('property_data')['status'] }}</p>
-    <p>Price: {{ session('property_data')['price'] }}</p>
-@endif
 
 
 </div>

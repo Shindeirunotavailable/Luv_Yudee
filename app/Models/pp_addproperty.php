@@ -17,7 +17,5 @@ class pp_addproperty extends Model
             }else{
                return $query->get();
             }
-
-
     }
 }
