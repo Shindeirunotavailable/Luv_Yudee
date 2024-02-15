@@ -31,14 +31,14 @@ class PropertyController extends Controller
         $districts = District::all();
         $property = pp_addproperty::property($id_properties);
 
-        $this->data['property']=$property ;
         $this->data['provinces']=Province::all();
-        $this->data['districts']=District::all();
         $this->data['amphures']=Amphure::all();
+        $this->data['districts']=District::all();
+        $this->data['property']=$property ;
         // dd($property);
-
+        Session::flash('data', 'Property created successfully!');
         return view('dashboard.sidebardashboard')->with('data',$this->data);
-        // Session::flash('property_created', 'Property created successfully!');
+
         // return redirect('sidebar')->with('property_data', $data);
 
     }

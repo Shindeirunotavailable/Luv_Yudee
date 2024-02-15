@@ -46,9 +46,9 @@
                             <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
                                 aria-labelledby="nav-item1-tab">
                                 <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
-                                    @if(Session::has('property_created'))
+                                    @if(Session::has('data'))
                                         <div class="alert alert-success">
-                                            {{ Session::get('property_created') }}
+                                            {{ Session::get('data') }}
                                         </div>
                                     @endif
                                     <h4 class="title fs-17 mb-6">Property Description</h4>
