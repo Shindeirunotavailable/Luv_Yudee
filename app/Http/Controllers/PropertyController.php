@@ -37,7 +37,7 @@ class PropertyController extends Controller
         $this->data['amphures']=Amphure::all();
         // dd($property);
 
-        return view('dashboard.sidebar')->with('data',$this->data);
+        return view('dashboard.sidebardashboard')->with('data',$this->data);
         // Session::flash('property_created', 'Property created successfully!');
         // return redirect('sidebar')->with('property_data', $data);
 
