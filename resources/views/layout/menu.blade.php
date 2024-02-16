@@ -4,14 +4,20 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto">
                     <div class="d-flex align-items-center justify-content-between">
-                        <div class="logos mr-40"><a class="header-logo logo1" href="#"><img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px"></a>
-                            <a class="header-logo logo2 link-effect" href="/"><img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px"></a></div>
-                        <ul class="responsive-menu">
-                            <li class="v_list dropitem link-li"><a class="list-item" href="#">
-                                <span class="title menuActive">Home</span>
-                                <i class="fa-solid fa-angle-down fa-xl"></i>
+                        <div class="logos mr-40">
+                            <a class="header-logo logo1" href="/home">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
                             </a>
-                                <ul class="sub-menus">
+                            <a class="header-logo logo2 link-effect" href="/home">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
+                            </a>
+                        </div>
+                        <ul class="responsive-menu">
+                            <li class="v_list dropitem link-li"><a class="list-item" href="/home">
+                                <span class="title menuActive">Home</span>
+                                {{-- <i class="fa-solid fa-angle-down fa-xl"></i> --}}
+                            </a>
+                                {{-- <ul class="sub-menus">
                                     <li class="link-li"><a class="undefined" href="#">Home v1</a></li>
                                     <li class="link-li"><a class="undefined" href="#">Home v2</a></li>
                                     <li class="link-li"><a class="undefined" href="#">Home v3</a></li>
@@ -22,15 +28,15 @@
                                     <li class="link-li"><a class="undefined" href="#">Home v8</a></li>
                                     <li class="link-li"><a class="undefined" href="#">Home v9</a></li>
                                     <li class="link-li"><a class="undefined" href="#">Home v10</a></li>
-                                </ul>
+                                </ul> --}}
                             </li>
                             
                             <li class="v_list dropitem link-li">
-                                <a class="list-item link-effect" href="#">
+                                <a class="list-item link-effect" href="/property">
                                     <span class="title">Property</span>
-                                    <i class="fa-solid fa-angle-down fa-xl"></i>
+                                    {{-- <i class="fa-solid fa-angle-down fa-xl"></i> --}}
                                 </a>
-                                <ul class="sub-menus">
+                                {{-- <ul class="sub-menus">
                                     <li class="dropitem link-li">
                                         <a href="#"> <span class="title">Agents</span>
                                             <span class="fa-solid fa-angle-down fa-rotate-270 dropagent1"></span></span>
@@ -72,12 +78,12 @@
                                             <li class="link-li"><a class="undefined" href="/dashboard-my-profile">My Profile</a></li>
                                         </ul>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
-                            <li class="v_list dropitem link-li"><a class="list-item" href="#"><span
-                                        class="title">Contact Us</span><i
-                                        class="fa-solid fa-angle-down fa-xl"></i></a>
-                                <ul class="sub-menus">
+                            <li class="v_list dropitem link-li"><a class="list-item" href="/contact">
+                                <span class="title">Contact Us</span>
+                                {{-- <i class="fa-solid fa-angle-down fa-xl"></i></a> --}}
+                                {{-- <ul class="sub-menus">
                                     <li class="link-li"><a class="undefined" href="/about">About</a></li>
                                     <li class="link-li"><a class="undefined" href="/contact">Contact</a></li>
                                     <li class="link-li"><a class="undefined" href="/compare">Compate</a></li>
@@ -87,21 +93,27 @@
                                     <li class="link-li"><a class="undefined" href="/register">Register</a></li>
                                     <li class="link-li"><a class="undefined" href="/not-found">404</a></li>
                                     <li class="link-li"><a class="undefined" href="/invoice">Invoice</a></li>
-                                </ul>
+                                </ul> --}}
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
-                        <a href="#" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
-                            <i class="far fa-user-circle fz16 mr-2 pb-1"></i> 
+                        <a href="/login" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
+                            <i class="far fa-user-circle fz18 mr-2 pb-1"></i> 
                             <span class="d-none d-xl-block">Login / Register</span>
                         </a>
+                        {{-- <a class="user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="/dashboard-add-property">
+                            Add Property
+                            <i class="fal fa-arrow-right-long"></i>
+                        </a> --}}
                         <a class="user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="/dashboard-add-property">
                             Add Property
                             <i class="fal fa-arrow-right-long"></i>
                         </a>
+                        
+                        
                         <a class="sidemenus-btn filter-btn-right" href="#" id="toggleSidebar" data-bs-toggle="offcanvas" data-bs-target="#SidebarPanel" aria-controls="SidebarPanelLabel"> </a>
                     </div>
                 </div>
@@ -138,229 +150,33 @@
                             <nav class="menu-root css-menu-root">
                                 <ul class="css-pm">
                                     <li class="menuitem-root submenu-root active css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" href="/home" data-testid="menu-button-test-id" tabindex="0">
                                             <span class="menu-label css-fotw">Home</span>
-                                            <span class="submenu-expand-icon css-submenu-expand">
-                                                <span class="css-sub-icon"></span>
-                                            </span>
                                         </a>
-                                        <div data-testid="submenu-content-test-id" class="submenu-content css-submenu-content" style="display: block; overflow: auto; height: 0;">
-                                            <ul class="css-pm">
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/home-v1">
-                                                        <span class="menu-label css-fotw">Home v1</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" ata-testid="menu-button-test-id" tabindex="0"href="/home-v2">
-                                                        <span class="menu-label css-fotw">Home v2</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/home-v3">
-                                                        <span class="menu-label css-fotw">Homev3</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button active" data-testid="menu-button-test-id" tabindex="0" href="/home-v4">
-                                                        <span class="menu-label css-fotw">Home v4</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0"href="/home-v5">
-                                                        <span class="menu-label css-fotw">Home v5</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0"href="/home-v6">
-                                                        <span class="menu-label css-fotw">Home v6</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/home-v7">
-                                                        <span class="menu-label css-fotw">Home v7</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0"href="/home-v8">
-                                                        <span class="menu-label css-fotw">Home v8</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/home-v9">
-                                                        <span class="menu-label css-fotw">Home v9</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/home-v10">
-                                                        <span class="menu-label css-fotw">Home v10</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" href="/property" data-testid="menu-button-test-id" tabindex="0">
                                             <span class="menu-label css-fotw">Property</span>
-                                            <span class="submenu-expand-icon css-submenu-expand">
-                                                <span class="css-sub-icon"></span>
-                                            </span>
                                         </a>
                                         <div data-testid="submenu-content-test-id" class="submenu-content css-submenu-content" style="display: none; overflow: auto; height: 0;">
                                             <ul class="css-pm">
                                                 <li class="menuitem-root submenu-root css-1ffbfs link-li">
                                                     <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
                                                         <span class="menu-label css-fotw">Agents</span>
-                                                        <span class="submenu-expand-icon css-submenu-expand">
-                                                            <span class="css-sub-icon"></span>
-                                                        </span>
                                                     </a>
-                                                    <div data-testid="submenu-content-test-id" class="submenu-content css-submenu-content" style="display: block; overflow: auto; height: 0;">
-                                                        <ul class="css-pm">
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/agents">
-                                                                    <span class="menu-label css-fotw">Agents</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id"tabindex="0"href="/agent-single/1">
-                                                                    <span class="menu-label css-fotw">Agent Single</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/agency">
-                                                                    <span class="menu-label css-fotw">Agency</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/agency-single/1">
-                                                                    <span class="menu-label css-fotw">Agency Single</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
                                                 </li>
                                                 <li class="menuitem-root submenu-root css-1ffbfs link-li">
                                                     <a class="menu-button" data-testid="menu-button-test-id"tabindex="0">
                                                         <span class="menu-label css-fotw">Single Style</span>
-                                                        <span class="submenu-expand-icon css-submenu-expand">
-                                                            <span class="css-sub-icon"></span>
-                                                        </span>
                                                     </a>
-                                                    <div data-testid="submenu-content-test-id" class="submenu-content css-submenu-content" style="display: block; overflow: auto; height: 0;">
-                                                        <ul class="css-pm">
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v1/1">
-                                                                    <span class="menu-label css-fotw">Single V1</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id"tabindex="0" href="/single-v2/1">
-                                                                    <span class="menu-label css-fotw">Single V2</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v3/1">
-                                                                    <span class="menu-label css-fotw">Single V3</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v4/1">
-                                                                    <span class="menu-label css-fotw">Single V4</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v5/1">
-                                                                    <span class="menu-label css-fotw">Single V5</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v6/1">
-                                                                    <span class="menu-label css-fotw">Single V6</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v7/1">
-                                                                    <span class="menu-label css-fotw">Single V7</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id"tabindex="0" href="/single-v8/1">
-                                                                    <span class="menu-label css-fotw">Single V8</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v9/1">
-                                                                    <span class="menu-label css-fotw">Single V9</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="menuitem-root css-x3jz15 link-li">
-                                                                <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/single-v10/1">
-                                                                    <span class="menu-label css-fotw">SingleV10</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" href="/contact" data-testid="menu-button-test-id" tabindex="0">
                                             <span class="menu-label css-fotw">Contact Us</span>
-                                            <span class="submenu-expand-icon css-submenu-expand">
-                                                <span class="css-sub-icon"></span>
-                                            </span>
                                         </a>
-                                        <div data-testid="submenu-content-test-id" class="submenu-content css-submenu-content" style="display: block; overflow: auto; height: 0;">
-                                            <ul class="css-pm">
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0"href="/about">
-                                                        <span class="menu-label css-fotw">About</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/contact">
-                                                        <span class="menu-label css-fotw">Contact</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/compare">
-                                                        <span class="menu-label css-fotw">Compate</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/pricing">
-                                                        <span class="menu-label css-fotw">Pricing</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/faq">
-                                                        <span class="menu-label css-fotw">Faq</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/login">
-                                                        <span class="menu-label css-fotw">Login</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0"href="/register">
-                                                        <span class="menu-label css-fotw">Register</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0"href="/404">
-                                                        <span class="menu-label css-fotw">404</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root css-wp link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0"href="/invoice">
-                                                        <span class="menu-label css-fotw">Invoice</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </li>
                                 </ul>
                             </nav>

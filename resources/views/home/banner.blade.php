@@ -53,7 +53,6 @@
                                                 <div class="advance-search-field position-relative text-al">
                                                     <form class="form-search position-relative">
                                                         <div class="box-search" id="nav-rent">
-                                                            {{-- <span class="icon flaticon-home-1"></span> --}}
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
                                                             <input class="form-controls background-f7 bdr12" type="text" name="search" placeholder="Search Products for Rent">
                                                         </div>
@@ -81,7 +80,6 @@
                                                 <div class="advance-search-field position-relative text-al">
                                                     <form class="form-search position-relative">
                                                         <div class="box-search" id="nav-sold">
-                                                            {{-- <span class="icon flaticon-home-1"></span> --}}
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
                                                             <input class="form-controls background-f7 bdr12" type="text" name="search" placeholder="Search Products for Sold">
                                                         </div>

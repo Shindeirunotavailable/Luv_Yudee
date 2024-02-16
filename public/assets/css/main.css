@@ -1066,6 +1066,9 @@ button,.btn {
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x))
 }
+.fz18 {
+    font-size: 18px
+}
 /* ----------------------------------End header nav--------------------------------------- */
 
 

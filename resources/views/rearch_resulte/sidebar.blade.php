@@ -249,9 +249,14 @@
             </div>
         </li> --}}
         <li class="list-group-item">
-            <button type="submit" class="btn btn-primary btn-lg btn-block afterButton" id="submitModalBtn">
-                <i class="fa-solid fa-magnifying-glass"></i> search
+      
+
+            <button type="submit"
+            class="btn btn-primary afterButton rounded-pill w-300 "
+            id="submitModal"> 
+            <i class="fa-solid fa-magnifying-glass"></i> search
             </button>
+
         </li>
         <li class="list-group-item">
             <div class="d-flex justify-content-between">

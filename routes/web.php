@@ -30,16 +30,10 @@ Route::any('non' , 'App\Http\Controllers\HomeController@non');
  // -----------------------------------main function  route non ------------------------------------
 route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
 route::any('contact','App\Http\Controllers\LoginController@contact'); // เปิดหน้า contact
-route::any('details','App\Http\Controllers\LoginController@details'); // เปิดหน้า details
+route::any('rearch_resulte','App\Http\Controllers\LoginController@rearch_resulte'); // เปิดหน้า details
 
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
-
-
-Route::get('test', function () {
-    return view('home.test');
-});
-
 
  // -----------------------------------function test Route ------------------------------------
 
