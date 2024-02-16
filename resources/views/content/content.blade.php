@@ -20,40 +20,40 @@
                             <form method="POST" class="needs-validation" novalidate>
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="label-700">First Name</label>
+                                    <label class="label-700">First Name</label>
                                     <input type="text" name="firstName" id="firstName" class="form-control "
-                                        id="exampleInputEmail1" placeholder="Enter Username" required>
+                                        id="exampleInputEmail1" placeholder="Enter First Name" required>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอก First Name</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="label-700">Last Name</label>
+                                    <label class="label-700">Last Name</label>
                                     <input type="text" name="lastName" id="lastName" class="form-control "
-                                        id="exampleInputEmail1" placeholder="Enter Username" required>
+                                        id="exampleInputEmail1" placeholder="Enter Last Name" required>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอก Last Name</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="label-700">Email</label>
+                                    <label class="label-700">Email</label>
                                     <input type="Email" name="contactEmail" id="contactEmail" class="form-control "
-                                        placeholder="Enter Username" required>
+                                        placeholder="Enter Email" required>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอก Email</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="label-700">Textarea</label>
+                                    <label class="label-700">Textarea</label>
                                     <textarea cols="30" rows="4" placeholder="There are many variations of passages." name="textarea"
                                         class="form-control" required></textarea>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอก Textarea</a>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block afterButton"
+                                 <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
                                     id="submitModalBtn"> Submit
-                                </button>
+                                </button> 
                             </form>
                         </div>
                     </div>

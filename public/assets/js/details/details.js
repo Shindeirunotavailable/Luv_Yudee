@@ -1,3 +1,5 @@
+// Property Type pc
+
 function selectAll() {
     var allCheckbox = document.getElementById("All");
     var checkboxes = document.querySelectorAll('.checkboox-all');
@@ -14,7 +16,77 @@ function checkAll() {
     allCheckbox.checked = false;
 }
 
-  
+// Price Range pc
+function priceAll() {
+    var allCheckbox = document.getElementById("averageAll");
+    var checkboxes = document.querySelectorAll('.checkboox-price');
+
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox !== allCheckbox) {
+            checkbox.checked = false;
+        }
+    });
+}
+
+
+
+function checkPrice() {
+    var allCheckbox = document.getElementById("averageAll");
+    allCheckbox.checked = false;
+}
+
+// sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('mySidebar');
+    sidebar.style.width = sidebar.style.width === '330px' ? '0' : '330px';
+
+    const customBtn = document.querySelector('.custom-btn');
+    // customBtn.classList.toggle('show-sidebar');
+  }
+
+  $(document).ready(function(){
+    
+    var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+       removeItemButton: true
+     }); 
+
+});
+
+
+// มือถือ Property Type
+// function PropertyMobile() {
+//     var allCheckbox = document.getElementById("propertyMobile1");
+//     var checkboxes = document.querySelectorAll('.checkboox-Property');
+
+//     checkboxes.forEach(function(checkbox) {
+//         if (checkbox !== allCheckbox) {
+//             checkbox.checked = false;
+//         }
+//     });
+// }
+
+
+
+// มือถือ Price Range
+
+// function PropertyMobile() {
+//     var allCheckbox = document.getElementById("Property_All");
+//     var checkboxes = document.querySelectorAll('.price-checkboox');
+
+//     checkboxes.forEach(function(checkbox) {
+//         if (checkbox !== allCheckbox) {
+//             checkbox.checked = false;
+//         }
+//     });
+// }
+
+// function priceAll() {
+//     var allCheckbox = document.getElementById("Property_All");
+//     allCheckbox.checked = false;
+// }
+
+
+
 // เช็คราคา radio
 
 // let minValue = $("#min-value");
@@ -60,12 +132,3 @@ function checkAll() {
 //    }); 
   
 // });
-
-
-function toggleSidebar() {
-    const sidebar = document.getElementById('mySidebar');
-    sidebar.style.width = sidebar.style.width === '330px' ? '0' : '330px';
-
-    const customBtn = document.querySelector('.custom-btn');
-    // customBtn.classList.toggle('show-sidebar');
-  }

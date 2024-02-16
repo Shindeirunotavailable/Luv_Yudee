@@ -1,8 +1,4 @@
-<div class="list-sidebar-style1">
-    <div class="mobile-media mt-2">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
-    </div>
-
+<div class="list-sidebar-style1 mb-30">
     {{-- side-bar --}}
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
@@ -77,43 +73,90 @@
         <li class="list-group-item">
             <h6>Price Range</h6>
 
-              <div class="row">
+              {{-- <div class="row">
                 <div class="col-12 col-lg-12">
+
                     <label class="label-700">ราคาสูงสุด</label>
                     <div class="input-group pb-10">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                          <span class="input-group-text">฿</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Max value">
+                      </div>
+
+                      <label class="label-700">ราคาต่ำสุด</label>
+                      <div class="input-group ">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">฿</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Min value">
+                      </div>
+                </div> --}}
+{{--            <div class="col-6 col-lg-6">
+                    <label class="label-700">ราคาสูงสุด</label>
+                    <div class="input-group pb-10">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">฿</span>
                         </div>
                         <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
                       </div>
-                    </div>
-
-                      {{-- <label for="basic-url">Your vanity URL</label>
+                </div>
+                <div class="col-6 col-lg-6">
+                      <label class="label-700">ราคาต่ำสุด</label>
                       <div class="input-group ">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                          <span class="input-group-text">฿</span>
                         </div>
                         <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                      </div> --}}
+                      </div>
+                </div> --}}
+              {{-- </div> --}}
+              
+              <div class="row">
+                <div class="col-12">
+                    <div class="form-check  custom-checkbox">
+                        <input class="form-check-input custom-control-input checkboox-price " type="checkbox" value="" id="averageAll" onclick="priceAll()" >
+                        <label class="form-check-label custom-control-label font-style" for="averageAll">
+                            เลือกทั้งหมด
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-check  custom-checkbox">
+                        <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="1Million" onclick="checkPrice()" >
+                        <label class="form-check-label custom-control-label font-style" for="1Million">
+                            น้อยกว่า 1 ล้านบาท
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-check  custom-checkbox">
+                        <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="5Million"  onclick="checkPrice()" >
+                        <label class="form-check-label custom-control-label font-style" for="5Million">
+                             1 ล้าน ถึง 5 ล้านบาท
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-check  custom-checkbox">
+                        <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="10Million"  onclick="checkPrice()" >
+                        <label class="form-check-label custom-control-label font-style" for="10Million">
+                             5 ล้าน ถึง 10 ล้านบาท
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-check  custom-checkbox">
+                        <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="10MillionUp"  onclick="checkPrice()" >
+                        <label class="form-check-label custom-control-label font-style" for="10MillionUp">
+                            มากกว่า 10 ล้านบาท
+                        </label>
+                    </div>
+                </div>
               </div>
+              
 
-
-            {{-- <div class="range-slider pb-3">
-                
-                <div class="range-fill"></div>
-                <input type="range" class="input-range min-price form-control-range radioname" value="100" min="10" max="500" step="10" />
-                <input type="range" class="input-range max-price form-control-range radioname" value="250" min="10" max="500" step="10" />
-            </div>
-
-            <div class="row">
-                <div class="col-5 col-lg-5">
-                    <label class="form-control background-grey" id="min-value">$50</label>
-                </div>
-                <h3> - </h3>
-                <div class="col-5 col-lg-5">
-                    <label class="form-control background-grey" id="max-value" > $250</label>
-                </div>
-            </div> --}}
+  
         </li>
         <li class="list-group-item">
               <div class="form-group">
