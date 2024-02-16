@@ -60,7 +60,8 @@ class PropertyController extends Controller
             // update
             // dd($request->all());
 
-            $id_properties = $request->input('id_properties');
+            // $id_properties = $request->input('id_properties');
+            $id_properties=$request['id_properties'];
             // อัปเดตข้อมูลในฐานข้อมูล
             $data['updated_at']= date('Y-m-d H:i:s');
             $data['updated_by']= 2;

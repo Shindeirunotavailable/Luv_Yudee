@@ -1059,7 +1059,7 @@
     }
   }
 
-  .flex-column {
+  /* .flex-column {
     -ms-flex-direction: column!important;
     flex-direction: column!important
   }
@@ -1077,7 +1077,7 @@
   .justify-content-between {
     -ms-flex-pack: justify!important;
     justify-content: space-between!important
-  }
+  } */
 
   /* .align-items-center {
     -ms-flex-align: center!important;

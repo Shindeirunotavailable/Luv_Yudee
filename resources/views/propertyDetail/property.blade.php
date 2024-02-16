@@ -669,8 +669,8 @@
                                                 dedication
                                                 is second to none.
                                             </p>
-                                            <div class="d-flex justify-content-center justify-content-sm-start">
-                                                <p class="mb-0 text-muted fs-13 lh-1 "> 02 Dec 2020 at 2:40 </p>
+                                            <div class="d-flex justify-content-center justify-content-sm-start ">
+                                                <p class="mb-0 text-muted fs-13 lh-1 text-center-sm"> 02 Dec 2020 at 2:40 </p>
                                                 <a href="#"
                                                     class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2">Reply</a>
                                             </div>
