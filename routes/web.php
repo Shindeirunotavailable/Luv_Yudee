@@ -29,7 +29,7 @@ Route::any('non' , 'App\Http\Controllers\HomeController@non');
 
  // -----------------------------------main function  route non ------------------------------------
 route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
-route::any('content','App\Http\Controllers\LoginController@content'); // เปิดหน้า content
+route::any('contact','App\Http\Controllers\LoginController@contact'); // เปิดหน้า contact
 route::any('details','App\Http\Controllers\LoginController@details'); // เปิดหน้า details
 
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน

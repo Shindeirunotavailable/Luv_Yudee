@@ -97,8 +97,8 @@ class LoginController extends Controller
 // ---------------------------------------------- หน้า Content -------------------------------------------------
 
  
-public function content(){ //แสดงหน้า content
-    return view("content.content")->with('main',$this->ContenrCss);
+public function contact(){ //แสดงหน้า content
+    return view("contact.contact")->with('main',$this->ContenrCss);
 }
  
 
