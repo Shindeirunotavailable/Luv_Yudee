@@ -41,6 +41,10 @@
         background-color: rgba(243, 240, 240, 0.212) !important; /* Fallback color */
         background-color: rgba(0,0,0,0.4) !important; /* Black w/ opacity */
       }
+
+      .colorBlue{
+        color: #0071bc;
+      }
   
 
  

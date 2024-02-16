@@ -69,14 +69,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="mobile-laptop">
                 <div class="tab-content row" id="nav-tabContent">
                     <div class="col-lg-4 ">
-                        <div class="mobile-laptop">
                             @include('details.sidebar')
-                        </div>
                     </div>
                     <div class="tab-pane fade col-lg-8 show active " id="nav-profile" role="tabpanel"
                         aria-labelledby="nav-profile-tab">
@@ -97,11 +93,11 @@
         </div>
 
         {{-- จอมือถือ 425px  --}}
-        <div class="grid-mobile">
+        {{-- <div class="grid-mobile">
             <div class="container">
                 @include('details.gride')
             </div>
-        </div>
+        </div> --}}
 
     </section>
 @endsection

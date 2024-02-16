@@ -5326,7 +5326,7 @@ textarea.form-controls-lg {
 
    .afterButton {
      background-color: #0071bc !important; /* สีพื้นหลัง */
-     border-radius: 10px !important; /* ปรับมุมกรอบไม่ให้เป็นสี่เหลี่ยม */
+     /* border-radius: 10px !important;  */
      border: none !important; /* ไม่ให้ปุ่มขยายเวลาเอาเม้าส์ไปชี้ */
      color: rgb(234, 234, 238) !important; /* สีตัวอักษา */
      font-size: 18px !important; /* ขนาด */

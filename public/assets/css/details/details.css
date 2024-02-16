@@ -265,33 +265,87 @@ element.style {
 }
 
 /* เมื่อขนาดจอใหญ่กว่า 760px จะแสดงผล แต่ถ้าขนาดจอเล็กกว่า 760px จะไม่แสดง */
-@media screen and (max-width: 760px) {
+/* @media screen and (max-width: 760px) {
     .list-mobile {
         display: none;
     }
-}
-
+} */
+/* 
 @media screen and (min-width: 770px) {
     .mobile-media {
         display: none;
     }
-}
+} */
 
 /* เมื่อขนาดจอใหญ่กว่า 430px จะไม่แสดง แต่ถ้าขนาดจอเล็กกว่า 430px จะแสดง */
 
-@media screen and (min-width: 430px) {
+/* @media screen and (min-width: 430px) {
     .grid-mobile {
         display: none !important ;
     }
-}
+} */
 
 /* เมื่อขนาดจอใหญ่กว่า 770px จะแสดงผล แต่ถ้าขนาดจอเล็กกว่า 770px จะไม่แสดง */
-
-@media screen and (max-width: 770px) {
+/* 
+@media screen and (max-width: 1024px) {
     .mobile-laptop {
         display: none;
     }
+} */
+
+
+/* ปรับขนาดจอขนาดต่างๆ */
+
+/* หน้าจอใหญ่กว่า 1024px */
+/* @media screen and (max-width: 1024px) {
+  .mobile-laptop {
+    display: none;
+  }
+} */
+
+/* หน้าจออยู่ระหว่าง 768px ถึง 1024px (รวมทั้ง 768px และ 1024px) */
+/* @media screen and (min-width: 770px){
+  .list-mobile {
+    display: none;
+  }
+  .mobile-media{
+    display: none;
+  }
+} */
+
+/* หน้าจอเล็กกว่า 750px */
+/* @media screen and (max-width: 750px) {
+  .grid-mobile {
+    display: none !important ;
 }
+
+} */
+
+/* ขนาดจอ PC */
+@media screen and (max-width: 1024px) {
+  .mobile-laptop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .list-mobile {
+    display: none;
+  }
+  .mobile-media {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ดึงมา */
 .pcs_dropdown .form-select {

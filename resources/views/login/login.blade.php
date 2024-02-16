@@ -21,7 +21,7 @@
                             <form class="needs-validation" novalidate>
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="label-700">Email</label>
+                                    <label class="label-700">Email</label>
                                     <input type="Email" name="Email" id="Email" class="form-control "
                                         id="exampleInputEmail1" placeholder="Enter Username" required>
                                     <div class="invalid-feedback">
@@ -30,7 +30,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="label-700">Password</label>
+                                    <label class="label-700">Password</label>
                                     <input type="password" name="password" id="password" class="form-control "
                                         id="exampleInputEmail1" placeholder="Enter Password" required>
                                     <div class="invalid-feedback">
@@ -44,18 +44,16 @@
                                 </div>
 
                                 <div class="pt-10 pb-10">
-                                    <button type="submit"
-                                        class="btn btn-primary btn-lg btn-block afterButton"
-                                        id="submitModalBtn">
-                                        <i class="fa-regular fa-paper-plane "></i> Submit 
-                                    </button>
+                                   <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+                                    id="submitModalBtn"> <i class="fa-regular fa-paper-plane "></i> Submit
+                                   </button> 
                                 </div>
 
 
                             </form>
                             <div class="text-center mt-3">
-                                <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up? <span
-                                        class="colorBlue">Create an account. </span> </a>
+                                <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up? 
+                                    <span class="colorBlue">Create an account. </span> </a>
                             </div>
                         </div>
                     </div>

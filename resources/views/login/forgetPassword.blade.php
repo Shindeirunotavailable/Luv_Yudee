@@ -22,9 +22,14 @@
 
                     <div class="pt-20 pb-20  text-center">
                         
-                        <button type="submit" class="buttonPlan btn btn-primary afterButton w-300 test" id="submitModal" >
+                        {{-- <button type="submit" class="buttonPlan btn btn-primary afterButton w-300 " id="submitModal" >
                             <i class="fa-regular fa-paper-plane "></i> Submit 
-                        </button>
+                        </button> --}}
+
+                        <button type="submit" class="text-center afterButton rounded-pill btn-lg btn-block w-300"
+                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
+                       </button> 
+
                     </div>
 
                 
