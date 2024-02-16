@@ -53,7 +53,6 @@ class PropertyController extends Controller
             // json_encode ลองใช้เป็น json
             'status'=>implode(',', $request['status']),
             'price'=>$request['price'],
-            'updated_at'=>date('Y-m-d H:i:s')
         );
         // dd($request->all());
         if(isset($request['id_properties']))
@@ -61,20 +60,23 @@ class PropertyController extends Controller
             // update
             // dd($request->all());
 
-            $id_properties = $request->input('id_properties');
+            // $id_properties = $request->input('id_properties');
+            $id_properties=$request['id_properties'];
             // อัปเดตข้อมูลในฐานข้อมูล
             $data['updated_at']= date('Y-m-d H:i:s');
             $data['updated_by']= 2;
             DB::table('pp_addproperties')->where('id_properties',$request['id_properties'])->update($data);
             Session::flash('data', 'Property updated successfully!');
-            $data['id_properties']=$request['id_properties'];
+            // $data['id_properties']=$request['id_properties'];
         }
         else{
+            $data['updated_at']= date('Y-m-d H:i:s');
             $data['created_at']= date('Y-m-d H:i:s');
+            $data['created_by']= 1;
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
             Session::flash('data', 'Property created successfully!');
         }
-        return redirect('sidebar?id_properties='.$id_properties);
+        return redirect('addproperty?id_properties='.$id_properties);
         // dd($data);
     }
 
