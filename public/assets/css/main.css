@@ -835,9 +835,9 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 .user-btn i {
     /* margin-left: 10px; */
     font-size: 16px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg)
+    /* -webkit-transform: rotate(-45deg); */
+    /* -ms-transform: rotate(-45deg); */
+    /* transform: rotate(-45deg) */
 }
 
 .user-btn:hover,.user-btn:focus,.user-btn:active {
@@ -4185,7 +4185,7 @@ header.nav-innerpage-style.style2 {
     align-items: center;
     justify-content: space-between;
     padding: var(--yuudee-modal-header-padding);
-    border-bottom: 1px solid #495057;
+    /* border-bottom: 1px solid #495057; */
     border-top-left-radius: var(--yuudee-modal-inner-border-radius);
     border-top-right-radius: var(--yuudee-modal-inner-border-radius)
 }
