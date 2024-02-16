@@ -26,7 +26,7 @@ class PropertyController extends Controller
         $provinces = Province::all(); // ดึงข้อมูลจังหวัดทั้งหมดจากฐานข้อมูล
         $amphures = Amphure::all();
         $districts = District::all();
-        $property = pp_addproperty::property($id_properties);
+        $property = Property::property($id_properties);
 
         $this->data['provinces']=Province::all();
         $this->data['amphures']=Amphure::all();

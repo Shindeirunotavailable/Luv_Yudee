@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class pp_addproperty extends Model
+class Property extends Model
 {
     public static function property($id_properties='')
     {
