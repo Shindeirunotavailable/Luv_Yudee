@@ -475,7 +475,7 @@
 
                                     </div>
 
-                                    <div class="col-sm-6 pt-3">
+                                    <div class="col-sm-6 pt-2">
                                         <h5 class="fs-16 lh-2 text-heading ">
                                             Rating Breakdown
                                         </h5>
