@@ -19,9 +19,6 @@ use App\Http\Controllers\HomeController;
 });*/
 
 Route::any('home' , 'App\Http\Controllers\HomeController@home');
-Route::any('hometest' , 'App\Http\Controllers\HomeController@hometest');
-Route::any('test' , 'App\Http\Controllers\HomeController@test');
-Route::any('non' , 'App\Http\Controllers\HomeController@non');
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
 
