@@ -26,16 +26,18 @@
 .text-list {
     height: 35px;
     border-radius: 10px;
-    margin-left: 25px;
+    margin-left: 10px;
     position: absolute;
-    margin-top: 180px;
+    margin-top: 160px;
     background-color: white;
     color: black;
     width: 90px;
+    z-index: 1;
+
 }
 
 .block-text {
-    height: 35px;
+    height: 30px;
     border-radius: 10px;
     margin-left: 10px;
     position: absolute;
@@ -73,6 +75,16 @@
 .img-sell:hover {
     transition: transform 0.4s ease;
     transform: scale(1.1) rotate(-1deg);
+}
+
+.img-list{
+  position: relative;
+  height: 200px;
+}
+
+.img-list:hover {
+  transition: transform 0.4s ease;
+  transform: scale(1.1) rotate(-1deg);
 }
 
 /* .block-text:hover{

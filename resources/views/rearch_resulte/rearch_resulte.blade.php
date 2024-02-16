@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
 
     <!-- {{-- ส่วนหัว --}} -->
-    <section class="background-grey pt-30">
+    <section class="pt-30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -16,11 +16,11 @@
     </section>
 
     {{-- menu-mobile --}}
-    <section class="background-grey">
+    <section >
         <div class="container">
             <div class="mobile-media pb-30">
                 <div class="col-12  ">
-                    @include('details.search')
+                    @include('rearch_resulte.search')
                 </div>
 
                 <div class="row pt-10 ml-30">
@@ -32,14 +32,14 @@
                     </div>
                 </div>
                 <div id="mySidebar" class="sidebar">
-                    @include('details.sidebar-mobile')
+                    @include('rearch_resulte.sidebar-mobile')
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="background-grey">
+    <section >
         <div class="container">
             <div class="mobile-laptop">
                 <div class="row mb-15">
@@ -72,14 +72,14 @@
 
                 <div class="tab-content row" id="nav-tabContent">
                     <div class="col-lg-4 ">
-                            @include('details.sidebar')
+                            @include('rearch_resulte.sidebar')
                     </div>
                     <div class="tab-pane fade col-lg-8 show active " id="nav-profile" role="tabpanel"
                         aria-labelledby="nav-profile-tab">
-                        @include('details.gride')
+                        @include('rearch_resulte.gride')
                     </div>
                     <div class="tab-pane fade col-lg-8 " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        @include('details.list')
+                        @include('rearch_resulte.list')
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
         {{-- จอ iPad 768px  --}}
         <div class="list-mobile">
             <div class="container">
-                @include('details.list')
+                @include('rearch_resulte.list')
             </div>
         </div>
 

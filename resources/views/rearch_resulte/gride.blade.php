@@ -5,7 +5,7 @@
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="block-text text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label"> $FEATURED </label>
+                                        <label class="label-700 pt-1 pl-1 font-label">FEATURED </label>
                                     </div>
                                     <div class="text-block text-center">
                                         <label class="label-700 pt-1 pl-1 font-label"> $14,000 / mo </label>
@@ -83,7 +83,7 @@
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="block-text text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label"> $FEATURED </label>
+                                        <label class="label-700 pt-1 pl-1 font-label">FEATURED </label>
                                     </div>
                                     <div class="text-block text-center">
                                         <label class="label-700 pt-1 pl-1 font-label"> $14,000 / mo </label>
