@@ -580,9 +580,9 @@
     border-top: 1px solid #eee
   } */
 
-  .card-footer:last-child {
+  /* .card-footer:last-child {
     border-radius: 0 0 4px 4px
-  }
+  } */
 
   .card-img-pp-overlay {
     position: absolute;
@@ -1038,10 +1038,10 @@
     display: block!important
   }
 
-  .d-flex {
+  /* .d-flex {
     display: -ms-flexbox!important;
     display: flex!important
-  }
+  } */
 
   .d-inline-flex {
     display: -ms-inline-flexbox!important;

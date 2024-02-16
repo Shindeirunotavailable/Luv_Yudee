@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-use App\Models\pp_addproperty;
+use App\Models\Property;
 use App\Models\Province;
 use App\Models\Amphure;
 use App\Models\District;
