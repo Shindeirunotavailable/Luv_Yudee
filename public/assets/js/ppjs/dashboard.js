@@ -120,7 +120,7 @@ $(document).ready(function() {
                  removePlugins: [ '' ],
 
                  toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
-                 , 'NumberedList','fontSize' ]
+                 , 'NumberedList' ]
             } )
             // .then(editor => {
             //     // console.log(editor);

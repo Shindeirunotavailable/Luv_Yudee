@@ -38,27 +38,9 @@ route::any('forget-password','App\Http\Controllers\LoginController@forgetPasswor
  // -----------------------------------function test Route ------------------------------------
 
 // earth
-// Route::any('sidebar' , 'App\Http\Controllers\HomeController@sidebar');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
-
-
-// Route::get('editor' , 'App\Http\Controllers\CKEditor@editor');
-// Route::post('store' , 'App\Http\Controllers\CKEditor@store');
-// Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
-
-
-// Route::get('/test-database', function () {
-//     try {
-//         DB::connection()->getPdo();
-//         return "เชื่อมต่อฐานข้อมูลสำเร็จ!";
-//     } catch (\Exception $e) {
-//         return "ไม่สามารถเชื่อมต่อฐานข้อมูล: " . $e->getMessage();
-//     }
-// });
-
-// Route::post('/db_provinces', [ProvincesController::class, 'getData'])->name('db_provinces');
 //sidebarแรกคือชื่อURL ด้นหลังของ @ คือชื่อเมธอดที่จะถูกเรียก
-Route::any('sidebar','App\Http\Controllers\PropertyController@sidebar');
+Route::any('addproperty','App\Http\Controllers\PropertyController@sidebar');
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');;
 

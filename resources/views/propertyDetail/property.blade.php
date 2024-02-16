@@ -151,7 +151,7 @@
 
         <div class="container-md-pp ">
             <div class="row">
-                <article class="col-lg-8  pr-xl-7 section-pp">
+                <article class="col-lg-8  pr-xl-7 mt-5">
                     <section class="m-top border-bottom-pp">
                         <ul class="list-inline d-sm-flex align-items-sm-center">
                             <li class="list-inline-item badge badge-orange">Featured</li>
@@ -441,7 +441,7 @@
                                 <div class="row">
 
                                     <div class="col-sm-6 mb-6 mb-sm-0  ">
-                                        <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-4 pl-4">
+                                        <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
 
                                                 <h5 class="fs-16 lh-2 text-heading mb-6 ">
                                                     Avarage User Rating
@@ -917,12 +917,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <textarea class="form-control-pp form-control-pp-lg border-0" placeholder="Your Review" name="message" rows="5"></textarea>
+                                        <textarea class="form-control-pp form-control-pp-lg border-0 textarea-pp" placeholder="Your Review" name="message" rows="5"></textarea>
                                     </div>
                                     {{-- เอา btn-t-white ออก btn-block--}}
-
-                                        <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block-sb "  >Submit</button>
-
+                                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb" id="submitModalBtn"> Submit </button>
 
                                 </form>
                             </div>
@@ -934,7 +932,7 @@
 
                 <aside class="col-lg-4 pl-xl-4 pdr-0 primary-sidebar sidebar-sticky  ">
                     <div class="make-me-sticky hide-all ">
-                        <div class="card border-0 widget-request-tour">
+                        <div class="card border-0">
 
                             <div class="card-body pr-sm-6 pl-sm-6 shadow-xxs-2 pb-5 pt-0">
                                 <form>
@@ -1047,10 +1045,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
-                                                <textarea class="form-control-pp border-0" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
+                                                <textarea class="form-control-pp border-0 textarea-pp" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
                                             </div>
                                             {{-- เอา btn-t-white ออก--}}
-                                            <button type="submit" class="btn btn-primary afterButton btn-t-white btn-block  ">Request Info</button>
+                                            <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="submitModalBtn"> Request Info</button>
                                             <div class="form-group form-check mt-2 mb-0">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label fs-13" for="exampleCheck2">Egestas
@@ -1072,7 +1070,7 @@
             </div>
         </div>
 
-        <section class="section-pp">
+        <section class="section-pp md-mb-80">
             <div class="container-pp ">
                 <h4 class="fs-22 text-heading ">Similar Homes You May Like</h4>
                 <div class="slick-list draggable" style="height: 100%;">
@@ -1117,19 +1115,19 @@
                                                 Los Angeles</p>
                                                 <div class="row no-gutters">
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bedroom">
                                                            <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                         </div>
                                                     </div>
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
                                                             <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="Size">
                                                             <div class="list-inline fa-sq">
                                                                 <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
@@ -1198,19 +1196,19 @@
                                                 Los Angeles</p>
                                                 <div class="row no-gutters">
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bedroom">
                                                            <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                         </div>
                                                     </div>
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
                                                             <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="Size">
                                                             <div class="list-inline fa-sq">
                                                                 <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
@@ -1280,19 +1278,19 @@
                                                 Los Angeles</p>
                                                 <div class="row no-gutters">
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bedroom">
                                                            <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                         </div>
                                                     </div>
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
                                                             <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="Size">
                                                             <div class="list-inline fa-sq">
                                                                 <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
@@ -1361,19 +1359,19 @@
                                                 Los Angeles</p>
                                                 <div class="row no-gutters">
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bedroom">
                                                            <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                         </div>
                                                     </div>
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
                                                             <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="Size">
                                                             <div class="list-inline fa-sq">
                                                                 <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
@@ -1442,19 +1440,19 @@
                                                 Los Angeles</p>
                                                 <div class="row no-gutters">
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bedroom">
                                                            <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                         </div>
                                                     </div>
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
                                                             <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="Size">
                                                             <div class="list-inline fa-sq">
                                                                 <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
@@ -1523,19 +1521,19 @@
                                                 Los Angeles</p>
                                                 <div class="row no-gutters">
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bedroom">
                                                            <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                         </div>
                                                     </div>
                                                     <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
                                                             <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center"
+                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
                                                             data-toggle="tooltip" title="" data-original-title="Size">
                                                             <div class="list-inline fa-sq">
                                                                 <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
@@ -1611,43 +1609,4 @@
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
-
-
-    {{-- <script>
-        $('.slick-slider').slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 3 ,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: false,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-    </script> --}}
-
 @endsection
