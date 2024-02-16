@@ -4,8 +4,8 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto">
                     <div class="d-flex align-items-center justify-content-between">
-                        <div class="logos mr-40"><a class="header-logo logo1" href="#"><img src="https://img5.pic.in.th/file/secure-sv1/YuuDee2e407624f79838bb3.png" alt="YuuDee2e407624f79838bb3.png"width="130px"></a>
-                            <a class="header-logo logo2 link-effect" href="/"><img src="https://img5.pic.in.th/file/secure-sv1/YuuDee2e407624f79838bb3.png" alt="YuuDee2e407624f79838bb3.png"width="130px"></a></div>
+                        <div class="logos mr-40"><a class="header-logo logo1" href="#"><img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px"></a>
+                            <a class="header-logo logo2 link-effect" href="/"><img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px"></a></div>
                         <ul class="responsive-menu">
                             <li class="v_list dropitem link-li"><a class="list-item" href="#">
                                 <span class="title menuActive">Home</span>
@@ -117,9 +117,8 @@
                 <div class="mobile_menus_bar d-flex justify-content-between align-items-center">
                     <a class="menusbar" href="#" id="menubarButton" data-bs-toggle="offcanvas"
                         data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                        <img src="/assets/images/mobile-dark-nav-icon.jpg" alt="mobile icon"
-                            width="30px"></a><a class="mobile_logo" href="/">
-                        <img src="/assets/images/YuuDee2.png" alt="logo" width="120px"></a>
+                        <img src="{{ asset('/assets/images/mobile-dark-nav-icon.jpg') }}" alt="mobile icon" width="30px"></a><a class="mobile_logo" href="/">
+                        <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="120px"></a>
                     <a href="/login"><span class="icon fz18 far fa-user-circle "></span></a>
                 </div>
             </div>
