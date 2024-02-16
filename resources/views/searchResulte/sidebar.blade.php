@@ -4,7 +4,7 @@
         <li class="list-group-item">
             <h6>Find your home</h6>
             <div class="search_area">
-                <input type="text" class="form-control form-control-text" placeholder="What are you looking for?"><span>
+                <input type="text" class="form-control form-control-text color-border" placeholder="What are you looking for?"><span>
                 <i class="fa-solid fa-magnifying-glass"></i></span>
             </div>
         </li>
@@ -162,10 +162,10 @@
               <div class="form-group">
                 <h6 class="list-title">Location</h6>
                 <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Houses</option>
-                  <option>Apartments</option>
-                  <option>Office</option>
-                  <option>Villa</option>
+                  <option>กรุงเทพมหานคร</option>
+                  <option>ปทุมธานี</option>
+                  <option>นนทบุรี</option>
+                  <option>พระนครศรีอยุธยา</option>
                 </select>
               </div>
         </li>
@@ -250,9 +250,8 @@
         </li> --}}
         <li class="list-group-item">
       
-
             <button type="submit"
-            class="btn btn-primary afterButton rounded-pill w-300 "
+            class="btn btn-primary afterButton rounded-pill w-100 "
             id="submitModal"> 
             <i class="fa-solid fa-magnifying-glass"></i> search
             </button>

@@ -4,7 +4,6 @@
 
 
     
-        <div class="col-12 col-lg-12">
             <div class="style-multiple">
                 <select id="choices-multiple-remove-button" placeholder="What are you looking for?" multiple>
                     <option value="Houses">Houses</option>
@@ -14,6 +13,5 @@
                     <option value="Condo">Condo</option>
                 </select> 
             </div>
-        </div>
 
 

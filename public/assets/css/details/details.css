@@ -1,11 +1,12 @@
 /* ---------------------------- ส่วน gird-list box  ------------------------------------------ */
 
 .list-sidebar-style1 {
+    padding-top: 10px;
     background-color: #fff;
-    padding: 30px;
-    position: relative;
-    -webkit-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
-    -o-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
+    /* padding: 30px; */
+    /* position: relative; */
+    /* -webkit-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07); */
+    /* -o-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07); */
     box-shadow: 0 1px 4px #181a2012;
     border-radius: 12px;
     /* margin-bottom: 30px */
@@ -134,7 +135,7 @@
     margin: 0 10px;
 }
 
-.range-slider {
+/* .range-slider {
     position: relative;
     margin: 15px 0 30px 0;
 }
@@ -155,7 +156,7 @@
 }
 
 .input-range[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* กำหนดลักษณะที่ไม่ให้แสดงผลตามสไตล์ทั่วไปของระบบ */
+    -webkit-appearance: none;
     height: 15px;
     width: 15px;
     border-radius: 50%;
@@ -172,7 +173,7 @@
     background: #e8e8e8;
     border-radius: 3px;
     border: none;
-}
+} */
 
 /* ---------------------------- ส่วน Bedrooms ------------------------------------------ */
 
@@ -246,7 +247,7 @@
 .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 18px;
+    /* font-size: 18px; */
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -333,14 +334,22 @@ element.style {
 
 } */
 
+.color-border{
+border-color: black;
+}
+
 /* ขนาดจอ PC */
-@media screen and (max-width: 1024px) {
+@media  (max-width: 1020px) {
   .mobile-laptop {
     display: none;
   }
+  .mobile-media {
+    display: none;
+  }
+
 }
 
-@media screen and (min-width: 770px) {
+@media  (min-width: 769px) {
   .list-mobile {
     display: none;
   }
@@ -349,11 +358,42 @@ element.style {
   }
 }
 
+@media (max-width: 769px) and (min-width: 320px){
+
+    .list-mobile {
+        display: block;
+      }
+      .mobile-media {
+        display: block;
+      }
+      .grid-mobile {
+        display: none;
+      }
+}
 
 
+@media (max-width: 426px) and (min-width: 300px){
 
+    .list-mobile {
+        display: none;
+      }
+      .mobile-media {
+        display: block;
+      }
+      .grid-mobile {
+        display: block;
+      }
+}
 
-
+@media  (max-width: 2561px) and (min-width: 1020px) {
+    .grid-mobile {
+      display: none;
+    }
+    .mobile-media {
+        display: none;
+      }
+ 
+  }
 
 
 
