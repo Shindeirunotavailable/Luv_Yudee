@@ -78,6 +78,7 @@ class PropertyController extends Controller
         // dd($data);
     }
 
+
     // ProvincesController
     public function db_provinces(Request $request)
     {

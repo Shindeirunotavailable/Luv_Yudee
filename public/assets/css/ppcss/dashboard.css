@@ -111,9 +111,9 @@ button:focus:not(:focus-visible) {
     line-height: inherit
 } */
 
-button {
+/* button {
     text-transform: none
-}
+} */
 
 [role=button] {
     cursor: pointer

@@ -359,13 +359,13 @@
                                                     <span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Basketball court<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Air Conditioning<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Lawn<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Swimming Pool<input type="checkbox">
                                                     <span class="checkmark"></span></label>
@@ -382,13 +382,13 @@
                                                     <span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Dryer<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Outdoor Shower<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Washer<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Gym<input type="checkbox">
                                                     <span class="checkmark"></span></label>
@@ -407,13 +407,13 @@
                                                     <span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Wine cellar<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Front yard<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">Refrigerator<input type="checkbox"
-                                                    checked=""><span class="checkmark"></span></label>
+                                                    checked><span class="checkmark"></span></label>
 
                                                     <label class="custom_checkbox">WiFi<input type="checkbox">
                                                     <span class="checkmark"></span></label>
