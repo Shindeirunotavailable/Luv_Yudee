@@ -28,6 +28,8 @@ function priceAll() {
     });
 }
 
+
+
 function checkPrice() {
     var allCheckbox = document.getElementById("averageAll");
     allCheckbox.checked = false;
@@ -36,7 +38,7 @@ function checkPrice() {
 // sidebar
 function toggleSidebar() {
     const sidebar = document.getElementById('mySidebar');
-    sidebar.style.width = sidebar.style.width === '350px' ? '0' : '350px';
+    sidebar.style.width = sidebar.style.width === '330px' ? '0' : '330px';
 
     const customBtn = document.querySelector('.custom-btn');
     // customBtn.classList.toggle('show-sidebar');
@@ -47,14 +49,13 @@ function toggleSidebar() {
     var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
        removeItemButton: true
      }); 
-    
-    
+
 });
 
 
 // มือถือ Property Type
 // function PropertyMobile() {
-//     var allCheckbox = document.getElementById("propertyMobile");
+//     var allCheckbox = document.getElementById("propertyMobile1");
 //     var checkboxes = document.querySelectorAll('.checkboox-Property');
 
 //     checkboxes.forEach(function(checkbox) {
@@ -64,10 +65,7 @@ function toggleSidebar() {
 //     });
 // }
 
-// function PropertyAll() {
-//     var allCheckbox = document.getElementById("propertyMobile");
-//     allCheckbox.checked = false;
-// }
+
 
 // มือถือ Price Range
 

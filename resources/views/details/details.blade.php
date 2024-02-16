@@ -22,7 +22,7 @@
                 <div class="col-12  ">
                     @include('details.search')
                 </div>
-                
+
                 <div class="row pt-10 ml-30">
                     <div class="d-flex justify-content-start" onclick="toggleSidebar()">
                         <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
@@ -55,42 +55,53 @@
                                 </select>
                             </div>
                             <label class="ml-10 border-right"></label>
-     
+
                             <div class="nav" id="nav-tab" role="tablist">
                                 <div class="ml-10 mr-10 link-effect active" id="nav-profile-tab" data-toggle="tab"
                                     data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
                                     aria-selected="true"> Grid </div>
                                 <label class="border-right"></label>
-                                <div class="ml-10 link-effect" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact"
-                                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">List </div>
+                                <div class="ml-10 link-effect" id="nav-contact-tab" data-toggle="tab"
+                                    data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                    aria-selected="false">List </div>
                             </div>
-    
+
                         </div>
                     </div>
-                </div>        
+                </div>
             </div>
 
-
-  
-
-            <div class="tab-content row" id="nav-tabContent">
-                <div class="col-lg-4 ">
-                    <div class="mobile-laptop">
-                        @include('details.sidebar')
+            <div class="mobile-laptop">
+                <div class="tab-content row" id="nav-tabContent">
+                    <div class="col-lg-4 ">
+                        <div class="mobile-laptop">
+                            @include('details.sidebar')
+                        </div>
                     </div>
-                </div>
-                <div class="tab-pane fade col-lg-8 show active " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    @include('details.gride')
-                </div>
-                <div class="tab-pane fade col-lg-8 " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    @include('details.list')
-
-                    <div class="list-mobile">
+                    <div class="tab-pane fade col-lg-8 show active " id="nav-profile" role="tabpanel"
+                        aria-labelledby="nav-profile-tab">
+                        @include('details.gride')
+                    </div>
+                    <div class="tab-pane fade col-lg-8 " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                         @include('details.list')
-
                     </div>
                 </div>
             </div>
         </div>
+
+        {{-- จอ iPad 768px  --}}
+        <div class="list-mobile">
+            <div class="container">
+                @include('details.list')
+            </div>
+        </div>
+
+        {{-- จอมือถือ 425px  --}}
+        <div class="grid-mobile">
+            <div class="container">
+                @include('details.gride')
+            </div>
+        </div>
+
     </section>
 @endsection
