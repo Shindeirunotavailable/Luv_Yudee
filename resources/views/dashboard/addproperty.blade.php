@@ -114,7 +114,7 @@
                             <div class="tab-pane fade" id="nav-item2" role="tabpanel"
                                 aria-labelledby="nav-item2-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="title fs-17 mb-6">Upload photos of your property</h4>
+                                    <h4 class="title fs-17 mb-10">Upload photos of your property</h4>
                                     <form class="form-style1">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -133,7 +133,7 @@
                                                 <div class="row position-relative d-md-flex align-items-end mb50"></div>
                                                 </div>
                                         </div>
-                                        <h4 class="title fs-17 mb-6">Video Option</h4>
+                                        <h4 class="title fs-17 mb-10">Video Option</h4>
                                         <div class="row">
                                             <div class="col-sm-6 mb-4">
                                                 <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
