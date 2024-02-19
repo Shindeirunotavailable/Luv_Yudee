@@ -72,45 +72,6 @@
         </li>
         <li class="list-group-item">
             <h6>Price Range</h6>
-
-              {{-- <div class="row">
-                <div class="col-12 col-lg-12">
-
-                    <label class="label-700">ราคาสูงสุด</label>
-                    <div class="input-group pb-10">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">฿</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Max value">
-                      </div>
-
-                      <label class="label-700">ราคาต่ำสุด</label>
-                      <div class="input-group ">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">฿</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Min value">
-                      </div>
-                </div> --}}
-{{--            <div class="col-6 col-lg-6">
-                    <label class="label-700">ราคาสูงสุด</label>
-                    <div class="input-group pb-10">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">฿</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                      </div>
-                </div>
-                <div class="col-6 col-lg-6">
-                      <label class="label-700">ราคาต่ำสุด</label>
-                      <div class="input-group ">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">฿</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                      </div>
-                </div> --}}
-              {{-- </div> --}}
               
               <div class="row">
                 <div class="col-12">
@@ -230,24 +191,6 @@
             </div>
         </li>
    
-
-{{-- 
-        <li class="list-group-item">
-            <h6>Square Feet</h6>
-            <div class="d-flex justify-content-between">
-                <input type="number" class="form-control" placeholder="Min." id="minFeet">
-                <h3 class=" pl-10 pr-10"> - </h3>
-                <input type="number" class="form-control" placeholder="Max." id="minFeet">
-            </div>
-        </li> --}}
-        {{-- <li class="list-group-item">
-            <h6>Year Built</h6>
-            <div class="d-flex justify-content-between">
-                <input type="number" class="form-control P-10" placeholder="2019" id="minFeet">
-                <h3 class=" pl-10 pr-10"> - </h3>
-                <input type="number" class="form-control P-10" placeholder="2024" id="minFeet">
-            </div>
-        </li> --}}
         <li class="list-group-item">
       
             <button type="submit"
