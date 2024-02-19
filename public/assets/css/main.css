@@ -916,11 +916,11 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
     color: #fff;
 }
 
-.h1,h1,.h2,h2,.h3,h3,.h4,h4,.h5,h5,.h6,h6 {
+/* .h1,h1,.h2,h2,.h3,h3,.h4,h4,.h5,h5,.h6,h6 {
     color: #181a20;
     font-weight: 600;
     line-height: 1.5
-}
+} */
 
 p {
     margin: 0 0 15px;
