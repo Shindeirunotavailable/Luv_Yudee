@@ -42,6 +42,7 @@ class PropertyController extends Controller
         return view('dashboard.sidebardashboard')->with('data',$this->data);
 
     }
+
     // PropertyController
     public function updatedata(Request $request){
         // dd($request->all());
@@ -49,8 +50,8 @@ class PropertyController extends Controller
             // 'id_properties'=>$request['id_properties'],
             'title'=>$request['title'],
             'description'=>json_encode($request['description']),
-            'category'=>implode(',', $request['category']),
             // json_encode ลองใช้เป็น json
+            'category'=>implode(',', $request['category']),
             'status'=>implode(',', $request['status']),
             'price'=>$request['price'],
         );
@@ -79,6 +80,18 @@ class PropertyController extends Controller
         return redirect('addproperty?id_properties='.$id_properties);
         // dd($data);
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // ProvincesController
