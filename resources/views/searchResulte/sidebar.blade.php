@@ -117,7 +117,7 @@
                     <div class="form-check  custom-checkbox">
                         <input class="form-check-input custom-control-input checkboox-price " type="checkbox" value="" id="averageAll" onclick="priceAll()" >
                         <label class="form-check-label custom-control-label font-style" for="averageAll">
-                            เลือกทั้งหมด
+                            All
                         </label>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                     <div class="form-check  custom-checkbox">
                         <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="1Million" onclick="checkPrice()" >
                         <label class="form-check-label custom-control-label font-style" for="1Million">
-                            น้อยกว่า 1 ล้านบาท
+                            ฿1,000,000
                         </label>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                     <div class="form-check  custom-checkbox">
                         <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="5Million"  onclick="checkPrice()" >
                         <label class="form-check-label custom-control-label font-style" for="5Million">
-                             1 ล้าน ถึง 5 ล้านบาท
+                            ฿1,000,001 - ฿5,000,000
                         </label>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                     <div class="form-check  custom-checkbox">
                         <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="10Million"  onclick="checkPrice()" >
                         <label class="form-check-label custom-control-label font-style" for="10Million">
-                             5 ล้าน ถึง 10 ล้านบาท
+                            ฿5,000,000 - ฿10,000,000
                         </label>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                     <div class="form-check  custom-checkbox">
                         <input class="form-check-input custom-control-input checkboox-price" type="checkbox" value="" id="10MillionUp"  onclick="checkPrice()" >
                         <label class="form-check-label custom-control-label font-style" for="10MillionUp">
-                            มากกว่า 10 ล้านบาท
+                            ฿10,000,001
                         </label>
                     </div>
                 </div>
@@ -162,10 +162,10 @@
               <div class="form-group">
                 <h6 class="list-title">Location</h6>
                 <select class="form-control" id="exampleFormControlSelect1">
-                  <option>กรุงเทพมหานคร</option>
-                  <option>ปทุมธานี</option>
-                  <option>นนทบุรี</option>
-                  <option>พระนครศรีอยุธยา</option>
+                  <option>bangkok</option>
+                  <option>Pathum Thani</option>
+                  <option>Nonthaburi</option>
+                  <option>Ayutthaya</option>
                 </select>
               </div>
         </li>
