@@ -1,16 +1,16 @@
 <div class="dashboard__main pl-d-0-md">
-    <div class="dashboard__content property-page bgc-f7">
+    <div class="dashboard__content property-page bg-f7">
         <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
                     <h2>Reviews</h2>
-                    <p class="text">We are glad to see you again!</p>
+                    <p class="text-ap">We are glad to see you again!</p>
                 </div>
             </div>
         </div>
         <div class="row ">
             <div class="col-xl-12">
-                <div class="ps-widget bgc-white bdrs12 default-box-shadow2 p-d-30 mb-6 overflow-hidden position-relative">
+                <div class="ps-widget bg-white bdrs-12 default-box-shadow2 p-d-30 mb-6 overflow-hidden position-relative">
                     <div class="product_single_content mb-8">
                         <div class="mbp_pagination_comments">
                             <div class="row">
@@ -35,7 +35,7 @@
 
                                 <div class="col-md-12">
 
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                         <img src="{{ asset('/assets/images/review-1.jpg') }}"
                                             alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
@@ -84,7 +84,7 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                         <img src="{{ asset('/assets/images/review-2.jpg') }}"
                                             alt="Viola Austin" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
@@ -133,7 +133,7 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                         <img src="{{ asset('/assets/images/review-3.jpg') }}"
                                             alt="Nettie Singleton" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
@@ -182,7 +182,7 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                         <img src="{{ asset('/assets/images/review-1.jpg') }}"
                                             alt="Vernon Fisher" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">
@@ -231,7 +231,7 @@
                                 </div>
 
                                 <div class="col-md-12 ">
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                         <img src="{{ asset('/assets/images/review-4.png') }}"
                                             alt="Harry Iglesias" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                             style="width: 84px; height: 84px; object-fit: cover;">

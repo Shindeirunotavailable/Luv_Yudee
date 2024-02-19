@@ -1,5 +1,5 @@
     <div class="dashboard__main pl-d-0-md">
-        <div class="dashboard__content property-page bgc-f7">
+        <div class="dashboard__content property-page bg-f7">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="mb-6">
@@ -194,7 +194,7 @@
                 <div class="row items-center justify-content-center justify-content-md-between">
                     <div class="col-auto">
                         <div class="copyright-widget">
-                            <p class="text">© Homez 2024 <a href="https://themeforest.net/user/ib-themes"
+                            <p class="text-ap">© Homez 2024 <a href="https://themeforest.net/user/ib-themes"
                                     target="_blank" rel="noopener noreferrer">ib-themes</a> - All rights reserved</p>
                         </div>
                     </div>
