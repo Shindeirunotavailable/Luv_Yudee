@@ -783,10 +783,9 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 
 .user-btn i {
     font-size: 16px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg)
 }
+
+
 
 .user-btn:hover,.user-btn:focus,.user-btn:active {
     outline: none;
@@ -929,6 +928,13 @@ a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visite
 }
 .fs-18 {
     font-size: 18px
+}
+.user-arrow i {
+    margin-left: 10px;
+    font-size: 16px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg)
 }
 /* ----------------------------------End header nav--------------------------------------- */
 
