@@ -88,19 +88,7 @@
                 </div>
         </div>
 
-        {{-- จอ iPad 768px  --}}
-        {{-- <div class="list-mobile">
-            <div class="container">
-                @include('searchResulte.list')
-            </div>
-        </div> --}}
 
-        {{-- จอมือถือ 425px  --}}
-        {{-- <div class="grid-mobile">
-            <div class="container">
-                @include('searchResulte.gride')
-            </div>
-        </div> --}}
 
     </section>
 @endsection

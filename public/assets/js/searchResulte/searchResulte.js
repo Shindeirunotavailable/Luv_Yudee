@@ -45,15 +45,15 @@ function toggleSidebar() {
   }
 
 
-$(function() {
+  $(function() {
 
-    $('.js-multiple-select').select2({
-        tags: true,
-        tokenSeparators: [',', ' '],
-        placeholder: 'Select Property Type'
-    });
-    
-    });
+	$('.js-multiple-select').select2({
+		tags: true,
+		// tokenSeparators: [',', ' '],
+		placeholder: 'Select a tags'
+	});
+
+});
 
 
 

@@ -117,7 +117,7 @@
                         <input class="form-check-input custom-control-input price-checkboox" type="checkbox"
                             value="" id="Price3">
                         <label class="form-check-label custom-control-label font-style" for="Price3">
-                            ฿5,000,000 - ฿10,000,000
+                            ฿5,000,001 - ฿10,000,000
                         </label>
                     </div>
                 </div>
