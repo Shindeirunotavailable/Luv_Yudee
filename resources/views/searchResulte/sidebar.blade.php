@@ -2,7 +2,7 @@
     {{-- side-bar --}}
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
-            <h6>Find your home</h6>
+            <h6 class="font-weight-600">Find your home</h6>
             <div class="search_area">
                 <input type="text" class="form-control form-control-text color-border" placeholder="What are you looking for?"><span>
                 <i class="fa-solid fa-magnifying-glass"></i></span>
@@ -10,7 +10,7 @@
         </li>
 
         <li class="list-group-item">
-            <h6>Listing Status</h6>
+            <h6 class="font-weight-600">Listing Status</h6>
             <div class="radio-element">
             
                 <div class="form-check">
@@ -36,7 +36,7 @@
         </li>
 
         <li class="list-group-item">
-            <h6 class="list-title">Property Type</h6>
+            <h6 class="font-weight-600">Property Type</h6>
 
             <div class="form-check  custom-checkbox">
                 <input class="form-check-input  checkboox-all custom-control-input " type="checkbox" value="" id="All"  onclick="selectAll()">
@@ -71,7 +71,7 @@
 
         </li>
         <li class="list-group-item">
-            <h6>Price Range</h6>
+            <h6 class="font-weight-600">Price Range</h6>
               
               <div class="row">
                 <div class="col-12">

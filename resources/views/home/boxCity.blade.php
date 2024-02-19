@@ -1,4 +1,4 @@
-<section class="md-pb-40 pb-90">
+<section class="md-pb-40 pb-90 pt-40">
     <div class="container">
         <div class="row align-items-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-7">

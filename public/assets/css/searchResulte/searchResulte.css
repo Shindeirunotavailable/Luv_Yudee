@@ -103,7 +103,7 @@
     font-size: 18px;
     left: 12px;
     position: absolute;
-    top: 15px;
+    top: 5px;
 }
 
 
@@ -165,7 +165,7 @@
 .font-style {
     /* margin-left: 10px; */
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .h-250 {
@@ -190,6 +190,10 @@
 
 .font-weight-500{
     font-weight: 500;
+}
+
+.font-weight-600{
+    font-weight: 600;
 }
 
 /* side-bar-mobile */
