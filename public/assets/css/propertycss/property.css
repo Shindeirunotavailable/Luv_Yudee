@@ -604,6 +604,61 @@ html {
   .z-index-10 {
     z-index: 10!important
   }
+  .mt-0 {
+    margin-top: 0!important
+}
+
+.p-d-30 {
+    padding: 30px!important
+}
+
+.pt-d-30 {
+    padding-top: 30px!important
+}
+
+.pr-d-5 {
+    padding-right: 5px!important
+}
+
+.pr-d-30 {
+    padding-right: 30px!important
+}
+
+.pb-d-40 {
+    padding-bottom: 40px!important
+}
+
+.pl-d-30 {
+    padding-left: 30px!important
+}
+
+.mt-d-30 {
+    margin-top: 30px!important
+}
+
+.mr-d-10 {
+    margin-right: 10px!important
+}
+
+.mr-d-15 {
+    margin-right: 15px!important
+}
+
+.mr-d-20 {
+    margin-right: 20px!important
+}
+
+.mb-d-10 {
+    margin-bottom: 10px!important
+}
+
+.mb-d-20 {
+    margin-bottom: 20px!important
+}
+
+.mb-d-25 {
+    margin-bottom: 25px!important
+}
 
   .shadow-xxs-1 {
     box-shadow: 0 0 7px 0 rgba(0,0,0,.07)!important
