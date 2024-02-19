@@ -3,7 +3,7 @@
         <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
-                    <h2>Reviews</h2>
+                    <h2 class="fw-600">Reviews</h2>
                     <p class="text-ap">We are glad to see you again!</p>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                                 <div class="col-lg-12">
                                     <div
                                         class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
-                                        <h6 class="fs-17 mb15"><i class="fas fa-star fs-12 pe-2"></i>5.0 · 3 reviews</h6>
+                                        <h6 class="fw-600 fs-17 mb15"><i class="fas fa-star fs-12 pe-2"></i>5.0 · 3 reviews</h6>
                                         <div
                                             class="page_control_shorting d-flex align-items-center justify-content-center justify-content-sm-end">
                                             <div class="pcs_dropdown mb15 d-flex align-items-center"><span
@@ -42,7 +42,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0 pl-0 ">
-                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -91,7 +91,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                    <h4 class="mb-0 text-heading fs-14">Viola Austin</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Viola Austin</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -140,7 +140,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                    <h4 class="mb-0 text-heading fs-14">Nettie Singleton</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Nettie Singleton</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -189,7 +189,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                    <h4 class="mb-0 text-heading fs-14">Vernon Fisher</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Vernon Fisher</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -238,7 +238,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-item-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                    <h4 class="mb-0 text-heading fs-14">Harry Iglesias</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Harry Iglesias</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">

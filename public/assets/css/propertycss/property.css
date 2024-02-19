@@ -41,14 +41,14 @@ html {
     box-shadow: none
 }
 
-  .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h4,h5,h6 {
+  /* .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h4,h5,h6 {
     font-family: "Poppins", sans-serif;
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-weight: 600;
     line-height: 1.2;
     color: #000;
-}
+} */
   .container-pp {
     width: 100%;
     padding-right: 15px;
@@ -569,7 +569,9 @@ html {
   .fs-48 {
     font-size: 48px!important
   }
-
+  .fw-600 {
+    font-weight: 600!important
+  }
   .lh-1 {
     line-height: 1!important
   }

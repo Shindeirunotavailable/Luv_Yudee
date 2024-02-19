@@ -5,7 +5,7 @@
         <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
-                    <h2>Add New Property</h2>
+                    <h2 class="fw-600">Add New Property</h2>
                     <p class="text-ap">We are glad to see you again!</p>
                 </div>
 
@@ -51,7 +51,7 @@
                                             {{ Session::get('data') }}
                                         </div>
                                     @endif
-                                    <h4 class="title fs-17 mb-6">Property Description</h4>
+                                    <h4 class="fw-600 title fs-17 mb-6">Property Description</h4>
 
                                     {{-- ใช้เพื่อทดสอบ --}}
                                     <form method="POST" action="{{ route('properties') }}">
@@ -114,7 +114,7 @@
                             <div class="tab-pane fade" id="nav-item2" role="tabpanel"
                                 aria-labelledby="nav-item2-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="title fs-17 mb-10">Upload photos of your property</h4>
+                                    <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
                                     <form class="form-style1">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -133,7 +133,7 @@
                                                 <div class="row position-relative d-md-flex align-items-end mb50"></div>
                                                 </div>
                                         </div>
-                                        <h4 class="title fs-17 mb-10">Video Option</h4>
+                                        <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                         <div class="row">
                                             <div class="col-sm-6 mb-4">
                                                 <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
@@ -152,7 +152,7 @@
                             <div class="tab-pane fade" id="nav-item3" role="tabpanel"
                                 aria-labelledby="nav-item3-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="title fs-17 mb-6">Listing Location</h4>
+                                    <h4 class="fw-600 title fs-17 mb-6">Listing Location</h4>
                                     <form class="form-style1">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -224,7 +224,7 @@
                             <div class="tab-pane fade" id="nav-item4" role="tabpanel"
                                 aria-labelledby="nav-item4-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="title fs-17 mb-6">Listing Details</h4>
+                                    <h4 class="fw-600 title fs-17 mb-6">Listing Details</h4>
                                     <form class="form-style1">
                                         <div class="row">
                                             <div class="col-5 col-xl-4 col-6-dt">
@@ -350,7 +350,7 @@
                             <div class="tab-pane fade" id="nav-item5" role="tabpanel"
                                 aria-labelledby="nav-item5-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="title fs-17 mb-6">Select Amenities</h4>
+                                    <h4 class="fw-600 title fs-17 mb-6">Select Amenities</h4>
                                     <div class="row">
                                         <div class="row-ap flex-lg-row flex-wrap">
                                             <div class="col-sm-12 col-md-6 col-lg-4">
