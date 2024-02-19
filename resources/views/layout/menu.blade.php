@@ -13,7 +13,7 @@
                             </a>
                         </div>
                         <ul class="responsive-menu">
-                            <li class="v_list dropitem link-li"><a class="list-item" href="#">
+                            <li class="v_list dropitem link-li"><a class="list-item" href="/home">
                                 <span class="title menuActive">Home</span>
                             </a>
                             </li>
@@ -78,21 +78,21 @@
                             <nav class="menu-root css-menu-root">
                                 <ul class="css-pm">
                                     <li class="menuitem-root submenu-root active css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
-                                            <span class="menu-label css-fotw">Home</span>
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/home">
+                                            <span class="menu-label css-fotw" >Home</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/property">
                                             <span class="menu-label css-fotw">Property</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/contact">
                                             <span class="menu-label css-fotw">Contact Us</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
