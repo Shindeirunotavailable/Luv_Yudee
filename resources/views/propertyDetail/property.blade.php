@@ -2,7 +2,6 @@
 @section('content')
     </div>
     <main>
-        <svg class="placeholder btn">Test Bootstrap</svg>
         <section class="section-pp">
             <div class="container-pp-fluid">
                 <div class="position-relative zoomIn ">
