@@ -3019,15 +3019,6 @@ header.nav-innerpage-style.style2 {
 .form-control[type=file]:not(:disabled):not([readonly]) {
     cursor: pointer
 }
-
-.form-control:focus {
-    color: #dee2e6;
-    background-color: var(--bs-body-bg);
-    border-color: #86b7fe;
-    outline: 0;
-    box-shadow: 0 0 0 .25rem #0d6efd40
-}
-
 .form-control::-webkit-date-and-time-value {
     min-width: 85px;
     height: 1.5em;
@@ -3452,10 +3443,7 @@ textarea.form-control-lg {
 .nav-tabs .nav-link {
     margin-bottom: 0
 }
-section {
-    padding: 40px 0;
-    position: relative
-}
+
 /* ----------------------------------End Banner--------------------------------------- */
 
 /*boxCity*/
