@@ -3176,7 +3176,7 @@ textarea.form-control-lg {
     position: relative
 }
 
-.form-style1 .form-control {
+/* .form-style1 .form-control {
     border-radius: 8px;
     border: 1px solid #dddddd;
     -webkit-box-shadow: none;
@@ -3185,7 +3185,7 @@ textarea.form-control-lg {
     height: 55px;
     outline: none;
     padding-left: 15px
-}
+} */
 
 .form-style1 .form-control::-webkit-input-placeholder {
     color: #717171;
