@@ -5,7 +5,7 @@
                 <div class="col-xl-9">
                     <div class="inner-banner-st4">
                         <h2 class="hero-title animation-up-1">Easy Way to Find a <br class="d-none d-md-block">Perfect Property</h2>
-                        <p class="hero-text fontz15 animation-up-2">From as low as $10 per day with limited time offer discounts</p>
+                        <p class="hero-text fs-15 animation-up-2">From as low as $10 per day with limited time offer discounts</p>
                         <div class="advance-search mt-60 mt30-lg mr-auto ml-auto animation-up-3">
                             <ul class="nav nav-tabs  p-0 m-0">
                                 <li class="nav-item">
@@ -27,7 +27,7 @@
                                                     <form class="form-search position-relative">
                                                         <div class="box-search" id="nav-buy">
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12" type="text" name="search" placeholder="Search Products for Buy" fdprocessedid="ufm989">
+                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Buy" fdprocessedid="ufm989">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -54,7 +54,7 @@
                                                     <form class="form-search position-relative">
                                                         <div class="box-search" id="nav-rent">
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12" type="text" name="search" placeholder="Search Products for Rent">
+                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Rent">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -81,7 +81,7 @@
                                                     <form class="form-search position-relative">
                                                         <div class="box-search" id="nav-sold">
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12" type="text" name="search" placeholder="Search Products for Sold">
+                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Sold">
                                                         </div>
                                                     </form>
                                                 </div>
