@@ -137,6 +137,7 @@
                             <p>Talk to our experts or Browse through more properties.</p>
                         </div>
                         <div class="col-lg-5 text-center">
+                            <a href=""></a>
                             <a class="user-btn btn-yuudee add-property rounded-pill text-a " href="javascript:void(0)">
                                 <i class="fa-solid fa-location-arrow"></i>  <span>Contact Us</span>
                             </a>

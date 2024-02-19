@@ -44,13 +44,38 @@ function toggleSidebar() {
     // customBtn.classList.toggle('show-sidebar');
   }
 
-  $(document).ready(function(){
-    
-    var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
-       removeItemButton: true
-     }); 
 
-});
+$(function() {
+
+    $('.js-multiple-select').select2({
+        tags: true,
+        tokenSeparators: [',', ' '],
+        placeholder: 'Select Property Type'
+    });
+    
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   $(document).ready(function(){
+    
+//     var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+//        removeItemButton: true
+//      }); 
+
+// });
 
 
 // มือถือ Property Type

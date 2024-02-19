@@ -1,22 +1,18 @@
 /* ---------------------------- ส่วน gird-list box  ------------------------------------------ */
 
 .list-sidebar-style1 {
+    padding-top: 10px;
     background-color: #fff;
-    padding: 30px;
-    position: relative;
-    -webkit-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
-    -o-box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
     box-shadow: 0 1px 4px #181a2012;
     border-radius: 12px;
-    /* margin-bottom: 30px */
 }
 
 .text-block {
-    height: 35px;
+    /* height: 35px; */
     border-radius: 10px;
     margin-left: 10px;
     position: absolute;
-    margin-top: 180px;
+    margin-top: 195px;
     background-color: white;
     color: black;
     width: 90px;
@@ -24,27 +20,27 @@
 }
 
 .text-list {
-    height: 35px;
+    /* height: 35px; */
     border-radius: 10px;
     margin-left: 10px;
     position: absolute;
     margin-top: 160px;
     background-color: white;
     color: black;
-    width: 90px;
+    width: 70px;
     z-index: 1;
 
 }
 
 .block-text {
-    height: 30px;
+    /* height: 30px; */
     border-radius: 10px;
     margin-left: 10px;
     position: absolute;
     margin-top: 10px;
     background-color: #0071bc;
-    color: rgb(255, 255, 255);
-    width: 100px;
+    color: white;
+    width: 90px;
     z-index: 1;
 }
 
@@ -110,14 +106,7 @@
     top: 5px;
 }
 
-/* ---------------------------- ส่วน radio ------------------------------------------ */
 
-.radio-style {
-    bottom: 4px;
-    height: 20px;
-    width: 20px;
-    accent-color: #0071bc;
-}
 
 /* ---------------------------- ส่วน checkbox ------------------------------------------ */
 
@@ -134,45 +123,6 @@
     margin: 0 10px;
 }
 
-.range-slider {
-    position: relative;
-    margin: 15px 0 30px 0;
-}
-
-.range-fill {
-    height: 6px;
-    background-color: #0071bc;
-    position: absolute;
-    z-index: 1;
-}
-
-.input-range[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    background: transparent;
-    position: absolute;
-    left: 0;
-}
-
-.input-range[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* กำหนดลักษณะที่ไม่ให้แสดงผลตามสไตล์ทั่วไปของระบบ */
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background: #0071bc;
-    cursor: pointer;
-    margin-top: -5px;
-    position: relative;
-    z-index: 1;
-}
-
-.input-range[type="range"]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 5px;
-    background: #e8e8e8;
-    border-radius: 3px;
-    border: none;
-}
 
 /* ---------------------------- ส่วน Bedrooms ------------------------------------------ */
 
@@ -209,6 +159,9 @@
 
 /* ----------------------------ปรับขนาดและสีต่างๆ------------------------------------------ */
 
+.text-whiter{
+    color: white;
+}
 .font-style {
     margin-left: 10px;
     font-size: 13px;
@@ -230,6 +183,15 @@
     margin-right: 165px;
 }
 
+
+.font-weight-700{
+    font-weight: 700;
+}
+
+.font-weight-500{
+    font-weight: 500;
+}
+
 /* side-bar-mobile */
 .sidebar {
     z-index: 1000 !important; /* ค่า z-index ที่มากกว่าทุกองค์ประกอบที่อยู่ในหน้าเว็บ */
@@ -246,7 +208,7 @@
 .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 18px;
+    /* font-size: 18px; */
     color: #818181;
     display: block;
     transition: 0.3s;
@@ -276,71 +238,23 @@ element.style {
     font-size: 13px;
 }
 
-/* เมื่อขนาดจอใหญ่กว่า 760px จะแสดงผล แต่ถ้าขนาดจอเล็กกว่า 760px จะไม่แสดง */
-/* @media screen and (max-width: 760px) {
-    .list-mobile {
-        display: none;
-    }
-} */
-/* 
-@media screen and (min-width: 770px) {
-    .mobile-media {
-        display: none;
-    }
-} */
 
-/* เมื่อขนาดจอใหญ่กว่า 430px จะไม่แสดง แต่ถ้าขนาดจอเล็กกว่า 430px จะแสดง */
-
-/* @media screen and (min-width: 430px) {
-    .grid-mobile {
-        display: none !important ;
-    }
-} */
-
-/* เมื่อขนาดจอใหญ่กว่า 770px จะแสดงผล แต่ถ้าขนาดจอเล็กกว่า 770px จะไม่แสดง */
-/* 
-@media screen and (max-width: 1024px) {
-    .mobile-laptop {
-        display: none;
-    }
-} */
-
-
-/* ปรับขนาดจอขนาดต่างๆ */
-
-/* หน้าจอใหญ่กว่า 1024px */
-/* @media screen and (max-width: 1024px) {
-  .mobile-laptop {
-    display: none;
-  }
-} */
-
-/* หน้าจออยู่ระหว่าง 768px ถึง 1024px (รวมทั้ง 768px และ 1024px) */
-/* @media screen and (min-width: 770px){
-  .list-mobile {
-    display: none;
-  }
-  .mobile-media{
-    display: none;
-  }
-} */
-
-/* หน้าจอเล็กกว่า 750px */
-/* @media screen and (max-width: 750px) {
-  .grid-mobile {
-    display: none !important ;
+.color-border{
+border-color: black;
 }
-
-} */
 
 /* ขนาดจอ PC */
-@media screen and (max-width: 1024px) {
+@media  (max-width: 1020px) {
   .mobile-laptop {
     display: none;
   }
+  .mobile-media {
+    display: none;
+  }
+
 }
 
-@media screen and (min-width: 770px) {
+@media  (min-width: 769px) {
   .list-mobile {
     display: none;
   }
@@ -349,14 +263,42 @@ element.style {
   }
 }
 
+@media (max-width: 769px) and (min-width: 320px){
+
+    .list-mobile {
+        display: block;
+      }
+      .mobile-media {
+        display: block;
+      }
+      .grid-mobile {
+        display: none;
+      }
+}
 
 
+@media (max-width: 426px) and (min-width: 300px){
 
+    .list-mobile {
+        display: none;
+      }
+      .mobile-media {
+        display: block;
+      }
+      .grid-mobile {
+        display: block;
+      }
+}
 
-
-
-
-
+@media  (max-width: 2561px) and (min-width: 1020px) {
+    .grid-mobile {
+      display: none;
+    }
+    .mobile-media {
+        display: none;
+      }
+ 
+  }
 
 
 /* ดึงมา */
@@ -374,47 +316,19 @@ element.style {
     border-left: 1px solid #dddddd;
 }
 
-/*/////////////////////////////////// secart ///////////////////////////////////  */
 
-.choices:last-child {
-    z-index: 10;
-    margin-bottom: 0;
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background: #0071bc;
+    border-color: #0071bc;
+    font-size: 14px;
+    color: #fff;
+    padding: 2px 10px; 
+  }
+.select2-container--default .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
+    color: rgb(248, 248, 248);
+    margin-right: 10px;
 }
 
-.style-multiple {
-    border-radius: 30px;
+.select2-container{
+    width: 100% !important;
 }
-.choices__inner {
-    border-radius: 10px !important;
-    background-color: white !important;
-    border: 1px solid #0071bc !important;
-}
-
-.choices__input {
-    background-color: transparent !important;
-}
-
-/* .choices__list{
-  border-radius: 25px !important;
-} */
-
-input:focus-visible {
-    border: transparent !important;
-}
-
-/* option {
-  z-index: 30;
-  background: #db0080;
-  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
-  background: linear-gradient(to right, #0083B0, #00B4DB);
-  min-height: 100vh
-} */
-
-/* 
-.choices__list{
-  border-radius: 25px !important;
-  width: 92%;
-}
-input:focus-visible{
-  border: transparent !important;
-} */

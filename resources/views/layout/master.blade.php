@@ -17,9 +17,8 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
          {{-- --CSS-- --}}
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
-         <link href="{{ asset('/assets/css/content/content.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า content -- --}}
-         <link href="{{ asset('/assets/css/details/details.css') }}" rel="stylesheet" type="text/css" />
-         {{-- -- Css หน้า details -- --}}
+         <link href="{{ asset('/assets/css/contact/contact.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า contact -- --}}
+         <link href="{{ asset('/assets/css/searchResulte/searchResulte.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า searchResulte -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
          <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
@@ -48,6 +47,7 @@
     @include('layout.menu')
     @yield('content')
     {{-- @include('layout.footer') --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

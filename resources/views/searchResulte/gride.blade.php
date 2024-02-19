@@ -4,11 +4,11 @@
                         <div class="card">
                             <div class="card-body p-0">
                                 <div class="img-block ">
-                                    <div class="block-text text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label">FEATURED </label>
+                                    <div class="block-text text-center ">
+                                        <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a>
                                     </div>
                                     <div class="text-block text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label"> $14,000 / mo </label>
+                                        <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                     </div>
                                     <img src="{{ asset('/assets/images/as-1.jpg') }}" alt="listings"
                                     class="card-img-top img-sell">
@@ -42,7 +42,7 @@
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="text-block text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label"> $14,000 / mo </label>
+                                        <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                     </div>
                                     <img src="{{ asset('/assets/images/as-2.jpg') }}" alt="listings"
                                     class="card-img-top img-sell">
@@ -83,10 +83,10 @@
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="block-text text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label">FEATURED </label>
+                                        <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a>
                                     </div>
                                     <div class="text-block text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label"> $14,000 / mo </label>
+                                        <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                     </div>
                                     <img src="{{ asset('/assets/images/as-3.jpg') }}" alt="listings"
                                     class="card-img-top img-sell">
@@ -120,7 +120,7 @@
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="text-block text-center">
-                                        <label class="label-700 pt-1 pl-1 font-label"> $14,000 / mo </label>
+                                        <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                     </div>
                                     <img src="{{ asset('/assets/images/as-4.jpg') }}" alt="listings"
                                     class="card-img-top img-sell">

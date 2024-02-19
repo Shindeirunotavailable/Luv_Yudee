@@ -1,11 +1,8 @@
 @extends('layout.master')
 @section('content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
 
     <!-- {{-- ส่วนหัว --}} -->
-    <section class="pt-30">
+    <section class="background-grey pt-30 pb-30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -15,15 +12,14 @@
         </div>
     </section>
 
+
     {{-- menu-mobile --}}
-    <section >
+    <section class="pt-20" >
         <div class="container">
             <div class="mobile-media pb-30">
-                <div class="col-12  ">
-                    @include('rearch_resulte.search')
-                </div>
-
-                <div class="row pt-10 ml-30">
+                <h5 class="ml-15">Find your home</h5>
+                    @include('searchResulte.search')
+                <div class="row pt-10 ml-15">
                     <div class="d-flex justify-content-start" onclick="toggleSidebar()">
                         <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
                             aria-controls="listingSidebarFilter">
@@ -31,8 +27,9 @@
                         </a>
                     </div>
                 </div>
+                
                 <div id="mySidebar" class="sidebar">
-                    @include('rearch_resulte.sidebar-mobile')
+                    @include('searchResulte.sidebar-mobile')
                 </div>
             </div>
         </div>
@@ -72,30 +69,36 @@
 
                 <div class="tab-content row" id="nav-tabContent">
                     <div class="col-lg-4 ">
-                            @include('rearch_resulte.sidebar')
+                            @include('searchResulte.sidebar')
                     </div>
                     <div class="tab-pane fade col-lg-8 show active " id="nav-profile" role="tabpanel"
                         aria-labelledby="nav-profile-tab">
-                        @include('rearch_resulte.gride')
+                        @include('searchResulte.gride')
                     </div>
                     <div class="tab-pane fade col-lg-8 " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        @include('rearch_resulte.list')
+                        @include('searchResulte.list')
                     </div>
                 </div>
             </div>
+                <div class="list-mobile">
+                    @include('searchResulte.list')
+                </div>
+                <div class="grid-mobile">
+                    @include('searchResulte.gride')
+                </div>
         </div>
 
         {{-- จอ iPad 768px  --}}
-        <div class="list-mobile">
+        {{-- <div class="list-mobile">
             <div class="container">
-                @include('rearch_resulte.list')
+                @include('searchResulte.list')
             </div>
-        </div>
+        </div> --}}
 
         {{-- จอมือถือ 425px  --}}
         {{-- <div class="grid-mobile">
             <div class="container">
-                @include('details.gride')
+                @include('searchResulte.gride')
             </div>
         </div> --}}
 
