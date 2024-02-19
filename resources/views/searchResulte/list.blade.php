@@ -21,9 +21,9 @@
 
                 </div>
                 <div class="pt-10">
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
-                    <a href="#" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
+                    <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
                 </div>
 
                 <div class="card-footer bg-transparent">
@@ -62,9 +62,9 @@
 
                 </div>
                 <div class="pt-10">
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
-                    <a href="#" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
+                    <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
                 </div>
 
                 <div class="card-footer bg-transparent">
@@ -105,9 +105,9 @@
 
                 </div>
                 <div class="pt-10">
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
-                    <a href="#" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
+                    <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
                 </div>
 
                 <div class="card-footer bg-transparent">
@@ -145,9 +145,9 @@
 
                 </div>
                 <div class="pt-10">
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
-                    <a href="#" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
-                    <a href="#" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5 bed</a>
+                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4 bath</a>
+                    <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i> 900 sqft</a>
                 </div>
 
                 <div class="card-footer bg-transparent">

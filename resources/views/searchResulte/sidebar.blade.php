@@ -115,9 +115,6 @@
                     </div>
                 </div>
               </div>
-              
-
-  
         </li>
         <li class="list-group-item">
               <div class="form-group">
