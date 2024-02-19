@@ -13,87 +13,20 @@
                             </a>
                         </div>
                         <ul class="responsive-menu">
-                            <li class="v_list dropitem link-li"><a class="list-item" href="/home">
+                            <li class="v_list dropitem link-li"><a class="list-item" href="#">
                                 <span class="title menuActive">Home</span>
-                                {{-- <i class="fa-solid fa-angle-down fa-xl"></i> --}}
                             </a>
-                                {{-- <ul class="sub-menus">
-                                    <li class="link-li"><a class="undefined" href="#">Home v1</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v2</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v3</a></li>
-                                    <li class="link-li"><a class="menuActive" href="#">Home v4</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v5</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v6</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v7</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v8</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v9</a></li>
-                                    <li class="link-li"><a class="undefined" href="#">Home v10</a></li>
-                                </ul> --}}
                             </li>
                             
                             <li class="v_list dropitem link-li">
                                 <a class="list-item link-effect" href="/property">
                                     <span class="title">Property</span>
-                                    {{-- <i class="fa-solid fa-angle-down fa-xl"></i> --}}
                                 </a>
-                                {{-- <ul class="sub-menus">
-                                    <li class="dropitem link-li">
-                                        <a href="#"> <span class="title">Agents</span>
-                                            <span class="fa-solid fa-angle-down fa-rotate-270 dropagent1"></span></span>
-                                        </a>
-                                        <ul class="sub-menus">
-                                            <li class="link-li"><a class="undefined" href="/agents">Agents</a></li>
-                                            <li class="link-li"><a class="undefined" href="/agent-single/1">Agent Single</a></li>
-                                            <li class="link-li"><a class="undefined" href="/agency">Agency</a></li>
-                                            <li class="link-li"><a class="undefined" href="/agency-single/1">Agency Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropitem link-li"><a href="#"><span class="title">Single Style</span><span
-                                                class="fa-solid fa-angle-down fa-rotate-270 dropagent2"></span></i></a>
-                                        <ul class="sub-menus">
-                                            <li class="link-li"><a class="undefined" href="/single-v1/1">Single V1</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v2/1">Single V2</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v3/1">Single V3</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v4/1">Single V4</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v5/1">Single V5</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v6/1">Single V6</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v7/1">Single V7</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v8/1">Single V8</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v9/1">Single V9</a></li>
-                                            <li class="link-li"><a class="undefined" href="/single-v10/1">Single V10</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropitem link-li"><a href="#">
-                                        <span class="title">Dashboard</span>
-                                        <span class="fa-solid fa-angle-down fa-rotate-270 dropagent3"></span></i></a>
-                                        <ul class="sub-menus">
-                                            <li class="link-li"><a class="undefined" href="/dashboard-home">Dashboard Home</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-message">Message</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-add-property">New Property</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-my-properties">My Properties</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-my-favourites">My Favorites</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-saved-search">Saved Search</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-reviews">Reviews</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-my-package">My Package</a></li>
-                                            <li class="link-li"><a class="undefined" href="/dashboard-my-profile">My Profile</a></li>
-                                        </ul>
-                                    </li>
-                                </ul> --}}
                             </li>
-                            <li class="v_list dropitem link-li"><a class="list-item" href="/contact">
-                                <span class="title">Contact Us</span>
-                                {{-- <i class="fa-solid fa-angle-down fa-xl"></i></a> --}}
-                                {{-- <ul class="sub-menus">
-                                    <li class="link-li"><a class="undefined" href="/about">About</a></li>
-                                    <li class="link-li"><a class="undefined" href="/contact">Contact</a></li>
-                                    <li class="link-li"><a class="undefined" href="/compare">Compate</a></li>
-                                    <li class="link-li"><a class="undefined" href="/pricing">Pricing</a></li>
-                                    <li class="link-li"><a class="undefined" href="/faq">Faq</a></li>
-                                    <li class="link-li"><a class="undefined" href="/login">Login</a></li>
-                                    <li class="link-li"><a class="undefined" href="/register">Register</a></li>
-                                    <li class="link-li"><a class="undefined" href="/not-found">404</a></li>
-                                    <li class="link-li"><a class="undefined" href="/invoice">Invoice</a></li>
-                                </ul> --}}
+                            <li class="v_list dropitem link-li">
+                                <a class="list-item" href="/contact">
+                                    <span class="title">Contact Us</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -101,19 +34,13 @@
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
                         <a href="/login" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
-                            <i class="far fa-user-circle fz18 mr-2 pb-1"></i> 
+                            <i class="far fa-user-circle fs-18 mr-2 pb-1"></i> 
                             <span class="d-none d-xl-block">Login / Register</span>
                         </a>
-                        {{-- <a class="user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="/dashboard-add-property">
-                            Add Property
-                            <i class="fal fa-arrow-right-long"></i>
-                        </a> --}}
                         <a class="user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="/dashboard-add-property">
                             Add Property
                             <i class="fal fa-arrow-right-long"></i>
                         </a>
-                        
-                        
                         <a class="sidemenus-btn filter-btn-right" href="#" id="toggleSidebar" data-bs-toggle="offcanvas" data-bs-target="#SidebarPanel" aria-controls="SidebarPanelLabel"> </a>
                     </div>
                 </div>
@@ -127,11 +54,12 @@
         <div class="header innerpage-style">
             <div class="menus_and_widget">
                 <div class="mobile_menus_bar d-flex justify-content-between align-items-center">
-                    <a class="menusbar" href="#" id="menubarButton" data-bs-toggle="offcanvas"
-                        data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                        <img src="{{ asset('/assets/images/mobile-dark-nav-icon.jpg') }}" alt="mobile icon" width="30px"></a><a class="mobile_logo" href="/">
-                        <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="120px"></a>
-                    <a href="/login"><span class="icon fz18 far fa-user-circle "></span></a>
+                    <a class="menusbar" href="#" id="menubarButton" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                        <img src="{{ asset('/assets/images/mobile-dark-nav-icon.jpg') }}" alt="mobile icon" width="30px"></a>
+                    </a>
+                    <a class="mobile_logo" href="/home">
+                        <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="120px">
+                    <a href="/login"><span class="icon fs-18 far fa-user-circle "></span></a>
                 </div>
             </div>
         </div>
@@ -150,32 +78,24 @@
                             <nav class="menu-root css-menu-root">
                                 <ul class="css-pm">
                                     <li class="menuitem-root submenu-root active css-pw link-li">
-                                        <a class="menu-button" href="/home" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
                                             <span class="menu-label css-fotw">Home</span>
+                                            <span class="submenu-expand-icon css-submenu-expand">
+                                            </span>
                                         </a>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" href="/property" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
                                             <span class="menu-label css-fotw">Property</span>
+                                            <span class="submenu-expand-icon css-submenu-expand">
+                                            </span>
                                         </a>
-                                        <div data-testid="submenu-content-test-id" class="submenu-content css-submenu-content" style="display: none; overflow: auto; height: 0;">
-                                            <ul class="css-pm">
-                                                <li class="menuitem-root submenu-root css-1ffbfs link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
-                                                        <span class="menu-label css-fotw">Agents</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menuitem-root submenu-root css-1ffbfs link-li">
-                                                    <a class="menu-button" data-testid="menu-button-test-id"tabindex="0">
-                                                        <span class="menu-label css-fotw">Single Style</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" href="/contact" data-testid="menu-button-test-id" tabindex="0">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0">
                                             <span class="menu-label css-fotw">Contact Us</span>
+                                            <span class="submenu-expand-icon css-submenu-expand">
+                                            </span>
                                         </a>
                                     </li>
                                 </ul>
