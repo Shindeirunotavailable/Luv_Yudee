@@ -90,7 +90,7 @@
                         <input class="form-check-input custom-control-input price-checkboox" type="checkbox"
                             value="" id="PriceAll">
                         <label class="form-check-label custom-control-label font-style" for="PriceAll">
-                            เลือกทั้งหมด
+                            All
                         </label>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                         <input class="form-check-input custom-control-input price-checkboox" type="checkbox"
                             value="" id="Price1">
                         <label class="form-check-label custom-control-label font-style" for="Price1">
-                            น้อยกว่า 1 ล้านบาท
+                            ฿1,000,000
                         </label>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                         <input class="form-check-input custom-control-input price-checkboox" type="checkbox"
                             value="" id="Price2">
                         <label class="form-check-label custom-control-label font-style" for="Price2">
-                            1 ล้าน ถึง 5 ล้านบาท
+                            ฿1,000,001 - ฿5,000,000
                         </label>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                         <input class="form-check-input custom-control-input price-checkboox" type="checkbox"
                             value="" id="Price3">
                         <label class="form-check-label custom-control-label font-style" for="Price3">
-                            5 ล้าน ถึง 10 ล้านบาท
+                            ฿5,000,000 - ฿10,000,000
                         </label>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                         <input class="form-check-input custom-control-input price-checkboox" type="checkbox"
                             value="" id="Price4">
                         <label class="form-check-label custom-control-label font-style" for="Price4">
-                            มากกว่า 10 ล้านบาท
+                            ฿10,000,001
                         </label>
                     </div>
                 </div>
@@ -137,10 +137,10 @@
             <div class="form-group">
               <h6 class="list-title">Location</h6>
               <select class="form-control" id="exampleFormControlSelect1">
-                <option>กรุงเทพมหานคร</option>
-                <option>ปทุมธานี</option>
-                <option>นนทบุรี</option>
-                <option>พระนครศรีอยุธยา</option>
+                <option>bangkok</option>
+                <option>Pathum Thani</option>
+                <option>Nonthaburi</option>
+                <option>Ayutthaya</option>
               </select>
             </div>
       </li>

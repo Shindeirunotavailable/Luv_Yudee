@@ -1,11 +1,8 @@
 @extends('layout.master')
 @section('content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
 
     <!-- {{-- ส่วนหัว --}} -->
-    <section class="background-grey pt-30">
+    <section class="background-grey pt-30 pb-30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -15,12 +12,14 @@
         </div>
     </section>
 
+
     {{-- menu-mobile --}}
     <section class="pt-20" >
         <div class="container">
             <div class="mobile-media pb-30">
+                <h5 class="ml-15">Find your home</h5>
                     @include('searchResulte.search')
-                <div class="row pt-10 ml-5">
+                <div class="row pt-10 ml-15">
                     <div class="d-flex justify-content-start" onclick="toggleSidebar()">
                         <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
                             aria-controls="listingSidebarFilter">
@@ -28,6 +27,7 @@
                         </a>
                     </div>
                 </div>
+                
                 <div id="mySidebar" class="sidebar">
                     @include('searchResulte.sidebar-mobile')
                 </div>
