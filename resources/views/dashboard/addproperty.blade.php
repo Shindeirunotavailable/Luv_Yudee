@@ -1,23 +1,23 @@
 @csrf
 
 <div class="dashboard__main pl-d-0-md">
-    <div class="dashboard__content property-page bgc-f7">
+    <div class="dashboard__content property-page bg-f7">
         <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
                     <h2>Add New Property</h2>
-                    <p class="text">We are glad to see you again!</p>
+                    <p class="text-ap">We are glad to see you again!</p>
                 </div>
 
             </div>
         </div>
         <div class="row d-flex">
             <div class="col-xl-12">
-                <div class="ps-widget bgc-white bdrs12 default-box-shadow2 pt-d-30 mb-6 overflow-hidden position-relative">
+                <div class="ps-widget bg-white bdrs-12 default-box-shadow2 pt-d-30 mb-6 overflow-hidden position-relative">
                     <div class="navtab-style1">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab2" role="tablist">
-                                <button class="nav-link-ap active font-weight-600 ms-3" id="nav-item1-tab"
+                                <button class="nav-link-ap active font-weight-600 ml-3" id="nav-item1-tab"
                                     data-toggle="tab" data-target="#nav-item1" type="button" role="tab"
                                     aria-controls="nav-item1" aria-selected="true">
                                     1. Description
@@ -45,7 +45,7 @@
 
                             <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
                                 aria-labelledby="nav-item1-tab">
-                                <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
+                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                     @if(Session::has('data'))
                                         <div class="alert alert-success">
                                             {{ Session::get('data') }}
@@ -113,18 +113,18 @@
 
                             <div class="tab-pane fade" id="nav-item2" role="tabpanel"
                                 aria-labelledby="nav-item2-tab">
-                                <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
+                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="title fs-17 mb-6">Upload photos of your property</h4>
                                     <form class="form-style1">
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="row">
 
-                                                    <div class="col-sm-6 col-xl-4 mb-4">
+                                                    <div class="col-sm-6 mb-4">
                                                         <label for="customIMG" class="upload-button btn-block">Select Image</label>
                                                         <input type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
                                                     </div>
-                                                    <div class="col-sm-6 col-xl-4 mb-4">
+                                                    <div class="col-sm-6 mb-4">
                                                         <button id="clearButtonIMG" class="clearButton">Clear</button>
                                                     </div>
                                                     <div class="col-sm-12 mt-30 row"  id="fileList"></div>
@@ -135,11 +135,11 @@
                                         </div>
                                         <h4 class="title fs-17 mb-6">Video Option</h4>
                                         <div class="row">
-                                            <div class="col-sm-6 col-xl-4 mb-4">
+                                            <div class="col-sm-6 mb-4">
                                                 <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
                                                 <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4 mb-4">
+                                            <div class="col-sm-6 mb-4">
                                                 <button id="clearButtonVDO" class="clearButton ">Clear</button>
                                             </div>
                                             <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
@@ -151,7 +151,7 @@
 
                             <div class="tab-pane fade" id="nav-item3" role="tabpanel"
                                 aria-labelledby="nav-item3-tab">
-                                <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
+                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="title fs-17 mb-6">Listing Location</h4>
                                     <form class="form-style1">
                                         <div class="row">
@@ -161,7 +161,7 @@
                                                         type="text" class="form-control"
                                                         placeholder="Your Name"></div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-6 ">
                                                 <div class="mb-d-20">
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
@@ -177,7 +177,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-6 ">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">City</label>
                                                     <div class="">
@@ -188,7 +188,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-6 ">
                                                 <div class="mb-d-20"><label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
                                                     <div class=" ">
@@ -199,7 +199,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 col-xl-4">
+                                            <div class="col-sm-6 ">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
                                                     <input type="text" name="zipcode" id="zipcode" readonly class="form-control"></div>
@@ -223,7 +223,7 @@
 
                             <div class="tab-pane fade" id="nav-item4" role="tabpanel"
                                 aria-labelledby="nav-item4-tab">
-                                <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
+                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="title fs-17 mb-6">Listing Details</h4>
                                     <form class="form-style1">
                                         <div class="row">
@@ -338,7 +338,7 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Owner/
                                                         Agent
                                                         nots (not visible on front end)</label>
-                                                    <textarea cols="30" rows="5" placeholder="There are many variations of passages."></textarea>
+                                                    <textarea class="textbox-ap" cols="30" rows="5" placeholder="There are many variations of passages."></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -349,79 +349,79 @@
 
                             <div class="tab-pane fade" id="nav-item5" role="tabpanel"
                                 aria-labelledby="nav-item5-tab">
-                                <div class="ps-widget bgc-white bdrs12 p-d-30 overflow-hidden position-relative">
+                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="title fs-17 mb-6">Select Amenities</h4>
                                     <div class="row">
                                         <div class="row-ap flex-lg-row flex-wrap">
                                             <div class="col-sm-12 col-md-6 col-lg-4">
                                                 <div class="checkbox-style1">
-                                                    <label class="custom_checkbox">Attic<input type="checkbox">
+                                                    <label class="checkbox-ap">Attic<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Basketball court<input type="checkbox"
+                                                    <label class="checkbox-ap">Basketball court<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Air Conditioning<input type="checkbox"
+                                                    <label class="checkbox-ap">Air Conditioning<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Lawn<input type="checkbox"
+                                                    <label class="checkbox-ap">Lawn<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Swimming Pool<input type="checkbox">
+                                                    <label class="checkbox-ap">Swimming Pool<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Barbeque<input type="checkbox">
+                                                    <label class="checkbox-ap">Barbeque<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Microwave<input type="checkbox">
+                                                    <label class="checkbox-ap">Microwave<input type="checkbox">
                                                     <span class="checkmark"></span></label></div>
                                             </div>
                                             <div class="col-sm-12 col-md-6 col-lg-4">
                                                 <div class="checkbox-style1">
-                                                    <label class="custom_checkbox">TV Cable<input type="checkbox">
+                                                    <label class="checkbox-ap">TV Cable<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Dryer<input type="checkbox"
+                                                    <label class="checkbox-ap">Dryer<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Outdoor Shower<input type="checkbox"
+                                                    <label class="checkbox-ap">Outdoor Shower<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Washer<input type="checkbox"
+                                                    <label class="checkbox-ap">Washer<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Gym<input type="checkbox">
+                                                    <label class="checkbox-ap">Gym<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Ocean view<input type="checkbox">
+                                                    <label class="checkbox-ap">Ocean view<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Private space<input type="checkbox">
+                                                    <label class="checkbox-ap">Private space<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-md-6 col-lg-4">
                                                 <div class="checkbox-style1">
-                                                    <label class="custom_checkbox">Lake view<input type="checkbox">
+                                                    <label class="checkbox-ap">Lake view<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Wine cellar<input type="checkbox"
+                                                    <label class="checkbox-ap">Wine cellar<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Front yard<input type="checkbox"
+                                                    <label class="checkbox-ap">Front yard<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Refrigerator<input type="checkbox"
+                                                    <label class="checkbox-ap">Refrigerator<input type="checkbox"
                                                     checked><span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">WiFi<input type="checkbox">
+                                                    <label class="checkbox-ap">WiFi<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Laundry<input type="checkbox">
+                                                    <label class="checkbox-ap">Laundry<input type="checkbox">
                                                     <span class="checkmark"></span></label>
 
-                                                    <label class="custom_checkbox">Sauna<input type="checkbox">
+                                                    <label class="checkbox-ap">Sauna<input type="checkbox">
                                                     <span class="checkmark"></span></label>
                                                 </div>
                                             </div>
@@ -443,7 +443,7 @@
             <div class="row items-center justify-content-center justify-content-md-between">
                 <div class="col-auto">
                     <div class="copyright-widget">
-                        <p class="text">© Homez 2024 <a href="https://themeforest.net/user/ib-themes"
+                        <p class="text-ap">© Homez 2024 <a href="https://themeforest.net/user/ib-themes"
                                 target="_blank" rel="noopener noreferrer">ib-themes</a> - All rights reserved</p>
                     </div>
                 </div>

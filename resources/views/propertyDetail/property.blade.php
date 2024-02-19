@@ -2,6 +2,7 @@
 @section('content')
     </div>
     <main>
+        <svg class="placeholder btn">Test Bootstrap</svg>
         <section class="section-pp">
             <div class="container-pp-fluid">
                 <div class="position-relative zoomIn ">
@@ -158,8 +159,8 @@
                 <article class="col-lg-8  pr-xl-7 mt-5">
                     <section class="m-top border-bottom-pp">
                         <ul class="list-inline d-sm-flex align-items-sm-center">
-                            <li class="list-inline-item badge badge-orange">Featured</li>
-                            <li class="list-inline-item badge badge-primary">For Sale</li>
+                            <li class="list-inline-item badge-pp badge-pp-orange">Featured</li>
+                            <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li>
                             <li class="list-inline-item mr-2 mt-2 mt-sm-0"><i class="fa-regular fa-clock mr-1"></i>2months
                                 ago
                             </li>
@@ -390,21 +391,21 @@
                     <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Offices Amenities</h2>
                         <ul class="list-unstyled mb-0 row pt-2 ">
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Balcony
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Fireplace
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Fireplace
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Balcony
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Fireplace
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Fireplace
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Basement
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Basement
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Cooling
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Cooling
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Basement
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Basement
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Cooling
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Cooling
                             </li>
                             <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining
                                     room</del>
@@ -506,8 +507,8 @@
                                                 </li>
                                             </ul>
                                             <div class="d-block w-100 px-1">
-                                                <div class="progress rating-progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
+                                                <div class="progress-pp rating-progress-pp">
+                                                    <div class="progress-pp-bar bg-warning" role="progressbar"
                                                         style="width: 60%" aria-valuenow="60" aria-valuemin="0"
                                                         aria-valuemax="100"></div>
                                                 </div>
@@ -534,8 +535,8 @@
                                                 </li>
                                             </ul>
                                             <div class="d-block w-100 px-1">
-                                                <div class="progress rating-progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
+                                                <div class="progress-pp rating-progress-pp">
+                                                    <div class="progress-pp-bar bg-warning" role="progressbar"
                                                         style="width: 40%" aria-valuenow="40" aria-valuemin="0"
                                                         aria-valuemax="100"></div>
                                                 </div>
@@ -562,8 +563,8 @@
                                                 </li>
                                             </ul>
                                             <div class="d-block w-100 px-1">
-                                                <div class="progress rating-progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
+                                                <div class="progress-pp rating-progress-pp">
+                                                    <div class="progress-pp-bar bg-warning" role="progressbar"
                                                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                                                     </div>
                                                 </div>
@@ -590,8 +591,8 @@
                                                 </li>
                                             </ul>
                                             <div class="d-block w-100 px-1">
-                                                <div class="progress rating-progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
+                                                <div class="progress-pp rating-progress-pp">
+                                                    <div class="progress-pp-bar bg-warning" role="progressbar"
                                                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                                                     </div>
                                                 </div>
@@ -618,8 +619,8 @@
                                                 </li>
                                             </ul>
                                             <div class="d-block w-100 px-1">
-                                                <div class="progress rating-progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
+                                                <div class="progress-pp rating-progress-pp">
+                                                    <div class="progress-pp-bar bg-warning" role="progressbar"
                                                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                                                     </div>
                                                 </div>
@@ -686,7 +687,7 @@
                                     </div>
                                 </div>
 
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
+                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                     <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
                                         class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
@@ -732,7 +733,7 @@
                                         </div>
                                 </div>
 
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
+                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                     <img src="{{ asset('/assets/images/review-3.jpg') }}" alt="Nettie Singleton"
                                         class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
@@ -778,7 +779,7 @@
                                         </div>
                                 </div>
 
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
+                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                     <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Vernon Fisher"
                                         class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
@@ -824,7 +825,7 @@
                                         </div>
                                 </div>
 
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
+                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                     <img src="{{ asset('/assets/images/review-4.png') }}" alt="Harry Iglesias"
                                         class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
@@ -1100,8 +1101,8 @@
                                                 alt="Affordable Urban House">
                                             <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
-                                                    <span class="badge mr-2 badge-orange">featured</span>
-                                                    <span class="badge mr-2 badge-indigo">for Sale</span>
+                                                    <span class="badge-pp mr-2 badge-pp-orange">featured</span>
+                                                    <span class="badge-pp mr-2 badge-pp-indigo">for Sale</span>
                                                 </div>
                                                 <ul class="list-inline mb-0 mt-auto hover-image">
                                                     <li class="list-inline-item mr-2" data-toggle="tooltip"
@@ -1133,14 +1134,14 @@
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
+                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
                                                     </div>
                                                 </div>
                                                 <div class="col-6 ">
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
+                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -1148,7 +1149,7 @@
                                                         data-toggle="tooltip" title="" data-original-title="Size">
                                                         <div class="list-inline fa-sq">
                                                             <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
                                                             2000 Sq.Ft
                                                         </div>
                                                     </div>
@@ -1185,8 +1186,8 @@
                                                 alt="Garden Gingerbread House">
                                             <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
-                                                    <span class="badge mr-2 badge-orange">featured</span>
-                                                    <span class="badge mr-2 badge-indigo">for Sale</span>
+                                                    <span class="badge-pp mr-2 badge-pp-orange">featured</span>
+                                                    <span class="badge-pp mr-2 badge-pp-indigo">for Sale</span>
                                                 </div>
                                                 <ul class="list-inline mb-0 mt-auto hover-image">
                                                     <li class="list-inline-item mr-2" data-toggle="tooltip"
@@ -1218,14 +1219,14 @@
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
+                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
                                                     </div>
                                                 </div>
                                                 <div class="col-6 ">
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
+                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -1233,7 +1234,7 @@
                                                         data-toggle="tooltip" title="" data-original-title="Size">
                                                         <div class="list-inline fa-sq">
                                                             <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
                                                             2200 Sq.Ft
                                                         </div>
                                                     </div>
@@ -1272,7 +1273,7 @@
                                                 alt="Affordable Urban House">
                                             <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
-                                                    <span class="badge mr-2 badge-primary">for Sale</span>
+                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
                                                 </div>
                                                 <ul class="list-inline mb-0 mt-auto hover-image">
                                                     <li class="list-inline-item mr-2" data-toggle="tooltip"
@@ -1304,14 +1305,14 @@
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
+                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
                                                     </div>
                                                 </div>
                                                 <div class="col-6 ">
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
+                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -1319,7 +1320,7 @@
                                                         data-toggle="tooltip" title="" data-original-title="Size">
                                                         <div class="list-inline fa-sq">
                                                             <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
                                                             2000 Sq.Ft
                                                         </div>
                                                     </div>
@@ -1357,7 +1358,7 @@
                                                 alt="Affordable Urban House">
                                             <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
-                                                    <span class="badge mr-2 badge-primary">for Sale</span>
+                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
                                                 </div>
                                                 <ul class="list-inline mb-0 mt-auto hover-image">
                                                     <li class="list-inline-item mr-2" data-toggle="tooltip"
@@ -1389,14 +1390,14 @@
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
+                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
                                                     </div>
                                                 </div>
                                                 <div class="col-6 ">
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
+                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -1404,7 +1405,7 @@
                                                         data-toggle="tooltip" title="" data-original-title="Size">
                                                         <div class="list-inline fa-sq">
                                                             <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
                                                             2000 Sq.Ft
                                                         </div>
                                                     </div>
@@ -1442,7 +1443,7 @@
                                                 alt="Affordable Urban House">
                                             <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
-                                                    <span class="badge mr-2 badge-primary">for Sale</span>
+                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
                                                 </div>
                                                 <ul class="list-inline mb-0 mt-auto hover-image">
                                                     <li class="list-inline-item mr-2" data-toggle="tooltip"
@@ -1474,14 +1475,14 @@
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
+                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
                                                     </div>
                                                 </div>
                                                 <div class="col-6 ">
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
+                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -1490,7 +1491,7 @@
                                                         data-original-title="Size">
                                                         <div class="list-inline fa-sq">
                                                             <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
                                                             2000 Sq.Ft
                                                         </div>
                                                     </div>
@@ -1528,7 +1529,7 @@
                                                 alt="Affordable Urban House">
                                             <div class="card-img-pp-overlay p-2 d-flex flex-column">
                                                 <div>
-                                                    <span class="badge mr-2 badge-primary">for Sale</span>
+                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
                                                 </div>
                                                 <ul class="list-inline mb-0 mt-auto hover-image">
                                                     <li class="list-inline-item mr-2" data-toggle="tooltip"
@@ -1560,14 +1561,14 @@
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
+                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
                                                     </div>
                                                 </div>
                                                 <div class="col-6 ">
                                                     <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
                                                         data-toggle="tooltip" title=""
                                                         data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
+                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -1576,7 +1577,7 @@
                                                         data-original-title="Size">
                                                         <div class="list-inline fa-sq">
                                                             <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
                                                             2000 Sq.Ft
                                                         </div>
                                                     </div>
