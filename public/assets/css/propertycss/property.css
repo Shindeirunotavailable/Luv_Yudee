@@ -569,7 +569,9 @@ html {
   .fs-48 {
     font-size: 48px!important
   }
-
+  .fw-600 {
+    font-weight: 600!important
+  }
   .lh-1 {
     line-height: 1!important
   }

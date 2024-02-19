@@ -169,7 +169,7 @@
 
                         <div class="d-sm-flex justify-content-sm-between ">
                             <div>
-                                <h2 class="fs-30 text-heading font-bold mb-0">Villa on Hollywood Boulevard</h2>
+                                <h2 class="fw-600 fs-30 text-heading font-bold mb-0">Villa on Hollywood Boulevard</h2>
                                 <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>ที่อยู่บ้าน</p>
                             </div>
 
@@ -178,7 +178,7 @@
                                 <p class="mb-0">$0000/SqFt</p>
                             </div>
                         </div>
-                        <h2 class="fs-22 text-heading font-bold mb-0">Description</h2>
+                        <h2 class="fw-600 fs-22 text-heading font-bold mb-0">Description</h2>
                         <p class="mb-6 lh-md pt-2 ">Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus
                             faucibus
                             scelerisque eleifend donec.
@@ -193,7 +193,7 @@
                     </section>
 
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fs-30 text-heading font-bold ">Facts and Features</h2>
+                        <h2 class="fw-600 fs-30 text-heading font-bold ">Facts and Features</h2>
                         <div class="row pt-3">
                             <div class="col-lg-3 col-6 mt-4 ">
                                 <div class="media ">
@@ -201,7 +201,7 @@
                                         <i class="fa-solid fa-house-chimney-window text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             Type
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -217,7 +217,7 @@
                                         <i class="fa-solid fa-trowel-bricks text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             YEAR BUILT
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -232,7 +232,7 @@
                                         <i class="fa-solid fa-temperature-arrow-up text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             HEATING
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -248,7 +248,7 @@
                                         <i class="fa-solid fa-bath text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             BATHROOMS
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -264,7 +264,7 @@
                                         <i class="fa-solid fa-bed text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             BEDROOMS
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -280,7 +280,7 @@
                                         <i class="fa-solid fa-house-flag text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             SQFT
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -296,7 +296,7 @@
                                         <i class="fa-solid fa-warehouse text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             GARAGE
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -312,7 +312,7 @@
                                         <i class="fa-solid fa-scroll text-blue"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                        <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
                                             STATUS
                                         </h5>
                                         <p class=" fs-ff2 font-weight-bold text-heading">
@@ -326,7 +326,7 @@
                     </section>
 
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fs-30 text-heading font-bold ">Additional Details</h2>
+                        <h2 class="fw-600 fs-30 text-heading font-bold ">Additional Details</h2>
                         <div class="row pt-2">
                             <dl class="col-sm-6 mb-0 d-flex">
                                 <dt class="w-110px fs-14  text-heading pr-2">Property ID</dt>
@@ -388,7 +388,7 @@
                     </section>
 
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fs-30 text-heading font-bold ">Offices Amenities</h2>
+                        <h2 class="fw-600 fs-30 text-heading font-bold ">Offices Amenities</h2>
                         <ul class="list-unstyled mb-0 row pt-2 ">
                             <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
                             </li>
@@ -424,7 +424,7 @@
 
                     <section class="pt-6 border-bottom-pp section-pp">
 
-                        <h4 class="fs-30 text-heading font-bold mb-3">Virtual Tour</h4>
+                        <h4 class="fw-600 fs-30 text-heading font-bold mb-3">Virtual Tour</h4>
                         <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
                             class="w-100"></iframe>
 
@@ -432,7 +432,7 @@
                     </section>
 
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fs-30 text-heading font-bold mb-3">Location</h2>
+                        <h2 class="fw-600 fs-30 text-heading font-bold mb-3">Location</h2>
                         <div class="d-flex justify-content-center ">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1704791449392!5m2!1sth!2sth"
@@ -443,7 +443,7 @@
                     </section>
 
                     <section class="pt-6 section-pp">
-                        <h4 class="fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
+                        <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
                         <div class="card border-0 ">
                             <div class="card-body p-0">
                                 <div class="row">
@@ -451,7 +451,7 @@
                                     <div class="col-sm-6 mb-6 mb-sm-0  ">
                                         <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
 
-                                            <h5 class="fs-16 lh-2 text-heading mb-6 ">
+                                            <h5 class="fw-600 fs-16 lh-2 text-heading mb-6 ">
                                                 Avarage User Rating
                                             </h5>
                                             <p class="fs-40 text-heading font-weight-bold lh-1">4.6 <span
@@ -484,7 +484,7 @@
                                     </div>
 
                                     <div class="col-sm-6 pt-2">
-                                        <h5 class="fs-16 lh-2 text-heading ">
+                                        <h5 class="fw-600 fs-16 lh-2 text-heading ">
                                             Rating Breakdown
                                         </h5>
                                         <div class="d-flex align-items-center mx-n1">
@@ -636,8 +636,7 @@
                     <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0 ">
                             <div class="card-body p-0">
-                                <h3
-                                    class="fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
+                                <h3 class="fw-600 fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
                                     5 Reviews</h3>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
@@ -647,7 +646,7 @@
                                     <div class="media-body">
                                         <div class="row mb-1 align-items-center">
                                             <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                             </div>
 
                                             <div class="col-sm-6">
@@ -693,7 +692,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-items-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -739,7 +738,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-items-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -785,7 +784,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-items-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -831,7 +830,7 @@
                                         <div class="media-body">
                                             <div class="row mb-1 align-items-center">
                                                 <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                                 </div>
 
                                                 <div class="col-sm-6">
@@ -876,7 +875,7 @@
                     <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0">
                             <div class="card-body pt-0 ">
-                                <h3 class="fs-16 lh-2 text-heading mb-4">Write A Review</h3>
+                                <h3 class="fw-600 fs-16 lh-2 text-heading mb-4">Write A Review</h3>
                                 <form>
 
                                     <div class="form-group mb-4 d-flex justify-content-start">
@@ -1038,7 +1037,7 @@
                                             </div>
 
                                             <div class="mt-3 hide-on-ls show-on-ss">
-                                                <h2 class="text-center">Contact</h2>
+                                                <h2 class="fw-600 text-center">Contact</h2>
                                             </div>
                                             <div class="mt-4">
                                                 <div class="form-group mb-2">
@@ -1086,7 +1085,7 @@
 
         <section class="section-pp md-mb-80">
             <div class="container-pp ">
-                <h4 class="fs-22 text-heading ">Similar Homes You May Like</h4>
+                <h4 class="fw-600 fs-22 text-heading ">Similar Homes You May Like</h4>
                 <div class="slick-list draggable" style="height: 100%;">
                     <div class="slick-track sm-box">
                         <div class="col-md-12 ">
@@ -1123,7 +1122,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
+                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Home in Metric Way</a>
                                             </h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1208,7 +1207,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
+                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Garden Gingerbread
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1294,7 +1293,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
+                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1379,7 +1378,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
+                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1464,7 +1463,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
+                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
@@ -1550,7 +1549,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body pt-3">
-                                            <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
+                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
                                                     class="text-dark hover-primary" tabindex="0">Affordable Urban
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,

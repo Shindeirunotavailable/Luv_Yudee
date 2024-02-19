@@ -3,7 +3,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="mb-6">
-                        <h2 class="mb-0 text-heading fs-mp-h">My Profile</h2>
+                        <h2 class="fw-600 mb-0 text-heading fs-mp-h">My Profile</h2>
                         <p class="">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
                     </div>
                     <div class="container">
@@ -14,7 +14,7 @@
                                     <div class="card-body px-6 pt-6 pb-5">
                                         <div class="row">
                                             <div class="col-sm-12 col-xl-12 col-xxl-7 ">
-                                                <h3 class="card-title mb-0 text-heading fs-mp-h">Photo</h3>
+                                                <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Photo</h3>
                                                 <p class=" fs-mp mb-4 ">Upload your profile photo.</p>
                                             </div>
                                             <div class="col-sm-8 col-xl-12 col-xxl-5 text-center">
@@ -35,7 +35,7 @@
 
                                 <div class="card mb-6">
                                     <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="card-title mb-0 text-heading fs-mp-h">Contact information</h3>
+                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Contact information</h3>
                                         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-row mx-n4">
                                             <div class="form-group col-md-6 px-4">
@@ -78,7 +78,7 @@
 
                                 <div class="card mb-6 mb-lg-0">
                                     <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="card-title mb-0 text-heading fs-mp-h">User detail</h3>
+                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">User detail</h3>
                                         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-group mb-0">
                                             <label for="title" class="text-heading">Title / Posittion</label>
@@ -97,7 +97,7 @@
 
                                 <div class="card mb-6 ">
                                         <div class="card-body  pt-6 pb-5">
-                                            <h3 class="card-title mb-0 text-heading fs-mp-h">User detail</h3>
+                                            <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">User detail</h3>
                                             <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                             </p>
                                             <div class="form-group">
@@ -137,7 +137,7 @@
 
                                 <div class="card">
                                     <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="card-title mb-0 text-heading fs-mp-h">Change password</h3>
+                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Change password</h3>
                                         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
                                         </p>
                                         <div class="form-group">
