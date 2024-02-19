@@ -1,12 +1,13 @@
 <div class="list-sidebar-style1" id="test">
-    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
 
     {{-- side-bar --}}
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+
             <h6>Find your home</h6>
             <div class="search_area">
-                <input type="text" class="form-control form-control-text"
+                <input type="text" class="form-control form-control-text color-border"
                     placeholder="What are you looking for?"><span>
                     <i class="fa-solid fa-magnifying-glass"></i></span>
             </div>
@@ -131,20 +132,18 @@
                 </div>
             </div>
 
-
-
         </li>
         <li class="list-group-item">
             <div class="form-group">
-                <h6 class="list-title">Location</h6>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Houses</option>
-                    <option>Apartments</option>
-                    <option>Office</option>
-                    <option>Villa</option>
-                </select>
+              <h6 class="list-title">Location</h6>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>กรุงเทพมหานคร</option>
+                <option>ปทุมธานี</option>
+                <option>นนทบุรี</option>
+                <option>พระนครศรีอยุธยา</option>
+              </select>
             </div>
-        </li>
+      </li>
 
         <li class="list-group-item">
             <h6 class="list-title">Bedrooms</h6>
@@ -206,17 +205,19 @@
             </div>
         </li>
         <li class="list-group-item">
-            <button type="submit" class="btn btn-primary btn-lg btn-block afterButton" id="submitModalBtn">
-                <i class="fa-solid fa-magnifying-glass"></i> search
+            <button type="submit"
+            class="btn btn-primary afterButton rounded-pill w-100 "
+            id="submitModal"> 
+            <i class="fa-solid fa-magnifying-glass"></i> search
             </button>
         </li>
         <li class="list-group-item">
             <div class="d-flex justify-content-between">
-
-                <a href="javascript:void(0)">
+                <a href="javascript:void(0)"><i class="fa fa-repeat"></i><span>Reset all filters</span></a>
+                {{-- <a href="javascript:void(0)">
                     <span class="fa fa-repeat"></span>
                     <u>Reset all filters</u>
-                </a>
+                </a> --}}
                 <a href="javascript:void(0)">
                     <span class="fa fa-star"></span>
                     <u>Save Search</u>

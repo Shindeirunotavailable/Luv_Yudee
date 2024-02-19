@@ -1,7 +1,6 @@
 @extends('layout.master')
 @section('content')
-
-</div>
+    </div>
     <main>
         <section class="section-pp">
             <div class="container-pp-fluid">
@@ -19,8 +18,7 @@
                             </li>
 
                             <li class="list-inline-item mr-2">
-                                <button
-                                    {{-- เอา btn-white หลัง btn ออก --}}
+                                <button {{-- เอา btn-white หลัง btn ออก --}}
                                     class="btn-1 btn-white-1 p-0 d-flex align-items-center justify-content-center tooltip-icon text-heading bg-hover-primary hover-white rounded-circle border-0 shadow-none"
                                     type="button" data-placement="top" data-toggle="popover" data-container="body"
                                     data-content='
@@ -39,7 +37,7 @@
                                             </li>
                                         </ul>'
                                     data-html="true" data-original-title="" title="">
-                                    <i class="fa-solid fa-share-nodes" ></i>
+                                    <i class="fa-solid fa-share-nodes"></i>
                                 </button>
                             </li>
 
@@ -61,8 +59,9 @@
                     <div class="col-lg-6 p-1 ">
                         <div class="item item-size-4-3">
                             <div class="card p-0 hover-zoom-in">
-                                <a href="{{ asset('/assets/images/property-1.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
-                                    <img src="{{ asset('/assets/images/property-1.jpg') }}"  >
+                                <a href="{{ asset('/assets/images/property-1.jpg') }}" class="card-img-pp"
+                                    data-gtf-mfp="true" data-gallery-id="01">
+                                    <img src="{{ asset('/assets/images/property-1.jpg') }}">
                                 </a>
                             </div>
                         </div>
@@ -72,8 +71,9 @@
                             <div class="col-md-6 p-1 ">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-2.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-2.jpg') }}"  >
+                                        <a href="{{ asset('/assets/images/property-2.jpg') }}" class="card-img-pp"
+                                            data-gtf-mfp="true" data-gallery-id="01">
+                                            <img src="{{ asset('/assets/images/property-2.jpg') }}">
                                         </a>
                                     </div>
                                 </div>
@@ -81,8 +81,9 @@
                             <div class="col-md-6 p-1">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-3.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-3.jpg') }}"  >
+                                        <a href="{{ asset('/assets/images/property-3.jpg') }}" class="card-img-pp"
+                                            data-gtf-mfp="true" data-gallery-id="01">
+                                            <img src="{{ asset('/assets/images/property-3.jpg') }}">
                                         </a>
                                     </div>
                                 </div>
@@ -90,8 +91,9 @@
                             <div class="col-md-6 p-1">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-4.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-4.jpg') }}"  >
+                                        <a href="{{ asset('/assets/images/property-4.jpg') }}" class="card-img-pp"
+                                            data-gtf-mfp="true" data-gallery-id="01">
+                                            <img src="{{ asset('/assets/images/property-4.jpg') }}">
                                         </a>
                                     </div>
                                 </div>
@@ -99,24 +101,25 @@
                             <div class="col-md-6 p-1">
                                 <div class="item item-size-4-3">
                                     <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-5.jpg') }}"  class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-5.jpg') }}"  >
+                                        <a href="{{ asset('/assets/images/property-5.jpg') }}" class="card-img-pp"
+                                            data-gtf-mfp="true" data-gallery-id="01">
+                                            <img src="{{ asset('/assets/images/property-5.jpg') }}">
                                         </a>
                                         <div class=" hidden">
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}"
-                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
+                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
+                                                data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}"
-                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
+                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
+                                                data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}"
-                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
+                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
+                                                data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}"
-                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
+                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
+                                                data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}"
-                                            class="card-img-pp" data-gtf-mfp="true" data-gallery-id="01">
+                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
+                                                data-gtf-mfp="true" data-gallery-id="01">
                                             </a>
 
                                         </div>
@@ -143,7 +146,8 @@
                         <li class="breadcrumb-item fs-12 letter-spacing-087">
                             <a href="#">Listing</a>
                         </li>
-                        <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood Boulevard</li>
+                        <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
+                            Boulevard</li>
                     </ol>
                 </nav>
             </div>
@@ -164,7 +168,7 @@
                         </ul>
 
                         <div class="d-sm-flex justify-content-sm-between ">
-                            <div >
+                            <div>
                                 <h2 class="fs-30 text-heading font-bold mb-0">Villa on Hollywood Boulevard</h2>
                                 <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>ที่อยู่บ้าน</p>
                             </div>
@@ -191,132 +195,132 @@
                     <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fs-30 text-heading font-bold ">Facts and Features</h2>
                         <div class="row pt-3">
-                                <div class="col-lg-3 col-6 mt-4 ">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-house-chimney-window text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                Type
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                Single Family
-                                            </p>
-                                        </div>
+                            <div class="col-lg-3 col-6 mt-4 ">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                        <i class="fa-solid fa-house-chimney-window text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            Type
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            Single Family
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-6 mt-4">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-trowel-bricks text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                YEAR BUILT
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                2020
-                                            </p>
-                                        </div>
+                            <div class="col-lg-3 col-6 mt-4">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                        <i class="fa-solid fa-trowel-bricks text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            YEAR BUILT
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            2020
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-6 mt-4">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-temperature-arrow-up text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                HEATING
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                Radiant
-                                            </p>
-                                        </div>
+                            </div>
+                            <div class="col-lg-3 col-6 mt-4">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                        <i class="fa-solid fa-temperature-arrow-up text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            HEATING
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            Radiant
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-6 mt-4">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2  ">
-                                            <i class="fa-solid fa-bath text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                BATHROOMS
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                2
-                                            </p>
-                                        </div>
+                            <div class="col-lg-3 col-6 mt-4">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2  ">
+                                        <i class="fa-solid fa-bath text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            BATHROOMS
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            2
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-6 mt-4">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-bed text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                BEDROOMS
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                3
-                                            </p>
-                                        </div>
+                            <div class="col-lg-3 col-6 mt-4">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                        <i class="fa-solid fa-bed text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            BEDROOMS
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            3
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-6 mt-4">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-house-flag text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                SQFT
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                979.0
-                                            </p>
-                                        </div>
+                            <div class="col-lg-3 col-6 mt-4">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                        <i class="fa-solid fa-house-flag text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            SQFT
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            979.0
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-6 mt-4">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-warehouse text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                GARAGE
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                1
-                                            </p>
-                                        </div>
+                            <div class="col-lg-3 col-6 mt-4">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                        <i class="fa-solid fa-warehouse text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            GARAGE
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            1
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-3 col-6 mt-4">
-                                    <div class="media ">
-                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                            <i class="fa-solid fa-scroll text-blue"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                STATUS
-                                            </h5>
-                                            <p class=" fs-ff2 font-weight-bold text-heading">
-                                                Active
-                                            </p>
-                                        </div>
+                            <div class="col-lg-3 col-6 mt-4">
+                                <div class="media ">
+                                    <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                        <i class="fa-solid fa-scroll text-blue"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="  fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                            STATUS
+                                        </h5>
+                                        <p class=" fs-ff2 font-weight-bold text-heading">
+                                            Active
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
                         </div>
                     </section>
@@ -380,7 +384,7 @@
 
                         </div>
                         <div class="container-pp list-head">
-            </div>
+                        </div>
                     </section>
 
                     <section class="pt-6 border-bottom-pp section-pp">
@@ -402,13 +406,17 @@
                             </li>
                             <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-primary"></i>Cooling
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining room</del>
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining
+                                    room</del>
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
+                            <li class="col-sm-3 col-6 mb-2"><i
+                                    class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining room</del>
+                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining
+                                    room</del>
                             </li>
-                            <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
+                            <li class="col-sm-3 col-6 mb-2"><i
+                                    class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
                             </li>
                         </ul>
 
@@ -443,33 +451,33 @@
                                     <div class="col-sm-6 mb-6 mb-sm-0  ">
                                         <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
 
-                                                <h5 class="fs-16 lh-2 text-heading mb-6 ">
-                                                    Avarage User Rating
-                                                </h5>
-                                                <p class="fs-40 text-heading font-weight-bold lh-1">4.6 <span
-                                                        class="fs-18 text-gray-light font-weight-normal">/5</span>
-                                                </p>
-                                                <div class="list-inline ">
-                                                    <li
-                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li
-                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li
-                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li
-                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
-                                                    <li
-                                                        class="list-inline-item bg-gray-04 text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                        <i class="fas fa-star"></i>
-                                                    </li>
+                                            <h5 class="fs-16 lh-2 text-heading mb-6 ">
+                                                Avarage User Rating
+                                            </h5>
+                                            <p class="fs-40 text-heading font-weight-bold lh-1">4.6 <span
+                                                    class="fs-18 text-gray-light font-weight-normal">/5</span>
+                                            </p>
+                                            <div class="list-inline ">
+                                                <li
+                                                    class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                    <i class="fas fa-star"></i>
+                                                </li>
+                                                <li
+                                                    class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                    <i class="fas fa-star"></i>
+                                                </li>
+                                                <li
+                                                    class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                    <i class="fas fa-star"></i>
+                                                </li>
+                                                <li
+                                                    class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                    <i class="fas fa-star"></i>
+                                                </li>
+                                                <li
+                                                    class="list-inline-item bg-gray-04 text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                    <i class="fas fa-star"></i>
+                                                </li>
                                             </div>
                                         </div>
 
@@ -628,16 +636,17 @@
                     <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0 ">
                             <div class="card-body p-0">
-                                <h3 class="fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
+                                <h3
+                                    class="fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
                                     5 Reviews</h3>
 
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
-                                    <img src="{{ asset('/assets/images/review-1.jpg') }}"
-                                        alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                    <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
                                     <div class="media-body">
-                                        <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0 ">
+                                        <div class="row mb-1 align-items-center">
+                                            <div class="col-sm-6 mb-2 mb-sm-0  ">
                                                 <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
                                             </div>
 
@@ -662,209 +671,203 @@
                                                     </li>
                                                 </ul>
                                             </div>
-
+                                        </div>
                                             <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
                                                 always keeping your WordPress themes up to date. Your level of support
                                                 and
                                                 dedication
                                                 is second to none.
                                             </p>
-                                            <div class="d-flex justify-content-center justify-content-sm-start">
-                                                <p class="mb-0 text-muted fs-13 lh-1 "> 02 Dec 2020 at 2:40 </p>
+                                            <div class="d-flex justify-content-sm-start justify-content-center">
+                                                <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
                                                 <a href="#"
-                                                    class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2">Reply</a>
+                                                    class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm ">
-                                    <img src="{{ asset('/assets/images/review-2.jpg') }}"
-                                        alt="Viola Austin" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                    <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
+                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
-                                    <div class="media-body">
-                                        <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                <h4 class="mb-0 text-heading fs-14">Viola Austin</h4>
-                                            </div>
+                                        <div class="media-body">
+                                            <div class="row mb-1 align-items-center">
+                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                </div>
 
-                                            <div class="col-sm-6">
-                                                <ul
-                                                    class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                    <li class="list-inline-item mr-0">
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
+                                                <div class="col-sm-6">
+                                                    <ul
+                                                        class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                        <li class="list-inline-item mr-0">
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-
-                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                always keeping your WordPress themes up to date. Your level of support
-                                                and
-                                                dedication
-                                                is second to none.
-                                            </p>
-                                            <div class="d-flex justify-content-center justify-content-sm-start">
-                                                <p class="mb-0 text-muted fs-13 lh-1"> 02 Dec 2020 at 2:40 </p>
-                                                <a href="#"
-                                                    class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2">Reply</a>
-                                            </div>
+                                                <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
+                                                    always keeping your WordPress themes up to date. Your level of support
+                                                    and
+                                                    dedication
+                                                    is second to none.
+                                                </p>
+                                                <div class="d-flex justify-content-sm-start justify-content-center">
+                                                    <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
+                                                    <a href="#"
+                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                </div>
                                         </div>
-                                    </div>
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                    <img src="{{ asset('/assets/images/review-3.jpg') }}"
-                                        alt="Nettie Singleton" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                    <img src="{{ asset('/assets/images/review-3.jpg') }}" alt="Nettie Singleton"
+                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
-                                    <div class="media-body">
-                                        <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                <h4 class="mb-0 text-heading fs-14">Nettie Singleton</h4>
-                                            </div>
+                                        <div class="media-body">
+                                            <div class="row mb-1 align-items-center">
+                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                </div>
 
-                                            <div class="col-sm-6">
-                                                <ul
-                                                    class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                    <li class="list-inline-item mr-0">
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
+                                                <div class="col-sm-6">
+                                                    <ul
+                                                        class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                        <li class="list-inline-item mr-0">
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-
-                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                always keeping your WordPress themes up to date. Your level of support
-                                                and
-                                                dedication
-                                                is second to none.
-                                            </p>
-                                            <div class="d-flex justify-content-center justify-content-sm-start">
-                                                <p class="mb-0 text-muted fs-13 lh-1"> 02 Dec 2020 at 2:40 </p>
-                                                <a href="#"
-                                                    class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2">Reply</a>
-                                            </div>
+                                                <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
+                                                    always keeping your WordPress themes up to date. Your level of support
+                                                    and
+                                                    dedication
+                                                    is second to none.
+                                                </p>
+                                                <div class="d-flex justify-content-sm-start justify-content-center">
+                                                    <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
+                                                    <a href="#"
+                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                </div>
                                         </div>
-                                    </div>
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                    <img src="{{ asset('/assets/images/review-1.jpg') }}"
-                                        alt="Vernon Fisher" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                    <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Vernon Fisher"
+                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
-                                    <div class="media-body">
-                                        <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                <h4 class="mb-0 text-heading fs-14">Vernon Fisher</h4>
-                                            </div>
+                                        <div class="media-body">
+                                            <div class="row mb-1 align-items-center">
+                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                </div>
 
-                                            <div class="col-sm-6">
-                                                <ul
-                                                    class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                    <li class="list-inline-item mr-0">
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-border">
-                                                            <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
+                                                <div class="col-sm-6">
+                                                    <ul
+                                                        class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                        <li class="list-inline-item mr-0">
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-
-                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                always keeping your WordPress themes up to date. Your level of support
-                                                and
-                                                dedication
-                                                is second to none.
-                                            </p>
-                                            <div class="d-flex justify-content-center justify-content-sm-start">
-                                                <p class="mb-0 text-muted fs-13 lh-1"> 02 Dec 2020 at 2:40 </p>
-                                                <a href="#"
-                                                    class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2">Reply</a>
-                                            </div>
+                                                <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
+                                                    always keeping your WordPress themes up to date. Your level of support
+                                                    and
+                                                    dedication
+                                                    is second to none.
+                                                </p>
+                                                <div class="d-flex justify-content-sm-start justify-content-center">
+                                                    <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
+                                                    <a href="#"
+                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                </div>
                                         </div>
-                                    </div>
                                 </div>
 
                                 <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center-sm">
-                                    <img src="{{ asset('/assets/images/review-4.png') }}"
-                                        alt="Harry Iglesias" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                    <img src="{{ asset('/assets/images/review-4.png') }}" alt="Harry Iglesias"
+                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
-                                    <div class="media-body">
-                                        <div class="row mb-1 align-item-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0 pl-0">
-                                                <h4 class="mb-0 text-heading fs-14">Harry Iglesias</h4>
-                                            </div>
+                                        <div class="media-body">
+                                            <div class="row mb-1 align-items-center">
+                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                    <h4 class="mb-0 text-heading fs-14">Danny Fox</h4>
+                                                </div>
 
-                                            <div class="col-sm-6">
-                                                <ul
-                                                    class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                    <li class="list-inline-item mr-0">
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-border">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                    </li>
-                                                </ul>
+                                                <div class="col-sm-6">
+                                                    <ul
+                                                        class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                        <li class="list-inline-item mr-0">
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-
-                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                always keeping your WordPress themes up to date. Your level of support
-                                                and
-                                                dedication
-                                                is second to none.
-                                            </p>
-                                            <div class="d-flex justify-content-center justify-content-sm-start">
-                                                <p class="mb-0 text-muted fs-13 lh-1"> 02 Dec 2020 at 2:40 </p>
-                                                <a href="#"
-                                                    class="mb-0 text-heading border-left border-dark lh-1 ml-2 pl-2">Reply</a>
-                                            </div>
+                                                <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
+                                                    always keeping your WordPress themes up to date. Your level of support
+                                                    and
+                                                    dedication
+                                                    is second to none.
+                                                </p>
+                                                <div class="d-flex justify-content-sm-start justify-content-center">
+                                                    <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
+                                                    <a href="#"
+                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                </div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -874,7 +877,7 @@
                         <div class="card border-0">
                             <div class="card-body pt-0 ">
                                 <h3 class="fs-16 lh-2 text-heading mb-4">Write A Review</h3>
-                                <form >
+                                <form>
 
                                     <div class="form-group mb-4 d-flex justify-content-start">
                                         <div class="rate-input">
@@ -917,10 +920,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <textarea class="form-control-pp form-control-pp-lg border-0 textarea-pp" placeholder="Your Review" name="message" rows="5"></textarea>
+                                        <textarea class="form-control-pp form-control-pp-lg border-0 textarea-pp" placeholder="Your Review" name="message"
+                                            rows="5"></textarea>
                                     </div>
-                                    {{-- เอา btn-t-white ออก btn-block--}}
-                                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb" id="submitModalBtn"> Submit </button>
+                                    {{-- เอา btn-t-white ออก btn-block --}}
+                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb"
+                                        id="submitModalBtn"> Submit </button>
 
                                 </form>
                             </div>
@@ -941,18 +946,21 @@
                                         <div class="tab-pane fade fade show active" id="request-info" role="tabpanel">
 
                                             <div class="hide-content">
-                                                <div class="form-check d-flex align-items-center border-bottom-pp pb-3 mb-3">
+                                                <div
+                                                    class="form-check d-flex align-items-center border-bottom-pp pb-3 mb-3">
                                                     <input class="form-check-input" type="radio" name="agent"
                                                         value="option1">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center mt-3">
                                                             <a href="#" class="d-block agent-icon mr-3">
-                                                                <img class="img-angent" src="{{ asset('/assets/images/agent-1.jpg') }}"
+                                                                <img class="img-angent"
+                                                                    src="{{ asset('/assets/images/agent-1.jpg') }}"
                                                                     class="rounded-circle" alt="agent-2">
                                                             </a>
                                                             <div>
                                                                 <a href="#"
-                                                                    class="d-block text-dark font-weight-500 lh-15 hover-primary">Oliver Beddows</a>
+                                                                    class="d-block text-dark font-weight-500 lh-15 hover-primary">Oliver
+                                                                    Beddows</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Sales Excutive</p>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">
                                                                     <span>(+123)</span><span
@@ -960,7 +968,7 @@
                                                                         68668</span>
                                                                 </p>
 
-                                                            <ul class="list-inline mb-0 fs-22 pl-2">
+                                                                <ul class="list-inline mb-0 fs-22 pl-2">
 
                                                                     <li class="list-inline-item mr-2 ml-2 mb-0">
                                                                         <a href="https://line.me/R/ti/p/@Luvdrive?from=page"
@@ -989,12 +997,14 @@
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#" class="d-block agent-icon mr-3">
-                                                                <img class="img-angent" src="{{ asset('/assets/images/agent-2.jpg') }}"
+                                                                <img class="img-angent"
+                                                                    src="{{ asset('/assets/images/agent-2.jpg') }}"
                                                                     class="rounded-circle" alt="agent-1">
                                                             </a>
                                                             <div>
                                                                 <a href="#"
-                                                                    class="d-block text-dark font-weight-500 lh-15 hover-primary">Max Kordex</a>
+                                                                    class="d-block text-dark font-weight-500 lh-15 hover-primary">Max
+                                                                    Kordex</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Real estate broker</p>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">
                                                                     <span>(+123)</span><span
@@ -1032,23 +1042,27 @@
                                             </div>
                                             <div class="mt-4">
                                                 <div class="form-group mb-2">
-                                                    <input type="text" class="form-control-pp form-control-pp-lg border-0"
+                                                    <input type="text"
+                                                        class="form-control-pp form-control-pp-lg border-0"
                                                         placeholder="First Name, Last Name">
                                                 </div>
                                                 <div class="form-group mb-2">
-                                                    <input type="email" class="form-control-pp form-control-pp-lg border-0"
+                                                    <input type="email"
+                                                        class="form-control-pp form-control-pp-lg border-0"
                                                         placeholder="Your Email">
                                                 </div>
                                                 <div class="form-group mb-2">
-                                                    <input type="tel" class="form-control-pp form-control-pp-lg border-0"
+                                                    <input type="tel"
+                                                        class="form-control-pp form-control-pp-lg border-0"
                                                         placeholder="Your phone">
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <textarea class="form-control-pp border-0 textarea-pp" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
                                             </div>
-                                            {{-- เอา btn-t-white ออก--}}
-                                            <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="submitModalBtn"> Request Info</button>
+                                            {{-- เอา btn-t-white ออก --}}
+                                            <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+                                                id="submitModalBtn"> Request Info</button>
                                             <div class="form-group form-check mt-2 mb-0">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label fs-13" for="exampleCheck2">Egestas
@@ -1110,34 +1124,39 @@
                                         </div>
                                         <div class="card-body pt-3">
                                             <h2 class="card-title fs-14 lh-2 mb-0"><a href="#"
-                                                    class="text-dark hover-primary" tabindex="0">Home in Metric Way</a></h2>
+                                                    class="text-dark hover-primary" tabindex="0">Home in Metric Way</a>
+                                            </h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
                                                 Los Angeles</p>
-                                                <div class="row no-gutters">
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bedroom">
-                                                           <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
-                                                        </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bedroom">
+                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                     </div>
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
-                                                            <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
-                                                        </div>
+                                                </div>
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bathrooms">
+                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="Size">
-                                                            <div class="list-inline fa-sq">
-                                                                <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
-                                                                2000 Sq.Ft
-                                                            </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title="" data-original-title="Size">
+                                                        <div class="list-inline fa-sq">
+                                                            <i
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                            2000 Sq.Ft
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
-                                        <div class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
+                                        <div
+                                            class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
                                             <p class="fs-price mb-0">$1.250.000</p>
                                             <ul class="list-inline mb-0">
                                                 <li class="list-inline-item">
@@ -1194,29 +1213,32 @@
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
                                                 Los Angeles</p>
-                                                <div class="row no-gutters">
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bedroom">
-                                                           <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
-                                                        </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bedroom">
+                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                     </div>
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
-                                                            <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
-                                                        </div>
+                                                </div>
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bathrooms">
+                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="Size">
-                                                            <div class="list-inline fa-sq">
-                                                                <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
-                                                                2200 Sq.Ft
-                                                            </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title="" data-original-title="Size">
+                                                        <div class="list-inline fa-sq">
+                                                            <i
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                            2200 Sq.Ft
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                         <div
                                             class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
@@ -1227,7 +1249,8 @@
                                                     <a href="#"
                                                         class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
                                                         data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                                                        data-original-title="Wishlist"><i
+                                                            class="fa-regular fa-heart"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <a href="#"
@@ -1276,29 +1299,32 @@
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
                                                 Los Angeles</p>
-                                                <div class="row no-gutters">
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bedroom">
-                                                           <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
-                                                        </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bedroom">
+                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                     </div>
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
-                                                            <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
-                                                        </div>
+                                                </div>
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bathrooms">
+                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="Size">
-                                                            <div class="list-inline fa-sq">
-                                                                <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
-                                                                2000 Sq.Ft
-                                                            </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title="" data-original-title="Size">
+                                                        <div class="list-inline fa-sq">
+                                                            <i
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                            2000 Sq.Ft
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                         <div
                                             class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
@@ -1308,7 +1334,8 @@
                                                     <a href="#"
                                                         class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
                                                         data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                                                        data-original-title="Wishlist"><i
+                                                            class="fa-regular fa-heart"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <a href="#"
@@ -1357,29 +1384,32 @@
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
                                                 Los Angeles</p>
-                                                <div class="row no-gutters">
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bedroom">
-                                                           <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
-                                                        </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bedroom">
+                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                     </div>
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
-                                                            <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
-                                                        </div>
+                                                </div>
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bathrooms">
+                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="Size">
-                                                            <div class="list-inline fa-sq">
-                                                                <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
-                                                                2000 Sq.Ft
-                                                            </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title="" data-original-title="Size">
+                                                        <div class="list-inline fa-sq">
+                                                            <i
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                            2000 Sq.Ft
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                         <div
                                             class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
@@ -1389,7 +1419,8 @@
                                                     <a href="#"
                                                         class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
                                                         data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                                                        data-original-title="Wishlist"><i
+                                                            class="fa-regular fa-heart"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <a href="#"
@@ -1438,29 +1469,33 @@
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
                                                 Los Angeles</p>
-                                                <div class="row no-gutters">
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bedroom">
-                                                           <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
-                                                        </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bedroom">
+                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                     </div>
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
-                                                            <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
-                                                        </div>
+                                                </div>
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bathrooms">
+                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="Size">
-                                                            <div class="list-inline fa-sq">
-                                                                <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
-                                                                2000 Sq.Ft
-                                                            </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="Size">
+                                                        <div class="list-inline fa-sq">
+                                                            <i
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                            2000 Sq.Ft
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                         <div
                                             class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
@@ -1470,7 +1505,8 @@
                                                     <a href="#"
                                                         class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
                                                         data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                                                        data-original-title="Wishlist"><i
+                                                            class="fa-regular fa-heart"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <a href="#"
@@ -1519,29 +1555,33 @@
                                                     House</a></h2>
                                             <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
                                                 Los Angeles</p>
-                                                <div class="row no-gutters">
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bedroom">
-                                                           <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
-                                                        </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bedroom">
+                                                        <i class="fa-solid fa-bed text-primary mr-2"></i>3 Bedroom
                                                     </div>
-                                                    <div class="col-6 ">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="3 Bathrooms">
-                                                            <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
-                                                        </div>
+                                                </div>
+                                                <div class="col-6 ">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="3 Bathrooms">
+                                                        <i class="fa-solid fa-shower text-primary mr-2"></i> 3 Bathroom
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                            data-toggle="tooltip" title="" data-original-title="Size">
-                                                            <div class="list-inline fa-sq">
-                                                                <i class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
-                                                                2000 Sq.Ft
-                                                            </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
+                                                        data-toggle="tooltip" title=""
+                                                        data-original-title="Size">
+                                                        <div class="list-inline fa-sq">
+                                                            <i
+                                                                class="fa-solid fa-up-right-and-down-left-from-center text-primary mr-2"></i>
+                                                            2000 Sq.Ft
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                         <div
                                             class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
@@ -1551,7 +1591,8 @@
                                                     <a href="#"
                                                         class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
                                                         data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                                                        data-original-title="Wishlist"><i
+                                                            class="fa-regular fa-heart"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <a href="#"
@@ -1572,37 +1613,36 @@
             </div>
         </section>
 
-            <div class="d-flex bottom-bar-action bottom-bar-action-01 con-t bg-gray-01 align-items-center position-fixed fixed-bottom d-sm-none"
-                style="">
-                <div class="media align-items-center">
-                    <img class="img-angent" src="{{ asset('/assets/images/agent-3.png') }}"
-
-                        alt="Irene Wallace" class="mr-4 rounded-circle">
-                    <div class="media-body">
-                        <a href="#" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
-                        <span class="fs-13 lh-2">Sales Excutive</span>
-                    </div>
-                </div>
-                <div class="ml-auto">
-
-                    <ul class="list-inline mb-0 fs-22 pl-2">
-
-                        <li class="list-inline-item mr-2 ml-2 mb-0">
-                            <a href="https://line.me/R/ti/p/@Luvdrive?from=page" target="_blank">
-                                <i class="fa-brands fa-line text-success"></i>
-                            </a>
-                        </li>
-
-
-                        <li class="list-inline-item mr-2 ml-2 mb-0">
-                            <a href="tel:091-545-3939" target="_blank">
-                                <i class="fa-solid fa-phone text-blue"></i>
-                            </a>
-                        </li>
-
-                    </ul>
+        <div class="d-flex bottom-bar-action bottom-bar-action-01 con-t bg-gray-01 align-items-center position-fixed fixed-bottom d-sm-none"
+            style="">
+            <div class="media align-items-center">
+                <img class="img-angent" src="{{ asset('/assets/images/agent-3.png') }}" alt="Irene Wallace"
+                    class="mr-4 rounded-circle">
+                <div class="media-body">
+                    <a href="#" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
+                    <span class="fs-13 lh-2">Sales Excutive</span>
                 </div>
             </div>
+            <div class="ml-auto">
+
+                <ul class="list-inline mb-0 fs-22 pl-2">
+
+                    <li class="list-inline-item mr-2 ml-2 mb-0">
+                        <a href="https://line.me/R/ti/p/@Luvdrive?from=page" target="_blank">
+                            <i class="fa-brands fa-line text-success"></i>
+                        </a>
+                    </li>
+
+
+                    <li class="list-inline-item mr-2 ml-2 mb-0">
+                        <a href="tel:091-545-3939" target="_blank">
+                            <i class="fa-solid fa-phone text-blue"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
     </main>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"

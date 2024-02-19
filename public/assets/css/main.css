@@ -828,9 +828,9 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 .user-btn i {
     /* margin-left: 10px; */
     font-size: 16px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg)
+    /* -webkit-transform: rotate(-45deg); */
+    /* -ms-transform: rotate(-45deg); */
+    /* transform: rotate(-45deg) */
 }
 
 .user-btn:hover,.user-btn:focus,.user-btn:active {

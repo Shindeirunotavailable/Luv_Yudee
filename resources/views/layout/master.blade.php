@@ -17,9 +17,8 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
          {{-- --CSS-- --}}
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
-         <link href="{{ asset('/assets/css/content/content.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า content -- --}}
-         <link href="{{ asset('/assets/css/details/details.css') }}" rel="stylesheet" type="text/css" />
-         {{-- -- Css หน้า details -- --}}
+         <link href="{{ asset('/assets/css/contact/contact.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า contact -- --}}
+         <link href="{{ asset('/assets/css/searchResulte/searchResulte.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า searchResulte -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
          <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
