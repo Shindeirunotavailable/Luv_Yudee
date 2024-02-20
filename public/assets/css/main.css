@@ -11,7 +11,7 @@ body {
     font-weight: 400;
     color: #181a20;
     line-height: 26px;
-    /* line-height: 1.5; */
+    line-height: 1.5;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     font-family: 'Kanit', sans-serif;
