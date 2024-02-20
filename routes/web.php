@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MediaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +37,9 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnect');
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
+// Route::controller(MediaController::class)->group(function() {
+
+// });
 
 Route::get('image-upload','App\Http\Controllers\MediaController@media')->name('image.form');
     Route::post('upload-image','App\Http\Controllers\MediaController@storeMedia')->name('image.store');
