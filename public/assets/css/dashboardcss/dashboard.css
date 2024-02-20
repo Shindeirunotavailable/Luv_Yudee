@@ -1,33 +1,9 @@
-.h2,h2 {
-    font-size: calc(1.325rem + .9vw)
-}
-
-@media (min-width: 1200px) {
-    .h2,h2 {
-        font-size:2rem
-    }
-}
-
-.h4,h4 {
-    font-size: calc(1.275rem + .3vw)
-}
-
-@media (min-width: 1200px) {
-    .h4,h4 {
-        font-size:1.5rem
-    }
-}
-
 [role=button] {
     cursor: pointer
 }
 
 [list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator {
     display: none!important
-}
-
-[type=button]:not(:disabled),button:not(:disabled) {
-    cursor: pointer
 }
 
 .form-control-ap {

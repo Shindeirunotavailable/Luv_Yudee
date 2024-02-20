@@ -722,15 +722,6 @@
   .bg-hover-overlay:hover::before {
     background-color: rgba(0,0,0,.4)
   }
-
-  .font-weight-500 {
-    font-weight: 500!important
-  }
-
-  .font-weight-600 {
-    font-weight: 600!important
-  }
-
   .pointer {
     cursor: pointer
   }
@@ -747,7 +738,6 @@
     color: #fff!important
   }
 
-
   .bg-hover-primary:hover {
     background-color: #0071bc!important
   }
@@ -756,28 +746,12 @@
     background-color: #eff6f7!important
   }
 
-  a.bg-hover-primary:hover {
-    background-color: #0071bc!important
-  }
-
-  a.bg-hover-primary:focus {
-    background-color: #0071bc!important
-  }
-
   a.bg-hover-accent:hover {
     background-color: #eff6f7!important
   }
 
   a.bg-hover-accent:focus {
     background-color: #eff6f7!important
-  }
-
-  .border-primary {
-    border-color: #0071bc!important
-  }
-
-  .border-dark {
-    border-color: #252525!important
   }
 
   .border-accent {

@@ -13,6 +13,7 @@ class MediaController extends Controller
     }
     public function storeMedia(Request $request)
     {
-        dd($request->all());
+
+        // dd($request->all());
     }
 }
