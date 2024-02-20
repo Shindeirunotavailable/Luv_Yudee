@@ -104,7 +104,7 @@
                                             </div>
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
                                     </form>
 
 
@@ -121,7 +121,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="row">
                                                         <div class="col-sm-6 mb-4">
-                                                            <label for="customIMG" class="upload-button btn-block">Select Image</label>
+                                                            <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
                                                             <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
                                                         </div>
                                                         {{-- <div class="col-sm-6 mb-4">
@@ -136,7 +136,7 @@
                                             <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                             <div class="row">
                                                 <div class="col-sm-6 mb-4">
-                                                    <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
+                                                    <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
                                                     <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                                 </div>
                                                 {{-- <div class="col-sm-6 mb-4">
@@ -145,7 +145,7 @@
                                                 <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
                                         </form>
                                 </div>
                             </div>
