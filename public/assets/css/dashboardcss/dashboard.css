@@ -164,7 +164,7 @@ textarea.form-control-ap {
 }
 /* ต่อ */
 .dashboard_sidebar_list .sidebar_list_item a:hover,.dashboard_sidebar_list .sidebar_list_item a:active,.dashboard_sidebar_list .sidebar_list_item a:focus,.dashboard_sidebar_list .sidebar_list_item a.-is-active {
-    background-color: #181a20;
+    background-color: #0071bc;
     color: #fff
 }
 
@@ -552,6 +552,31 @@ input:focus-visible {
     background-clip: padding-box;
 }
 
+.select2-container--default .select2-selection--single  {
+    display: block;
+    width: 100%;
+    padding-top: 2px;
+    height: 38px ;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 35px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 30px;
+}
+
 .dashboard-navigation .dropbtn:hover, .dashboard-navigation .dropbtn:focus {
     background-color: #fff;
     color: #181a20;
@@ -580,7 +605,7 @@ input:focus-visible {
 }
 
 .dashboard-navigation .dropdown-content a.-is-active {
-    background-color: #181a20;
+    background-color: #0071bc;
     color: #fff
 }
 

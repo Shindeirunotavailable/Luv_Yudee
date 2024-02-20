@@ -77,11 +77,11 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
-                                                    <select id="selectcategory" name="category[]" class="form-select" style="width: 100%; height: 55px;" multiple>
-                                                        <option value="คอนโด">คอนโด</option>
-                                                        <option value="บ้นเดี่ยว">บ้นเดี่ยว</option>
-                                                        <option value="ทาวน์เฮาส์">ทาวน์เฮาส์</option>
-                                                        <option value="อพาร์ทเมนท์">อพาร์ทเมนท์</option>
+                                                    <select id="selectcategory" name="category[]" class="form-select" multiple>
+                                                        <option value="1">คอนโด</option>
+                                                        <option value="2">บ้นเดี่ยว</option>
+                                                        <option value="3">ทาวน์เฮาส์</option>
+                                                        <option value="4">อพาร์ทเมนท์</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -89,9 +89,9 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                    <select id="propertystatus" name="status[]" class="form-control" style="width: 100%; height: 38px;" multiple>
-                                                        <option value="ขาย"{{ isset($data['property']->status) && $data['property']->status=='ขาย' ? "selected" :""}} >ขาย</option>
-                                                        <option value="เช่า" {{ isset($data['property']->status) && $data['property']->status=='เช่า' ? "selected" :""}}>เช่า</option>
+                                                    <select id="propertystatus" name="status[]" class="form-control"  multiple>
+                                                        <option value="1"{{ isset($data['property']->status) && $data['property']->status=='ขาย' ? "selected" :""}} >ขาย</option>
+                                                        <option value="2" {{ isset($data['property']->status) && $data['property']->status=='เช่า' ? "selected" :""}}>เช่า</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -168,12 +168,22 @@
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
                                                     <div class="">
 
-                                                        <select name="provinces" id="provinces" class="form-control">
+                                                        {{-- <select name="provinces" id="provinces" class="form-control">
                                                             <option value="" selected disabled>กรุณาเลือกจังหวัด</option>
                                                             @foreach ($data['provinces'] as $value)
                                                                 <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
                                                             @endforeach
+                                                        </select> --}}
+
+                                                        <select  name="provinces" id="provinces" class="form-control" >
+                                                            <option  value="" selected disabled></option>
+                                                            @foreach ($data['provinces'] as $value)
+                                                                <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
+                                                            @endforeach
                                                         </select>
+
+                                                        {{-- <input type="text" id="provinceSearch" placeholder="ค้นหาจังหวัด"> --}}
+
 
                                                     </div>
                                                 </div>

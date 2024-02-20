@@ -35,20 +35,28 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    $('#selectcategory').val('คอนโด');
+    $('#selectcategory').val('1');
     $('#selectcategory').select2({
         placeholder: "Select...",
         allowClear: true
     });
 
-    $('#propertystatus').val('ขาย');
+    $('#propertystatus').val('1');
     $('#propertystatus').select2({
         placeholder: "Select...",
         allowClear: true
     });
+
+
 });
 
-
+$(document).ready(function() {
+    $('#provinces').select2({
+        placeholder: "กรุณาเลือกจังหวัด"
+    });
+    $('#amphures').select2();
+    $('#districts').select2();
+});
 
 
 
