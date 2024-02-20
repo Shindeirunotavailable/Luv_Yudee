@@ -99,7 +99,7 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                    <input type="text" class="form-control" placeholder="Price" name="price" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price : "" }}">
+                                                    <input type="number" class="form-control" placeholder="Price" name="price" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price : "" }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -115,37 +115,38 @@
                                 aria-labelledby="nav-item2-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
-                                    <form class="form-style1">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="row">
+                                        <form method="POST" action="{{ route('image.store') }}" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 mb-4">
+                                                            <label for="customIMG" class="upload-button btn-block">Select Image</label>
+                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
+                                                        </div>
+                                                        {{-- <div class="col-sm-6 mb-4">
+                                                            <button id="clearButtonIMG" class="clearButton">Clear</button>
+                                                        </div> --}}
+                                                        <div class="col-sm-12 mt-30 row"  id="fileList"></div>
 
-                                                    <div class="col-sm-6 mb-4">
-                                                        <label for="customIMG" class="upload-button btn-block">Select Image</label>
-                                                        <input type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
                                                     </div>
-                                                    <div class="col-sm-6 mb-4">
-                                                        <button id="clearButtonIMG" class="clearButton">Clear</button>
+                                                    <div class="row position-relative d-md-flex align-items-end mb50"></div>
                                                     </div>
-                                                    <div class="col-sm-12 mt-30 row"  id="fileList"></div>
-
-                                                </div>
-                                                <div class="row position-relative d-md-flex align-items-end mb50"></div>
-                                                </div>
-                                        </div>
-                                        <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
-                                        <div class="row">
-                                            <div class="col-sm-6 mb-4">
-                                                <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
-                                                <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                             </div>
-                                            <div class="col-sm-6 mb-4">
-                                                <button id="clearButtonVDO" class="clearButton ">Clear</button>
+                                            <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
+                                            <div class="row">
+                                                <div class="col-sm-6 mb-4">
+                                                    <label for="customVdo" class="upload-button btn-block">Select Vdo</label>
+                                                    <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
+                                                </div>
+                                                {{-- <div class="col-sm-6 mb-4">
+                                                    <button id="clearButtonVDO" class="clearButton ">Clear</button>
+                                                </div> --}}
+                                                <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
                                             </div>
-                                            <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
 
-                                        </div>
-                                    </form>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
                                 </div>
                             </div>
 

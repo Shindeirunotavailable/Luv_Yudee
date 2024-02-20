@@ -421,16 +421,12 @@
                         </ul>
 
                     </section>
-
+                    {{-- error --}}
                     <section class="pt-6 border-bottom-pp section-pp">
-
                         <h4 class="fw-600 fs-30 text-heading font-bold mb-3">Virtual Tour</h4>
                         <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
                             class="w-100"></iframe>
-
-
                     </section>
-
                     <section class="pt-6 border-bottom-pp section-pp">
                         <h2 class="fw-600 fs-30 text-heading font-bold mb-3">Location</h2>
                         <div class="d-flex justify-content-center ">
@@ -439,7 +435,6 @@
                                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-
                     </section>
 
                     <section class="pt-6 section-pp">
