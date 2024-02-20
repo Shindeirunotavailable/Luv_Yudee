@@ -57,13 +57,13 @@
                                     <form method="POST" action="{{ route('properties') }}">
                                         @csrf
                                         @if (isset($data['id_properties']))
-                                            <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}">
+                                            <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}" >
                                         @endif
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                     <input type="text" class="form-control" placeholder="Your Name" name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}} " >
+                                                     <input type="text" class="form-control" placeholder="Your Name"  name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}} " >
 
                                                 </div>
                                             </div>
@@ -90,8 +90,8 @@
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
                                                     <select id="propertystatus" name="status[]" class="form-control"  multiple>
-                                                        <option value="1"{{ isset($data['property']->status) && $data['property']->status=='ขาย' ? "selected" :""}} >ขาย</option>
-                                                        <option value="2" {{ isset($data['property']->status) && $data['property']->status=='เช่า' ? "selected" :""}}>เช่า</option>
+                                                        <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}} >ขาย</option>
+                                                        <option value="2" {{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -117,37 +117,26 @@
                                     <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
                                         <form method="POST" action="{{ route('image.store') }}" enctype="multipart/form-data">
                                             @csrf
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="row">
-                                                        <div class="col-sm-6 mb-4">
+                                            <div class="row justify-content-center">
+                                                <div class="col-sm-6 mb-4 mt-3">
                                                             <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
                                                             <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
-                                                        </div>
-                                                        {{-- <div class="col-sm-6 mb-4">
-                                                            <button id="clearButtonIMG" class="clearButton">Clear</button>
-                                                        </div> --}}
-                                                        <div class="col-sm-12 mt-30 row"  id="fileList"></div>
-
-                                                    </div>
-                                                    <div class="row position-relative d-md-flex align-items-end mb50"></div>
-                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 mt-30 row"  id="fileList"></div>
                                             </div>
                                             <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
-                                            <div class="row">
-                                                <div class="col-sm-6 mb-4">
+                                            <div class="row justify-content-center">
+                                                <div class="col-sm-6 mb-4 mt-3">
                                                     <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
                                                     <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                                 </div>
-                                                {{-- <div class="col-sm-6 mb-4">
-                                                    <button id="clearButtonVDO" class="clearButton ">Clear</button>
-                                                </div> --}}
                                                 <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
                                             </div>
 
                                             <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
                                         </form>
                                 </div>
+
                             </div>
 
                             <div class="tab-pane fade" id="nav-item3" role="tabpanel"
@@ -167,24 +156,12 @@
                                                     <label
                                                         class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
                                                     <div class="">
-
-                                                        {{-- <select name="provinces" id="provinces" class="form-control">
-                                                            <option value="" selected disabled>กรุณาเลือกจังหวัด</option>
-                                                            @foreach ($data['provinces'] as $value)
-                                                                <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
-                                                            @endforeach
-                                                        </select> --}}
-
                                                         <select  name="provinces" id="provinces" class="form-control" >
                                                             <option  value="" selected disabled></option>
                                                             @foreach ($data['provinces'] as $value)
                                                                 <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
                                                             @endforeach
                                                         </select>
-
-                                                        {{-- <input type="text" id="provinceSearch" placeholder="ค้นหาจังหวัด"> --}}
-
-
                                                     </div>
                                                 </div>
                                             </div>

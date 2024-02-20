@@ -141,7 +141,6 @@ $(document).ready(function() {
 
 
     //Upload Image
-
     $(document).ready(function() {
         if ($('#customIMG').length) {
             $('#customIMG').on('change', function(e) {
@@ -160,19 +159,17 @@ $(document).ready(function() {
                     });
                     colDiv.append(img);
 
+                    // Add delete button for each image
+                    var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('X');
+                    deleteButton.click(function() {
+                        $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
+                    });
+                    colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
+
                     fileList.append(colDiv);
                 }
             });
-
-            $('#clearButtonIMG').on('click', function() {
-                var fileList = $('#fileList');
-                fileList.html('');
-
-                // Clear input file
-                $('#customIMG').val('');
-            });
         }
-
         if ($('#customVdo').length) {
             $('#customVdo').on('change', function(e) {
                 var VdoList = $('#VdoList');
@@ -192,17 +189,18 @@ $(document).ready(function() {
                         'margin-bottom': '20px'
                     });
                     colDiv.append(video);
+                    var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('X');
+                    deleteButton.click(function() {
+                        $(this).parent().remove();
+                    });
+                    colDiv.prepend(deleteButton);
 
                     VdoList.append(colDiv);
                 }
             });
-
-            $('#clearButtonVDO').on('click', function() {
-                var VdoList = $('#VdoList');
-                VdoList.html('');
-
-                // Clear input file
-                $('#customVdo').val('');
-            });
         }
+
     });
+
+
+
