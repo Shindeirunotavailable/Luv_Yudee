@@ -1,6 +1,5 @@
 @extends('layout.master')
 @section('content')
-    <div class="border-bottom border-dark"><h4>Test </h4></div>
     <main>
         <section class="section-pp">
             <div class="container-pp-fluid">
