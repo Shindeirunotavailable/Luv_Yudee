@@ -21,7 +21,7 @@
          <link href="{{ asset('/assets/css/searchResulte/searchResulte.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า searchResulte -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
-         <link href="{{ asset('/assets/css/ppcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
+         <link href="{{ asset('/assets/css/dashboardcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/propertycss/property.css') }}" rel="stylesheet" type="text/css"/>
          <link href="{{ asset('/assets/css/main.css') }}" rel="stylesheet" type="text/css" />
 
@@ -36,7 +36,7 @@
 
          {{-- @if(isset($a['css']))
            @foreach ($a['css'] as $item)
-           <link href="{{ asset('/assets/css/ppcss/'.$item) }}" rel="stylesheet" type="text/css"/>
+           <link href="{{ asset('/assets/css/dashboardcss/'.$item) }}" rel="stylesheet" type="text/css"/>
            @endforeach
          @endif --}}
 
@@ -67,7 +67,7 @@
     integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script type="module" crossorigin="" src="{{ asset('/assets/js/ppjs/dashboard.js') }}"></script>
+    <script type="module" crossorigin="" src="{{ asset('/assets/js/dashboardjs/dashboard.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
     <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
     <script src="{{ asset('/assets/js/login.js') }}"></script>
