@@ -115,15 +115,24 @@
                                 aria-labelledby="nav-item2-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                     <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
+
+                                    @if($message = Session::get('success'))
+                                        <div class="alert alert-success alert-block">
+                                            <strong>{{$message}}</strong>
+                                        </div>
+                                        <img src="{{asset('image1/'.Session::get('image'))}}"/>
+                                    @endif
+
                                         <form method="POST" action="{{ route('image.store') }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row justify-content-center">
                                                 <div class="col-sm-6 mb-4 mt-3">
                                                             <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
-                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
+                                                            <input name="image" type="file" {{--style="visibility:hidden;"--}}  id="customIMG" multiple accept="image/*"  />
                                                 </div>
                                                 <div class="col-sm-12 mt-30 row"  id="fileList"></div>
                                             </div>
+
                                             <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                             <div class="row justify-content-center">
                                                 <div class="col-sm-6 mb-4 mt-3">
@@ -136,7 +145,6 @@
                                             <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
                                         </form>
                                 </div>
-
                             </div>
 
                             <div class="tab-pane fade" id="nav-item3" role="tabpanel"

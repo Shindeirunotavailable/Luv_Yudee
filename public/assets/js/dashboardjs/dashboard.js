@@ -189,11 +189,12 @@ $(document).ready(function() {
                         'margin-bottom': '20px'
                     });
                     colDiv.append(video);
-                    var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('X');
+                    var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('ลบ');
                     deleteButton.click(function() {
-                        $(this).parent().remove();
+                        $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
                     });
-                    colDiv.prepend(deleteButton);
+                    colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
+
 
                     VdoList.append(colDiv);
                 }

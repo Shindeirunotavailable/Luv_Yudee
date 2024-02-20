@@ -61,7 +61,7 @@ class PropertyController extends Controller
         return redirect('addproperty?id_properties=' . $id_properties);
     }
 
-
+    // ProvinceController
     public function db_provinces(Request $request)
     {
         if ($request->has('function') && $request->input('function') === 'provinces') {
