@@ -211,21 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
       offcanvasElement.classList.remove('show');
   });
 });
-/*------------------------------------------------------------------------ */
 
-/*modal advanced */
-document.addEventListener('DOMContentLoaded', function () {
-  // ให้ Bootstrap JavaScript จัดการการเปิด Modal
-  var myModal = new bootstrap.Modal(document.getElementById('advanceSeachModal'));
-
-  // เมื่อคลิก btn-advance-search
-  document.querySelector('.btn-advance-search').addEventListener('click', function () {
-      // เปิด Modal
-      myModal.show();
-  });
-});
-
-/*------------------------------------------------------------------------ */
 
 
 
