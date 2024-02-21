@@ -37,5 +37,3 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnect');
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
-
-Route::post('upload-image','App\Http\Controllers\MediaController@storeMedia')->name('mediastore');
