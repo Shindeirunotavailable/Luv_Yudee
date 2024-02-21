@@ -871,10 +871,7 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 }
 
 p {
-    margin: 0 0 15px;
-    color: #181a20;
     line-height: 1.85;
-    font-weight: 400
 }
 li {
     list-style-type: none
@@ -1951,13 +1948,6 @@ header.nav-innerpage-style.style2 {
 
 /*Banner*/
 
-.mr-auto {
-    margin-right: auto!important;
-}
-.ml-auto {
-    margin-left: auto!important;
-}
-
 .home-st4 {
     background-image: url(/assets/images/home-banner.jpg);
     background-position: center center;
@@ -2334,14 +2324,14 @@ header.nav-innerpage-style.style2 {
     margin-right: 115px !important; /* ปรับขนาดของระยะห่างตามที่คุณต้องการ */
 }
 .btn-search {
-    background-color: #181a20;
-    border: 1px solid #181a20;
+    background-color: #0071BC;
+    border: 1px solid #0071BC;
     color: #fff
 }
 
 .btn-search:hover {
-    background-color: #0071bc;
-    border: 1px solid #0071bc;
+    background-color: #0071BC;
+    border: 1px solid #2596be;
 }
 .advance-character-modal button,.sideborder-dropdown button {
     font-size: 14px
@@ -2413,7 +2403,7 @@ header.nav-innerpage-style.style2 {
 }
 
 .advance-character-modal .btn-close:hover,.signup-modal .btn-close:hover {
-    background-color: #f8d3cd
+    background-color: #0071BC
 }
 
 .advance-character-modal .btn-close:focus,.signup-modal .btn-close:focus {
@@ -2466,7 +2456,7 @@ header.nav-innerpage-style.style2 {
 }
 
 .modal-header .btn-close {
-    padding: calc(1rem * .5) calc(1rem * .5);
+    /* padding: calc(1rem * .5) calc(1rem * .5); */
     margin: calc(-.5 * 1rem) calc(-.5 * 1rem) calc(-.5 * 1rem) auto
 }
 
@@ -3431,7 +3421,42 @@ textarea.form-control-lg {
 .nav-tabs .nav-link {
     margin-bottom: 0
 }
+.btn-close {
+    --yuudee-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    padding: .25em;
+    color: #000;
+    background: transparent var(--yuudee-btn-close-bg) center/1em auto no-repeat;
+    border: 0;
+    border-radius: .375rem;
+    opacity: .5
+}
 
+.btn-close:hover {
+    color: #000;
+    text-decoration: none;
+    opacity: .75
+}
+
+.btn-close:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+    opacity: 1
+}
+
+.btn-close.disabled,.btn-close:disabled {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    opacity: .25
+}
+
+.btn-close-white,[data-bs-theme=dark] .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%)
+}
 /* ----------------------------------End Banner--------------------------------------- */
 
 /*boxCity*/
@@ -3683,6 +3708,99 @@ textarea.form-control-lg {
 }
 
 /* ----------------------------------End boxCity--------------------------------------- */
+
+/* ----------------------------------End boxCity--------------------------------------- */
+/* boxForSales */
+
+
+
+
+
+
+/* ----------------------------------End boxForSales--------------------------------------- */
+/* boxForYou */
+.cta-banner3:before {
+    background-image: url(/assets/images/cta-side-bg-1-64503766.jpg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 42%
+}
+
+@media (max-width: 767.98px) {
+    .cta-banner3:before {
+        display:none
+    }
+}
+.bgc-thm-light {
+    /* background-color: #b3d9f2; */
+    background-color: #99d2f8;
+}
+.why-chose-list {
+    position: relative
+}
+
+.why-chose-list .list-one .list-icon {
+    background-color: #eb675312;
+    border-radius: 50%;
+    color: #eb6753;
+    display: block;
+    font-size: 25px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    width: 70px;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+.why-chose-list .list-one:hover .list-icon {
+    background-color: #0071bc;
+    color: #fff
+}
+
+.why-chose-list.style2 .list-one:hover .list-icon {
+    background-color: #0071bc;
+    color: #fff
+}
+
+.why-chose-list.style2 .list-icon {
+    color: #181a20
+}
+
+.why-chose-list.style3 .list-icon {
+    background-color: #f7f7f7
+}
+
+.why-chose-list.style3 .list-icon {
+    color: #181a20
+}
+
+
+
+
+
+/* ----------------------------------End boxForYou--------------------------------------- */
+/* boxStroes */
+
+.bdrb1 {
+    border-bottom: 1px solid #dddddd
+}
+.funfact_one .timer,.funfact_one span {
+    color: #181a20;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 63px
+}
+
+
+
+/* ------------------------------------end boxStroes-------------------------------------- */
 
   
 

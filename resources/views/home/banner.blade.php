@@ -9,17 +9,17 @@
                         <div class="advance-search mt-60 mt30-lg mr-auto ml-auto animation-up-3">
                             <ul class="nav nav-tabs  p-0 m-0">
                                 <li class="nav-item">
-                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-buy" aria-selected="true">Buy</a>
+                                    <button class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-buy" role="tab" aria-controls="nav-buy" aria-selected="true">Buy</button>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-rent" aria-selected="false">Rent</a>
+                                    <button class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-rent" role="tab" aria-controls="nav-rent" aria-selected="false">Rent</button>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-sold" aria-selected="false">Sold</a>
+                                    <button class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-sold" role="tab" aria-controls="nav-sold" aria-selected="false">Sold</button>
                                 </li>
                             </ul>
                             <div class="tab-content">
-                                <div class="active tab-step">
+                                <div class="active tab-pane" id="nav-buy">
                                     <div class="advance-content-st1">
                                         <div class="row">
                                             <div class="col-md-8 col-lg-9">
@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-step">
+                                <div class="tab-pane" id="nav-rent">
                                     <div class="advance-content-st1">
                                         <div class="row">
                                             <div class="col-md-8 col-lg-9">
@@ -66,14 +66,14 @@
                                                         <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                                                     </button>
                                                     <button class="icon-advance-search user-btn btn-search ml-4" type="button">
-                                                        <span class="flaticon-search"></span>
+                                                        <i class="fa-solid fa-magnifying-glass"></i>
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" tab-step">
+                                <div class=" tab-pane" id="nav-sold">
                                     <div class="advance-content-st1">
                                         <div class="row">
                                             <div class="col-md-8 col-lg-9">
@@ -92,7 +92,7 @@
                                                         <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                                                     </button>
                                                     <button class="icon-advance-search user-btn btn-search ml-4" type="button">
-                                                        <span class="flaticon-search"></span>
+                                                        <i class="fa-solid fa-magnifying-glass"></i>
                                                     </button>
                                                 </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                 <div class="widget-wrapper">
                                                     <h6 class="list-title">Property ID</h6>
                                                     <div class="form-style2">
-                                                        <input type="text" class="form-control" placeholder="RT04949213">
+                                                        <input type="text" class="form-control h-55" placeholder="RT04949213">
                                                     </div>
                                                 </div>
                                             </div>
@@ -330,12 +330,12 @@
                                     </div>
                                     <div class="modal-footer justify-content-between">
                                         <button class="reset-button">
-                                            <span class="flaticon-turn-back"></span>
+                                            <i class="fa-solid fa-arrow-turn-down fa-rotate-90 mr-10 mt-1"></i>
                                             <u>Reset all filters</u>
                                         </button>
                                         <div class="btn-area">
-                                            <button data-bs-dismiss="modal" type="submit" class="user-btn btn-thm">
-                                                <i class="fa-solid fa-magnifying-glass pr-10" aria-hidden="true"></i>
+                                            <button data-bs-dismiss="modal" type="submit" class="user-arrow user-btn btn-yuudee add-property rounded-pill text-a ">
+                                                <i class="fa-solid fa-magnifying-glass pr-10 ml-0" aria-hidden="true"></i>
                                                 Search
                                             </button>
                                         </div>

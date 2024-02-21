@@ -5,26 +5,26 @@
                 <div class="col-auto">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="logos mr-40">
-                            <a class="header-logo logo1" href="/home">
+                            <a class="header-logo logo1" href="{{url("home")}}">
                                 <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
                             </a>
-                            <a class="header-logo logo2 link-effect" href="/home">
+                            <a class="header-logo logo2 link-effect" href="{{url("home")}}">
                                 <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
                             </a>
                         </div>
                         <ul class="responsive-menu">
-                            <li class="v_list dropitem link-li"><a class="list-item" href="/home">
+                            <li class="v_list dropitem link-li"><a class="list-item"href="{{url("home")}}">
                                 <span class="title menuActive">Home</span>
                             </a>
                             </li>
                             
                             <li class="v_list dropitem link-li">
-                                <a class="list-item link-effect" href="/property">
+                                <a class="list-item link-effect" href="{{url("property")}}">
                                     <span class="title">Property</span>
                                 </a>
                             </li>
                             <li class="v_list dropitem link-li">
-                                <a class="list-item" href="/contact">
+                                <a class="list-item" href="{{url("contact")}}">
                                     <span class="title">Contact Us</span>
                                 </a>
                             </li>
@@ -33,11 +33,11 @@
                 </div>
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
-                        <a href="/login" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
+                        <a href="{{url("login")}}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
                             <i class="far fa-user-circle fs-18 mr-2 pb-1"></i> 
                             <span class="d-none d-xl-block">Login / Register</span>
                         </a>
-                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="/dashboard-add-property">
+                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("/")}}">
                             Add Property
                             <i class="fal fa-arrow-right-long"></i>
                         </a>
@@ -57,9 +57,9 @@
                     <a class="menusbar" href="#" id="menubarButton" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
                         <img src="{{ asset('/assets/images/mobile-dark-nav-icon.jpg') }}" alt="mobile icon" width="30px"></a>
                     </a>
-                    <a class="mobile_logo" href="/home">
+                    <a class="mobile_logo" href="{{url("home")}}">
                         <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="120px">
-                    <a href="/login"><span class="icon fs-18 far fa-user-circle "></span></a>
+                    <a href="{{url("login")}}"><span class="icon fs-18 far fa-user-circle "></span></a>
                 </div>
             </div>
         </div>
@@ -78,21 +78,21 @@
                             <nav class="menu-root css-menu-root">
                                 <ul class="css-pm">
                                     <li class="menuitem-root submenu-root active css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/home">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("home")}}">
                                             <span class="menu-label css-fotw" >Home</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/property">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("property")}}">
                                             <span class="menu-label css-fotw">Property</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="/contact">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("contact")}}">
                                             <span class="menu-label css-fotw">Contact Us</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
