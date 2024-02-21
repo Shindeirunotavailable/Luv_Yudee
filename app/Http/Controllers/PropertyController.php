@@ -69,7 +69,8 @@ class PropertyController extends Controller
             $data['updated_at'] = date('Y-m-d H:i:s');
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
-            dd($request->all());
+           // // dd($request->all());
+
             $imageName = time().'_'.$request->image->getClientOriginalName();
             $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
             $data['image_url'] = ('/assets/upload_image/'. $imageName);
@@ -90,9 +91,9 @@ class PropertyController extends Controller
         if ($request->has('function') && $request->input('function') === 'provinces') {
 
             $id = $request->input('id');
-            $amphures = Amphure::where('province_id', $id)->get();
+            $data = Amphure::where('province_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกอำเภอ</option>';
-            foreach ($amphures['amphures'] as $value) {
+            foreach ($data as $value) {
                 $options .= '<option value="' . $value->id . '">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);

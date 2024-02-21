@@ -158,10 +158,9 @@
                                                         <div class="">
 
                                                             <select name="amphures" id="amphures" class="form-control">
-                                                                    {{-- @foreach ($data['amphures'] as $value)
-                                                                    <option value="{{ $value['id'] }}" {{ isset($data['property']->amphures) && $data['property']->amphures == $value['id'] ? 'selected' : '' }}>
-                                                                        {{ $value['name_th'] }}
-                                                                    @endforeach --}}
+                                                                {{-- <option selected disabled value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
+                                                                    {{ $value['name_th'] }}</option> --}}
+
                                                             </select>
 
                                                         </div>
