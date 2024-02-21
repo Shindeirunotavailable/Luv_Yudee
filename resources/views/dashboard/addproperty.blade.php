@@ -1,5 +1,4 @@
 @csrf
-
 <div class="dashboard__main pl-d-0-md">
     <div class="dashboard__content property-page bg-f7">
         <div class="row align-items-center pb-d-40">
@@ -46,15 +45,14 @@
                             <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
                                 aria-labelledby="nav-item1-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    @if(Session::has('data'))
-                                        <div class="alert alert-success">
-                                            {{ Session::get('data') }}
+                                    @if($message = Session::get('success'))
+                                        <div class="alert alert-success alert-block">
+                                            <strong>{{$message}}</strong>
                                         </div>
                                     @endif
                                     <h4 class="fw-600 title fs-17 mb-6">Property Description</h4>
 
-                                    {{-- ใช้เพื่อทดสอบ --}}
-                                    <form method="POST" action="{{ route('properties') }}">
+                                    <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
                                         @csrf
                                         @if (isset($data['id_properties']))
                                             <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}" >
@@ -63,14 +61,14 @@
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                     <input type="text" class="form-control" placeholder="Your Name"  name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}} " >
+                                                     <input type="text" class="form-control" placeholder="Your Name" required name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}}">
 
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
-                                                    <textarea name="description" id="editor">{{isset($data['property']->description)? json_decode($data['property']->description) :"" }}</textarea>
+                                                    <textarea name="description" id="editor">{{isset($data['property']->description)? json_decode($data['property']->description) :""}}</textarea>
                                                 </div>
                                             </div>
 
@@ -99,36 +97,25 @@
                                             <div class="col-sm-6 col-xl-4">
                                                 <div class="mb-6">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                    <input type="number" class="form-control" placeholder="Price" name="price" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price : "" }}">
+                                                    <input type="text" class="form-control" placeholder="Price" name="price" required value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
-                                    </form>
-
-
                                 </div>
                             </div>
 
                             <div class="tab-pane fade" id="nav-item2" role="tabpanel"
                                 aria-labelledby="nav-item2-tab">
                                 <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
 
-                                    @if($message = Session::get('success'))
-                                        <div class="alert alert-success alert-block">
-                                            <strong>{{$message}}</strong>
-                                        </div>
-                                        <img src="{{asset('image1/'.Session::get('image'))}}"/>
-                                    @endif
 
-                                        <form method="POST" action="{{ route('image.store') }}" enctype="multipart/form-data">
+
                                             @csrf
+                                            <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
                                             <div class="row justify-content-center">
                                                 <div class="col-sm-6 mb-4 mt-3">
-                                                            <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
-                                                            <input name="image" type="file" {{--style="visibility:hidden;"--}}  id="customIMG" multiple accept="image/*"  />
+                                                        <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
+                                                        <input name="image" type="file" {{--style="visibility:hidden;"--}}  id="customIMG" multiple accept="image/*"  />
                                                 </div>
                                                 <div class="col-sm-12 mt-30 row"  id="fileList"></div>
                                             </div>
@@ -137,7 +124,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-sm-6 mb-4 mt-3">
                                                     <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
-                                                    <input type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
+                                                    <input name="video" type="file" {{--style="visibility:hidden;"--}}  id="customVdo" multiple  accept="video/*"/>
                                                 </div>
                                                 <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
                                             </div>

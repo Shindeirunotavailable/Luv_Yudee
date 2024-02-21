@@ -38,5 +38,4 @@ Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnec
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
 
-Route::get('image-upload','App\Http\Controllers\MediaController@media')->name('image.form');
-Route::post('upload-image','App\Http\Controllers\MediaController@storeMedia')->name('image.store');
+Route::post('upload-image','App\Http\Controllers\MediaController@storeMedia')->name('mediastore');

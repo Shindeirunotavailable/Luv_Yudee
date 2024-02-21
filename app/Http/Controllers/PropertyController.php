@@ -17,7 +17,7 @@ class PropertyController extends Controller
     public function databaseconnect(Request $request)
     {
         $id_properties = $request['id_properties'];
-
+        $id_media  = $request['id_media'];
 
         $provinces = Province::all();
         $amphures = Amphure::all();
@@ -44,22 +44,38 @@ class PropertyController extends Controller
             'category' => implode(',', $request['category']),
             'status' => implode(',', $request['status']),
             'price' => $request['price'],
+            'image_url'=> $request['image_url'],
+            'video_url'=> $request['video_url'],
         );
         if (isset($request['id_properties'])) {
             $id_properties = $request['id_properties'];
             $data['updated_at'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
+            $imageName = time().'_'.$request->image->getClientOriginalName();
+            $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+            $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            $videoName = time().'_'.$request->video->getClientOriginalName();
+            $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+            $data['video_url'] = ('/assets/upload_video/' . $videoName);
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
-            Session::flash('data', 'Property updated successfully!');
         } else {
             $data['updated_at'] = date('Y-m-d H:i:s');
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
+            // dd($request->all());
+            $imageName = time().'_'.$request->image->getClientOriginalName();
+            $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+            $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            $videoName = time().'_'.$request->video->getClientOriginalName();
+            $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+            $data['video_url'] = ('/assets/upload_video/' . $videoName);
+
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
-            Session::flash('data', 'Property created successfully!');
         }
-        return redirect('addproperty?id_properties=' . $id_properties);
+        return redirect('addproperty?id_properties=' . $id_properties)
+        ->with('success', 'Property and Media uploaded successfully');
     }
+
 
     // ProvinceController
     public function db_provinces(Request $request)
