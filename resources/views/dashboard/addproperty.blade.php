@@ -115,7 +115,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-sm-6 mb-4 mt-3">
                                                         <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
-                                                        <input name="image" type="file" {{--style="visibility:hidden;"--}}  id="customIMG" multiple accept="image/*"  />
+                                                        <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
                                                 </div>
                                                 <div class="col-sm-12 mt-30 row"  id="fileList"></div>
                                             </div>
@@ -124,7 +124,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-sm-6 mb-4 mt-3">
                                                     <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
-                                                    <input name="video" type="file" {{--style="visibility:hidden;"--}}  id="customVdo" multiple  accept="video/*"/>
+                                                    <input name="video" type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
                                                 </div>
                                                 <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
                                             </div>

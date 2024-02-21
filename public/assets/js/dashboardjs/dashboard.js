@@ -159,12 +159,12 @@ $(document).ready(function() {
                     });
                     colDiv.append(img);
 
-                    // Add delete button for each image
-                    var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('X');
-                    deleteButton.click(function() {
-                        $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
-                    });
-                    colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
+                    // // Add delete button for each image
+                    // var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('X');
+                    // deleteButton.click(function() {
+                    //     $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
+                    // });
+                    // colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
 
                     fileList.append(colDiv);
                 }
@@ -189,13 +189,11 @@ $(document).ready(function() {
                         'margin-bottom': '20px'
                     });
                     colDiv.append(video);
-                    var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('ลบ');
-                    deleteButton.click(function() {
-                        $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
-                    });
-                    colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
-
-
+                    // var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('ลบ');
+                    // deleteButton.click(function() {
+                    //     $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
+                    // });
+                    // colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
                     VdoList.append(colDiv);
                 }
             });
