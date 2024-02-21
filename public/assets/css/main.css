@@ -3788,16 +3788,15 @@ textarea.form-control-lg {
 /* ----------------------------------End boxForYou--------------------------------------- */
 /* boxStroes */
 
-.bdrb1 {
+.bdb1 {
     border-bottom: 1px solid #dddddd
 }
-.funfact_one .timer,.funfact_one span {
+.stores_one .timer,.stores_one span {
     color: #181a20;
     font-weight: 600;
     font-size: 42px;
     line-height: 63px
 }
-
 
 
 /* ------------------------------------end boxStroes-------------------------------------- */
