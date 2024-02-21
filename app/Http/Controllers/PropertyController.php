@@ -46,23 +46,30 @@ class PropertyController extends Controller
             'price' => $request['price'],
             'image_url'=> $request['image_url'],
             'video_url'=> $request['video_url'],
+            'address'=> $request['address'],
+            'provinces'=> $request['provinces'],
+            'amphures'=> $request['amphures'],
+            'districts'=> $request['districts'],
+            'zipcode'=> $request['zipcode'],
+
         );
         if (isset($request['id_properties'])) {
             $id_properties = $request['id_properties'];
             $data['updated_at'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
-            $imageName = time().'_'.$request->image->getClientOriginalName();
-            $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-            $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            $videoName = time().'_'.$request->video->getClientOriginalName();
-            $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-            $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            // $imageName = time().'_'.$request->image->getClientOriginalName();
+            // $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+            // $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            // $videoName = time().'_'.$request->video->getClientOriginalName();
+            // $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+            // $data['video_url'] = ('/assets/upload_video/' . $videoName);
+
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
         } else {
             $data['updated_at'] = date('Y-m-d H:i:s');
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
-            // dd($request->all());
+            dd($request->all());
             $imageName = time().'_'.$request->image->getClientOriginalName();
             $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
             $data['image_url'] = ('/assets/upload_image/'. $imageName);
@@ -85,7 +92,7 @@ class PropertyController extends Controller
             $id = $request->input('id');
             $amphures = Amphure::where('province_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกอำเภอ</option>';
-            foreach ($amphures as $value) {
+            foreach ($amphures['amphures'] as $value) {
                 $options .= '<option value="' . $value->id . '">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);

@@ -46,19 +46,13 @@ $(document).ready(function() {
         placeholder: "Select...",
         allowClear: true
     });
-
-
-});
-
-$(document).ready(function() {
     $('#provinces').select2({
         placeholder: "กรุณาเลือกจังหวัด"
     });
     $('#amphures').select2();
     $('#districts').select2();
+
 });
-
-
 
 // db_provinces
         var getUrl = window.location;
@@ -200,6 +194,7 @@ $(document).ready(function() {
         }
 
     });
+
 
 
 
