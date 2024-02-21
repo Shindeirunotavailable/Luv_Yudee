@@ -12,7 +12,7 @@
                 <form class="needs-validation" novalidate>
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1" class="label-700">Email</label>
+                        <label class="label-700">Email</label>
                         <input type="Email" name="username" id="Email" class="form-control "
                             id="exampleInputEmail1" placeholder="Enter Username" required>
                         <div class="invalid-feedback">

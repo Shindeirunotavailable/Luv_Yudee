@@ -1,6 +1,5 @@
-<div class="list-sidebar-style1 mb-30 box-shadow">
     {{-- side-bar --}}
-    <ul class="list-group list-group-flush">
+    <ul class="list-group  list-sidebar-style mb-30 box-shadow">
         <li class="list-group-item">
             <h6 class="font-weight-600">Find your home</h6>
             <div class="search_area">
@@ -118,7 +117,7 @@
         </li>
         <li class="list-group-item">
               <div class="form-group">
-                <h6 class="list-title">Location</h6>
+                <h6 class="font-weight-600">Location</h6>
                 <select class="form-control" id="exampleFormControlSelect1">
                   <option>bangkok</option>
                   <option>Pathum Thani</option>
@@ -129,7 +128,7 @@
         </li>
 
         <li class="list-group-item">
-            <h6 class="list-title">Bedrooms</h6>
+            <h6 class="font-weight-600">Bedrooms</h6>
             <div class="d-flex justify-content-center">
                 <div class="selection">
                     <input type="radio" id="any" name="Bedrooms" checked>
@@ -159,7 +158,7 @@
         </li>
 
         <li class="list-group-item">
-            <h6 class="list-title">Bathrooms</h6>
+            <h6 class="font-weight-600">Bathrooms</h6>
             <div class="d-flex justify-content-center">
                 <div class="selection">
                     <input type="radio" id="anyBathrooms" name="Bathrooms" checked>
@@ -214,5 +213,4 @@
 
     </ul>
     {{-- end side-bar --}}
-</div>
 
