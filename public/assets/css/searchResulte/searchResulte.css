@@ -223,6 +223,13 @@
 
 }
 
+.pb-auto{
+    padding-bottom: auto;
+}
+
+.pt-auto{
+padding-top: auto;
+}
 
 
 
@@ -263,7 +270,7 @@
     position: absolute;
     top: 0;
     left: 195px; /* Change right to left */
-    font-size: 36px;
+    font-size: 30px;
     margin-left: 50px;
 }
 

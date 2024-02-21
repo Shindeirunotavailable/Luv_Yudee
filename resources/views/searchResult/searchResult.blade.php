@@ -20,7 +20,7 @@
             <div class="mobile-media pb-30">
                 <h5 class="ml-15">Find your home</h5>
                     @include('searchResult.search')
-                <div class="row pt-10 ml-1">
+                <div class="d-flex align-items-center pt-2">
                     <div class="d-flex justify-content-start" onclick="toggleSidebar()">
                         <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
                             aria-controls="listingSidebarFilter">
