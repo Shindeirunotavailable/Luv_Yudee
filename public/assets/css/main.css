@@ -2232,14 +2232,6 @@ header.nav-innerpage-style.style2 {
 .form-control:placeholder {
     color: #717171;
 }
-
-.form-control:focus {
-    border: 1px solid transparent;
-    outline: 2px solid #181a20;
-    -webkit-box-shadow: none;
-    box-shadow: none
-}
-
 .advance-search-field .box-search input::-webkit-input-placeholder {
     color: #181a20
 }
