@@ -4,10 +4,12 @@
 
 .list-sidebar-style1 {
     padding-top: 10px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 12px;
 }
-
+.list-sidebar-style{
+    border-radius: 12px;
+}
 .text-block {
     /* height: 35px; */
     border-radius: 10px;

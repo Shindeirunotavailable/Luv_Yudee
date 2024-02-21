@@ -1,6 +1,5 @@
-<div class="list-sidebar-style1 mb-30 box-shadow">
     {{-- side-bar --}}
-    <ul class="list-group list-group-flush">
+    <ul class="list-group  list-sidebar-style mb-30 box-shadow">
         <li class="list-group-item">
             <h6 class="font-weight-600">Find your home</h6>
             <div class="search_area">
@@ -214,5 +213,4 @@
 
     </ul>
     {{-- end side-bar --}}
-</div>
 
