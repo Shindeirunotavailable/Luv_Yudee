@@ -3177,11 +3177,6 @@ textarea.form-control-lg {
     color: #717171;
 }
 
-.form-style1 .form-control.active,.form-style1 .form-control:focus {
-    border: 1px solid transparent;
-    outline: 2px solid #181a20;
-    color: #181a20
-}
 .form-style1 .custom_checkbox {
     line-height: 26px
 }
