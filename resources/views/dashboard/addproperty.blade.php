@@ -39,381 +39,377 @@
                                 </button>
                             </div>
                         </nav>
+                        <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
+                            @csrf
+                            @if (isset($data['id_properties']))
+                                <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}" >
+                            @endif
+                            <div class="tab-content-ds" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
+                                        aria-labelledby="nav-item1-tab">
+                                        <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
+                                            @if($message = Session::get('success'))
+                                                <div class="alert alert-success alert-block">
+                                                    <strong>{{$message}}</strong>
+                                                </div>
+                                            @endif
+                                            <h4 class="fw-600 title fs-17 mb-6">Property Description</h4>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="mb-d-20">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
+                                                            <input type="text" class="form-control" placeholder="Your Name" required name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}}">
 
-                        <div class="tab-content-ds" id="nav-tabContent">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="mb-d-20">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
+                                                            <textarea name="description" id="editor">{{isset($data['property']->description)? json_decode($data['property']->description) :""}}</textarea>
+                                                        </div>
+                                                    </div>
 
-                            <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
-                                aria-labelledby="nav-item1-tab">
-                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    @if($message = Session::get('success'))
-                                        <div class="alert alert-success alert-block">
-                                            <strong>{{$message}}</strong>
+                                                    <div class="col-sm-6 col-xl-4">
+                                                        <div class="mb-d-20">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
+                                                            <select id="selectcategory" name="category[]" class="form-select" multiple>
+                                                                <option value="1">คอนโด</option>
+                                                                <option value="2">บ้นเดี่ยว</option>
+                                                                <option value="3">ทาวน์เฮาส์</option>
+                                                                <option value="4">อพาร์ทเมนท์</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-xl-4">
+                                                        <div class="mb-d-20">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
+                                                            <select id="propertystatus" name="status[]" class="form-control"  multiple>
+                                                                <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}} >ขาย</option>
+                                                                <option value="2" {{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-xl-4">
+                                                        <div class="mb-6">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
+                                                            <input type="number" step=".01" class="form-control" placeholder="0.00" name="price" required value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                         </div>
-                                    @endif
-                                    <h4 class="fw-600 title fs-17 mb-6">Property Description</h4>
+                                    </div>
 
-                                    <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
-                                        @csrf
-                                        @if (isset($data['id_properties']))
-                                            <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}" >
-                                        @endif
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                     <input type="text" class="form-control" placeholder="Your Name" required name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}}">
+                                    <div class="tab-pane fade" id="nav-item2" role="tabpanel"
+                                        aria-labelledby="nav-item2-tab">
+                                        <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
+                                                <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                            <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
+                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
+                                                    </div>
+                                                    <div class="col-sm-12 mt-30 row"  id="fileList"></div>
+                                                </div>
+                                                <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                        <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
+                                                        <input name="video" type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
+                                                    </div>
+                                                    <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
+                                                </div>
 
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
-                                                    <textarea name="description" id="editor">{{isset($data['property']->description)? json_decode($data['property']->description) :""}}</textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
-                                                    <select id="selectcategory" name="category[]" class="form-select" multiple>
-                                                        <option value="1">คอนโด</option>
-                                                        <option value="2">บ้นเดี่ยว</option>
-                                                        <option value="3">ทาวน์เฮาส์</option>
-                                                        <option value="4">อพาร์ทเมนท์</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                    <select id="propertystatus" name="status[]" class="form-control"  multiple>
-                                                        <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}} >ขาย</option>
-                                                        <option value="2" {{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6 col-xl-4">
-                                                <div class="mb-6">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                    <input type="text" class="form-control" placeholder="Price" name="price" required value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
-                                                </div>
-                                            </div>
                                         </div>
-                                </div>
-                            </div>
+                                    </div>
 
-                            <div class="tab-pane fade" id="nav-item2" role="tabpanel"
-                                aria-labelledby="nav-item2-tab">
-                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
+                                <div class="tab-pane fade" id="nav-item3" role="tabpanel"
+                                    aria-labelledby="nav-item3-tab">
+                                    <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
+                                        <h4 class="fw-600 title fs-17 mb-6">Listing Location</h4>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="mb-d-20">
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Address</label>
+                                                        <input type="text" class="form-control" placeholder="Your Address" required name="address" value="{{isset($data['property']->title) ? $data['property']->address : ""}}"></div>
+                                                    </div>
 
-
-
-                                            @csrf
-                                            <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
-                                            <div class="row justify-content-center">
-                                                <div class="col-sm-6 mb-4 mt-3">
-                                                        <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
-                                                        <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
+                                                <div class="col-sm-6 ">
+                                                    <div class="mb-d-20">
+                                                        <label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
+                                                        <div class="">
+                                                            <select  name="provinces" id="provinces" class="form-control" >
+                                                                <option  value="" selected disabled></option>
+                                                                @foreach ($data['provinces'] as $value)
+                                                                    {{-- <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option> --}}
+                                                                    <option value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
+                                                                        {{ $value['name_th'] }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-12 mt-30 row"  id="fileList"></div>
-                                            </div>
+                                                <div class="col-sm-6 ">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10">City</label>
+                                                        <div class="">
 
-                                            <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
-                                            <div class="row justify-content-center">
-                                                <div class="col-sm-6 mb-4 mt-3">
-                                                    <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
-                                                    <input name="video" type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
+                                                            <select name="amphures" id="amphures" class="form-control">
+                                                                    {{-- @foreach ($data['amphures'] as $value)
+                                                                    <option value="{{ $value['id'] }}" {{ isset($data['property']->amphures) && $data['property']->amphures == $value['id'] ? 'selected' : '' }}>
+                                                                        {{ $value['name_th'] }}
+                                                                    @endforeach --}}
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
-                                            </div>
+                                                <div class="col-sm-6 ">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
+                                                        <div class=" ">
 
+                                                            <select name="districts" id="districts" class="form-control">
+                                                            </select><br>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 ">
+                                                    <div class="mb-d-20">
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
+                                                        <input type="text" name="zipcode" id="zipcode" readonly class="form-control"></div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="mb-d-20 mt30">
+                                                        <label class="heading-color ff-heading font-weight-600 mb-6">Place
+                                                            the listing pin on the map</label>
+                                                        <iframe
+                                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1705384925758!5m2!1sth!2sth"
+                                                            width="100%" height="450" style="border:0;"
+                                                            allowfullscreen="" loading="lazy"
+                                                            referrerpolicy="no-referrer-when-downgrade">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
+                                    </div>
+                                </div>
+                        </form>
+                                <div class="tab-pane fade" id="nav-item4" role="tabpanel"
+                                    aria-labelledby="nav-item4-tab">
+                                    <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
+                                        <h4 class="fw-600 title fs-17 mb-6">Listing Details</h4>
+                                        <form class="form-style1">
+                                            <div class="row">
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property ID
+                                                            (only numbers)</label><input type="text"
+                                                            class="form-control" placeholder="Your ID">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property type
+                                                            (only numbers)</label><input type="text"
+                                                            class="form-control" placeholder="Your Property type">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property status</label><input
+                                                            type="text" class="form-control"
+                                                            placeholder="Status"></div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Price</label><input
+                                                            type="text" class="form-control"
+                                                            placeholder="Price"></div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label><input
+                                                            type="text" class="form-control"
+                                                            placeholder="Rooms"></div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms
+                                                            </label><input type="text" class="form-control"
+                                                            placeholder="Rooms">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label><input
+                                                            type="text" class="form-control"
+                                                            placeholder="Rooms"></div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Size
+                                                            </label><input type="text" class="form-control"
+                                                            placeholder="SqFt">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage
+                                                            </label><input type="text" class="form-control"
+                                                            placeholder="Garage">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage size
+                                                            </label><input type="text" class="form-control"
+                                                            placeholder="SqFt">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">PSM / sqm
+                                                            </label><input type="text" class="form-control"
+                                                            placeholder="SqFt">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">TYPE
+                                                        </label><input type="text" class="form-control"
+                                                        placeholder="Family">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Available
+                                                            from
+                                                            (date)</label><input type="text" class="form-control"
+                                                            placeholder="99.aa.yyyy">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Year build
+                                                            </label><input type="text" class="form-control"
+                                                            placeholder="Year">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-xl-4 col-6-dt">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Label</label><input
+                                                            type="text" class="form-control"
+                                                            placeholder="status"></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="mb-d-20"><label
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Owner/
+                                                            Agent
+                                                            nots (not visible on front end)</label>
+                                                        <textarea class="textbox-ap" cols="30" rows="5" placeholder="There are many variations of passages."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </form>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="tab-pane fade" id="nav-item3" role="tabpanel"
-                                aria-labelledby="nav-item3-tab">
-                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="fw-600 title fs-17 mb-6">Listing Location</h4>
-                                    <form class="form-style1">
+                                <div class="tab-pane fade" id="nav-item5" role="tabpanel"
+                                    aria-labelledby="nav-item5-tab">
+                                    <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
+                                        <h4 class="fw-600 title fs-17 mb-6">Select Amenities</h4>
                                         <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Address</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="Your Name"></div>
-                                            </div>
-                                            <div class="col-sm-6 ">
-                                                <div class="mb-d-20">
-                                                    <label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
-                                                    <div class="">
-                                                        <select  name="provinces" id="provinces" class="form-control" >
-                                                            <option  value="" selected disabled></option>
-                                                            @foreach ($data['provinces'] as $value)
-                                                                <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option>
-                                                            @endforeach
-                                                        </select>
+                                            <div class="row-ap flex-lg-row flex-wrap">
+                                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                                    <div class="checkbox-style1">
+                                                        <label class="checkbox-ap">Attic<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Basketball court<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Air Conditioning<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Lawn<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Swimming Pool<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Barbeque<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Microwave<input type="checkbox">
+                                                        <span class="checkmark"></span></label></div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                                    <div class="checkbox-style1">
+                                                        <label class="checkbox-ap">TV Cable<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Dryer<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Outdoor Shower<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Washer<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Gym<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Ocean view<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Private space<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 ">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">City</label>
-                                                    <div class="">
+                                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                                    <div class="checkbox-style1">
+                                                        <label class="checkbox-ap">Lake view<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
 
-                                                        <select name="amphures" id="amphures" class="form-control">
-                                                        </select>
+                                                        <label class="checkbox-ap">Wine cellar<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
 
+                                                        <label class="checkbox-ap">Front yard<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Refrigerator<input type="checkbox"
+                                                        checked><span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">WiFi<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Laundry<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
+
+                                                        <label class="checkbox-ap">Sauna<input type="checkbox">
+                                                        <span class="checkmark"></span></label>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 ">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
-                                                    <div class=" ">
-
-                                                        <select name="districts" id="districts" class="form-control">
-                                                        </select><br>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 ">
-                                                <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
-                                                    <input type="text" name="zipcode" id="zipcode" readonly class="form-control"></div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="mb-d-20 mt30">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-6">Place
-                                                        the listing pin on the map</label>
-                                                    <iframe
-                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1705384925758!5m2!1sth!2sth"
-                                                        width="100%" height="450" style="border:0;"
-                                                        allowfullscreen="" loading="lazy"
-                                                        referrerpolicy="no-referrer-when-downgrade">
-                                                    </iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="nav-item4" role="tabpanel"
-                                aria-labelledby="nav-item4-tab">
-                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="fw-600 title fs-17 mb-6">Listing Details</h4>
-                                    <form class="form-style1">
-                                        <div class="row">
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property ID
-                                                        (only numbers)</label><input type="text"
-                                                        class="form-control" placeholder="Your ID">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property type
-                                                        (only numbers)</label><input type="text"
-                                                        class="form-control" placeholder="Your Property type">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property status</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="Status"></div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Price</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="Price"></div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="Rooms"></div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms
-                                                        </label><input type="text" class="form-control"
-                                                        placeholder="Rooms">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="Rooms"></div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Size
-                                                        </label><input type="text" class="form-control"
-                                                        placeholder="SqFt">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage
-                                                        </label><input type="text" class="form-control"
-                                                        placeholder="Garage">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage size
-                                                        </label><input type="text" class="form-control"
-                                                        placeholder="SqFt">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">PSM / sqm
-                                                        </label><input type="text" class="form-control"
-                                                        placeholder="SqFt">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                    class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">TYPE
-                                                    </label><input type="text" class="form-control"
-                                                    placeholder="Family">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Available
-                                                        from
-                                                        (date)</label><input type="text" class="form-control"
-                                                        placeholder="99.aa.yyyy">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Year build
-                                                        </label><input type="text" class="form-control"
-                                                        placeholder="Year">
-                                                </div>
-                                            </div>
-                                            <div class="col-5 col-xl-4 col-6-dt">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Label</label><input
-                                                        type="text" class="form-control"
-                                                        placeholder="status"></div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10">Owner/
-                                                        Agent
-                                                        nots (not visible on front end)</label>
-                                                    <textarea class="textbox-ap" cols="30" rows="5" placeholder="There are many variations of passages."></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="nav-item5" role="tabpanel"
-                                aria-labelledby="nav-item5-tab">
-                                <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                    <h4 class="fw-600 title fs-17 mb-6">Select Amenities</h4>
-                                    <div class="row">
-                                        <div class="row-ap flex-lg-row flex-wrap">
-                                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                                <div class="checkbox-style1">
-                                                    <label class="checkbox-ap">Attic<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Basketball court<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Air Conditioning<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Lawn<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Swimming Pool<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Barbeque<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Microwave<input type="checkbox">
-                                                    <span class="checkmark"></span></label></div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                                <div class="checkbox-style1">
-                                                    <label class="checkbox-ap">TV Cable<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Dryer<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Outdoor Shower<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Washer<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Gym<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Ocean view<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Private space<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                                <div class="checkbox-style1">
-                                                    <label class="checkbox-ap">Lake view<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Wine cellar<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Front yard<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Refrigerator<input type="checkbox"
-                                                    checked><span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">WiFi<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Laundry<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
-
-                                                    <label class="checkbox-ap">Sauna<input type="checkbox">
-                                                    <span class="checkmark"></span></label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
+                            </div>
 
                     </div>
 
