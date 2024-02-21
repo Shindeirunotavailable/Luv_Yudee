@@ -3,10 +3,9 @@
     {{-- side-bar --}}
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
-            <div class="row p-10">
+            <div class="d-flex align-items-center pt-2">
                 <h6>Find your home</h6>
                 <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
-
             </div>
 
             <div class="search_area">

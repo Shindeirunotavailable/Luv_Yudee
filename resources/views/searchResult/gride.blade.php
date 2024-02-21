@@ -5,7 +5,8 @@
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="block-text text-center ">
-                                        <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a>
+                                        {{-- <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a> --}}
+                                        <b class="font-size-13">FEATURED</b>
                                     </div>
                                     <div class="text-block text-center">
                                         <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
@@ -89,7 +90,7 @@
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="block-text text-center">
-                                        <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a>
+                                        <b class="font-size-13">FEATURED</b>
                                     </div>
                                     <div class="text-block text-center">
                                         <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
