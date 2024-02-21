@@ -12,14 +12,15 @@
         </div>
     </section>
 
-
+    
+    
     {{-- menu-mobile --}}
-    <section class="pt-20" >
+    <section class="pt-20 " >
         <div class="container">
             <div class="mobile-media pb-30">
                 <h5 class="ml-15">Find your home</h5>
-                    @include('searchResulte.search')
-                <div class="row pt-10 ml-15">
+                    @include('searchResult.search')
+                <div class="row pt-10 ml-1">
                     <div class="d-flex justify-content-start" onclick="toggleSidebar()">
                         <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
                             aria-controls="listingSidebarFilter">
@@ -29,14 +30,14 @@
                 </div>
                 
                 <div id="mySidebar" class="sidebar">
-                    @include('searchResulte.sidebar-mobile')
+                    @include('searchResult.sidebar-mobile')
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section >
+    <section>
         <div class="container">
             <div class="mobile-laptop">
                 <div class="row mb-15">
@@ -69,22 +70,22 @@
 
                 <div class="tab-content row" id="nav-tabContent">
                     <div class="col-lg-4 ">
-                            @include('searchResulte.sidebar')
+                            @include('searchResult.sidebar')
                     </div>
                     <div class="tab-pane fade col-lg-8 show active " id="nav-profile" role="tabpanel"
                         aria-labelledby="nav-profile-tab">
-                        @include('searchResulte.gride')
+                        @include('searchResult.gride')
                     </div>
                     <div class="tab-pane fade col-lg-8 " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                        @include('searchResulte.list')
+                        @include('searchResult.list')
                     </div>
                 </div>
             </div>
                 <div class="list-mobile">
-                    @include('searchResulte.list')
+                    @include('searchResult.list')
                 </div>
                 <div class="grid-mobile">
-                    @include('searchResulte.gride')
+                    @include('searchResult.gride')
                 </div>
         </div>
 

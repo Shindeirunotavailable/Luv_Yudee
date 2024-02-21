@@ -24,7 +24,7 @@ Route::any('home' , 'App\Http\Controllers\HomeController@home');
  // -----------------------------------main function  route non ------------------------------------
 route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
 route::any('contact','App\Http\Controllers\LoginController@contact'); // เปิดหน้า contact
-route::any('search_resulte','App\Http\Controllers\LoginController@search_resulte'); // เปิดหน้า details
+route::any('search_result','App\Http\Controllers\LoginController@search_result'); // เปิดหน้า details
 
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน

@@ -132,8 +132,8 @@ public function contact(){ //แสดงหน้า content
 // ---------------------------------------------- หน้า Details -------------------------------------------------
 
  
-public function search_resulte(){ 
-    return view("searchResulte.searchResulte");
+public function search_result(){ 
+    return view("searchResult.searchResult");
 }
 
 }

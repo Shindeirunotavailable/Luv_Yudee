@@ -3,11 +3,14 @@
     {{-- side-bar --}}
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+            <div class="row p-10">
+                <h6>Find your home</h6>
+                <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
 
-            <h6>Find your home</h6>
+            </div>
+
             <div class="search_area">
-                <input type="text" class="form-control form-control-text color-border"
+                <input type="text" class="form-control form-control-text "
                     placeholder="What are you looking for?"><span>
                     <i class="fa-solid fa-magnifying-glass"></i></span>
             </div>

@@ -1,10 +1,10 @@
-<div class="list-sidebar-style1 mb-30">
+<div class="list-sidebar-style1 mb-30 box-shadow">
     {{-- side-bar --}}
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
             <h6 class="font-weight-600">Find your home</h6>
             <div class="search_area">
-                <input type="text" class="form-control form-control-text color-border" placeholder="What are you looking for?"><span>
+                <input type="text" class="form-control form-control-text " placeholder="What are you looking for?"><span>
                 <i class="fa-solid fa-magnifying-glass"></i></span>
             </div>
         </li>
