@@ -1,9 +1,10 @@
 /* ---------------------------- ส่วน gird-list box  ------------------------------------------ */
 
+
+
 .list-sidebar-style1 {
     padding-top: 10px;
     background-color: #fff;
-    box-shadow: 0 1px 4px #181a2012;
     border-radius: 12px;
 }
 
@@ -196,6 +197,46 @@
     font-weight: 600;
 }
 
+.red:hover{
+    color: red;
+}
+
+.blue:hover{
+    color: #0071bc;
+}
+
+.green:hover{
+    color: green;
+}
+
+.background-white{
+    background-color: white;
+}
+
+.box-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.box-shadow-lightblue{
+    box-shadow: 5px 5px 5px rgba(41, 41, 41, 0.226);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* side-bar-mobile */
 .sidebar {
     z-index: 1000 !important; /* ค่า z-index ที่มากกว่าทุกองค์ประกอบที่อยู่ในหน้าเว็บ */
@@ -233,7 +274,7 @@ element.style {
 .mobile {
     margin-right: 1rem;
     padding-left: 11px;
-    padding-top: 3px;
+    padding-top: 5px;
     height: 30px;
     width: 100px;
     background-color: #0071bc;

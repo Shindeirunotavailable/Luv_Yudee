@@ -1,7 +1,7 @@
                     {{-- img-grid --}}
                     <div class="card-deck mb-30">
 
-                        <div class="card">
+                        <div class="card box-shadow-lightblue">
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="block-text text-center ">
@@ -33,15 +33,15 @@
                                         <label class="label-700">For Rent</label>
                                     </div>
                                     <div class="flex-row-reverse">
-                                        <i class="fa-regular fa-share-from-square mr-10"aria-hidden="true"></i>
-                                        <i class="fa fa-heart-o mr-10" aria-hidden="true"></i>
-                                        <i class="fa-regular fa-square-plus mr-10" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                        <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card box-shadow-lightblue">
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="text-block text-center">
@@ -70,9 +70,9 @@
                                         <label class="label-700">For Rent</label>
                                     </div>
                                     <div class="flex-row-reverse">
-                                        <i class="fa-regular fa-share-from-square mr-10"aria-hidden="true"></i>
-                                        <i class="fa fa-heart-o mr-10" aria-hidden="true"></i>
-                                        <i class="fa-regular fa-square-plus mr-10" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                        <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                     {{-- img-grid --}}
                     <div class="card-deck mb-30">
 
-                        <div class="card">
+                        <div class="card box-shadow-lightblue">
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="block-text text-center">
@@ -117,15 +117,15 @@
                                         <label class="label-700">For Rent</label>
                                     </div>
                                     <div class="flex-row-reverse">
-                                        <i class="fa-regular fa-share-from-square mr-10"aria-hidden="true"></i>
-                                        <i class="fa fa-heart-o mr-10" aria-hidden="true"></i>
-                                        <i class="fa-regular fa-square-plus mr-10" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                        <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card box-shadow-lightblue">
                             <div class="card-body p-0">
                                 <div class="img-block ">
                                     <div class="text-block text-center">
@@ -155,9 +155,9 @@
                                         <label class="label-700">For Rent</label>
                                     </div>
                                     <div class="flex-row-reverse">
-                                        <i class="fa-regular fa-share-from-square mr-10"aria-hidden="true"></i>
-                                        <i class="fa fa-heart-o mr-10" aria-hidden="true"></i>
-                                        <i class="fa-regular fa-square-plus mr-10" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                        <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
