@@ -4,7 +4,7 @@
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
             <div class="d-flex align-items-center pt-2">
-                <h6>Find your home</h6>
+                <h6 class="font-weight-600">Find your home</h6>
                 <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
             </div>
 
@@ -16,7 +16,7 @@
         </li>
 
         <li class="list-group-item">
-            <h6>Listing Status</h6>
+            <h6 class="font-weight-600">Listing Status</h6>
             <div class="radio-element">
 
                 <div class="form-check">
@@ -44,7 +44,7 @@
         </li>
 
         <li class="list-group-item">
-            <h6 class="list-title">Property Type</h6>
+            <h6 class="font-weight-600">Property Type</h6>
 
             <div class="form-check  custom-checkbox">
                 <input class="form-check-input checkboox-Property custom-control-input " type="checkbox" value=""
@@ -84,7 +84,7 @@
 
         </li>
         <li class="list-group-item">
-            <h6>Price Range</h6>
+            <h6 class="font-weight-600">Price Range</h6>
 
             <div class="row">
                 <div class="col-12">
@@ -137,7 +137,7 @@
         </li>
         <li class="list-group-item">
             <div class="form-group">
-              <h6 class="list-title">Location</h6>
+              <h6 class="font-weight-600">Location</h6>
               <select class="form-control" id="exampleFormControlSelect1">
                 <option>bangkok</option>
                 <option>Pathum Thani</option>
@@ -148,7 +148,7 @@
       </li>
 
         <li class="list-group-item">
-            <h6 class="list-title">Bedrooms</h6>
+            <h6 class="font-weight-600">Bedrooms</h6>
             <div class="d-flex justify-content-center">
                 <div class="selection">
                     <input type="radio" id="Bedroomsany" name="Bedrooms" checked>
@@ -178,7 +178,7 @@
         </li>
 
         <li class="list-group-item">
-            <h6 class="list-title">Bathrooms</h6>
+            <h6 class="font-weight-600">Bathrooms</h6>
             <div class="d-flex justify-content-center">
                 <div class="selection">
                     <input type="radio" id="Bathroomasany" name="Bathrooms" checked>
