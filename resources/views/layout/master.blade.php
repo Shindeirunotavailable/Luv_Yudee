@@ -72,7 +72,7 @@
     <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
     <script src="{{ asset('/assets/js/login.js') }}"></script>
     <script src="{{ asset('/assets/js/searchResulte/searchResulte.js') }}"></script>
-
+    <script src="{{ asset('/assets/js/contact/contact.js') }}"></script>
 
 
 </body>

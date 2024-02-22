@@ -38,7 +38,7 @@
     }
   }
 
-  .icom-xl{
+  .icon-xl{
     width: 45%;
   }
 
@@ -131,4 +131,8 @@
 
 .radius-button {
   transform: scale(1, 1) !important;
+}
+
+.border-danger {
+  border-color: #dc3545 !important;
 }

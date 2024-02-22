@@ -9,15 +9,11 @@
             </div>
 
             <div class="modal-body">
-                <form class="needs-validation" novalidate>
+                <form >
                     @csrf
                     <div class="form-group">
-                        <label class="label-700">Email</label>
-                        <input type="Email" name="username" id="Email" class="form-control "
-                            id="exampleInputEmail1" placeholder="Enter Username" required>
-                        <div class="invalid-feedback">
-                            <a> กรุณากรอกอีเมลของคุณ: Yourname@domain.com</a>
-                        </div>
+                        <label class="label-700 pl-10">Email</label>
+                        <input type="email" name="username" id="email" class="form-control " placeholder="Enter Email" required>
                     </div>
 
                     <div class="pt-20 pb-20  text-center">
@@ -25,10 +21,6 @@
                         <button type="submit" class="btn btn-primary afterButton rounded-pill w-300 " id="submitModal" >
                             <i class="fa-regular fa-paper-plane "></i> Submit 
                         </button>
-
-                        {{-- <button type="submit" class="btn btn-primary afterButton rounded-pill btn-lg btn-block w-300"
-                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
-                       </button>  --}}
 
                     </div>
 
