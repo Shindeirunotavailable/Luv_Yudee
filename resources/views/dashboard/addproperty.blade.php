@@ -141,10 +141,9 @@
                                                             class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
                                                         <div class="">
                                                             <select  name="provinces" id="provinces" class="form-control" >
-                                                                <option  value="" selected disabled></option>
+                                                                <option  value="" selected disabled ></option>
                                                                 @foreach ($data['provinces'] as $value)
-                                                                    {{-- <option value="{{ $value['id'] }}">{{ $value['name_th'] }}</option> --}}
-                                                                    <option value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
+                                                                    <option required value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
                                                                         {{ $value['name_th'] }}
                                                                     </option>
                                                                 @endforeach
@@ -175,7 +174,7 @@
                                                             class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
                                                         <div class=" ">
 
-                                                            <select name="districts" id="districts" class="form-control">
+                                                            <select name="districts" id="districts" class="form-control" >
                                                                 @if (isset($data['id_properties']))
                                                                     @foreach ($data['districts'] as $value)
                                                                         <option value="{{ $value['id'] }}" {{ isset($data['property']->districts) && $data['property']->districts == $value['id'] ? 'selected' : '' }}>
