@@ -219,20 +219,35 @@ document.addEventListener('DOMContentLoaded', function() {
 //============================ js non ==============================//
 
 // เช็คค่าว่างใน input
-$(document).ready(function() {
-  'use strict';
-  var forms = $('.needs-validation');
-  forms.on('submit', function(event) {
-    var form = $(this);
+// $(document).ready(function() {
+//   'use strict';
+//   var forms = $('.needs-validation');
+//   forms.on('submit', function(event) {
+//     var form = $(this);
 
-    if (form[0].checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+//     if (form[0].checkValidity() === false) {
+//       event.preventDefault();
+//       event.stopPropagation();
+//     }
+
+//     form.addClass('was-validated');
+//   });
+// });
+
+
+
+function alertText(){  
+  var form = $('#password');
+  console.log(form.val().length);
+  
+    if (form.val().length === 0) {
+       $('#textAlert').removeClass('d-none');
+      return false
+    
     }
+      return true
+}
 
-    form.addClass('was-validated');
-  });
-});
 
 
 // ใช้เช็คว่าว่างใน modal
@@ -246,6 +261,7 @@ $(document).ready(function() {
     });
 
 });
+
 
 
 

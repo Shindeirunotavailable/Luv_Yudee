@@ -1,7 +1,4 @@
  
-      .logo-md{
-        width: 50%;
-      }
 
       .imagbackground{
         padding-bottom: 30px;
@@ -9,6 +6,11 @@
         background-position: right;
         background-repeat: no-repeat;
         background-size:60% 100%; /* ทำให้ภาพไม่ยืด */   
+      }
+
+      
+      .logo-md{
+        width: 50%;
       }
 
       @media (max-width: 768px) {
@@ -44,6 +46,14 @@
 
       .colorBlue{
         color: #0071bc;
+      }
+
+      .colorRed{
+        color: red;
+      }
+
+      .border-danger {
+        border-color: #dc3545 !important;
       }
   
 

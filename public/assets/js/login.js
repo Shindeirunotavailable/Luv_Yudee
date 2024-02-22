@@ -39,3 +39,78 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 })
 
 
+
+
+    // เช็คค่าว่างใน input
+    function alertText(){  
+        var form = $('#password');
+        // console.log(form.val().length);
+        
+          if (form.val().length === 0) {
+            $('#textAlert').removeClass('d-none');
+            form.addClass('border-danger');
+            return false
+          }
+            return true
+      }
+
+      $('body').on('click', '#submitModalBtn', function() {
+        alertText();
+        function alertText(){  
+          var form = $('#password');
+          console.log(form.val().length);
+          
+            if (form.val().length === 0) {
+              $('#textAlert').removeClass('d-none');
+              form.addClass('border-danger');
+              return false
+            }
+            else {
+              $('#textAlert').addClass('d-none');
+              form.removeClass('border-danger');
+              return true
+            }
+             
+        }
+
+      });
+
+
+
+
+  // ใช้เช็คว่าว่างใน modal
+$('body').on('click', '#submitModal', function() {
+    // เรียกใช้ modalTextAlert
+    
+    modalTextAlert();
+    function modalTextAlert() {
+      var firstNameForm = $('#modal_password');
+      var tellForm = $('#modal_confirmPassword');
+      // var isValid = true;
+          console.log(firstNameForm.val().length);
+          console.log(tellForm.val().length);
+
+      if (firstNameForm.val().length === 0) {
+        $('#alertModalPassword').removeClass('d-none');
+        firstNameForm.addClass('border-danger');
+        isValid = false;
+      } 
+
+      // ตรวจสอบConfirmPassword
+
+      if (tellForm.val().length === 0) {
+        
+        $('#alertModalConfirmPassword').removeClass('d-none');
+        tellForm.addClass('border-danger');
+        isValid = false;
+        
+      }
+      console.log(isValid);
+      return isValid;
+    }
+
+
+  });
+
+
+

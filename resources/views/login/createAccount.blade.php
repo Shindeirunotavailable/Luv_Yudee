@@ -9,33 +9,30 @@
             </div>
             <div class="modal-body">
 
-                <form class="needs-validation" novalidate>
+                <form onsubmit="return modalTextAlert()">
                     @csrf
                     <div class="form-group">
-                        <label class="label-700">Email</label>
+                        <label class="label-700 pl-10">Email</label>
                         <input type="Email" name="modal_email" id="modal_email" class="form-control "
-                            id="exampleInputEmail1" placeholder="Enter Email" required>
-                        <div class="invalid-feedback">
-                            <a> กรุณากรอกอีเมลของคุณ: Yourname@domain.com</a>
-                        </div>
+                            placeholder="Enter Email" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="label-700">Password</label>
+                        <label class="label-700 pl-10">Password</label>
                         <input type="password" name="modal_password" id="modal_password" class="form-control "
-                            id="exampleInputEmail1" placeholder="Enter Password" required>
-                        <div class="invalid-feedback">
-                            <a> กรุณากรอกPassword</a>
-                        </div>
+                            placeholder="Enter Password" required>
+                        {{-- <div class="d-none " id="alertModalPassword">
+                            <a class="colorRed"> กรุณากรอกPassword</a>
+                        </div> --}}
                     </div>
 
                     <div class="form-group">
-                        <label class="label-700">Confirm Password</label>
+                        <label class="label-700 pl-10">Confirm Password</label>
                         <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
-                            class="form-control " id="exampleInputEmail1" placeholder="Enter Password" required>
-                        <div class="invalid-feedback">
-                            <a> กรุณากรอกPassword</a>
-                        </div>
+                            class="form-control "  placeholder="Enter Password" required >
+                            {{-- <div class="d-none " id="alertModalConfirmPassword">
+                                <a class="colorRed"> กรุณากรอก Confirm Password</a>
+                            </div> --}}
                     </div>
 
                     <div class="pt-20 pb-20 text-center">

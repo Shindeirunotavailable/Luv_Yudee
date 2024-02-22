@@ -17,42 +17,40 @@
                                 <h4>Have questions? Get in touch!</h4>
                             </div>
                             {{-- <form action="{{ url('/contentstone') }}"  method="POST" class="needs-validation" novalidate> --}}
-                            <form method="POST" class="needs-validation" novalidate>
+                            <form  onsubmit="return alertContact()" >
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700">First Name</label>
                                     <input type="text" name="firstName" id="firstName" class="form-control "
-                                        id="exampleInputEmail1" placeholder="Enter First Name" required>
-                                    <div class="invalid-feedback">
-                                        <a> กรุณากรอก First Name</a>
+                                       placeholder="Enter First Name" >
+                                    <div class="d-none " id="alertfirstName">
+                                        <a class="colorRed"> กรุณากรอก First Name</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700">Last Name</label>
                                     <input type="text" name="lastName" id="lastName" class="form-control "
-                                        id="exampleInputEmail1" placeholder="Enter Last Name" required>
-                                    <div class="invalid-feedback">
-                                        <a> กรุณากรอก Last Name</a>
+                                         placeholder="Enter Last Name" >
+                                    <div class="d-none " id="alertLastName">
+                                        <a class="colorRed"> กรุณากรอก Last Name</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700">Email</label>
                                     <input type="Email" name="contactEmail" id="contactEmail" class="form-control "
                                         placeholder="Enter Email" required>
-                                    <div class="invalid-feedback">
-                                        <a> กรุณากรอกอีเมลของคุณ: Yourname@domain.com</a>
-                                    </div>
+  
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-700">Textarea</label>
-                                    <textarea cols="30" rows="4" placeholder="There are many variations of passages." name="textarea"
-                                        class="form-control" required></textarea>
-                                    <div class="invalid-feedback">
-                                        <a> กรุณากรอก Textarea</a>
+                                    <label class="label-700">Description</label>
+                                    <textarea cols="30" rows="4" placeholder="There are many variations of passages." id="description" name="description"
+                                        class="form-control" ></textarea>
+                                    <div class="d-none " id="alertdescription">
+                                        <a class="colorRed"> กรุณากรอก Description</a>
                                     </div>
                                 </div>
                                  <button type="submit" class="afterButton rounded-pill btn-lg btn-block btn "
-                                    id="submitModalBtn"> Submit
+                                    id="submitContact"> Submit
                                 </button> 
                             </form>
                         </div>
@@ -85,7 +83,7 @@
                     <div class="card cards-effect bg-transparent border-0 pt-30 ">
                         <div class="text-center">
                             <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
-                                class="icon-lg icon-sm icom-xl">
+                                class="icon-lg icon-sm icon-xl">
                         </div>
                         <div class="card-body mt-15">
                             <h3 class="card-title">Paris</h3>
@@ -98,7 +96,7 @@
                     <div class="card cards-effect bg-transparent border-0 pt-30 ">
                         <div class="text-center">
                             <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
-                                class="icon-lg icon-sm icom-xl">
+                                class="icon-lg icon-sm icon-xl">
                         </div>
                         <div class="card-body mt-15">
                             <h3 class="card-title">Paris</h3>
@@ -111,7 +109,7 @@
                     <div class="card cards-effect bg-transparent border-0 pt-30 ">
                         <div class="text-center">
                             <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
-                                class="icon-lg icon-sm icom-xl">
+                                class="icon-lg icon-sm icon-xl">
                         </div>
                         <div class="card-body mt-15">
                             <h3 class="card-title">Paris</h3>
