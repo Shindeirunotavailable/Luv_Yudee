@@ -132,8 +132,9 @@
                                                 <div class="col-sm-12">
                                                     <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Address</label>
-                                                        <input type="text" class="form-control" placeholder="Your Address" required name="address" value="{{isset($data['property']->title) ? $data['property']->address : ""}}"></div>
+                                                        <input type="text" class="form-control" placeholder="Your Address" required name="address" value="{{isset($data['property']->address) ? $data['property']->address : ""}}">
                                                     </div>
+                                                </div>
 
                                                 <div class="col-sm-6 ">
                                                     <div class="mb-d-20">
@@ -192,18 +193,30 @@
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
                                                         <input type="text" name="zipcode" id="zipcode" readonly class="form-control" value="{{isset($data['property']->zipcode) ? $data['property']->zipcode : ""}}"></div>
 
-
+{{-- <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
+</form> --}}
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="mb-d-20 mt30">
-                                                        <label class="heading-color ff-heading font-weight-600 mb-6">Place
-                                                            the listing pin on the map</label>
+                                                        <label class="heading-color ff-heading font-weight-600 mb-6">Place the listing pin on the map</label>
                                                         <iframe
                                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1705384925758!5m2!1sth!2sth"
                                                             width="100%" height="450" style="border:0;"
                                                             allowfullscreen="" loading="lazy"
                                                             referrerpolicy="no-referrer-when-downgrade">
                                                         </iframe>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="mb-d-20">
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label>
+                                                        <input type="text" class="form-control" placeholder="Your Latitude" {{--required name="latitude" value="{{isset($data['property']->latitude) ? $data['property']->latitude : ""}}"--}}>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="mb-d-20">
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label>
+                                                        <input type="text" class="form-control" placeholder="Your Longitude" {{--required name="longitude" value="{{isset($data['property']->longitude) ? $data['property']->longitude : ""--}}"}}>
                                                     </div>
                                                 </div>
                                             </div>
