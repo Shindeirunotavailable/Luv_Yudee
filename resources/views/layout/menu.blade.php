@@ -66,14 +66,15 @@
     </div>
     <div class="offcanvas offcanvas-start mobile_menus-canvas" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel" data-bs-scroll="true" aria-modal="true" role="dialog">
         <div class="rside-hidden-bar">
-            <div class="hsidebar-header">
-                <div class="sidebar-close-icon" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <span class="far fa-times"></span></div>
-                <h4 class="title">Welcome to Homez</h4>
+            <div class="hsidebar-header text-left">
+                <div class="sidebar-close-icon pt-2 " data-bs-dismiss="offcanvas" aria-label="Close">
+                    <a href="javascript:void(0)" class="closebtns" onclick="toggleSidebar()">&times;</a>
+                </div>
+                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
             </div>
             <div class="hsidebar-contents ">
                 <div class="hbar_navbar_contents">
-                    <aside data-testid="sidebar-root-test-id" width="100%" class="sidebar-root custom-class css-sidebar-root">
+                    <aside data-testid="sidebar-root-test-id" width="100%" class="sidebar-root custom-class css-sidebar-root pbr-10">
                         <div data-testid="sidebar-container-test-id" class="sidebar-container css-sidebar-container">
                             <nav class="menu-root css-menu-root">
                                 <ul class="css-pm">

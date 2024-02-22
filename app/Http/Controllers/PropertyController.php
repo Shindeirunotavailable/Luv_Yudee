@@ -91,10 +91,10 @@ class PropertyController extends Controller
         if ($request->has('function') && $request->input('function') === 'provinces') {
 
             $id = $request->input('id');
-            $data = Amphure::where('province_id', $id)->get();
+            $Amphure = Amphure::where('province_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกอำเภอ</option>';
-            foreach ($data as $value) {
-                $options .= '<option value="' . $value->id . '">' . $value->name_th . '</option>';
+            foreach ($Amphure as $value) {
+                $options .= '<option value="' . $value->id . ' ">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
         }

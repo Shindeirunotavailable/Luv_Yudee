@@ -64,8 +64,6 @@ $(document).ready(function() {
 
     $('#provinces').change(function() {
         var id_provinces = $(this).val();
-        // console.log($('#db_provinces').val())
-         // console.log($("input[name=_token]").val())
         $.ajax({
             type: "post",
             url: baseUrl+"db_provinces",

@@ -11,7 +11,7 @@
             
             @include('home.boxForYou')
 
-            @include('home.boxStores')
+            {{-- @include('home.boxStores') --}}
 
 
 
