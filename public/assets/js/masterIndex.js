@@ -1,8 +1,8 @@
 
 
 /*slide cycle */
-var swiper = new Swiper(".swiper", {
-  slidesPerView: 6,
+var swiper = new Swiper(".swiperess", {
+  slidesPerView: 7,
   spaceBetween: 28,
   slidesPerGroup: 1,
   loop: true,
@@ -10,7 +10,7 @@ var swiper = new Swiper(".swiper", {
   centerSlide: "true",
   grapCurser: "true",
   fade: "true",
-  loopFillGroupWithBlank: true,
+  // loopFillGroupWithBlank: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -28,11 +28,17 @@ var swiper = new Swiper(".swiper", {
     300: {
       slidesPerView: 2,
     },
-    780: {
+    400: {
       slidesPerView: 3,
     },
+    768: {
+      slidesPerView: 4,
+    },
     1000: {
-      slidesPerView: 6,
+      slidesPerView: 5,
+    },
+    1200: {
+      slidesPerView: 7,
     }
   }
 });
