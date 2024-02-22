@@ -51,7 +51,7 @@
                                         <a> กรุณากรอก Textarea</a>
                                     </div>
                                 </div>
-                                 <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+                                 <button type="submit" class="afterButton rounded-pill btn-lg btn-block btn "
                                     id="submitModalBtn"> Submit
                                 </button> 
                             </form>
@@ -138,10 +138,10 @@
                         </div>
                         <div class="col-lg-5 text-center">
                             <a href=""></a>
-                            <a class="user-btn btn-yuudee add-property rounded-pill text-a " href="javascript:void(0)">
+                            <a class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="javascript:void(0)">
                                 <i class="fa-solid fa-location-arrow"></i>  <span>Contact Us</span>
                             </a>
-                            <a class="user-btn btn-yuudee add-property rounded-pill text-a " href="Tel:0915453939">
+                            <a class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="Tel:0915453939">
                                 <i class="fa-solid fa-phone"></i> <span>091-545-3939</span>
                             </a>
                         </div>

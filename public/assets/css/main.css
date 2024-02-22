@@ -3836,3 +3836,9 @@ textarea.form-control-lg {
      background-image: linear-gradient(45deg, #3a9ad9 50%, transparent 50%) ; /* สีตอนกำลังจะเปลี่ยนพื้นหลัง */
      background-position: 0 !important; /* ต่ำแหน่งสีพื้นหลัง */
    }
+
+   .btn-contact {
+    font-size: 14px;
+    height: 47px;
+    /* padding: 9px 22px */
+}
