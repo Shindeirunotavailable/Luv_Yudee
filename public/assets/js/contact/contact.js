@@ -23,7 +23,6 @@
       var firstNameForm = $('#firstName');
       var lastNameForm = $('#lastName');
       var descriptionForm = $('#description');
-      var contactEmailForm = $('#contactEmail');
       var isValid = true;
   
       // ตรวจสอบpassword
@@ -46,10 +45,7 @@
         isValid = false;
       }
 
-      if (contactEmailForm.val().length === 0) {
-        contactEmailForm.addClass('border-danger');
-        isValid = false;
-      }
+ 
 
       return isValid;
     }
