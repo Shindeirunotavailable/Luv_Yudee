@@ -40,7 +40,7 @@
                                     <input type="Email" name="contactEmail" id="contactEmail" class="form-control "
                                         placeholder="Enter Email" required>
                                     <div class="invalid-feedback">
-                                        <a> กรุณากรอก Email</a>
+                                        <a> กรุณากรอกอีเมลของคุณ: Yourname@domain.com</a>
                                     </div>
                                 </div>
                                 <div class="form-group">
