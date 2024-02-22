@@ -158,9 +158,13 @@
                                                         <div class="">
 
                                                             <select name="amphures" id="amphures" class="form-control">
-                                                                {{-- <option selected disabled value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
-                                                                    {{ $value['name_th'] }}</option> --}}
-
+                                                                @if (isset($data['id_properties']))
+                                                                    @foreach ($data['amphures'] as $value)
+                                                                        <option value="{{ $value['id'] }}" {{ isset($data['property']->amphures) && $data['property']->amphures == $value['id'] ? 'selected' : '' }}>
+                                                                            {{ $value['name_th'] }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                @endif
                                                             </select>
 
                                                         </div>
@@ -172,6 +176,13 @@
                                                         <div class=" ">
 
                                                             <select name="districts" id="districts" class="form-control">
+                                                                @if (isset($data['id_properties']))
+                                                                    @foreach ($data['districts'] as $value)
+                                                                        <option value="{{ $value['id'] }}" {{ isset($data['property']->districts) && $data['property']->districts == $value['id'] ? 'selected' : '' }}>
+                                                                            {{ $value['name_th'] }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                @endif
                                                             </select><br>
 
                                                         </div>
@@ -180,7 +191,9 @@
                                                 <div class="col-sm-6 ">
                                                     <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
-                                                        <input type="text" name="zipcode" id="zipcode" readonly class="form-control"></div>
+                                                        <input type="text" name="zipcode" id="zipcode" readonly class="form-control" value="{{isset($data['property']->zipcode) ? $data['property']->zipcode : ""}}"></div>
+
+
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="mb-d-20 mt30">

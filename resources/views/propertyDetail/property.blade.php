@@ -138,7 +138,7 @@
             </div>
             <div class="container-pp ">
                 <nav aria-label="breadcrumb ">
-                    <ol class="breadcrumb pb-0 bg-white">
+                    <ol class="breadcrumb pb-0 pl-0 bg-white">
                         <li class="breadcrumb-item fs-12 letter-spacing-087">
                             <a href=".">Home</a>
                         </li>
