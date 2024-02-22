@@ -16,7 +16,7 @@
                         <input type="Email" name="modal_email" id="modal_email" class="form-control "
                             id="exampleInputEmail1" placeholder="Enter Email" required>
                         <div class="invalid-feedback">
-                            <a> กรุณากรอก E-mail</a>
+                            <a> กรุณากรอกอีเมลของคุณ: Yourname@domain.com</a>
                         </div>
                     </div>
 

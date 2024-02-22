@@ -16,7 +16,7 @@
                         <input type="Email" name="username" id="Email" class="form-control "
                             id="exampleInputEmail1" placeholder="Enter Username" required>
                         <div class="invalid-feedback">
-                            <a> กรุณากรอก Email</a>
+                            <a> กรุณากรอกอีเมลของคุณ: Yourname@domain.com</a>
                         </div>
                     </div>
 
