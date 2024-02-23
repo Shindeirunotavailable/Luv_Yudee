@@ -21,9 +21,9 @@
                 {{-- <h5 >Find your home</h5>
                     @include('searchResult.search') --}}
                 <div class="d-flex justify-content-end pt-2">
-                    <div class="d-flex justify-content-start" onclick="toggleSidebar()">
+                    <div class="d-flex align-items-center" onclick="toggleSidebar()">
                         <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
-                            <span class="fa-solid fa-sliders text-white"></span> <b class="text-white">search</b>
+                            <span> <i class="fa-solid fa-magnifying-glass text-white"></i></span> <b class="text-white">search</b>
                         </button>
 
                     </div>

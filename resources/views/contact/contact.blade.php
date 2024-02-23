@@ -136,12 +136,20 @@
                         </div>
                         <div class="col-lg-5 text-center">
                             <a href=""></a>
-                            <a class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="javascript:void(0)">
+
+                            {{-- <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
+                                <span class="fa-solid fa-sliders text-white"></span> <b class="text-white">search</b>
+                            </button>
+                            <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
+                                <span class="fa-solid fa-sliders text-white"></span> <b class="text-white">search</b>
+                            </button> --}}
+
+                            <button type="button" class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="javascript:void(0)">
                                 <i class="fa-solid fa-location-arrow"></i> <span>Contact Us</span>
-                            </a>
-                            <a class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="Tel:0915453939">
+                            </button>
+                            <button type="button" class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="Tel:0915453939">
                                 <i class="fa-solid fa-phone"></i> <span>091-545-3939</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
