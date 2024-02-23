@@ -1,5 +1,3 @@
-
-
       <select class="js-multiple-select form-control" multiple data-placeholder="Select Categories">
         <option value="1">คอนโด</option>
         <option value="2">บ้นเดี่ยว</option>

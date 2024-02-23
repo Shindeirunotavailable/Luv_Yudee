@@ -22,10 +22,10 @@
                     @include('searchResult.search') --}}
                 <div class="d-flex justify-content-end pt-2">
                     <div class="d-flex justify-content-start" onclick="toggleSidebar()">
-                        <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
-                            aria-controls="listingSidebarFilter">
-                            <span class="fa-solid fa-sliders"></span> Advance
-                        </a>
+                        <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
+                            <span class="fa-solid fa-sliders text-white"></span> <b class="text-white">search</b>
+                        </button>
+
                     </div>
                 </div>
                 

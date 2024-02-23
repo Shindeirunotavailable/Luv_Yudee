@@ -21,11 +21,11 @@
                             <form class="needs-validation">
                                 @csrf
                                 <div class="form-group">
-                                    <label class="label-700 pl-10">Email</label>
+                                    <label class="label-700">Email</label>
                                         <input type="email" name="email" id="email" class="form-control " placeholder="Enter Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-700 pl-10">Password</label>
+                                    <label class="label-700">Password</label>
                                         <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password">
                                         <div class="invalid-feedback">
                                             <a> กรุณากรอก Password</a>
