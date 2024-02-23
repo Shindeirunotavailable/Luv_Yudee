@@ -29,7 +29,7 @@
                     <div class="form-group">
                         <label class="label-700 pl-10">Confirm Password</label>
                         <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
-                            class="form-control "  placeholder="Enter Password"  >
+                            class="form-control "  placeholder="Enter Confirm Password"  >
                             <div class="d-none " id="alertModalConfirmPassword">
                                 <a class="colorRed"> กรุณากรอก Confirm Password</a>
                             </div>
