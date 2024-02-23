@@ -17,10 +17,10 @@
                     </div>
 
                     <div class="pt-20 pb-20  text-center">
-                        
-                        <button type="submit" class="btn btn-primary afterButton rounded-pill w-300 " id="submitModal" >
-                            <i class="fa-regular fa-paper-plane "></i> Submit 
-                        </button>
+
+                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
+                       </button> 
 
                     </div>
 
