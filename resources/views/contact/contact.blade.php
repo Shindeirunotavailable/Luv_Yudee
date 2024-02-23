@@ -22,18 +22,12 @@
                                 <div class="form-group">
                                     <label class="label-700">First Name</label>
                                     <input type="text" name="firstName" id="firstName" class="form-control "
-                                       placeholder="Enter First Name" >
-                                    <div class="d-none " id="alertfirstName">
-                                        <a class="colorRed"> กรุณากรอก First Name</a>
-                                    </div>
+                                       placeholder="Enter First Name" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700">Last Name</label>
                                     <input type="text" name="lastName" id="lastName" class="form-control "
-                                         placeholder="Enter Last Name" >
-                                    <div class="d-none " id="alertLastName">
-                                        <a class="colorRed"> กรุณากรอก Last Name</a>
-                                    </div>
+                                         placeholder="Enter Last Name" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700">Email</label>
@@ -44,10 +38,7 @@
                                 <div class="form-group">
                                     <label class="label-700">Description</label>
                                     <textarea cols="30" rows="4" placeholder="There are many variations of passages." id="description" name="description"
-                                        class="form-control" ></textarea>
-                                    <div class="d-none " id="alertdescription">
-                                        <a class="colorRed"> กรุณากรอก Description</a>
-                                    </div>
+                                        class="form-control" required></textarea>
                                 </div>
                                  <button type="submit" class="afterButton rounded-pill btn-lg btn-block btn "
                                     id="submitContact"> Submit

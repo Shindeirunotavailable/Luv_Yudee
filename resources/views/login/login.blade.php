@@ -27,9 +27,6 @@
                                 <div class="form-group">
                                     <label class="label-700 pl-10">Password</label>
                                         <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password" required>
-                                    {{-- <div class="d-none " id="textAlert">
-                                        <a class="colorRed"> กรุณากรอกPassword</a>
-                                    </div> --}}
                                 </div>
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="text-right">

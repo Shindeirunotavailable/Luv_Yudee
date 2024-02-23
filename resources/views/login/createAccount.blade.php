@@ -20,27 +20,22 @@
                     <div class="form-group">
                         <label class="label-700 pl-10">Password</label>
                         <input type="password" name="modal_password" id="modal_password" class="form-control "
-                            placeholder="Enter Password" required>
-                        {{-- <div class="d-none " id="alertModalPassword">
-                            <a class="colorRed"> กรุณากรอกPassword</a>
-                        </div> --}}
+                            placeholder="Enter Password"  required>
+
                     </div>
 
                     <div class="form-group">
                         <label class="label-700 pl-10">Confirm Password</label>
                         <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
-                            class="form-control "  placeholder="Enter Password" required >
-                            {{-- <div class="d-none " id="alertModalConfirmPassword">
-                                <a class="colorRed"> กรุณากรอก Confirm Password</a>
-                            </div> --}}
+                            class="form-control" placeholder="Enter Confirm Password" required >
+
                     </div>
 
-                    <div class="pt-20 pb-20 text-center">
-                        <button type="submit"
-                            class="btn btn-primary afterButton rounded-pill  w-300 "
-                            id="submitModal"> 
-                            <i class="fa-regular fa-paper-plane "></i> Submit 
-                        </button>                       
+                    <div class="pt-20 pb-20 text-center">                        
+                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
+                       </button> 
+
                     </div>
 
                 </form>
