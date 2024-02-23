@@ -1,4 +1,4 @@
-<div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+<div class="modal" tabindex="-1" role="dialog" id="forgetPassword">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

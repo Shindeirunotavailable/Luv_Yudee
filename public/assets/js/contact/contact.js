@@ -1,63 +1,41 @@
 
-// function alertContact(){  
-//     var form = $('#firstName');
-//     var form = $('#lastName');
-//     var form = $('#description');
+    $('body').on('click', '#submitContact', function() {
+      alertText();
+      function alertText(){  
+          var firstNameForm = $('#firstName');
+          var lastNameForm = $('#lastName');
+          var emailForm = $('#contactEmail');
+          var descriptionForm = $('#description');
+        
+          if (firstNameForm.val().length === 0) {
+            firstNameForm.addClass('border-danger');
+          }
+          else {
+            firstNameForm.removeClass('border-danger');
+          }
+          if (lastNameForm.val().length === 0) {
+            lastNameForm.addClass('border-danger');
+          }
+          else {
+            lastNameForm.removeClass('border-danger');
+          }
+          
+          if (emailForm.val().length === 0) {
+            emailForm.addClass('border-danger');
+          }
+          else {
+            emailForm.removeClass('border-danger');
+          }
 
-//     console.log(form.val().length);
-    
-//       if (form.val().length === 0) {
-//          $('#firstNameAlert').removeClass('d-none');
-//          $('#lastNameAlert').removeClass('d-none');
-//          $('#descriptionAlert').removeClass('d-none');
-//         return false
-//       }
-//         return true
-//   }
-
-
- 
-
-    function alertContact() {
-      var firstNameForm = $('#firstName');
-      var lastNameForm = $('#lastName');
-      var descriptionForm = $('#description');
-      var isValid = true;
-
-        console.log(firstNameForm);
-        console.log(lastNameForm);
-        console.log(descriptionForm);
-
-        // ตรวจสอบ First Name
-      if (firstNameForm.val().length === 0) {
-        $('#alertfirstName').removeClass('d-none');
-        firstNameForm.addClass('border-danger');
-        isValid = false;
-      } else {
-        $('#alertfirstName').addClass('d-none');
-        firstNameForm.removeClass('border-danger');
+          if (descriptionForm.val().length === 0) {
+            descriptionForm.addClass('border-danger');
+          }
+          else {
+            descriptionForm.removeClass('border-danger');
+          }
+           
       }
 
-      if (lastNameForm.val().length === 0) {
-        $('#alertLastName').removeClass('d-none');
-        lastNameForm.addClass('border-danger');
-        isValid = false;
-      } else {
-        $('#alertLastName').addClass('d-none');
-        lastNameForm.removeClass('border-danger');
-      }
+    });
 
-      if (descriptionForm.val().length === 0) {
-        $('#alertdescription').removeClass('d-none');
-        descriptionForm.addClass('border-danger');
-        isValid = false;
-      } else {
-        $('#alertdescription').addClass('d-none');
-        descriptionForm.removeClass('border-danger');
-      }
-
-      
-      console.log(isValid);
-      return isValid;
-    }
 

@@ -40,35 +40,24 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
 
 
-
-    // เช็คค่าว่างใน input
-    // function alertText(){  
-    //     var form = $('#password');
-    //     // console.log(form.val().length);
-        
-    //       if (form.val().length === 0) {
-    //         $('#textAlert').removeClass('d-none');
-    //         form.addClass('border-danger');
-    //         return false
-    //       }
-    //         return true
-    //   }
-
       $('body').on('click', '#submitModalBtn', function() {
         alertText();
         function alertText(){  
-          var form = $('#password');
-          console.log(form.val().length);
-          
-            if (form.val().length === 0) {
-              $('#textAlert').removeClass('d-none');
-              form.addClass('border-danger');
-              return false
+          var passwordForm = $('#password');
+          var emailForm = $('#email');
+
+         
+          if (emailForm.val().length === 0) {
+            emailForm.addClass('border-danger');
+          }
+          else {
+            emailForm.removeClass('border-danger');
+          }
+            if (passwordForm.val().length === 0) {
+              passwordForm.addClass('border-danger');
             }
             else {
-              $('#textAlert').addClass('d-none');
-              form.removeClass('border-danger');
-              return true
+              passwordForm.removeClass('border-danger');
             }
              
         }
@@ -76,47 +65,45 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
       });
 
 
+      $('body').on('click', '#exampleModal', function() {
+        modalTextAlert();
+        function modalTextAlert() {
+          var emailmodlForm = $('#modal_email');
+          var firstNameForm = $('#modal_password');
+          var tellForm = $('#modal_confirmPassword');
 
-// ใช้เช็คว่าว่างใน modal
-$('body').on('click', '#exampleModal', function() {
-  $('#exampleModal form').submit(function(event) {
-   
-    modalTextAlert();
-    function modalTextAlert() {
-      var firstNameForm = $('#modal_password');
-      var tellForm = $('#modal_confirmPassword');
-      var isValid = true;
+          if (emailmodlForm.val().length === 0) {
+            emailmodlForm.addClass('border-danger');
+          }else {
+            emailmodlForm.removeClass('border-danger');
+          } 
+          if (firstNameForm.val().length === 0) {
+            firstNameForm.addClass('border-danger');
+          }else {
+            firstNameForm.removeClass('border-danger');
+          } 
+          if (tellForm.val().length === 0) {
+            tellForm.addClass('border-danger');
+          }else {
+            tellForm.removeClass('border-danger');
+          } 
 
-          // console.log(firstNameForm.val().length);
-          // console.log(tellForm.val().length);
-      if (firstNameForm.val().length === 0) {
-        $('#alertModalPassword').removeClass('d-none');
-        firstNameForm.addClass('border-danger');
-        event.preventDefault();
-        event.stopPropagation();
-        isValid = false;
-      }else {
-        $('#alertModalPassword').addClass('d-none');
-        firstNameForm.removeClass('border-danger');
-      } 
-
-      // ตรวจสอบConfirmPassword
-      if (tellForm.val().length === 0) {
-        $('#alertModalConfirmPassword').removeClass('d-none');
-        tellForm.addClass('border-danger');
-        event.preventDefault();
-        event.stopPropagation();
-        isValid = false;
-      }else {
-        $('#alertModalConfirmPassword').addClass('d-none');
-        tellForm.removeClass('border-danger');
-      } 
-      
-      // console.log(isValid);
-      return isValid;
-    }
+        }        
+  
+      });
 
 
-  });
+      $('body').on('click', '#forgetPassword', function() {
+        modalTextAlert();
+        function modalTextAlert() {
+          var forgetEmailForm = $('#forgetEmail');
 
-});
+          if (forgetEmailForm.val().length === 0) {
+            forgetEmailForm.addClass('border-danger');
+          }else {
+            forgetEmailForm.removeClass('border-danger');
+          }  
+
+        }        
+  
+      });
