@@ -1,5 +1,4 @@
 
-
 /*slide cycle */
 var swiper = new Swiper(".swiperess", {
   slidesPerView: 7,
@@ -34,7 +33,7 @@ var swiper = new Swiper(".swiperess", {
     768: {
       slidesPerView: 4,
     },
-    1000: {
+    917: {
       slidesPerView: 5,
     },
     1200: {

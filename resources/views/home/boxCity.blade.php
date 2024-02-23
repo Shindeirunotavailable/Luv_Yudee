@@ -1,5 +1,5 @@
-<section class="md-pb-40 pb-90 pt-40">
-    <div class="max-width1490-con position-relative mr-auto ml-auto">
+<section class="md-pb-40 pb-90 pt-40 mx20-lg">
+    <div class="max-width1460-con position-relative mr-auto ml-auto">
         <div class="row align-items-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-7">
                 <div class="main-title-2">
