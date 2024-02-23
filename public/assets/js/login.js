@@ -42,17 +42,17 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
 
     // เช็คค่าว่างใน input
-    function alertText(){  
-        var form = $('#password');
-        // console.log(form.val().length);
+    // function alertText(){  
+    //     var form = $('#password');
+    //     // console.log(form.val().length);
         
-          if (form.val().length === 0) {
-            $('#textAlert').removeClass('d-none');
-            form.addClass('border-danger');
-            return false
-          }
-            return true
-      }
+    //       if (form.val().length === 0) {
+    //         $('#textAlert').removeClass('d-none');
+    //         form.addClass('border-danger');
+    //         return false
+    //       }
+    //         return true
+    //   }
 
       $('body').on('click', '#submitModalBtn', function() {
         alertText();
@@ -77,40 +77,46 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
 
 
-
-  // ใช้เช็คว่าว่างใน modal
-$('body').on('click', '#submitModal', function() {
-    // เรียกใช้ modalTextAlert
-    
+// ใช้เช็คว่าว่างใน modal
+$('body').on('click', '#exampleModal', function() {
+  $('#exampleModal form').submit(function(event) {
+   
     modalTextAlert();
     function modalTextAlert() {
       var firstNameForm = $('#modal_password');
       var tellForm = $('#modal_confirmPassword');
-      // var isValid = true;
-          console.log(firstNameForm.val().length);
-          console.log(tellForm.val().length);
+      var isValid = true;
 
+          // console.log(firstNameForm.val().length);
+          // console.log(tellForm.val().length);
       if (firstNameForm.val().length === 0) {
         $('#alertModalPassword').removeClass('d-none');
         firstNameForm.addClass('border-danger');
+        event.preventDefault();
+        event.stopPropagation();
         isValid = false;
+      }else {
+        $('#alertModalPassword').addClass('d-none');
+        firstNameForm.removeClass('border-danger');
       } 
 
       // ตรวจสอบConfirmPassword
-
       if (tellForm.val().length === 0) {
-        
         $('#alertModalConfirmPassword').removeClass('d-none');
         tellForm.addClass('border-danger');
+        event.preventDefault();
+        event.stopPropagation();
         isValid = false;
-        
-      }
-      console.log(isValid);
+      }else {
+        $('#alertModalConfirmPassword').addClass('d-none');
+        tellForm.removeClass('border-danger');
+      } 
+      
+      // console.log(isValid);
       return isValid;
     }
 
 
   });
 
-
-
+});
