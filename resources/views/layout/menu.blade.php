@@ -68,7 +68,7 @@
         <div class="rside-hidden-bar">
             <div class="hsidebar-header text-left">
                 <div class="sidebar-close-icon pt-2 " data-bs-dismiss="offcanvas" aria-label="Close">
-                    <a href="javascript:void(0)" class="closebtns" onclick="toggleSidebar()">&times;</a>
+                    <a href="javascript:void(0)" class="closebtns">&times;</a>
                 </div>
                 <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
             </div>
