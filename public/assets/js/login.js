@@ -38,72 +38,51 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
             });
 })
 
+ $('body').on('click', '#exampleModal', function() {
+        var forms = $('.needs-validation');
+    $('#exampleModal form').submit(function(event) {
+        var firstNameforms = $('#modal_password');
+        var lastNameforms = $('#modal_confirmPassword');
 
-
-      $('body').on('click', '#submitModalBtn', function() {
-        alertText();
-        function alertText(){  
-          var passwordForm = $('#password');
-          var emailForm = $('#email');
-
-         
-          if (emailForm.val().length === 0) {
-            emailForm.addClass('border-danger');
+          if( !firstNameforms.val()  ){
+            firstNameforms.addClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            firstNameforms.removeClass('is-invalid');
+            firstNameforms.addClass('is-valid');
           }
-          else {
-            emailForm.removeClass('border-danger');
-          }
-            if (passwordForm.val().length === 0) {
-              passwordForm.addClass('border-danger');
-            }
-            else {
-              passwordForm.removeClass('border-danger');
-            }
-             
-        }
-
-      });
-
-
-      $('body').on('click', '#exampleModal', function() {
-        modalTextAlert();
-        function modalTextAlert() {
-          var emailmodlForm = $('#modal_email');
-          var firstNameForm = $('#modal_password');
-          var tellForm = $('#modal_confirmPassword');
-
-          if (emailmodlForm.val().length === 0) {
-            emailmodlForm.addClass('border-danger');
-          }else {
-            emailmodlForm.removeClass('border-danger');
+          if( !lastNameforms.val()  ){
+            lastNameforms.addClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            lastNameforms.removeClass('is-invalid');
+            lastNameforms.addClass('is-valid');
           } 
-          if (firstNameForm.val().length === 0) {
-            firstNameForm.addClass('border-danger');
-          }else {
-            firstNameForm.removeClass('border-danger');
-          } 
-          if (tellForm.val().length === 0) {
-            tellForm.addClass('border-danger');
-          }else {
-            tellForm.removeClass('border-danger');
-          } 
+    });
 
-        }        
-  
-      });
+});
 
 
-      $('body').on('click', '#forgetPassword', function() {
-        modalTextAlert();
-        function modalTextAlert() {
-          var forgetEmailForm = $('#forgetEmail');
 
-          if (forgetEmailForm.val().length === 0) {
-            forgetEmailForm.addClass('border-danger');
-          }else {
-            forgetEmailForm.removeClass('border-danger');
-          }  
+$(document).ready(function() {
+    var forms = $('.needs-validation');
+    forms.on('submit', function(event) {
+      var firstNameforms = $('#password');
+        
 
-        }        
-  
-      });
+      if( !firstNameforms.val()  ){
+        firstNameforms.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        firstNameforms.removeClass('is-invalid');
+        firstNameforms.addClass('is-valid');
+      }
+ 
+    });
+
+
+  });
+

@@ -224,20 +224,20 @@ document.addEventListener('DOMContentLoaded', function() {
 //============================ js non ==============================//
 
 // เช็คค่าว่างใน input
-$(document).ready(function() {
-  'use strict';
-  var forms = $('.needs-validation');
-  forms.on('submit', function(event) {
-    var form = $(this);
+// $(document).ready(function() {
+//   'use strict';
+//   var forms = $('.needs-validation');
+//   forms.on('submit', function(event) {
+//     var form = $(this);
 
-    if (form[0].checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+//     if (form[0].checkValidity() === false) {
+//       event.preventDefault();
+//       event.stopPropagation();
+//     }
 
-    form.addClass('was-validated');
-  });
-});
+//     form.addClass('was-validated');
+//   });
+// });
 
 
 
@@ -256,16 +256,16 @@ $(document).ready(function() {
 
 
 // ใช้เช็คว่าว่างใน modal
- $('body').on('click', '#exampleModal', function() {
-    $('#exampleModal form').submit(function(event) {
-      if (!$(this)[0].checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-        $(this).addClass('was-validated');
-      }
-    });
+//  $('body').on('click', '#exampleModal', function() {
+//     $('#exampleModal form').submit(function(event) {
+//       if (!$(this)[0].checkValidity()) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//         $(this).addClass('was-validated');
+//       }
+//     });
 
-});
+// });
 
 
 

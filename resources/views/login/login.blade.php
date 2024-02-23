@@ -18,7 +18,7 @@
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
-                            <form onsubmit="return alertText()" >
+                            <form class="needs-validation">
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700 pl-10">Email</label>
@@ -26,7 +26,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700 pl-10">Password</label>
-                                        <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password" required>
+                                        <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password">
+                                        <div class="invalid-feedback">
+                                            <a> กรุณากรอก Password</a>
+                                        </div>
                                 </div>
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="text-right">

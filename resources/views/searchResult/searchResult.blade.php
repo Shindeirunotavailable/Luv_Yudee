@@ -17,10 +17,10 @@
     {{-- menu-mobile --}}
     <section class="pt-20 " >
         <div class="container">
-            <div class="mobile-media pb-30">
-                <h5 >Find your home</h5>
-                    @include('searchResult.search')
-                <div class="d-flex align-items-center pt-2">
+            <div class="mobile-media pb-15">
+                {{-- <h5 >Find your home</h5>
+                    @include('searchResult.search') --}}
+                <div class="d-flex justify-content-end pt-2">
                     <div class="d-flex justify-content-start" onclick="toggleSidebar()">
                         <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
                             aria-controls="listingSidebarFilter">

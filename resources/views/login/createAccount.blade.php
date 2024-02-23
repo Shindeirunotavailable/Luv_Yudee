@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
 
-                <form onsubmit="return modalTextAlert()">
+                <form class="needs-validation">
                     @csrf
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
@@ -20,14 +20,21 @@
                     <div class="form-group">
                         <label class="label-700 pl-10">Password</label>
                         <input type="password" name="modal_password" id="modal_password" class="form-control "
-                            placeholder="Enter Password"  required>
+                            placeholder="Enter Password">
+
+                        <div class="invalid-feedback">
+                            <a> กรุณากรอก Password</a>
+                        </div>
 
                     </div>
 
                     <div class="form-group">
                         <label class="label-700 pl-10">Confirm Password</label>
                         <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
-                            class="form-control" placeholder="Enter Confirm Password" required >
+                            class="form-control" placeholder="Enter Confirm Password" >
+                        <div class="invalid-feedback">
+                            <a> กรุณากรอก Confirm Password</a>
+                        </div>
 
                     </div>
 

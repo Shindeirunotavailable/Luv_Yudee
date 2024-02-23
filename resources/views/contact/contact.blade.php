@@ -17,32 +17,41 @@
                                 <h4>Have questions? Get in touch!</h4>
                             </div>
                             {{-- <form action="{{ url('/contentstone') }}"  method="POST" class="needs-validation" novalidate> --}}
-                            <form  onsubmit="return alertContact()" >
+                            <form class="needs-validation">
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700">First Name</label>
                                     <input type="text" name="firstName" id="firstName" class="form-control "
-                                       placeholder="Enter First Name" required>
+                                        placeholder="Enter First Name">
+                                    <div class="invalid-feedback">
+                                        <a> กรุณากรอก First Name</a>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700">Last Name</label>
                                     <input type="text" name="lastName" id="lastName" class="form-control "
-                                         placeholder="Enter Last Name" required>
+                                        placeholder="Enter Last Name">
+                                    <div class="invalid-feedback">
+                                        <a> กรุณากรอก Last Name</a>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700">Email</label>
                                     <input type="Email" name="contactEmail" id="contactEmail" class="form-control "
                                         placeholder="Enter Email" required>
-  
+
                                 </div>
                                 <div class="form-group">
                                     <label class="label-700">Description</label>
-                                    <textarea cols="30" rows="4" placeholder="There are many variations of passages." id="description" name="description"
-                                        class="form-control" required></textarea>
+                                    <textarea cols="30" rows="4" placeholder="There are many variations of passages." id="description"
+                                        name="description" class="form-control"></textarea>
+                                    <div class="invalid-feedback">
+                                        <a> กรุณากรอก Description</a>
+                                    </div>
                                 </div>
-                                 <button type="submit" class="afterButton rounded-pill btn-lg btn-block btn "
+                                <button type="submit" class="afterButton rounded-pill btn-lg btn-block btn "
                                     id="submitContact"> Submit
-                                </button> 
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -128,7 +137,7 @@
                         <div class="col-lg-5 text-center">
                             <a href=""></a>
                             <a class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="javascript:void(0)">
-                                <i class="fa-solid fa-location-arrow"></i>  <span>Contact Us</span>
+                                <i class="fa-solid fa-location-arrow"></i> <span>Contact Us</span>
                             </a>
                             <a class="user-btn btn-yuudee btn-contact rounded-pill text-a " href="Tel:0915453939">
                                 <i class="fa-solid fa-phone"></i> <span>091-545-3939</span>
