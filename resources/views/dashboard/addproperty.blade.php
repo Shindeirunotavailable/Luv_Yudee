@@ -196,29 +196,28 @@
 {{-- <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
 </form> --}}
                                                 </div>
+
                                                 <div class="col-sm-12">
                                                     <div class="mb-d-20 mt30">
                                                         <label class="heading-color ff-heading font-weight-600 mb-6">Place the listing pin on the map</label>
-                                                        <iframe
-                                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1705384925758!5m2!1sth!2sth"
-                                                            width="100%" height="450" style="border:0;"
-                                                            allowfullscreen="" loading="lazy"
-                                                            referrerpolicy="no-referrer-when-downgrade">
-                                                        </iframe>
+                                                        <iframe id="mapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label>
-                                                        <input type="text" class="form-control" placeholder="Your Latitude" {{--required name="latitude" value="{{isset($data['property']->latitude) ? $data['property']->latitude : ""}}"--}}>
+                                                        <input type="text" id="latitudeInput" class="form-control" placeholder="Your Latitude">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label>
-                                                        <input type="text" class="form-control" placeholder="Your Longitude" {{--required name="longitude" value="{{isset($data['property']->longitude) ? $data['property']->longitude : ""--}}"}}>
+                                                        <input type="text" id="longitudeInput" class="form-control" placeholder="Your Longitude">
                                                     </div>
                                                 </div>
+
+
                                             </div>
                                             <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
                                     </div>
@@ -464,4 +463,25 @@
 
 </div>
 
+
+<script>
+document.getElementById('latitudeInput').addEventListener('input', function() {
+    updateMap();
+});
+
+document.getElementById('longitudeInput').addEventListener('input', function() {
+    updateMap();
+});
+
+function updateMap() {
+    var latitude = parseFloat(document.getElementById('latitudeInput').value);
+    var longitude = parseFloat(document.getElementById('longitudeInput').value);
+    var mapFrame = document.getElementById('mapFrame');
+    var mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!" + longitude + "!3d" + latitude + "!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x";
+
+    mapFrame.src = mapSrc;
+}
+"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15573.76533190548!2d101.87776705!3d12.619026900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31037794b035d18b%3A0x9ea85a1df6b56c04!2z4Liq4Lin4LiZ4LiX4Li44LmA4Lij4Li14Lii4LiZIOKAnOC4iOC4tOC4k-C4k-C4p-C4seC4kuC4meC5jOKAnQ!5e0!3m2!1sth!2sth!4v1708598960377!5m2!1sth!2sth"
+"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15571.677310151746!2d101.90162436163234!3d12.653294081305116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31037a6bd14762bd%3A0x5685b1e8561d4bb6!2z4Lia4LmJ4Liy4LiZ4LiZ4LmJ4Liz4LmB4LiC4LmH4LiHIOC5geC4oeC5ieC4lSDguYDguK3guIE!5e0!3m2!1sth!2sth!4v1708599007999!5m2!1sth!2sth"
+</script>
 
