@@ -9,41 +9,40 @@
             </div>
             <div class="modal-body">
 
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation">
                     @csrf
                     <div class="form-group">
-                        <label class="label-700">Email</label>
+                        <label class="label-700 pl-10">Email</label>
                         <input type="Email" name="modal_email" id="modal_email" class="form-control "
-                            id="exampleInputEmail1" placeholder="Enter Email" required>
-                        <div class="invalid-feedback">
-                            <a> กรุณากรอกอีเมลของคุณ: Yourname@domain.com</a>
-                        </div>
+                            placeholder="Enter Email" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="label-700">Password</label>
+                        <label class="label-700 pl-10">Password</label>
                         <input type="password" name="modal_password" id="modal_password" class="form-control "
-                            id="exampleInputEmail1" placeholder="Enter Password" required>
+                            placeholder="Enter Password">
+
                         <div class="invalid-feedback">
-                            <a> กรุณากรอกPassword</a>
+                            <a> กรุณากรอก Password</a>
                         </div>
+
                     </div>
 
                     <div class="form-group">
-                        <label class="label-700">Confirm Password</label>
+                        <label class="label-700 pl-10">Confirm Password</label>
                         <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
-                            class="form-control " id="exampleInputEmail1" placeholder="Enter Password" required>
+                            class="form-control" placeholder="Enter Confirm Password" >
                         <div class="invalid-feedback">
-                            <a> กรุณากรอกPassword</a>
+                            <a> กรุณากรอก Confirm Password</a>
                         </div>
+
                     </div>
 
-                    <div class="pt-20 pb-20 text-center">
-                        <button type="submit"
-                            class="btn btn-primary afterButton rounded-pill  w-300 "
-                            id="submitModal"> 
-                            <i class="fa-regular fa-paper-plane "></i> Submit 
-                        </button>                       
+                    <div class="pt-20 pb-20 text-center">                        
+                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
+                       </button> 
+
                     </div>
 
                 </form>

@@ -38,4 +38,51 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
             });
 })
 
+ $('body').on('click', '#exampleModal', function() {
+        var forms = $('.needs-validation');
+    $('#exampleModal form').submit(function(event) {
+        var firstNameforms = $('#modal_password');
+        var lastNameforms = $('#modal_confirmPassword');
+
+          if( !firstNameforms.val()  ){
+            firstNameforms.addClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            firstNameforms.removeClass('is-invalid');
+            firstNameforms.addClass('is-valid');
+          }
+          if( !lastNameforms.val()  ){
+            lastNameforms.addClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            lastNameforms.removeClass('is-invalid');
+            lastNameforms.addClass('is-valid');
+          } 
+    });
+
+});
+
+
+
+$(document).ready(function() {
+    var forms = $('.needs-validation');
+    forms.on('submit', function(event) {
+      var firstNameforms = $('#password');
+        
+
+      if( !firstNameforms.val()  ){
+        firstNameforms.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        firstNameforms.removeClass('is-invalid');
+        firstNameforms.addClass('is-valid');
+      }
+ 
+    });
+
+
+  });
 

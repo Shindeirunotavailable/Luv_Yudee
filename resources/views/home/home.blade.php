@@ -5,7 +5,7 @@
 
             @include('home.banner')
 
-            {{-- @include('home.boxCity') --}}
+            @include('home.boxCity')
 
             {{-- @include('home.boxForSales') --}}
             

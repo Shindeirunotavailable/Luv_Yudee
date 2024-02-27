@@ -1,8 +1,7 @@
 
-
 /*slide cycle */
-var swiper = new Swiper(".swiper", {
-  slidesPerView: 6,
+var swiper = new Swiper(".swiperess", {
+  slidesPerView: 7,
   spaceBetween: 28,
   slidesPerGroup: 1,
   loop: true,
@@ -10,7 +9,7 @@ var swiper = new Swiper(".swiper", {
   centerSlide: "true",
   grapCurser: "true",
   fade: "true",
-  loopFillGroupWithBlank: true,
+  // loopFillGroupWithBlank: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -28,11 +27,17 @@ var swiper = new Swiper(".swiper", {
     300: {
       slidesPerView: 2,
     },
-    780: {
+    400: {
       slidesPerView: 3,
     },
-    1000: {
-      slidesPerView: 6,
+    768: {
+      slidesPerView: 4,
+    },
+    917: {
+      slidesPerView: 5,
+    },
+    1200: {
+      slidesPerView: 7,
     }
   }
 });
@@ -219,33 +224,49 @@ document.addEventListener('DOMContentLoaded', function() {
 //============================ js non ==============================//
 
 // เช็คค่าว่างใน input
-$(document).ready(function() {
-  'use strict';
-  var forms = $('.needs-validation');
-  forms.on('submit', function(event) {
-    var form = $(this);
+// $(document).ready(function() {
+//   'use strict';
+//   var forms = $('.needs-validation');
+//   forms.on('submit', function(event) {
+//     var form = $(this);
 
-    if (form[0].checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+//     if (form[0].checkValidity() === false) {
+//       event.preventDefault();
+//       event.stopPropagation();
+//     }
 
-    form.addClass('was-validated');
-  });
-});
+//     form.addClass('was-validated');
+//   });
+// });
+
+
+
+// function alertText(){  
+//   var form = $('#password');
+//   console.log(form.val().length);
+  
+//     if (form.val().length === 0) {
+//        $('#textAlert').removeClass('d-none');
+//       return false
+    
+//     }
+//       return true
+// }
+
 
 
 // ใช้เช็คว่าว่างใน modal
- $('body').on('click', '#exampleModal', function() {
-    $('#exampleModal form').submit(function(event) {
-      if (!$(this)[0].checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-        $(this).addClass('was-validated');
-      }
-    });
+//  $('body').on('click', '#exampleModal', function() {
+//     $('#exampleModal form').submit(function(event) {
+//       if (!$(this)[0].checkValidity()) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//         $(this).addClass('was-validated');
+//       }
+//     });
 
-});
+// });
+
 
 
 
