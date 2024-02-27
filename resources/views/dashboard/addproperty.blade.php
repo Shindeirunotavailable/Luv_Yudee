@@ -106,19 +106,19 @@
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                                 <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
                                                 <div class="row justify-content-center">
-                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                    <div class="col-sm-6 mb-0 mt-3">
                                                             <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
-                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
+                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG"  accept="image/*"  />
                                                     </div>
-                                                    <div class="col-sm-12 mt-30 row"  id="fileList"></div>
+                                                    <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
                                                 </div>
                                                 <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                 <div class="row justify-content-center">
-                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                    <div class="col-sm-6 mb-0 mt-3">
                                                         <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
-                                                        <input name="video" type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
+                                                        <input name="video" type="file" style="visibility:hidden;"  id="customVdo"  accept="video/*"/>
                                                     </div>
-                                                    <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
+                                                    <div class="col-sm-12 mt-0 row justify-content-center"  id="VdoList"></div>
                                                 </div>
 
                                         </div>
@@ -223,7 +223,7 @@
                                 <div class="tab-pane fade" id="nav-item4" role="tabpanel"
                                     aria-labelledby="nav-item4-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                        <h4 class="fw-600 title fs-17 mb-6">Listing Details</h4>
+                                        <h4 class="fw-600 title fs-17 mb-10">Listing Details</h4>
                                         <form class="form-style1">
                                             <div class="row">
                                                 <div class="col-5 col-xl-4 col-6-dt">
