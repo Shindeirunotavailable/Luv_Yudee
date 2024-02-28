@@ -53,14 +53,32 @@ $(document).ready(function() {
     $('#districts').select2();
 
 });
+// map
+    $(document).ready(function() {
+        $('#latitudeInput, #longitudeInput').change(updateMap);
+
+        function updateMap() {
+            var latitude = $('#latitudeInput').val();
+            var longitude = $('#longitudeInput').val();
+            // console.log(latitude,longitude);
+            if (!latitude || !longitude) {
+                $('#mapFrame').attr('src', 'https://maps.google.com/maps?q=0,0&output=embed');
+                return;
+            }
+
+            var mapSrc = "https://maps.google.com/maps?q=" + latitude + "," + longitude + "&output=embed&hl=th";
+            $('#mapFrame').attr('src', mapSrc);
+        }
+
+        $(document).ready(function() {
+            updateMap();
+        });
+    });
 
 // db_provinces
         var getUrl = window.location;
         var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
-        // var csrf = $('meta[name="csrf-token"]').attr('content');
         var lang = document.documentElement.lang;
-        // console.log(lang,getUrl,baseUrl,csrf);
-        // var url = '/db_provinces';
 
     $('#provinces').change(function() {
         var id_provinces = $(this).val();

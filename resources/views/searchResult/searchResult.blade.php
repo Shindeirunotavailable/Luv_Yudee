@@ -17,15 +17,15 @@
     {{-- menu-mobile --}}
     <section class="pt-20 " >
         <div class="container">
-            <div class="mobile-media pb-30">
-                <h5 >Find your home</h5>
-                    @include('searchResult.search')
-                <div class="d-flex align-items-center pt-2">
-                    <div class="d-flex justify-content-start" onclick="toggleSidebar()">
-                        <a class="mobile " data-bs-toggle="offcanvas" href="#" role="button"
-                            aria-controls="listingSidebarFilter">
-                            <span class="fa-solid fa-sliders"></span> Advance
-                        </a>
+            <div class="mobile-media pb-15">
+                {{-- <h5 >Find your home</h5>
+                    @include('searchResult.search') --}}
+                <div class="d-flex justify-content-end pt-2">
+                    <div class="d-flex align-items-center" onclick="toggleSidebar()">
+                        <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
+                            <span> <i class="fa-solid fa-magnifying-glass text-white"></i></span> <b class="text-white">search</b>
+                        </button>
+
                     </div>
                 </div>
                 

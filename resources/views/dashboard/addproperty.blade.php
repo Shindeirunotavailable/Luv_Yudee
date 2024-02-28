@@ -73,10 +73,10 @@
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
                                                             <select id="selectcategory" name="category[]" class="form-select" multiple>
-                                                                <option value="1">คอนโด</option>
-                                                                <option value="2">บ้นเดี่ยว</option>
-                                                                <option value="3">ทาวน์เฮาส์</option>
-                                                                <option value="4">อพาร์ทเมนท์</option>
+                                                                <option value="1" {{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}} >คอนโด</option>
+                                                                <option value="2" {{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}} >บ้นเดี่ยว</option>
+                                                                <option value="3" {{ isset($data['property']->status) && $data['property']->status=='3' ? "selected" :""}} >ทาวน์เฮาส์</option>
+                                                                <option value="4" {{ isset($data['property']->status) && $data['property']->status=='4' ? "selected" :""}} >อพาร์ทเมนท์</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -106,19 +106,19 @@
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                                 <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
                                                 <div class="row justify-content-center">
-                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                    <div class="col-sm-6 mb-0 mt-3">
                                                             <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
-                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG" multiple accept="image/*"  />
+                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG"  accept="image/*"  />
                                                     </div>
-                                                    <div class="col-sm-12 mt-30 row"  id="fileList"></div>
+                                                    <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
                                                 </div>
                                                 <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                 <div class="row justify-content-center">
-                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                    <div class="col-sm-6 mb-0 mt-3">
                                                         <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
-                                                        <input name="video" type="file" style="visibility:hidden;"  id="customVdo" multiple  accept="video/*"/>
+                                                        <input name="video" type="file" style="visibility:hidden;"  id="customVdo"  accept="video/*"/>
                                                     </div>
-                                                    <div class="col-sm-12 mt-30 row"  id="VdoList"></div>
+                                                    <div class="col-sm-12 mt-0 row justify-content-center"  id="VdoList"></div>
                                                 </div>
 
                                         </div>
@@ -191,43 +191,39 @@
                                                 <div class="col-sm-6 ">
                                                     <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
-                                                        <input type="text" name="zipcode" id="zipcode" readonly class="form-control" value="{{isset($data['property']->zipcode) ? $data['property']->zipcode : ""}}"></div>
+                                                        <input type="text" name="zipcode" id="zipcode" readonly class="form-control" value="{{isset($data['property']->zipcode) ? $data['property']->zipcode : ""}}">
+                                                    </div>
+                                                </div>
 
-{{-- <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
-</form> --}}
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="mb-d-20 mt30">
-                                                        <label class="heading-color ff-heading font-weight-600 mb-6">Place the listing pin on the map</label>
-                                                        <iframe
-                                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1705384925758!5m2!1sth!2sth"
-                                                            width="100%" height="450" style="border:0;"
-                                                            allowfullscreen="" loading="lazy"
-                                                            referrerpolicy="no-referrer-when-downgrade">
-                                                        </iframe>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="mb-d-20">
+                                                    <div class="col-sm-6">
+                                                        <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label>
-                                                        <input type="text" class="form-control" placeholder="Your Latitude" {{--required name="latitude" value="{{isset($data['property']->latitude) ? $data['property']->latitude : ""}}"--}}>
+                                                        <input type="text" class="form-control" name="latitude" id="latitudeInput" placeholder="Enter latitude" required value="{{isset($data['property']->latitude) ? $data['property']->latitude : ""}}">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="mb-d-20">
+
+                                                    <div class="col-sm-6">
+                                                        <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label>
-                                                        <input type="text" class="form-control" placeholder="Your Longitude" {{--required name="longitude" value="{{isset($data['property']->longitude) ? $data['property']->longitude : ""--}}"}}>
+                                                        <input type="text" class="form-control" name="longitude" id="longitudeInput" placeholder="Enter longitude" required value="{{isset($data['property']->longitude) ? $data['property']->longitude : ""}}">
+                                                        </div>
                                                     </div>
-                                                </div>
+
+                                                    <div class="col-sm-12">
+                                                        <div class="mb-d-20 mt30">
+                                                        <iframe id="mapFrame" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                        </div>
+                                                    </div>
+
                                             </div>
-                                            <button type="submit" class="afterButton rounded-pill btn-lg">Submit</button>
+                                            <button type="submit" class="afterButton rounded-pill btn-lg mt-2">Submit</button>
                                     </div>
                                 </div>
                         </form>
                                 <div class="tab-pane fade" id="nav-item4" role="tabpanel"
                                     aria-labelledby="nav-item4-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                        <h4 class="fw-600 title fs-17 mb-6">Listing Details</h4>
+                                        <h4 class="fw-600 title fs-17 mb-10">Listing Details</h4>
                                         <form class="form-style1">
                                             <div class="row">
                                                 <div class="col-5 col-xl-4 col-6-dt">
@@ -460,8 +456,4 @@
         </div>
     </footer>
 
-
-
 </div>
-
-

@@ -1,41 +1,39 @@
 
-    $('body').on('click', '#submitContact', function() {
-      alertText();
-      function alertText(){  
-          var firstNameForm = $('#firstName');
-          var lastNameForm = $('#lastName');
-          var emailForm = $('#contactEmail');
-          var descriptionForm = $('#description');
-        
-          if (firstNameForm.val().length === 0) {
-            firstNameForm.addClass('border-danger');
-          }
-          else {
-            firstNameForm.removeClass('border-danger');
-          }
-          if (lastNameForm.val().length === 0) {
-            lastNameForm.addClass('border-danger');
-          }
-          else {
-            lastNameForm.removeClass('border-danger');
-          }
-          
-          if (emailForm.val().length === 0) {
-            emailForm.addClass('border-danger');
-          }
-          else {
-            emailForm.removeClass('border-danger');
-          }
 
-          if (descriptionForm.val().length === 0) {
-            descriptionForm.addClass('border-danger');
-          }
-          else {
-            descriptionForm.removeClass('border-danger');
-          }
-           
-      }
 
+    
+
+    $(document).ready(function() {
+      var forms = $('.needs-validation');
+      forms.on('submit', function(event) {
+        var firstNameforms = $('#firstName');
+        var lastNameforms = $('#lastName');
+        var descriptionforms = $('#description');
+
+        if( !firstNameforms.val()  ){
+          firstNameforms.addClass('is-invalid');
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          firstNameforms.removeClass('is-invalid');
+          firstNameforms.addClass('is-valid');
+        }
+        if( !lastNameforms.val()  ){
+          lastNameforms.addClass('is-invalid');
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          lastNameforms.removeClass('is-invalid');
+          lastNameforms.addClass('is-valid');
+        } 
+        if( !descriptionforms.val()  ){
+          descriptionforms.addClass('is-invalid');
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          descriptionforms.removeClass('is-invalid');
+          descriptionforms.addClass('is-valid');
+        }   
+      });
     });
-
 

@@ -192,7 +192,7 @@
                     </section>
 
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fw-600 fs-30 text-heading font-bold ">Facts and Features</h2>
+                        <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Facts and Features</h2>
                         <div class="row pt-3">
                             <div class="col-lg-3 col-6 mt-4 ">
                                 <div class="media ">
@@ -325,7 +325,7 @@
                     </section>
 
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fw-600 fs-30 text-heading font-bold ">Additional Details</h2>
+                        <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Additional Details</h2>
                         <div class="row pt-2">
                             <dl class="col-sm-6 mb-0 d-flex">
                                 <dt class="w-110px fs-14  text-heading pr-2">Property ID</dt>
@@ -386,8 +386,8 @@
                         </div>
                     </section>
 
-                    <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fw-600 fs-30 text-heading font-bold ">Offices Amenities</h2>
+                    <section class="pt-6 border-bottom-pp section-pp ">
+                        <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2>
                         <ul class="list-unstyled mb-0 row pt-2 ">
                             <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
                             </li>
@@ -422,12 +422,13 @@
                     </section>
                     {{-- error --}}
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h4 class="fw-600 fs-30 text-heading font-bold mb-3">Virtual Tour</h4>
+                        <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Virtual Tour</h4>
                         <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
                             class="w-100"></iframe>
                     </section>
+
                     <section class="pt-6 border-bottom-pp section-pp">
-                        <h2 class="fw-600 fs-30 text-heading font-bold mb-3">Location</h2>
+                        <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Location</h2>
                         <div class="d-flex justify-content-center ">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1704791449392!5m2!1sth!2sth"
