@@ -37,7 +37,7 @@
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i> 
                             <span class="d-xl-block">Login / Register</span>
                         </a>
-                        <button class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a pt-1    "href="{{url("addproperty")}}">
+                        <button class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("addproperty")}}">
                             Add Property
                             <i class="fal fa-arrow-right-long"></i>
                         </button>
