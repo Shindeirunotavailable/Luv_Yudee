@@ -1,5 +1,5 @@
-<section class="home-banner-style4 p-0 background-white">
-    <div class="home-st4 max-width1600 bdr-24 position-relative mr-auto ml-auto mx20-lg">
+<section class="home-banner-yuudee p-0 background-white">
+    <div class="home-st4 max-width1600 bdr-24 position-relative mr-auto ml-auto">
         <div class="container">
             <div class="row">
                 <div class="col-xl-9">
@@ -7,7 +7,7 @@
                         <h2 class="hero-title animation-up-1">Easy Way to Find a <br class="d-none d-md-block">Perfect Property</h2>
                         <p class="hero-text fs-15 animation-up-2">From as low as $10 per day with limited time offer discounts</p>
                         <div class="advance-search mt-60 mt30-lg mr-auto ml-auto animation-up-3">
-                            <ul class="nav nav-tabs  p-0 m-0">
+                            <ul class="nav nav-tabs  p-0 m-0" id="nav-tab">
                                 <li class="nav-item">
                                     <button class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-buy" role="tab" aria-controls="nav-buy" aria-selected="true">Buy</button>
                                 </li>
@@ -18,7 +18,7 @@
                                     <button class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-sold" role="tab" aria-controls="nav-sold" aria-selected="false">Sold</button>
                                 </li>
                             </ul>
-                            <div class="tab-content">
+                            <div class="tab-content" id="nav-tabContent">
                                 <div class="active tab-pane" id="nav-buy">
                                     <div class="advance-content-st1">
                                         <div class="row">
@@ -35,7 +35,7 @@
                                             <div class="col-md-4 col-lg-3">
                                                 <div
                                                     class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
-                                                    <button class="btn-advance-search" type="button" data-bs-toggle="modal" data-bs-target="#advanceSeachModal" fdprocessedid="13esg">
+                                                    <button class="btn-advance-search" type="button" data-toggle="modal" data-target="#advanceSeachModal" fdprocessedid="13esg">
                                                         <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                                                     </button>
                                                     <button class="icon-advance-search user-btn btn-search ml-4" type="button" fdprocessedid="5isoj8">
@@ -62,7 +62,7 @@
                                             <div class="col-md-4 col-lg-3">
                                                 <div
                                                     class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
-                                                    <button class="btn-advance-search" type="button" data-bs-toggle="modal" data-bs-target="#advanceSeachModal">
+                                                    <button class="btn-advance-search" type="button" data-toggle="modal" data-target="#advanceSeachModal">
                                                         <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                                                     </button>
                                                     <button class="icon-advance-search user-btn btn-search ml-4" type="button">
@@ -73,7 +73,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" tab-pane" id="nav-sold">
+                                <div class="tab-pane" id="nav-sold">
                                     <div class="advance-content-st1">
                                         <div class="row">
                                             <div class="col-md-8 col-lg-9">
@@ -88,7 +88,7 @@
                                             </div>
                                             <div class="col-md-4 col-lg-3">
                                                 <div class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
-                                                    <button class="btn-advance-search" type="button" data-bs-toggle="modal" data-bs-target="#advanceSeachModal">
+                                                    <button class="btn-advance-search" type="button" data-toggle="modal" data-target="#advanceSeachModal">
                                                         <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                                                     </button>
                                                     <button class="icon-advance-search user-btn btn-search ml-4" type="button">
@@ -102,13 +102,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="advance-character-modal">
+                    <div class="advance-character-modal" >
                         <div class="modal fade" id="advanceSeachModal" tabindex="-1" aria-labelledby="advanceSeachModalLabel" style="display: none;" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-dialog modal-dialog-centered modal-lg"id="advanceSeachMod" >
                                 <div class="modal-content">
                                     <div class="modal-header pl-30 pr-30">
                                         <h5 class="modal-title" id="exampleModalLabel">More Filter</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body pb-0">
                                         <div class="row">
@@ -119,27 +119,16 @@
                                             <div class="col-sm-6">
                                                 <div class="widget-wrapper">
                                                     <h6 class="list-title">Type</h6>
-                                                    <div class="form-style2 input-group">
+                                                    <div class="form-st2 input-group">
                                                         <div class="select-custom css-custom-container">
                                                             <span id="react-select-2-live-region" class="css-select"></span>
                                                             <span aria-live="polite" aria-atomic="false"aria-relevant="additions text"class="css-select"></span>
-                                                            <div class="select__control css-control">
-                                                                <div class="select__value-container select__value-container--has-value css-value">
-                                                                    <div class="select__single-value css-singleValue">Bungalow</div>
-                                                                    <div class="select__input-container css-input-con" data-value="">
-                                                                        <input class="select__input"autocapitalize="none"autocomplete="off" autocorrect="off"id="react-select-2-input"spellcheck="false" tabindex="0"type="text"aria-autocomplete="list"aria-expanded="false"aria-haspopup="true"aria-required="true"role="combobox" value=""style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="select__indicators css-indicators">
-                                                                    <span class="select__indicator-separator css-indicatorSeparator"></span>
-                                                                    <div class="select__indicator select__dropdown-indicator css-drop-indicatorSeparator"aria-hidden="true"><svg height="20"width="20" viewBox="0 0 20 20"aria-hidden="true"focusable="false"class="css-icon-down">
-                                                                            <path
-                                                                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                                            </path>
-                                                                        </svg>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                                    <option>Houses</option>
+                                                                    <option>Loft</option>
+                                                                    <option>Office</option>
+                                                                    <option>Town home</option>
+                                                                </select>
                                                             <input name="colors" type="hidden" value="Bungalow">
                                                         </div>
                                                     </div>
@@ -148,7 +137,7 @@
                                             <div class="col-sm-6">
                                                 <div class="widget-wrapper">
                                                     <h6 class="list-title">Property ID</h6>
-                                                    <div class="form-style2">
+                                                    <div class="form-st2">
                                                         <input type="text" class="form-control h-55" placeholder="RT04949213">
                                                     </div>
                                                 </div>
@@ -164,23 +153,23 @@
                                                             <label for="xany">any</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="xoneplus" name="xbeds" type="radio" checked="">
+                                                            <input id="xoneplus" name="xbeds" type="radio" >
                                                             <label for="xoneplus">1+</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="xtwoplus"name="xbeds" type="radio"checked="">
+                                                            <input id="xtwoplus"name="xbeds" type="radio">
                                                             <label for="xtwoplus">2+</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="xthreeplus"name="xbeds" type="radio"checked="">
+                                                            <input id="xthreeplus"name="xbeds" type="radio">
                                                             <label for="xthreeplus">3+</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="xfourplus"name="xbeds" type="radio"checked="">
+                                                            <input id="xfourplus"name="xbeds" type="radio">
                                                             <label for="xfourplus">4+</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="xfiveplus"name="xbeds" type="radio"checked="">
+                                                            <input id="xfiveplus"name="xbeds" type="radio">
                                                             <label for="xfiveplus">5+</label>
                                                         </div>
                                                     </div>
@@ -195,22 +184,22 @@
                                                             <label for="yany">any</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="yoneplus"name="ybath" type="radio"checked="">
+                                                            <input id="yoneplus"name="ybath" type="radio">
                                                             <label for="yoneplus">1+</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="ytwoplus"name="ybath" type="radio"checked="">
+                                                            <input id="ytwoplus"name="ybath" type="radio">
                                                             <label for="ytwoplus">2+</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="ythreeplus" name="ybath" type="radio"checked="">
+                                                            <input id="ythreeplus" name="ybath" type="radio">
                                                             <label for="ythreeplus">3+</label>
                                                         </div>
                                                         <div class="selection">
-                                                            <input id="yfourplus"name="ybath" type="radio"checked="">
+                                                            <input id="yfourplus"name="ybath" type="radio">
                                                             <label for="yfourplus">4+</label>
                                                         </div>
-                                                        <div class="selection"><input id="yfiveplus"name="ybath" type="radio"checked="">
+                                                        <div class="selection"><input id="yfiveplus"name="ybath" type="radio">
                                                             <label for="yfiveplus">5+</label>
                                                         </div>
                                                     </div>
@@ -221,27 +210,16 @@
                                             <div class="col-sm-6">
                                                 <div class="widget-wrapper">
                                                     <h6 class="list-title">Location</h6>
-                                                    <div class="form-style2 input-group">
+                                                    <div class="form-st2 input-group">
                                                         <div class="select-custom css-custom-container">
                                                             <span id="react-select-3-live-region" class="css-select"></span>
                                                             <span aria-live="polite" aria-atomic="false" aria-relevant="additions text"class="css-select"></span>
-                                                            <div class="select__control css-control">
-                                                                <div class="select__value-container select__value-container--has-value css-value">
-                                                                    <div class="select__single-value css-singleValue">All Cities</div>
-                                                                    <div class="select__input-container css-input-con"data-value="">
-                                                                        <input class="select__input" autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-required="true" role="combobox" value="" style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="select__indicators css-indicators">
-                                                                    <span class="select__indicator-separator css-indicatorSeparator"></span>
-                                                                    <div class="select__indicator select__dropdown-indicator css-drop-indicatorSeparator"aria-hidden="true">
-                                                                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-icon-down">
-                                                                            <path
-                                                                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z">
-                                                                            </path>
-                                                                        </svg></div>
-                                                                </div>
-                                                            </div>
+                                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                                <option>All Cities</option>
+                                                                <option>New Jersy</option>
+                                                                <option>New York</option>
+                                                                <option>San Diego</option>
+                                                            </select>
                                                             <input name="colors" type="hidden" value="All Cities">
                                                         </div>
                                                     </div>
@@ -252,11 +230,11 @@
                                                     <h6 class="list-title">Square Feet</h6>
                                                     <div class="space-area">
                                                         <div class="d-flex align-items-center justify-content-between">
-                                                            <div class="form-style1">
+                                                            <div class="form-st1">
                                                                 <input type="text" class="form-control" placeholder="Min.">
                                                             </div>
                                                             <span class="dark-color">-</span>
-                                                            <div class="form-style1">
+                                                            <div class="form-st1">
                                                                 <input type="text" class="form-control" placeholder="Max">
                                                             </div>
                                                         </div>

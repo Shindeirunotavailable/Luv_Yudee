@@ -384,7 +384,6 @@ header.nav-homepage.sticky .header-logo.logo2 {
     margin-right: 0;
     display: inline;
     font-size: 16px;
-    font-family: "Font Awesome 6 Pro";
     height: auto;
     content: "";
     font-weight: 300;
@@ -796,13 +795,6 @@ a {
 a,.btn {
     color: black;
     text-decoration: none;
-    outline: none;
-    -webkit-transition: all ease .4s;
-    -o-transition: all ease .4s;
-    transition: all ease .4s
-}
-a:hover,.btn:hover {
-    color: #0071bc
 }
 a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visited {
     text-decoration: none;
@@ -817,8 +809,8 @@ a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visite
 .fa-arrow-right-long:before {
     content: "→" !important
 }
-.fs-18 {
-    font-size: 18px
+.fs-25 {
+    font-size: 25px
 }
 .user-arrow i {
     margin-left: 10px;
@@ -833,6 +825,10 @@ a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visite
 .pbr-10{
     padding-bottom: 10rem;
 }
+.ptr-1 {
+    padding-top: .25rem !important
+}
+
 /* ----------------------------------End header nav--------------------------------------- */
 /* Mobile nav */
 .mobile_header_nav .hsidebar-header {
@@ -857,16 +853,6 @@ a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visite
     cursor: pointer;
     padding-right: 20px;
     padding-left: 20px;
-}
-.css-submenu-content {
-    display: none;
-    overflow: hidden;
-    z-index: 999;
-    transition: height 300ms ease 0s;
-    box-sizing: border-box;
-    background-color: white;
-    position: static !important;
-    transform: none !important;
 }
 .css-fotw {
     -webkit-box-flex: 1;
@@ -977,7 +963,7 @@ nav {
         display: block
     }
     .header,.footer {
-        padding: 0 20px!important
+        padding: 0 20px
     }
 }
 .mobile-menu-btn.mm-listitem {
@@ -1005,7 +991,6 @@ header.nav-innerpage-style.style2 {
     -o-box-shadow: 0px 1px 4px rgba(24,26,32,.07);
     box-shadow: 0 1px 4px #181a2012;
     height: 65px;
-    line-height: 65px
 }
 .navbar-expand .offcanvas {
     position: static;
@@ -1639,7 +1624,6 @@ header.nav-innerpage-style.style2 {
     }
 }
 .far,.fa-regular {
-    font-family: "Font Awesome 6 Pro";
     font-weight: 400
 }
 .far{ 
@@ -2565,6 +2549,15 @@ header.nav-innerpage-style.style2 {
 .form-st2 {
     position: relative
 }
+.form-st2 .form-control {
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height: 50px;
+    outline: none;
+    padding-left: 15px
+}
 .input-group>.form-control,.input-group>.form-floating,.input-group>.form-select {
     position: relative;
     flex: 1 1 auto;
@@ -3092,6 +3085,7 @@ textarea.form-control-lg {
         margin-right: 20px!important
     }
 }
+
 /* ----------------------------------End Banner--------------------------------------- */
 /*boxCity*/
 .swiperess {
@@ -3329,22 +3323,11 @@ textarea.form-control-lg {
 
 /* ----------------------------------End boxForSales--------------------------------------- */
 /* boxForYou */
-.cta-banner3:before {
-    background-image: url(/assets/images/cta-side-bg-1-64503766.jpg);
-    background-size: cover;
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 42%
+.object-fit{
+    object-fit: cover;
 }
-
-@media (max-width: 767.98px) {
-    .cta-banner3:before {
-        display:none
-    }
+.bg-color-b{
+    background-color: #99d2f8;
 }
 .bgc-thm-light {
     /* background-color: #b3d9f2; */
