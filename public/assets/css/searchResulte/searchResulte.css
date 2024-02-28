@@ -387,14 +387,14 @@ border-color: black;
 
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background: #0071bc;
-    border-color: #0071bc;
+    /* background: #0071bc;
+    border-color: #0071bc; */
     font-size: 14px;
-    color: #fff;
+    /* color: #fff; */
     padding: 2px 10px;
   }
 .select2-container--default .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
-    color: rgb(248, 248, 248);
+    /* color: rgb(248, 248, 248); */
     margin-right: 10px;
 }
 

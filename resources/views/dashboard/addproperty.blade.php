@@ -73,10 +73,10 @@
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
                                                             <select id="selectcategory" name="category[]" class="form-select" multiple>
-                                                                <option value="1">คอนโด</option>
-                                                                <option value="2">บ้นเดี่ยว</option>
-                                                                <option value="3">ทาวน์เฮาส์</option>
-                                                                <option value="4">อพาร์ทเมนท์</option>
+                                                                <option value="1" {{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}} >คอนโด</option>
+                                                                <option value="2" {{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}} >บ้นเดี่ยว</option>
+                                                                <option value="3" {{ isset($data['property']->status) && $data['property']->status=='3' ? "selected" :""}} >ทาวน์เฮาส์</option>
+                                                                <option value="4" {{ isset($data['property']->status) && $data['property']->status=='4' ? "selected" :""}} >อพาร์ทเมนท์</option>
                                                             </select>
                                                         </div>
                                                     </div>
