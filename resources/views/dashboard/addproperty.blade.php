@@ -73,10 +73,10 @@
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
                                                             <select id="selectcategory" name="category[]" class="form-select" multiple>
-                                                                <option value="1" {{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}} >คอนโด</option>
-                                                                <option value="2" {{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}} >บ้นเดี่ยว</option>
-                                                                <option value="3" {{ isset($data['property']->status) && $data['property']->status=='3' ? "selected" :""}} >ทาวน์เฮาส์</option>
-                                                                <option value="4" {{ isset($data['property']->status) && $data['property']->status=='4' ? "selected" :""}} >อพาร์ทเมนท์</option>
+                                                                <option value="1" >คอนโด</option>
+                                                                <option value="2" >บ้าน</option>
+                                                                <option value="3" >ทาวน์เฮาส์</option>
+                                                                <option value="4" >อพาร์ทเมนท์</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -85,8 +85,8 @@
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
                                                             <select id="propertystatus" name="status[]" class="form-control"  multiple>
-                                                                <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}} >ขาย</option>
-                                                                <option value="2" {{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
+                                                                <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}}>ขาย</option>
+                                                                <option value="2"{{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -94,7 +94,8 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-6">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                            <input type="number" step=".01" class="form-control" placeholder="0.00" name="price" required value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
+                                                            {{-- <input type="number"  class="form-control" placeholder="0.00" name="price" required value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}"> --}}
+                                                            <input type="text" name="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -216,136 +217,85 @@
                                                     </div>
 
                                             </div>
-                                            <button type="submit" class="afterButton rounded-pill btn-lg mt-2">Submit</button>
+
+                        </form>
                                     </div>
                                 </div>
-                        </form>
+
                                 <div class="tab-pane fade" id="nav-item4" role="tabpanel"
                                     aria-labelledby="nav-item4-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                         <h4 class="fw-600 title fs-17 mb-10">Listing Details</h4>
-                                        <form class="form-style1">
-                                            <div class="row">
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property ID
-                                                            (only numbers)</label><input type="text"
-                                                            class="form-control" placeholder="Your ID">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property type
-                                                            (only numbers)</label><input type="text"
-                                                            class="form-control" placeholder="Your Property type">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Property status</label><input
-                                                            type="text" class="form-control"
-                                                            placeholder="Status"></div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Price</label><input
-                                                            type="text" class="form-control"
-                                                            placeholder="Price"></div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label><input
-                                                            type="text" class="form-control"
-                                                            placeholder="Rooms"></div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms
-                                                            </label><input type="text" class="form-control"
-                                                            placeholder="Rooms">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label><input
-                                                            type="text" class="form-control"
-                                                            placeholder="Rooms"></div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Size
-                                                            </label><input type="text" class="form-control"
-                                                            placeholder="SqFt">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage
-                                                            </label><input type="text" class="form-control"
-                                                            placeholder="Garage">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage size
-                                                            </label><input type="text" class="form-control"
-                                                            placeholder="SqFt">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">PSM / sqm
-                                                            </label><input type="text" class="form-control"
-                                                            placeholder="SqFt">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                        class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">TYPE
-                                                        </label><input type="text" class="form-control"
-                                                        placeholder="Family">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Available
-                                                            from
-                                                            (date)</label><input type="text" class="form-control"
-                                                            placeholder="99.aa.yyyy">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Year build
-                                                            </label><input type="text" class="form-control"
-                                                            placeholder="Year">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-xl-4 col-6-dt">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Label</label><input
-                                                            type="text" class="form-control"
-                                                            placeholder="status"></div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Owner/
-                                                            Agent
-                                                            nots (not visible on front end)</label>
-                                                        <textarea class="textbox-ap" cols="30" rows="5" placeholder="There are many variations of passages."></textarea>
-                                                    </div>
+                                        <div class="row">
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Floor amount</label>
+                                                    <input type="number" name="floor_amount"  class="form-control" placeholder="Floor amount" value="{{isset($data['property']->floor_amount) ? $data['property']->floor_amount : ""}}">
                                                 </div>
                                             </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label>
+                                                    <input type="number" name="rooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->rooms) ? $data['property']->rooms : ""}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms</label>
+                                                    <input type="number" name="bedrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->bedrooms) ? $data['property']->bedrooms : ""}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label>
+                                                    <input type="number" name="bathrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->bathrooms) ? $data['property']->bathrooms : ""}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Interior Size</label>
+                                                    <input type="text" name="interior_size" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->interior_size) ? $data['property']->interior_size : ""}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage</label>
+                                                    <input type="number" name="garage" class="form-control" placeholder="Garage" value="{{isset($data['property']->garage) ? $data['property']->garage : ""}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage size (Sqm)</label>
+                                                    <input type="text" name="garage_size" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->garage_size) ? $data['property']->garage_size : ""}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">PSM / sqm</label>
+                                                    <input type="text" name="psm" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->psm) ? $data['property']->psm : ""}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-5 col-xl-4 col-6-dt">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Year build </label>
+                                                    <input type="text" name="year_build" class="form-control" placeholder="Year" value="{{isset($data['property']->year_build) ? $data['property']->year_build : ""}}">
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                        </form>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="mb-d-20">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10">Owner/Agent notes (not visible on front end)</label>
+                                                    <textarea class="textbox-ap" name="notes" cols="30" rows="5" placeholder="There are many variations of passages.">{{ isset($data['property']->notes) ? $data['property']->notes : "" }}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2">Submit</button>
+                            </div>
 
+                        </form>
                                 <div class="tab-pane fade" id="nav-item5" role="tabpanel"
                                     aria-labelledby="nav-item5-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
