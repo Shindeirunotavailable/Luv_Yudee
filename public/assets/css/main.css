@@ -3323,22 +3323,11 @@ textarea.form-control-lg {
 
 /* ----------------------------------End boxForSales--------------------------------------- */
 /* boxForYou */
-.cta-banner3:before {
-    background-image: url(/assets/images/cta-side-bg-1-64503766.jpg);
-    background-size: cover;
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 42%
+.object-fit{
+    object-fit: cover;
 }
-
-@media (max-width: 767.98px) {
-    .cta-banner3:before {
-        display:none
-    }
+.bg-color-b{
+    background-color: #99d2f8;
 }
 .bgc-thm-light {
     /* background-color: #b3d9f2; */
