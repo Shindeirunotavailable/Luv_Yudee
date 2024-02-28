@@ -34,13 +34,13 @@
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
                         <a href="{{url("login")}}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
-                            <i class="far fa-user-circle fs-18 mr-2 pb-1"></i> 
-                            <span class="d-none d-xl-block">Login / Register</span>
+                            <i class="far fa-user-circle fs-25 mr-2 pb-1"></i> 
+                            <span class="d-xl-block">Login / Register</span>
                         </a>
-                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("addproperty")}}">
+                        <button class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a pt-1    "href="{{url("addproperty")}}">
                             Add Property
                             <i class="fal fa-arrow-right-long"></i>
-                        </a>
+                        </button>
                         <a class="sidemenus-btn filter-btn-right" href="#" id="toggleSidebar" data-bs-toggle="offcanvas" data-bs-target="#SidebarPanel" aria-controls="SidebarPanelLabel"> </a>
                     </div>
                 </div>
@@ -51,15 +51,15 @@
 
 <div class="mobile_header_nav sthome1">
     <div class="mobile-menus">
-        <div class="header innerpage-style">
+        <div class="header innerpage-style ptr-1">
             <div class="menus_and_widget">
                 <div class="mobile_menus_bar d-flex justify-content-between align-items-center">
                     <a class="menusbar" href="#" id="menubarButton" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
                         <img src="{{ asset('/assets/images/mobile-dark-nav-icon.jpg') }}" alt="mobile icon" width="30px"></a>
                     </a>
                     <a class="mobile_logo" href="{{url("home")}}">
-                        <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="120px">
-                    <a href="{{url("login")}}"><span class="icon fs-18 far fa-user-circle "></span></a>
+                        <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="150px">
+                        <a href="{{url("login")}}"><span class="icon fs-25 far fa-user-circle "></span></a>
                 </div>
             </div>
         </div>
@@ -95,6 +95,13 @@
                                     <li class="menuitem-root submenu-root css-pw link-li">
                                         <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("contact")}}">
                                             <span class="menu-label css-fotw">Contact Us</span>
+                                            <span class="submenu-expand-icon css-submenu-expand">
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="menuitem-root submenu-root css-pw link-li">
+                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("addproperty")}}">
+                                            <span class="menu-label css-fotw">Add Property</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>

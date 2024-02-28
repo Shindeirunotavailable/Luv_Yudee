@@ -17,7 +17,6 @@ class PropertyController extends Controller
     public function databaseconnect(Request $request)
     {
         $id_properties = $request['id_properties'];
-        $id_media  = $request['id_media'];
 
         $provinces = Province::all();
         $amphures = Amphure::all();
@@ -51,6 +50,20 @@ class PropertyController extends Controller
             'amphures'=> $request['amphures'],
             'districts'=> $request['districts'],
             'zipcode'=> $request['zipcode'],
+            'latitude'=> $request['latitude'],
+            'longitude'=> $request['longitude'],
+
+            'floor_amount'=> $request['floor_amount'],
+            'rooms'=> $request['rooms'],
+            'bedrooms'=> $request['bedrooms'],
+            'bathrooms'=> $request['bathrooms'],
+            'interior_size'=> $request['interior_size'],
+            'garage'=> $request['garage'],
+            'garage_size'=> $request['garage_size'],
+            'psm'=> $request['psm'],
+            'year_build'=> $request['year_build'],
+            'notes'=> $request['notes'],
+
 
         );
         if (isset($request['id_properties'])) {
@@ -70,13 +83,12 @@ class PropertyController extends Controller
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
            // // dd($request->all());
-
-            $imageName = time().'_'.$request->image->getClientOriginalName();
-            $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-            $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            $videoName = time().'_'.$request->video->getClientOriginalName();
-            $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-            $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            // $imageName = time().'_'.$request->image->getClientOriginalName();
+            // $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+            // $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            // $videoName = time().'_'.$request->video->getClientOriginalName();
+            // $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+            // $data['video_url'] = ('/assets/upload_video/' . $videoName);
 
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
         }
