@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="needs-validation">
+                <form action="{{ url('/register') }}"  method="POST" class="needs-validation">
                     @csrf
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
@@ -20,31 +20,27 @@
                     <div class="form-group">
                         <label class="label-700 pl-10">Password</label>
                         <input type="password" name="modal_password" id="modal_password" class="form-control "
-                            placeholder="Enter Password">
+                            placeholder="Enter Password"  onChange="onChange()">
 
                         <div class="invalid-feedback">
                             <a> กรุณากรอก Password</a>
                         </div>
-
                     </div>
-
                     <div class="form-group">
                         <label class="label-700 pl-10">Confirm Password</label>
                         <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
-                            class="form-control" placeholder="Enter Confirm Password" >
+                            class="form-control" placeholder="Enter Confirm Password"  onChange="onChange()" >
                         <div class="invalid-feedback">
                             <a> กรุณากรอก Confirm Password</a>
                         </div>
-
                     </div>
+                    <div id="result" class="colorRed"> </div>
 
                     <div class="pt-20 pb-20 text-center">                        
                         <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
                         id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
                        </button> 
-
                     </div>
-
                 </form>
             </div>
         </div>

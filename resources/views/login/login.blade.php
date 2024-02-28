@@ -41,6 +41,12 @@
                                     id="submitModalBtn"> <i class="fa-regular fa-paper-plane "></i> Submit
                                    </button> 
                                 </div>
+
+                                @if ($errors->any())
+                                    <h6 class="colorRed">{{$errors->first()}}</h6>
+                                @endif
+                                <div id="result"> </div>
+
                             </form>
                             <div class="text-center mt-3">
                                 <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up? 
@@ -54,4 +60,5 @@
 
         </div>
     </div>
+
 @endsection
