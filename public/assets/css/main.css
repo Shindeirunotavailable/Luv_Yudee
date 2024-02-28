@@ -3086,6 +3086,26 @@ textarea.form-control-lg {
     }
 }
 
+.color-search {
+    background-color: #0071BC;
+    border: 1px solid #0071BC;
+}
+@media (max-width: 767px){
+    .laptop-searchs{
+        display: none;
+    }
+    .mobile-searchs{
+        display: block;
+    }
+}
+@media (min-width: 768px){
+    .laptop-searchs{
+        display: block;
+    }
+    .mobile-searchs{
+        display: none;
+    }
+}
 /* ----------------------------------End Banner--------------------------------------- */
 /*boxCity*/
 .swiperess {
@@ -3315,12 +3335,31 @@ textarea.form-control-lg {
 }
 /* ----------------------------------End boxCity--------------------------------------- */
 /* boxForSales */
-
-
-
-
-
-
+.me-2{
+    margin-left: 0.5rem !important;
+}
+.swipers {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.pro-city-slider.style2.vam_nav_style.owl-theme .owl-nav button.owl-prev,.pro-city-slider.style2.vam_nav_style.owl-theme .owl-nav button.owl-next {
+    top: 25%
+}
+.my-3 {
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important
+}
+@media (min-width: 576px){
+    .col-sm-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
 /* ----------------------------------End boxForSales--------------------------------------- */
 /* boxForYou */
 .object-fit{
