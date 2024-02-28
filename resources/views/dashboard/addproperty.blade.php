@@ -72,11 +72,12 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
-                                                            <select id="selectcategory" name="category[]" class="form-select" multiple>
-                                                                <option value="1" >คอนโด</option>
-                                                                <option value="2" >บ้าน</option>
-                                                                <option value="3" >ทาวน์เฮาส์</option>
-                                                                <option value="4" >อพาร์ทเมนท์</option>
+                                                            <select id="selectcategory" name="category" class="form-select" >
+                                                                {{-- <option value="0" selected>Select</option> --}}
+                                                                <option value="1"{{ isset($data['property']->category) && $data['property']->category =='1' ? 'selected' :""}}>คอนโด</option>
+                                                                <option value="2"{{ isset($data['property']->category) && $data['property']->category =='2' ? 'selected' :""}}>บ้าน</option>
+                                                                <option value="3"{{ isset($data['property']->category) && $data['property']->category =='3' ? 'selected' :""}}>ทาวน์เฮาส์</option>
+                                                                <option value="4"{{ isset($data['property']->category) && $data['property']->category =='4' ? 'selected' :""}}>อพาร์ทเมนท์</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -84,7 +85,8 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                            <select id="propertystatus" name="status[]" class="form-control"  multiple>
+                                                            <select id="propertystatus" name="status" class="form-control" >
+                                                                {{-- <option value="0" selected>Select</option> --}}
                                                                 <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}}>ขาย</option>
                                                                 <option value="2"{{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
                                                             </select>
@@ -94,7 +96,6 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-6">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                            {{-- <input type="number"  class="form-control" placeholder="0.00" name="price" required value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}"> --}}
                                                             <input type="text" name="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
                                                         </div>
                                                     </div>
@@ -407,3 +408,44 @@
     </footer>
 
 </div>
+    {{-- <label class="checkbox-ap">Attic<input type="checkbox">
+
+    <label class="checkbox-ap">Basketball court<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Air Conditioning<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Lawn<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Swimming Pool<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Barbeque<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Microwave<input type="checkbox"></label>
+
+    <label class="checkbox-ap">TV Cable<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Dryer<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Outdoor Shower<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Washer<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Gym<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Ocean view<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Private space<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Lake view<input type="checkbox">
+
+    <label class="checkbox-ap">Wine cellar<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Front yard<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">Refrigerator<input type="checkbox" checked></label>
+
+    <label class="checkbox-ap">WiFi<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Laundry<input type="checkbox"></label>
+
+    <label class="checkbox-ap">Sauna<input type="checkbox"></label> --}}

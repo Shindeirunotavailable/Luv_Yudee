@@ -40,8 +40,10 @@ class PropertyController extends Controller
         $data = array(
             'title' => $request['title'],
             'description' => json_encode($request['description']),
-            'category' => implode(',', $request['category']),
-            'status' => implode(',', $request['status']),
+            // 'category' => implode(',', $request['category']),
+            // 'status' => implode(',', $request['status']),
+            'category' => $request['category'],
+            'status' => $request['status'],
             'price' => $request['price'],
             'image_url'=> $request['image_url'],
             'video_url'=> $request['video_url'],

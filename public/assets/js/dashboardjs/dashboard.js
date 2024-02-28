@@ -35,16 +35,16 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    $('#selectcategory').val('1');
+    // $('#selectcategory').val("");
     $('#selectcategory').select2({
         placeholder: "Select...",
-        allowClear: true
+        // allowClear: true
     });
 
-    $('#propertystatus').val('1');
+    // $('#propertystatus').val("");
     $('#propertystatus').select2({
         placeholder: "Select...",
-        allowClear: true
+        // allowClear: true
     });
     $('#provinces').select2({
         placeholder: "กรุณาเลือกจังหวัด"
