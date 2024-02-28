@@ -25,7 +25,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-1.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">Manhattan</a> </h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -40,7 +40,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-2.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Diego</a> </h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -55,7 +55,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-3.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Francisco</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -70,7 +70,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-4.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">Los Angeles</a> </h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -85,7 +85,7 @@
                                     <div class="feature-st3 text-center">
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-5.png') }}" alt="cities"></div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">California</a> </h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -99,7 +99,7 @@
                                     <div class="feature-st3 text-center">
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-6.png') }}" alt="cities"></div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">New Jersey</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -113,7 +113,7 @@
                                     <div class="feature-st3 text-center">
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-1.png') }}" alt="cities"></div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">Manhattan</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -128,7 +128,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-2.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Diego</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -143,7 +143,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-3.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Francisco</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -159,7 +159,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-3.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Francisco</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -174,7 +174,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-3.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Francisco</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -189,7 +189,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-3.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Francisco</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>
@@ -204,7 +204,7 @@
                                         <div class="feature-img rounded-circle">
                                             <img class="w-100 cover" src="{{ asset('/assets/images/cp-m-3.png') }}" alt="cities">
                                         </div>
-                                        <div class="feature-content p-20">
+                                        <div class="feature-content pt-20 pb-40">
                                             <div class="top-area">
                                                 <h6 class="title mb-1"><a href="/map-v3">San Francisco</a></h6>
                                                 <p class="fs-15 fw-400 dark-color mb-0">12 Properties</p>

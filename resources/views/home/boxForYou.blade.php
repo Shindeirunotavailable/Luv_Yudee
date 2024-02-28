@@ -30,9 +30,9 @@
                             </div>
                         </div>
                     </div>
-                    <a class="user-arrow user-btn btn-yuudee add-property rounded-pill text-a " href="/home-v4">Learn More
+                    <button class="user-arrow user-btn btn-yuudee add-property rounded-pill text-a pt-1" href="/home-v4">Learn More
                         <i class="fal fa-arrow-right-long"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
