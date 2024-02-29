@@ -1,5 +1,6 @@
-<section class="pt-0 pb-60">
-    <div class="container">
+<section class="pt-0 pb-60 mx20-lg">
+    <div class="max-width1460-con position-relative mr-auto ml-auto">
+    {{-- <div class="container"> --}}
         <div class="row wow fadeInUp" data-wow-delay="100ms">
             <div class="col-lg-6">
                 <div class="main-title-2">
@@ -32,7 +33,6 @@
                 <div class="pro-city-slider position-relative ">
                     <div class="swipers swiper-initialized swiper-horizontal swiper-pointer swiper-backface-hidden">
                         <div class="swiper-wrapper pb-20">
-                            {{-- style="transform: translate3d(-410.5px, 0px, 0px); transition-duration: 0ms;" --}}
                             <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
                                 <div class="card box-shadow-lightblue mb-30">
                                     <div class="card-body p-0">
@@ -159,7 +159,6 @@
                                     <div class="card-body p-0">
                                         <div class="img-block ">
                                             <div class="block-text text-center ">
-                                                {{-- <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a> --}}
                                                 <b class="font-size-13">FEATURED</b>
                                             </div>
                                             <div class="text-block text-center">
@@ -239,7 +238,6 @@
                                     <div class="card-body p-0">
                                         <div class="img-block ">
                                             <div class="block-text text-center ">
-                                                {{-- <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a> --}}
                                                 <b class="font-size-13">FEATURED</b>
                                             </div>
                                             <div class="text-block text-center">
@@ -361,7 +359,6 @@
                                     <div class="card-body p-0">
                                         <div class="img-block ">
                                             <div class="block-text text-center ">
-                                                {{-- <a href="javascript:void(0)" class="font-weight-500 text-whiter">FEATURED</a> --}}
                                                 <b class="font-size-13">FEATURED</b>
                                             </div>
                                             <div class="text-block text-center">
@@ -401,21 +398,6 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-
-                    {{-- <div class="rounded-arrow arrowY-center-position">
-
-                        <button
-                            class="property-by-city-prev__active swiper_button _prevs "fdprocessedid="yj6omk">
-                            <i class="fa-solid fa-angle-left"></i>
-                        </button>
-                        <button
-                            class="property-by-city-next__active swiper_button _nexts swiper-button-disabled "fdprocessedid="1ipwv"
-                            disabled="">
-                            <i class="fa-solid fa-angle-right"></i>
-                        </button>
-                    </div> --}}
-                    {{-- <div class="swiper-pagination"></div> --}}
-
                 </div>
             </div>
         </div>

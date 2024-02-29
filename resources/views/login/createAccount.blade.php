@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
 
-                <form action="{{ url('/register') }}"  method="POST" class="needs-validation">
+                <form action="{{ url('/register') }}"  method="POST" class="needs-validation" id="registerForm">
                     @csrf
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
@@ -43,8 +43,11 @@
                     <div id="result" class="colorRed"> </div>
 
                     <div class="pt-20 pb-20 text-center">                        
-                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
-                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
+                        <button type="submit" class="g-recaptcha afterButton rounded-pill btn-lg btn-block"
+                        id="submitModal" 
+                        data-sitekey="{{config('services.recaptcha.site_key')}}" 
+                        data-callback='onSubmit' data-action='submit'> 
+                        <i class="fa-regular fa-paper-plane "></i> Submit
                        </button> 
                     </div>
                 </form>

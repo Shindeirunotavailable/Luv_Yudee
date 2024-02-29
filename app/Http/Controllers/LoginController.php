@@ -71,7 +71,7 @@ class LoginController extends Controller
     //     dd($errorMessages);
     //     return back()->withErrors($errorMessages)->withInput();
     // }
-    
+
 
 
     public function register(Request $request){
@@ -79,7 +79,7 @@ class LoginController extends Controller
     $username = $request->input('modal_email');
     $password = $request->input('modal_password');
     // ตรวจสอบว่ามีอีเมล์ที่ซ้ำกันในฐานข้อมูลหรือไม่
-    $existingUser = DB::table('create_accounts')->where('modal_email', $username)->first();
+    $existingUser = DB::table('create_accounts')->where('email', $username)->first();
     // รายการข้อผิดพลาด
     $errorMessages = [];
     if ($existingUser) {
@@ -90,13 +90,15 @@ class LoginController extends Controller
     } else {
         // บันทึกข้อมูล
         $data = [
-            'modal_email' => $username,
-            'modal_password' => bcrypt($password),
+            'email' => $username,
+            'password' => bcrypt($password),
         ];
         DB::table('create_accounts')->insert($data);
         // ส่งผู้ใช้ไปยังหน้า searchResult.searchResult
         Mail::to($username)->send(new WelcomeEmail());
-        return view('searchResult.searchResult');
+        // return view("searchResult.searchResult");
+        return redirect('/addproperty');
+
     }
     return back()->withErrors($errorMessages)->withInput();
 }

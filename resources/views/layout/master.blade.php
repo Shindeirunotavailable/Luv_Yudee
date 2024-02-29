@@ -15,6 +15,9 @@
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
          <!-- Include Select2 from CDN -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+         
+         <!-- reCAPTCHA เวอร์ชัน 3  -->
+         <script src="https://www.google.com/recaptcha/api.js"></script>
          {{-- --CSS-- --}}
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
          <link href="{{ asset('/assets/css/contact/contact.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า contact -- --}}

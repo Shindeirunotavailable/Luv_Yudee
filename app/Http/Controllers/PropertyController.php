@@ -14,6 +14,8 @@ use App\Models\District;
 
 class PropertyController extends Controller
 {
+
+
     // DataBaseController
     public function databaseconnect(Request $request)
     {

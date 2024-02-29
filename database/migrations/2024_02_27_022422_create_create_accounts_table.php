@@ -15,9 +15,11 @@ class CreateCreateAccountsTable extends Migration
     {
         Schema::create('create_accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('modal_email');
-            $table->string('modal_password');
+            $table->string('email',50);
+            $table->string('password');
             $table->tinyInteger('status')->default(2);
+            $table->dateTime('created_datetime')->useCurrent();
+            $table->dateTime('updated_datetime')->useCurrent();
             $table->timestamps();
         });
     }

@@ -170,7 +170,6 @@ $('body').on('click', '#exampleModal', function(event) {
     function onChange(event) {
         const password = $('#modal_password');
         const confirm = $('#modal_confirmPassword');
-        const checkpassword = $('#modal_password');
         const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     
 
@@ -203,15 +202,15 @@ $('body').on('click', '#exampleModal', function(event) {
             confirm[0].setCustomValidity('');
         }
         
-        // if (passwordValidation.test(checkpassword.val())) {
-        //     checkpassword[0].setCustomValidity('Password is not formation');
-        //     checkpassword.addClass('border-danger ');
-        //     event.preventDefault();
-        //     event.stopPropagation();
-        // } else {
-        //     checkpassword[0].setCustomValidity('');
-        //     checkpassword.removeClass('border-danger ');
-        // }
+        if (passwordValidation.test(password.val())) {
+            password[0].setCustomValidity('Password is not formation');
+            password.addClass('border-danger ');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            password[0].setCustomValidity('');
+            password.removeClass('border-danger ');
+        }
     
     }
 
@@ -227,7 +226,9 @@ $('body').on('click', '#exampleModal', function(event) {
           });
 
 
-
+          function onSubmit(token) {
+            document.getElementById("registerForm").submit();
+          }
   
  
   
