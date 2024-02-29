@@ -6,7 +6,6 @@ use App\Mail\WelcomeEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 
-
 class LoginController extends Controller
 {
 
@@ -71,7 +70,7 @@ class LoginController extends Controller
     //     dd($errorMessages);
     //     return back()->withErrors($errorMessages)->withInput();
     // }
-    
+
 
 
     public function register(Request $request){
@@ -96,7 +95,7 @@ class LoginController extends Controller
         DB::table('create_accounts')->insert($data);
         // ส่งผู้ใช้ไปยังหน้า searchResult.searchResult
         Mail::to($username)->send(new WelcomeEmail());
-        return view('searchResult.searchResult');
+        return view('dashboard.sidebardashboard');
     }
     return back()->withErrors($errorMessages)->withInput();
 }
