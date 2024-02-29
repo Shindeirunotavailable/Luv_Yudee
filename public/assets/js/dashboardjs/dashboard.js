@@ -35,16 +35,16 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    $('#selectcategory').val('1');
+    // $('#selectcategory').val("");
     $('#selectcategory').select2({
         placeholder: "Select...",
-        allowClear: true
+        // allowClear: true
     });
 
-    $('#propertystatus').val('1');
+    // $('#propertystatus').val("");
     $('#propertystatus').select2({
         placeholder: "Select...",
-        allowClear: true
+        // allowClear: true
     });
     $('#provinces').select2({
         placeholder: "กรุณาเลือกจังหวัด"
@@ -260,3 +260,39 @@ function formatCurrency(input, blur) {
     caret_pos = updated_len - original_len + caret_pos;
     input[0].setSelectionRange(caret_pos, caret_pos);
 }
+// Event Handling
+  $('body').on('click', '#nav-media-tab, #nav-location-tab, #nav-detail-tab, #nav-amenities-tab' , function(event) {
+    var forms = $('.needs-validation');
+    // console.log('dasdas')
+    var titleproperty = $('#titleproperty');
+    var price = $('#price');
+    var address = $('#address');
+    // var provinces = $('#provinces');
+    address
+    if( !titleproperty.val()  ){
+            titleproperty.addClass('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+              } else if (!price.val()){
+                price.addClass('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+              }else {
+                // titleproperty.removeClass('is-invalid');
+                // titleproperty.addClass('is-valid');
+                // price.removeClass('is-invalid');
+                // price.addClass('is-valid');
+                titleproperty.removeClass('is-invalid')
+                price.removeClass('is-invalid')
+            }
+
+    if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            address.addClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+            } else {
+            // address.removeClass('is-invalid');
+            // address.addClass('is-valid');
+            address.removeClass('is-invalid')
+        }
+});
