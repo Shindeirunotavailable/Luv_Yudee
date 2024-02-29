@@ -6,10 +6,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="logos mr-40">
                             <a class="header-logo logo1" href="{{url("home")}}">
-                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="150px">
                             </a>
                             <a class="header-logo logo2 link-effect" href="{{url("home")}}">
-                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="150px">
                             </a>
                         </div>
                         <ul class="responsive-menu">

@@ -20,7 +20,7 @@
                                 <div class="box-search d-flex" id="nav-buy-m">
                                     <i class="icon fa-solid fa-house mtb-2"></i>
                                     <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Buy" fdprocessedid="ufm989">
-                                    <button class="color-search  add-property rounded-pill mx-2 text-a pt-1 mt-1"href="{{url("/")}}">
+                                    <button class="color-search  add-property rounded-pill mx-2 text-a mt-1"href="{{url("/")}}">
                                         Search
                                     </button>
                                 </div>
@@ -46,7 +46,7 @@
                                 <div class="box-search d-flex" id="nav-rent-m">
                                     <i class="icon fa-solid fa-house mtb-2"></i>
                                     <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Rent">
-                                    <button class="color-search add-property rounded-pill mx-2 text-a pt-1 mt-1"href="{{url("/")}}">
+                                    <button class="color-search add-property rounded-pill mx-2 text-a mt-1"href="{{url("/")}}">
                                         Search
                                     </button>
                                 </div>
@@ -73,7 +73,7 @@
                                 <div class="box-search d-flex" id="nav-sold-m">
                                     <i class="icon fa-solid fa-house mtb-2"></i>
                                     <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Sold">
-                                    <button class="color-search add-property rounded-pill mx-2 text-a pt-1 mt-1"href="{{url("/")}}">
+                                    <button class="color-search add-property rounded-pill mx-2 text-a mt-1"href="{{url("/")}}">
                                         Search
                                     </button>
                                 </div>
