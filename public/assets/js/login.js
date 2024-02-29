@@ -126,65 +126,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 //     }
 // }
 
-
-
-// ทดลอง //
-$('body').on('click', '#exampleModal', function(event) {
-        var forms = $('.needs-validation');
-        $('.modal-body form').submit(function(event) {
-            onChange(event);
-        });
-    });
     
-    function onChange(event) {
-        const password = $('#modal_password');
-        const confirm = $('#modal_confirmPassword');
-        const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    
-        if (confirm.val() !== password.val()) {
-            confirm[0].setCustomValidity('Passwords do not match');
-            confirm.removeClass('is-valid');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            confirm[0].setCustomValidity('');
-        }
-    
-        if (!passwordValidation.test(password.val())) {
-            password.addClass('is-invalid');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            password.removeClass('is-invalid');
-            password.addClass('is-valid');
-        }
-    
-        if (!confirm.val()) {
-            confirm.addClass('is-invalid');
-        } else {
-            confirm.removeClass('is-invalid');
-            confirm.addClass('is-valid');
-        }
-
- 
-    }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // เช็คค่าว่างหน้า login
 $(document).ready(function() {
@@ -204,6 +146,85 @@ $(document).ready(function() {
     });
 
   });
+
+
+// ทดลอง //
+$('body').on('click', '#exampleModal', function(event) {
+        var forms = $('.needs-validation');
+        $(".toggle-password").click(function() {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+              input.attr("type", "text");
+            } else {
+              input.attr("type", "password");
+            }
+          });
+
+        $('.modal-body form').submit(function(event) {
+            onChange(event);
+        });
+    });
+    
+    function onChange(event) {
+        const password = $('#modal_password');
+        const confirm = $('#modal_confirmPassword');
+        const checkpassword = $('#modal_password');
+        const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    
+
+        // ตรวจสอบว่า modal_password มีค่าว่างหรือไม่
+        if (!password.val()) {
+            password.addClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            password.removeClass('is-invalid');
+            password.addClass('is-valid');
+        }
+        // ตรวจสอบว่า modal_confirmPassword มีค่าว่างหรือไม่
+        if (!confirm.val()) {
+            confirm.addClass('is-invalid');
+        } else {
+            confirm.removeClass('is-invalid');
+            confirm.addClass('is-valid');
+        }
+
+        // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
+        if (confirm.val() !== password.val()) {
+            confirm[0].setCustomValidity('Passwords do not match');
+            confirm.addClass('border-danger');
+            confirm.removeClass('is-valid');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            confirm.removeClass('border-danger ');
+            confirm[0].setCustomValidity('');
+        }
+        
+        // if (passwordValidation.test(checkpassword.val())) {
+        //     checkpassword[0].setCustomValidity('Password is not formation');
+        //     checkpassword.addClass('border-danger ');
+        //     event.preventDefault();
+        //     event.stopPropagation();
+        // } else {
+        //     checkpassword[0].setCustomValidity('');
+        //     checkpassword.removeClass('border-danger ');
+        // }
+    
+    }
+
+
+        $(".toggle-password").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+              input.attr("type", "text");
+            } else {
+              input.attr("type", "password");
+            }
+          });
 
 
 

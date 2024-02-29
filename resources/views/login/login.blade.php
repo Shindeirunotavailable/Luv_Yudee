@@ -24,8 +24,13 @@
                                     <label class="label-700">Email</label>
                                         <input type="email" name="email" id="email" class="form-control " placeholder="Enter Email" required>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group box-search">
                                     <label class="label-700">Password</label>
+                                    <div class="d-flex justify-content-end">
+                                        <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
+
+                                    </div>
+
                                         <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password">
                                         <div class="invalid-feedback">
                                             <a> กรุณากรอก Password</a>

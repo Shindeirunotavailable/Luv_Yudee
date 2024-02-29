@@ -28,7 +28,7 @@ class WelcomeEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails')
-                    ->subject('Welcome to YourApp');
+        return $this->view('login.emails')
+                    ->subject('Welcome to WebsiteYudee');
     }
 }

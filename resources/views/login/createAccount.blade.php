@@ -19,8 +19,11 @@
 
                     <div class="form-group">
                         <label class="label-700 pl-10">Password</label>
+                        <div class="d-flex justify-content-end">
+                            <span toggle="#modal_password" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
+                        </div>
                         <input type="password" name="modal_password" id="modal_password" class="form-control "
-                            placeholder="Enter Password"  onChange="onChange()">
+                            placeholder="Enter Password"  onChange="onChange()"> 
 
                         <div class="invalid-feedback">
                             <a> กรุณากรอก Password</a>
@@ -28,6 +31,9 @@
                     </div>
                     <div class="form-group">
                         <label class="label-700 pl-10">Confirm Password</label>
+                        <div class="d-flex justify-content-end">
+                            <span toggle="#modal_confirmPassword" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
+                        </div>
                         <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
                             class="form-control" placeholder="Enter Confirm Password"  onChange="onChange()" >
                         <div class="invalid-feedback">
