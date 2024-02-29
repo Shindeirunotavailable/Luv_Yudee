@@ -282,7 +282,8 @@ function formatCurrency(input, blur) {
                 // titleproperty.addClass('is-valid');
                 // price.removeClass('is-invalid');
                 // price.addClass('is-valid');
-                address.removeClass('is-invalid')
+                titleproperty.removeClass('is-invalid')
+                price.removeClass('is-invalid')
             }
 
     if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
