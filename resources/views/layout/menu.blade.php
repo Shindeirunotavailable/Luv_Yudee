@@ -6,10 +6,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="logos mr-40">
                             <a class="header-logo logo1" href="{{url("home")}}">
-                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="150px">
                             </a>
                             <a class="header-logo logo2 link-effect" href="{{url("home")}}">
-                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="130px">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="150px">
                             </a>
                         </div>
                         <ul class="responsive-menu">
@@ -37,7 +37,7 @@
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i> 
                             <span class="d-xl-block">Login / Register</span>
                         </a>
-                        <button class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a pt-1    "href="{{url("addproperty")}}">
+                        <button class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("addproperty")}}">
                             Add Property
                             <i class="fal fa-arrow-right-long"></i>
                         </button>
