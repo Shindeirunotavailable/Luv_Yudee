@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Mail\WelcomeEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 
 
 class LoginController extends Controller
 {
-
 
     // public function __construct()
     // {
@@ -23,15 +24,11 @@ class LoginController extends Controller
     {
         $this->loginCss= ['main', 'login']; // ดึง LoginCss
         $this->ContenrCss= ['main', 'content/content']; // ดึง ContenrCss
- 
     }
-
 
     public function login(){ //แสดงหน้า modal สร้างรหัสผ่าน
         return view("login.login")->with('main',$this->loginCss);
     }
-
-    
     
     public function createAccount(){ //แสดงหน้า modal สร้างรหัสผ่าน
         return view("login.createAccount");
@@ -42,32 +39,69 @@ class LoginController extends Controller
         
     }
 
-
-    public function register(Request $request)
-    {
-        $username = $request->input('username');
-        $password = $request->input('password');
-        $confirmpassword = $request->input('confirmpassword');
-    
-        $errorMessages = [];
-            // ตรวจสอบว่ามีอีเมล์ซ้ำกันในฐานข้อมูลหรือไม่
-            $existingUser = DB::table('createaccounts')->where('username', $username)->first();
-            if ($existingUser) {
-                $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
-            } else {
-                // บันทึกข้อมูล
-                $data = [
-                    'username' => $username,
-                    'password' => bcrypt($password),
-                    'confirmpassword' => bcrypt($confirmpassword),
-                ];
-                DB::table('createaccounts')->insert($data);
-                return redirect('login');
-            }
+    public function emails(){ // แสดงหน้า modal ลืมรหัสผ่าน
+        return view("emails");
         
-        return implode("<br>", $errorMessages);
     }
+
+// ------------------------------------- สมัครสมาชิก -------------------------------------------------
+
+    // public function register(Request $request)
+    // {
+    //     $username = $request->input('modal_email');
+    //     $password = $request->input('modal_password');
     
+    //     $errorMessages = [];
+    //         // ตรวจสอบว่ามีอีเมล์ซ้ำกันในฐานข้อมูลหรือไม่
+    //         $existingUser = DB::table('create_accounts')->where('status', 1)->first();
+    //         if ($existingUser) {
+    //             $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+    //         } 
+    //         else {
+    //             // บันทึกข้อมูล
+    //             $data = [
+    //                 'modal_email' => $username,
+    //                 'modal_password' => bcrypt($password),
+    //             ];
+    //             DB::table('create_accounts')->insert($data);
+    //             return view('searchResult.searchResult');
+    //         }
+        
+    //     // return $errorMessages;
+    //     dd($errorMessages);
+    //     return back()->withErrors($errorMessages)->withInput();
+    // }
+    
+
+
+    public function register(Request $request){
+    // รับข้อมูลจาก request
+    $username = $request->input('modal_email');
+    $password = $request->input('modal_password');
+    // ตรวจสอบว่ามีอีเมล์ที่ซ้ำกันในฐานข้อมูลหรือไม่
+    $existingUser = DB::table('create_accounts')->where('modal_email', $username)->first();
+    // รายการข้อผิดพลาด
+    $errorMessages = [];
+    if ($existingUser) {
+        // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
+        if ($existingUser->status >= 1) {
+            $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+        } 
+    } else {
+        // บันทึกข้อมูล
+        $data = [
+            'modal_email' => $username,
+            'modal_password' => bcrypt($password),
+        ];
+        DB::table('create_accounts')->insert($data);
+        // ส่งผู้ใช้ไปยังหน้า searchResult.searchResult
+        Mail::to($username)->send(new WelcomeEmail());
+        return view('searchResult.searchResult');
+    }
+    return back()->withErrors($errorMessages)->withInput();
+}
+
+
 
 // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 

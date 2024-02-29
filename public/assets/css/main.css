@@ -2759,23 +2759,18 @@ header.nav-innerpage-style.style2 {
 textarea.form-control {
     min-height: calc(1.5em + .75rem + calc(1px * 2))
 }
-
 textarea.form-control-sm {
     min-height: calc(1.5em + .5rem + calc(1px * 2))
 }
-
 textarea.form-control-lg {
     min-height: calc(1.5em + 1rem + calc(1px * 2))
 }
-
 .selection:first-child label {
     border-radius: 12px 0 0 12px
 }
-
 .selection:last-child label {
     border-radius: 0 12px 12px 0
 }
-
 .selection label {
     background-color: #fff;
     border: 2px solid transparent;
@@ -2788,11 +2783,9 @@ textarea.form-control-lg {
     margin-right: 1px;
     padding: 7px 12px
 }
-
 .selection input[type=radio] {
     display: none
 }
-
 .selection input[type=radio]:checked~label {
     border: 2px solid #181a20;
     outlinie: transparent;
@@ -2826,35 +2819,27 @@ textarea.form-control-lg {
 .form-st1 .form-control::-webkit-input-placeholder {
     color: #717171;
 }
-
 .form-st1 .form-control::-moz-placeholder {
     color: #717171;
 }
-
 .form-st1 .form-control:-ms-input-placeholder {
     color: #717171;
 }
-
 .form-st1 .form-control::-ms-input-placeholder {
     color: #717171;
 }
-
 .form-st1 .form-control::placeholder {
     color: #717171;
 }
-
 .form-st1 .custom_checkbox {
     line-height: 26px
 }
-
 .form-st1 .custom_checkbox .checkmark {
     top: 7px
 }
-
 .form-st1 .form-select {
     height: 50px
 }
-
 .form-st1 .form-select option {
     font-size: 14px;
     color: #181a20;
@@ -2862,11 +2847,9 @@ textarea.form-control-lg {
     height: 50px;
     border-bottom: 1px solid #dddddd
 }
-
 .form-st1 .form-select option:hover {
     background-color: #2596be
 }
-
 .form-st1 .form-select:before {
     background-color: #ddd;
     content: "";
@@ -2895,7 +2878,6 @@ textarea.form-control-lg {
     -ms-user-select: none;
     user-select: none
 }
-
 .custom_checkbox input {
     position: absolute;
     opacity: 0;
@@ -2903,11 +2885,9 @@ textarea.form-control-lg {
     height: 0;
     width: 0
 }
-
 .custom_checkbox input:checked~.checkmark {
     background-color: #041e42
 }
-
 .custom_checkbox .checkmark {
     border: 1px solid #041e42;
     border-radius: 4px;
@@ -2917,7 +2897,6 @@ textarea.form-control-lg {
     height: 16px;
     width: 16px
 }
-
 .custom_checkbox .checkmark:after {
     content: "";
     position: absolute;
@@ -2973,7 +2952,6 @@ textarea.form-control-lg {
     border: 1px solid #2596be;
     color: #2596be;
 }
-
 .btn-thm-border {
     background-color: #fff;
     border: 1px solid #2596be;
@@ -3056,19 +3034,16 @@ textarea.form-control-lg {
     border-radius: .375rem;
     opacity: .5
 }
-
 .btn-close:hover {
     color: #000;
     text-decoration: none;
     opacity: .75
 }
-
 .btn-close:focus {
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
     opacity: 1
 }
-
 .btn-close.disabled,.btn-close:disabled {
     pointer-events: none;
     -webkit-user-select: none;
@@ -3085,7 +3060,26 @@ textarea.form-control-lg {
         margin-right: 20px!important
     }
 }
-
+.color-search {
+    background-color: #0071BC;
+    border: 1px solid #0071BC;
+}
+@media (max-width: 767px){
+    .laptop-searchs{
+        display: none;
+    }
+    .mobile-searchs{
+        display: block;
+    }
+}
+@media (min-width: 768px){
+    .laptop-searchs{
+        display: block;
+    }
+    .mobile-searchs{
+        display: none;
+    }
+}
 /* ----------------------------------End Banner--------------------------------------- */
 /*boxCity*/
 .swiperess {
@@ -3315,12 +3309,31 @@ textarea.form-control-lg {
 }
 /* ----------------------------------End boxCity--------------------------------------- */
 /* boxForSales */
-
-
-
-
-
-
+.me-2{
+    margin-left: 0.5rem !important;
+}
+.swipers {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.pro-city-slider.style2.vam_nav_style.owl-theme .owl-nav button.owl-prev,.pro-city-slider.style2.vam_nav_style.owl-theme .owl-nav button.owl-next {
+    top: 25%
+}
+.my-3 {
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important
+}
+@media (min-width: 576px){
+    .col-sm-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
 /* ----------------------------------End boxForSales--------------------------------------- */
 /* boxForYou */
 .object-fit{
@@ -3336,7 +3349,6 @@ textarea.form-control-lg {
 .why-chose-list {
     position: relative
 }
-
 .why-chose-list .list-one .list-icon {
     background-color: #0088ff47;
     border-radius: 50%;
@@ -3351,25 +3363,20 @@ textarea.form-control-lg {
     -o-transition: all .4s ease;
     transition: all .4s ease
 }
-
 .why-chose-list .list-one:hover .list-icon {
     background-color: #0071bc;
     color: #fff
 }
-
 .why-chose-list.style2 .list-one:hover .list-icon {
     background-color: #0071bc;
     color: #fff
 }
-
 .why-chose-list.style2 .list-icon {
     color: #181a20
 }
-
 .why-chose-list.style3 .list-icon {
     background-color: #f7f7f7
 }
-
 .why-chose-list.style3 .list-icon {
     color: #181a20
 }

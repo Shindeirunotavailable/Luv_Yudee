@@ -1,6 +1,5 @@
 @extends('layout.master')
 @section('content')
-
     <!-- {{-- ส่วนหัว --}} -->
     <section class="background-grey pt-30 pb-30">
         <div class="container">
@@ -11,11 +10,8 @@
             </div>
         </div>
     </section>
-
-    
-    
     {{-- menu-mobile --}}
-    <section class="pt-20 " >
+    <section class="pt-20 ">
         <div class="container">
             <div class="mobile-media pb-15">
                 {{-- <h5 >Find your home</h5>
@@ -23,20 +19,19 @@
                 <div class="d-flex justify-content-end pt-2">
                     <div class="d-flex align-items-center" onclick="toggleSidebar()">
                         <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
-                            <span> <i class="fa-solid fa-magnifying-glass text-white"></i></span> <b class="text-white">search</b>
+                            <span> <i class="fa-solid fa-magnifying-glass text-white"></i></span> <b
+                                class="text-white">search</b>
                         </button>
 
                     </div>
                 </div>
-                
+
                 <div id="mySidebar" class="sidebar">
                     @include('searchResult.sidebar-mobile')
                 </div>
             </div>
         </div>
     </section>
-
-
     <section>
         <div class="container">
             <div class="mobile-laptop">
@@ -70,7 +65,7 @@
 
                 <div class="tab-content row" id="nav-tabContent">
                     <div class="col-lg-4 ">
-                            @include('searchResult.sidebar')
+                        @include('searchResult.sidebar')
                     </div>
                     <div class="tab-pane fade col-lg-8 show active " id="nav-profile" role="tabpanel"
                         aria-labelledby="nav-profile-tab">
@@ -81,15 +76,12 @@
                     </div>
                 </div>
             </div>
-                <div class="list-mobile">
-                    @include('searchResult.list')
-                </div>
-                <div class="grid-mobile">
-                    @include('searchResult.gride')
-                </div>
+            <div class="list-mobile">
+                @include('searchResult.list')
+            </div>
+            <div class="grid-mobile">
+                @include('searchResult.gride')
+            </div>
         </div>
-
-
-
     </section>
 @endsection
