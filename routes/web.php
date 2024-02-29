@@ -36,7 +36,7 @@ route::any('forget-password','App\Http\Controllers\LoginController@forgetPasswor
 route::any('register','App\Http\Controllers\LoginController@register');  //Dataสมัครสมาชิก
 
  // -----------------------------------function test Route ------------------------------------
-
+ Route::view('/addproperty', 'dashboard.sidebardashboard');
 // earth
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //sidebarแรกคือชื่อURL ด้นหลังของ @ คือชื่อเมธอดที่จะถูกเรียก

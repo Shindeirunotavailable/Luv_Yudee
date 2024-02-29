@@ -268,8 +268,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // });
 
 
-
-
 // อนิเมชั่น button เครื่องบิน //
     $('#submitModalBtn').on('click', function () {
       $('#start').prop('checked', true);
