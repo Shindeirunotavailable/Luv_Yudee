@@ -43,9 +43,7 @@ class HomeController extends Controller
     public function property(){
         return view(".propertyDetail.property");
     }
-    public function test1(){
-        return view("dashboard.sidebardashboard");
-    }
+
 }
 
 
