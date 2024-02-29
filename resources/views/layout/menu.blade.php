@@ -37,10 +37,10 @@
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i> 
                             <span class="d-xl-block">Login / Register</span>
                         </a>
-                        <button class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("addproperty")}}">
+                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("addproperty")}}">
                             Add Property
                             <i class="fal fa-arrow-right-long"></i>
-                        </button>
+                        </a>
                         <a class="sidemenus-btn filter-btn-right" href="#" id="toggleSidebar" data-bs-toggle="offcanvas" data-bs-target="#SidebarPanel" aria-controls="SidebarPanelLabel"> </a>
                     </div>
                 </div>
