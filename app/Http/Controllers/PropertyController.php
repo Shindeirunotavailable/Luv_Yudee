@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Property;
+use App\Models\Amenities;
 use App\Models\Province;
 use App\Models\Amphure;
 use App\Models\District;
@@ -21,27 +22,33 @@ class PropertyController extends Controller
         $provinces = Province::all();
         $amphures = Amphure::all();
         $districts = District::all();
+        $amenities = Amenities::all();
         $property = Property::property($id_properties);
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
         $this->data['districts'] = District::all();
+        $this->data['amenities'] = Amenities::all();
         $this->data['property'] = $property;
 
         if (isset($request['id_properties'])) {
             $this->data['id_properties'] = $request['id_properties'];
         }
-        return view('dashboard.sidebardashboard')->with('data', $this->data);
+        return view('dashboard.sidebardashboard')->with('data', $this->data)
+                                                 ;
     }
 
     // PropertyController
     public function updatedata(Request $request)
     {
+
         $data = array(
             'title' => $request['title'],
             'description' => json_encode($request['description']),
-            'category' => implode(',', $request['category']),
-            'status' => implode(',', $request['status']),
+            // 'category' => implode(',', $request['category']),
+            // 'status' => implode(',', $request['status']),
+            'category' => $request['category'],
+            'status' => $request['status'],
             'price' => $request['price'],
             'image_url'=> $request['image_url'],
             'video_url'=> $request['video_url'],
@@ -52,7 +59,6 @@ class PropertyController extends Controller
             'zipcode'=> $request['zipcode'],
             'latitude'=> $request['latitude'],
             'longitude'=> $request['longitude'],
-
             'floor_amount'=> $request['floor_amount'],
             'rooms'=> $request['rooms'],
             'bedrooms'=> $request['bedrooms'],
@@ -63,7 +69,7 @@ class PropertyController extends Controller
             'psm'=> $request['psm'],
             'year_build'=> $request['year_build'],
             'notes'=> $request['notes'],
-
+            'amenities' => implode(',', $request['amenities']),
 
         );
         if (isset($request['id_properties'])) {
@@ -83,12 +89,12 @@ class PropertyController extends Controller
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
            // // dd($request->all());
-            // $imageName = time().'_'.$request->image->getClientOriginalName();
-            // $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-            // $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            // $videoName = time().'_'.$request->video->getClientOriginalName();
-            // $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-            // $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            $imageName = time().'_'.$request->image->getClientOriginalName();
+            $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+            $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            $videoName = time().'_'.$request->video->getClientOriginalName();
+            $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+            $data['video_url'] = ('/assets/upload_video/' . $videoName);
 
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
         }

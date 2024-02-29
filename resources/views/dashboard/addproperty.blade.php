@@ -16,25 +16,25 @@
                     <div class="navtab-style1">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab2" role="tablist">
-                                <button class="nav-link-ap active font-weight-600 ml-3" id="nav-item1-tab"
-                                    data-toggle="tab" data-target="#nav-item1" type="button" role="tab"
-                                    aria-controls="nav-item1" aria-selected="true">
+                                <button class="nav-link-ap active font-weight-600 ml-3" id="nav-description-tab"
+                                    data-toggle="tab" data-target="#nav-description" type="button" role="tab"
+                                    aria-controls="nav-description" aria-selected="true">
                                     1. Description
                                 </button>
-                                <button class="nav-link-ap font-weight-600" id="nav-item2-tab" data-toggle="tab"
-                                    data-target="#nav-item2" type="button" role="tab" aria-controls="nav-item2"
+                                <button class="nav-link-ap font-weight-600" id="nav-media-tab" data-toggle="tab"
+                                    data-target="#nav-media" type="button" role="tab" aria-controls="nav-media"
                                     aria-selected="false">2. Media
                                 </button>
-                                <button class="nav-link-ap font-weight-600" id="nav-item3-tab" data-toggle="tab"
-                                    data-target="#nav-item3" type="button" role="tab" aria-controls="nav-item3"
+                                <button class="nav-link-ap font-weight-600" id="nav-location-tab" data-toggle="tab"
+                                    data-target="#nav-location" type="button" role="tab" aria-controls="nav-location"
                                     aria-selected="false">3. Location
                                 </button>
-                                <button class="nav-link-ap font-weight-600" id="nav-item4-tab" data-toggle="tab"
-                                    data-target="#nav-item4" type="button" role="tab" aria-controls="nav-item4"
+                                <button class="nav-link-ap font-weight-600" id="nav-detail-tab" data-toggle="tab"
+                                    data-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail"
                                     aria-selected="false">4. Detail
                                 </button>
-                                <button class="nav-link-ap font-weight-600" id="nav-item5-tab" data-toggle="tab"
-                                    data-target="#nav-item5" type="button" role="tab" aria-controls="nav-item5"
+                                <button class="nav-link-ap font-weight-600" id="nav-amenities-tab" data-toggle="tab"
+                                    data-target="#nav-amenities" type="button" role="tab" aria-controls="nav-amenities"
                                     aria-selected="false">5. Amenities
                                 </button>
                             </div>
@@ -45,8 +45,7 @@
                                 <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}" >
                             @endif
                             <div class="tab-content-ds" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-item1" role="tabpanel"
-                                        aria-labelledby="nav-item1-tab">
+                                <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                             @if($message = Session::get('success'))
                                                 <div class="alert alert-success alert-block">
@@ -57,8 +56,8 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Title</label>
-                                                            <input type="text" class="form-control" placeholder="Your Name" required name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}}">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Title *</label>
+                                                            <input type="text" class="form-control" placeholder="Your Name" id="titleproperty" required name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}}">
 
                                                         </div>
                                                     </div>
@@ -72,11 +71,11 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
-                                                            <select id="selectcategory" name="category[]" class="form-select" multiple>
-                                                                <option value="1" >คอนโด</option>
-                                                                <option value="2" >บ้าน</option>
-                                                                <option value="3" >ทาวน์เฮาส์</option>
-                                                                <option value="4" >อพาร์ทเมนท์</option>
+                                                            <select id="selectcategory" name="category" class="form-select" >
+                                                                <option value="1"{{ isset($data['property']->category) && $data['property']->category =='1' ? 'selected' :""}}>คอนโด</option>
+                                                                <option value="2"{{ isset($data['property']->category) && $data['property']->category =='2' ? 'selected' :""}}>บ้าน</option>
+                                                                <option value="3"{{ isset($data['property']->category) && $data['property']->category =='3' ? 'selected' :""}}>ทาวน์เฮาส์</option>
+                                                                <option value="4"{{ isset($data['property']->category) && $data['property']->category =='4' ? 'selected' :""}}>อพาร์ทเมนท์</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -84,7 +83,7 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                            <select id="propertystatus" name="status[]" class="form-control"  multiple>
+                                                            <select id="propertystatus" name="status" class="form-control" >
                                                                 <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}}>ขาย</option>
                                                                 <option value="2"{{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
                                                             </select>
@@ -93,17 +92,16 @@
 
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-6">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht</label>
-                                                            {{-- <input type="number"  class="form-control" placeholder="0.00" name="price" required value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}"> --}}
-                                                            <input type="text" name="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht *</label>
+                                                            <input type="text" name="price" id="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
                                                         </div>
                                                     </div>
                                                 </div>
                                         </div>
-                                    </div>
+                                </div>
 
-                                    <div class="tab-pane fade" id="nav-item2" role="tabpanel"
-                                        aria-labelledby="nav-item2-tab">
+                                <div class="tab-pane fade" id="nav-media" role="tabpanel"
+                                        aria-labelledby="nav-media-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                                 <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
                                                 <div class="row justify-content-center">
@@ -123,17 +121,17 @@
                                                 </div>
 
                                         </div>
-                                    </div>
+                                </div>
 
-                                <div class="tab-pane fade" id="nav-item3" role="tabpanel"
-                                    aria-labelledby="nav-item3-tab">
+                                <div class="tab-pane fade" id="nav-location" role="tabpanel"
+                                    aria-labelledby="nav-location-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                         <h4 class="fw-600 title fs-17 mb-6">Listing Location</h4>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="mb-d-20">
                                                         <label class="heading-color ff-heading font-weight-600 mb-d-10">Address</label>
-                                                        <input type="text" class="form-control" placeholder="Your Address" required name="address" value="{{isset($data['property']->address) ? $data['property']->address : ""}}">
+                                                        <input type="text" class="form-control" placeholder="Your Address" required name="address" id="address" value="{{isset($data['property']->address) ? $data['property']->address : ""}}">
                                                     </div>
                                                 </div>
 
@@ -218,12 +216,12 @@
 
                                             </div>
 
-                        </form>
+
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="nav-item4" role="tabpanel"
-                                    aria-labelledby="nav-item4-tab">
+                                <div class="tab-pane fade" id="nav-detail" role="tabpanel"
+                                    aria-labelledby="nav-detail-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                         <h4 class="fw-600 title fs-17 mb-10">Listing Details</h4>
                                         <div class="row">
@@ -292,94 +290,43 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2">Submit</button>
-                            </div>
+                                </div>
 
-                        </form>
-                                <div class="tab-pane fade" id="nav-item5" role="tabpanel"
-                                    aria-labelledby="nav-item5-tab">
+                                <div class="tab-pane fade" id="nav-amenities" role="tabpanel"
+                                    aria-labelledby="nav-amenities-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                         <h4 class="fw-600 title fs-17 mb-6">Select Amenities</h4>
                                         <div class="row">
                                             <div class="row-ap flex-lg-row flex-wrap">
-                                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                                    <div class="checkbox-style1">
-                                                        <label class="checkbox-ap">Attic<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
+                                                @php
+                                                $amenities = isset($data['property']->amenities) ? explode(',', $data['property']->amenities) : [];
 
-                                                        <label class="checkbox-ap">Basketball court<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
+                                                $amenitiesArray = $data['amenities']->toArray();
 
-                                                        <label class="checkbox-ap">Air Conditioning<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
+                                                $chunks = array_chunk($amenitiesArray, ceil(count($amenitiesArray) / 3));
+                                                @endphp
+                                                    @foreach ($chunks as $chunk)
 
-                                                        <label class="checkbox-ap">Lawn<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Swimming Pool<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Barbeque<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Microwave<input type="checkbox">
-                                                        <span class="checkmark"></span></label></div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                                    <div class="checkbox-style1">
-                                                        <label class="checkbox-ap">TV Cable<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Dryer<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Outdoor Shower<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Washer<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Gym<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Ocean view<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Private space<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-6 col-lg-4">
-                                                    <div class="checkbox-style1">
-                                                        <label class="checkbox-ap">Lake view<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Wine cellar<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Front yard<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Refrigerator<input type="checkbox"
-                                                        checked><span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">WiFi<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Laundry<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-
-                                                        <label class="checkbox-ap">Sauna<input type="checkbox">
-                                                        <span class="checkmark"></span></label>
-                                                    </div>
-                                                </div>
+                                                        <div class="col-sm-12 col-md-6 col-lg-4">
+                                                            <div class="checkbox-style1">
+                                                                @foreach ($chunk as $amenity)
+                                                                <label class="checkbox-ap">{{ $amenity['name_amenities'] }}
+                                                                    <input type="checkbox" name="amenities[]" id="amenities{{ $amenity['id_amenities'] }}" value="{{ $amenity['id_amenities'] }}" {{ in_array($amenity['id_amenities'], $amenities) ? 'checked' : '' }}>
+                                                                    <span class="checkmark"></span>
+                                                                </label>
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
 
+                                    </div>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2">Submit</button>
+                                </div>
                             </div>
+
+                        </form>
 
                     </div>
 
