@@ -83,7 +83,7 @@ var swiper = new Swiper(".swiper", {
 
 /*Best Properties For Sale */
 var swiper = new Swiper(".swipers", {
-  slidesPerView: 3,
+  slidesPerView: 4,
   spaceBetween: 30,
   slidesPerGroup: 1,
   loop: true,
@@ -111,6 +111,9 @@ var swiper = new Swiper(".swipers", {
       },
       1000: {
         slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
       },
     }
 });
