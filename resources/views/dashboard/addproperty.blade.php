@@ -301,13 +301,10 @@
                                             <div class="row-ap flex-lg-row flex-wrap">
                                                 @php
                                                 $amenities = isset($data['property']->amenities) ? explode(',', $data['property']->amenities) : [];
-                                                // แปลงออบเจ็กต์ $data['amenities'] เป็นอาร์เรย์
                                                 $amenitiesArray = $data['amenities']->toArray();
-                                                // แบ่งอาเรย์ข้อมูลออกเป็นกลุ่มที่มีขนาดเท่าๆ กัน
                                                 $chunks = array_chunk($amenitiesArray, ceil(count($amenitiesArray) / 3));
                                                 @endphp
                                                     @foreach ($chunks as $chunk)
-                                                    {{-- chunks จะสร้างdivคลุมแต่ละกลุ่ม ที่ได้มาจาก $chunks ก็คือ3 --}}
                                                         <div class="col-sm-12 col-md-6 col-lg-4">
                                                             <div class="checkbox-style1">
                                                                 @foreach ($chunk as $amenity)
