@@ -131,7 +131,7 @@ class PropertyController extends Controller
             $districts = District::where('amphure_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกตำบล</option>';
             foreach ($districts as $value) {
-                $options .= '<option value="' . $value->id . '">' . $value->name_th . '</option>';
+                $options .= '<option required value="' . $value->id . ' ">'. $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
         }

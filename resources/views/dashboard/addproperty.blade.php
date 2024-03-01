@@ -141,10 +141,10 @@
                                                         <label
                                                             class="heading-color ff-heading font-weight-600 mb-d-10">Country/State *</label>
                                                         <div class="">
-                                                            <select  name="provinces" id="provinces" class="form-control" >
+                                                            <select  name="provinces" id="provinces" class="form-control" required>
                                                                 <option  value="" selected disabled ></option>
                                                                 @foreach ($data['provinces'] as $value)
-                                                                    <option required value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
+                                                                    <option value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
                                                                         {{ $value['name_th'] }}
                                                                     </option>
                                                                 @endforeach
@@ -318,8 +318,9 @@
                                                     @endforeach
                                             </div>
                                         </div>
+                                        <button type="submit" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2 d-flex justify-content-end">Submit</button>
+
                                 </div>
 
                             </div>

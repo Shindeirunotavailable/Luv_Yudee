@@ -269,7 +269,12 @@ function formatCurrency(input, blur) {
     var address = $('#address');
     var latitudeInput = $('#latitudeInput');
     var longitudeInput = $('#longitudeInput');
-    address
+    var provinces = $('#provinces');
+    var amphures = $('#amphures');
+    var districts = $('#districts');
+    var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
+    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+
     if( !titleproperty.val()  ){
             titleproperty.addClass('is-invalid');
                 event.preventDefault();
@@ -279,13 +284,9 @@ function formatCurrency(input, blur) {
                 event.preventDefault();
                 event.stopPropagation();
               }else {
-                // titleproperty.removeClass('is-invalid');
-                // titleproperty.addClass('is-valid');
-                // price.removeClass('is-invalid');
-                // price.addClass('is-valid');
                 titleproperty.removeClass('is-invalid')
                 price.removeClass('is-invalid')
-            }
+        }
 
     if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
             address.addClass('is-invalid');
@@ -300,9 +301,39 @@ function formatCurrency(input, blur) {
                 event.preventDefault();
                 event.stopPropagation();
             }else {
-            // address.removeClass('is-invalid');
-            // address.addClass('is-valid');
             address.removeClass('is-invalid')
+            latitudeInput.removeClass('is-invalid')
+            longitudeInput.removeClass('is-invalid')
         }
+
+    if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            provinces.addClass('is-invalid');
+            provinces.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            provinces.removeClass('is-invalid');
+            provinces.next('.additional-message').remove();
+    }
+
+    if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            amphures.addClass('is-invalid');
+            amphures.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            amphures.removeClass('is-invalid');
+            amphures.next('.additional-message').remove();
+    }
+
+    if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            districts.addClass('is-invalid');
+            districts.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            districts.removeClass('is-invalid');
+            districts.next('.additional-message').remove();
+    }
 
 });
