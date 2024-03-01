@@ -183,7 +183,7 @@
                                                                         </option>
                                                                     @endforeach
                                                                 @endif
-                                                            </select><br>
+                                                            </select>
 
                                                         </div>
                                                     </div>
