@@ -17,7 +17,7 @@
                                 <span class="title menuActive">Home</span>
                             </a>
                             </li>
-                            
+
                             <li class="v_list dropitem link-li">
                                 <a class="list-item link-effect" href="{{url("property")}}">
                                     <span class="title">Property</span>
@@ -34,7 +34,7 @@
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
                         <a href="{{url("login")}}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
-                            <i class="far fa-user-circle fs-25 mr-2 pb-1"></i> 
+                            <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
                             <span class="d-xl-block">Login / Register</span>
                         </a>
                         <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("addproperty")}}">

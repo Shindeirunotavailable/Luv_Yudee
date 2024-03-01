@@ -45,6 +45,7 @@
                                 <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}" >
                             @endif
                             <div class="tab-content-ds" id="nav-tabContent">
+
                                 <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                             @if($message = Session::get('success'))
@@ -130,7 +131,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="mb-d-20">
-                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Address</label>
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Address *</label>
                                                         <input type="text" class="form-control" placeholder="Your Address" required name="address" id="address" value="{{isset($data['property']->address) ? $data['property']->address : ""}}">
                                                     </div>
                                                 </div>
@@ -138,7 +139,7 @@
                                                 <div class="col-sm-6 ">
                                                     <div class="mb-d-20">
                                                         <label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country /State</label>
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country/State *</label>
                                                         <div class="">
                                                             <select  name="provinces" id="provinces" class="form-control" >
                                                                 <option  value="" selected disabled ></option>
@@ -153,7 +154,7 @@
                                                 </div>
                                                 <div class="col-sm-6 ">
                                                     <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10">City</label>
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10">City *</label>
                                                         <div class="">
 
                                                             <select name="amphures" id="amphures" class="form-control">
@@ -171,7 +172,7 @@
                                                 </div>
                                                 <div class="col-sm-6 ">
                                                     <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country</label>
+                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country *</label>
                                                         <div class=" ">
 
                                                             <select name="districts" id="districts" class="form-control" >
@@ -189,21 +190,21 @@
                                                 </div>
                                                 <div class="col-sm-6 ">
                                                     <div class="mb-d-20">
-                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip</label>
-                                                        <input type="text" name="zipcode" id="zipcode" readonly class="form-control" value="{{isset($data['property']->zipcode) ? $data['property']->zipcode : ""}}">
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip *</label>
+                                                        <input type="text" name="zipcode" id="zipcode" readonly class="form-control"  value="{{isset($data['property']->zipcode) ? $data['property']->zipcode : ""}}">
                                                     </div>
                                                 </div>
 
                                                     <div class="col-sm-6">
                                                         <div class="mb-d-20">
-                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Latitude</label>
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Latitude *</label>
                                                         <input type="text" class="form-control" name="latitude" id="latitudeInput" placeholder="Enter latitude" required value="{{isset($data['property']->latitude) ? $data['property']->latitude : ""}}">
                                                         </div>
                                                     </div>
 
                                                     <div class="col-sm-6">
                                                         <div class="mb-d-20">
-                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Longitude</label>
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Longitude *</label>
                                                         <input type="text" class="form-control" name="longitude" id="longitudeInput" placeholder="Enter longitude" required value="{{isset($data['property']->longitude) ? $data['property']->longitude : ""}}">
                                                         </div>
                                                     </div>
@@ -300,13 +301,10 @@
                                             <div class="row-ap flex-lg-row flex-wrap">
                                                 @php
                                                 $amenities = isset($data['property']->amenities) ? explode(',', $data['property']->amenities) : [];
-
                                                 $amenitiesArray = $data['amenities']->toArray();
-
                                                 $chunks = array_chunk($amenitiesArray, ceil(count($amenitiesArray) / 3));
                                                 @endphp
                                                     @foreach ($chunks as $chunk)
-
                                                         <div class="col-sm-12 col-md-6 col-lg-4">
                                                             <div class="checkbox-style1">
                                                                 @foreach ($chunk as $amenity)
@@ -320,10 +318,10 @@
                                                     @endforeach
                                             </div>
                                         </div>
-
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2">Submit</button>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2 d-flex justify-content-end">Submit</button>
                                 </div>
+
                             </div>
 
                         </form>

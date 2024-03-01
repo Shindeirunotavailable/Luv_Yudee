@@ -267,7 +267,8 @@ function formatCurrency(input, blur) {
     var titleproperty = $('#titleproperty');
     var price = $('#price');
     var address = $('#address');
-    // var provinces = $('#provinces');
+    var latitudeInput = $('#latitudeInput');
+    var longitudeInput = $('#longitudeInput');
     address
     if( !titleproperty.val()  ){
             titleproperty.addClass('is-invalid');
@@ -290,9 +291,18 @@ function formatCurrency(input, blur) {
             address.addClass('is-invalid');
             event.preventDefault();
             event.stopPropagation();
-            } else {
+            }else if (!latitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
+                latitudeInput.addClass('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+            }else if (!longitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
+                longitudeInput.addClass('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+            }else {
             // address.removeClass('is-invalid');
             // address.addClass('is-valid');
             address.removeClass('is-invalid')
         }
+
 });

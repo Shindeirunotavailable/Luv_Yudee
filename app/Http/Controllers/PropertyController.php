@@ -15,7 +15,7 @@ use App\Models\District;
 class PropertyController extends Controller
 {
 
-    
+
     // DataBaseController
     public function databaseconnect(Request $request)
     {
@@ -36,7 +36,8 @@ class PropertyController extends Controller
         if (isset($request['id_properties'])) {
             $this->data['id_properties'] = $request['id_properties'];
         }
-        return view('dashboard.sidebardashboard')->with('data', $this->data);
+        return view('dashboard.sidebardashboard')->with('data', $this->data)
+                                                ;
     }
 
     // PropertyController
@@ -46,8 +47,6 @@ class PropertyController extends Controller
         $data = array(
             'title' => $request['title'],
             'description' => json_encode($request['description']),
-            // 'category' => implode(',', $request['category']),
-            // 'status' => implode(',', $request['status']),
             'category' => $request['category'],
             'status' => $request['status'],
             'price' => $request['price'],
@@ -77,12 +76,17 @@ class PropertyController extends Controller
             $id_properties = $request['id_properties'];
             $data['updated_at'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
-            // $imageName = time().'_'.$request->image->getClientOriginalName();
-            // $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-            // $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            // $videoName = time().'_'.$request->video->getClientOriginalName();
-            // $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-            // $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            if ($request->hasFile('image')) {
+                $imageName = time().'_'.$request->image->getClientOriginalName();
+                $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+                $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            }
+
+            if ($request->hasFile('video')) {
+                $videoName = time().'_'.$request->video->getClientOriginalName();
+                $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+                $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            }
 
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
         } else {
@@ -90,12 +94,17 @@ class PropertyController extends Controller
             $data['created_at'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
            // // dd($request->all());
-            // $imageName = time().'_'.$request->image->getClientOriginalName();
-            // $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-            // $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            // $videoName = time().'_'.$request->video->getClientOriginalName();
-            // $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-            // $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            if ($request->hasFile('image')) {
+                $imageName = time().'_'.$request->image->getClientOriginalName();
+                $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+                $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            }
+
+            if ($request->hasFile('video')) {
+                $videoName = time().'_'.$request->video->getClientOriginalName();
+                $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+                $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            }
 
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
         }
