@@ -39,7 +39,117 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 })
 
 
-// เช็คค่าว่างใน modal
+
+// เช็คค่าว่างหน้า login
+$(document).ready(function() {
+  const forms = $('.needs-validation');
+    forms.on('submit', function(event) {
+      const firstNameforms = $('#password');
+      if( !firstNameforms.val()  ){
+        firstNameforms.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        firstNameforms.removeClass('is-invalid');
+        firstNameforms.addClass('is-valid');
+      }
+ 
+    });
+    
+  });
+
+
+      // เปิด-ปิด password 
+      $(".toggle-password").click(function() { 
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+          input.attr("type", "text");
+        } else {
+          input.attr("type", "password");
+        }
+      });
+
+
+      function onSubmit(token) {
+        document.getElementById("registerForm").submit();
+      }
+
+// รับ function จากหน้าสมัคร//
+$('body').on('click', '#exampleModal', function(event) {
+        var forms = $('.needs-validation');
+        $(".toggle-password").click(function() {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+              input.attr("type", "text");
+            } else {
+              input.attr("type", "password");
+            }
+          });
+
+        $('.modal-body form').submit(function(event) {
+            onChange(event);
+        });
+    });
+    
+    // เช็คค่าต่างๆหน้าสมัคร 
+    function onChange(event) {
+        const password = $('#modal_password');
+        const confirm = $('#modal_confirmPassword');
+        const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        // ตรวจสอบว่า modal_password มีค่าว่างหรือไม่
+        if (!password.val()) {
+            password.addClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            password.removeClass('is-invalid');
+            password.addClass('is-valid');
+        }
+        // ตรวจสอบว่า modal_confirmPassword มีค่าว่างหรือไม่
+        if (!confirm.val()) {
+            confirm.addClass('is-invalid');
+        } else {
+            confirm.removeClass('is-invalid');
+            confirm.addClass('is-valid');
+        }
+
+        // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
+        if (confirm.val() !== password.val()) {
+            confirm[0].setCustomValidity('Passwords do not match');
+            confirm.addClass('border-danger');
+            confirm.removeClass('is-valid');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            confirm.removeClass('border-danger ');
+            confirm[0].setCustomValidity('');
+        }
+        
+        if (!passwordValidation.test(password.val())) {
+            password[0].setCustomValidity('Password is not formation');
+            password.addClass('border-danger ');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            password[0].setCustomValidity('');
+            password.removeClass('border-danger ');
+        }
+    
+    }
+
+  
+ 
+  
+
+
+
+
+
+  ///////////////////////////////////////////////////////////////////////
+  // เช็คค่าว่างใน modal
 // $('body').on('click', '#exampleModal', function() {
 //   var forms = $('.needs-validation');
 //   $('#exampleModal form').submit(function(event) {
@@ -125,116 +235,3 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 //         confirm.addClass('is-valid');
 //     }
 // }
-
-    
-
-// เช็คค่าว่างหน้า login
-$(document).ready(function() {
-    var forms = $('.needs-validation');
-    forms.on('submit', function(event) {
-      var firstNameforms = $('#password');
-        
-      if( !firstNameforms.val()  ){
-        firstNameforms.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
-      } else {
-        firstNameforms.removeClass('is-invalid');
-        firstNameforms.addClass('is-valid');
-      }
- 
-    });
-
-  });
-
-
-// ทดลอง //
-$('body').on('click', '#exampleModal', function(event) {
-        var forms = $('.needs-validation');
-        $(".toggle-password").click(function() {
-
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $($(this).attr("toggle"));
-            if (input.attr("type") == "password") {
-              input.attr("type", "text");
-            } else {
-              input.attr("type", "password");
-            }
-          });
-
-        $('.modal-body form').submit(function(event) {
-            onChange(event);
-        });
-    });
-    
-    function onChange(event) {
-        const password = $('#modal_password');
-        const confirm = $('#modal_confirmPassword');
-        const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    
-
-        // ตรวจสอบว่า modal_password มีค่าว่างหรือไม่
-        if (!password.val()) {
-            password.addClass('is-invalid');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            password.removeClass('is-invalid');
-            password.addClass('is-valid');
-        }
-        // ตรวจสอบว่า modal_confirmPassword มีค่าว่างหรือไม่
-        if (!confirm.val()) {
-            confirm.addClass('is-invalid');
-        } else {
-            confirm.removeClass('is-invalid');
-            confirm.addClass('is-valid');
-        }
-
-        // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
-        if (confirm.val() !== password.val()) {
-            confirm[0].setCustomValidity('Passwords do not match');
-            confirm.addClass('border-danger');
-            confirm.removeClass('is-valid');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            confirm.removeClass('border-danger ');
-            confirm[0].setCustomValidity('');
-        }
-        
-        if (passwordValidation.test(password.val())) {
-            password[0].setCustomValidity('Password is not formation');
-            password.addClass('border-danger ');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            password[0].setCustomValidity('');
-            password.removeClass('border-danger ');
-        }
-    
-    }
-
-
-        $(".toggle-password").click(function() {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $($(this).attr("toggle"));
-            if (input.attr("type") == "password") {
-              input.attr("type", "text");
-            } else {
-              input.attr("type", "password");
-            }
-          });
-
-
-          function onSubmit(token) {
-            document.getElementById("registerForm").submit();
-          }
-  
- 
-  
-
-
-
-
-
-  

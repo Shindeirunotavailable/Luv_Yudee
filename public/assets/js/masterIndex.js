@@ -267,14 +267,13 @@ document.addEventListener('DOMContentLoaded', function() {
 //         $(this).addClass('was-validated');
 //       }
 //     });
-
 // });
 
 
 // อนิเมชั่น button เครื่องบิน //
-    $('#submitModalBtn').on('click', function () {
-      $('#start').prop('checked', true);
-    });
+  //   $('#submitModalBtn').on('click', function () {
+  //     $('#start').prop('checked', true);
+  //   });
 
     $('body').on('click', '#exampleModal', function() {
       $('#submitModal').on('click', function () {
