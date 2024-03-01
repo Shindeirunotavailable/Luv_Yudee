@@ -18,7 +18,7 @@
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
-                            <form class="needs-validation">
+                            <form action="{{ url('/loginform') }}"  method="POST" >
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700">Email</label>
@@ -28,10 +28,8 @@
                                     <label class="label-700">Password</label>
                                     <div class="d-flex justify-content-end">
                                         <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
-
                                     </div>
-
-                                        <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password">
+                                        <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password" required>
                                         <div class="invalid-feedback">
                                             <a> กรุณากรอก Password</a>
                                         </div>
@@ -40,19 +38,18 @@
                                 <div class="text-right">
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your password?</button>
                                 </div>
-
                                 <div class="pt-10 pb-10">
-                                   <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
-                                    id="submitModalBtn"> <i class="fa-regular fa-paper-plane "></i> Submit
+                                   <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="loginSubmit"> 
+                                        <i class="fa-regular fa-paper-plane "></i> Submit
                                    </button> 
                                 </div>
 
                                 @if ($errors->any())
                                     <h6 class="colorRed">{{$errors->first()}}</h6>
                                 @endif
-                                <div id="result"> </div>
-
+                                {{-- <div id="result"> </div> --}}
                             </form>
+
                             <div class="text-center mt-3">
                                 <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up? 
                                     <span class="colorBlue">Create an account. </span> </a>
