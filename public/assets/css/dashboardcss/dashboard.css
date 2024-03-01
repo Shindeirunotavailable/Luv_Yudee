@@ -450,7 +450,9 @@ input:focus-visible {
     background-color: #fff;
     background-clip: padding-box;
 }
-
+.select2-dropdown {
+    z-index: 3;
+}
 .select2-container--default .select2-selection--single  {
     display: block;
     width: 100%;

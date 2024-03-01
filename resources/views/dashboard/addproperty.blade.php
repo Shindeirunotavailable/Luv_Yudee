@@ -113,7 +113,7 @@
                                                     <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
                                                     @if (isset($data['id_properties']))
                                                         <div class="col-4 mt-0 row justify-content-center mb-6">
-                                                            <img src="{{ $data['property']->image_url }}" alt="Property Image" style="width: 100%;">
+                                                            <img src="{{ $data['property']->image_url }}" alt="Property Image" style="width: 50%;">
                                                         </div>
                                                     @endif
 
