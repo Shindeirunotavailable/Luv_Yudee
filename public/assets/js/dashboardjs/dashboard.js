@@ -272,9 +272,11 @@ function formatCurrency(input, blur) {
     var provinces = $('#provinces');
     var amphures = $('#amphures');
     var districts = $('#districts');
+    var amenities = $('#amenities');
     var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
+    amenities
     if( !titleproperty.val()  ){
             titleproperty.addClass('is-invalid');
                 event.preventDefault();
@@ -337,3 +339,22 @@ function formatCurrency(input, blur) {
     }
 
 });
+$('#submitpp').click(function(event) {
+    var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
+    var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
+    var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
+    var error = $('#error');
+    var isChecked = false;
+    checkboxes.each(function() {
+        if ($(this).is(':checked')) {
+            isChecked = true;
+            return false;
+        }
+    });
+    if (!isChecked) {
+        error.addClass('is-invalid');
+        error.after(errorElement);
+        event.preventDefault();
+    }
+});
+
