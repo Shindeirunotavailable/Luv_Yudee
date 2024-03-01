@@ -361,6 +361,28 @@ function formatCurrency(input, blur) {
             districts.next('.additional-message').remove();
         }
 
+        provinces.on('input', function() {
+            if (!$(this).val()) {
+                $(this).next('.additional-message').remove();
+            } else {
+                $(this).next('.additional-message').remove();
+            }
+        });
+        amphures.on('input', function() {
+            if (!$(this).val()) {
+                $(this).next('.additional-message').remove();
+            } else {
+                $(this).next('.additional-message').remove();
+            }
+        });
+        districts.on('input', function() {
+            if (!$(this).val()) {
+                $(this).next('.additional-message').remove();
+            } else {
+                $(this).next('.additional-message').remove();
+            }
+        });
+
 });
 $('#submitpp').click(function(event) {
     var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
