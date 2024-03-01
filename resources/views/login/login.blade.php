@@ -16,9 +16,20 @@
                                 {{-- <img src="https://img5.pic.in.th/file/secure-sv1/YuuDee2.png" class="logo-sm logo-md"> --}}
                                 <h2 class="mb-3 pt-3 font-weight-bold">Sign in</h2>
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
+
+
+                                @if ($errors->any())
+                                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <strong >{{$errors->first()}}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                   </button>
+                                 </div>
+                              @endif
+
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
-                            <form action="{{ url('/loginform') }}"  method="POST" >
+                            <form action="{{ url('/loginform') }}"  method="POST" class="needs-validation" id="loginForm">
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700">Email</label>
@@ -29,7 +40,7 @@
                                     <div class="d-flex justify-content-end">
                                         <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
                                     </div>
-                                        <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password" required>
+                                        <input type="password" name="password" id="password" class="form-control " placeholder="Enter Password">
                                         <div class="invalid-feedback">
                                             <a> กรุณากรอก Password</a>
                                         </div>
@@ -39,14 +50,13 @@
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your password?</button>
                                 </div>
                                 <div class="pt-10 pb-10">
-                                   <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="loginSubmit"> 
+                                   <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="loginSubmit" 
+                                   data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmit'> 
                                         <i class="fa-regular fa-paper-plane "></i> Submit
                                    </button> 
                                 </div>
 
-                                @if ($errors->any())
-                                    <h6 class="colorRed">{{$errors->first()}}</h6>
-                                @endif
+         
                                 {{-- <div id="result"> </div> --}}
                             </form>
 

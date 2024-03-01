@@ -54,7 +54,7 @@ class LoginController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        $errorMessages = "รหัสผ่านไม่ถูกต้อง";
+        $errorMessages = "อีเมล์หรือรหัสผ่านไม่ถูกต้อง";
 
 
         $account = login::where('email', $request->email)->first();
@@ -96,37 +96,23 @@ class LoginController extends Controller
         Mail::to($username)->send(new WelcomeEmail());
         // return view("searchResult.searchResult");
         return redirect('/addproperty');
-
     }
     return back()->withErrors($errorMessages)->withInput();
 }
-
-
-
-
-
 
 // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
     public function lostpassword(Request $request){ 
         $email = $request->input('email');
     
-        if (empty($email)) {
-            // ถ้า email เป็นค่าว่าง
-            return 'กรุณากรอกข้อมูล';
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            // ถ้า email ไม่ถูกต้อง
-            return 'กรุณากรอก E-mail ในรูปแบบที่ถูกต้อง';
+        // ถ้ามี email ส่งมาและถูกต้อง
+        $email = DB::table('createaccounts')->where('Username', $email)->first();
+        if ($email) {
+            // ถ้าเจอ email ในฐานข้อมูล
+            Mail::to($email)->send(new WelcomeEmail());
         } else {
-            // ถ้ามี email ส่งมาและถูกต้อง
-            $email = DB::table('createaccounts')->where('Username', $email)->first();
-            if ($email) {
-                // ถ้าเจอ email ในฐานข้อมูล
-                return '<script>window.location.href = window.location.href;</script>';
-            } else {
-                // ถ้าไม่เจอ email ในฐานข้อมูล
-                return 'ไม่พบอีเมล์นี้ในระบบกรุณาลองใหม่อีกครั้ง';
-            }
+            // ถ้าไม่เจอ email ในฐานข้อมูล
+            return 'ไม่พบอีเมล์นี้ในระบบกรุณาลองใหม่อีกครั้ง';
         }
     }
     

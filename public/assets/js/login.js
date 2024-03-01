@@ -41,7 +41,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
 
 // เช็คค่าว่างหน้า login
-      $(document).ready(function() {
+      $(".card").click(function() {
         const forms = $('.needs-validation');
           forms.on('submit', function(event) {
             const firstNameforms = $('#password');
@@ -74,6 +74,10 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
         document.getElementById("registerForm").submit();
       }
 
+      function submitLogin(token) {
+        document.getElementById("loginSubmit").submit();
+      }
+      
 // รับ function จากหน้าสมัคร//
 $('body').on('click', '#exampleModal', function(event) {
         var forms = $('.needs-validation');
@@ -128,7 +132,10 @@ $('body').on('click', '#exampleModal', function(event) {
         if (!passwordValidation.test(password.val())) {
             password[0].setCustomValidity('Password is not formation');
             password.addClass('border-danger ');
+            confirm.addClass('border-danger ');
             password.removeClass('is-valid');
+            confirm.removeClass('is-valid');
+
             event.preventDefault();
             event.stopPropagation();
         } else {
