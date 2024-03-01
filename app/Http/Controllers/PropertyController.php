@@ -117,11 +117,10 @@ class PropertyController extends Controller
     public function db_provinces(Request $request)
     {
         if ($request->has('function') && $request->input('function') === 'provinces') {
-
             $id = $request->input('id');
-            $Amphure = Amphure::where('province_id', $id)->get();
+            $amphure = Amphure::where('province_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกอำเภอ</option>';
-            foreach ($Amphure as $value) {
+            foreach ($amphure as $value) {
                 $options .= '<option value="' . $value->id . ' ">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
@@ -131,7 +130,7 @@ class PropertyController extends Controller
             $districts = District::where('amphure_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกตำบล</option>';
             foreach ($districts as $value) {
-                $options .= '<option required value="' . $value->id . ' ">'. $value->name_th . '</option>';
+                $options .= '<option value="' . $value->id . ' ">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
         }
