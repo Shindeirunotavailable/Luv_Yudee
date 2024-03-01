@@ -43,7 +43,6 @@ class PropertyController extends Controller
     // PropertyController
     public function updatedata(Request $request)
     {
-
         $data = array(
             'title' => $request['title'],
             'description' => json_encode($request['description']),

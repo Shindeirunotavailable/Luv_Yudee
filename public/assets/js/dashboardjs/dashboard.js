@@ -254,11 +254,9 @@ function formatCurrency(input, blur) {
     var provinces = $('#provinces');
     var amphures = $('#amphures');
     var districts = $('#districts');
-    var amenities = $('#amenities');
     var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-    amenities
     if( !titleproperty.val()  ){
             titleproperty.addClass('is-invalid');
                 event.preventDefault();
@@ -271,6 +269,22 @@ function formatCurrency(input, blur) {
                 titleproperty.removeClass('is-invalid')
                 price.removeClass('is-invalid')
         }
+
+        titleproperty.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        price.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
 
     if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
             address.addClass('is-invalid');
@@ -290,35 +304,62 @@ function formatCurrency(input, blur) {
             longitudeInput.removeClass('is-invalid')
         }
 
-    if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+        address.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        latitudeInput.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        longitudeInput.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
             provinces.addClass('is-invalid');
+            provinces.next('.additional-message').remove();
             provinces.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
         } else {
             provinces.removeClass('is-invalid');
             provinces.next('.additional-message').remove();
-    }
+        }
 
-    if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+        if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
             amphures.addClass('is-invalid');
+            amphures.next('.additional-message').remove();
             amphures.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
         } else {
             amphures.removeClass('is-invalid');
             amphures.next('.additional-message').remove();
-    }
+        }
 
-    if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+        if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
             districts.addClass('is-invalid');
+            districts.next('.additional-message').remove();
             districts.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
         } else {
             districts.removeClass('is-invalid');
             districts.next('.additional-message').remove();
-    }
+        }
 
 });
 $('#submitpp').click(function(event) {
@@ -334,9 +375,8 @@ $('#submitpp').click(function(event) {
         }
     });
     if (!isChecked) {
-        error.addClass('is-invalid');
-        error.after(errorElement);
+        error.next('.invalid-feedback').remove();
+        error.addClass('is-invalid').after(errorElement);
         event.preventDefault();
     }
 });
-

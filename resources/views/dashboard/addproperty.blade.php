@@ -110,7 +110,13 @@
                                                             <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
                                                             <input name="image" type="file" style="visibility:hidden;"  id="customIMG"  accept="image/*"  />
                                                     </div>
-                                                    <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
+                                                    <div class="col-4 mt-0 row justify-content-center"  id="fileList"></div>
+                                                    @if (isset($data['id_properties']))
+                                                        <div class="col-sm-12 mt-0 row justify-content-center">
+                                                            <img src="{{ $data['property']->image_url }}" alt="Property Image">
+                                                        </div>
+                                                    @endif
+
                                                 </div>
                                                 <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                 <div class="row justify-content-center">
@@ -119,6 +125,11 @@
                                                         <input name="video" type="file" style="visibility:hidden;"  id="customVdo"  accept="video/*"/>
                                                     </div>
                                                     <div class="col-sm-12 mt-0 row justify-content-center"  id="VdoList"></div>
+                                                    @if (isset($data['id_properties']))
+                                                        <div class="col-4 mt-0 row justify-content-center">
+                                                            <video src="{{ $data['property']->video_url }}" controls style="width: 100%;"></video>
+                                                        </div>
+                                                    @endif
                                                 </div>
 
                                         </div>
