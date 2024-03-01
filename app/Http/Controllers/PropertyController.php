@@ -74,7 +74,7 @@ class PropertyController extends Controller
         );
         if (isset($request['id_properties'])) {
             $id_properties = $request['id_properties'];
-            $data['updated_at'] = date('Y-m-d H:i:s');
+            $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
             if ($request->hasFile('image')) {
                 $imageName = time().'_'.$request->image->getClientOriginalName();
@@ -90,8 +90,8 @@ class PropertyController extends Controller
 
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
         } else {
-            $data['updated_at'] = date('Y-m-d H:i:s');
-            $data['created_at'] = date('Y-m-d H:i:s');
+            $data['updated_datetime'] = date('Y-m-d H:i:s');
+            $data['created_datetime'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
            // // dd($request->all());
             if ($request->hasFile('image')) {
