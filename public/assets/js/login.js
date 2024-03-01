@@ -41,22 +41,21 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
 
 // เช็คค่าว่างหน้า login
-$(document).ready(function() {
-  const forms = $('.needs-validation');
-    forms.on('submit', function(event) {
-      const firstNameforms = $('#password');
-      if( !firstNameforms.val()  ){
-        firstNameforms.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
-      } else {
-        firstNameforms.removeClass('is-invalid');
-        firstNameforms.addClass('is-valid');
-      }
- 
-    });
-    
-  });
+      $(document).ready(function() {
+        const forms = $('.needs-validation');
+          forms.on('submit', function(event) {
+            const firstNameforms = $('#password');
+            if( !firstNameforms.val()  ){
+              firstNameforms.addClass('is-invalid');
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              firstNameforms.removeClass('is-invalid');
+              firstNameforms.addClass('is-valid');
+            }
+      
+          });
+        });
 
 
       // เปิด-ปิด password 
@@ -79,7 +78,6 @@ $(document).ready(function() {
 $('body').on('click', '#exampleModal', function(event) {
         var forms = $('.needs-validation');
         $(".toggle-password").click(function() {
-
             $(this).toggleClass("fa-eye fa-eye-slash");
             var input = $($(this).attr("toggle"));
             if (input.attr("type") == "password") {
@@ -88,7 +86,6 @@ $('body').on('click', '#exampleModal', function(event) {
               input.attr("type", "password");
             }
           });
-
         $('.modal-body form').submit(function(event) {
             onChange(event);
         });
@@ -105,6 +102,7 @@ $('body').on('click', '#exampleModal', function(event) {
             event.preventDefault();
             event.stopPropagation();
         } else {
+            password.removeClass('border-danger ');
             password.removeClass('is-invalid');
             password.addClass('is-valid');
         }
@@ -115,7 +113,6 @@ $('body').on('click', '#exampleModal', function(event) {
             confirm.removeClass('is-invalid');
             confirm.addClass('is-valid');
         }
-
         // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
         if (confirm.val() !== password.val()) {
             confirm[0].setCustomValidity('Passwords do not match');
@@ -131,6 +128,7 @@ $('body').on('click', '#exampleModal', function(event) {
         if (!passwordValidation.test(password.val())) {
             password[0].setCustomValidity('Password is not formation');
             password.addClass('border-danger ');
+            password.removeClass('is-valid');
             event.preventDefault();
             event.stopPropagation();
         } else {
