@@ -141,10 +141,10 @@
                                                         <label
                                                             class="heading-color ff-heading font-weight-600 mb-d-10">Country/State *</label>
                                                         <div class="">
-                                                            <select  name="provinces" id="provinces" class="form-control" >
+                                                            <select  name="provinces" id="provinces" class="form-control" required>
                                                                 <option  value="" selected disabled ></option>
                                                                 @foreach ($data['provinces'] as $value)
-                                                                    <option required value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
+                                                                    <option value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
                                                                         {{ $value['name_th'] }}
                                                                     </option>
                                                                 @endforeach
@@ -183,7 +183,7 @@
                                                                         </option>
                                                                     @endforeach
                                                                 @endif
-                                                            </select><br>
+                                                            </select>
 
                                                         </div>
                                                     </div>
@@ -296,9 +296,9 @@
                                 <div class="tab-pane fade" id="nav-amenities" role="tabpanel"
                                     aria-labelledby="nav-amenities-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                        <h4 class="fw-600 title fs-17 mb-6">Select Amenities</h4>
+                                        <h4 class="fw-600 title fs-17 mb-6" id="error">Select Amenities</h4>
                                         <div class="row">
-                                            <div class="row-ap flex-lg-row flex-wrap">
+                                            <div  class="row-ap flex-lg-row flex-wrap">
                                                 @php
                                                 $amenities = isset($data['property']->amenities) ? explode(',', $data['property']->amenities) : [];
                                                 $amenitiesArray = $data['amenities']->toArray();
@@ -318,8 +318,9 @@
                                                     @endforeach
                                             </div>
                                         </div>
+                                        <button type="submit" id="submitpp" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2 d-flex justify-content-end">Submit</button>
+
                                 </div>
 
                             </div>

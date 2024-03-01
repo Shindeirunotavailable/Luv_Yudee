@@ -74,7 +74,7 @@ class PropertyController extends Controller
         );
         if (isset($request['id_properties'])) {
             $id_properties = $request['id_properties'];
-            $data['updated_at'] = date('Y-m-d H:i:s');
+            $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
             if ($request->hasFile('image')) {
                 $imageName = time().'_'.$request->image->getClientOriginalName();
@@ -90,8 +90,8 @@ class PropertyController extends Controller
 
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
         } else {
-            $data['updated_at'] = date('Y-m-d H:i:s');
-            $data['created_at'] = date('Y-m-d H:i:s');
+            $data['updated_datetime'] = date('Y-m-d H:i:s');
+            $data['created_datetime'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
            // // dd($request->all());
             if ($request->hasFile('image')) {
@@ -117,11 +117,10 @@ class PropertyController extends Controller
     public function db_provinces(Request $request)
     {
         if ($request->has('function') && $request->input('function') === 'provinces') {
-
             $id = $request->input('id');
-            $Amphure = Amphure::where('province_id', $id)->get();
+            $amphure = Amphure::where('province_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกอำเภอ</option>';
-            foreach ($Amphure as $value) {
+            foreach ($amphure as $value) {
                 $options .= '<option value="' . $value->id . ' ">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
@@ -131,7 +130,7 @@ class PropertyController extends Controller
             $districts = District::where('amphure_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกตำบล</option>';
             foreach ($districts as $value) {
-                $options .= '<option value="' . $value->id . '">' . $value->name_th . '</option>';
+                $options .= '<option value="' . $value->id . ' ">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
         }

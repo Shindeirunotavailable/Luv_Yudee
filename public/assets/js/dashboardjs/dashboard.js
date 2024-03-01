@@ -140,12 +140,7 @@ $(document).ready(function() {
                  toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
                  , 'NumberedList' ]
             } )
-            // .then(editor => {
-            //     // console.log(editor);
-            // })
-
             .catch(error => {
-                // console.error(error);
             });
     }
 
@@ -168,14 +163,6 @@ $(document).ready(function() {
                         'margin-bottom': '20px'
                     });
                     colDiv.append(img);
-
-                    // // Add delete button for each image
-                    // var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('X');
-                    // deleteButton.click(function() {
-                    //     $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
-                    // });
-                    // colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
-
                     fileList.append(colDiv);
                 }
             });
@@ -199,11 +186,6 @@ $(document).ready(function() {
                         'margin-bottom': '20px'
                     });
                     colDiv.append(video);
-                    // var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('ลบ');
-                    // deleteButton.click(function() {
-                    //     $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
-                    // });
-                    // colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
                     VdoList.append(colDiv);
                 }
             });
@@ -269,7 +251,14 @@ function formatCurrency(input, blur) {
     var address = $('#address');
     var latitudeInput = $('#latitudeInput');
     var longitudeInput = $('#longitudeInput');
-    address
+    var provinces = $('#provinces');
+    var amphures = $('#amphures');
+    var districts = $('#districts');
+    var amenities = $('#amenities');
+    var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
+    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+
+    amenities
     if( !titleproperty.val()  ){
             titleproperty.addClass('is-invalid');
                 event.preventDefault();
@@ -279,13 +268,9 @@ function formatCurrency(input, blur) {
                 event.preventDefault();
                 event.stopPropagation();
               }else {
-                // titleproperty.removeClass('is-invalid');
-                // titleproperty.addClass('is-valid');
-                // price.removeClass('is-invalid');
-                // price.addClass('is-valid');
                 titleproperty.removeClass('is-invalid')
                 price.removeClass('is-invalid')
-            }
+        }
 
     if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
             address.addClass('is-invalid');
@@ -300,9 +285,58 @@ function formatCurrency(input, blur) {
                 event.preventDefault();
                 event.stopPropagation();
             }else {
-            // address.removeClass('is-invalid');
-            // address.addClass('is-valid');
             address.removeClass('is-invalid')
+            latitudeInput.removeClass('is-invalid')
+            longitudeInput.removeClass('is-invalid')
         }
 
+    if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            provinces.addClass('is-invalid');
+            provinces.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            provinces.removeClass('is-invalid');
+            provinces.next('.additional-message').remove();
+    }
+
+    if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            amphures.addClass('is-invalid');
+            amphures.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            amphures.removeClass('is-invalid');
+            amphures.next('.additional-message').remove();
+    }
+
+    if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            districts.addClass('is-invalid');
+            districts.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            districts.removeClass('is-invalid');
+            districts.next('.additional-message').remove();
+    }
+
 });
+$('#submitpp').click(function(event) {
+    var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
+    var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
+    var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
+    var error = $('#error');
+    var isChecked = false;
+    checkboxes.each(function() {
+        if ($(this).is(':checked')) {
+            isChecked = true;
+            return false;
+        }
+    });
+    if (!isChecked) {
+        error.addClass('is-invalid');
+        error.after(errorElement);
+        event.preventDefault();
+    }
+});
+
