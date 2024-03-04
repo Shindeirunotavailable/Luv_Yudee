@@ -1,3 +1,16 @@
+$(document).ready(function() {
+  let scrolls = $(".scrollToHome");
+
+  $(window).on("scroll", function() {
+    $(this).scrollTop() >= 500 ? scrolls.addClass("show") : scrolls.removeClass("show");
+  });
+
+  scrolls.on("click", function() {
+    $("html, body").animate({
+      scrollTop: 0
+    }, "slow");
+  });
+});
 
 /*slide cycle */
 var swiper = new Swiper(".swiperess", {
@@ -46,7 +59,7 @@ var swiper = new Swiper(".swiperess", {
 
 /* slide property-city-slider */
 var swiper = new Swiper(".swiper", {
-  slidesPerView: 6,
+  slidesPerView: 7,
   spaceBetween: 28,
   slidesPerGroup: 1,
   loop: true,
@@ -71,11 +84,20 @@ var swiper = new Swiper(".swiper", {
     300: {
       slidesPerView: 2,
     },
-    780: {
+    516: {
       slidesPerView: 3,
+    },
+    650: {
+      slidesPerView: 4,
+    },
+    900: {
+      slidesPerView: 5,
     },
     1000: {
       slidesPerView: 6,
+    },
+    1200: {
+      slidesPerView: 7,
     }
   }
 });
@@ -117,47 +139,17 @@ var swiper = new Swiper(".swipers", {
       },
     }
 });
-// var swiper = new Swiper(".swipers", {
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   slidesPerGroup: 1,
-//   loop: false,
-//   // centerSlide: "true",
-//   // grapCurser: "true",
-//   // fade: "true",
-//   // loopFillGroupWithBlank: true,
-//   pagination: {
-//     el: "",
-//     clickable: true,
-//     r
-//   },
-//   navigation: {
-//     nextEl: "._nexts",
-//     prevEl: "._prevs",
-//   },
-//   breakpoints: {
-//     0: {
-//       slidesPerView: 1,
-//     },
-//     950: {
-//       slidesPerView: 2,
-//     },
-//     1000: {
-//       slidesPerView: 3,
-//     }
-//   }
-// });
 /*------------------------------------------------------------------------ */
 
 var swiper = new Swiper(".swiperes", {
-  slidesPerView: 6,
+  slidesPerView: 7,
   spaceBetween: 30,
   slidesPerGroup: 1,
   loop: true,
   // loopFillGroupWithBlank: true,
   
   autoplay: {
-    delay: 3000, // Autoplay delay in milliseconds ทำให้มันสไลด์เอง
+    delay: 3000,  //Autoplay delay in milliseconds ทำให้มันสไลด์เอง
   },
   pagination: {
     el: ".swiper-pagination-bullet",
@@ -176,11 +168,14 @@ var swiper = new Swiper(".swiperes", {
     300: {
       slidesPerView: 2,
     },
-    780: {
-      slidesPerView: 3,
+    768: {
+      slidesPerView: 4,
     },
     1000: {
       slidesPerView: 6,
+    },
+    1200: {
+      slidesPerView: 7,
     }
   }
 });
@@ -220,6 +215,42 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/*ตัวเลข */
+const counts = document.querySelectorAll('.count');
+const speed = 200;
+
+function upData() {
+  counts.forEach((counter) => {
+    const target = Number(counter.getAttribute('data-target'));
+    const count = Number(counter.innerText);
+    const inc = target / speed;
+    if (count < target) {
+      counter.innerText = Math.floor(inc + count);
+      setTimeout(upData, 1);
+    } else {
+      counter.innerText = target;
+    }
+  });
+}
+
+let isActivated = false;
+
+document.addEventListener('scroll', function() {
+  if (!isActivated && isElementInViewport(document.getElementById('num'))) {
+    upData();
+    isActivated = true;
+  }
+});
+
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 
 
 
