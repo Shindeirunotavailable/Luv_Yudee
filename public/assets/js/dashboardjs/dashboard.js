@@ -251,9 +251,13 @@ function formatCurrency(input, blur) {
     var address = $('#address');
     var latitudeInput = $('#latitudeInput');
     var longitudeInput = $('#longitudeInput');
+
     var provinces = $('#provinces');
+    var errorprovinces = $('#errorprovinces');
     var amphures = $('#amphures');
+    var erroramphures = $('#erroramphures');
     var districts = $('#districts');
+    var errordistricts = $('#errordistricts');
     var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
@@ -322,48 +326,48 @@ function formatCurrency(input, blur) {
         });
 
         if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-            provinces.addClass('is-invalid');
-            provinces.next('.additional-message').remove();
-            provinces.after(errorElement);
+            errorprovinces.addClass('is-invalid');
+            errorprovinces.next('.additional-message').remove();
+            errorprovinces.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
         }
 
         if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-            amphures.addClass('is-invalid');
-            amphures.next('.additional-message').remove();
-            amphures.after(errorElement);
+            erroramphures.addClass('is-invalid');
+            erroramphures.next('.additional-message').remove();
+            erroramphures.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
         }
 
         if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-            districts.addClass('is-invalid');
-            districts.next('.additional-message').remove();
-            districts.after(errorElement);
+            errordistricts.addClass('is-invalid');
+            errordistricts.next('.additional-message').remove();
+            errordistricts.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
         }
 
         provinces.on('input', function() {
-            if (!$(this).val()) {
-                $(this).next('.additional-message').remove();
+            if (!$('#errorprovinces').val()) {
+                $('#errorprovinces').next('.additional-message').remove();
             } else {
-                $(this).next('.additional-message').remove();
+                $('#errorprovinces').next('.additional-message').remove();
             }
         });
         amphures.on('input', function() {
-            if (!$(this).val()) {
-                $(this).next('.additional-message').remove();
+            if (!$('#erroramphures').val()) {
+                $('#erroramphures').next('.additional-message').remove();
             } else {
-                $(this).next('.additional-message').remove();
+                $('#erroramphures').next('.additional-message').remove();
             }
         });
         districts.on('input', function() {
-            if (!$(this).val()) {
-                $(this).next('.additional-message').remove();
+            if (!$('#errordistricts').val()) {
+                $('#errordistricts').next('.additional-message').remove();
             } else {
-                $(this).next('.additional-message').remove();
+                $('#errordistricts').next('.additional-message').remove();
             }
         });
 
