@@ -1,9 +1,10 @@
+{{--boxForRent--}}
 <section class="pt-0 pb-60 mx20-lg">
     <div class="max-width1460-con position-relative mr-auto ml-auto">
         <div class="row wow fadeInUp" data-wow-delay="100ms">
             <div class="col-lg-6">
                 <div class="main-title-2">
-                    <h2 class="title">Best Properties For Sale</h2>
+                    <h2 class="title">Best Properties For Rent</h2>
                     <p class="par">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
                 </div>
             </div>
@@ -24,9 +25,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- test1 --}}
-
         <div class="row">
             <div class="col-lg-12 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
                 <div class="pro-city-slider position-relative ">
@@ -42,10 +40,9 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-3.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-02.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
-        
                                         <div class="p-10">
                                             <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
                                             <p class="list-text">San Diego City, CA, USA</p>
@@ -80,7 +77,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-4.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-05.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -122,7 +119,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-3.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-06.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -163,7 +160,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-1.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-07.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -201,7 +198,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-2.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-02.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -242,7 +239,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-1.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-05.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -283,7 +280,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-3.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-06.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -321,7 +318,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-4.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-07.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -363,7 +360,7 @@
                                             <div class="text-block text-center">
                                                 <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
                                             </div>
-                                            <img src="{{ asset('/assets/images/as-1.jpg') }}" alt="listings"
+                                            <img src="{{ asset('/assets/images/properties-grid-02.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
         
@@ -402,3 +399,4 @@
         </div>
     </div>
 </section>
+ {{--end boxForRent--}}

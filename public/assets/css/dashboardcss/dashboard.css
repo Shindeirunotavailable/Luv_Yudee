@@ -135,7 +135,7 @@
     height: calc(100% - 87px);
     left: 0;
     /* margin-top: 87px; เปลี่ยนเป็นtop:87*/
-    top: 87px;
+    top: 97px;
     overflow-y: scroll;
     padding: 60px 30px 40px;
     position: fixed;
@@ -175,7 +175,13 @@
     border-radius: 16px;
     padding: 60px 60px 20px;
     width: 100%;
+    /* ชั่วคราว */
     margin-top:-80px;
+}
+@media (max-width: 426px) {
+    .dashboard__content {
+        margin-top:0px;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -444,7 +450,9 @@ input:focus-visible {
     background-color: #fff;
     background-clip: padding-box;
 }
-
+.select2-dropdown {
+    z-index: 3;
+}
 .select2-container--default .select2-selection--single  {
     display: block;
     width: 100%;
@@ -719,9 +727,20 @@ input[type="submit"] {
   .tab-content-ds {
     padding: 30px;
     box-shadow: 0 0 10px 0 rgba(51,51,51,.1);
-    border-radius: 0 .3125rem .3125rem .3125rem
-  }
-
+    border-radius: 0 .3125rem .3125rem .3125rem;
+    /* ชั่วคราว */
+    padding-bottom: 40px;
+}
+@media (max-width: 768px) and (min-width: 427px){
+    .tab-content-ds {
+        padding-top: 120px;
+    }
+}
+@media (max-width: 426px) {
+    .tab-content-ds {
+        margin-top:-50px;
+    }
+}
 @media (max-width: 426px) {
 
     .tab-content-ds {

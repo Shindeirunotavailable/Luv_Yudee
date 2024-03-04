@@ -1,5 +1,5 @@
 <section class="pt-30 pb-0">
-    <div class="bgc-thm-light mr-auto ml-auto max-width1600  pt60-lg pb60-lg bdr-24 position-relative overflow-hidden mx20-lg">
+    <div class="bgc-thm-light mr-auto ml-auto max-width1460-con  pt60-lg pb60-lg bdr-24 position-relative overflow-hidden mx20-lg">
             <div class="card bg-color-b border border border-0">
                 <div class="row no-gutters ">
                   <div class="col-md-6 col-lg-5 col-12  md-pl-30 xs-pl-15 order-md-last">
@@ -7,7 +7,7 @@
                   </div>
                   <div class="col-md-6 col-lg-7 md-pl-30 xs-pl-15 md-pt-10 md-pl-20">
                     <div class="card-body row justify-content-md-center justify-content-center ">
-                        <div class="why-chose-list style2 pt-30 pb-30 md-pl-30 md-pr-30 lg-pr-30 lg-pl-30">
+                        <div class="why-chose-list style2 pt-30 pb-30 md-pl-30 md-pr-15 lg-pr-30 lg-pl-30">
                             <h2 class="card-title text-capitalize mb-30">Let’s find the right <br class="d-none d-md-block"> selling option for you</h2>
                             <div class="list-one d-flex align-items-start mb-30"> 
                                 <i class="list-icon flex-shrink-0 fa-solid fa-user-shield"></i>
@@ -30,9 +30,11 @@
                                     <p class="card-text mb-0 fs-15">Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.</p>
                                 </div> 
                             </div>
-                            <button class="user-arrow user-btn btn-yuudee add-property rounded-pill text-a pt-1" href="/home-v4">Learn More
-                                <i class="fal fa-arrow-right-long"></i>
-                            </button>
+                            <div class="mobile-b">
+                                <a class="user-arrow user-btn btn-yuudee add-property rounded-pill text-a ptr-7" href="#">Learn More
+                                    <i class="fa-solid fa-arrow-right fa-lg"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                   </div>

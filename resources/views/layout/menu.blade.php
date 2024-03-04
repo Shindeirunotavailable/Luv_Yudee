@@ -37,9 +37,9 @@
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
                             <span class="d-xl-block">Login / Register</span>
                         </a>
-                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a "href="{{url("addproperty")}}">
+                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}">
                             Add Property
-                            <i class="fal fa-arrow-right-long"></i>
+                            <i class="fa-solid fa-arrow-right fa-lg"></i>
                         </a>
                         <a class="sidemenus-btn filter-btn-right" href="#" id="toggleSidebar" data-bs-toggle="offcanvas" data-bs-target="#SidebarPanel" aria-controls="SidebarPanelLabel"> </a>
                     </div>
@@ -59,7 +59,16 @@
                     </a>
                     <a class="mobile_logo" href="{{url("home")}}">
                         <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="150px">
-                        <a href="{{url("login")}}"><span class="icon fs-25 far fa-user-circle "></span></a>
+                        <div class="dropdown">
+                            <a class=" dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                <span class="icon fs-25 far fa-user-circle "></span>
+                              </a>
+                            
+                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left with-border">
+                                <a class="dropdown-item" href="{{url("login")}}">Login</a>
+                                <a class="dropdown-item" href="{{url("addproperty")}}">Add Property</a>
+                              </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -95,13 +104,6 @@
                                     <li class="menuitem-root submenu-root css-pw link-li">
                                         <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("contact")}}">
                                             <span class="menu-label css-fotw">Contact Us</span>
-                                            <span class="submenu-expand-icon css-submenu-expand">
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="menuitem-root submenu-root css-pw link-li">
-                                        <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("addproperty")}}">
-                                            <span class="menu-label css-fotw">Add Property</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
