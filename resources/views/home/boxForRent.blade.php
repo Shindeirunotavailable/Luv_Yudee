@@ -25,9 +25,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- test1 --}}
-
         <div class="row">
             <div class="col-lg-12 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
                 <div class="pro-city-slider position-relative ">
@@ -46,7 +43,6 @@
                                             <img src="{{ asset('/assets/images/properties-grid-02.jpg') }}" alt="listings"
                                                 class="card-img-top img-sell">
                                         </div>
-        
                                         <div class="p-10">
                                             <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
                                             <p class="list-text">San Diego City, CA, USA</p>
