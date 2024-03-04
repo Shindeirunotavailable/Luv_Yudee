@@ -265,10 +265,7 @@ function formatCurrency(input, blur) {
                 price.addClass('is-invalid');
                 event.preventDefault();
                 event.stopPropagation();
-              }else {
-                titleproperty.removeClass('is-invalid')
-                price.removeClass('is-invalid')
-        }
+              }
 
         titleproperty.on('input', function() {
             if (!$(this).val()) {
@@ -298,11 +295,7 @@ function formatCurrency(input, blur) {
                 longitudeInput.addClass('is-invalid');
                 event.preventDefault();
                 event.stopPropagation();
-            }else {
-            address.removeClass('is-invalid')
-            latitudeInput.removeClass('is-invalid')
-            longitudeInput.removeClass('is-invalid')
-        }
+            }
 
         address.on('input', function() {
             if (!$(this).val()) {
@@ -334,9 +327,6 @@ function formatCurrency(input, blur) {
             provinces.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
-        } else {
-            provinces.removeClass('is-invalid');
-            provinces.next('.additional-message').remove();
         }
 
         if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
@@ -345,9 +335,6 @@ function formatCurrency(input, blur) {
             amphures.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
-        } else {
-            amphures.removeClass('is-invalid');
-            amphures.next('.additional-message').remove();
         }
 
         if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
@@ -356,9 +343,6 @@ function formatCurrency(input, blur) {
             districts.after(errorElement);
             event.preventDefault();
             event.stopPropagation();
-        } else {
-            districts.removeClass('is-invalid');
-            districts.next('.additional-message').remove();
         }
 
         provinces.on('input', function() {
@@ -384,21 +368,34 @@ function formatCurrency(input, blur) {
         });
 
 });
+
 $('#submitpp').click(function(event) {
     var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
     var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
     var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
     var error = $('#error');
     var isChecked = false;
-    checkboxes.each(function() {
-        if ($(this).is(':checked')) {
-            isChecked = true;
-            return false;
+
+    function validateCheckboxes() {
+        isChecked = false;
+        checkboxes.each(function() {
+            if ($(this).is(':checked')) {
+                isChecked = true;
+                return false;
+            }
+        });
+        if (!isChecked) {
+            error.next('.invalid-feedback').remove();
+            error.addClass('is-invalid').after(errorElement);
+            event.preventDefault();
+        } else {
+            error.removeClass('is-invalid').next('.invalid-feedback').remove();
         }
-    });
-    if (!isChecked) {
-        error.next('.invalid-feedback').remove();
-        error.addClass('is-invalid').after(errorElement);
-        event.preventDefault();
     }
+
+    checkboxes.change(function() {
+        validateCheckboxes();
+    });
+
+    validateCheckboxes();
 });
