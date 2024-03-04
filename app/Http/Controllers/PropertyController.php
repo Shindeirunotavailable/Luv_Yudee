@@ -75,7 +75,6 @@ class PropertyController extends Controller
                 $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
                 $data['image_url'] = ('/assets/upload_image/'. $imageName);
             }else {
-                // หากไม่มีไฟล์รูปภาพใหม่
                 $property = Property::property($id_properties);
                 $data['image_url'] = $property->image_url; // กำหนด URL รูปภาพจากข้อมูลที่มีอยู่ก่อนหน้านี้
             }

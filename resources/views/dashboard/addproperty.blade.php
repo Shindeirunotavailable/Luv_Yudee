@@ -101,9 +101,8 @@
                                         </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="nav-media" role="tabpanel"
-                                        aria-labelledby="nav-media-tab">
-                                        <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
+                                <div class="tab-pane fade" id="nav-media" role="tabpanel" aria-labelledby="nav-media-tab">
+                                    <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                                 <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
                                                 <div class="row justify-content-center">
                                                     <div class="col-sm-6 mb-0 mt-3">
@@ -142,7 +141,7 @@
                                                         </div>
                                                     </div>
                                                 @endif --}}
-                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="nav-location" role="tabpanel"
@@ -157,13 +156,12 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-6 ">
-                                                    <div class="mb-d-20">
-                                                        <label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country/State *</label>
-                                                        <div class="">
+                                                <div class="col-sm-6 " >
+                                                    <div class="mb-d-20 " >
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10" >Country/State *</label>
+                                                        <div class="" id="errorprovinces">
                                                             <select  name="provinces" id="provinces" class="form-control" required>
-                                                                <option  value="" selected disabled ></option>
+                                                                <option  value=""  selected disabled ></option>
                                                                 @foreach ($data['provinces'] as $value)
                                                                     <option value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
                                                                         {{ $value['name_th'] }}
@@ -174,10 +172,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 ">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10">City *</label>
-                                                        <div class="">
-
+                                                    <div class="mb-d-20" >
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">City *</label>
+                                                        <div class="" id="erroramphures">
                                                             <select name="amphures" id="amphures" class="form-control">
                                                                 @if (isset($data['id_properties']))
                                                                     @foreach ($data['amphures'] as $value)
@@ -187,15 +184,13 @@
                                                                     @endforeach
                                                                 @endif
                                                             </select>
-
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 ">
-                                                    <div class="mb-d-20"><label
-                                                            class="heading-color ff-heading font-weight-600 mb-d-10">Country *</label>
-                                                        <div class=" ">
-
+                                                    <div class="mb-d-20" >
+                                                        <label class="heading-color ff-heading font-weight-600 mb-d-10">Country *</label>
+                                                        <div class=" " id="errordistricts">
                                                             <select name="districts" id="districts" class="form-control" >
                                                                 @if (isset($data['id_properties']))
                                                                     @foreach ($data['districts'] as $value)
