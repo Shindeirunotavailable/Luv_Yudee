@@ -215,43 +215,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-/*ตัวเลข */
-const counts = document.querySelectorAll('.count');
-const speed = 200;
-
-function upData() {
-  counts.forEach((counter) => {
-    const target = Number(counter.getAttribute('data-target'));
-    const count = Number(counter.innerText);
-    const inc = target / speed;
-    if (count < target) {
-      counter.innerText = Math.floor(inc + count);
-      setTimeout(upData, 1);
-    } else {
-      counter.innerText = target;
-    }
-  });
-}
-
-let isActivated = false;
-
-document.addEventListener('scroll', function() {
-  if (!isActivated && isElementInViewport(document.getElementById('num'))) {
-    upData();
-    isActivated = true;
-  }
-});
-
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
 
 
 
