@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+
+
+
 Route::any('home' , 'App\Http\Controllers\HomeController@home');
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
@@ -30,10 +33,13 @@ route::any('search_result','App\Http\Controllers\LoginController@search_result')
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
 
-route::any('register','App\Http\Controllers\LoginController@register');  //Dataสมัครสมาชิก
+route::any('register','App\Http\Controllers\LoginController@register');  // สมัคร
+route::any('loginform','App\Http\Controllers\LoginController@loginform');  // สมัคร
+
+route::any('test','App\Http\Controllers\LoginController@test');  // สมัคร
 
  // -----------------------------------function test Route ------------------------------------
-
+ Route::view('/addproperty', 'dashboard.sidebardashboard');
 // earth
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //sidebarแรกคือชื่อURL ด้นหลังของ @ คือชื่อเมธอดที่จะถูกเรียก

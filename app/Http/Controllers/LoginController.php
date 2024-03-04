@@ -5,7 +5,9 @@ use Illuminate\Http\Request;
 use App\Mail\WelcomeEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\login;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -43,43 +45,39 @@ class LoginController extends Controller
         return view("emails");
         
     }
+// ------------------------------------- เข้าสู่ระบบ -------------------------------------------------
+
+
+    public function loginform(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $errorMessages = "อีเมล์หรือรหัสผ่านไม่ถูกต้อง";
+
+
+        $account = login::where('email', $request->email)->first();
+        if ($account && Hash::check($request->password, $account->password)) {
+            // ล็อกอินสำเร็จ
+            return redirect('/addproperty');
+        } else {
+            // ล็อกอินไม่สำเร็จ
+            return back()->withErrors($errorMessages)->withInput();
+            
+        }
+    }
 
 // ------------------------------------- สมัครสมาชิก -------------------------------------------------
 
-    // public function register(Request $request)
-    // {
-    //     $username = $request->input('modal_email');
-    //     $password = $request->input('modal_password');
-    
-    //     $errorMessages = [];
-    //         // ตรวจสอบว่ามีอีเมล์ซ้ำกันในฐานข้อมูลหรือไม่
-    //         $existingUser = DB::table('create_accounts')->where('status', 1)->first();
-    //         if ($existingUser) {
-    //             $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
-    //         } 
-    //         else {
-    //             // บันทึกข้อมูล
-    //             $data = [
-    //                 'modal_email' => $username,
-    //                 'modal_password' => bcrypt($password),
-    //             ];
-    //             DB::table('create_accounts')->insert($data);
-    //             return view('searchResult.searchResult');
-    //         }
-        
-    //     // return $errorMessages;
-    //     dd($errorMessages);
-    //     return back()->withErrors($errorMessages)->withInput();
-    // }
-    
-
 
     public function register(Request $request){
+
     // รับข้อมูลจาก request
     $username = $request->input('modal_email');
     $password = $request->input('modal_password');
     // ตรวจสอบว่ามีอีเมล์ที่ซ้ำกันในฐานข้อมูลหรือไม่
-    $existingUser = DB::table('create_accounts')->where('modal_email', $username)->first();
+    $existingUser = DB::table('create_accounts')->where('email', $username)->first();
     // รายการข้อผิดพลาด
     $errorMessages = [];
     if ($existingUser) {
@@ -90,40 +88,31 @@ class LoginController extends Controller
     } else {
         // บันทึกข้อมูล
         $data = [
-            'modal_email' => $username,
-            'modal_password' => bcrypt($password),
+            'email' => $username,
+            'password' => bcrypt($password),
         ];
         DB::table('create_accounts')->insert($data);
         // ส่งผู้ใช้ไปยังหน้า searchResult.searchResult
         Mail::to($username)->send(new WelcomeEmail());
-        return view('searchResult.searchResult');
+        // return view("searchResult.searchResult");
+        return redirect('/addproperty');
     }
     return back()->withErrors($errorMessages)->withInput();
 }
-
-
 
 // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
     public function lostpassword(Request $request){ 
         $email = $request->input('email');
     
-        if (empty($email)) {
-            // ถ้า email เป็นค่าว่าง
-            return 'กรุณากรอกข้อมูล';
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            // ถ้า email ไม่ถูกต้อง
-            return 'กรุณากรอก E-mail ในรูปแบบที่ถูกต้อง';
+        // ถ้ามี email ส่งมาและถูกต้อง
+        $email = DB::table('createaccounts')->where('Username', $email)->first();
+        if ($email) {
+            // ถ้าเจอ email ในฐานข้อมูล
+            Mail::to($email)->send(new WelcomeEmail());
         } else {
-            // ถ้ามี email ส่งมาและถูกต้อง
-            $email = DB::table('createaccounts')->where('Username', $email)->first();
-            if ($email) {
-                // ถ้าเจอ email ในฐานข้อมูล
-                return '<script>window.location.href = window.location.href;</script>';
-            } else {
-                // ถ้าไม่เจอ email ในฐานข้อมูล
-                return 'ไม่พบอีเมล์นี้ในระบบกรุณาลองใหม่อีกครั้ง';
-            }
+            // ถ้าไม่เจอ email ในฐานข้อมูล
+            return 'ไม่พบอีเมล์นี้ในระบบกรุณาลองใหม่อีกครั้ง';
         }
     }
     

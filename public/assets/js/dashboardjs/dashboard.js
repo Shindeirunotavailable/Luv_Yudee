@@ -140,12 +140,7 @@ $(document).ready(function() {
                  toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
                  , 'NumberedList' ]
             } )
-            // .then(editor => {
-            //     // console.log(editor);
-            // })
-
             .catch(error => {
-                // console.error(error);
             });
     }
 
@@ -168,14 +163,6 @@ $(document).ready(function() {
                         'margin-bottom': '20px'
                     });
                     colDiv.append(img);
-
-                    // // Add delete button for each image
-                    // var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('X');
-                    // deleteButton.click(function() {
-                    //     $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
-                    // });
-                    // colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
-
                     fileList.append(colDiv);
                 }
             });
@@ -199,11 +186,6 @@ $(document).ready(function() {
                         'margin-bottom': '20px'
                     });
                     colDiv.append(video);
-                    // var deleteButton = $('<button></button>').addClass('btn btn-danger delete-button').text('ลบ');
-                    // deleteButton.click(function() {
-                    //     $(this).parent().remove(); // Remove the parent container (colDiv) of the clicked delete button
-                    // });
-                    // colDiv.prepend(deleteButton); // Prepend delete button to the colDiv container
                     VdoList.append(colDiv);
                 }
             });
@@ -267,8 +249,14 @@ function formatCurrency(input, blur) {
     var titleproperty = $('#titleproperty');
     var price = $('#price');
     var address = $('#address');
-    // var provinces = $('#provinces');
-    address
+    var latitudeInput = $('#latitudeInput');
+    var longitudeInput = $('#longitudeInput');
+    var provinces = $('#provinces');
+    var amphures = $('#amphures');
+    var districts = $('#districts');
+    var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
+    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+
     if( !titleproperty.val()  ){
             titleproperty.addClass('is-invalid');
                 event.preventDefault();
@@ -277,22 +265,137 @@ function formatCurrency(input, blur) {
                 price.addClass('is-invalid');
                 event.preventDefault();
                 event.stopPropagation();
-              }else {
-                // titleproperty.removeClass('is-invalid');
-                // titleproperty.addClass('is-valid');
-                // price.removeClass('is-invalid');
-                // price.addClass('is-valid');
-                titleproperty.removeClass('is-invalid')
-                price.removeClass('is-invalid')
+              }
+
+        titleproperty.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
             }
+        });
+
+        price.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
 
     if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
             address.addClass('is-invalid');
             event.preventDefault();
             event.stopPropagation();
+            }else if (!latitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
+                latitudeInput.addClass('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+            }else if (!longitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
+                longitudeInput.addClass('is-invalid');
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+        address.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
             } else {
-            // address.removeClass('is-invalid');
-            // address.addClass('is-valid');
-            address.removeClass('is-invalid')
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        latitudeInput.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        longitudeInput.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            provinces.addClass('is-invalid');
+            provinces.next('.additional-message').remove();
+            provinces.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
         }
+
+        if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            amphures.addClass('is-invalid');
+            amphures.next('.additional-message').remove();
+            amphures.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+            districts.addClass('is-invalid');
+            districts.next('.additional-message').remove();
+            districts.after(errorElement);
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        provinces.on('input', function() {
+            if (!$(this).val()) {
+                $(this).next('.additional-message').remove();
+            } else {
+                $(this).next('.additional-message').remove();
+            }
+        });
+        amphures.on('input', function() {
+            if (!$(this).val()) {
+                $(this).next('.additional-message').remove();
+            } else {
+                $(this).next('.additional-message').remove();
+            }
+        });
+        districts.on('input', function() {
+            if (!$(this).val()) {
+                $(this).next('.additional-message').remove();
+            } else {
+                $(this).next('.additional-message').remove();
+            }
+        });
+
+});
+
+$('#submitpp').click(function(event) {
+    var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
+    var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
+    var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
+    var error = $('#error');
+    var isChecked = false;
+
+    function validateCheckboxes() {
+        isChecked = false;
+        checkboxes.each(function() {
+            if ($(this).is(':checked')) {
+                isChecked = true;
+                return false;
+            }
+        });
+        if (!isChecked) {
+            error.next('.invalid-feedback').remove();
+            error.addClass('is-invalid').after(errorElement);
+            event.preventDefault();
+        } else {
+            error.removeClass('is-invalid').next('.invalid-feedback').remove();
+        }
+    }
+
+    checkboxes.change(function() {
+        validateCheckboxes();
+    });
+
+    validateCheckboxes();
 });

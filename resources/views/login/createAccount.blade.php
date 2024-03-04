@@ -9,16 +9,16 @@
             </div>
             <div class="modal-body">
 
-                <form action="{{ url('/register') }}"  method="POST" class="needs-validation">
+                <form action="{{ url('/register') }}"  method="POST" class="needs-validation" id="registerForm">
                     @csrf
                     <div class="form-group">
-                        <label class="label-700 pl-10">Email</label>
+                        <label class="label-700 pl-5">Email</label>
                         <input type="Email" name="modal_email" id="modal_email" class="form-control "
                             placeholder="Enter Email" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="label-700 pl-10">Password</label>
+                        <label class="label-700 pl-5">Password</label>
                         <div class="d-flex justify-content-end">
                             <span toggle="#modal_password" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
                         </div>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="label-700 pl-10">Confirm Password</label>
+                        <label class="label-700 pl-5">Confirm Password</label>
                         <div class="d-flex justify-content-end">
                             <span toggle="#modal_confirmPassword" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
                         </div>
@@ -43,8 +43,11 @@
                     <div id="result" class="colorRed"> </div>
 
                     <div class="pt-20 pb-20 text-center">                        
-                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
-                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
+                        <button type="submit" class="g-recaptcha afterButton rounded-pill btn-lg btn-block"
+                        id="submitModal" 
+                        data-sitekey="{{config('services.recaptcha.site_key')}}" 
+                        data-callback='onSubmit' data-action='submit'> 
+                        <i class="fa-regular fa-paper-plane "></i> Submit
                        </button> 
                     </div>
                 </form>

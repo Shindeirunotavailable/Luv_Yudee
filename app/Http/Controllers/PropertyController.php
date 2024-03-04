@@ -14,15 +14,12 @@ use App\Models\District;
 
 class PropertyController extends Controller
 {
+
+
     // DataBaseController
     public function databaseconnect(Request $request)
     {
         $id_properties = $request['id_properties'];
-
-        $provinces = Province::all();
-        $amphures = Amphure::all();
-        $districts = District::all();
-        $amenities = Amenities::all();
         $property = Property::property($id_properties);
 
         $this->data['provinces'] = Province::all();
@@ -35,18 +32,15 @@ class PropertyController extends Controller
             $this->data['id_properties'] = $request['id_properties'];
         }
         return view('dashboard.sidebardashboard')->with('data', $this->data)
-                                                 ;
+                                                ;
     }
 
     // PropertyController
     public function updatedata(Request $request)
     {
-
         $data = array(
             'title' => $request['title'],
             'description' => json_encode($request['description']),
-            // 'category' => implode(',', $request['category']),
-            // 'status' => implode(',', $request['status']),
             'category' => $request['category'],
             'status' => $request['status'],
             'price' => $request['price'],
@@ -74,27 +68,44 @@ class PropertyController extends Controller
         );
         if (isset($request['id_properties'])) {
             $id_properties = $request['id_properties'];
-            $data['updated_at'] = date('Y-m-d H:i:s');
+            $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
-            // $imageName = time().'_'.$request->image->getClientOriginalName();
-            // $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-            // $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            // $videoName = time().'_'.$request->video->getClientOriginalName();
-            // $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-            // $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            if ($request->hasFile('image')) {
+                $imageName = time().'_'.$request->image->getClientOriginalName();
+                $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+                $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            }else {
+                // หากไม่มีไฟล์รูปภาพใหม่
+                $property = Property::property($id_properties);
+                $data['image_url'] = $property->image_url; // กำหนด URL รูปภาพจากข้อมูลที่มีอยู่ก่อนหน้านี้
+            }
+
+            if ($request->hasFile('video')) {
+                $videoName = time().'_'.$request->video->getClientOriginalName();
+                $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+                $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            }else {
+                $property = Property::property($id_properties);
+                $data['video_url'] = $property->video_url;
+            }
 
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
         } else {
-            $data['updated_at'] = date('Y-m-d H:i:s');
-            $data['created_at'] = date('Y-m-d H:i:s');
+            $data['updated_datetime'] = date('Y-m-d H:i:s');
+            $data['created_datetime'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
            // // dd($request->all());
-            $imageName = time().'_'.$request->image->getClientOriginalName();
-            $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-            $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            $videoName = time().'_'.$request->video->getClientOriginalName();
-            $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-            $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            if ($request->hasFile('image')) {
+                $imageName = time().'_'.$request->image->getClientOriginalName();
+                $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
+                $data['image_url'] = ('/assets/upload_image/'. $imageName);
+            }
+
+            if ($request->hasFile('video')) {
+                $videoName = time().'_'.$request->video->getClientOriginalName();
+                $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
+                $data['video_url'] = ('/assets/upload_video/' . $videoName);
+            }
 
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
         }
@@ -107,11 +118,10 @@ class PropertyController extends Controller
     public function db_provinces(Request $request)
     {
         if ($request->has('function') && $request->input('function') === 'provinces') {
-
             $id = $request->input('id');
-            $Amphure = Amphure::where('province_id', $id)->get();
+            $amphure = Amphure::where('province_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกอำเภอ</option>';
-            foreach ($Amphure as $value) {
+            foreach ($amphure as $value) {
                 $options .= '<option value="' . $value->id . ' ">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
@@ -121,7 +131,7 @@ class PropertyController extends Controller
             $districts = District::where('amphure_id', $id)->get();
             $options = '<option selected disabled>กรุณาเลือกตำบล</option>';
             foreach ($districts as $value) {
-                $options .= '<option value="' . $value->id . '">' . $value->name_th . '</option>';
+                $options .= '<option value="' . $value->id . ' ">' . $value->name_th . '</option>';
             }
             return response()->json(['options' => $options]);
         }

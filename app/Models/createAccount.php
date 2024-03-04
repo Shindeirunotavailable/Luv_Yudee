@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class createAccount extends Model 
 {
     use HasFactory;
-    protected $fillable = ['modal_email', 'modal_password','status'];
+    protected $fillable = ['email', 'password','status','created_datetime','updated_datetime','created_by','updated_by'];
 
 }
