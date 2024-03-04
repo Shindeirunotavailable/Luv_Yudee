@@ -8,7 +8,6 @@
                 </button>
             </div>
             <div class="modal-body">
-
                 <form action="{{ url('/register') }}"  method="POST" class="needs-validation" id="registerForm">
                     @csrf
                     <div class="form-group">
@@ -46,12 +45,27 @@
                         <button type="submit" class="g-recaptcha afterButton rounded-pill btn-lg btn-block"
                         id="submitModal" 
                         data-sitekey="{{config('services.recaptcha.site_key')}}" 
-                        data-callback='onSubmit' data-action='submit'> 
+                        data-callback='onSubmitRegister' data-action='submit'> 
                         <i class="fa-regular fa-paper-plane "></i> Submit
                        </button> 
+
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+<script>
+    
+    function onSubmitRegister(token) {
+          $("#registerForm").submit();
+        }
+
+</script>
