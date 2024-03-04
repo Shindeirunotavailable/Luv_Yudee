@@ -8,12 +8,12 @@
                 </button>
             </div>
 
-            <div class="modal-body">
-                <form >
+            <div  class="modal-body" >
+                <form action="{{ url('/lostpassword') }}"  method="POST">
                     @csrf
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
-                        <input type="email" name="username" id="forgetEmail" class="form-control " placeholder="Enter Email" required>
+                        <input type="email" name="forgetEmail" id="forgetEmail" class="form-control " placeholder="Enter Email" required>
                     </div>
 
                     <div class="pt-20 pb-20  text-center">

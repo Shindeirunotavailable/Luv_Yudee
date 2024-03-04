@@ -34,9 +34,8 @@ route::any('create-account','App\Http\Controllers\LoginController@createAccount'
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
 
 route::any('register','App\Http\Controllers\LoginController@register');  // สมัคร
-route::any('loginform','App\Http\Controllers\LoginController@loginform');  // สมัคร
-
-route::any('test','App\Http\Controllers\LoginController@test');  // สมัคร
+route::any('loginform','App\Http\Controllers\LoginController@loginform');  // เข้าสู่ระบบ
+route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // กู้รหัสผ่าน
 
  // -----------------------------------function test Route ------------------------------------
  Route::view('/addproperty', 'dashboard.sidebardashboard');
