@@ -3448,6 +3448,7 @@ textarea.form-control-lg {
     text-align: center;
     text-decoration: none;
     width: 50px;
+    /* z-index: 9; */
     z-index: 9;
     -webkit-box-shadow: 0px 1px 4px 0px rgba(36,65,231,.3);
     -o-box-shadow: 0px 1px 4px 0px rgba(36,65,231,.3);
