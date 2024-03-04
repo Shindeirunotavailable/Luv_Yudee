@@ -831,19 +831,27 @@ a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visite
 .ptr-7 {
     padding-top: .7rem !important
 }
-/* @media (max-width: 769px){
+.with-border {
+    border: 1px solid #ddd; /* เลือกสีที่คุณต้องการ */
+}
+@media (max-width: 769px){
     .add-property {
         font-size: 10px;
         height: 37px;
         padding: 9px 12px;
-        margin-top: 9px;
+        margin-top: 7px;
     }
-    .user-btn i {
-        font-size: 12px;
+}
+
+@media (max-width: 767px){
+    .tab-lets{
+        display: none !important;
     }
-} */
-.with-border {
-    border: 1px solid #ddd; /* เลือกสีที่คุณต้องการ */
+}
+@media (max-width: 1023px) and (min-width:767px){
+    .mb-size{
+        display: none !important;
+    }
 }
 /* ----------------------------------End header nav--------------------------------------- */
 /* Mobile nav */
