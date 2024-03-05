@@ -44,8 +44,8 @@ class PropertyController extends Controller
             'category' => $request['category'],
             'status' => $request['status'],
             'price' => $request['price'],
-            'image_url'=> $request['image_url'],
-            'video_url'=> $request['video_url'],
+            // 'image_url'=> $request['image_url'],
+            // 'video_url'=> $request['video_url'],
             'address'=> $request['address'],
             'provinces'=> $request['provinces'],
             'amphures'=> $request['amphures'],
@@ -70,25 +70,41 @@ class PropertyController extends Controller
             $id_properties = $request['id_properties'];
             $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
+
             if ($request->hasFile('image')) {
-                $imageName = time().'_'.$request->image->getClientOriginalName();
-                $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-                $data['image_url'] = ('/assets/upload_image/'. $imageName);
-            }else {
-                $property = Property::property($id_properties);
-                $data['image_url'] = $property->image_url; // กำหนด URL รูปภาพจากข้อมูลที่มีอยู่ก่อนหน้านี้
+                $imageUrl = [];
+
+                foreach ($request->file('image') as $image) {
+                    $imageName = time().'_'.$image->getClientOriginalName();
+                    $image->move(public_path('/assets/upload_image' ), $imageName);
+                    $imageUrl[] = '/assets/upload_image/'. $imageName;
+                }
+
+                $data['image_url'] = implode(',', $imageUrl);
             }
 
             if ($request->hasFile('video')) {
-                $videoName = time().'_'.$request->video->getClientOriginalName();
-                $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-                $data['video_url'] = ('/assets/upload_video/' . $videoName);
-            }else {
+                $videoUrl = [];
+
+                foreach ($request->file('video') as $video) {
+                    $videoName = time().'_'.$video->getClientOriginalName();
+                    $video->move(public_path('/assets/upload_video' ), $videoName);
+                    $videoUrl[] = '/assets/upload_video/'. $videoName;
+                }
+
+                $data['video_url'] = implode(',', $videoUrl);
+            }
+
+            // เช็คว่ามีการอัพโหลดรูปหรือวิดีโอใหม่หรือไม่ ถ้าไม่มีจะใช้ข้อมูลเดิม
+            if (!($request->hasFile('video') || $request->hasFile('video'))) {
+                // ใช้ข้อมูลเดิมจากคุณสมบัติก่อนหน้า
                 $property = Property::property($id_properties);
+                $data['image_url'] = $property->image_url;
                 $data['video_url'] = $property->video_url;
             }
 
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
+
         } else {
             $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['created_datetime'] = date('Y-m-d H:i:s');
@@ -109,7 +125,7 @@ class PropertyController extends Controller
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
         }
         return redirect('addproperty?id_properties=' . $id_properties)
-        ->with('success', 'Property and Media uploaded successfully');
+        ->with('success', 'Property uploaded successfully');
     }
 
 
