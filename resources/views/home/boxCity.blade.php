@@ -218,10 +218,10 @@
                     </div>
                     <div class="btn-swiper">
                         <div class="rounded-arrow arrowY-center-position">
-                            <button class="property-by-city-prev__active swiper_button _prev "fdprocessedid="yj6omk">
+                            <button class="property-by-city-prev__active swiper_button _prev ">
                                 <i class="fa-solid fa-angle-left"></i>
                             </button>
-                            <button class="property-by-city-next__active swiper_button _next swiper-button-disabled "fdprocessedid="1ipwv" disabled="">
+                            <button class="property-by-city-next__active swiper_button _next swiper-button-disabled " disabled="">
                                 <i class="fa-solid fa-angle-right "></i>
                             </button>
                         </div>

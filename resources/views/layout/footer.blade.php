@@ -56,8 +56,10 @@
                     <div class="mailchimp-widget mb-30">
                         <h6 class="title mb-30 fw-700">Sign Up for Our Newsletter</h6>
                         <div class="mailchimp-style1 at-home4 white-version">
-                            <input type="email" class="form-control" placeholder="Your Email"fdprocessedid="q0ns2o">
-                            <button type="submit"   fdprocessedid="yko0ob"><i class="fa-solid fa-rocket"></i></button>   
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button type="submit">
+                                <i class="fa-solid fa-rocket"></i>
+                            </button>   
                         </div>
                         <div class="social-style1 light-style py-2">
                             <a href="#"><i class="fab fa-facebook-f list-inline-item"></i></a>

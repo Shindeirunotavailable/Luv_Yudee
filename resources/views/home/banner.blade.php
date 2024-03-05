@@ -28,7 +28,7 @@
                                                     <form class="form-search position-relative">
                                                         <div class="box-search" id="nav-buy">
                                                             <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Buy" fdprocessedid="ufm989">
+                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Buy">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -37,11 +37,10 @@
                                                 <div
                                                     class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
                                                     <button class="btn-advance-search" type="button" data-toggle="modal"
-                                                        data-target="#advanceSeachModal" fdprocessedid="13esg">
+                                                        data-target="#advanceSeachModal">
                                                         <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                                                     </button>
-                                                    <button class="icon-advance-search user-btn btn-search ml-4" type="button"
-                                                        fdprocessedid="5isoj8">
+                                                    <button class="icon-advance-search user-btn btn-search ml-4" type="button">
                                                         <i class="fa-solid fa-magnifying-glass"></i>
                                                     </button>
                                                 </div>
