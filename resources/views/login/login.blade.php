@@ -29,7 +29,7 @@
 
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
-                            <form action="{{ url('/loginform') }}"  method="POST" class="needs-validation" id="loginForm">
+                            <form action="{{ url('/loginform') }}"  method="POST" class="needs-validation" id="loginform">
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700">Email</label>
@@ -49,15 +49,14 @@
                                 <div class="text-right">
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your password?</button>
                                 </div>
-                                <div class="pt-10 pb-10">
-                                   <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="loginSubmit" 
-                                   data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmit'> 
+                                <div class="pt-10 pb-10 " >
+                                   <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" id="loginSubmit" 
+                                   data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitLogin' data-action='submit'> 
                                         <i class="fa-regular fa-paper-plane "></i> Submit
                                    </button> 
                                 </div>
 
-         
-                                {{-- <div id="result"> </div> --}}
+                                <div id="result"> </div>
                             </form>
 
                             <div class="text-center mt-3">

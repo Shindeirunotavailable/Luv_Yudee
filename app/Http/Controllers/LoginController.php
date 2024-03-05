@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\WelcomeEmail;
+use App\Mail\RegisterPassword;
+
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -45,6 +47,7 @@ class LoginController extends Controller
         return view("emails");
         
     }
+
 // ------------------------------------- เข้าสู่ระบบ -------------------------------------------------
 
 
@@ -53,33 +56,48 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required',
             'password' => 'required',
+            'g-recaptcha-response' => 'required',
         ]);
-        $errorMessages = "อีเมล์หรือรหัสผ่านไม่ถูกต้อง";
 
-
+        $errorMessages = [];
+        if (!$request->filled('g-recaptcha-response')) {
+            // ถ้าไม่มีค่า g-recaptcha-response
+            $errorMessages[] = "ไม่มี reCAPTCHA";
+        }
+        
         $account = login::where('email', $request->email)->first();
         if ($account && Hash::check($request->password, $account->password)) {
             // ล็อกอินสำเร็จ
             return redirect('/addproperty');
-        } else {
+        } 
+        else {
             // ล็อกอินไม่สำเร็จ
-            return back()->withErrors($errorMessages)->withInput();
-            
+            $errorMessages[] = "อีเมล์หรือรหัสผ่านไม่ถูกต้อง";
+
         }
+        return back()->withErrors($errorMessages)->withInput();
+
     }
 
 // ------------------------------------- สมัครสมาชิก -------------------------------------------------
 
 
     public function register(Request $request){
-
+        
+    $request->validate([ 'g-recaptcha-response' => 'required',]);
     // รับข้อมูลจาก request
     $username = $request->input('modal_email');
     $password = $request->input('modal_password');
+    
     // ตรวจสอบว่ามีอีเมล์ที่ซ้ำกันในฐานข้อมูลหรือไม่
     $existingUser = DB::table('create_accounts')->where('email', $username)->first();
     // รายการข้อผิดพลาด
     $errorMessages = [];
+    if (!$request->filled('g-recaptcha-response')) {
+        // ถ้าไม่มีค่า g-recaptcha-response
+        $errorMessages[] = "ไม่มี reCAPTCHA";
+    }
+
     if ($existingUser) {
         // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
         if ($existingUser->status >= 1) {
@@ -102,19 +120,24 @@ class LoginController extends Controller
 
 // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
-    public function lostpassword(Request $request){ 
-        $email = $request->input('email');
-    
-        // ถ้ามี email ส่งมาและถูกต้อง
-        $email = DB::table('createaccounts')->where('Username', $email)->first();
-        if ($email) {
-            // ถ้าเจอ email ในฐานข้อมูล
-            Mail::to($email)->send(new WelcomeEmail());
-        } else {
-            // ถ้าไม่เจอ email ในฐานข้อมูล
-            return 'ไม่พบอีเมล์นี้ในระบบกรุณาลองใหม่อีกครั้ง';
-        }
+public function lostpassword(Request $request){ 
+    $forgetEmail = $request->input('forgetEmail');
+
+    // ค้นหา email ในฐานข้อมูล
+    $foundEmail = DB::table('create_accounts')->where('email', $forgetEmail)->first();
+    $errorMessages = [];
+    if ($foundEmail) {
+        Mail::to($forgetEmail)->send(new WelcomeEmail  ());
+        return redirect('/login');
+    } else {
+        // ถ้าไม่เจอ email ในฐานข้อมูล
+        $errorMessages = 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง';
     }
+
+    return $errorMessages;
+}
+
+
     
 
 // ---------------------------------------------- หน้า Content -------------------------------------------------

@@ -21,6 +21,7 @@ $('.register').click(function(){ //$.register คือชื่อ class ขอ
 })
 
 
+
 // กู้รหัสผ่าน
 $('.Forgetpassword').click(function(){ //$.register คือชื่อ class ของปุ่มที่เราจะกด ถ้าเป็น ID จะต้อง #register
     // console.log(csrf)
@@ -69,18 +70,18 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
         }
       });
 
-
-      function onSubmit(token) {
-        document.getElementById("registerForm").submit();
+      function onSubmitLogin() {
+        $("#loginform").submit();
       }
+  
 
-      function submitLogin(token) {
-        document.getElementById("loginSubmit").submit();
-      }
-      
+
+
+     
 // รับ function จากหน้าสมัคร//
 $('body').on('click', '#exampleModal', function(event) {
         var forms = $('.needs-validation');
+
         $(".toggle-password").click(function() {
             $(this).toggleClass("fa-eye fa-eye-slash");
             var input = $($(this).attr("toggle"));
@@ -91,9 +92,12 @@ $('body').on('click', '#exampleModal', function(event) {
             }
           });
         $('.modal-body form').submit(function(event) {
-            onChange(event);
+          onChange(event);
         });
+
     });
+
+
     
     // เช็คค่าต่างๆหน้าสมัคร 
     function onChange(event) {
