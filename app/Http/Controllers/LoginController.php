@@ -48,6 +48,10 @@ class LoginController extends Controller
         
     }
 
+    
+
+    
+
 // ------------------------------------- เข้าสู่ระบบ -------------------------------------------------
 
 
@@ -56,15 +60,9 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required',
             'password' => 'required',
-            'g-recaptcha-response' => 'required',
         ]);
 
         $errorMessages = [];
-        if (!$request->filled('g-recaptcha-response')) {
-            // ถ้าไม่มีค่า g-recaptcha-response
-            $errorMessages[] = "ไม่มี reCAPTCHA";
-        }
-        
         $account = login::where('email', $request->email)->first();
         if ($account && Hash::check($request->password, $account->password)) {
             // ล็อกอินสำเร็จ
@@ -84,7 +82,7 @@ class LoginController extends Controller
 
     public function register(Request $request){
         
-    $request->validate([ 'g-recaptcha-response' => 'required',]);
+    // $request->validate([ 'g-recaptcha-response' => 'required',]);
     // รับข้อมูลจาก request
     $username = $request->input('modal_email');
     $password = $request->input('modal_password');
@@ -93,10 +91,10 @@ class LoginController extends Controller
     $existingUser = DB::table('create_accounts')->where('email', $username)->first();
     // รายการข้อผิดพลาด
     $errorMessages = [];
-    if (!$request->filled('g-recaptcha-response')) {
-        // ถ้าไม่มีค่า g-recaptcha-response
-        $errorMessages[] = "ไม่มี reCAPTCHA";
-    }
+    // if (!$request->filled('g-recaptcha-response')) {
+    //     // ถ้าไม่มีค่า g-recaptcha-response
+    //     $errorMessages[] = "ไม่มี reCAPTCHA";
+    // }
 
     if ($existingUser) {
         // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
@@ -115,7 +113,9 @@ class LoginController extends Controller
         // return view("searchResult.searchResult");
         return redirect('/addproperty');
     }
+    // return back()->withErrors($errorMessages)->withInput();
     return back()->withErrors($errorMessages)->withInput();
+
 }
 
 // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
@@ -127,19 +127,20 @@ public function lostpassword(Request $request){
     $foundEmail = DB::table('create_accounts')->where('email', $forgetEmail)->first();
     $errorMessages = [];
     if ($foundEmail) {
-        Mail::to($forgetEmail)->send(new WelcomeEmail  ());
-        return redirect('/login');
+        Mail::to($forgetEmail)->send(new WelcomeEmail());
+        $errorMessages[] = 'ส่งเมล์สำหรับกู้รหัสให้แล้ว';
+
     } else {
         // ถ้าไม่เจอ email ในฐานข้อมูล
-        $errorMessages = 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง';
+        $errorMessages[]  = 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง';
     }
 
-    return $errorMessages;
+    return back()->withErrors($errorMessages)->withInput();
 }
 
 
-    
 
+    
 // ---------------------------------------------- หน้า Content -------------------------------------------------
 
  

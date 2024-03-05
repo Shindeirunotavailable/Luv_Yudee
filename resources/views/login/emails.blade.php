@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcom To Yudee</title>
 
-</head>
-<body>
     <h2 class="colorBlue">ขอบคุณที่สมัครใช้บน Yudee - การประกาศซื้อขายบ้านที่ง่ายดาย</h2>
     <p class="background-grey">เรียน [ชื่อผู้สมัคร],</p>
     <p>ขอบคุณที่ท่านได้สมัครใช้บนเว็บไซต์ของเรา "Yudee" ซึ่งเป็นที่นิยมสำหรับการซื้อขายบ้านและอสังหาริมทรัพย์ทั่วไปในพื้นที่ของเรา!</p>
@@ -16,5 +7,3 @@
     <p>ขอบคุณอีกครั้งที่ท่านได้เลือกใช้ Yudee เพื่อการซื้อขายบ้านและอสังหาริมทรัพย์ของท่าน ทางเรายินดีที่จะได้ช่วยเสมอภาพให้ท่านได้บ้านในฝัน!</p>
     <p>ขอแสดงความนับถือ,<br>
     </p><p>ทีม Yudee</p>
-</body>
-</html>
