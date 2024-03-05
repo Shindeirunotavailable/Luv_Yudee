@@ -40,36 +40,36 @@
                                         <div class="form-row mx-n4">
                                             <div class="form-group col-md-6 px-4">
                                                 <label for="firstName" class="text-heading">First name</label>
-                                                <input type="text" class="form-control form-control-lg border-0"
+                                                <input type="text" class="form-control form-control-lg "
                                                     id="firstName" name="firsName">
                                             </div>
                                             <div class="form-group col-md-6 px-4">
                                                 <label for="lastName" class="text-heading">Last name</label>
-                                                <input type="text" class="form-control form-control-lg border-0"
+                                                <input type="text" class="form-control form-control-lg "
                                                     id="lastName" name="lastname">
                                             </div>
                                         </div>
                                         <div class="form-row mx-n4">
                                             <div class="form-group col-md-6 px-4">
                                                 <label for="phone" class="text-heading">Phone</label>
-                                                <input type="text" class="form-control form-control-lg border-0"
+                                                <input type="text" class="form-control form-control-lg "
                                                     id="phone" name="phone">
                                             </div>
                                             <div class="form-group col-md-6 px-4">
                                                 <label for="mobile" class="text-heading">Mobile</label>
-                                                <input type="text" class="form-control form-control-lg border-0"
+                                                <input type="text" class="form-control form-control-lg "
                                                     id="mobile" name="mobile">
                                             </div>
                                         </div>
                                         <div class="form-row mx-n4">
                                             <div class="form-group col-md-6 px-4 mb-md-0">
                                                 <label for="email" class="text-heading">Email</label>
-                                                <input type="email" class="form-control form-control-lg border-0"
+                                                <input type="email" class="form-control form-control-lg "
                                                     id="email" name="email">
                                             </div>
                                             <div class="form-group col-md-6 px-4 mb-md-0">
                                                 <label for="skype" class="text-heading">Skype</label>
-                                                <input type="text" class="form-control form-control-lg border-0"
+                                                <input type="text" class="form-control form-control-lg "
                                                     id="skype" name="skype">
                                             </div>
                                         </div>
@@ -82,7 +82,7 @@
                                         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-group mb-0">
                                             <label for="title" class="text-heading">Title / Posittion</label>
-                                            <input type="text" class="form-control form-control-lg border-0"
+                                            <input type="text" class="form-control form-control-lg "
                                                 id="title" name="title">
                                         </div>
                                     </div>
@@ -102,34 +102,34 @@
                                             </p>
                                             <div class="form-group">
                                                 <label for="facebook" class="text-heading">Facebook Url</label>
-                                                <input type="url" class="form-control form-control-lg border-0"
+                                                <input type="url" class="form-control form-control-lg "
                                                     id="facebook" name="facebook">
                                             </div>
                                             <div class="form-group">
                                                 <label for="pinterest" class="text-heading">Pinterest Url</label>
-                                                <input type="url" class="form-control form-control-lg border-0"
+                                                <input type="url" class="form-control form-control-lg "
                                                     id="pinterest" name="pinterest">
                                             </div>
                                             <div class="form-group">
                                                 <label for="instagram" class="text-heading">Instagram Url</label>
-                                                <input type="url" class="form-control form-control-lg border-0"
+                                                <input type="url" class="form-control form-control-lg "
                                                     id="instagram" name="instagram">
                                             </div>
                                             <div class="form-group">
                                                 <label for="twitter" class="text-heading">Twitter Url</label>
-                                                <input type="url" class="form-control form-control-lg border-0"
+                                                <input type="url" class="form-control form-control-lg "
                                                     id="twitter" name="twitter">
                                             </div>
                                             <div class="form-group">
                                                 <label for="linkedin" class="text-heading">Linkedin Url</label>
-                                                <input type="url" class="form-control form-control-lg border-0"
+                                                <input type="url" class="form-control form-control-lg "
                                                     id="linkedin" name="linkedin">
                                             </div>
                                             <div class="form-group mb-7">
                                                 <label for="website" class="text-heading">Website Url <span
                                                         class="text-muted">(without http)</span>
                                                 </label>
-                                                <input type="url" class="form-control form-control-lg border-0"
+                                                <input type="url" class="form-control form-control-lg "
                                                     id="website" name="website">
                                             </div>
                                         </div>
@@ -142,19 +142,19 @@
                                         </p>
                                         <div class="form-group">
                                             <label for="oldPassword" class="text-heading">Old Password</label>
-                                            <input type="password" class="form-control form-control-lg border-0"
+                                            <input type="password" class="form-control form-control-lg "
                                                 id="oldPassword" name="oldPassword">
                                         </div>
                                         <div class="form-row mx-n4">
                                             <div class="form-group col-md-6 col-lg-12 col-xxl-6 px-4">
                                                 <label for="newPassword" class="text-heading">New Password</label>
-                                                <input type="password" class="form-control form-control-lg border-0"
+                                                <input type="password" class="form-control form-control-lg "
                                                     id="newPassword" name="newPassword">
                                             </div>
                                             <div class="form-group col-md-6 col-lg-12 col-xxl-6 px-4">
                                                 <label for="confirmNewPassword" class="text-heading">Confirm New
                                                     Password</label>
-                                                <input type="password" class="form-control form-control-lg border-0"
+                                                <input type="password" class="form-control form-control-lg "
                                                     id="confirmNewPassword" name="confirmNewPassword">
 
 
