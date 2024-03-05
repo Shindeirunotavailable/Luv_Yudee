@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\WelcomeEmail;
-use App\Mail\RegisterPassword;
+use App\Mail\ResetPasswordEmail; 
+use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -120,15 +121,45 @@ class LoginController extends Controller
 
 // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
+// public function lostpassword(Request $request){ 
+//     $forgetEmail = $request->input('forgetEmail');
+
+//     // ค้นหา email ในฐานข้อมูล
+//     $foundEmail = DB::table('create_accounts')->where('email', $forgetEmail)->first();
+//     $errorMessages = [];
+//     if ($foundEmail) {
+//         Mail::to($forgetEmail)->send(new ResetPasswordEmail());
+//         $errorMessages[] = 'ส่งเมล์สำหรับกู้รหัสให้แล้ว';
+
+//     } else {
+//         // ถ้าไม่เจอ email ในฐานข้อมูล
+//         $errorMessages[]  = 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง';
+//     }
+
+//     return back()->withErrors($errorMessages)->withInput();
+// }
+
 public function lostpassword(Request $request){ 
     $forgetEmail = $request->input('forgetEmail');
 
     // ค้นหา email ในฐานข้อมูล
     $foundEmail = DB::table('create_accounts')->where('email', $forgetEmail)->first();
     $errorMessages = [];
+
     if ($foundEmail) {
-        Mail::to($forgetEmail)->send(new WelcomeEmail());
-        $errorMessages[] = 'ส่งเมล์สำหรับกู้รหัสให้แล้ว';
+        // สร้าง token สำหรับการ reset password
+        $resetToken = Str::random(60);
+
+        // บันทึก token และเวลาที่สร้างลงในตาราง password_resets
+        DB::table('password_resets')->updateOrInsert(
+            ['email' => $forgetEmail],
+            ['token' => bcrypt($resetToken), 'created_at' => now()]
+        );
+
+        // ส่งอีเมล์ reset password
+        Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
+
+        $errorMessages[] = 'ส่งอีเมล์สำหรับกู้รหัสให้แล้ว';
 
     } else {
         // ถ้าไม่เจอ email ในฐานข้อมูล
@@ -137,8 +168,6 @@ public function lostpassword(Request $request){
 
     return back()->withErrors($errorMessages)->withInput();
 }
-
-
 
     
 // ---------------------------------------------- หน้า Content -------------------------------------------------
