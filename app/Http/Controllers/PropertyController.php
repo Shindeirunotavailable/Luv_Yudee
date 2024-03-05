@@ -95,9 +95,7 @@ class PropertyController extends Controller
                 $data['video_url'] = implode(',', $videoUrl);
             }
 
-            // เช็คว่ามีการอัพโหลดรูปหรือวิดีโอใหม่หรือไม่ ถ้าไม่มีจะใช้ข้อมูลเดิม
             if (!($request->hasFile('video') || $request->hasFile('video'))) {
-                // ใช้ข้อมูลเดิมจากคุณสมบัติก่อนหน้า
                 $property = Property::property($id_properties);
                 $data['image_url'] = $property->image_url;
                 $data['video_url'] = $property->video_url;
