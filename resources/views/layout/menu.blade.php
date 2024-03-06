@@ -6,10 +6,10 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="logos mr-40">
                             <a class="header-logo logo1" href="{{url("home")}}">
-                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="150px">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}" class="s-logo">
                             </a>
                             <a class="header-logo logo2 link-effect" href="{{url("home")}}">
-                                <img src="{{ asset('/assets/images/YuuDee2.png') }}"width="150px">
+                                <img src="{{ asset('/assets/images/YuuDee2.png') }}" class="s-logo">
                             </a>
                         </div>
                         <ul class="responsive-menu">
@@ -55,24 +55,13 @@
             <div class="menus_and_widget">
                 <div class="mobile_menus_bar d-flex justify-content-between align-items-center">
                     <a class="menusbar" href="#" id="menubarButton" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                        <img src="{{ asset('/assets/images/mobile-dark-nav-icon.jpg') }}" alt="mobile icon" width="30px"></a>
+                        <img src="{{ asset('/assets/images/mobile-dark-nav-icon.jpg') }}" alt="mobile icon" class="slidebar-logo"></a>
                     </a>
                     <a class="mobile_logo" href="{{url("home")}}">
-                        <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" width="150px">
-                        <div class="dropdown mb-size">
-                            <a class=" dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                <span class="icon fs-25 far fa-user-circle "></span>
-                              </a>
-                            
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left with-border">
-                                <a class="dropdown-item" href="{{url("login")}}">Login</a>
-                                <a class="dropdown-item" href="{{url("addproperty")}}">Add Property</a>
-                              </div>
-                        </div>
-
+                        <img src="{{ asset('/assets/images/YuuDee2.png') }}" alt="logo" class="s-logo">
                         <div class="d-flex bd-highlight tab-lets">
                             <a class="p-2 flex-fill bd-highlight"  href="{{url("login")}}"><span class="icon fs-25 far fa-user-circle "></span>
-                                <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 text-a "href="{{url("addproperty")}}">
+                                <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 text-a ptr-7"href="{{url("addproperty")}}">
                                         Add Property
                                         <i class="fa-solid fa-arrow-right fa-lg"></i>
                                 </a>

@@ -10,7 +10,8 @@
             <div class="col-lg-5">
                 <div class="text-al text-lg-end mb-3">
                     <a class="user-arrow user-btn2" href="#">See All Cities
-                        <i class="fal fa-arrow-right-long"></i></a>
+                        <i class="fa-solid fa-arrow-right fa-lg"></i>
+                    </a>
                 </div>
             </div>
         </div>

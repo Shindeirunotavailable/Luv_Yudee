@@ -180,6 +180,41 @@ var swiper = new Swiper(".swiperes", {
   }
 });
 /*------------------------------------------------------------------------ */
+/*boxBlog */
+var swiper = new Swiper(".swiperp", {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  slidesPerGroup: 1,
+  // loop: true,
+  // loopFillGroupWithBlank: true,
+  // autoplay: {
+  //   delay: 3000, // Autoplay delay in milliseconds ทำให้มันสไลด์เอง
+  // },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: "._nexts",
+    prevEl: "._prevs",
+  },
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      500: {
+        slidesPerView: 2,
+      },
+      980: {
+        slidesPerView: 3,
+      },
+    }
+});
+
+/*--------------------------------------------------------------*/
 
 /*--header-nav--*/
 

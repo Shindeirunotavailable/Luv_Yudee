@@ -11,15 +11,15 @@
             </div>
 
             <div class="row mt-8">
-                <div class="col-lg-4 mb-6 mb-lg-0">
-                    <div class="card border-hover shadow-2 shadow-hover-lg-1 pl-5 pr-6 py-6 h-100 hover-change-image">
+                <div class="col-lg-4 mb-20 mb-lg-0">
+                    <div class="card border-hover shadow-2 shadow-hover-lg-1 p-xl-30 p-lg-20 h-100 hover-change-image">
                         <div class="row no-gutters ">
                             <div class="col-sm-3 b-cen">
                                 <img src="{{ asset('/assets/images/group-16.png') }}" alt="Buy a new home">
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-9 t-cen">
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">
-                                    <a href="#" class="d-flex align-items-center text-dark hover-secondary">
+                                    <a href="#" class="text-dark hover-secondary">
                                         <h4 class="fs-20 lh-1625 mb-1">Buy a new home </h4>
                                     </a>
                                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -29,17 +29,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-6 mb-lg-0">
-                    <div
-                        class="card border-hover shadow-2 shadow-hover-lg-1 pl-5 pr-6 py-6 h-100 hover-change-image">
+                <div class="col-lg-4 mb-20 mb-lg-0">
+                    <div class="card border-hover shadow-2 shadow-hover-lg-1 p-xl-30 p-lg-20 h-100 hover-change-image">
                         <div class="row no-gutters">
                             <div class="col-sm-3 b-cen">
                                 <img src="{{ asset('/assets/images/group-17.png') }}" alt="Sell a home">
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-9 t-cen">
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">
                                     <a href="#"
-                                        class="d-flex align-items-center text-dark hover-secondary">
+                                        class="text-dark hover-secondary">
                                         <h4 class="fs-20 lh-1625 mb-1">Sell a home </h4>
                                     </a>
                                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -50,16 +49,15 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mb-6 mb-lg-0">
-                    <div
-                        class="card border-hover shadow-2 shadow-hover-lg-1 pl-5 pr-6 py-6 h-100 hover-change-image">
+                    <div class="card border-hover shadow-2 shadow-hover-lg-1 p-xl-30 p-lg-20 h-100 hover-change-image">
                         <div class="row no-gutters">
                             <div class="col-sm-3 b-cen">
                                 <img src="{{ asset('/assets/images/group-21.png') }}" alt="Rent a home">
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-9 t-cen">
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">
                                     <a href="#"
-                                        class="d-flex align-items-center text-dark hover-secondary">
+                                        class="text-dark hover-secondary">
                                         <h4 class="fs-20 lh-1625 mb-1">Rent a home </h4>
                                     </a>
                                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
