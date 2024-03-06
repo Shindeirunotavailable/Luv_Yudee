@@ -129,25 +129,7 @@ function onSubmitLogin() {
 
     ///////////////////////  modal //////////////////////
 
-      // เข็คว่าเป็นประเภทของอีเมลหรือไม่
-      // $('body').on('click', '#exampleModal', function(event) {
-      // $('#registerForm').submit(function(event) {
-      //   var emailInput = $('#modal_email');
-      //   var emailValue = emailInput.val();
-
-      //   // ตรวจสอบว่ามีค่าว่างหรือไม่
-      //   if (emailValue.trim() === '') {
-      //       event.preventDefault();
-      //       alert('Please enter your email address.');
-      //   } else if (emailValue.indexOf('@') === -1) {
-      //       event.preventDefault();
-      //       alert('Please enter a valid email address. Missing @ symbol.');
-      //   } else if (emailValue.indexOf('.') === -1) {
-      //       event.preventDefault();
-      //       alert('Please enter a valid email address. Missing dot (.) symbol.');
-      //   }
-      //   });
-      // });
+    
      
 // รับ function จากหน้าสมัคร//
 $('body').on('click', '#exampleModal', function(event) {
@@ -270,6 +252,7 @@ $('body').on('click', '#exampleModal', function(event) {
     
         // เช็คอักษรอักษรพิเศษ
         var specialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/g;
+                                
         if (myInput.val().match(specialCharacters)) {
           specialChar.removeClass("invalid").addClass("valid");
         } else {
@@ -382,4 +365,26 @@ $('body').on('click', '#exampleModal', function(event) {
 // }
 
 
+
+
+  
+
+function onSubmitRegister(event) {
+    var emailInput = $('#modal_email');
+    var emailValue = emailInput.val();
+    if (emailValue.trim() === '') {
+      event.preventDefault();
+      emailValue.addClass('is-invalid');
+  } else if (emailValue.indexOf('@') === -1) {
+      event.preventDefault();
+      emailValue.addClass('is-invalid');
+  } else if (emailValue.indexOf('.') === -1) {
+      event.preventDefault();
+      emailValue.addClass('is-invalid');
+  }else{
+    document.getElementById("registerForm").submit();
+
+  }
+
+}
 

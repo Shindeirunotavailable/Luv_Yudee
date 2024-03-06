@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class login extends Model
 {
-    protected $fillable = ['email', 'password',];
-    protected $table = 'create_accounts';
+    protected $table = 'user';
     const CREATED_AT = 'created_datetime';
     const UPDATED_AT = 'updated_datetime';
 

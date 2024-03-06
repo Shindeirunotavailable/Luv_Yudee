@@ -16,7 +16,6 @@
                         <input type="Email" name="modal_email" id="modal_email" class="form-control "
                             placeholder="Enter Email" required>
                     </div>
-
                     <div class="form-group">
                         <label class="label-700 pl-5">Password</label>
                         <div class="d-flex justify-content-end">
@@ -27,7 +26,6 @@
                         <div class="invalid-feedback">
                             <a> กรุณากรอก Password</a>
                         </div>
-
                     </div>
                     <div class="form-group">
                         <label class="label-700 pl-5">Confirm Password</label>
