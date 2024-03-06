@@ -31,13 +31,13 @@ class PropertyController extends Controller
         if (isset($request['id_properties'])) {
             $this->data['id_properties'] = $request['id_properties'];
         }
-        return view('dashboard.sidebardashboard')->with('data', $this->data)
-                                                ;
+        return view('dashboard.sidebardashboard')->with('data', $this->data);
     }
 
     // PropertyController
     public function updatedata(Request $request)
     {
+
         $data = array(
             'title' => $request['title'],
             'description' => json_encode($request['description']),
@@ -46,86 +46,85 @@ class PropertyController extends Controller
             'price' => $request['price'],
             // 'image_url'=> $request['image_url'],
             // 'video_url'=> $request['video_url'],
-            'address'=> $request['address'],
-            'provinces'=> $request['provinces'],
-            'amphures'=> $request['amphures'],
-            'districts'=> $request['districts'],
-            'zipcode'=> $request['zipcode'],
-            'latitude'=> $request['latitude'],
-            'longitude'=> $request['longitude'],
-            'floor_amount'=> $request['floor_amount'],
-            'rooms'=> $request['rooms'],
-            'bedrooms'=> $request['bedrooms'],
-            'bathrooms'=> $request['bathrooms'],
-            'interior_size'=> $request['interior_size'],
-            'garage'=> $request['garage'],
-            'garage_size'=> $request['garage_size'],
-            'psm'=> $request['psm'],
-            'year_build'=> $request['year_build'],
-            'notes'=> $request['notes'],
+            'address' => $request['address'],
+            'provinces' => $request['provinces'],
+            'amphures' => $request['amphures'],
+            'districts' => $request['districts'],
+            'zipcode' => $request['zipcode'],
+            'latitude' => $request['latitude'],
+            'longitude' => $request['longitude'],
+            'floor_amount' => $request['floor_amount'],
+            'rooms' => $request['rooms'],
+            'bedrooms' => $request['bedrooms'],
+            'bathrooms' => $request['bathrooms'],
+            'interior_size' => $request['interior_size'],
+            'garage' => $request['garage'],
+            'garage_size' => $request['garage_size'],
+            'psm' => $request['psm'],
+            'year_build' => $request['year_build'],
+            'notes' => $request['notes'],
             // 'amenities' => implode(',', $request['amenities']),
             'amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
 
 
         );
         if (isset($request['id_properties'])) {
+
             $id_properties = $request['id_properties'];
             $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
 
+            // Update image and video URLs if new files are uploaded
             if ($request->hasFile('image')) {
-                $imageUrl = [];
-
+                $image_url = [];
                 foreach ($request->file('image') as $image) {
-                    $imageName = time().'_'.$image->getClientOriginalName();
-                    $image->move(public_path('/assets/upload_image' ), $imageName);
-                    $imageUrl[] = '/assets/upload_image/'. $imageName;
+                    $imageName = time() . '_' . $image->getClientOriginalName();
+                    $image->move(public_path('/assets/upload_image'), $imageName);
+                    $image_url[] = '/assets/upload_image/' . $imageName;
                 }
-
-                $data['image_url'] = implode(',', $imageUrl);
+                $data['image_url'] = implode(',', $image_url);
             }
 
             if ($request->hasFile('video')) {
-                $videoUrl = [];
-
+                $video_url = [];
                 foreach ($request->file('video') as $video) {
-                    $videoName = time().'_'.$video->getClientOriginalName();
-                    $video->move(public_path('/assets/upload_video' ), $videoName);
-                    $videoUrl[] = '/assets/upload_video/'. $videoName;
+                    $videoName = time() . '_' . $video->getClientOriginalName();
+                    $video->move(public_path('/assets/upload_video'), $videoName);
+                    $video_url[] = '/assets/upload_video/' . $videoName;
                 }
-
-                $data['video_url'] = implode(',', $videoUrl);
+                $data['video_url'] = implode(',', $video_url);
             }
-
-            if (!($request->hasFile('video') || $request->hasFile('video'))) {
-                $property = Property::property($id_properties);
-                $data['image_url'] = $property->image_url;
-                $data['video_url'] = $property->video_url;
-            }
-
             DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
-
         } else {
+
             $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['created_datetime'] = date('Y-m-d H:i:s');
             $data['created_by'] = 1;
-           // // dd($request->all());
+            // // dd($request->all());
+            $image_url = [];
             if ($request->hasFile('image')) {
-                $imageName = time().'_'.$request->image->getClientOriginalName();
-                $request->file('image')->move(public_path('/assets/upload_image' ), $imageName);
-                $data['image_url'] = ('/assets/upload_image/'. $imageName);
+                foreach ($request->file('image') as $image) {
+                    $imageName = time() . '_' . $image->getClientOriginalName();
+                    $image->move(public_path('/assets/upload_image'), $imageName);
+                    $image_url[] = '/assets/upload_image/' . $imageName;
+                }
             }
 
+            $video_url = [];
             if ($request->hasFile('video')) {
-                $videoName = time().'_'.$request->video->getClientOriginalName();
-                $request->file('video')->move(public_path('/assets/upload_video'), $videoName);
-                $data['video_url'] = ('/assets/upload_video/' . $videoName);
+                foreach ($request->file('video') as $video) {
+                    $videoName = time() . '_' . $video->getClientOriginalName();
+                    $video->move(public_path('/assets/upload_video'), $videoName);
+                    $video_url[] = '/assets/upload_video/' . $videoName;
+                }
             }
+            $data['image_url'] = $image_url ? implode(',', $image_url) : null;
+            $data['video_url'] = $video_url ? implode(',', $video_url) : null;
 
             $id_properties = DB::table('pp_addproperties')->insertGetId($data);
         }
         return redirect('addproperty?id_properties=' . $id_properties)
-        ->with('success', 'Property uploaded successfully');
+            ->with('success', 'Property uploaded successfully');
     }
 
 
