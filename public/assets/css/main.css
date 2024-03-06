@@ -50,7 +50,7 @@ header.nav-homepage .responsive-menu .sub-menus li {
 /*้hover เมนู*/
 header.nav-homepage .responsive-menu .sub-menus li:hover {
     background-color: #99d2f8;
-    /* background-color: #0071bc; */ 
+    /* background-color: #0071bc; */
 }
 header.nav-homepage .responsive-menu .sub-menus a {
     color:white;
@@ -252,7 +252,7 @@ header.nav-homepage.sticky .header-logo.logo2 {
 .responsive-menu li {
     list-style: none
 }
-.responsive-menu>li { 
+.responsive-menu>li {
     border: 0px;
     display: inline-block;
     margin: 0 2px;
@@ -1698,7 +1698,7 @@ header.nav-innerpage-style.style2 {
 .far,.fa-regular {
     font-weight: 400
 }
-.far{ 
+.far{
     margin-top: 5px;
 }
 .hsidebar-contents {
@@ -2661,7 +2661,7 @@ textarea.form-control-lg {
     border: none
 }
 .flaticon-turn-back:before {
-    content: "" 
+    content: ""
 }
 .btn-thm {
     background-color: #2596be;
@@ -2734,10 +2734,10 @@ textarea.form-control-lg {
     margin-right: 1.5rem!important
 }
 .fa-regular.fa-building {
-    margin-right: 5px !important; 
+    margin-right: 5px !important;
 }
 .fa-solid.fa-house {
-    margin-right: 5px !important; 
+    margin-right: 5px !important;
 }
 .fa-solid.fa-house-laptop {
     margin-right: 5px !important;
@@ -3283,14 +3283,14 @@ textarea.form-control-lg {
 }
 @media (max-width: 426px){
     .b-cen{
-        max-width: 425px; 
+        max-width: 425px;
         text-align: center;
     }
 }
 @media (max-width: 769px){
     .b-cen{
         max-width: 768px;
-        text-align: center; 
+        text-align: center;
     }
 }
 
@@ -3503,7 +3503,7 @@ textarea.form-control-lg {
     background-color: #0071bc;
     display: flex;
     justify-content: center;
-    align-items: center;      
+    align-items: center;
 }
 .copyright-text{
     color: white;
@@ -3556,7 +3556,7 @@ textarea.form-control-lg {
      .label-700{
          font-weight: 700;
        }
- 
+
      .w-300{
          width: 300px;
      }
@@ -3568,7 +3568,7 @@ textarea.form-control-lg {
      .link-effect:hover{
         color: #0071bc
     }
-             
+
      .background-grey{
          background-color: #f7f7f7
      }
@@ -3583,7 +3583,7 @@ textarea.form-control-lg {
      /* border-radius: 10px !important;  */
      border: none !important; /* ไม่ให้ปุ่มขยายเวลาเอาเม้าส์ไปชี้ */
      color: rgb(234, 234, 238) !important; /* สีตัวอักษา */
-     font-size: 18px !important; /* ขนาด */
+     font-size: 18px ; /* ขนาด */
      background-position: 100% !important; /* ต่ำแหน่งสีพื้นหลัง */
      background-size: 400% !important;  /* ต่ำแหน่งสีพื้นหลัง */
      transition-duration: 1.5s !important;  /* เวลาการเคลื่อนทีสีพิ้นหลัง */
