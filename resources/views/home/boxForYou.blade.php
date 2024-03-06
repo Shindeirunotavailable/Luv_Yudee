@@ -31,7 +31,7 @@
                                 </div> 
                             </div>
                             <div class="mobile-b">
-                                <a class="user-arrow user-btn btn-yuudee add-property rounded-pill text-a ptr-7" href="#">Learn More
+                                <a class="user-arrow user-btn btn-yuudee learn-more rounded-pill text-a ptr-7" href="#">Learn More
                                     <i class="fa-solid fa-arrow-right fa-lg"></i>
                                 </a>
                             </div>

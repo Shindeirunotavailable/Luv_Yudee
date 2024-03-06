@@ -754,7 +754,7 @@ ul[data-menu-style=vertical]>li>ul.sub-menus>li ul.sub-menus>li ul.sub-menus {
 .btn-yuudee2:hover {
     border: 1px solid #181a20
 }
-.add-property,.add-search {
+.add-property,.add-search,.learn-more {
     font-size: 14px;
     height: 47px;
     padding: 9px 22px
@@ -856,6 +856,14 @@ a:active,a:focus,a:hover,a:visited,.btn:active,.btn:focus,.btn:hover,.btn:visite
     }
     .s-logo{
         width: 120px;
+    }
+}
+@media (max-width: 426px){
+    .learn-more {
+        font-size: 14px;
+        height: 47px;
+        padding: 9px 12px;
+        margin-top: 7px; 
     }
 }
 @media (max-width: 321px){
