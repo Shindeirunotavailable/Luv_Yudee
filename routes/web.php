@@ -37,6 +37,7 @@ route::any('register','App\Http\Controllers\LoginController@register');  // ส�
 route::any('loginform','App\Http\Controllers\LoginController@loginform');  // เข้าสู่ระบบ
 route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // กู้รหัสผ่าน
 
+
  // -----------------------------------function test Route ------------------------------------
  Route::view('/addproperty', 'dashboard.sidebardashboard');
 // earth

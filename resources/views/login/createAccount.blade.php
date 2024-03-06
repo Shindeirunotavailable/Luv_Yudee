@@ -10,6 +10,7 @@
             <div class="modal-body">
                 <form action="{{ url('/register') }}"  method="POST" class="needs-validation" id="registerForm">
                     @csrf
+                    
                     <div class="form-group">
                         <label class="label-700 pl-5">Email</label>
                         <input type="Email" name="modal_email" id="modal_email" class="form-control "
@@ -23,10 +24,10 @@
                         </div>
                         <input type="password" name="modal_password" id="modal_password" class="form-control "
                             placeholder="Enter Password"  onChange="onChange()"> 
-
                         <div class="invalid-feedback">
                             <a> กรุณากรอก Password</a>
                         </div>
+
                     </div>
                     <div class="form-group">
                         <label class="label-700 pl-5">Confirm Password</label>
@@ -40,16 +41,32 @@
                         </div>
                     </div>
                     <div id="result" class="colorRed"> </div>
+                    <div id="statusMessage" style="color: red"></div>
 
-                    <div class="pt-20 pb-20 text-center">                        
-                        <button type="submit" class="g-recaptcha afterButton rounded-pill btn-lg btn-block"
-                        id="submitModal" 
-                        data-sitekey="{{config('services.recaptcha.site_key')}}" 
-                        data-callback='onSubmitRegister' data-action='submit'> 
-                        <i class="fa-regular fa-paper-plane "></i> Submit
-                       </button> 
+                        <div id="message">
+                            <div class="divider d-flex align-items-center">
+                                <p class="text-center mx-3 mb-0">Password must contain the following</p>
+                           </div>
+                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                            <p id="number" class="invalid">A <b>number</b></p>
+                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                            <p id="specialChar" class="invalid">A <b>special character</b></p>
+                        </div>
+                            <div class="pt-20 pb-20 text-center">    
+                            <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+                                id="submitModal" > 
+                                <i class="fa-regular fa-paper-plane "></i> Submit
+                            </button> 
 
-                    </div>
+                                {{-- <button type="submit" class="g-recaptcha afterButton rounded-pill btn-lg btn-block"
+                                id="submitModal" 
+                                data-sitekey="{{config('services.recaptcha.site_key')}}" 
+                                data-callback='onSubmitRegister' data-action='submit'> 
+                                <i class="fa-regular fa-paper-plane "></i> Submit
+                            </button>  --}}
+
+                            </div>
                 </form>
             </div>
         </div>
@@ -67,5 +84,6 @@
     function onSubmitRegister(token) {
           $("#registerForm").submit();
         }
+
 
 </script>

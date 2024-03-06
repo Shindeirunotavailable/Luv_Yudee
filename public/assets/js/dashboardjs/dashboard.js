@@ -53,6 +53,32 @@ $(document).ready(function() {
     $('#districts').select2();
 
 });
+// $(document).ready(function() {
+//     // อัปเดตป้ายกำกับของรูปภาพ
+//     function updateImage(input) {
+//         var fileName = input.files[0].name;
+//         var label = $('#imageLabel');
+//         label.html(fileName);
+//     }
+
+//     // อัปเดตป้ายกำกับของวิดีโอ
+//     function updateVideoLabel(input) {
+//         var fileName = input.files[0].name;
+//         var label = $('#videoLabel');
+//         label.html(fileName);
+//     }
+
+//     // รับอีเวนต์ change จาก input รูปภาพ
+//     $('#customIMG').change(function() {
+//         updateImage(this);
+//     });
+
+//     // รับอีเวนต์ change จาก input วิดีโอ
+//     $('#customVdo').change(function() {
+//         updateVideoLabel(this);
+//     });
+// });
+
 // map
     $(document).ready(function() {
         $('#latitudeInput, #longitudeInput').change(updateMap);

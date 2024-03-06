@@ -37,6 +37,10 @@
                                     data-target="#nav-amenities" type="button" role="tab" aria-controls="nav-amenities"
                                     aria-selected="false">5. Amenities
                                 </button>
+                                {{-- <a href="#nav-media" role="tab" aria-controls="nav-media" aria-selected="false"
+                                    class="nav-link-ap font-weight-600" id="next-tab">Next
+                                </a> --}}
+
                             </div>
                         </nav>
                         <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
@@ -98,37 +102,47 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                        </div>
+                                            </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="nav-media" role="tabpanel" aria-labelledby="nav-media-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                                 <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
-                                                <div class="row justify-content-center">
-                                                    <div class="col-sm-6 mb-0 mt-3">
-                                                            <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Image</label>
-                                                            <input name="image" type="file" style="visibility:hidden;"  id="customIMG"  accept="image/*" />
+                                                <div class=" ">
+                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                        <label for="customIMG" class="afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="imageLabel">Select Image</label>
+                                                        <input name="image[]" type="file" class="custom-file-input" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
                                                     </div>
+
                                                     <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
-                                                    {{-- @if (isset($data['id_properties']))
-                                                        <div class="col-4 mt-0 row justify-content-center mb-6">
-                                                            <img src="{{ $data['property']->image_url }}" alt="Property Image" style="width: 50%;">
+                                                    @if (isset($data['id_properties']))
+                                                        <div class="row">
+                                                            @foreach (explode(',', $data['property']->image_url) as $imageUrl)
+                                                                <div class="col-4 mt-0 row justify-content-center mb-6">
+                                                                    <img src="{{ $imageUrl }}" alt="Property Image" style="width: 50%;">
+                                                                </div>
+                                                            @endforeach
                                                         </div>
-                                                    @endif --}}
+                                                    @endif
+
 
                                                 </div>
                                                 <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
-                                                <div class="row justify-content-center">
-                                                    <div class="col-sm-6 mb-0 mt-3">
-                                                        <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block">Select Video</label>
-                                                        <input name="video" type="file" style="visibility:hidden;"  id="customVdo"  accept="video/*"/>
+                                                <div class=" ">
+                                                    <div class="col-sm-6 mb-4 mt-3">
+                                                        <label for="customVdo" class="afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="videoLabel">Select Video</label>
+                                                        <input name="video[]" type="file" style="visibility:hidden;" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                     </div>
                                                     <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div>
-                                                    {{-- @if (isset($data['id_properties']))
-                                                        <div class="col-4 mt-0 row justify-content-center" >
-                                                            <video src="{{ $data['property']->video_url }}" controls style="width: 100%;" ></video>
+                                                    @if (isset($data['id_properties']))
+                                                        <div class="row">
+                                                            @foreach (explode(',', $data['property']->video_url) as $videoUrl)
+                                                                <div class="col-6 mt-0 row justify-content-center mb-6 " >
+                                                                    <video src="{{ $videoUrl }}" controls style="width: 75%;" ></video>
+                                                                </div>
+                                                            @endforeach
                                                         </div>
-                                                    @endif --}}
+                                                    @endif
                                                 </div>
                                                 {{-- @if (isset($data['id_properties']))
                                                     <h4 class="fw-600 title fs-17 mb-10 mt-5">Current Media</h4>
