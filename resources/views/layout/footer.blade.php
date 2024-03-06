@@ -80,9 +80,9 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="text-lg-start">
-                    <p class="copyright-text  mb-0 texts-pad ">© Homez 2024 
-                        <a class="copyright-text" href="https://themeforest.net/user/ib-themes" target="_blank" rel="noopener noreferrer">ib-themes</a> 
-                            - All rights reserved
+                    <p class="copyright-text  mb-0 texts-pad ">© 2024 
+                        <a class="copyright-text" href="https://themeforest.net/user/ib-themes" target="_blank" rel="noopener noreferrer">yuudee.com</a> 
+                            | All Rights Reserved
                     </p>
                 </div>
             </div>

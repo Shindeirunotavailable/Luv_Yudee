@@ -7,7 +7,7 @@
                   </div>
                   <div class="col-md-6 col-lg-7 md-pl-30 xs-pl-15 md-pt-10 md-pl-20">
                     <div class="card-body row justify-content-md-center justify-content-center ">
-                        <div class="why-chose-list style2 pt-30 pb-30 md-pl-30 md-pr-15 lg-pr-30 lg-pl-30">
+                        <div class="why-chose-list style2 pt-30 sm-pt-0 pb-30 sm-pb-0 md-pl-15 md-pr-15 lg-pr-30 lg-pl-30">
                             <h2 class="card-title text-capitalize mb-30">Let’s find the right <br class="d-none d-md-block"> selling option for you</h2>
                             <div class="list-one d-flex align-items-start mb-30"> 
                                 <i class="list-icon flex-shrink-0 fa-solid fa-user-shield"></i>
@@ -31,7 +31,7 @@
                                 </div> 
                             </div>
                             <div class="mobile-b">
-                                <a class="user-arrow user-btn btn-yuudee add-property rounded-pill text-a ptr-7" href="#">Learn More
+                                <a class="user-arrow user-btn btn-yuudee learn-more rounded-pill text-a ptr-7" href="#">Learn More
                                     <i class="fa-solid fa-arrow-right fa-lg"></i>
                                 </a>
                             </div>

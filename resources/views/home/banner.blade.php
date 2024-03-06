@@ -7,107 +7,12 @@
                         <h2 class="hero-title animation-up-1">Easy Way to Find a <br class="d-none d-md-block">Perfect Property</h2>
                         <p class="hero-text fs-15 animation-up-2">From as low as $10 per day with limited time offer discounts</p>
                        
-                        <div class="advance-search mt-60 mt30-lg mr-auto ml-auto animation-up-3">
-                            <ul class="nav nav-tabs  p-0 m-0" id="nav-tab">
-                                <li class="nav-item">
-                                    <button class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-buy" role="tab" aria-controls="nav-buy" aria-selected="true">Buy</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-rent" role="tab" aria-controls="nav-rent" aria-selected="false">Rent</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-sold" role="tab" aria-controls="nav-sold" aria-selected="false">Sold</button>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="active tab-pane" id="nav-buy">
-                                    <div class="advance-content-st1">
-                                        <div class="row">
-                                            <div class="col-md-8 col-lg-9">
-                                                <div class="advance-search-field position-relative text-al">
-                                                    <form class="form-search position-relative">
-                                                        <div class="box-search" id="nav-buy">
-                                                            <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search" placeholder="Search Products for Buy">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-lg-3">
-                                                <div
-                                                    class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
-                                                    <button class="btn-advance-search" type="button" data-toggle="modal"
-                                                        data-target="#advanceSeachModal">
-                                                        <i class="fa-solid fa-list-ul mr-2"></i>Advanced
-                                                    </button>
-                                                    <button class="icon-advance-search user-btn btn-search ml-4" type="button">
-                                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="nav-rent">
-                                    <div class="advance-content-st1">
-                                        <div class="row">
-                                            <div class="col-md-8 col-lg-9">
-                                                <div class="advance-search-field position-relative text-al">
-                                                    <form class="form-search position-relative">
-                                                        <div class="box-search" id="nav-rent">
-                                                            <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search"
-                                                                placeholder="Search Products for Rent">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-lg-3">
-                                                <div
-                                                    class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
-                                                    <button class="btn-advance-search" type="button" data-toggle="modal"
-                                                        data-target="#advanceSeachModal">
-                        
-                                                        <i class="fa-solid fa-list-ul mr-2"></i>Advanced
-                                                    </button>
-                                                    <button class="icon-advance-search user-btn btn-search ml-4" type="button">
-                                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="nav-sold">
-                                    <div class="advance-content-st1">
-                                        <div class="row">
-                                            <div class="col-md-8 col-lg-9">
-                                                <div class="advance-search-field position-relative text-al">
-                                                    <form class="form-search position-relative">
-                                                        <div class="box-search" id="nav-sold">
-                                                            <i class="icon fa-solid fa-house mtb-2"></i>
-                                                            <input class="form-control background-f7 bdr12 h-55" type="text" name="search"
-                                                                placeholder="Search Products for Sold">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-lg-3">
-                                                <div
-                                                    class="d-flex align-items-center justify-content-start justify-content-md-center mt-3 mt-md-0">
-                                                    <button class="btn-advance-search" type="button" data-toggle="modal"
-                                                        data-target="#advanceSeachModal">
-                                                        <i class="fa-solid fa-list-ul mr-2"></i>Advanced
-                                                    </button>
-                                                    <button class="icon-advance-search user-btn btn-search ml-4" type="button">
-                                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="laptop-searchs">
+                            @include('home.boxSearchLaptop')
+                        </div>
+
+                        <div class="mobile-searchs">
+                            @include('home.boxSearchMobile')
                         </div>
                         
                         
@@ -119,7 +24,9 @@
                                 <div class="modal-content">
                                     <div class="modal-header pl-30 pr-30">
                                         <h5 class="modal-title" id="exampleModalLabel">Advanced</h5>
-                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                        <a type="button"  data-dismiss="modal" aria-label="Close">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </a>
                                     </div>
                                     <div class="modal-body pb-0">
                                         <ul class="list-group  list-sidebar-style">

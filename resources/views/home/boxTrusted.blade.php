@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12 aos-init">
                 <div class="main-title text-center">
-                    <h6>Trusted by the world’s best</h6>
+                    <h6 class="fs-20">Trusted by the world’s best</h6>
                 </div>
             </div>
             <div class="col-lg-12 my-5 text-center">
