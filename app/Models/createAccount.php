@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class createAccount extends Model 
 {
-    use HasFactory;
-    protected $fillable = ['email', 'password','status','created_datetime','updated_datetime','created_by','updated_by'];
+    public static function Getemail($username){
 
+        $existingUser = DB::table('user')->where('email', $username)->first();
+
+        return $existingUser;
+    }
 }

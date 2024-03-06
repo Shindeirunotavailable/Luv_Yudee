@@ -3004,7 +3004,7 @@ textarea.form-control-lg {
 /* ----------------------------------End boxCity--------------------------------------- */
 /* boxForSales */
 .me-2{
-    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
 }
 .swipers {
     margin-left: auto;
@@ -3026,6 +3026,14 @@ textarea.form-control-lg {
     .col-sm-6 {
         flex: 0 0 auto;
         width: 50%;
+    }
+}
+@media (max-width : 426px){
+    .i-forrent{
+        display: none;
+    }
+    .i-forsale{
+        display: none;
     }
 }
 /* ----------------------------------End boxForSales--------------------------------------- */
@@ -3100,6 +3108,12 @@ textarea.form-control-lg {
     -webkit-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease;
+    }
+}
+@media (max-width: 320px){
+    .s-321{
+        padding-left: 30px !important;
+        padding-right: 30px !important;
     }
 }
 /* ----------------------------------End boxForYou--------------------------------------- */
