@@ -63,7 +63,9 @@ class PropertyController extends Controller
             'psm'=> $request['psm'],
             'year_build'=> $request['year_build'],
             'notes'=> $request['notes'],
-            'amenities' => implode(',', $request['amenities']),
+            // 'amenities' => implode(',', $request['amenities']),
+            'amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
+
 
         );
         if (isset($request['id_properties'])) {

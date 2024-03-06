@@ -298,10 +298,10 @@ function formatCurrency(input, blur) {
               }
 
         titleproperty.on('input', function() {
-            if (!$(this).val()) {
-                $(this).addClass('is-invalid');
+            if (!$(titleproperty).val()) {
+                $(titleproperty).addClass('is-invalid');
             } else {
-                $(this).removeClass('is-invalid');
+                $(titleproperty).removeClass('is-invalid');
             }
         });
 

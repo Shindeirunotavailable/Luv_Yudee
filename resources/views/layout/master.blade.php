@@ -16,7 +16,7 @@
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
          <!-- Include Select2 from CDN -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
-         
+
          <!-- reCAPTCHA เวอร์ชัน 3  -->
          <script src="https://www.google.com/recaptcha/api.js"></script>
          <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
@@ -52,7 +52,10 @@
 <body>
     @include('layout.menu')
     @yield('content')
-    @include('layout.footer')
+    @if(!request()->is('addproperty'))
+        @include('layout.footer')
+    @endif
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
