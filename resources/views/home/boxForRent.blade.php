@@ -9,7 +9,7 @@
                         <p class="par">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
                     </div>
                 </div>
-                <div class="col-lg-6 my-3 pr-4">
+                <div class="col-lg-6 my-3 pr-4 i-forrent">
                     <div class="home-icon-st d-none d-sm-flex justify-content-start justify-content-lg-end">
                         <a class="d-flex align-items-center dark-color  me-2" href="#">
                             <i class=" icons fa-solid fa-house" aria-hidden="true"></i> Houses
