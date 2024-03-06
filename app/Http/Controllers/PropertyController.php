@@ -69,7 +69,6 @@ class PropertyController extends Controller
 
         );
         if (isset($request['id_properties'])) {
-
             $id_properties = $request['id_properties'];
             $data['updated_datetime'] = date('Y-m-d H:i:s');
             $data['updated_by'] = 2;
