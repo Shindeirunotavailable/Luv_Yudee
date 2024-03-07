@@ -17,7 +17,7 @@ class User extends Migration
             $table->id();
             $table->string('email', 50);
             $table->string('password');
-            $table->tinyInteger('status')->default(2);
+            $table->tinyInteger('status')->default(1);
             $table->dateTime('create_datetime')->useCurrent();
             $table->dateTime('update_datetime')->useCurrent();
             $table->tinyInteger('create_by')->default(0); // ปรับเปลี่ยนเป็น unsignedBigInteger สำหรับ id
