@@ -10,7 +10,7 @@ class Property extends Model
 {
     public static function property($id_properties='')
     {
-        $query = DB::table('pp_addproperties');
+        $query = DB::table('pp_properties');
             if($id_properties){
                return $query->where('id_properties',$id_properties)
                 ->first();
