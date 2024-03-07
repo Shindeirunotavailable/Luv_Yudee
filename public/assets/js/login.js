@@ -224,21 +224,16 @@ function onSubmitLogin() {
         confirm.addClass('is-valid');
         password.addClass('is-valid');
     }
-    if (!confirm.val()) {
-      confirm.addClass('is-invalid');
-      event.preventDefault();
-      event.stopPropagation();
-  }else {
-      confirm.removeClass('is-invalid');
-      confirm.addClass('is-valid');
-  }
-
     
+
+
     // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
     if (confirm.val() !== password.val()) {
         showError(confirm, errorPassword, 'Passwords do not match');
         confirm.addClass('border-danger');
         confirm.removeClass('is-valid');
+        confirm.removeClass('is-invalid');
+
         event.preventDefault();
         event.stopPropagation();
     } else {
@@ -253,7 +248,8 @@ function onSubmitLogin() {
         confirm.addClass('border-danger ');
         password.removeClass('is-valid');
         confirm.removeClass('is-valid');
-
+        confirm.removeClass('is-valid');
+        confirm.removeClass('is-invalid');
         event.preventDefault();
         event.stopPropagation();
     } else {
@@ -274,7 +270,6 @@ function onSubmitLogin() {
     input.addClass('is-invalid');
     errorDiv.text(message); // แสดงข้อความผิดพลาดใน div
   }
-
 
 
 

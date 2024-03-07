@@ -111,7 +111,7 @@
                                         class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
                                 </div>
                                 <input type="password" name="modal_password" id="modal_password" class="form-control "
-                                    placeholder="Enter Password" onChange="onChange()">
+                                    placeholder="Enter Password" >
                                 <div class="invalid-feedback">
                                     <a> กรุณากรอก Password</a>
                                 </div>
@@ -123,15 +123,15 @@
                                         class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
                                 </div>
                                 <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
-                                    class="form-control" placeholder="Enter Confirm Password" onChange="onChange()">
+                                    class="form-control" placeholder="Enter Confirm Password" >
                                 <div class="invalid-feedback">
                                     <a> กรุณากรอก Confirm Password</a>
                                 </div>
-                                <div class="invalid-feedback" id="errorpassword"></div>
+                                <div class="colorRed" id="errorpassword"></div>
 
                             </div>
                             <div class="pt-20 pb-20 text-center">
-                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" id="loginSubmit" 
+                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" 
                                 data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-action='register'> 
                                      <i class="fa-regular fa-paper-plane "></i> Submit
                                 </button> 
