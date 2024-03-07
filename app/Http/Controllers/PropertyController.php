@@ -96,6 +96,7 @@ class PropertyController extends Controller
 
             $data['update_datetime'] = date('Y-m-d H:i:s');
             $data['create_datetime'] = date('Y-m-d H:i:s');
+            $data['update_by'] = 1;
             $data['create_by'] = 1;
             // // dd($request->all());
             $image_url = [];
