@@ -187,9 +187,6 @@ function onSubmitLogin() {
   
   // new modal
 
- $('body').on('click', '#forgetPassword', function() {
-
-    });
 
 
   function onSubmitRegister(event) {
@@ -211,7 +208,7 @@ function onSubmitLogin() {
       showError(emailInput, errorDiv, 'please enter a part fllowing .');
       event.preventDefault();
     } else{
-      showError(emailInput, errorDiv, '').removeClass('is-invalid');
+      showError(emailInput, errorDiv, '');
     }
 
     // ตรวจสอบว่า modal_password มีค่าว่างหรือไม่
@@ -227,6 +224,14 @@ function onSubmitLogin() {
         confirm.addClass('is-valid');
         password.addClass('is-valid');
     }
+    if (!confirm.val()) {
+      confirm.addClass('is-invalid');
+      event.preventDefault();
+      event.stopPropagation();
+  }else {
+      confirm.removeClass('is-invalid');
+      confirm.addClass('is-valid');
+  }
 
     
     // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
@@ -243,8 +248,7 @@ function onSubmitLogin() {
     
     
     if (!passwordValidation.test(password.val())) {
-        showError(confirm, errorPassword, 'Password is not formation');
-
+        showError(confirm, errorPassword, 'รหัสผ่านควรมีความยาว 8 ตัวอักษรขึ้นไป ประกอบด้วย ตัวอักษรทั้งพิมพ์เล็ก พิมพ์ใหญ่ (a-z, A-Z) ตัวเลข (0-9) และมีเครื่องหมายหรืออักขระพิเศษ  (!@#$%^&*()_+|~-=\`{}[]:"');
         password.addClass('border-danger ');
         confirm.addClass('border-danger ');
         password.removeClass('is-valid');
