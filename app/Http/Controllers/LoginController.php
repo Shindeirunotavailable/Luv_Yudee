@@ -51,10 +51,6 @@ class LoginController extends Controller
         return view("login.forgetPassword");
     }
 
-    public function test()
-    { // แสดงหน้า modal ลืมรหัสผ่าน
-        return view("login.test");
-    }
 
 
 
@@ -106,6 +102,52 @@ class LoginController extends Controller
     // }
 
 
+    
+    public function register(Request $request)
+    {
+        $this->validate($request, [
+            'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
+                $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
+                    'secret' => config('services.recaptcha.secret_key'),
+                    'response' => $value,
+                    'remoteip' => \request()->ip()
+                ]);
+    
+                $g_recaptcha_result = $g_recaptcha->json();
+    
+                if (!$g_recaptcha_result['success']) {
+                    $fail("The {$attribute} is invalid.");
+                }
+            },]
+        ]);
+
+        // รับข้อมูลจาก request
+        $username = $request->input('modal_email');
+        $password = $request->input('modal_password');
+        // รายการข้อผิดพลาด
+        $errorMessages = [];
+        $existingUser = createAccount::Getemail($username);
+
+        if ($existingUser) {
+            // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
+            if ($existingUser->status >= 1) {
+                $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+            }
+        } else {
+            // บันทึกข้อมูล
+            $data = [
+                'email' => $username,
+                'password' => bcrypt($password),
+                'create_datetime'=> date('Y-m-d H:i:s'),
+                'update_datetime'=> date('Y-m-d H:i:s'),
+
+            ];
+            DB::table('user')->insert($data);
+            Mail::to($username)->send(new WelcomeEmail());
+            return redirect('/addproperty');
+        }
+        return back()->withErrors($errorMessages)->withInput();
+    }
 
 
 
@@ -243,25 +285,6 @@ class LoginController extends Controller
     // }
 
 
-    public function register(Request $request)
-    {
-        $this->validate($request, [
-            'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
-                $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
-                    'secret' => config('services.recaptcha.secret_key'),
-                    'response' => $value,
-                    'remoteip' => \request()->ip()
-                ]);
-                    dd($g_recaptcha->json());
-    
-                $g_recaptcha_result = $g_recaptcha->json();
-    
-                if (!$g_recaptcha_result['success']) {
-                    $fail("The {$attribute} is invalid.");
-                }
-            },]
-        ]);
-    }
     
 
 }
