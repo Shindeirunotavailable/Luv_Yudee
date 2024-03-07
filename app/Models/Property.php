@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class Property extends Model
 {
-    public static function property($id_propertie='')
+    public static function property($id_property='')
     {
         $query = DB::table('pp_properties');
-            if($id_propertie){
-               return $query->where('id_propertie',$id_propertie)
+            if($id_property){
+               return $query->where('id_property',$id_property)
                 ->first();
             }else{
                return $query->get();

@@ -41,8 +41,8 @@
                         </nav>
                         <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
                             @csrf
-                            @if (isset($data['id_propertie']))
-                                <input type="hidden"  name="id_propertie" value="{{$data['id_propertie']}}" >
+                            @if (isset($data['id_property']))
+                                <input type="hidden"  name="id_property" value="{{$data['id_property']}}" >
                             @endif
                             <div class="tab-content-ds" id="nav-tabContent">
 
@@ -123,7 +123,7 @@
                                                         </div>
 
                                                         <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
-                                                        @if (isset($data['id_propertie'])&& isset($data['property']->property_image_url))
+                                                        @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
 
                                                             <div class="row">
                                                                 @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
@@ -141,7 +141,7 @@
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
                                                         <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div>
-                                                        @if (isset($data['id_propertie'])&& isset($data['property']->property_video_url))
+                                                        @if (isset($data['id_property'])&& isset($data['property']->property_video_url))
                                                             <div class="row">
                                                                 @foreach (explode(',', $data['property']->property_video_url) as $videoUrl)
                                                                     <div class="col-6 mt-0 row justify-content-center mb-6 " >
@@ -187,7 +187,7 @@
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">City *</label>
                                                             <div class="" id="erroramphures">
                                                                 <select name="amphures" id="amphures" class="form-control">
-                                                                    @if (isset($data['id_propertie']))
+                                                                    @if (isset($data['id_property']))
                                                                         @foreach ($data['amphures'] as $value)
                                                                             <option value="{{ $value['id'] }}" {{ isset($data['property']->property_amphures) && $data['property']->property_amphures == $value['id'] ? 'selected' : '' }}>
                                                                                 {{ $value['name_th'] }}
@@ -203,7 +203,7 @@
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Country *</label>
                                                             <div class=" " id="errordistricts">
                                                                 <select name="districts" id="districts" class="form-control" >
-                                                                    @if (isset($data['id_propertie']))
+                                                                    @if (isset($data['id_property']))
                                                                         @foreach ($data['districts'] as $value)
                                                                             <option value="{{ $value['id'] }}" {{ isset($data['property']->property_districts) && $data['property']->property_districts == $value['id'] ? 'selected' : '' }}>
                                                                                 {{ $value['name_th'] }}

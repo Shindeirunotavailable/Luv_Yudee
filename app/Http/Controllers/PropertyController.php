@@ -19,8 +19,8 @@ class PropertyController extends Controller
     // DataBaseController
     public function databaseconnect(Request $request)
     {
-        $id_propertie = $request['id_propertie'];
-        $property = Property::property($id_propertie);
+        $id_property = $request['id_property'];
+        $property = Property::property($id_property);
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
@@ -28,8 +28,8 @@ class PropertyController extends Controller
         $this->data['amenities'] = Amenities::all();
         $this->data['property'] = $property;
 
-        if (isset($request['id_propertie'])) {
-            $this->data['id_propertie'] = $request['id_propertie'];
+        if (isset($request['id_property'])) {
+            $this->data['id_property'] = $request['id_property'];
         }
         return view('dashboard.sidebardashboard')->with('data', $this->data);
     }
@@ -67,8 +67,8 @@ class PropertyController extends Controller
 
 
         );
-        if (isset($request['id_propertie'])) {
-            $id_propertie = $request['id_propertie'];
+        if (isset($request['id_property'])) {
+            $id_property = $request['id_property'];
             $data['update_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 2;
 
@@ -92,7 +92,7 @@ class PropertyController extends Controller
                 }
                 $data['property_video_url'] = implode(',', $video_url);
             }
-            DB::table('pp_properties')->where('id_propertie', $request['id_propertie'])->update($data);
+            DB::table('pp_properties')->where('id_property', $request['id_property'])->update($data);
         } else {
 
             $data['update_datetime'] = date('Y-m-d H:i:s');
@@ -120,9 +120,9 @@ class PropertyController extends Controller
             $data['property_image_url'] = $image_url ? implode(',', $image_url) : null;
             $data['property_video_url'] = $video_url ? implode(',', $video_url) : null;
 
-            $id_propertie = DB::table('pp_properties')->insertGetId($data);
+            $id_property = DB::table('pp_properties')->insertGetId($data);
         }
-        return redirect('addproperty?id_propertie=' . $id_propertie)
+        return redirect('addproperty?id_property=' . $id_property)
             // ->with('success', 'Property uploaded successfully')
             ;
     }
