@@ -33,7 +33,7 @@
                     <div class="card border-hover shadow-2 shadow-hover-lg-1 p-xl-30 p-lg-20 h-100 hover-change-image">
                         <div class="row no-gutters">
                             <div class="col-sm-3 b-cen">
-                                <img src="{{ asset('/assets/images/group-17.png') }}" alt="Sell a home">
+                                <img src="{{ asset('/assets/images/group-16.png') }}" alt="Sell a home">
                             </div>
                             <div class="col-sm-9 t-cen">
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">
@@ -52,7 +52,7 @@
                     <div class="card border-hover shadow-2 shadow-hover-lg-1 p-xl-30 p-lg-20 h-100 hover-change-image">
                         <div class="row no-gutters">
                             <div class="col-sm-3 b-cen">
-                                <img src="{{ asset('/assets/images/group-21.png') }}" alt="Rent a home">
+                                <img src="{{ asset('/assets/images/group-16.png') }}" alt="Rent a home">
                             </div>
                             <div class="col-sm-9 t-cen">
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">

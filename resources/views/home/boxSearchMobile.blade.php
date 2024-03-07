@@ -30,7 +30,7 @@
                                 <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                             </button>
                             <button class="color-search add-search rounded-pill mx-2 text-a mt-1"href="{{url("/")}}">
-                                Search
+                                <i class="fa-solid fa-magnifying-glass"></i> Search
                             </button>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                                 <i class="fa-solid fa-list-ul mr-2"></i>Advanced
                             </button>
                             <button class="color-search add-search rounded-pill mx-2 text-a mt-1"href="{{url("/")}}">
-                                Search
+                                <i class="fa-solid fa-magnifying-glass"></i> Search
                             </button>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                             </button>
                             
                             <button class="color-search add-search rounded-pill mx-2 text-a mt-1"href="{{url("/")}}">
-                                Search
+                                <i class="fa-solid fa-magnifying-glass"></i> Search
                             </button>
                         </div>
                     </div>
