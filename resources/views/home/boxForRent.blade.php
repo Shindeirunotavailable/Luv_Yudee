@@ -1,5 +1,5 @@
 {{--boxForRent--}}
-<div class="py-5">
+<div class="pt-5 pt-0">
     <section class="pt-0 pb-60 mx20-lg">
         <div class="max-width1460-con position-relative mr-auto ml-auto">
             <div class="row wow fadeInUp" data-wow-delay="100ms">
