@@ -20,8 +20,8 @@ class User extends Migration
             $table->tinyInteger('status')->default(2);
             $table->dateTime('create_datetime')->useCurrent();
             $table->dateTime('update_datetime')->useCurrent();
-            $table->string('created_by')->default(0); // ปรับเปลี่ยนเป็น unsignedBigInteger สำหรับ id
-            $table->string('updated_by')->default(0); // ปรับเปลี่ยนเป็น unsignedBigInteger สำหรับ id และให้ nullable
+            $table->tinyInteger('create_by')->default(0); // ปรับเปลี่ยนเป็น unsignedBigInteger สำหรับ id
+            $table->tinyInteger('update_by')->default(0); // ปรับเปลี่ยนเป็น unsignedBigInteger สำหรับ id และให้ nullable
             $table->timestamps();
         });
     }

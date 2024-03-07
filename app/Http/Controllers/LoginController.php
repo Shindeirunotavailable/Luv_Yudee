@@ -53,7 +53,10 @@ class LoginController extends Controller
 
 
 
-
+    public function test()
+    { // แสดงหน้า modal ลืมรหัสผ่าน
+        return view("login.test ");
+    }
     // ------------------------------------- เข้าสู่ระบบ -------------------------------------------------
 
 
