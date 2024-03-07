@@ -41,8 +41,8 @@
                         </nav>
                         <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
                             @csrf
-                            @if (isset($data['id_properties']))
-                                <input type="hidden"  name="id_properties" value="{{$data['id_properties']}}" >
+                            @if (isset($data['id_propertie']))
+                                <input type="hidden"  name="id_propertie" value="{{$data['id_propertie']}}" >
                             @endif
                             <div class="tab-content-ds" id="nav-tabContent">
 
@@ -63,14 +63,14 @@
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Title *</label>
-                                                            <input type="text" class="form-control" placeholder="Your Name" id="titleproperty"  name="title" value="{{isset($data['property']->title) ? $data['property']->title : ""}}">
+                                                            <input type="text" class="form-control" placeholder="Your Name" id="titleproperty"  name="title" value="{{isset($data['property']->property_title) ? $data['property']->property_title : ""}}">
 
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
-                                                            <textarea name="description" id="editor">{{isset($data['property']->description)? json_decode($data['property']->description) :""}}</textarea>
+                                                            <textarea name="description" id="editor">{{isset($data['property']->property_description)? json_decode($data['property']->property_description) :""}}</textarea>
                                                         </div>
                                                     </div>
 
@@ -78,10 +78,10 @@
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
                                                             <select id="selectcategory" name="category" class="form-select" >
-                                                                <option value="1"{{ isset($data['property']->category) && $data['property']->category =='1' ? 'selected' :""}}>คอนโด</option>
-                                                                <option value="2"{{ isset($data['property']->category) && $data['property']->category =='2' ? 'selected' :""}}>บ้าน</option>
-                                                                <option value="3"{{ isset($data['property']->category) && $data['property']->category =='3' ? 'selected' :""}}>ทาวน์เฮาส์</option>
-                                                                <option value="4"{{ isset($data['property']->category) && $data['property']->category =='4' ? 'selected' :""}}>อพาร์ทเมนท์</option>
+                                                                <option value="1"{{ isset($data['property']->property_category) && $data['property']->property_category =='1' ? 'selected' :""}}>คอนโด</option>
+                                                                <option value="2"{{ isset($data['property']->property_category) && $data['property']->property_category =='2' ? 'selected' :""}}>บ้าน</option>
+                                                                <option value="3"{{ isset($data['property']->property_category) && $data['property']->property_category =='3' ? 'selected' :""}}>ทาวน์เฮาส์</option>
+                                                                <option value="4"{{ isset($data['property']->property_category) && $data['property']->property_category =='4' ? 'selected' :""}}>อพาร์ทเมนท์</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -90,8 +90,8 @@
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
                                                             <select id="propertystatus" name="status" class="form-control" >
-                                                                <option value="1"{{ isset($data['property']->status) && $data['property']->status=='1' ? "selected" :""}}>ขาย</option>
-                                                                <option value="2"{{ isset($data['property']->status) && $data['property']->status=='2' ? "selected" :""}}>เช่า</option>
+                                                                <option value="1"{{ isset($data['property']->property_status) && $data['property']->property_status=='1' ? "selected" :""}}>ขาย</option>
+                                                                <option value="2"{{ isset($data['property']->property_status) && $data['property']->property_status=='2' ? "selected" :""}}>เช่า</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -99,11 +99,11 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-6">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht *</label>
-                                                            <input type="text" name="price" id="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->price) && is_numeric($data['property']->price) ? $data['property']->price :""}}">
+                                                            <input type="text" name="price" id="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->property_price) && is_numeric($data['property']->property_price) ? $data['property']->property_price :""}}">
                                                         </div>
                                                     </div>
                                                 </div >
-                                            {{-- <button data-target="#nav-media-tab" type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button> --}}
+                                            <button data-target="#nav-media-tab" type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                         </div>
                                     {{-- </form> --}}
                                 </div>
@@ -123,10 +123,10 @@
                                                         </div>
 
                                                         <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
-                                                        @if (isset($data['id_properties'])&& isset($data['property']->image_url))
+                                                        @if (isset($data['id_propertie'])&& isset($data['property']->property_image_url))
 
                                                             <div class="row">
-                                                                @foreach (explode(',', $data['property']->image_url) as $imageUrl)
+                                                                @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
                                                                     <div class="col-4 mt-0 row justify-content-center mb-6">
                                                                         <img src="{{ $imageUrl }}" alt="Property Image" style="width: 50%;">
                                                                     </div>
@@ -141,9 +141,9 @@
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
                                                         <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div>
-                                                        @if (isset($data['id_properties'])&& isset($data['property']->video_url))
+                                                        @if (isset($data['id_propertie'])&& isset($data['property']->property_video_url))
                                                             <div class="row">
-                                                                @foreach (explode(',', $data['property']->video_url) as $videoUrl)
+                                                                @foreach (explode(',', $data['property']->property_video_url) as $videoUrl)
                                                                     <div class="col-6 mt-0 row justify-content-center mb-6 " >
                                                                         <video src="{{ $videoUrl }}" controls style="width: 75%;" ></video>
                                                                     </div>
@@ -151,7 +151,7 @@
                                                             </div>
                                                         @endif
                                                     </div>
-                                            {{-- <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right ">Submit</button> --}}
+                                            <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right ">Submit</button>
                                         </div>
                                     {{-- </form> --}}
                                 </div>
@@ -163,7 +163,7 @@
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Address *</label>
-                                                            <input type="text" class="form-control" placeholder="Your Address"  name="address" id="address" value="{{isset($data['property']->address) ? $data['property']->address : ""}}">
+                                                            <input type="text" class="form-control" placeholder="Your Address"  name="address" id="address" value="{{isset($data['property']->property_address) ? $data['property']->property_address : ""}}">
                                                         </div>
                                                     </div>
 
@@ -174,7 +174,7 @@
                                                                 <select  name="provinces" id="provinces" class="form-control" >
                                                                     <option  value=""  selected disabled ></option>
                                                                     @foreach ($data['provinces'] as $value)
-                                                                        <option value="{{ $value['id'] }}" {{ isset($data['property']->provinces) && $data['property']->provinces == $value['id'] ? 'selected' : '' }}>
+                                                                        <option value="{{ $value['id'] }}" {{ isset($data['property']->property_provinces) && $data['property']->property_provinces == $value['id'] ? 'selected' : '' }}>
                                                                             {{ $value['name_th'] }}
                                                                         </option>
                                                                     @endforeach
@@ -187,9 +187,9 @@
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">City *</label>
                                                             <div class="" id="erroramphures">
                                                                 <select name="amphures" id="amphures" class="form-control">
-                                                                    @if (isset($data['id_properties']))
+                                                                    @if (isset($data['id_propertie']))
                                                                         @foreach ($data['amphures'] as $value)
-                                                                            <option value="{{ $value['id'] }}" {{ isset($data['property']->amphures) && $data['property']->amphures == $value['id'] ? 'selected' : '' }}>
+                                                                            <option value="{{ $value['id'] }}" {{ isset($data['property']->property_amphures) && $data['property']->property_amphures == $value['id'] ? 'selected' : '' }}>
                                                                                 {{ $value['name_th'] }}
                                                                             </option>
                                                                         @endforeach
@@ -203,13 +203,14 @@
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Country *</label>
                                                             <div class=" " id="errordistricts">
                                                                 <select name="districts" id="districts" class="form-control" >
-                                                                    @if (isset($data['id_properties']))
+                                                                    @if (isset($data['id_propertie']))
                                                                         @foreach ($data['districts'] as $value)
-                                                                            <option value="{{ $value['id'] }}" {{ isset($data['property']->districts) && $data['property']->districts == $value['id'] ? 'selected' : '' }}>
+                                                                            <option value="{{ $value['id'] }}" {{ isset($data['property']->property_districts) && $data['property']->property_districts == $value['id'] ? 'selected' : '' }}>
                                                                                 {{ $value['name_th'] }}
                                                                             </option>
                                                                         @endforeach
                                                                     @endif
+
                                                                 </select>
 
                                                             </div>
@@ -218,21 +219,21 @@
                                                     <div class="col-sm-6 ">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip *</label>
-                                                            <input type="text" name="zipcode" id="zipcode" readonly class="form-control"  value="{{isset($data['property']->zipcode) ? $data['property']->zipcode : ""}}">
+                                                            <input type="text" name="zipcode" id="zipcode" readonly class="form-control"  value="{{isset($data['property']->property_zipcode) ? $data['property']->property_zipcode : ""}}">
                                                         </div>
                                                     </div>
 
                                                         <div class="col-sm-6">
                                                             <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Latitude *</label>
-                                                            <input type="text" class="form-control" name="latitude" id="latitudeInput" placeholder="Enter latitude"  value="{{isset($data['property']->latitude) ? $data['property']->latitude : ""}}">
+                                                            <input type="text" class="form-control" name="latitude" id="latitudeInput" placeholder="Enter latitude"  value="{{isset($data['property']->property_latitude) ? $data['property']->property_latitude : ""}}">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-6">
                                                             <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Longitude *</label>
-                                                            <input type="text" class="form-control" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{isset($data['property']->longitude) ? $data['property']->longitude : ""}}">
+                                                            <input type="text" class="form-control" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{isset($data['property']->property_longitude) ? $data['property']->property_longitude : ""}}">
                                                             </div>
                                                         </div>
 
@@ -244,7 +245,7 @@
 
                                                 </div>
 
-                                                <button type="submit" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                                <button type="submit" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                         </div>
                                 </div>
 
@@ -255,55 +256,55 @@
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Floor amount</label>
-                                                    <input type="number" name="floor_amount"  class="form-control" placeholder="Floor amount" value="{{isset($data['property']->floor_amount) ? $data['property']->floor_amount : ""}}">
+                                                    <input type="number" name="floor_amount"  class="form-control" placeholder="Floor amount" value="{{isset($data['property']->property_floor_amount) ? $data['property']->property_floor_amount : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label>
-                                                    <input type="number" name="rooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->rooms) ? $data['property']->rooms : ""}}">
+                                                    <input type="number" name="rooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_rooms) ? $data['property']->property_rooms : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms</label>
-                                                    <input type="number" name="bedrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->bedrooms) ? $data['property']->bedrooms : ""}}">
+                                                    <input type="number" name="bedrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_bedrooms) ? $data['property']->property_bedrooms : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label>
-                                                    <input type="number" name="bathrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->bathrooms) ? $data['property']->bathrooms : ""}}">
+                                                    <input type="number" name="bathrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_bathrooms) ? $data['property']->property_bathrooms : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Interior Size</label>
-                                                    <input type="text" name="interior_size" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->interior_size) ? $data['property']->interior_size : ""}}">
+                                                    <input type="text" name="interior_size" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->property_interior_size) ? $data['property']->property_interior_size : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage</label>
-                                                    <input type="number" name="garage" class="form-control" placeholder="Garage" value="{{isset($data['property']->garage) ? $data['property']->garage : ""}}">
+                                                    <input type="number" name="garage" class="form-control" placeholder="Garage" value="{{isset($data['property']->property_garage) ? $data['property']->property_garage : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Garage size (Sqm)</label>
-                                                    <input type="text" name="garage_size" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->garage_size) ? $data['property']->garage_size : ""}}">
+                                                    <input type="text" name="garage_size" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->property_garage_size) ? $data['property']->property_garage_size : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">PSM / sqm</label>
-                                                    <input type="text" name="psm" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->psm) ? $data['property']->psm : ""}}">
+                                                    <input type="text" name="psm" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->property_psm) ? $data['property']->property_psm : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Year build </label>
-                                                    <input type="text" name="year_build" class="form-control" placeholder="Year" value="{{isset($data['property']->year_build) ? $data['property']->year_build : ""}}">
+                                                    <input type="text" name="year_build" class="form-control" placeholder="Year" value="{{isset($data['property']->property_year_build) ? $data['property']->property_year_build : ""}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -312,7 +313,7 @@
                                             <div class="col-sm-12">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10">Owner/Agent notes (not visible on front end)</label>
-                                                    <textarea class="textbox-ap" name="notes" cols="30" rows="5" placeholder="There are many variations of passages.">{{ isset($data['property']->notes) ? $data['property']->notes : "" }}</textarea>
+                                                    <textarea class="textbox-ap" name="notes" cols="30" rows="5" placeholder="There are many variations of passages.">{{ isset($data['property']->property_notes) ? $data['property']->property_notes : "" }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -326,7 +327,7 @@
                                         <div class="row">
                                             <div  class="row-ap flex-lg-row flex-wrap">
                                                 @php
-                                                $amenities = isset($data['property']->amenities) ? explode(',', $data['property']->amenities) : [];
+                                                $amenities = isset($data['property']->property_amenities) ? explode(',', $data['property']->property_amenities) : [];
                                                 $amenitiesArray = $data['amenities']->toArray();
                                                 $chunks = array_chunk($amenitiesArray, ceil(count($amenitiesArray) / 3));
                                                 @endphp
@@ -358,8 +359,9 @@
                 </div>
             </div>
         </div>
+
     </div>
-    <footer class="dashboard_footer pb10">
+    <footer class="mb-1 pt-30">
         <div class="container">
             <div class="row items-center justify-content-center justify-content-md-between">
                 <div class="col-auto">
@@ -380,9 +382,9 @@
 
 </div>
 
-<script>
+{{-- <script>
     document.getElementById("submitdescription").addEventListener("click", function() {
         // เปลี่ยนไปยัง tap ที่เป็นส่วนของ Media
         document.getElementById("nav-media-tab").click();
     });
-</script>
+</script> --}}

@@ -19,8 +19,8 @@ class PropertyController extends Controller
     // DataBaseController
     public function databaseconnect(Request $request)
     {
-        $id_properties = $request['id_properties'];
-        $property = Property::property($id_properties);
+        $id_propertie = $request['id_propertie'];
+        $property = Property::property($id_propertie);
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
@@ -28,8 +28,8 @@ class PropertyController extends Controller
         $this->data['amenities'] = Amenities::all();
         $this->data['property'] = $property;
 
-        if (isset($request['id_properties'])) {
-            $this->data['id_properties'] = $request['id_properties'];
+        if (isset($request['id_propertie'])) {
+            $this->data['id_propertie'] = $request['id_propertie'];
         }
         return view('dashboard.sidebardashboard')->with('data', $this->data);
     }
@@ -38,36 +38,37 @@ class PropertyController extends Controller
     public function updatedata(Request $request)
     {
 
+        date_default_timezone_set('Asia/Bangkok');
         $data = array(
-            'title' => $request['title'],
-            'description' => json_encode($request['description']),
-            'category' => $request['category'],
-            'status' => $request['status'],
-            'price' => $request['price'],
-            'address' => $request['address'],
-            'provinces' => $request['provinces'],
-            'amphures' => $request['amphures'],
-            'districts' => $request['districts'],
-            'zipcode' => $request['zipcode'],
-            'latitude' => $request['latitude'],
-            'longitude' => $request['longitude'],
-            'floor_amount' => $request['floor_amount'],
-            'rooms' => $request['rooms'],
-            'bedrooms' => $request['bedrooms'],
-            'bathrooms' => $request['bathrooms'],
-            'interior_size' => $request['interior_size'],
-            'garage' => $request['garage'],
-            'garage_size' => $request['garage_size'],
-            'psm' => $request['psm'],
-            'year_build' => $request['year_build'],
-            'notes' => $request['notes'],
+            'property_title' => $request['title'],
+            'property_description' => json_encode($request['description']),
+            'property_category' => $request['category'],
+            'property_status' => $request['status'],
+            'property_price' => $request['price'],
+            'property_address' => $request['address'],
+            'property_provinces' => $request['provinces'],
+            'property_amphures' => $request['amphures'],
+            'property_districts' => $request['districts'],
+            'property_zipcode' => $request['zipcode'],
+            'property_latitude' => $request['latitude'],
+            'property_longitude' => $request['longitude'],
+            'property_floor_amount' => $request['floor_amount'],
+            'property_rooms' => $request['rooms'],
+            'property_bedrooms' => $request['bedrooms'],
+            'property_bathrooms' => $request['bathrooms'],
+            'property_interior_size' => $request['interior_size'],
+            'property_garage' => $request['garage'],
+            'property_garage_size' => $request['garage_size'],
+            'property_psm' => $request['psm'],
+            'property_year_build' => $request['year_build'],
+            'property_notes' => $request['notes'],
             // 'amenities' => implode(',', $request['amenities']),
-            'amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
+            'property_amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
 
 
         );
-        if (isset($request['id_properties'])) {
-            $id_properties = $request['id_properties'];
+        if (isset($request['id_propertie'])) {
+            $id_propertie = $request['id_propertie'];
             $data['update_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 2;
 
@@ -79,7 +80,7 @@ class PropertyController extends Controller
                     $image->move(public_path('/assets/upload_image'), $imageName);
                     $image_url[] = '/assets/upload_image/' . $imageName;
                 }
-                $data['image_url'] = implode(',', $image_url);
+                $data['property_image_url'] = implode(',', $image_url);
             }
 
             if ($request->hasFile('video')) {
@@ -89,9 +90,9 @@ class PropertyController extends Controller
                     $video->move(public_path('/assets/upload_video'), $videoName);
                     $video_url[] = '/assets/upload_video/' . $videoName;
                 }
-                $data['video_url'] = implode(',', $video_url);
+                $data['property_video_url'] = implode(',', $video_url);
             }
-            DB::table('pp_properties')->where('id_properties', $request['id_properties'])->update($data);
+            DB::table('pp_properties')->where('id_propertie', $request['id_propertie'])->update($data);
         } else {
 
             $data['update_datetime'] = date('Y-m-d H:i:s');
@@ -116,12 +117,12 @@ class PropertyController extends Controller
                     $video_url[] = '/assets/upload_video/' . $videoName;
                 }
             }
-            $data['image_url'] = $image_url ? implode(',', $image_url) : null;
-            $data['video_url'] = $video_url ? implode(',', $video_url) : null;
+            $data['property_image_url'] = $image_url ? implode(',', $image_url) : null;
+            $data['property_video_url'] = $video_url ? implode(',', $video_url) : null;
 
-            $id_properties = DB::table('pp_properties')->insertGetId($data);
+            $id_propertie = DB::table('pp_properties')->insertGetId($data);
         }
-        return redirect('addproperty?id_properties=' . $id_properties)
+        return redirect('addproperty?id_propertie=' . $id_propertie)
             // ->with('success', 'Property uploaded successfully')
             ;
     }
