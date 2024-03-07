@@ -1,4 +1,4 @@
-<section class="mb-75 mb0-md md-pb-30 mx20-lg">
+<section class="mb0-md md-pb-30 mx20-lg">
     <div class="max-width1460-con position-relative mr-auto ml-auto">
         <div class="row">
             <div class="col-lg-6 aos-init">

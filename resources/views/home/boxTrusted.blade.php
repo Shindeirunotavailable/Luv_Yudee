@@ -1,4 +1,4 @@
-<section class="pt-50 pb-50 our-partners mx20-lg">
+<section class="pt-50 pb-20 our-partners mx20-lg">
     <div class="max-width1460-con position-relative mr-auto ml-auto">
     {{-- <div class="container"> --}}
         <div class="row">
