@@ -132,148 +132,187 @@ function onSubmitLogin() {
     
      
 // รับ function จากหน้าสมัคร//
-$('body').on('click', '#exampleModal', function(event) {
-        var forms = $('.needs-validation');
-        validatePassword(event);
+// $('body').on('click', '#forgetPassword', function() {
+//         var forms = $('.needs-validation');
+//         $('.modal-body form').submit(function(event) {
+//           onChange(event);
+//         });
 
-        $('.modal-body form').submit(function(event) {
-          onChange(event);
-        });
+//         $(".toggle-password").click(function() {
+//           $(this).toggleClass("fa-eye fa-eye-slash");
+//           var input = $($(this).attr("toggle"));
+//           if (input.attr("type") == "password") {
+//             input.attr("type", "text");
+//           } else {
+//             input.attr("type", "password");
+//           }
+//         });
 
-        $(".toggle-password").click(function() {
-          $(this).toggleClass("fa-eye fa-eye-slash");
-          var input = $($(this).attr("toggle"));
-          if (input.attr("type") == "password") {
-            input.attr("type", "text");
-          } else {
-            input.attr("type", "password");
-          }
-        });
+//     });
 
-    });
 
-    
     // เช็คค่าต่างๆหน้าสมัคร 
-    function onChange(event) {
-        const password = $('#modal_password');
-        const confirm = $('#modal_confirmPassword');
-        const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    // function onChange(event) {
+    //     const password = $('#modal_password');
+    //     const confirm = $('#modal_confirmPassword');
+    //     const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    //     var emailValue = emailInput.val();
+    //     var errorDiv = $('#error');
+    //     // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
+    //     if (confirm.val() !== password.val()) {
+    //       showError(emailInput, errorDiv, 'please fill out this field');
+    //       confirm.addClass('border-danger');
+    //         confirm.removeClass('is-valid');
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //     } else {
+    //         confirm.removeClass('border-danger ');
+    //         confirm[0].setCustomValidity('');
+    //     }if (!passwordValidation.test(password.val())) {
+    //         password[0].setCustomValidity('Password is not formation');
+    //         password.addClass('border-danger ');
+    //         confirm.addClass('border-danger ');
+    //         password.removeClass('is-valid');
+    //         confirm.removeClass('is-valid');
 
-        // ตรวจสอบว่า modal_password มีค่าว่างหรือไม่
-        if (!password.val()) {
-            password.addClass('is-invalid');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            password.removeClass('border-danger ');
-            password.removeClass('is-invalid');
-            password.addClass('is-valid');
-        }
-        // ตรวจสอบว่า modal_confirmPassword มีค่าว่างหรือไม่
-        if (!confirm.val()) {
-            confirm.addClass('is-invalid');
-        } else {
-            confirm.removeClass('is-invalid');
-            confirm.addClass('is-valid');
-        }
-        // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
-        if (confirm.val() !== password.val()) {
-            confirm[0].setCustomValidity('Passwords do not match');
-            confirm.addClass('border-danger');
-            confirm.removeClass('is-valid');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            confirm.removeClass('border-danger ');
-            confirm[0].setCustomValidity('');
-        }if (!passwordValidation.test(password.val())) {
-            password[0].setCustomValidity('Password is not formation');
-            password.addClass('border-danger ');
-            confirm.addClass('border-danger ');
-            password.removeClass('is-valid');
-            confirm.removeClass('is-valid');
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //     } else {
+    //         password[0].setCustomValidity('');
+    //         password.removeClass('border-danger ');
+    //     }
+    // }
 
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            password[0].setCustomValidity('');
-            password.removeClass('border-danger ');
-        }
+
+  
+  // new modal
+
+
+
+  function onSubmitRegister(event) {
+    var emailInput = $('#modal_email');
+    const password = $('#modal_password');
+    const confirm = $('#modal_confirmPassword');
+    const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    var emailValue = emailInput.val();
+    var errorDiv = $('#error');
+    var errorPassword =$('#errorpassword')
+
+    if (emailValue.trim() === '') {
+      showError(emailInput, errorDiv, 'please fill out this field');
+      event.preventDefault();
+    } else if (emailValue.indexOf('@') === -1) {
+      showError(emailInput, errorDiv, 'please include an @ in the email');
+      event.preventDefault();
+    } else if (emailValue.indexOf('.') === -1) {
+      showError(emailInput, errorDiv, 'please enter a part fllowing .');
+      event.preventDefault();
+    } else{
+      showError(emailInput, errorDiv, '');
     }
 
-      // เช็คจำนวนอักษร เล็กใหญ่ เลข พิเศษ
-    function validatePassword(event) {
-      var myInput = $("#modal_password");
-      var letter = $("#letter");
-      var capital = $("#capital");
-      var number = $("#number");
-      var specialChar = $("#specialChar");
-      var length = $("#length");
-      var messageBox = $("#message"); 
-    
-      myInput.focus(function() {
-        messageBox.css("display", "block");
-      });
-    
-      myInput.blur(function() {
-        messageBox.css("display", "none");
-      });
-    
-      myInput.on("keyup", function(event) {
-        // เช็คอักษรตัวเล็ก
-        var lowerCaseLetters = /[a-z]/g;
-        if (myInput.val().match(lowerCaseLetters)) {
-          letter.removeClass("invalid").addClass("valid");
-        } else {
-          letter.removeClass("valid").addClass("invalid");
-          event.preventDefault();
-          event.stopPropagation();
-        }
-    
-        // เช็คอักษรตัวใหญ้
-        var upperCaseLetters = /[A-Z]/g;
-        if (myInput.val().match(upperCaseLetters)) {
-          capital.removeClass("invalid").addClass("valid");
-        } else {
-          capital.removeClass("valid").addClass("invalid");
-          event.preventDefault();
-          event.stopPropagation();
-        }
-    
-        // เช็คตัวเลข
-        var numbers = /[0-9]/g;
-        if (myInput.val().match(numbers)) {
-          number.removeClass("invalid").addClass("valid");
-        } else {
-          number.removeClass("valid").addClass("invalid");
-          event.preventDefault();
-          event.stopPropagation();
-        }
-    
-        // เช็คอักษรอักษรพิเศษ
-        var specialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/g;
-                                
-        if (myInput.val().match(specialCharacters)) {
-          specialChar.removeClass("invalid").addClass("valid");
-        } else {
-          specialChar.removeClass("valid").addClass("invalid");
-          event.preventDefault();
-          event.stopPropagation();
-        }
-    
-        // เช็คจำนวนตัวอักษร
-        if (myInput.val().length >= 8) {
-          length.removeClass("invalid").addClass("valid");
-        } else {
-          length.removeClass("valid").addClass("invalid");
-          event.preventDefault();
-          event.stopPropagation();
-        }
-      });
+    // ตรวจสอบว่า modal_password มีค่าว่างหรือไม่
+    if (!password.val() && !confirm.val()) {
+        password.addClass('is-invalid');
+        confirm.addClass('is-invalid');
+
+        event.preventDefault();
+        event.stopPropagation();
+    }else {
+        password.removeClass('is-invalid');
+        confirm.removeClass('is-invalid');
+        confirm.addClass('is-valid');
+        password.addClass('is-valid');
     }
     
 
 
+    // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
+    if (confirm.val() !== password.val()) {
+        showError(confirm, errorPassword, 'Passwords do not match');
+        confirm.addClass('border-danger');
+        confirm.removeClass('is-valid');
+        confirm.removeClass('is-invalid');
+
+        event.preventDefault();
+        event.stopPropagation();
+    } else {
+        confirm.removeClass('border-danger ');
+        showError(confirm, errorPassword, '');
+    }
+    
+    
+    if (!passwordValidation.test(password.val())) {
+        showError(confirm, errorPassword, 'รหัสผ่านควรมีความยาว 8 ตัวอักษรขึ้นไป ประกอบด้วย ตัวอักษรทั้งพิมพ์เล็ก พิมพ์ใหญ่ (a-z, A-Z) ตัวเลข (0-9) และมีเครื่องหมายหรืออักขระพิเศษ  (!@#$%^&*()_+|~-=\`{}[]:"');
+        password.addClass('border-danger ');
+        confirm.addClass('border-danger ');
+        password.removeClass('is-valid');
+        confirm.removeClass('is-valid');
+        confirm.removeClass('is-valid');
+        confirm.removeClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+    } else {
+      showError(confirm, errorPassword, '');
+      password.removeClass('border-danger ');
+      document.getElementById("registerForm").submit();
+
+    }
+  }
+
+
+
+
+  function showError(input, errorDiv, message) {
+    // ลบคลาส is-invalid ทั้งหมด
+    $('input').removeClass('is-invalid');
+    // เพิ่มคลาส is-invalid และแสดงข้อความ
+    input.addClass('is-invalid');
+    errorDiv.text(message); // แสดงข้อความผิดพลาดใน div
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // function onSubmitRegister(event) {
+  //     var emailInput = $('#modal_email');
+  //     var emailValue = emailInput.val();
+  //     if (emailValue.trim() === '') {
+  //       emailInput.addClass('is-invalid');
+  //       event.preventDefault();
+  //     } else if (emailValue.indexOf('@') === -1) {
+  //       emailInput.addClass('is-invalid');
+  //       event.preventDefault();
+
+  //     } else if (emailValue.indexOf('.') === -1) {
+  //       emailInput.addClass('is-invalid');
+  //       event.preventDefault();
+
+  //     }
+  //     document.getElementById("registerForm").submit();
+
+  // }
 
 
   ///////////////////////////////////////////////////////////////////////
@@ -367,24 +406,4 @@ $('body').on('click', '#exampleModal', function(event) {
 
 
 
-  
-
-function onSubmitRegister(event) {
-    var emailInput = $('#modal_email');
-    var emailValue = emailInput.val();
-    if (emailValue.trim() === '') {
-      event.preventDefault();
-      emailValue.addClass('is-invalid');
-  } else if (emailValue.indexOf('@') === -1) {
-      event.preventDefault();
-      emailValue.addClass('is-invalid');
-  } else if (emailValue.indexOf('.') === -1) {
-      event.preventDefault();
-      emailValue.addClass('is-invalid');
-  }else{
-    document.getElementById("registerForm").submit();
-
-  }
-
-}
 
