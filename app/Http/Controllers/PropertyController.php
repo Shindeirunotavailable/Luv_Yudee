@@ -19,8 +19,8 @@ class PropertyController extends Controller
     // DataBaseController
     public function databaseconnect(Request $request)
     {
-        $id_properties = $request['id_properties'];
-        $property = Property::property($id_properties);
+        $id_property = $request['id_property'];
+        $property = Property::property($id_property);
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
@@ -28,8 +28,8 @@ class PropertyController extends Controller
         $this->data['amenities'] = Amenities::all();
         $this->data['property'] = $property;
 
-        if (isset($request['id_properties'])) {
-            $this->data['id_properties'] = $request['id_properties'];
+        if (isset($request['id_property'])) {
+            $this->data['id_property'] = $request['id_property'];
         }
         return view('dashboard.sidebardashboard')->with('data', $this->data);
     }
@@ -38,40 +38,39 @@ class PropertyController extends Controller
     public function updatedata(Request $request)
     {
 
+        date_default_timezone_set('Asia/Bangkok');
         $data = array(
-            'title' => $request['title'],
-            'description' => json_encode($request['description']),
-            'category' => $request['category'],
-            'status' => $request['status'],
-            'price' => $request['price'],
-            // 'image_url'=> $request['image_url'],
-            // 'video_url'=> $request['video_url'],
-            'address' => $request['address'],
-            'provinces' => $request['provinces'],
-            'amphures' => $request['amphures'],
-            'districts' => $request['districts'],
-            'zipcode' => $request['zipcode'],
-            'latitude' => $request['latitude'],
-            'longitude' => $request['longitude'],
-            'floor_amount' => $request['floor_amount'],
-            'rooms' => $request['rooms'],
-            'bedrooms' => $request['bedrooms'],
-            'bathrooms' => $request['bathrooms'],
-            'interior_size' => $request['interior_size'],
-            'garage' => $request['garage'],
-            'garage_size' => $request['garage_size'],
-            'psm' => $request['psm'],
-            'year_build' => $request['year_build'],
-            'notes' => $request['notes'],
+            'property_title' => $request['title'],
+            'property_description' => json_encode($request['description']),
+            'property_category' => $request['category'],
+            'property_status' => $request['status'],
+            'property_price' => $request['price'],
+            'property_address' => $request['address'],
+            'property_provinces' => $request['provinces'],
+            'property_amphures' => $request['amphures'],
+            'property_districts' => $request['districts'],
+            'property_zipcode' => $request['zipcode'],
+            'property_latitude' => $request['latitude'],
+            'property_longitude' => $request['longitude'],
+            'property_floor_amount' => $request['floor_amount'],
+            'property_rooms' => $request['rooms'],
+            'property_bedrooms' => $request['bedrooms'],
+            'property_bathrooms' => $request['bathrooms'],
+            'property_interior_size' => $request['interior_size'],
+            'property_garage' => $request['garage'],
+            'property_garage_size' => $request['garage_size'],
+            'property_psm' => $request['psm'],
+            'property_year_build' => $request['year_build'],
+            'property_notes' => $request['notes'],
             // 'amenities' => implode(',', $request['amenities']),
-            'amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
+            'property_amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
 
 
         );
-        if (isset($request['id_properties'])) {
-            $id_properties = $request['id_properties'];
-            $data['updated_datetime'] = date('Y-m-d H:i:s');
-            $data['updated_by'] = 2;
+        if (isset($request['id_property'])) {
+            $id_property = $request['id_property'];
+            $data['update_datetime'] = date('Y-m-d H:i:s');
+            $data['update_by'] = 2;
 
             // Update image and video URLs if new files are uploaded
             if ($request->hasFile('image')) {
@@ -81,7 +80,7 @@ class PropertyController extends Controller
                     $image->move(public_path('/assets/upload_image'), $imageName);
                     $image_url[] = '/assets/upload_image/' . $imageName;
                 }
-                $data['image_url'] = implode(',', $image_url);
+                $data['property_image_url'] = implode(',', $image_url);
             }
 
             if ($request->hasFile('video')) {
@@ -91,14 +90,15 @@ class PropertyController extends Controller
                     $video->move(public_path('/assets/upload_video'), $videoName);
                     $video_url[] = '/assets/upload_video/' . $videoName;
                 }
-                $data['video_url'] = implode(',', $video_url);
+                $data['property_video_url'] = implode(',', $video_url);
             }
-            DB::table('pp_addproperties')->where('id_properties', $request['id_properties'])->update($data);
+            DB::table('pp_properties')->where('id_property', $request['id_property'])->update($data);
         } else {
 
-            $data['updated_datetime'] = date('Y-m-d H:i:s');
-            $data['created_datetime'] = date('Y-m-d H:i:s');
-            $data['created_by'] = 1;
+            $data['update_datetime'] = date('Y-m-d H:i:s');
+            $data['create_datetime'] = date('Y-m-d H:i:s');
+            $data['update_by'] = 1;
+            $data['create_by'] = 1;
             // // dd($request->all());
             $image_url = [];
             if ($request->hasFile('image')) {
@@ -117,13 +117,14 @@ class PropertyController extends Controller
                     $video_url[] = '/assets/upload_video/' . $videoName;
                 }
             }
-            $data['image_url'] = $image_url ? implode(',', $image_url) : null;
-            $data['video_url'] = $video_url ? implode(',', $video_url) : null;
+            $data['property_image_url'] = $image_url ? implode(',', $image_url) : null;
+            $data['property_video_url'] = $video_url ? implode(',', $video_url) : null;
 
-            $id_properties = DB::table('pp_addproperties')->insertGetId($data);
+            $id_property = DB::table('pp_properties')->insertGetId($data);
         }
-        return redirect('addproperty?id_properties=' . $id_properties)
-            ->with('success', 'Property uploaded successfully');
+        return redirect('addproperty?id_property=' . $id_property)
+            // ->with('success', 'Property uploaded successfully')
+            ;
     }
 
 
