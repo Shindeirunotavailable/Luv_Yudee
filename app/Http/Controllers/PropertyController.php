@@ -123,7 +123,7 @@ class PropertyController extends Controller
             $id_property = DB::table('pp_properties')->insertGetId($data);
         }
         return redirect('addproperty?id_property=' . $id_property)
-            // ->with('success', 'Property uploaded successfully')
+            ->with('success', 'message')
             ;
     }
 
