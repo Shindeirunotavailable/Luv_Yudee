@@ -7,7 +7,7 @@
                     <h6 class="fs-20">Trusted by the world’s best</h6>
                 </div>
             </div>
-            <div class="col-lg-12 my-5 text-center">
+            <div class="col-lg-12 my-4 text-center">
                 <div class="dots_none nav_none aos-init dots_pad" data-aos-delay="100">
                     <div
                         class="swiperes swiper-container swiper-initialized swiper-horizontal swiper-pointer">

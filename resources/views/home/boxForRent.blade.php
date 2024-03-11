@@ -3,13 +3,13 @@
     <section class="pt-0 mx20-lg">
         <div class="max-width1460-con position-relative mr-auto ml-auto">
             <div class="row wow fadeInUp" data-wow-delay="100ms">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6">
                     <div class="main-title-2">
                         <h2 class="title">Best Properties For Rent</h2>
                         <p class="par">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 my-3 pr-4 i-forrent">
+                <div class="col-lg-6 my-3 pr-4 i-forrent">
                     <div class="home-icon-st d-none d-sm-flex justify-content-start justify-content-lg-end">
                         <a class="d-flex align-items-center dark-color  me-2 md-me-2" href="#">
                             <i class=" icons fa-solid fa-house" aria-hidden="true"></i> Houses
