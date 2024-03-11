@@ -33,10 +33,33 @@
                 </div>
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
+{{-- 
                         <a href="{{url("login")}}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
                             <span class="d-xl-block">Login / Register</span>
+                        </a> --}}
+                        @if(session('user_email'))
+                        <span>{{ session('user_email') }}</span>
+                        
+                        <div class="pcs_dropdown">
+                            <label class="mr-10">Sort by</label>
+                            <select class="form-select">
+                                <option>Best Seller</option>
+                                <option>Best Match</option>
+                                <option>Price Low</option>
+                                <option>Price High</option>
+                            </select>
+                        </div>
+                        
+                    @else
+                        <a href="{{ url("login") }}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
+                            <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
+                            <span class="d-xl-block">Login / Register</span>
                         </a>
+                    @endif
+                    
+                    
+
                         <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}">
                             Add Property
                             <i class="fa-solid fa-arrow-right fa-lg"></i>
