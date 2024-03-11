@@ -103,7 +103,7 @@ $(document).ready(function() {
 
 // db_provinces
         var getUrl = window.location;
-        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/yuudee/" ;// เพิ่ม/yuudee/ก่อนอัพขึ้นserver
         var lang = document.documentElement.lang;
 
     $('#provinces').change(function() {
