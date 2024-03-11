@@ -16,26 +16,26 @@
                     <div class="navtab-style1">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab2" role="tablist">
-                                    <button id="" class="nav-link-ap {{ !isset($data['property']->stage) || $data['property']->stage=='1' ? 'active' : '' }} font-weight-600 ml-3" id="nav-description-tab"
+                                    <button id="" class="nav-link-ap {{ !isset($data['property']->property_stage) || $data['property']->property_stage=='1' ? 'active' : '' }} font-weight-600 ml-3" id="nav-description-tab"
                                         data-toggle="tab" data-target="#nav-description" type="button" role="tab"
-                                        aria-controls="nav-description" aria-selected="{{ isset($data['property']->stage) && $data['property']->stage=='1' ? 'true' : 'false' }}">
+                                        aria-controls="nav-description" aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='1' ? 'true' : 'false' }}">
                                         1. Description
                                     </button>
-                                    <button class="nav-link-ap {{ isset($data['property']->stage) && $data['property']->stage=='2' ? 'active' : '' }} font-weight-600" id="nav-media-tab" data-toggle="tab"
+                                    <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'active' : '' }} font-weight-600" id="nav-media-tab" data-toggle="tab"
                                         data-target="#nav-media" type="button" role="tab" aria-controls="nav-media"
-                                        aria-selected="{{ isset($data['property']->stage) && $data['property']->stage=='2' ? 'true' : 'false' }}">2. Media
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'true' : 'false' }}">2. Media
                                     </button>
-                                    <button class="nav-link-ap {{ isset($data['property']->stage) && $data['property']->stage=='3' ? 'active' : '' }} font-weight-600" id="nav-location-tab" data-toggle="tab"
+                                    <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'active' : '' }} font-weight-600" id="nav-location-tab" data-toggle="tab"
                                         data-target="#nav-location" type="button" role="tab" aria-controls="nav-location"
-                                        aria-selected="{{ isset($data['property']->stage) && $data['property']->stage=='3' ? 'true' : 'false' }}">3. Location
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'true' : 'false' }}">3. Location
                                     </button>
-                                    <button class="nav-link-ap {{ isset($data['property']->stage) && $data['property']->stage=='4' ? 'active' : '' }} font-weight-600" id="nav-detail-tab" data-toggle="tab"
+                                    <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='4' ? 'active' : '' }} font-weight-600" id="nav-detail-tab" data-toggle="tab"
                                         data-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail"
-                                        aria-selected="{{ isset($data['property']->stage) && $data['property']->stage=='4' ? 'true' : 'false' }}">4. Detail
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='4' ? 'true' : 'false' }}">4. Detail
                                     </button>
-                                    <button class="nav-link-ap {{ isset($data['property']->stage) && $data['property']->stage=='5' ? 'active' : '' }} font-weight-600" id="nav-amenities-tab" data-toggle="tab"
+                                    <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='5' ? 'active' : '' }} font-weight-600" id="nav-amenities-tab" data-toggle="tab"
                                         data-target="#nav-amenities" type="button" role="tab" aria-controls="nav-amenities"
-                                        aria-selected="{{ isset($data['property']->stage) && $data['property']->stage=='5' ? 'true' : 'false' }}">5. Amenities
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='5' ? 'true' : 'false' }}">5. Amenities
                                     </button>
                                 </div>
                             </nav>
@@ -48,9 +48,9 @@
                             @endif
                             <div class="tab-content-ds" id="nav-tabContent">
 
-                                <div class="tab-pane fade {{ !isset($data['property']->stage) || $data['property']->stage=='1' ? 'show active' : '' }}" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
+                                <div class="tab-pane fade {{ !isset($data['property']->property_stage) || $data['property']->property_stage=='1' ? 'show active' : '' }}" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                            @if($message = Session::get('success') && $data['property']->stage=='1')
+                                            @if($message = Session::get('success') && $data['property']->property_stage=='1')
                                                 <div class="alert alert-success alert-block">
                                                     <strong>Property Uploaded Successfully</strong>
                                                 </div>
@@ -100,13 +100,13 @@
                                                         </div>
                                                     </div>
                                                 </div >
-                                            <button data-target="#nav-media-tab" type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right" name="stage" value="1">Submit</button>
+                                            <button data-target="#nav-media-tab" type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right" name="property_stage" value="1">Submit</button>
                                         </div>
                                 </div>
 
-                                <div class="tab-pane fade {{ isset($data['property']->stage) && $data['property']->stage=='2' ? 'show active' : '' }}" id="nav-media" role="tabpanel" aria-labelledby="nav-media-tab">
+                                <div class="tab-pane fade {{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'show active' : '' }}" id="nav-media" role="tabpanel" aria-labelledby="nav-media-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                            @if($message = Session::get('success') && $data['property']->stage=='2')
+                                            @if($message = Session::get('success') && $data['property']->property_stage=='2')
                                                 <div class="alert alert-success alert-block">
                                                     <strong>Media Uploaded Successfully</strong>
                                                 </div>
@@ -160,13 +160,13 @@
                                                             </div>
                                                         @endif
                                                     </div>
-                                            <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right " name="stage" value="2">Submit</button>
+                                            <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right " name="property_stage" value="2">Submit</button>
                                         </div>
                                 </div>
 
-                                <div class="tab-pane fade{{ isset($data['property']->stage) && $data['property']->stage=='3' ? 'show active' : '' }}" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">
+                                <div class="tab-pane fade{{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'show active' : '' }}" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                            @if($message = Session::get('success') && $data['property']->stage=='3')
+                                            @if($message = Session::get('success') && $data['property']->property_stage=='3')
                                                 <div class="alert alert-success alert-block">
                                                     <strong>Location Uploaded Successfully</strong>
                                                 </div>
@@ -258,13 +258,13 @@
 
                                                 </div>
 
-                                                <button type="submit" name="stage" value="3" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                                <button type="submit" name="property_stage" value="3" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                         </div>
                                 </div>
 
-                                <div class="tab-pane fade{{ isset($data['property']->stage) && $data['property']->stage=='4' ? 'show active' : '' }}" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab">
+                                <div class="tab-pane fade{{ isset($data['property']->property_stage) && $data['property']->property_stage=='4' ? 'show active' : '' }}" id="nav-detail" role="tabpanel" aria-labelledby="nav-detail-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                        @if($message = Session::get('success') && $data['property']->stage=='4')
+                                        @if($message = Session::get('success') && $data['property']->property_stage=='4')
                                                 <div class="alert alert-success alert-block">
                                                     <strong>Details Uploaded Successfully</strong>
                                                 </div>
@@ -335,13 +335,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" name="stage" value="4" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" name="property_stage" value="4" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade{{ isset($data['property']->stage) && $data['property']->stage=='5' ? 'show active' : '' }}" id="nav-amenities" role="tabpanel" aria-labelledby="nav-amenities-tab">
+                                <div class="tab-pane fade{{ isset($data['property']->property_stage) && $data['property']->property_stage=='5' ? 'show active' : '' }}" id="nav-amenities" role="tabpanel" aria-labelledby="nav-amenities-tab">
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
-                                        @if($message = Session::get('success') && $data['property']->stage=='5')
+                                        @if($message = Session::get('success') && $data['property']->property_stage=='5')
                                                 <div class="alert alert-success alert-block">
                                                     <strong>Amenities Uploaded Successfully</strong>
                                                 </div>
@@ -368,7 +368,7 @@
                                                     @endforeach
                                             </div>
                                         </div>
-                                        <button type="submit" id="submitpp" name="stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" id="submitpp" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
 
                                 </div>
