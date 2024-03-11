@@ -38,6 +38,7 @@ route::any('loginform','App\Http\Controllers\LoginController@loginform');  // �
 route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // กู้รหัสผ่าน
 
 
+
  // -----------------------------------function test Route ------------------------------------
  Route::view('/addproperty', 'dashboard.sidebardashboard');
 // earth

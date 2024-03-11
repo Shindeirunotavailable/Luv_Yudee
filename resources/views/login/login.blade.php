@@ -100,8 +100,8 @@
                             <div class="form-group">
                                 <label class="label-700 pl-5">Email</label>
                                 <input type="Email" name="modal_email" id="modal_email" class="form-control "
-                                    placeholder="Enter Email" required>
-                                    <div class="invalid-feedback" id="error"></div>
+                                    placeholder="Enter Email">
+                                    <div class="colorRed" id="ShowError"></div>
 
                             </div>
                             <div class="form-group">
@@ -112,6 +112,7 @@
                                 </div>
                                 <input type="password" name="modal_password" id="modal_password" class="form-control "
                                     placeholder="Enter Password" >
+                                 <div class="colorRed" id="errorPassword"></div>
                                 <div class="invalid-feedback">
                                     <a> กรุณากรอก Password</a>
                                 </div>
@@ -124,6 +125,7 @@
                                 </div>
                                 <input type="password" name="modal_confirmPassword" id="modal_confirmPassword"
                                     class="form-control" placeholder="Enter Confirm Password" >
+                                    <div class="colorRed" id="errorconfirm"></div>
                                 <div class="invalid-feedback">
                                     <a> กรุณากรอก Confirm Password</a>
                                 </div>
@@ -135,6 +137,7 @@
                                 data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-action='register'> 
                                      <i class="fa-regular fa-paper-plane "></i> Submit
                                 </button> 
+
                             </div>
                         </form>
                     </div>

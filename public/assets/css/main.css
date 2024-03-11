@@ -3006,6 +3006,11 @@ textarea.form-control-lg {
 .me-2{
     margin-right: 0.5rem !important;
 }
+@media (max-width: 769px){
+    .md-me-2{
+        margin-right: 3px;
+    }
+}
 .swipers {
     margin-left: auto;
     margin-right: auto;
@@ -3281,12 +3286,7 @@ textarea.form-control-lg {
 .backg-container{
     background-color:#f8f8f8
 }
-@media (max-width: 426px){
-    .b-cen{
-        max-width: 425px;
-        text-align: center;
-    }
-}
+
 @media (max-width: 769px){
     .b-cen{
         max-width: 768px;
