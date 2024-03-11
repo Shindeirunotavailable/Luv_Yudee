@@ -119,7 +119,7 @@
                                                         </div>
 
                                                         <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
-                                                        {{-- @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
+                                                        @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
                                                             <div class="row">
                                                                 @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
                                                                     <div class="col-4 mt-0 row justify-content-center mb-6">
@@ -127,8 +127,8 @@
                                                                     </div>
                                                                 @endforeach
                                                             </div>
-                                                        @endif --}}
-                                                        @if (isset($data['id_property']) && isset($data['property']->property_image_url))
+                                                        @endif
+                                                        {{-- @if (isset($data['id_property']) && isset($data['property']->property_image_url))
                                                         <div class="row">
                                                             @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
                                                             <div class="col-4 mt-0 row justify-content-center mb-6">
@@ -141,7 +141,7 @@
                                                             </div>
                                                             @endforeach
                                                         </div>
-                                                        @endif
+                                                        @endif --}}
                                                     </div>
                                                     <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                     <div class=" ">
