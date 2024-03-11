@@ -86,9 +86,9 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                            <select id="propertystatus" name="status" class="form-control" >
-                                                                <option value="1"{{ isset($data['property']->property_status) && $data['property']->property_status=='1' ? "selected" :""}}>ขาย</option>
-                                                                <option value="2"{{ isset($data['property']->property_status) && $data['property']->property_status=='2' ? "selected" :""}}>เช่า</option>
+                                                            <select id="propertystatus" name="type" class="form-control" >
+                                                                <option value="1"{{ isset($data['property']->property_type) && $data['property']->property_type=='1' ? "selected" :""}}>ขาย</option>
+                                                                <option value="2"{{ isset($data['property']->property_type) && $data['property']->property_type=='2' ? "selected" :""}}>เช่า</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -119,7 +119,7 @@
                                                         </div>
 
                                                         <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
-                                                        @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
+                                                        {{-- @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
                                                             <div class="row">
                                                                 @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
                                                                     <div class="col-4 mt-0 row justify-content-center mb-6">
@@ -127,8 +127,8 @@
                                                                     </div>
                                                                 @endforeach
                                                             </div>
-                                                        @endif
-                                                        {{-- @if (isset($data['id_property']) && isset($data['property']->property_image_url))
+                                                        @endif --}}
+                                                        @if (isset($data['id_property']) && isset($data['property']->property_image_url))
                                                         <div class="row">
                                                             @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
                                                             <div class="col-4 mt-0 row justify-content-center mb-6">
@@ -136,12 +136,12 @@
                                                                 <form action="{{ route('delete_image') }}" method="post">
                                                                     @csrf
                                                                     <input type="hidden" name="image_url" value="{{ $imageUrl }}">
-                                                                    <button type="submit" class="btn btn-danger btn-sm mt-2">Delete</button>
+                                                                    <button type="submit"  class="btn btn-danger btn-sm mt-2">Delete</button>
                                                                 </form>
                                                             </div>
                                                             @endforeach
                                                         </div>
-                                                        @endif --}}
+                                                        @endif
                                                     </div>
                                                     <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                     <div class=" ">
@@ -200,11 +200,11 @@
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">City *</label>
                                                             <div class="" id="erroramphures">
                                                                 <select name="amphures" id="amphures" class="form-control">
-                                                                    @if (isset($data['id_property']))
-                                                                        @foreach ($data['amphures'] as $value)
-                                                                            <option value="{{ $value['id'] }}" {{ isset($data['property']->property_amphures) && $data['property']->property_amphures == $value['id'] ? 'selected' : '' }}>
-                                                                                {{ $value['name_th'] }}
-                                                                            </option>
+                                                                    @if (isset($data['id_property']) && $data['property']->property_amphures !== null)
+                                                                        @foreach ($data['amphures'] as $value )
+                                                                        <option value="{{ $value['id'] }}" {{ isset($data['property']->property_amphures) && $data['property']->property_amphures == $value['id'] ? 'selected' : '' }}>
+                                                                            {{ $value['name_th'] }}
+                                                                        </option>
                                                                         @endforeach
                                                                     @endif
                                                                 </select>
@@ -216,7 +216,7 @@
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Country *</label>
                                                             <div class=" " id="errordistricts">
                                                                 <select name="districts" id="districts" class="form-control" >
-                                                                    @if (isset($data['id_property']))
+                                                                    @if (isset($data['id_property'])&& $data['property']->property_districts !== null)
                                                                         @foreach ($data['districts'] as $value)
                                                                             <option value="{{ $value['id'] }}" {{ isset($data['property']->property_districts) && $data['property']->property_districts == $value['id'] ? 'selected' : '' }}>
                                                                                 {{ $value['name_th'] }}

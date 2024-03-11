@@ -44,7 +44,7 @@ class PropertyController extends Controller
             'property_title' => $request['title'],
             'property_description' => json_encode($request['description']),
             'property_category' => $request['category'],
-            'property_status' => $request['status'],
+            'property_type' => $request['type'],
             'property_price' => $request['price'],
             'property_address' => $request['address'],
             'property_provinces' => $request['provinces'],
@@ -160,4 +160,21 @@ class PropertyController extends Controller
         }
         return response()->json(['options' => '']);
     }
+
+    // public function deleteImage(Request $request)
+    // {
+    //     $imageUrl = $request->input('image_url');
+
+    //     // Delete image file from storage
+    //     if (File::exists($imageUrl)) {
+    //         File::delete($imageUrl);
+    //     }
+
+    //     // Delete image record from database
+    //     DB::table('pp_media')->where('file_path', $imageUrl)->delete();
+
+    //     return redirect()->back()->with('success', 'Image deleted successfully');
+    // }
+
 }
+
