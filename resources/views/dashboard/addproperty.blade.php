@@ -120,7 +120,6 @@
 
                                                         <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
                                                         @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
-
                                                             <div class="row">
                                                                 @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
                                                                     <div class="col-4 mt-0 row justify-content-center mb-6">
