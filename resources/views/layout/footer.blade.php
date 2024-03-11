@@ -54,12 +54,19 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-widget mb-4 mb-lg-5">
                     <div class="mailchimp-widget mb-30">
+                        
+                        <form action="{{ url('/home_email') }}" method="POST" class="needs-validation" id="home_email">
                         <h6 class="title mb-30 fw-700">Sign Up for Our Newsletter</h6>
                         <div class="mailchimp-style1 at-home4 white-version">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                            <button type="submit">
+                            <input type="email" id="home-email" class="form-control" placeholder="Your Email">
+                            <div class="colorRed" id="ShowErrorEmail"></div>
+
+                            <button type="submit" class="g-recaptcha" 
+                                data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitemail' data-action='home'> 
                                 <i class="fa-solid fa-rocket"></i>
-                            </button>   
+                            </button> 
+                        </form>
+
                         </div>
                         <div class="social-style1 light-style py-2">
                             <a href="#"><i class="fab fa-facebook-f list-inline-item"></i></a>
