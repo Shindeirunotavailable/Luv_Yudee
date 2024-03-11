@@ -2787,7 +2787,7 @@ textarea.form-control-lg {
 }
 .main-title,.main-title-2 {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 @media (max-width: 991.98px) {
     .main-title,.main-title-2 {
@@ -3005,11 +3005,6 @@ textarea.form-control-lg {
 /* boxForSales */
 .me-2{
     margin-right: 0.5rem !important;
-}
-@media (max-width: 769px){
-    .md-me-2{
-        margin-right: 3px;
-    }
 }
 .swipers {
     margin-left: auto;
@@ -3550,7 +3545,6 @@ textarea.form-control-lg {
     -ms-transform: scale(1);
     transform: scale(1)
 }
-
 /*end footer*/
     /* ----------------------------ปรับขนาดและสีต่างๆ------------------------------------------ */
      .label-700{

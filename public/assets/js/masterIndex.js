@@ -201,17 +201,20 @@ var swiper = new Swiper(".swiperp", {
     prevEl: "._prevs",
   },
 
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      500: {
-        slidesPerView: 2,
-      },
-      980: {
-        slidesPerView: 3,
-      },
-    }
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    500: {
+      slidesPerView: 2,
+    },
+    980: {
+      slidesPerView: 3,
+    },
+    1100: {
+      slidesPerView: 4,
+    },
+  }
 });
 
 /*--------------------------------------------------------------*/

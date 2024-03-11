@@ -8,7 +8,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="max-width1460-con position-relative mr-auto ml-auto">
             <div class="row">
                 <div class="col-lg-12 aos-init aos-animate pl-0 pr-0" data-aos="fade-up" data-aos-delay="300">
                     <div class="pro-city-slider position-relative ">
@@ -52,9 +52,22 @@
                                             <div class="date">
                                                 <span class="month">July</span><span class="day">28</span>
                                             </div>
-                                            <a class="tag" href="#">Living
-                                                Room</a>
+                                            <a class="tag" href="#">Living Room</a>
                                             <h6 class="title mt-1"><a href="/blogs/3">Balancing Private Contemporary Home Openness</a></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                    <div class="blog-style1">
+                                        <div class="blog-img">
+                                            <img class="w-100 cover" src="{{ asset('/assets/images/blog-2.jpg') }}" alt="blog">
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="date">
+                                                <span class="month">July</span><span class="day">28</span>
+                                            </div>
+                                            <a class="tag" href="#">Living Room</a>
+                                            <h6 class="title mt-1"><a href="/blogs/2">Contemporary Home Private Balancing Openness</a></h6>
                                         </div>
                                     </div>
                                 </div>
