@@ -42,9 +42,6 @@ Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logou
 
 
 
-route::any('test','App\Http\Controllers\LoginController@test');  // กู้รหัสผ่าน
-
-
  // -----------------------------------function test Route ------------------------------------
  Route::view('/addproperty', 'dashboard.sidebardashboard');
 // earth
