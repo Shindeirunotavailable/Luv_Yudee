@@ -73,7 +73,7 @@
     <aside>
 
         <div class="dashboard_content_wrapper">
-            <div class="dashboard dashboard_wrapper pr-d-30 pr-d-0-md">
+            <div class="dashboard dashboard_wrapper  pr-d-0-md">
                 <div class="dashboard__sidebar  d-side-block ">
                     <div class="dashboard_sidebar_list" role="tablist">
 

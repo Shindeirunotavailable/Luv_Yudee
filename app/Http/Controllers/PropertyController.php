@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Property;
@@ -62,8 +63,8 @@ class PropertyController extends Controller
             'property_psm' => $request['psm'],
             'property_year_build' => $request['year_build'],
             'property_notes' => $request['notes'],
-            // 'amenities' => implode(',', $request['amenities']),
             'property_amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
+            'stage' => $request['stage'],
 
 
         );
@@ -123,10 +124,9 @@ class PropertyController extends Controller
             $id_property = DB::table('pp_properties')->insertGetId($data);
         }
         return redirect('addproperty?id_property=' . $id_property)
-            // ->with('success', 'Property uploaded successfully')
+            ->with('success', 'message')
             ;
     }
-
 
     // ProvinceController
     public function db_provinces(Request $request)

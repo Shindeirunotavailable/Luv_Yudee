@@ -201,17 +201,20 @@ var swiper = new Swiper(".swiperp", {
     prevEl: "._prevs",
   },
 
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      500: {
-        slidesPerView: 2,
-      },
-      980: {
-        slidesPerView: 3,
-      },
-    }
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    500: {
+      slidesPerView: 2,
+    },
+    980: {
+      slidesPerView: 3,
+    },
+    1100: {
+      slidesPerView: 4,
+    },
+  }
 });
 
 /*--------------------------------------------------------------*/
@@ -252,6 +255,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// function onSubmitRegister(event) {
+//   var emailInput = $('#modal_email');
+//   var emailValue = emailInput.val();
+//   var showErrorDiv = $('#ShowError');
+//   // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
+//   emailInput.removeClass('border-danger is-valid');
+//   if (emailValue.trim() === '') {
+//       showErrorDiv.text('Please enter a valid email');
+//       emailInput.addClass('border-danger');
+//       event.preventDefault(); // ป้องกันการ submit แบบปกติ
+//   } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+//       showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+//       emailInput.addClass('border-danger');
+//       event.preventDefault();
+//   } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+//     showErrorDiv.text('Please enter a part following .');
+//     emailInput.addClass('border-danger');
+//     event.preventDefault();
+//   } else {
+//       emailInput.addClass('is-valid');
+//       showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+//   }
+//   document.getElementById("registerForm").submit();
+// }
+
+
+function onSubmitemail(event) {
+    var emailInput = $('#home-email');
+    var emailValue = emailInput.val();
+    var showErrorDiv = $('#ShowErrorEmail');
+    // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
+    emailInput.removeClass('border-danger is-valid');
+    if (emailValue.trim() === '') {
+        showErrorDiv.text('Please enter a valid email');
+        emailInput.addClass('border-danger');
+        event.preventDefault(); // ป้องกันการ submit แบบปกติ
+    } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+        showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+        emailInput.addClass('border-danger');
+        event.preventDefault();
+    } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+      showErrorDiv.text('Please enter a part following .');
+      emailInput.addClass('border-danger');
+      event.preventDefault();
+    } else {
+        emailInput.addClass('is-valid');
+        showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+    }
+    document.getElementById("home_email").submit();
+}
 
 //============================ js non ==============================//
 
@@ -310,3 +363,4 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
   
+
