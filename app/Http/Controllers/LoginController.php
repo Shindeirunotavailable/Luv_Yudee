@@ -60,69 +60,63 @@ class LoginController extends Controller
     // ------------------------------------- เข้าสู่ระบบ -------------------------------------------------
 
 
+    // public function loginform(Request $request)
+    // {
+    //     $account = login::where('email', $request->email)->first();
+    //     if ($account && Hash::check($request->password, $account->password)) {
+    //         // ล็อกอินสำเร็จ
+            
+    //         return redirect('/addproperty');
+    //     }
+
+    //     return back()->withErrors(['อีเมล์หรือรหัสผ่านไม่ถูกต้อง'])->withInput();
+    // }
+
+
     public function loginform(Request $request)
     {
         $account = login::where('email', $request->email)->first();
         if ($account && Hash::check($request->password, $account->password)) {
             // ล็อกอินสำเร็จ
+            // เก็บค่าอีเมลใน session
+            $request->session()->put('user_email', $account->email);
             return redirect('/addproperty');
         }
-
+    
         return back()->withErrors(['อีเมล์หรือรหัสผ่านไม่ถูกต้อง'])->withInput();
+    }
+    
+
+    public function logout()
+    {
+        // ลบ session ที่เกี่ยวกับการล็อกอิน
+        Auth::logout();
+        session()->forget('user_email');
+        return redirect('/login');
     }
 
     // ------------------------------------- สมัครสมาชิก -------------------------------------------------
-
-
-    // public function register(Request $request)
-    // {
-    //     // รับข้อมูลจาก request
-    //     $username = $request->input('modal_email');
-    //     $password = $request->input('modal_password');
-    //     // รายการข้อผิดพลาด
-    //     $errorMessages = [];
-    //     $existingUser = createAccount::Getemail($username);
-
-    //     if ($existingUser) {
-    //         // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
-    //         if ($existingUser->status >= 1) {
-    //             $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
-    //         }
-    //     } else {
-    //         // บันทึกข้อมูล
-    //         $data = [
-    //             'email' => $username,
-    //             'password' => bcrypt($password),
-    //             'create_datetime'=> date('Y-m-d H:i:s'),
-    //             'update_datetime'=> date('Y-m-d H:i:s'),
-
-    //         ];
-    //         DB::table('user')->insert($data);
-    //         Mail::to($username)->send(new WelcomeEmail());
-    //         return redirect('/addproperty');
-    //     }
-    //     return back()->withErrors($errorMessages)->withInput();
-    // }
 
 
     
     public function register(Request $request)
     {
         $this->validate($request, [
+            'modal_email'=>'required',
             'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
                 $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
                     'secret' => config('services.recaptcha.secret_key'),
                     'response' => $value,
                     'remoteip' => \request()->ip()
                 ]);
-    
                 $g_recaptcha_result = $g_recaptcha->json();
-    
+
                 if (!$g_recaptcha_result['success']) {
                     $fail("The {$attribute} is invalid.");
                 }
             },]
         ]);
+
 
         // รับข้อมูลจาก request
         $username = $request->input('modal_email');
@@ -178,7 +172,6 @@ class LoginController extends Controller
 
             // ส่งอีเมล์ reset password
             Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
-
             $errorMessages[] = 'ส่งอีเมล์สำหรับกู้รหัสให้แล้ว';
         } else {
             // ถ้าไม่เจอ email ในฐานข้อมูล
@@ -230,65 +223,6 @@ class LoginController extends Controller
     }
 
 
-
-
-
-
-    ////////////////////////////////// recaptcha ///////////////////////////////////////////////
-
-
-    // public function register(Request $request){
-
-    //     $request->validate([ 
-    //         'modal_email'=>'required',
-                
-    //         'g-recaptcha-response' => 'required',function (string $attribute, mixed $value, Closure $fail) {
-    //             $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
-    //                 'secret' => config('services.recaptcha.secret_key'),
-    //                 'response' => $value,
-    //                 'remoteip' => \request()->ip()
-    //             ]);
-    //             dd($g_recaptcha->json());
-
-    //             if ($value === 'foo') {
-    //             }
-    //         },
-    //     ]);
-
-   
-
-    // }
-
- 
-
-
-    // public function register(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'g-recaptcha-response' => ['required',function (string $attribute, mixed $value, Closure $fail) {
-    //             $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
-    //                 'secret' =>config('services.recaptcha.secret_key'),
-    //                 'response' =>$value,
-    //                 'remoteip'=>\request()->ip()
-    //             ]);
-
-    //             dd($g_recaptcha->json());
-
-    //             if ($value === 'foo') {
-    //                 $fail("The {$attribute} is invalid.");
-    //             }
-    //         },]
-    //     ]);
-
-
-    //     // RecaptCha V3 and other rules have passed, safe to continue
-
-    //     // Here you can add code to actually send the email message
-
-    // }
-
-
-    
 
 }
 

@@ -33,10 +33,34 @@
                 </div>
                 <div class="col-auto">
                     <div class="d-flex align-items-center">
+{{-- 
                         <a href="{{url("login")}}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
                             <span class="d-xl-block">Login / Register</span>
+                        </a> --}}
+                        @if(session('user_email'))
+                        @php
+                            $userParts = explode('@', session('user_email'));
+                            $username = $userParts[0];
+                        @endphp
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                <span>{{ $username }}</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="{{ route('logout') }}" class="logout-btn dropdown-item">Logout</a>                              
+                            </div>
+                        </div>
+                    @else
+                        <a href="{{ url("login") }}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
+                            <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
+                            <span class="d-xl-block">Login / Register</span>
                         </a>
+                    @endif
+                    
+                    
+                    
+
                         <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}">
                             Add Property
                             <i class="fa-solid fa-arrow-right fa-lg"></i>

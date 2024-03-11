@@ -5,7 +5,7 @@
     {{ $item }}
 @endforeach --}}
 
-    <div class="container ">
+    <div class="container h-100vh">
         <div class="imagbackground ">
             <div class="row pt-13 ">
                 <div class="col-12 col-lg-6 ">
@@ -70,11 +70,8 @@
                             <div class="text-center mt-3">
                                 {{-- <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up?
                                     <span class="colorBlue">Create an account. </span> </a> --}}
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#forgetPassword"> Not signed up?
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#createAccount"> Not signed up?
                                     <span class="colorBlue">Create an account. </span> </a>
-             
-
-                                
                             </div>
                         </div>
                     </div>
@@ -83,7 +80,7 @@
             <div class="popupmodal" id="modal-data"></div>
         </div>
 
-        <div class="modal fade" id="forgetPassword" tabindex="-1" role="dialog"
+        <div class="modal fade pb-300" id="createAccount" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -130,7 +127,6 @@
                                     <a> กรุณากรอก Confirm Password</a>
                                 </div>
                                 <div class="colorRed" id="errorpassword"></div>
-
                             </div>
                             <div class="pt-20 pb-20 text-center">
                                 <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" 
@@ -144,5 +140,6 @@
                 </div>
             </div>
         </div>
+
     </div>
 @endsection
