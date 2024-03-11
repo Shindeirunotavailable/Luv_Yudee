@@ -14,4 +14,7 @@ class createAccount extends Model
 
         return $existingUser;
     }
+
+    const CREATED_AT = 'create_datetime	';
+    const UPDATED_AT = 'update_datetime';
 }
