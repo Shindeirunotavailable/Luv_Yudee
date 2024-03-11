@@ -269,163 +269,166 @@ function formatCurrency(input, blur) {
     input[0].setSelectionRange(caret_pos, caret_pos);
 }
 // Event Handling
-  $('body').on('click', '#nav-media-tab, #nav-location-tab, #nav-detail-tab, #nav-amenities-tab' , function(event) {
-    var forms = $('.needs-validation');
-    // console.log('dasdas')
-    var titleproperty = $('#titleproperty');
-    var price = $('#price');
-    var address = $('#address');
-    var latitudeInput = $('#latitudeInput');
-    var longitudeInput = $('#longitudeInput');
+//   $('body').on('click', '#nav-media-tab, #nav-location-tab, #nav-detail-tab, #nav-amenities-tab' , function(event) {
+//     var forms = $('.needs-validation');
+//     // console.log('dasdas')
+//     var titleproperty = $('#titleproperty');
+//     var price = $('#price');
+//     var address = $('#address');
+//     var latitudeInput = $('#latitudeInput');
+//     var longitudeInput = $('#longitudeInput');
+//     var test = $('#test');
 
-    var provinces = $('#provinces');
-    var errorprovinces = $('#errorprovinces');
-    var amphures = $('#amphures');
-    var erroramphures = $('#erroramphures');
-    var districts = $('#districts');
-    var errordistricts = $('#errordistricts');
-    var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
-    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+//     var provinces = $('#provinces');
+//     var errorprovinces = $('#errorprovinces');
+//     var amphures = $('#amphures');
+//     var erroramphures = $('#erroramphures');
+//     var districts = $('#districts');
+//     var errordistricts = $('#errordistricts');
+//     var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
+//     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-    if( !titleproperty.val()  ){
-            titleproperty.addClass('is-invalid');
-                event.preventDefault();
-                event.stopPropagation();
-              } else if (!price.val()){
-                price.addClass('is-invalid');
-                event.preventDefault();
-                event.stopPropagation();
-              }
+//     if( !titleproperty.val()  ){
+//             titleproperty.addClass('is-invalid');
+//             test.next('.additional-message').remove();
+//             test.after(errorElement);
+//                 event.preventDefault();
+//                 event.stopPropagation();
+//               } else if (!price.val()){
+//                 price.addClass('is-invalid');
+//                 event.preventDefault();
+//                 event.stopPropagation();
+//               }
 
-        titleproperty.on('input', function() {
-            if (!$(titleproperty).val()) {
-                $(titleproperty).addClass('is-invalid');
-            } else {
-                $(titleproperty).removeClass('is-invalid');
-            }
-        });
+//         titleproperty.on('input', function() {
+//             if (!$(titleproperty).val()) {
+//                 $(titleproperty).addClass('is-invalid');
+//             } else {
+//                 $(titleproperty).removeClass('is-invalid');
+//             }
+//         });
 
-        price.on('input', function() {
-            if (!$(this).val()) {
-                $(this).addClass('is-invalid');
-            } else {
-                $(this).removeClass('is-invalid');
-            }
-        });
+//         price.on('input', function() {
+//             if (!$(this).val()) {
+//                 $(this).addClass('is-invalid');
+//             } else {
+//                 $(this).removeClass('is-invalid');
+//             }
+//         });
 
-    if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-            address.addClass('is-invalid');
-            event.preventDefault();
-            event.stopPropagation();
-            }else if (!latitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
-                latitudeInput.addClass('is-invalid');
-                event.preventDefault();
-                event.stopPropagation();
-            }else if (!longitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
-                longitudeInput.addClass('is-invalid');
-                event.preventDefault();
-                event.stopPropagation();
-            }
+//     if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+//             address.addClass('is-invalid');
+//             event.preventDefault();
+//             event.stopPropagation();
+//             }else if (!latitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
+//                 latitudeInput.addClass('is-invalid');
+//                 event.preventDefault();
+//                 event.stopPropagation();
+//             }else if (!longitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
+//                 longitudeInput.addClass('is-invalid');
+//                 event.preventDefault();
+//                 event.stopPropagation();
+//             }
 
-        address.on('input', function() {
-            if (!$(this).val()) {
-                $(this).addClass('is-invalid');
-            } else {
-                $(this).removeClass('is-invalid');
-            }
-        });
+//         address.on('input', function() {
+//             if (!$(this).val()) {
+//                 $(this).addClass('is-invalid');
+//             } else {
+//                 $(this).removeClass('is-invalid');
+//             }
+//         });
 
-        latitudeInput.on('input', function() {
-            if (!$(this).val()) {
-                $(this).addClass('is-invalid');
-            } else {
-                $(this).removeClass('is-invalid');
-            }
-        });
+//         latitudeInput.on('input', function() {
+//             if (!$(this).val()) {
+//                 $(this).addClass('is-invalid');
+//             } else {
+//                 $(this).removeClass('is-invalid');
+//             }
+//         });
 
-        longitudeInput.on('input', function() {
-            if (!$(this).val()) {
-                $(this).addClass('is-invalid');
-            } else {
-                $(this).removeClass('is-invalid');
-            }
-        });
+//         longitudeInput.on('input', function() {
+//             if (!$(this).val()) {
+//                 $(this).addClass('is-invalid');
+//             } else {
+//                 $(this).removeClass('is-invalid');
+//             }
+//         });
 
-        if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-            errorprovinces.addClass('is-invalid');
-            errorprovinces.next('.additional-message').remove();
-            errorprovinces.after(errorElement);
-            event.preventDefault();
-            event.stopPropagation();
-        }
+//         if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+//             errorprovinces.addClass('is-invalid');
+//             errorprovinces.next('.additional-message').remove();
+//             errorprovinces.after(errorElement);
+//             event.preventDefault();
+//             event.stopPropagation();
+//         }
 
-        if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-            erroramphures.addClass('is-invalid');
-            erroramphures.next('.additional-message').remove();
-            erroramphures.after(errorElement);
-            event.preventDefault();
-            event.stopPropagation();
-        }
+//         if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+//             erroramphures.addClass('is-invalid');
+//             erroramphures.next('.additional-message').remove();
+//             erroramphures.after(errorElement);
+//             event.preventDefault();
+//             event.stopPropagation();
+//         }
 
-        if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-            errordistricts.addClass('is-invalid');
-            errordistricts.next('.additional-message').remove();
-            errordistricts.after(errorElement);
-            event.preventDefault();
-            event.stopPropagation();
-        }
+//         if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
+//             errordistricts.addClass('is-invalid');
+//             errordistricts.next('.additional-message').remove();
+//             errordistricts.after(errorElement);
+//             event.preventDefault();
+//             event.stopPropagation();
+//         }
 
-        provinces.on('input', function() {
-            if (!$('#errorprovinces').val()) {
-                $('#errorprovinces').next('.additional-message').remove();
-            } else {
-                $('#errorprovinces').next('.additional-message').remove();
-            }
-        });
-        amphures.on('input', function() {
-            if (!$('#erroramphures').val()) {
-                $('#erroramphures').next('.additional-message').remove();
-            } else {
-                $('#erroramphures').next('.additional-message').remove();
-            }
-        });
-        districts.on('input', function() {
-            if (!$('#errordistricts').val()) {
-                $('#errordistricts').next('.additional-message').remove();
-            } else {
-                $('#errordistricts').next('.additional-message').remove();
-            }
-        });
+//         provinces.on('input', function() {
+//             if (!$('#errorprovinces').val()) {
+//                 $('#errorprovinces').next('.additional-message').remove();
+//             } else {
+//                 $('#errorprovinces').next('.additional-message').remove();
+//             }
+//         });
+//         amphures.on('input', function() {
+//             if (!$('#erroramphures').val()) {
+//                 $('#erroramphures').next('.additional-message').remove();
+//             } else {
+//                 $('#erroramphures').next('.additional-message').remove();
+//             }
+//         });
+//         districts.on('input', function() {
+//             if (!$('#errordistricts').val()) {
+//                 $('#errordistricts').next('.additional-message').remove();
+//             } else {
+//                 $('#errordistricts').next('.additional-message').remove();
+//             }
+//         });
 
-});
+// });
 
-$('#submitpp').click(function(event) {
-    var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
-    var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
-    var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
-    var error = $('#error');
-    var isChecked = false;
+// $('#submitpp').click(function(event) {
+//     var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
+//     var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
+//     var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
+//     var error = $('#error');
+//     var isChecked = false;
 
-    function validateCheckboxes() {
-        isChecked = false;
-        checkboxes.each(function() {
-            if ($(this).is(':checked')) {
-                isChecked = true;
-                return false;
-            }
-        });
-        if (!isChecked) {
-            error.next('.invalid-feedback').remove();
-            error.addClass('is-invalid').after(errorElement);
-            event.preventDefault();
-        } else {
-            error.removeClass('is-invalid').next('.invalid-feedback').remove();
-        }
-    }
+//     function validateCheckboxes() {
+//         isChecked = false;
+//         checkboxes.each(function() {
+//             if ($(this).is(':checked')) {
+//                 isChecked = true;
+//                 return false;
+//             }
+//         });
+//         if (!isChecked) {
+//             error.next('.invalid-feedback').remove();
+//             error.addClass('is-invalid').after(errorElement);
+//             event.preventDefault();
+//         } else {
+//             error.removeClass('is-invalid').next('.invalid-feedback').remove();
+//         }
+//     }
 
-    checkboxes.change(function() {
-        validateCheckboxes();
-    });
+//     checkboxes.change(function() {
+//         validateCheckboxes();
+//     });
 
-    validateCheckboxes();
-});
+//     validateCheckboxes();
+// });
