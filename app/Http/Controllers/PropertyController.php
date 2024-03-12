@@ -45,7 +45,6 @@ class PropertyController extends Controller
             'property_description' => json_encode($request['description']),
             'property_category' => $request['category'],
             'property_type' => $request['type'] ? implode(',', $request['type']) : null,
-            // 'property_type' => implode(',', $request['type']) : null,
             'property_price' => $request['price'],
             'property_address' => $request['address'],
             'property_provinces' => $request['provinces'],
