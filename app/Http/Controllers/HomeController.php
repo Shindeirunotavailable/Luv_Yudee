@@ -90,7 +90,7 @@ class HomeController extends Controller
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
     
-            // เพิ่มข้อมูลในตาราง newsletters
+            // เพิ่มข้อมูลในตาราง pp_newsletters
             DB::table('pp_newsletters')->insert($data);
             mail::to($username)->send(new news());
     
