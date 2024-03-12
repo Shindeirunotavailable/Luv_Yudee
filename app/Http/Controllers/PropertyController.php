@@ -100,7 +100,7 @@ class PropertyController extends Controller
             $data['create_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 1;
             $data['create_by'] = 1;
-            // // dd($request->all());
+            $data['property_status'] = 1;
             $image_url = [];
             if ($request->hasFile('image')) {
                 foreach ($request->file('image') as $image) {
@@ -161,20 +161,22 @@ class PropertyController extends Controller
         return response()->json(['options' => '']);
     }
 
-    // public function deleteImage(Request $request)
-    // {
-    //     $imageUrl = $request->input('image_url');
+    public function deleteImage(Request $request)
+{
+    $imageUrl = $request->input('property_image_url');
 
-    //     // Delete image file from storage
-    //     if (File::exists($imageUrl)) {
-    //         File::delete($imageUrl);
-    //     }
+    // Delete image file from storage
+    if (File::exists($imageUrl))
+    {
+        File::delete($imageUrl);
+    }
 
-    //     // Delete image record from database
-    //     DB::table('pp_media')->where('file_path', $imageUrl)->delete();
+    // Delete image record from database
+    DB::table('pp_properties')->where('id_property', $request->input('id_property'))->delete();
 
-    //     return redirect()->back()->with('success', 'Image deleted successfully');
-    // }
+    return redirect()->back()->with('success', 'Image deleted successfully');
+}
+
 
 }
 

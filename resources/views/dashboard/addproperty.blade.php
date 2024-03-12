@@ -59,7 +59,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Title *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Title </label>
                                                             <input type="text" class="form-control" placeholder="Your Name" id="titleproperty"  name="title" value="{{isset($data['property']->property_title) ? $data['property']->property_title : ""}}">
 
                                                         </div>
@@ -95,7 +95,7 @@
 
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-6">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Price in baht *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Price in baht </label>
                                                             <input type="text" name="price" id="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->property_price) && is_numeric($data['property']->property_price) ? $data['property']->property_price :""}}">
                                                         </div>
                                                     </div>
@@ -111,10 +111,10 @@
                                                     <strong>Media Uploaded Successfully</strong>
                                                 </div>
                                             @endif
-                                                    <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
+                                                    <h4 class="fw-600 title fs-17 mb-10" id="errormedia">Upload photos of your property</h4>
                                                     <div class=" ">
-                                                        <div class="col-sm-6 mb-4 mt-3">
-                                                            <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="imageLabel">Select Image</label>
+                                                        <div class="col-sm-4 mb-4 mt-3">
+                                                            <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 " id="imageLabel">Select Image</label>
                                                             <input name="image[]" type="file" class="custom-file-input" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
 
@@ -145,7 +145,7 @@
                                                     </div>
                                                     <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                     <div class=" ">
-                                                        <div class="col-sm-6 mb-4 mt-3">
+                                                        <div class="col-sm-4 mb-4 mt-3">
                                                             <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="videoLabel">Select Video</label>
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
@@ -175,14 +175,14 @@
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Address *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Address </label>
                                                             <input type="text" class="form-control" placeholder="Your Address"  name="address" id="address" value="{{isset($data['property']->property_address) ? $data['property']->property_address : ""}}">
                                                         </div>
                                                     </div>
 
                                                     <div class="col-sm-6 " >
                                                         <div class="mb-d-20 " >
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10" >Country/State *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required" >Country/State </label>
                                                             <div class="" id="errorprovinces">
                                                                 <select  name="provinces" id="provinces" class="form-control" >
                                                                     <option  value=""  selected disabled ></option>
@@ -197,7 +197,7 @@
                                                     </div>
                                                     <div class="col-sm-6 ">
                                                         <div class="mb-d-20" >
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">City *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">City </label>
                                                             <div class="" id="erroramphures">
                                                                 <select name="amphures" id="amphures" class="form-control">
                                                                     @if (isset($data['id_property']) && $data['property']->property_amphures !== null)
@@ -213,7 +213,7 @@
                                                     </div>
                                                     <div class="col-sm-6 ">
                                                         <div class="mb-d-20" >
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Country *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Country </label>
                                                             <div class=" " id="errordistricts">
                                                                 <select name="districts" id="districts" class="form-control" >
                                                                     @if (isset($data['id_property'])&& $data['property']->property_districts !== null)
@@ -231,21 +231,21 @@
                                                     </div>
                                                     <div class="col-sm-6 ">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Zip *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Zip </label>
                                                             <input type="text" name="zipcode" id="zipcode" readonly class="form-control"  value="{{isset($data['property']->property_zipcode) ? $data['property']->property_zipcode : ""}}">
                                                         </div>
                                                     </div>
 
                                                         <div class="col-sm-6">
                                                             <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Latitude *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Latitude </label>
                                                             <input type="text" class="form-control" name="latitude" id="latitudeInput" placeholder="Enter latitude"  value="{{isset($data['property']->property_latitude) ? $data['property']->property_latitude : ""}}">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-6">
                                                             <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Longitude *</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Longitude </label>
                                                             <input type="text" class="form-control" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{isset($data['property']->property_longitude) ? $data['property']->property_longitude : ""}}">
                                                             </div>
                                                         </div>
@@ -258,7 +258,7 @@
 
                                                 </div>
 
-                                                <button type="submit" name="property_stage" value="3" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                                <button type="submit" name="property_stage" value="3" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                         </div>
                                 </div>
 
@@ -273,14 +273,14 @@
                                         <div class="row">
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Floor amount</label>
-                                                    <input type="number" name="floor_amount"  class="form-control" placeholder="Floor amount" value="{{isset($data['property']->property_floor_amount) ? $data['property']->property_floor_amount : ""}}">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt required">Floor amount</label>
+                                                    <input type="number" name="floor_amount" id="floor"  class="form-control" placeholder="Floor amount" value="{{isset($data['property']->property_floor_amount) ? $data['property']->property_floor_amount : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label>
-                                                    <input type="number" name="rooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_rooms) ? $data['property']->property_rooms : ""}}">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt required">Rooms</label>
+                                                    <input type="number" name="rooms" id="room" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_rooms) ? $data['property']->property_rooms : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
@@ -335,7 +335,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" name="property_stage" value="4" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" name="property_stage" value="4" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
                                 </div>
 
@@ -346,7 +346,7 @@
                                                     <strong>Amenities Uploaded Successfully</strong>
                                                 </div>
                                             @endif
-                                        <h4 class="fw-600 title fs-17 mb-6" id="error">Select Amenities</h4>
+                                        <h4 class="fw-600 title fs-17 mb-6 " id="error">Select Amenities</h4>
                                         <div class="row">
                                             <div  class="row-ap flex-lg-row flex-wrap">
                                                 @php
@@ -368,7 +368,7 @@
                                                     @endforeach
                                             </div>
                                         </div>
-                                        <button type="submit" id="submitpp" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
 
                                 </div>
