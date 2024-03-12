@@ -50,9 +50,11 @@
 </head>
 
 <body>
-    @include('layout.menu')
-    @yield('content')
-    @if(!request()->is('addproperty'))
+    @if (!request()->is('emails'))
+        @include('layout.menu')
+    @endif
+        @yield('content')
+    @if(!request()->is('addproperty','emails'))
         @include('layout.footer')
     @endif
 

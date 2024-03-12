@@ -17,6 +17,7 @@ class User extends Migration
             $table->id();
             $table->string('email', 50);
             $table->string('password'); 
+            $table->string('name',50); 
             $table->tinyInteger('status')->default(1); // status 1 เมื่อผู้ใช้งานสมัครแล้วแต่ยังไม่ได้ทำการยืนยัน email , status 2 เมื่อผู้ใช้งานทำการยืนยันอีเมล์แล้ว
             $table->dateTime('create_datetime')->useCurrent();
             $table->dateTime('update_datetime')->useCurrent();

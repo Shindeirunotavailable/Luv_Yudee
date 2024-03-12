@@ -11,11 +11,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\login;
 use App\Models\createAccount;
-use App\Rules\ReCaptchaV3;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use PharIo\Manifest\Url;
-use Closure;
 
 class LoginController extends Controller
 {
@@ -74,17 +72,18 @@ class LoginController extends Controller
         if ($account && Hash::check($request->password, $account->password)) {
             // ล็อกอินสำเร็จ
             // เก็บค่าอีเมลใน session
-            $request->session()->put('user_email', $account->email);
+            $request->session()->put('user_email', $account->name);
             return redirect('/addproperty');
         }
     
-        return back()->withErrors(['อีเมล์หรือรหัสผ่านไม่ถูกต้อง'])->withInput();
+        // return back()->withErrors(['อีเมล์หรือรหัสผ่านไม่ถูกต้อง'])->withInput();
+        return back()->with('warning', 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง');
+
     }
     
 
     public function logout()
     {
-        // ลบ session ที่เกี่ยวกับการล็อกอิน
         Auth::logout();
         session()->forget('user_email');
         return redirect('/login');
@@ -114,11 +113,12 @@ class LoginController extends Controller
 
 
         // รับข้อมูลจาก request
-        $username = $request->input('modal_email');
+        $email = $request->input('modal_email');
         $password = $request->input('modal_password');
+        $username = $request->input('modal_name');
         // รายการข้อผิดพลาด
         $errorMessages = [];
-        $existingUser = createAccount::Getemail($username);
+        $existingUser = createAccount::Getemail($email);
 
         if ($existingUser) {
             // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
@@ -128,19 +128,25 @@ class LoginController extends Controller
         } else {
             // บันทึกข้อมูล
             $data = [
-                'email' => $username,
+                'email' => $email,
+                'name' => $username,
                 'password' => bcrypt($password),
                 'create_datetime'=> date('Y-m-d H:i:s'),
                 'update_datetime'=> date('Y-m-d H:i:s'),
 
             ];
             DB::table('user')->insert($data);
-            Mail::to($username)->send(new WelcomeEmail());
-            return redirect('/addproperty');
+            // Mail::to($email)->send(new WelcomeEmail());
+            Mail::to($email)->send(new WelcomeEmail($username));
+
+            return back()->with('status', 'สมัครสมาชิกเสร็จสิ้น');
+
         }
         return back()->withErrors($errorMessages)->withInput();
+
     }
 
+    
 
 
 

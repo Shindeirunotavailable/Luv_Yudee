@@ -117,7 +117,7 @@ $(document).ready(function() {
                 '_token': csrf
             },
             success: function(response) {
-                console.log(response)
+                // console.log(response)
                 $('#amphures').html(response.options);
                 $('#districts').html('');
                 $('#zipcode').val('');
@@ -276,33 +276,29 @@ $('#submitdescription').click(function(event) {
     var errorMessage = 'กรุณากรอกข้อมูลที่จำเป็นในช่องสีแดง';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-    if( !titleproperty.val()  ){
+    if( !titleproperty.val() || !price.val() ){
+        if( !titleproperty.val()){
             titleproperty.addClass('is-invalid');
             titleproperty.next('.additional-message').remove();
             titleproperty.after(errorElement)
-            event.preventDefault();
-            event.stopPropagation();
-    }
-    if (!price.val()){
-        price.addClass('is-invalid');
-        price.next('.additional-message').remove();
-        price.after(errorElement)
+        }
+        if (!price.val()){
+            price.addClass('is-invalid');
+            price.next('.additional-message').remove();
+            price.after(errorElement)
+
+        }
         event.preventDefault();
         event.stopPropagation();
     }
-
         titleproperty.on('input', function() {
-            if (!$(titleproperty).val()) {
-                $(titleproperty).addClass('is-invalid');
-            } else {
+            if ($(titleproperty).val()) {
                 $(titleproperty).removeClass('is-invalid');
             }
         });
 
         price.on('input', function() {
-            if (!$(this).val()) {
-                $(this).addClass('is-invalid');
-            } else {
+            if ($(this).val()) {
                 $(this).removeClass('is-invalid');
             }
         });
@@ -316,24 +312,28 @@ $('#submitmedia').click(function(event) {
     var errorMessage = 'ต้องมีรูปอย่างน้อย 1 รูป';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-    if (!customIMG.val() ) {
+    if (!customIMG.val()) {
         errormedia.addClass('is-invalid');
         errormedia.next('.additional-message').remove();
         errormedia.after(errorElement);
         event.preventDefault();
         event.stopPropagation();
+    } else {
+        errormedia.removeClass('is-invalid');
+        errormedia.next('.additional-message').remove();
     }
 
-
     customIMG.on('input', function() {
-        if (!$('#errormedia').val()) {
-            $('#errormedia').next('.additional-message').remove();
+        if (!$(this).val()) {
+            errormedia.addClass('is-invalid');
+            errormedia.after(errorElement);
         } else {
-            $('#errormedia').next('.additional-message').remove();
+            errormedia.removeClass('is-invalid');
+            errormedia.next('.additional-message').remove();
         }
     });
-
 });
+
 
 $('#submitlocation').click(function(event) {
     var forms = $('.needs-validation');
@@ -342,133 +342,86 @@ $('#submitlocation').click(function(event) {
     var latitudeInput = $('#latitudeInput');
     var longitudeInput = $('#longitudeInput');
     var provinces = $('#provinces');
-    var errorprovinces = $('#errorprovinces');
     var amphures = $('#amphures');
-    var erroramphures = $('#erroramphures');
     var districts = $('#districts');
-    var errordistricts = $('#errordistricts');
     var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-    if (!address.val() ) {
-        address.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
-        }
-    if (!latitudeInput.val()){
-        latitudeInput.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
-        }
-    if (!longitudeInput.val()){
-        longitudeInput.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
+    if (!address.val() || !latitudeInput.val() || !longitudeInput.val() || !provinces.val() || !amphures.val() || !districts.val()) {
+        if (!address.val()) {
+            address.addClass('is-invalid');
         }
 
+        if (!latitudeInput.val()) {
+            latitudeInput.addClass('is-invalid');
+        }
+
+        if (!longitudeInput.val()) {
+            longitudeInput.addClass('is-invalid');
+        }
+
+        if (!provinces.val()) {
+            $('#errorprovinces').next('.additional-message').remove();
+            $('#errorprovinces').addClass('is-invalid');
+            $('#errorprovinces').after(errorElement);
+
+        }
+
+        if (!amphures.val()) {
+            $('#erroramphures').next('.additional-message').remove();
+            $('#erroramphures').addClass('is-invalid');
+            $('#erroramphures').after(errorElement);
+
+        }
+
+        if (!districts.val()) {
+            $('#errordistricts').next('.additional-message').remove();
+            $('#errordistricts').addClass('is-invalid');
+            $('#errordistricts').after(errorElement);
+
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
     address.on('input', function() {
-        if (!$(this).val()) {
-            $(this).addClass('is-invalid');
-        } else {
+        if ($(this).val()) {
             $(this).removeClass('is-invalid');
         }
     });
 
     latitudeInput.on('input', function() {
-        if (!$(this).val()) {
-            $(this).addClass('is-invalid');
-        } else {
+        if ($(this).val()) {
             $(this).removeClass('is-invalid');
         }
     });
 
     longitudeInput.on('input', function() {
-        if (!$(this).val()) {
-            $(this).addClass('is-invalid');
-        } else {
+        if ($(this).val()) {
             $(this).removeClass('is-invalid');
         }
     });
-
-    if (!provinces.val()) {
-        errorprovinces.addClass('is-invalid');
-        errorprovinces.next('.additional-message').remove();
-        errorprovinces.after(errorElement);
-        event.preventDefault();
-        event.stopPropagation();
-    }
-
-    if (!amphures.val()) {
-        erroramphures.addClass('is-invalid');
-        erroramphures.next('.additional-message').remove();
-        erroramphures.after(errorElement);
-        event.preventDefault();
-        event.stopPropagation();
-    }
-
-    if (!districts.val()) {
-        errordistricts.addClass('is-invalid');
-        errordistricts.next('.additional-message').remove();
-        errordistricts.after(errorElement);
-        event.preventDefault();
-        event.stopPropagation();
-    }
 
     provinces.on('input', function() {
-        if (!$('#errorprovinces').val()) {
-            $('#errorprovinces').next('.additional-message').remove();
-        } else {
-            $('#errorprovinces').next('.additional-message').remove();
+        if ($(this).val()) {
+            $('#errorprovinces').removeClass('is-invalid');
         }
     });
+
     amphures.on('input', function() {
-        if (!$('#erroramphures').val()) {
-            $('#erroramphures').next('.additional-message').remove();
-        } else {
-            $('#erroramphures').next('.additional-message').remove();
+        if ($(this).val()) {
+            $('#erroramphures').removeClass('is-invalid');
         }
     });
+
     districts.on('input', function() {
-        if (!$('#errordistricts').val()) {
-            $('#errordistricts').next('.additional-message').remove();
-        } else {
-            $('#errordistricts').next('.additional-message').remove();
-        }
-    });
-
-
-    if( !floor.val()){
-        floor.addClass('is-invalid');
-        floor.next('.additional-message').remove();
-        floor.after(error);
-        event.preventDefault();
-        event.stopPropagation();
-    }
-
-    if (!room.val()){
-        room.addClass('is-invalid');
-        room.next('.additional-message').remove();
-        room.after(error);
-        event.preventDefault();
-        vent.stopPropagation();
-    }
-
-    floor.on('input', function() {
-        if (!$(this).val()) {
-            $(this).addClass('is-invalid');
-        } else {
-            $(this).removeClass('is-invalid');
-        }
-    });
-
-    room.on('input', function() {
-        if (!$(this).val()) {
-            $(this).addClass('is-invalid');
-        } else {
-            $(this).removeClass('is-invalid');
+        if ($(this).val()) {
+            $('#errordistricts').removeClass('is-invalid');
         }
     });
 });
+
 
 $('#submitdetail').click(function(event) {
     var forms = $('.needs-validation');
@@ -478,38 +431,36 @@ $('#submitdetail').click(function(event) {
     var errorMessage = 'กรุณากรอกข้อมูลที่จำเป็นในช่องสีแดง';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-    if( !floor.val()){
-        floor.addClass('is-invalid');
-        floor.next('.additional-message').remove();
-        floor.after(errorElement);
+    if (!floor.val() || !room.val()) {
+        if (!floor.val()) {
+            floor.addClass('is-invalid');
+            floor.next('.additional-message').remove();
+            floor.after(errorElement);
+        }
+
+        if (!room.val()) {
+            room.addClass('is-invalid');
+            room.next('.additional-message').remove();
+            room.after(errorElement);
+        }
+
         event.preventDefault();
         event.stopPropagation();
     }
 
-    if (!room.val()){
-        room.addClass('is-invalid');
-        room.next('.additional-message').remove();
-        room.after(errorElement);
-        event.preventDefault();
-        vent.stopPropagation();
-    }
-
     floor.on('input', function() {
-        if (!$(this).val()) {
-            $(this).addClass('is-invalid');
-        } else {
+        if ($(this).val()) {
             $(this).removeClass('is-invalid');
         }
     });
 
     room.on('input', function() {
-        if (!$(this).val()) {
-            $(this).addClass('is-invalid');
-        } else {
+        if ($(this).val()) {
             $(this).removeClass('is-invalid');
         }
     });
 });
+
 
 $('#submitamenitie').click(function(event) {
     var checkboxes = $('.checkbox-style1 input[type="checkbox"]');

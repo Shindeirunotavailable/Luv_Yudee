@@ -101,7 +101,6 @@ class PropertyController extends Controller
             $data['update_by'] = 1;
             $data['create_by'] = 1;
             $data['property_status'] = 1;
-            // // dd($request->all());
             $image_url = [];
             if ($request->hasFile('image')) {
                 foreach ($request->file('image') as $image) {
@@ -167,8 +166,9 @@ class PropertyController extends Controller
     $imageUrl = $request->input('property_image_url');
 
     // Delete image file from storage
-    if (File::exists(public_path($imageUrl))) {
-        File::delete(public_path($imageUrl));
+    if (File::exists($imageUrl))
+    {
+        File::delete($imageUrl);
     }
 
     // Delete image record from database
