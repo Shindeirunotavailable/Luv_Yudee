@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use App\Models\createAccount;
 use App\Models\Newsletter;
+use App\Mail\news;
+
+
 
 
 class HomeController extends Controller
@@ -47,7 +51,6 @@ class HomeController extends Controller
 
     public function home_email(Request $request)
     {
-        // dd($request);
         $this->validate($request, [
             'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
                 $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
@@ -76,7 +79,7 @@ class HomeController extends Controller
             // ถ้ามีอีเมลนี้อยู่แล้ว
             return redirect('/home')->with('warning', 'This email is already subscribed.');
         }elseif ($existingUser){
-            return redirect('/home')->with('warning', 'thanabodee.');
+            return redirect('/home')->with('warning', 'This email is already subscribed.');
         }
          else {
             // ถ้ายังไม่มีอีเมลนี้ในฐานข้อมูล
@@ -88,6 +91,7 @@ class HomeController extends Controller
     
             // เพิ่มข้อมูลในตาราง newsletters
             DB::table('newsletters')->insert($data);
+            mail::to($username)->send(new news());
     
             // ไปที่หน้า home พร้อมกับข้อความเตือน
             return redirect('/home')->with('success', 'You have successfully subscribed to our newsletter.');
