@@ -117,7 +117,7 @@ $(document).ready(function() {
                 '_token': csrf
             },
             success: function(response) {
-                console.log(response)
+                // console.log(response)
                 $('#amphures').html(response.options);
                 $('#districts').html('');
                 $('#zipcode').val('');
@@ -361,18 +361,24 @@ $('#submitlocation').click(function(event) {
         }
 
         if (!provinces.val()) {
+            $('#errorprovinces').next('.additional-message').remove();
             $('#errorprovinces').addClass('is-invalid');
             $('#errorprovinces').after(errorElement);
+
         }
 
         if (!amphures.val()) {
+            $('#erroramphures').next('.additional-message').remove();
             $('#erroramphures').addClass('is-invalid');
             $('#erroramphures').after(errorElement);
+
         }
 
         if (!districts.val()) {
+            $('#errordistricts').next('.additional-message').remove();
             $('#errordistricts').addClass('is-invalid');
             $('#errordistricts').after(errorElement);
+
         }
 
         event.preventDefault();
