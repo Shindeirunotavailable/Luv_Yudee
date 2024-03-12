@@ -269,166 +269,275 @@ function formatCurrency(input, blur) {
     input[0].setSelectionRange(caret_pos, caret_pos);
 }
 // Event Handling
-//   $('body').on('click', '#nav-media-tab, #nav-location-tab, #nav-detail-tab, #nav-amenities-tab' , function(event) {
-//     var forms = $('.needs-validation');
-//     // console.log('dasdas')
-//     var titleproperty = $('#titleproperty');
-//     var price = $('#price');
-//     var address = $('#address');
-//     var latitudeInput = $('#latitudeInput');
-//     var longitudeInput = $('#longitudeInput');
-//     var test = $('#test');
+$('#submitdescription').click(function(event) {
+    var forms = $('.needs-validation');
+    var titleproperty = $('#titleproperty');
+    var price = $('#price');
+    var errorMessage = 'กรุณากรอกข้อมูลที่จำเป็นในช่องสีแดง';
+    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-//     var provinces = $('#provinces');
-//     var errorprovinces = $('#errorprovinces');
-//     var amphures = $('#amphures');
-//     var erroramphures = $('#erroramphures');
-//     var districts = $('#districts');
-//     var errordistricts = $('#errordistricts');
-//     var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
-//     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+    if( !titleproperty.val()  ){
+            titleproperty.addClass('is-invalid');
+            titleproperty.next('.additional-message').remove();
+            titleproperty.after(errorElement)
+            event.preventDefault();
+            event.stopPropagation();
+    }
+    if (!price.val()){
+        price.addClass('is-invalid');
+        price.next('.additional-message').remove();
+        price.after(errorElement)
+        event.preventDefault();
+        event.stopPropagation();
+    }
 
-//     if( !titleproperty.val()  ){
-//             titleproperty.addClass('is-invalid');
-//             test.next('.additional-message').remove();
-//             test.after(errorElement);
-//                 event.preventDefault();
-//                 event.stopPropagation();
-//               } else if (!price.val()){
-//                 price.addClass('is-invalid');
-//                 event.preventDefault();
-//                 event.stopPropagation();
-//               }
+        titleproperty.on('input', function() {
+            if (!$(titleproperty).val()) {
+                $(titleproperty).addClass('is-invalid');
+            } else {
+                $(titleproperty).removeClass('is-invalid');
+            }
+        });
 
-//         titleproperty.on('input', function() {
-//             if (!$(titleproperty).val()) {
-//                 $(titleproperty).addClass('is-invalid');
-//             } else {
-//                 $(titleproperty).removeClass('is-invalid');
-//             }
-//         });
+        price.on('input', function() {
+            if (!$(this).val()) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+});
 
-//         price.on('input', function() {
-//             if (!$(this).val()) {
-//                 $(this).addClass('is-invalid');
-//             } else {
-//                 $(this).removeClass('is-invalid');
-//             }
-//         });
+$('#submitmedia').click(function(event) {
+    var forms = $('.needs-validation');
 
-//     if (!address.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-//             address.addClass('is-invalid');
-//             event.preventDefault();
-//             event.stopPropagation();
-//             }else if (!latitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
-//                 latitudeInput.addClass('is-invalid');
-//                 event.preventDefault();
-//                 event.stopPropagation();
-//             }else if (!longitudeInput.val()&& $(this).is('#nav-detail-tab, #nav-amenities-tab')){
-//                 longitudeInput.addClass('is-invalid');
-//                 event.preventDefault();
-//                 event.stopPropagation();
-//             }
+    var customIMG = $('#customIMG');
+    var errormedia = $('#errormedia');
+    var errorMessage = 'ต้องมีรูปอย่างน้อย 1 รูป';
+    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-//         address.on('input', function() {
-//             if (!$(this).val()) {
-//                 $(this).addClass('is-invalid');
-//             } else {
-//                 $(this).removeClass('is-invalid');
-//             }
-//         });
+    if (!customIMG.val() ) {
+        errormedia.addClass('is-invalid');
+        errormedia.next('.additional-message').remove();
+        errormedia.after(errorElement);
+        event.preventDefault();
+        event.stopPropagation();
+    }
 
-//         latitudeInput.on('input', function() {
-//             if (!$(this).val()) {
-//                 $(this).addClass('is-invalid');
-//             } else {
-//                 $(this).removeClass('is-invalid');
-//             }
-//         });
 
-//         longitudeInput.on('input', function() {
-//             if (!$(this).val()) {
-//                 $(this).addClass('is-invalid');
-//             } else {
-//                 $(this).removeClass('is-invalid');
-//             }
-//         });
+    customIMG.on('input', function() {
+        if (!$('#errormedia').val()) {
+            $('#errormedia').next('.additional-message').remove();
+        } else {
+            $('#errormedia').next('.additional-message').remove();
+        }
+    });
 
-//         if (!provinces.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-//             errorprovinces.addClass('is-invalid');
-//             errorprovinces.next('.additional-message').remove();
-//             errorprovinces.after(errorElement);
-//             event.preventDefault();
-//             event.stopPropagation();
-//         }
+});
 
-//         if (!amphures.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-//             erroramphures.addClass('is-invalid');
-//             erroramphures.next('.additional-message').remove();
-//             erroramphures.after(errorElement);
-//             event.preventDefault();
-//             event.stopPropagation();
-//         }
+$('#submitlocation').click(function(event) {
+    var forms = $('.needs-validation');
 
-//         if (!districts.val() && $(this).is('#nav-detail-tab, #nav-amenities-tab')) {
-//             errordistricts.addClass('is-invalid');
-//             errordistricts.next('.additional-message').remove();
-//             errordistricts.after(errorElement);
-//             event.preventDefault();
-//             event.stopPropagation();
-//         }
+    var address = $('#address');
+    var latitudeInput = $('#latitudeInput');
+    var longitudeInput = $('#longitudeInput');
+    var provinces = $('#provinces');
+    var errorprovinces = $('#errorprovinces');
+    var amphures = $('#amphures');
+    var erroramphures = $('#erroramphures');
+    var districts = $('#districts');
+    var errordistricts = $('#errordistricts');
+    var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
+    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-//         provinces.on('input', function() {
-//             if (!$('#errorprovinces').val()) {
-//                 $('#errorprovinces').next('.additional-message').remove();
-//             } else {
-//                 $('#errorprovinces').next('.additional-message').remove();
-//             }
-//         });
-//         amphures.on('input', function() {
-//             if (!$('#erroramphures').val()) {
-//                 $('#erroramphures').next('.additional-message').remove();
-//             } else {
-//                 $('#erroramphures').next('.additional-message').remove();
-//             }
-//         });
-//         districts.on('input', function() {
-//             if (!$('#errordistricts').val()) {
-//                 $('#errordistricts').next('.additional-message').remove();
-//             } else {
-//                 $('#errordistricts').next('.additional-message').remove();
-//             }
-//         });
+    if (!address.val() ) {
+        address.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+        }
+    if (!latitudeInput.val()){
+        latitudeInput.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+        }
+    if (!longitudeInput.val()){
+        longitudeInput.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+        }
 
-// });
+    address.on('input', function() {
+        if (!$(this).val()) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
 
-// $('#submitpp').click(function(event) {
-//     var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
-//     var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
-//     var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
-//     var error = $('#error');
-//     var isChecked = false;
+    latitudeInput.on('input', function() {
+        if (!$(this).val()) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
 
-//     function validateCheckboxes() {
-//         isChecked = false;
-//         checkboxes.each(function() {
-//             if ($(this).is(':checked')) {
-//                 isChecked = true;
-//                 return false;
-//             }
-//         });
-//         if (!isChecked) {
-//             error.next('.invalid-feedback').remove();
-//             error.addClass('is-invalid').after(errorElement);
-//             event.preventDefault();
-//         } else {
-//             error.removeClass('is-invalid').next('.invalid-feedback').remove();
-//         }
-//     }
+    longitudeInput.on('input', function() {
+        if (!$(this).val()) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
 
-//     checkboxes.change(function() {
-//         validateCheckboxes();
-//     });
+    if (!provinces.val()) {
+        errorprovinces.addClass('is-invalid');
+        errorprovinces.next('.additional-message').remove();
+        errorprovinces.after(errorElement);
+        event.preventDefault();
+        event.stopPropagation();
+    }
 
-//     validateCheckboxes();
-// });
+    if (!amphures.val()) {
+        erroramphures.addClass('is-invalid');
+        erroramphures.next('.additional-message').remove();
+        erroramphures.after(errorElement);
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    if (!districts.val()) {
+        errordistricts.addClass('is-invalid');
+        errordistricts.next('.additional-message').remove();
+        errordistricts.after(errorElement);
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    provinces.on('input', function() {
+        if (!$('#errorprovinces').val()) {
+            $('#errorprovinces').next('.additional-message').remove();
+        } else {
+            $('#errorprovinces').next('.additional-message').remove();
+        }
+    });
+    amphures.on('input', function() {
+        if (!$('#erroramphures').val()) {
+            $('#erroramphures').next('.additional-message').remove();
+        } else {
+            $('#erroramphures').next('.additional-message').remove();
+        }
+    });
+    districts.on('input', function() {
+        if (!$('#errordistricts').val()) {
+            $('#errordistricts').next('.additional-message').remove();
+        } else {
+            $('#errordistricts').next('.additional-message').remove();
+        }
+    });
+
+
+    if( !floor.val()){
+        floor.addClass('is-invalid');
+        floor.next('.additional-message').remove();
+        floor.after(error);
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    if (!room.val()){
+        room.addClass('is-invalid');
+        room.next('.additional-message').remove();
+        room.after(error);
+        event.preventDefault();
+        vent.stopPropagation();
+    }
+
+    floor.on('input', function() {
+        if (!$(this).val()) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    room.on('input', function() {
+        if (!$(this).val()) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
+});
+
+$('#submitdetail').click(function(event) {
+    var forms = $('.needs-validation');
+
+    var floor = $('#floor');
+    var room = $('#room');
+    var errorMessage = 'กรุณากรอกข้อมูลที่จำเป็นในช่องสีแดง';
+    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+
+    if( !floor.val()){
+        floor.addClass('is-invalid');
+        floor.next('.additional-message').remove();
+        floor.after(errorElement);
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    if (!room.val()){
+        room.addClass('is-invalid');
+        room.next('.additional-message').remove();
+        room.after(errorElement);
+        event.preventDefault();
+        vent.stopPropagation();
+    }
+
+    floor.on('input', function() {
+        if (!$(this).val()) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    room.on('input', function() {
+        if (!$(this).val()) {
+            $(this).addClass('is-invalid');
+        } else {
+            $(this).removeClass('is-invalid');
+        }
+    });
+});
+
+$('#submitamenitie').click(function(event) {
+    var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
+    var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
+    var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
+    var error = $('#error');
+    var isChecked = false;
+
+    function validateCheckboxes() {
+        isChecked = false;
+        checkboxes.each(function() {
+            if ($(this).is(':checked')) {
+                isChecked = true;
+                return false;
+            }
+        });
+        if (!isChecked) {
+            error.next('.invalid-feedback').remove();
+            error.addClass('is-invalid').after(errorElement);
+            event.preventDefault();
+        } else {
+            error.removeClass('is-invalid').next('.invalid-feedback').remove();
+        }
+    }
+
+    checkboxes.change(function() {
+        validateCheckboxes();
+    });
+
+    validateCheckboxes();
+});

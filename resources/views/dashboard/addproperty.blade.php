@@ -111,7 +111,7 @@
                                                     <strong>Media Uploaded Successfully</strong>
                                                 </div>
                                             @endif
-                                                    <h4 class="fw-600 title fs-17 mb-10">Upload photos of your property</h4>
+                                                    <h4 class="fw-600 title fs-17 mb-10" id="errormedia">Upload photos of your property</h4>
                                                     <div class=" ">
                                                         <div class="col-sm-6 mb-4 mt-3">
                                                             <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="imageLabel">Select Image</label>
@@ -258,7 +258,7 @@
 
                                                 </div>
 
-                                                <button type="submit" name="property_stage" value="3" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                                <button type="submit" name="property_stage" value="3" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                         </div>
                                 </div>
 
@@ -274,13 +274,13 @@
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Floor amount</label>
-                                                    <input type="number" name="floor_amount"  class="form-control" placeholder="Floor amount" value="{{isset($data['property']->property_floor_amount) ? $data['property']->property_floor_amount : ""}}">
+                                                    <input type="number" name="floor_amount" id="floor"  class="form-control" placeholder="Floor amount" value="{{isset($data['property']->property_floor_amount) ? $data['property']->property_floor_amount : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
                                                     <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Rooms</label>
-                                                    <input type="number" name="rooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_rooms) ? $data['property']->property_rooms : ""}}">
+                                                    <input type="number" name="rooms" id="room" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_rooms) ? $data['property']->property_rooms : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
@@ -335,7 +335,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" name="property_stage" value="4" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" name="property_stage" value="4" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
                                 </div>
 
@@ -368,7 +368,7 @@
                                                     @endforeach
                                             </div>
                                         </div>
-                                        <button type="submit" id="submitpp" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
                                     </div>
 
                                 </div>
