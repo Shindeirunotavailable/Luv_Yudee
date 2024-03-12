@@ -112,6 +112,14 @@
                         <form action="{{ url('/register') }}" method="POST" class="needs-validation" id="registerForm">
                             @csrf
                             <div class="form-group">
+                                <label class="label-700 pl-5">name</label>
+                                <input type="text" name="modal_name" id="modal_name" class="form-control "
+                                    placeholder="Enter Your name">
+                                <div class="invalid-feedback">
+                                    <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                </div>
+                            </div>                           
+                            <div class="form-group">
                                 <label class="label-700 pl-5">Email</label>
                                 <input type="Email" name="modal_email" id="modal_email" class="form-control "
                                     placeholder="Enter Email">
@@ -143,16 +151,6 @@
                                 </div>
                                 <div class="colorRed" id="errorpassword"></div>
                             </div>
-                            <div class="form-group">
-                                <label class="label-700 pl-5">name</label>
-                                <input type="text" name="modal_name" id="modal_name" class="form-control "
-                                    placeholder="Enter Your name">
-                                <div class="invalid-feedback">
-                                    <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
-                                </div>
-                            </div>
-
-
                             <div class="pt-20 pb-20 text-center">
                                 <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block"
                                 data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-act ion='register'>
