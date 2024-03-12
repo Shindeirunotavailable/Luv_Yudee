@@ -91,7 +91,7 @@ class HomeController extends Controller
             ];
     
             // เพิ่มข้อมูลในตาราง newsletters
-            DB::table('pp__newsletters')->insert($data);
+            DB::table('pp_newsletters')->insert($data);
             mail::to($username)->send(new news());
     
             // ไปที่หน้า home พร้อมกับข้อความเตือน
