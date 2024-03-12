@@ -259,21 +259,4 @@ $('#modal_email').on('input', function(event) {
   }
 
 
-  function callbackthen(response){
-    response.json().then(function(data){
-      console.log(data);
-      if(data.success && data.score > 0.5 ){
-        console.log('valid source');
-      }else{
-        document.getElementById("registerForm").addEventListener('submit',function(event){
-          event.preventDefault();
-          alert('recaptcha error stop form submit')
-        })
-
-      }
-    })
-  }
-
-  function callbackthen(error){
-    console.log('error' + error);
-  }
+ 
