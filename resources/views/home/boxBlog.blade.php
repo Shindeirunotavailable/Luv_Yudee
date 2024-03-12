@@ -1,7 +1,7 @@
 <section class="mb0-md md-pb-30 mx20-lg">
     <div class="max-width1460-con position-relative mr-auto ml-auto">
         <div class="row">
-            <div class="col-lg-6 aos-init">
+            <div class="col-lg-6 aos-init pt-40">
                 <div class="main-title ">
                     <h2 class="title">From Our Blog</h2>
                     <p class="par">Aliquam lacinia diam quis lacus euismod</p>
