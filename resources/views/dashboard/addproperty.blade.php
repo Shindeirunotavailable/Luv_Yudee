@@ -86,9 +86,9 @@
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
                                                             <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
-                                                            <select id="propertystatus" name="type" class="form-control" >
-                                                                <option value="1"{{ isset($data['property']->property_type) && $data['property']->property_type=='1' ? "selected" :""}}>ขาย</option>
-                                                                <option value="2"{{ isset($data['property']->property_type) && $data['property']->property_type=='2' ? "selected" :""}}>เช่า</option>
+                                                            <select id="propertystatus" name="type[]" class="form-control" multiple >
+                                                                <option value="1"{{ isset($data['property']->property_type) && in_array('1', explode(',', $data['property']->property_type)) ? "selected" : "" }}>ขาย</option>
+                                                                <option value="2"{{ isset($data['property']->property_type) && in_array('2', explode(',', $data['property']->property_type)) ? "selected" : "" }}>เช่า</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -118,7 +118,7 @@
                                                             <input name="image[]" type="file" class="custom-file-input" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
 
-                                                        <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div>
+                                                        {{-- <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div> --}}
                                                         {{-- @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
                                                             <div class="row">
                                                                 @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
@@ -149,7 +149,7 @@
                                                             <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="videoLabel">Select Video</label>
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
-                                                        <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div>
+                                                        {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
                                                         @if (isset($data['id_property'])&& isset($data['property']->property_video_url))
                                                             <div class="row">
                                                                 @foreach (explode(',', $data['property']->property_video_url) as $videoUrl)

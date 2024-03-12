@@ -41,10 +41,10 @@ $(document).ready(function() {
         // allowClear: true
     });
 
-    // $('#propertystatus').val("");
+    // $('#propertystatus').val("1");
     $('#propertystatus').select2({
         placeholder: "Select...",
-        // allowClear: true
+        allowClear: true
     });
     $('#provinces').select2({
         placeholder: "กรุณาเลือกจังหวัด"
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
 // db_provinces
         var getUrl = window.location;
-        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/yuudee/" ;// เพิ่ม/yuudee/ก่อนอัพขึ้นserver
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;// เพิ่ม/yuudee/ก่อนอัพขึ้นserver
         var lang = document.documentElement.lang;
 
     $('#provinces').change(function() {
@@ -308,11 +308,12 @@ $('#submitmedia').click(function(event) {
     var forms = $('.needs-validation');
 
     var customIMG = $('#customIMG');
+    var customVdo = $('#customVdo');
     var errormedia = $('#errormedia');
-    var errorMessage = 'ต้องมีรูปอย่างน้อย 1 รูป';
+    var errorMessage = 'ต้องมีรูปหรือวิดีโออย่างน้อย 1 ไฟล์';
     var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
 
-    if (!customIMG.val()) {
+    if (!customIMG.val() && !customVdo.val()) {
         errormedia.addClass('is-invalid');
         errormedia.next('.additional-message').remove();
         errormedia.after(errorElement);
@@ -324,7 +325,17 @@ $('#submitmedia').click(function(event) {
     }
 
     customIMG.on('input', function() {
-        if (!$(this).val()) {
+        if (!$(this).val() && !customVdo.val()) {
+            errormedia.addClass('is-invalid');
+            errormedia.after(errorElement);
+        } else {
+            errormedia.removeClass('is-invalid');
+            errormedia.next('.additional-message').remove();
+        }
+    });
+
+    customVdo.on('input', function() {
+        if (!$(this).val() && !customIMG.val()) {
             errormedia.addClass('is-invalid');
             errormedia.after(errorElement);
         } else {
