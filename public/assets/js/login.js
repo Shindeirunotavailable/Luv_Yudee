@@ -165,6 +165,8 @@ $('#modal_email').on('input', function(event) {
       password.removeClass('is-invalid');
       confirm.removeClass('is-invalid');
       nameInput.removeClass('is-invalid');
+      nameInput.addClass('is-valid');
+
     }
 
     if (emailValue.trim() === '') {
