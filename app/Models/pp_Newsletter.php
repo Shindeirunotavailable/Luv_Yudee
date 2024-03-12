@@ -10,7 +10,7 @@ class pp_Newsletter extends Model
 {
     public static function Gethome($username){
 
-        $existingEmail = DB::table('newsletters')->where('email', $username)->first();
+        $existingEmail = DB::table('pp_newsletters')->where('newsletter_email', $username)->first();
 
         return $existingEmail;
     }

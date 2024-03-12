@@ -280,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //   document.getElementById("registerForm").submit();
 // }
 
+
 /*้home-email */
 function onSubmitemail(event) {
     var emailInput = $('#home-email');
@@ -306,6 +307,8 @@ function onSubmitemail(event) {
     document.getElementById("home_email").submit();
 }
 /*------------------------------------------- */
+
+
 
 //============================ js non ==============================//
 

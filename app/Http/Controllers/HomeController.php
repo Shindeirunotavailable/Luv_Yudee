@@ -97,14 +97,6 @@ class HomeController extends Controller
             // ไปที่หน้า home พร้อมกับข้อความเตือน
             return redirect('/home')->with('success', 'You have successfully subscribed to our newsletter.');
         }
-        
-        // $data= [
-        //     'email' => $username,
-        //     'create_datetime'=> date('Y-m-d H:i:s'),
-        //     'update_datetime'=> date('Y-m-d H:i:s'),
-        // ];
-        // DB::table('newsletters')->insert($data);
-        // return redirect('/home');
     }
 }
 
