@@ -111,6 +111,8 @@ $('#modal_email').on('input', function(event) {
   var showErrorDiv = $('#ShowError');
   // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
   emailInput.removeClass('border-danger is-valid');
+
+
   if (emailValue.trim() === '') {
       showErrorDiv.text('Please enter a valid email');
       emailInput.addClass('border-danger');
@@ -149,7 +151,21 @@ $('#modal_email').on('input', function(event) {
     showerrorPassword.text('');
     showerrorconfirm.text('');
 
-
+    if(emailValue.trim() === '' && !password.val() && !confirm.val() && !nameInput.val()){
+      showErrorDiv.text('Please enter a valid email');
+      emailInput.addClass('border-danger');
+      password.addClass('is-invalid');
+      confirm.addClass('is-invalid');
+      nameInput.addClass('is-invalid');
+      event.preventDefault();
+      event.stopPropagation();
+    }else{
+      showErrorDiv.text('');
+      emailInput.removeClass('border-danger');
+      password.removeClass('is-invalid');
+      confirm.removeClass('is-invalid');
+      nameInput.removeClass('is-invalid');
+    }
 
     if (emailValue.trim() === '') {
         showErrorDiv.text('Please enter a valid email');
