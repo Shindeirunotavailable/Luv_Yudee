@@ -11,14 +11,16 @@ class WelcomeEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $username;  // เพิ่ม property นี้
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($username) // แก้ constructor เพิ่ม $username
     {
-        //
+        $this->username = $username; // กำหนดค่าให้กับ property
     }
 
     /**
@@ -29,6 +31,8 @@ class WelcomeEmail extends Mailable
     public function build()
     {
         return $this->view('login.emails')
-                    ->subject('Yuudee : thankyou for register');
+                    ->subject('Yuudee : Thank you for registering')
+                    ->with(['username' => $this->username]);
     }
 }
+

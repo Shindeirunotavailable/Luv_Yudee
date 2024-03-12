@@ -134,17 +134,22 @@ $('#modal_email').on('input', function(event) {
     var emailInput = $('#modal_email');
     const password = $('#modal_password');
     const confirm = $('#modal_confirmPassword');
+    var nameInput =$('#modal_name')
     var emailValue = emailInput.val();
     var showErrorDiv = $('#ShowError');
     var showerrorPassword = $('#errorPassword');
     var showerrorconfirm = $('#errorconfirm');
-
     const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
     emailInput.removeClass('border-danger is-valid');
     password.removeClass('is-invalid is-valid border-danger ');
     confirm.removeClass('is-invalid is-valid border-danger ');
+    showErrorDiv.text('');
+    showerrorPassword.text('');
+    showerrorconfirm.text('');
+
+
 
     if (emailValue.trim() === '') {
         showErrorDiv.text('Please enter a valid email');
@@ -163,33 +168,55 @@ $('#modal_email').on('input', function(event) {
         showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
     }
 
-    if (!password.val() && !confirm.val()) {
+    if (!password.val() && !confirm.val() && !nameInput.val()) {
         password.addClass('is-invalid');
         confirm.addClass('is-invalid');
+        nameInput.addClass('is-invalid');
+
         event.preventDefault();
         event.stopPropagation();
-    } else if(password.val() && !confirm.val()){
-      password.removeClass('is-invalid');
+    } else if(password.val() && !confirm.val() && !nameInput.val() ){
       password.addClass('is-valid');
+      password.removeClass('is-invalid');
       confirm.addClass('is-invalid');
+      nameInput.addClass('is-invalid');
       event.preventDefault();
       event.stopPropagation();
-    } else if(confirm.val() && !password.val()){
+    } else if(confirm.val() && !password.val() && !nameInput.val()){
       confirm.removeClass('is-invalid');
       confirm.addClass('is-valid');
       password.addClass('is-invalid');
+      nameInput.addClass('is-invalid');
+      event.preventDefault();
+      event.stopPropagation();
+    } else if(!confirm.val() && !password.val() && nameInput.val()){
+      nameInput.removeClass('is-invalid');
+      nameInput.addClass('is-valid');
+      password.addClass('is-invalid');
+      confirm.addClass('is-invalid');
+      event.preventDefault();
+      event.stopPropagation();
+    }else if(confirm.val() && password.val() && !nameInput.val()){
+      password.removeClass('is-invalid');
+      confirm.removeClass('is-invalid');
+      confirm.addClass('is-valid');
+      password.addClass('is-valid');
+      nameInput.addClass('is-invalid');
       event.preventDefault();
       event.stopPropagation();
     }
-    else {
-      password.addClass('is-valid');
-      confirm.addClass('is-valid');
+      else {
+        password.removeClass('is-invalid');
+        confirm.removeClass('is-invalid');
+        nameInput.removeClass('is-invalid');
+        password.addClass('is-valid');
+        nameInput.addClass('is-valid');
+        confirm.addClass('is-valid');
     }
 
    // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
     if (confirm.val() !== password.val()) {
       showerrorconfirm.text('Passwords do not match');
-
         confirm.addClass('border-danger');
         password.addClass('border-danger');
 
@@ -206,8 +233,8 @@ $('#modal_email').on('input', function(event) {
 
 
     if (!passwordValidation.test(password.val())) {
-      showerrorPassword.text('รหัสผ่านควรมีความยาว 8 ตัวอักษรขึ้นไป ประกอบด้วย ตัวอักษรทั้งพิมพ์เล็ก พิมพ์ใหญ่ (a-z, A-Z) ตัวเลข (0-9) และมีเครื่องหมายหรืออักขระพิเศษ  (!@#$%^&*()_+|~-=\`{}[]:")');
-      showerrorconfirm.text('รหัสผ่านควรมีความยาว 8 ตัวอักษรขึ้นไป ประกอบด้วย ตัวอักษรทั้งพิมพ์เล็ก พิมพ์ใหญ่ (a-z, A-Z) ตัวเลข (0-9) และมีเครื่องหมายหรืออักขระพิเศษ  (!@#$%^&*()_+|~-=\`{}[]:") ');
+        showerrorPassword.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
+        showerrorconfirm.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
         password.addClass('border-danger ');
         confirm.addClass('border-danger ');
 
@@ -218,12 +245,35 @@ $('#modal_email').on('input', function(event) {
 
         event.preventDefault();
         event.stopPropagation();
-    } else {
-      showerrorPassword.text('');
-      password.removeClass('border-danger ');
-      confirm.removeClass('border-danger ');
+      } else {
+        showerrorPassword.text('');
+        password.removeClass('border-danger ');
+        confirm.removeClass('border-danger ');
 
-    }
-
-    document.getElementById("registerForm").submit();
+      }
+     document.getElementById("registerForm").submit();
 }
+
+  if($('#modalError').length){
+    $('#createAccount').modal('show');
+  }
+
+
+  function callbackthen(response){
+    response.json().then(function(data){
+      console.log(data);
+      if(data.success && data.score > 0.5 ){
+        console.log('valid source');
+      }else{
+        document.getElementById("registerForm").addEventListener('submit',function(event){
+          event.preventDefault();
+          alert('recaptcha error stop form submit')
+        })
+
+      }
+    })
+  }
+
+  function callbackthen(error){
+    console.log('error' + error);
+  }

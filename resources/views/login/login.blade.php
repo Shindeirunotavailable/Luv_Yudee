@@ -5,7 +5,7 @@
     {{ $item }}
 @endforeach --}}
 
-    <div class="container h-100vh">
+    <div class="container h-70vh">
         <div class="imagbackground ">
             <div class="row pt-13 ">
                 <div class="col-12 col-lg-6 ">
@@ -15,15 +15,23 @@
                                 {{-- <img src="https://img5.pic.in.th/file/secure-sv1/YuuDee2.png" class="logo-sm logo-md"> --}}
                                 <h2 class="mb-3 pt-3 font-weight-bold">Sign in</h2>
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
-
-                                @if ($errors->any())
+                                @if (session('warning'))
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $errors->first() }}</strong>
+                                        <strong> {{ session('warning') }}</strong>
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                @endif
+                                @endif                                
+
+                                @if (session('status'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong> {{ session('status') }}</strong>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endif   
 
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
@@ -56,8 +64,6 @@
                                    data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitLogin' data-action='submit'> 
                                         <i class="fa-regular fa-paper-plane "></i> Submit
                                    </button>  --}}
-             
-
                                     <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
                                         id="loginSubmit">
                                         <i class="fa-regular fa-paper-plane "></i> Submit
@@ -80,6 +86,7 @@
             <div class="popupmodal" id="modal-data"></div>
         </div>
 
+
         <div class="modal fade pb-300" id="createAccount" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -90,22 +97,30 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <input type="hidden" value="1" id="modalError">
+                            <strong>{{ $errors->first() }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    
                     <div class="modal-body">
                         <form action="{{ url('/register') }}" method="POST" class="needs-validation" id="registerForm">
                             @csrf
-
                             <div class="form-group">
                                 <label class="label-700 pl-5">Email</label>
                                 <input type="Email" name="modal_email" id="modal_email" class="form-control "
                                     placeholder="Enter Email">
                                     <div class="colorRed" id="ShowError"></div>
-
                             </div>
                             <div class="form-group">
                                 <label class="label-700 pl-5">Password</label>
                                 <div class="d-flex justify-content-end">
-                                    <span toggle="#modal_password"
-                                        class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
+                                    <span toggle="#modal_password" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
                                 </div>
                                 <input type="password" name="modal_password" id="modal_password" class="form-control "
                                     placeholder="Enter Password" >
@@ -113,7 +128,7 @@
                                 <div class="invalid-feedback">
                                     <a> กรุณากรอก Password</a>
                                 </div>
-                            </div>
+                            </div>                            
                             <div class="form-group">
                                 <label class="label-700 pl-5">Confirm Password</label>
                                 <div class="d-flex justify-content-end">
@@ -128,6 +143,16 @@
                                 </div>
                                 <div class="colorRed" id="errorpassword"></div>
                             </div>
+                            <div class="form-group">
+                                <label class="label-700 pl-5">name</label>
+                                <input type="text" name="modal_name" id="modal_name" class="form-control "
+                                    placeholder="Enter Your name">
+                                <div class="invalid-feedback">
+                                    <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                </div>
+                            </div>
+
+
                             <div class="pt-20 pb-20 text-center">
                                 <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" 
                                 data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-action='register'> 
@@ -142,4 +167,5 @@
         </div>
 
     </div>
+
 @endsection
