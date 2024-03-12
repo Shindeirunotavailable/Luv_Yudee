@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use App\Models\createAccount;
 use App\Models\Newsletter;
+use App\Models\pp_Newsletter;
 use App\Mail\news;
 
 
@@ -72,7 +73,7 @@ class HomeController extends Controller
         $username = $request->input('email');
 
         // $existingEmail = DB::table('newsletters')->where('email', $username)->first();
-        $existingEmail = Newsletter::Gethome($username);
+        $existingEmail = pp_Newsletter::Gethome($username);
         $existingUser = createAccount::Getemail($username);
 
         if ($existingEmail) {
@@ -84,13 +85,13 @@ class HomeController extends Controller
          else {
             // ถ้ายังไม่มีอีเมลนี้ในฐานข้อมูล
             $data = [
-                'email' => $username,
+                'newsletter_email' => $username,
                 'create_datetime' => date('Y-m-d H:i:s'),
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
     
             // เพิ่มข้อมูลในตาราง newsletters
-            DB::table('newsletters')->insert($data);
+            DB::table('pp__newsletters')->insert($data);
             mail::to($username)->send(new news());
     
             // ไปที่หน้า home พร้อมกับข้อความเตือน
