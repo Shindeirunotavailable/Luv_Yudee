@@ -9,8 +9,8 @@
                         <p class="par">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
                     </div>
                 </div>
-                <div class="col-lg-6 my-3 pr-4 i-forrent">
-                    <div class="home-icon-st d-none d-sm-flex justify-content-start justify-content-lg-end">
+                <div class="col-lg-6 my-3 pr-4 ">
+                    <div class="d-flex home-icon-st flex-wrap d-sm-flex justify-content-start justify-content-md-end justify-content-lg-end">
                         <a class="d-flex align-items-center dark-color  me-2 md-me-2" href="#">
                             <i class=" icons fa-solid fa-house" aria-hidden="true"></i> Houses
                         </a>
@@ -20,7 +20,7 @@
                         <a class="d-flex align-items-center dark-color  me-2 md-me-2" href="#">
                             <i class="icons fa-solid fa-house-laptop" aria-hidden="true"></i>Office
                         </a>
-                        <a class="d-flex align-items-center dark-color  me-2 md-me-2" href="#">
+                        <a class="d-flex align-items-center dark-color  md-me-2" href="#">
                             <i class="icons fa-solid fa-house-flood-water" aria-hidden="true"></i>Villa
                         </a>
                     </div>

@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //   document.getElementById("registerForm").submit();
 // }
 
-
+/*้home-email */
 function onSubmitemail(event) {
     var emailInput = $('#home-email');
     var emailValue = emailInput.val();
