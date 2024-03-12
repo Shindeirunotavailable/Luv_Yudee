@@ -1,11 +1,11 @@
 @extends('layout.master')
 @section('content')
-    {{-- 
-@foreach ($count as $item)
+    {{--
+@ foreach ($count as $item)
     {{ $item }}
 @endforeach --}}
 
-    <div class="container ">
+    <div class="container h-100vh">
         <div class="imagbackground ">
             <div class="row pt-13 ">
                 <div class="col-12 col-lg-6 ">
@@ -52,13 +52,13 @@
                                         password?</button>
                                 </div>
                                 <div class="pt-10 pb-10 ">
-                                    {{-- <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" id="loginSubmit" 
-                                   data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitLogin' data-action='submit'> 
-                                        <i class="fa-regular fa-paper-plane "></i> Submit
+                                    {{-- <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" id="loginSubmit"
+                                   data-sitekey="{{co nfig('services.recaptcha.site_key')}}" data-callback='onSubmitLogin' data-action='submit'>
+                                        <i class="fa-r egular fa-paper-plane "></i> Submit
                                    </button>  --}}
-             
 
-                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
+
+                                    <button type="submit             " class="afterButton rounded-pill btn-lg btn-block"
                                         id="loginSubmit">
                                         <i class="fa-regular fa-paper-plane "></i> Submit
                                     </button>
@@ -70,11 +70,8 @@
                             <div class="text-center mt-3">
                                 {{-- <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up?
                                     <span class="colorBlue">Create an account. </span> </a> --}}
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#forgetPassword"> Not signed up?
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#createAccount"> Not signed up?
                                     <span class="colorBlue">Create an account. </span> </a>
-             
-
-                                
                             </div>
                         </div>
                     </div>
@@ -83,7 +80,7 @@
             <div class="popupmodal" id="modal-data"></div>
         </div>
 
-        <div class="modal fade" id="forgetPassword" tabindex="-1" role="dialog"
+        <div class="modal fade pb-300" id="createAccount" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -130,19 +127,19 @@
                                     <a> กรุณากรอก Confirm Password</a>
                                 </div>
                                 <div class="colorRed" id="errorpassword"></div>
-
                             </div>
                             <div class="pt-20 pb-20 text-center">
-                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" 
-                                data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-action='register'> 
+                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block"
+                                data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-act ion='register'>
                                      <i class="fa-regular fa-paper-plane "></i> Submit
-                                </button> 
+                                </button>
 
-                            </div>
+                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
+            </d iv>
         </div>
+
     </div>
 @endsection

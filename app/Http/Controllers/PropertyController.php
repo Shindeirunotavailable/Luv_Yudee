@@ -44,7 +44,7 @@ class PropertyController extends Controller
             'property_title' => $request['title'],
             'property_description' => json_encode($request['description']),
             'property_category' => $request['category'],
-            'property_status' => $request['status'],
+            'property_type' => $request['type'],
             'property_price' => $request['price'],
             'property_address' => $request['address'],
             'property_provinces' => $request['provinces'],
@@ -64,7 +64,7 @@ class PropertyController extends Controller
             'property_year_build' => $request['year_build'],
             'property_notes' => $request['notes'],
             'property_amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
-            'stage' => $request['stage'],
+            'property_stage' => $request['property_stage'],
 
 
         );
@@ -100,6 +100,7 @@ class PropertyController extends Controller
             $data['create_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 1;
             $data['create_by'] = 1;
+            $data['property_status'] = 1;
             // // dd($request->all());
             $image_url = [];
             if ($request->hasFile('image')) {
@@ -160,4 +161,22 @@ class PropertyController extends Controller
         }
         return response()->json(['options' => '']);
     }
+
+    public function deleteImage(Request $request)
+{
+    $imageUrl = $request->input('property_image_url');
+
+    // Delete image file from storage
+    if (File::exists(public_path($imageUrl))) {
+        File::delete(public_path($imageUrl));
+    }
+
+    // Delete image record from database
+    DB::table('pp_properties')->where('id_property', $request->input('id_property'))->delete();
+
+    return redirect()->back()->with('success', 'Image deleted successfully');
 }
+
+
+}
+

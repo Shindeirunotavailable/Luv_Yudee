@@ -22,8 +22,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::any('home' , 'App\Http\Controllers\HomeController@home');
-Route::any('home_email' , 'App\Http\Controllers\HomeController@home_email');
-
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
 
@@ -38,6 +36,7 @@ route::any('forget-password','App\Http\Controllers\LoginController@forgetPasswor
 route::any('register','App\Http\Controllers\LoginController@register');  // สมัคร
 route::any('loginform','App\Http\Controllers\LoginController@loginform');  // เข้าสู่ระบบ
 route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // กู้รหัสผ่าน
+Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
 
 
 
@@ -49,3 +48,4 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnect');
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
+Route::post('delete_image', 'App\Http\Controllers\PropertyController@deleteImage')->name('delete_image');
