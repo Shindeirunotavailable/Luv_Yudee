@@ -104,7 +104,6 @@ class LoginController extends Controller
                     'remoteip' => \request()->ip()
                 ]);
                 $g_recaptcha_result = $g_recaptcha->json();
-
                 if (!$g_recaptcha_result['success']) {
                     $fail("The {$attribute} is invalid.");
                 }

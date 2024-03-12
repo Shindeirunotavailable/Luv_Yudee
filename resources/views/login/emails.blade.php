@@ -1,6 +1,4 @@
 
-@extends('layout.master')
-@section('content')
 
     <h2 class="colorBlue">ขอบคุณที่สมัครใช้บน Yuudee - การประกาศซื้อขายบ้านที่ง่ายดาย</h2>
     <p id="displayValue"> เรียน: {{ $username }} </p>
@@ -11,5 +9,4 @@
     <p>ขอแสดงความนับถือ,<br></p>
     <p>ทีม Yuudee</p>
     
-@endsection
 
