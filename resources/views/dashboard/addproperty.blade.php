@@ -113,7 +113,7 @@
                                             @endif
                                                     <h4 class="fw-600 title fs-17 mb-10" id="errormedia">Upload photos of your property</h4>
                                                     <div class=" ">
-                                                        <div class="col-sm-6 mb-4 mt-3">
+                                                        <div class="col-sm-4 mb-4 mt-3">
                                                             <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="imageLabel">Select Image</label>
                                                             <input name="image[]" type="file" class="custom-file-input" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
@@ -145,7 +145,7 @@
                                                     </div>
                                                     <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                     <div class=" ">
-                                                        <div class="col-sm-6 mb-4 mt-3">
+                                                        <div class="col-sm-4 mb-4 mt-3">
                                                             <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="videoLabel">Select Video</label>
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
