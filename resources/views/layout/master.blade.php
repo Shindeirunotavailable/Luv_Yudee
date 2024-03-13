@@ -19,7 +19,7 @@
 
          <!-- reCAPTCHA เวอร์ชัน 3  -->
          <script src="https://www.google.com/recaptcha/api.js"></script>
-         <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+         {{-- <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script> --}}
 
         {{-- --CSS-- --}}
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
@@ -50,9 +50,11 @@
 </head>
 
 <body>
-    @include('layout.menu')
-    @yield('content')
-    @if(!request()->is('addproperty'))
+    @if (!request()->is('emails'))
+        @include('layout.menu')
+    @endif
+        @yield('content')
+    @if(!request()->is('addproperty','emails'))
         @include('layout.footer')
     @endif
 

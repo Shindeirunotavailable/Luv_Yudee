@@ -11,11 +11,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\login;
 use App\Models\createAccount;
-use App\Rules\ReCaptchaV3;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use PharIo\Manifest\Url;
-use Closure;
+
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -68,23 +69,37 @@ class LoginController extends Controller
     // }
 
 
+    // public function loginform(Request $request)
+    // {
+    //     $account = login::where('email', $request->email)->first();
+    //     if ($account && Hash::check($request->password, $account->password)) {
+    //         $request->session()->put('user_email', $account->name);
+    //         return redirect('/addproperty');
+    //     }
+    //     else{
+    //         $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง';
+    //     }
+    
+    //     return $errorMessages;
+    //     // return back()->with('warning', 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง');
+
+    // }
+    
     public function loginform(Request $request)
     {
-        $account = login::where('email', $request->email)->first();
+        $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
         if ($account && Hash::check($request->password, $account->password)) {
-            // ล็อกอินสำเร็จ
-            // เก็บค่าอีเมลใน session
-            $request->session()->put('user_email', $account->email);
-            return redirect('/addproperty');
+            // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
+            $request->session()->put('user_email', $account->name); // เก็บค่าอีเมลของผู้ใช้ใน Session
+            return response()->json(['success' => true, 'redirect' => '/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+        } else {
+            $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
+            return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
         }
-    
-        return back()->withErrors(['อีเมล์หรือรหัสผ่านไม่ถูกต้อง'])->withInput();
     }
     
-
     public function logout()
     {
-        // ลบ session ที่เกี่ยวกับการล็อกอิน
         Auth::logout();
         session()->forget('user_email');
         return redirect('/login');
@@ -94,7 +109,60 @@ class LoginController extends Controller
 
 
     
-    public function register(Request $request)
+    // public function register(Request $request)
+    // {
+    //     $this->validate($request, [
+    //         'modal_email'=>'required',
+    //         'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
+    //             $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
+    //                 'secret' => config('services.recaptcha.secret_key'),
+    //                 'response' => $value,
+    //                 'remoteip' => \request()->ip()
+    //             ]);
+    //             $g_recaptcha_result = $g_recaptcha->json();
+    //             if (!$g_recaptcha_result['success']) {
+    //                 $fail("The {$attribute} is invalid.");
+    //             }
+    //         },]
+    //     ]);
+    //     // รับข้อมูลจาก request
+    //     $email = $request->input('modal_email');
+    //     $password = $request->input('modal_password');
+    //     $username = $request->input('modal_name');
+    //     // รายการข้อผิดพลาด
+    //     $errorMessages = [];
+    //     $existingUser = createAccount::Getemail($email);
+
+    //     if ($existingUser) {
+    //         // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
+    //         if ($existingUser->status >= 1) {
+    //             $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+    //         }
+    //     } else {
+    //         // บันทึกข้อมูล
+    //         $data = [
+    //             'email' => $email,
+    //             'name' => $username,
+    //             'password' => bcrypt($password),
+    //             'create_datetime'=> date('Y-m-d H:i:s'),
+    //             'update_datetime'=> date('Y-m-d H:i:s'),
+
+    //         ];
+    //         DB::table('user')->insert($data);
+    //         // Mail::to($email)->send(new WelcomeEmail());
+    //         Mail::to($email)->send(new WelcomeEmail($username));
+
+    //         return back()->with('status', 'สมัครสมาชิกเสร็จสิ้น');
+
+    //     }
+    //     return back()->withErrors($errorMessages)->withInput();
+
+    // }
+
+    
+
+
+        public function register(Request $request)
     {
         $this->validate($request, [
             'modal_email'=>'required',
@@ -105,45 +173,46 @@ class LoginController extends Controller
                     'remoteip' => \request()->ip()
                 ]);
                 $g_recaptcha_result = $g_recaptcha->json();
-
                 if (!$g_recaptcha_result['success']) {
                     $fail("The {$attribute} is invalid.");
                 }
             },]
         ]);
-
-
         // รับข้อมูลจาก request
-        $username = $request->input('modal_email');
+        $email = $request->input('modal_email');
         $password = $request->input('modal_password');
-        // รายการข้อผิดพลาด
-        $errorMessages = [];
-        $existingUser = createAccount::Getemail($username);
+        $username = $request->input('modal_name');
+        $existingUser = createAccount::Getemail($email);
 
         if ($existingUser) {
             // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
             if ($existingUser->status >= 1) {
-                $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+                $errorMessages = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+                return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+
             }
+
         } else {
             // บันทึกข้อมูล
             $data = [
-                'email' => $username,
+                'email' => $email,
+                'name' => $username,
                 'password' => bcrypt($password),
                 'create_datetime'=> date('Y-m-d H:i:s'),
                 'update_datetime'=> date('Y-m-d H:i:s'),
 
             ];
             DB::table('user')->insert($data);
-            Mail::to($username)->send(new WelcomeEmail());
-            return redirect('/addproperty');
+            // Mail::to($email)->send(new WelcomeEmail());
+            Mail::to($email)->send(new WelcomeEmail($username));
+
+            // return back()->with('status', 'สมัครสมาชิกเสร็จสิ้น');
+            $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
+            return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+
         }
-        return back()->withErrors($errorMessages)->withInput();
+
     }
-
-
-
-
     // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
     public function lostpassword(Request $request)
@@ -176,6 +245,7 @@ class LoginController extends Controller
         return back()->withErrors($errorMessages)->withInput();
     }
 
+    
 
     // ---------------------------------------------- หน้า Content -------------------------------------------------
 

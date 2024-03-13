@@ -5,7 +5,7 @@
     {{ $item }}
 @endforeach --}}
 
-    <div class="container h-100vh">
+    <div class="container h-70vh">
         <div class="imagbackground ">
             <div class="row pt-13 ">
                 <div class="col-12 col-lg-6 ">
@@ -16,15 +16,12 @@
                                 <h2 class="mb-3 pt-3 font-weight-bold">Sign in</h2>
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
 
-                                @if ($errors->any())
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ $errors->first() }}</strong>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                <div class="hidden" id="hiddenError">
+                                    <div class="alert alert-danger" role="alert">
+                                        <div id="statusMessage" ></div>
                                     </div>
-                                @endif
-
+                                </div>         
+                                                      
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
                             <form action="{{ url('/loginform') }}" method="POST" class="needs-validation" id="loginform">
@@ -46,6 +43,7 @@
                                         <a> กรุณากรอก Password</a>
                                     </div>
                                 </div>
+                            
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="text-right">
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your
@@ -56,15 +54,14 @@
                                    data-sitekey="{{co nfig('services.recaptcha.site_key')}}" data-callback='onSubmitLogin' data-action='submit'>
                                         <i class="fa-r egular fa-paper-plane "></i> Submit
                                    </button>  --}}
-
-
-                                    <button type="submit             " class="afterButton rounded-pill btn-lg btn-block"
+                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
                                         id="loginSubmit">
                                         <i class="fa-regular fa-paper-plane "></i> Submit
                                     </button>
                                 </div>
 
                                 <div id="result"> </div>
+                                
                             </form>
 
                             <div class="text-center mt-3">
@@ -75,10 +72,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
             <div class="popupmodal" id="modal-data"></div>
         </div>
+
 
         <div class="modal fade pb-300" id="createAccount" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -91,21 +89,50 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                            {{-- @if ($errors->any())
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <input type="hidden" value="1" id="modalError">
+                                    <strong>{{ $errors->first() }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif --}}
+                        
+                    <div class="hidden" id="hiddenErrorModal">
+                        <div class="alert alert-danger" role="alert">
+                            <div id="statusMessageModel" ></div>
+                        </div>
+                    </div>
+
+                    <div class="hidden" id="hiddensuccessModal">
+                        <div class="alert alert-success" role="alert">
+                            <div id="successMessageModel" ></div>
+                          </div>
+                    </div>
+
+                    
+
                         <form action="{{ url('/register') }}" method="POST" class="needs-validation" id="registerForm">
                             @csrf
-
+                            <div class="form-group">
+                                <label class="label-700 pl-5">name</label>
+                                <input type="text" name="modal_name" id="modal_name" class="form-control "
+                                    placeholder="Enter Your name">
+                                <div class="invalid-feedback">
+                                    <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                </div>
+                            </div>                           
                             <div class="form-group">
                                 <label class="label-700 pl-5">Email</label>
                                 <input type="Email" name="modal_email" id="modal_email" class="form-control "
                                     placeholder="Enter Email">
                                     <div class="colorRed" id="ShowError"></div>
-
                             </div>
                             <div class="form-group">
                                 <label class="label-700 pl-5">Password</label>
                                 <div class="d-flex justify-content-end">
-                                    <span toggle="#modal_password"
-                                        class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
+                                    <span toggle="#modal_password" class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
                                 </div>
                                 <input type="password" name="modal_password" id="modal_password" class="form-control "
                                     placeholder="Enter Password" >
@@ -113,7 +140,7 @@
                                 <div class="invalid-feedback">
                                     <a> กรุณากรอก Password</a>
                                 </div>
-                            </div>
+                            </div>                            
                             <div class="form-group">
                                 <label class="label-700 pl-5">Confirm Password</label>
                                 <div class="d-flex justify-content-end">
@@ -129,7 +156,7 @@
                                 <div class="colorRed" id="errorpassword"></div>
                             </div>
                             <div class="pt-20 pb-20 text-center">
-                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block"
+                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" id="registerBtn"
                                 data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-act ion='register'>
                                      <i class="fa-regular fa-paper-plane "></i> Submit
                                 </button>
@@ -138,8 +165,11 @@
                         </form>
                     </div>
                 </div>
-            </d iv>
+            </div>
         </div>
 
     </div>
+
+
+
 @endsection

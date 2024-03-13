@@ -19,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 
-
-
 Route::any('home' , 'App\Http\Controllers\HomeController@home');
+Route::any('home_email' , 'App\Http\Controllers\HomeController@home_email');
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
 

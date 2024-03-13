@@ -39,13 +39,9 @@
                             <span class="d-xl-block">Login / Register</span>
                         </a> --}}
                         @if(session('user_email'))
-                        @php
-                            $userParts = explode('@', session('user_email'));
-                            $username = $userParts[0];
-                        @endphp
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                                <span>{{ $username }}</span>
+                                <span>{{ session('user_email') }}</span>
                             </button>
                             <div class="dropdown-menu">
                                 <a href="{{ route('logout') }}" class="logout-btn dropdown-item">Logout</a>                              
