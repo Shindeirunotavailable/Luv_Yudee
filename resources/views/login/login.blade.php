@@ -23,15 +23,7 @@
                                         </button>
                                     </div>
                                 @endif                                
-
-                                @if (session('status'))
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        <strong> {{ session('status') }}</strong>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                @endif   
+ 
 
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
@@ -54,6 +46,10 @@
                                         <a> กรุณากรอก Password</a>
                                     </div>
                                 </div>
+
+                                <div id="statusMessage" style="color: red"></div>
+
+                                
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="text-right">
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your
@@ -71,6 +67,7 @@
                                 </div>
 
                                 <div id="result"> </div>
+                                
                             </form>
 
                             <div class="text-center mt-3">
@@ -81,7 +78,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
             <div class="popupmodal" id="modal-data"></div>
         </div>
@@ -97,18 +94,29 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <input type="hidden" value="1" id="modalError">
-                            <strong>{{ $errors->first() }}</strong>
+                    <div class="modal-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <input type="hidden" value="1" id="modalError">
+                                <strong>{{ $errors->first() }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+                    
+                    @if (session('status'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <input type="hidden" value="1" id="modalsuccess">
+                            <strong> {{ session('status') }}</strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                    @endif
-                    
-                    <div class="modal-body">
+                    @endif 
+                        <div class="" id="test"></div>    
+
+
                         <form action="{{ url('/register') }}" method="POST" class="needs-validation" id="registerForm">
                             @csrf
                             <div class="form-group">
@@ -152,7 +160,7 @@
                                 <div class="colorRed" id="errorpassword"></div>
                             </div>
                             <div class="pt-20 pb-20 text-center">
-                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block"
+                                <button type="submit" class=" g-recaptcha afterButton rounded-pill btn-lg btn-block" id="registerBtn"
                                 data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitRegister' data-act ion='register'>
                                      <i class="fa-regular fa-paper-plane "></i> Submit
                                 </button>
@@ -165,5 +173,38 @@
         </div>
 
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#registerForm').submit(function(event){
+            event.preventDefault();
+            var formData = $(this).serialize();
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: formData,
+                success: function(response){
+                    // If successful, display success message
+                    if (response.success) {
+                        $('#test').text(response.success);
+                    }
+                },
+                error: function(xhr){
+                    // If error, display error messages
+                    var errors = xhr.responseJSON.errors;
+                    if (errors) {
+                        var errorMessage = '';
+                        $.each(errors, function(key, value){
+                            errorMessage += value + '<br>';
+                        });
+                        $('#test').html(errorMessage);
+                    }
+                }
+            });
+        });
+    });
+</script>
 
 @endsection

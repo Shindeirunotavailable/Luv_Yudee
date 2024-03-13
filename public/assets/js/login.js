@@ -40,6 +40,13 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 })
 
 
+
+
+
+
+
+
+
     ///////////////////////  login //////////////////////
 
 
@@ -276,5 +283,7 @@ $('#modal_email').on('input', function(event) {
     $('#createAccount').modal('show');
   }
 
-
- 
+  if($('#modalsuccess').length){
+    $('#createAccount').modal('show');
+  }
+  

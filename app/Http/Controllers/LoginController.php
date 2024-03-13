@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use PharIo\Manifest\Url;
 
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Validator;
+
 class LoginController extends Controller
 {
 
@@ -146,6 +149,7 @@ class LoginController extends Controller
     }
 
     
+
 
 
 
