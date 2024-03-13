@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use PharIo\Manifest\Url;
 
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Validator;
+
 class LoginController extends Controller
 {
 
@@ -66,22 +69,35 @@ class LoginController extends Controller
     // }
 
 
+    // public function loginform(Request $request)
+    // {
+    //     $account = login::where('email', $request->email)->first();
+    //     if ($account && Hash::check($request->password, $account->password)) {
+    //         $request->session()->put('user_email', $account->name);
+    //         return redirect('/addproperty');
+    //     }
+    //     else{
+    //         $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง';
+    //     }
+    
+    //     return $errorMessages;
+    //     // return back()->with('warning', 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง');
+
+    // }
+    
     public function loginform(Request $request)
     {
-        $account = login::where('email', $request->email)->first();
+        $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
         if ($account && Hash::check($request->password, $account->password)) {
-            // ล็อกอินสำเร็จ
-            // เก็บค่าอีเมลใน session
-            $request->session()->put('user_email', $account->name);
-            return redirect('/addproperty');
+            // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
+            $request->session()->put('user_email', $account->name); // เก็บค่าอีเมลของผู้ใช้ใน Session
+            return response()->json(['success' => true, 'redirect' => '/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+        } else {
+            $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
+            return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
         }
-    
-        // return back()->withErrors(['อีเมล์หรือรหัสผ่านไม่ถูกต้อง'])->withInput();
-        return back()->with('warning', 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง');
-
     }
     
-
     public function logout()
     {
         Auth::logout();
@@ -149,6 +165,7 @@ class LoginController extends Controller
 
 
 
+
     // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
     public function lostpassword(Request $request)
@@ -181,6 +198,7 @@ class LoginController extends Controller
         return back()->withErrors($errorMessages)->withInput();
     }
 
+    
 
     // ---------------------------------------------- หน้า Content -------------------------------------------------
 
