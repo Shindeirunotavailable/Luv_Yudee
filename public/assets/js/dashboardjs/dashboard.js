@@ -273,19 +273,20 @@ $('#submitdescription').click(function(event) {
     var forms = $('.needs-validation');
     var titleproperty = $('#titleproperty');
     var price = $('#price');
-    var errorMessage = 'กรุณากรอกข้อมูลที่จำเป็นในช่องสีแดง';
-    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+    var errorTitleproperty = '<div class="invalid-feedback additional-message">' + 'รุณาระบุข้อมูล Title' + '</div>';
+    var errorPrice = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล price' + '</div>';
+
 
     if( !titleproperty.val() || !price.val() ){
         if( !titleproperty.val()){
             titleproperty.addClass('is-invalid');
             titleproperty.next('.additional-message').remove();
-            titleproperty.after(errorElement)
+            titleproperty.after(errorTitleproperty)
         }
         if (!price.val()){
             price.addClass('is-invalid');
             price.next('.additional-message').remove();
-            price.after(errorElement)
+            price.after(errorPrice)
 
         }
         event.preventDefault();
@@ -352,50 +353,55 @@ $('#submitlocation').click(function(event) {
     var address = $('#address');
     var latitudeInput = $('#latitudeInput');
     var longitudeInput = $('#longitudeInput');
+    var errorAddress = '<div class="invalid-feedback additional-message">' + 'รุณาระบุข้อมูล Address ' + '</div>';
+    var errorLatitude = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล Latitude ' + '</div>';
+    var errorLongitude = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล Longitude ' + '</div>';
+
     var provinces = $('#provinces');
     var amphures = $('#amphures');
     var districts = $('#districts');
-    var errorMessage = 'ต้องระบุข้อมูลที่อยู่สถานที่';
-    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+    var errorprovinces = $('#errorprovinces');
+    var erroramphures = $('#erroramphures');
+    var errordistricts = $('#errordistricts');
+    var errorMessageProvinces = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล จังหวัด' + '</div>';
+    var errorMessageAmphures = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล อำเภอ' + '</div>';
+    var errorMessageDistricts = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล ตำบล' + '</div>';
 
     if (!address.val() || !latitudeInput.val() || !longitudeInput.val() || !provinces.val() || !amphures.val() || !districts.val()) {
         if (!address.val()) {
             address.addClass('is-invalid');
+            address.next('.additional-message').remove();
+            address.after(errorAddress);
         }
 
         if (!latitudeInput.val()) {
             latitudeInput.addClass('is-invalid');
+            latitudeInput.next('.additional-message').remove();
+            latitudeInput.after(errorLatitude);
         }
-
         if (!longitudeInput.val()) {
             longitudeInput.addClass('is-invalid');
+            longitudeInput.next('.additional-message').remove();
+            longitudeInput.after(errorLongitude);
         }
-
         if (!provinces.val()) {
-            $('#errorprovinces').next('.additional-message').remove();
-            $('#errorprovinces').addClass('is-invalid');
-            $('#errorprovinces').after(errorElement);
-
+            errorprovinces.addClass('is-invalid');
+            errorprovinces.next('.additional-message').remove();
+            errorprovinces.after(errorMessageProvinces);
         }
-
         if (!amphures.val()) {
-            $('#erroramphures').next('.additional-message').remove();
-            $('#erroramphures').addClass('is-invalid');
-            $('#erroramphures').after(errorElement);
-
+            erroramphures.addClass('is-invalid');
+            erroramphures.next('.additional-message').remove();
+            erroramphures.after(errorMessageAmphures);
         }
-
         if (!districts.val()) {
-            $('#errordistricts').next('.additional-message').remove();
-            $('#errordistricts').addClass('is-invalid');
-            $('#errordistricts').after(errorElement);
-
+            errordistricts.addClass('is-invalid');
+            errordistricts.next('.additional-message').remove();
+            errordistricts.after(errorMessageDistricts);
         }
-
         event.preventDefault();
         event.stopPropagation();
     }
-
     address.on('input', function() {
         if ($(this).val()) {
             $(this).removeClass('is-invalid');
@@ -416,19 +422,19 @@ $('#submitlocation').click(function(event) {
 
     provinces.on('input', function() {
         if ($(this).val()) {
-            $('#errorprovinces').removeClass('is-invalid');
+            $(this).removeClass('is-invalid');
         }
     });
 
-    amphures.on('input', function() {
+    Districts.on('input', function() {
         if ($(this).val()) {
-            $('#erroramphures').removeClass('is-invalid');
+            $(this).removeClass('is-invalid');
         }
     });
 
     districts.on('input', function() {
         if ($(this).val()) {
-            $('#errordistricts').removeClass('is-invalid');
+            $(this).removeClass('is-invalid');
         }
     });
 });
@@ -439,20 +445,20 @@ $('#submitdetail').click(function(event) {
 
     var floor = $('#floor');
     var room = $('#room');
-    var errorMessage = 'กรุณากรอกข้อมูลที่จำเป็นในช่องสีแดง';
-    var errorElement = '<div class="invalid-feedback additional-message">' + errorMessage + '</div>';
+    var errorFloor = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Floor' + '</div>';
+    var errorRoom = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Rooms' + '</div>';
 
     if (!floor.val() || !room.val()) {
         if (!floor.val()) {
             floor.addClass('is-invalid');
             floor.next('.additional-message').remove();
-            floor.after(errorElement);
+            floor.after(errorFloor);
         }
 
         if (!room.val()) {
             room.addClass('is-invalid');
             room.next('.additional-message').remove();
-            room.after(errorElement);
+            room.after(errorRoom);
         }
 
         event.preventDefault();

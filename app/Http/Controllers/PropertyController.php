@@ -166,16 +166,16 @@ class PropertyController extends Controller
     $imageUrl = $request->input('property_image_url');
 
     // Delete image file from storage
-    if (File::exists($imageUrl))
-    {
-        File::delete($imageUrl);
+    if (File::exists(public_path($imageUrl))) {
+        File::delete(public_path($imageUrl));
     }
 
     // Delete image record from database
-    DB::table('pp_properties')->where('id_property', $request->input('id_property'))->delete();
+    DB::table('pp_properties')->where('id_property', $request['property_image_url'])->delete();
 
     return redirect()->back()->with('success', 'Image deleted successfully');
 }
+
 
 
 }
