@@ -44,10 +44,6 @@
                                     </div>
                                 </div>
                             
-
-
-
-            
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="text-right">
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your
@@ -93,27 +89,29 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        @if ($errors->any())
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <input type="hidden" value="1" id="modalError">
-                                <strong>{{ $errors->first() }}</strong>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        @endif
-                    
-                    @if (session('status'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <input type="hidden" value="1" id="modalsuccess">
-                            <strong> {{ session('status') }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            {{-- @if ($errors->any())
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <input type="hidden" value="1" id="modalError">
+                                    <strong>{{ $errors->first() }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif --}}
+                        
+                    <div class="hidden" id="hiddenErrorModal">
+                        <div class="alert alert-danger" role="alert">
+                            <div id="statusMessageModel" ></div>
                         </div>
-                    @endif 
-                        <div class="" id="test"></div>    
+                    </div>
 
+                    <div class="hidden" id="hiddensuccessModal">
+                        <div class="alert alert-success" role="alert">
+                            <div id="successMessageModel" ></div>
+                          </div>
+                    </div>
+
+                    
 
                         <form action="{{ url('/register') }}" method="POST" class="needs-validation" id="registerForm">
                             @csrf

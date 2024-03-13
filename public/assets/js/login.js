@@ -49,6 +49,8 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                 url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
                 data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
                 success: function (response) {
+                  console.log(response);
+
                     if (response.success) {
                         // ถ้าเข้าสู่ระบบสำเร็จ
                         window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
@@ -63,6 +65,28 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
         });
 
 
+  
+    // $('#registerBtn').click(function (event) {
+    //       event.preventDefault(); // ป้องกันการส่งฟอร์ม
+    //       var formData = $("#registerForm").serialize();
+    //       $.ajax({
+    //           type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+    //           url: $("#registerForm").attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+    //           data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+    //           success: function (response) {
+    //             console.log(response);
+    //               if (response.success) {
+    //                   // ถ้าเข้าสู่ระบบสำเร็จ
+    //                   window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
+    //               } else {
+    //                   // ถ้าเข้าสู่ระบบไม่สำเร็จ
+    //                   $('#statusMessageModel').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+    //                   $('#hiddenErrorModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+
+    //               }
+    //           }
+    //       });
+    //   });
 
     ///////////////////////  login //////////////////////
 
@@ -293,7 +317,26 @@ $('#modal_email').on('input', function(event) {
         confirm.removeClass('border-danger ');
 
       }
-     document.getElementById("registerForm").submit();
+        var formData = $("#registerForm").serialize();
+        $.ajax({
+            type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+            url: $("#registerForm").attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+            data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+            success: function (response) {
+                if (response.success) {
+
+                    $('#successMessageModel').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                    $('#hiddensuccessModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+
+                } else {
+                    // ถ้าเข้าสู่ระบบไม่สำเร็จ
+                    $('#statusMessageModel').text(response.messageError); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                    $('#hiddenErrorModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+
+                }
+            }
+        });
+    //  document.getElementById("registerForm").submit();
 }
 
   if($('#modalError').length){

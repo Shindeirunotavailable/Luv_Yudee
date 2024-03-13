@@ -109,7 +109,60 @@ class LoginController extends Controller
 
 
     
-    public function register(Request $request)
+    // public function register(Request $request)
+    // {
+    //     $this->validate($request, [
+    //         'modal_email'=>'required',
+    //         'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
+    //             $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
+    //                 'secret' => config('services.recaptcha.secret_key'),
+    //                 'response' => $value,
+    //                 'remoteip' => \request()->ip()
+    //             ]);
+    //             $g_recaptcha_result = $g_recaptcha->json();
+    //             if (!$g_recaptcha_result['success']) {
+    //                 $fail("The {$attribute} is invalid.");
+    //             }
+    //         },]
+    //     ]);
+    //     // รับข้อมูลจาก request
+    //     $email = $request->input('modal_email');
+    //     $password = $request->input('modal_password');
+    //     $username = $request->input('modal_name');
+    //     // รายการข้อผิดพลาด
+    //     $errorMessages = [];
+    //     $existingUser = createAccount::Getemail($email);
+
+    //     if ($existingUser) {
+    //         // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
+    //         if ($existingUser->status >= 1) {
+    //             $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+    //         }
+    //     } else {
+    //         // บันทึกข้อมูล
+    //         $data = [
+    //             'email' => $email,
+    //             'name' => $username,
+    //             'password' => bcrypt($password),
+    //             'create_datetime'=> date('Y-m-d H:i:s'),
+    //             'update_datetime'=> date('Y-m-d H:i:s'),
+
+    //         ];
+    //         DB::table('user')->insert($data);
+    //         // Mail::to($email)->send(new WelcomeEmail());
+    //         Mail::to($email)->send(new WelcomeEmail($username));
+
+    //         return back()->with('status', 'สมัครสมาชิกเสร็จสิ้น');
+
+    //     }
+    //     return back()->withErrors($errorMessages)->withInput();
+
+    // }
+
+    
+
+
+        public function register(Request $request)
     {
         $this->validate($request, [
             'modal_email'=>'required',
@@ -125,21 +178,20 @@ class LoginController extends Controller
                 }
             },]
         ]);
-
-
         // รับข้อมูลจาก request
         $email = $request->input('modal_email');
         $password = $request->input('modal_password');
         $username = $request->input('modal_name');
-        // รายการข้อผิดพลาด
-        $errorMessages = [];
         $existingUser = createAccount::Getemail($email);
 
         if ($existingUser) {
             // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
             if ($existingUser->status >= 1) {
-                $errorMessages[] = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+                $errorMessages = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+                return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+
             }
+
         } else {
             // บันทึกข้อมูล
             $data = [
@@ -154,18 +206,13 @@ class LoginController extends Controller
             // Mail::to($email)->send(new WelcomeEmail());
             Mail::to($email)->send(new WelcomeEmail($username));
 
-            return back()->with('status', 'สมัครสมาชิกเสร็จสิ้น');
+            // return back()->with('status', 'สมัครสมาชิกเสร็จสิ้น');
+            $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
+            return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
 
         }
-        return back()->withErrors($errorMessages)->withInput();
 
     }
-
-    
-
-
-
-
     // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
     public function lostpassword(Request $request)
