@@ -308,6 +308,7 @@ function onSubmitemail(event) {
 }
 /*------------------------------------------- */
 /*เเจ้งเตือน ตอนส่งเมล */
+
 if($('#newsletter').length){
   // alert("You have successfully subscribed to our newsletter.");
   Swal.fire({
@@ -323,6 +324,29 @@ if($('#newslettererror').length){
     confirmButtonColor: "#0071BC",
   });
 }
+
+// $(document).ready(function () {
+//   $("#home_email").submit(function (e) {
+//     e.preventDefault();
+
+//     let formUrl = $(this).attr("action");
+//     let reqMethod = $(this).attr("method");
+//     let formData = $(this).serialize();
+
+//     $.ajax ({
+//       url: formUrl,
+//       type: reqMethod,
+//       data: formData,
+//       success: function(data) {
+//         if (data.status == "success"){ 
+//           Swal.fire("SweetAlert2 is working!");
+//         }else {
+//           Swal.fire("SweetAlert2 is !");
+//         }
+//       }
+//     })
+//   })
+// })
 //============================ js non ==============================//
 
 // เช็คค่าว่างใน input
