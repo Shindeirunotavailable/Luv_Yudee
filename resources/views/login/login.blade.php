@@ -15,16 +15,13 @@
                                 {{-- <img src="https://img5.pic.in.th/file/secure-sv1/YuuDee2.png" class="logo-sm logo-md"> --}}
                                 <h2 class="mb-3 pt-3 font-weight-bold">Sign in</h2>
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
-                                @if (session('warning'))
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong> {{ session('warning') }}</strong>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                @endif                                
- 
 
+                                <div class="hidden" id="hiddenError">
+                                    <div class="alert alert-danger" role="alert">
+                                        <div id="statusMessage" ></div>
+                                    </div>
+                                </div>         
+                                                      
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
                             <form action="{{ url('/loginform') }}" method="POST" class="needs-validation" id="loginform">
@@ -46,10 +43,11 @@
                                         <a> กรุณากรอก Password</a>
                                     </div>
                                 </div>
+                            
 
-                                <div id="statusMessage" style="color: red"></div>
 
-                                
+
+            
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="text-right">
                                     <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your
@@ -175,36 +173,5 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('#registerForm').submit(function(event){
-            event.preventDefault();
-            var formData = $(this).serialize();
-            $.ajax({
-                url: $(this).attr('action'),
-                type: 'POST',
-                data: formData,
-                success: function(response){
-                    // If successful, display success message
-                    if (response.success) {
-                        $('#test').text(response.success);
-                    }
-                },
-                error: function(xhr){
-                    // If error, display error messages
-                    var errors = xhr.responseJSON.errors;
-                    if (errors) {
-                        var errorMessage = '';
-                        $.each(errors, function(key, value){
-                            errorMessage += value + '<br>';
-                        });
-                        $('#test').html(errorMessage);
-                    }
-                }
-            });
-        });
-    });
-</script>
 
 @endsection
