@@ -89,7 +89,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                            @if ($errors->any())
+                            {{-- @if ($errors->any())
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     <input type="hidden" value="1" id="modalError">
                                     <strong>{{ $errors->first() }}</strong>
@@ -97,18 +97,8 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                            @endif
+                            @endif --}}
                         
-                        @if (session('status'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <input type="hidden" value="1" id="modalsuccess">
-                                <strong> {{ session('status') }}</strong>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        @endif 
-
                     <div class="hidden" id="hiddenErrorModal">
                         <div class="alert alert-danger" role="alert">
                             <div id="statusMessageModel" ></div>
