@@ -10,6 +10,6 @@ class Media extends Model
 
     public function property()
     {
-        return $this->belongsTo(Property::class, 'id_properties');
+        return $this->belongsTo(Property::class, 'id_property');
     }
 }

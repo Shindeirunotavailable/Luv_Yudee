@@ -119,26 +119,14 @@
                                                         </div>
 
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div> --}}
-                                                        {{-- @if (isset($data['id_property'])&& isset($data['property']->property_image_url))
+                                                        @if (isset($data['id_property']))
                                                             <div class="row">
-                                                                @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
-                                                                    <div class="col-4 mt-0 row justify-content-center mb-6">
-                                                                        <img src="{{ $imageUrl }}" alt="Property Image" style="width: 50%;">
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
-                                                        @endif --}}
-                                                        @if (isset($data['id_property']) && isset($data['property']->property_image_url))
-                                                            <div class="row">
-                                                                @foreach (explode(',', $data['property']->property_image_url) as $imageUrl)
-                                                                <div class="col-2 mt-0 row justify-content-center mb-6">
-                                                                    <img src="{{ $imageUrl }}" alt="Property Image" style="width: 100%;">
-                                                                    <form action="{{ route('delete_image') }}" method="post">
-                                                                        @csrf
-                                                                        <input type="hidden" name="image_url" value="{{ $imageUrl }}">
-                                                                        <button type="submit"  class="btn btn-danger btn-sm mt-2">Delete</button>
-                                                                    </form>
-                                                                </div>
+                                                                @foreach ($data['media'] as $media)
+                                                                        @if ($media->id_property == $data['id_property'] && $media->file_type === 1)
+                                                                            <div class="col-2 mt-0 mb-4 m-2 row justify-content-center mb-6">
+                                                                                <img src="{{ $media->property_media }}" alt="Property Image" style="width: 100%;">
+                                                                            </div>
+                                                                        @endif
                                                                 @endforeach
                                                             </div>
                                                         @endif
@@ -150,15 +138,14 @@
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
-                                                        @if (isset($data['id_property'])&& isset($data['property']->property_video_url))
-                                                            <div class="row">
-                                                                @foreach (explode(',', $data['property']->property_video_url) as $videoUrl)
-                                                                    <div class="col-4 mt-0 row justify-content-center mb-6 " >
-                                                                        <video src="{{ $videoUrl }}" controls style="width: 75%;" ></video>
-                                                                    </div>
+                                                        @foreach ($data['media'] as $media)
+                                                                        @if ($media->id_property == $data['id_property'] && $media->file_type === 2)
+                                                                            <div class="col-4 mt-0 mb-4 m-2 row justify-content-center mb-6">
+                                                                                <video src="{{ $media->property_media }}" controls style="width: 75%;" ></video>
+                                                                            </div>
+                                                                        @endif
                                                                 @endforeach
-                                                            </div>
-                                                        @endif
+
                                                     </div>
                                             <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right " name="property_stage" value="2">Submit</button>
                                         </div>

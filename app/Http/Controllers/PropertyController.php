@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Property;
+use App\Models\Media;
 use App\Models\Amenities;
 use App\Models\Province;
 use App\Models\Amphure;
@@ -23,11 +24,15 @@ class PropertyController extends Controller
         $id_property = $request['id_property'];
         $property = Property::property($id_property);
 
+
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
         $this->data['districts'] = District::all();
         $this->data['amenities'] = Amenities::all();
+
+        $this->data['media'] = Media::all();
         $this->data['property'] = $property;
+
 
         if (isset($request['id_property'])) {
             $this->data['id_property'] = $request['id_property'];
@@ -72,28 +77,39 @@ class PropertyController extends Controller
             $id_property = $request['id_property'];
             $data['update_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 2;
+            DB::table('pp_properties')->where('id_property', $request['id_property'])->update($data);
 
             // Update image and video URLs if new files are uploaded
             if ($request->hasFile('image')) {
-                $image_url = [];
+
                 foreach ($request->file('image') as $image) {
                     $imageName = time() . '_' . $image->getClientOriginalName();
                     $image->move(public_path('/assets/upload_image'), $imageName);
-                    $image_url[] = '/assets/upload_image/' . $imageName;
+                    $image_url = '/assets/upload_image/' . $imageName;
+                    $media = new Media();
+                    $media->property_media = $image_url;
+                    $media->file_type = '1';
+                    $media->created_by = '1';
+                    $media->update_by = '0';
+                    $media->id_property = $id_property;
+                    $media->save();
                 }
-                $data['property_image_url'] = implode(',', $image_url);
             }
 
             if ($request->hasFile('video')) {
-                $video_url = [];
                 foreach ($request->file('video') as $video) {
                     $videoName = time() . '_' . $video->getClientOriginalName();
                     $video->move(public_path('/assets/upload_video'), $videoName);
-                    $video_url[] = '/assets/upload_video/' . $videoName;
+                    $video_url = '/assets/upload_video/' . $videoName;
+                    $media = new Media();
+                    $media->property_media = $video_url;
+                    $media->file_type = '2';
+                    $media->created_by = '1';
+                    $media->update_by = '0';
+                    $media->id_property = $id_property;
+                    $media->save();
                 }
-                $data['property_video_url'] = implode(',', $video_url);
             }
-            DB::table('pp_properties')->where('id_property', $request['id_property'])->update($data);
         } else {
 
             $data['update_datetime'] = date('Y-m-d H:i:s');
@@ -101,27 +117,44 @@ class PropertyController extends Controller
             $data['update_by'] = 1;
             $data['create_by'] = 1;
             $data['property_status'] = 1;
-            $image_url = [];
+            $id_property = DB::table('pp_properties')->insertGetId($data);
+
+
             if ($request->hasFile('image')) {
+
                 foreach ($request->file('image') as $image) {
+                    // บันทึกไฟล์รูปภาพลงในระบบ
                     $imageName = time() . '_' . $image->getClientOriginalName();
                     $image->move(public_path('/assets/upload_image'), $imageName);
-                    $image_url[] = '/assets/upload_image/' . $imageName;
+                    $image_url = '/assets/upload_image/' . $imageName;
+
+                    // เพิ่มข้อมูล media ลงในตาราง pp_media
+                    $media = new Media();
+                    $media->property_media = $image_url;
+                    $media->file_type = '1'; // 1 คือ image
+                    $media->created_by = '1';
+                    $media->update_by = '1';
+                    $media->id_property = $id_property; // ระบุคีย์นอก id_property ที่เกี่ยวข้อง
+                    $media->save();
                 }
             }
 
-            $video_url = [];
             if ($request->hasFile('video')) {
                 foreach ($request->file('video') as $video) {
+                    // บันทึกไฟล์วิดีโอลงในระบบ
                     $videoName = time() . '_' . $video->getClientOriginalName();
                     $video->move(public_path('/assets/upload_video'), $videoName);
-                    $video_url[] = '/assets/upload_video/' . $videoName;
+                    $video_url = '/assets/upload_video/' . $videoName;
+                    // เพิ่มข้อมูล media ลงในตาราง pp_media
+                    $media = new Media();
+                    $media->property_media = $video_url;
+                    $media->file_type = '2'; // 2 คือ video
+                    $media->created_by = '1';
+                    $media->update_by = '1';
+                    $media->id_property = $id_property; // ระบุคีย์นอก id_property ที่เกี่ยวข้อง
+                    $media->save();
                 }
             }
-            $data['property_image_url'] = $image_url ? implode(',', $image_url) : null;
-            $data['property_video_url'] = $video_url ? implode(',', $video_url) : null;
-
-            $id_property = DB::table('pp_properties')->insertGetId($data);
         }
         return redirect('addproperty?id_property=' . $id_property)
             ->with('success', 'message')
@@ -163,16 +196,15 @@ class PropertyController extends Controller
 
     public function deleteImage(Request $request)
 {
-    $imageUrl = $request->input('property_image_url');
+    dd($request);
+    $imageUrl = $request['property_image_url'];
 
     // Delete image file from storage
-    if (File::exists(public_path($imageUrl))) {
-        File::delete(public_path($imageUrl));
+    if (File::exists($imageUrl)) {
+        File::delete($imageUrl);
     }
-
     // Delete image record from database
-    DB::table('pp_properties')->where('id_property', $request['property_image_url'])->delete();
-
+    DB::table('pp_properties')->where('property_image_url', $imageUrl)->delete();
     return redirect()->back()->with('success', 'Image deleted successfully');
 }
 
