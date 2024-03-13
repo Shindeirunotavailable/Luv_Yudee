@@ -323,7 +323,6 @@ if($('#newslettererror').length){
     confirmButtonColor: "#0071BC",
   });
 }
-
 //============================ js non ==============================//
 
 // เช็คค่าว่างใน input
