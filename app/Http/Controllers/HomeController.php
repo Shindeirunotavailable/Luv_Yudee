@@ -92,7 +92,7 @@ class HomeController extends Controller
     
             // เพิ่มข้อมูลในตาราง pp_newsletters
             DB::table('pp_newsletters')->insert($data);
-            mail::to($username)->send(new news());
+            mail::to($username)->send(new news($username));
     
             // ไปที่หน้า home พร้อมกับข้อความเตือน
             return redirect('/home')->with('success', 'You have successfully subscribed to our newsletter.');

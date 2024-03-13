@@ -307,8 +307,22 @@ function onSubmitemail(event) {
     document.getElementById("home_email").submit();
 }
 /*------------------------------------------- */
-
-
+/*เเจ้งเตือน ตอนส่งเมล */
+if($('#newsletter').length){
+  // alert("You have successfully subscribed to our newsletter.");
+  Swal.fire({
+    icon: "success",
+    text: "ขอบคุณสำหรับการสมัครรับข่าวสารค่ะ",
+    confirmButtonColor: "#0071BC",
+  });
+}
+if($('#newslettererror').length){
+  Swal.fire({
+    icon: "error",
+    text: "คุณได้สมัครรับข่าวสารไปเเล้วค่ะ",
+    confirmButtonColor: "#0071BC",
+  });
+}
 
 //============================ js non ==============================//
 
@@ -368,3 +382,9 @@ function onSubmitemail(event) {
   });
   
 
+
+
+
+
+
+  
