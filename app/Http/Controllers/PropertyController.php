@@ -77,38 +77,47 @@ class PropertyController extends Controller
             $id_property = $request['id_property'];
             $data['update_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 2;
-            DB::table('pp_properties')->where('id_property', $request['id_property'])->update($data);
+            DB::table('pp_properties')->where('id_property', $id_property)->update($data);
 
             // Update image and video URLs if new files are uploaded
             if ($request->hasFile('image')) {
-
+                $mediaData = [];
                 foreach ($request->file('image') as $image) {
                     $imageName = time() . '_' . $image->getClientOriginalName();
                     $image->move(public_path('/assets/upload_image'), $imageName);
                     $image_url = '/assets/upload_image/' . $imageName;
-                    $media = new Media();
-                    $media->property_media = $image_url;
-                    $media->file_type = '1';
-                    $media->created_by = '1';
-                    $media->update_by = '0';
-                    $media->id_property = $id_property;
-                    $media->save();
+                    $mediaData[] = [
+                        'property_media' => $image_url,
+                        'file_type' => '1',
+                        'created_by' => '1',
+                        'update_by' => '0',
+                        'update_at' => date('Y-m-d H:i:s'),
+                        'create_at' => date('Y-m-d H:i:s'),
+                        'id_property' => $id_property,
+                    ];
                 }
+                // Insert media data using Query Builder
+                DB::table('pp_media')->insert($mediaData);
             }
 
             if ($request->hasFile('video')) {
+                $mediaData = [];
                 foreach ($request->file('video') as $video) {
                     $videoName = time() . '_' . $video->getClientOriginalName();
                     $video->move(public_path('/assets/upload_video'), $videoName);
                     $video_url = '/assets/upload_video/' . $videoName;
-                    $media = new Media();
-                    $media->property_media = $video_url;
-                    $media->file_type = '2';
-                    $media->created_by = '1';
-                    $media->update_by = '0';
-                    $media->id_property = $id_property;
-                    $media->save();
+                    $mediaData[] = [
+                        'property_media' => $video_url,
+                        'file_type' => '2',
+                        'created_by' => '1',
+                        'update_by' => '0',
+                        'update_at' => date('Y-m-d H:i:s'),
+                        'create_at' => date('Y-m-d H:i:s'),
+                        'id_property' => $id_property,
+                    ];
                 }
+                // Insert media data using Query Builder
+                DB::table('pp_media')->insert($mediaData);
             }
         } else {
 
@@ -120,40 +129,41 @@ class PropertyController extends Controller
             $id_property = DB::table('pp_properties')->insertGetId($data);
 
 
-            if ($request->hasFile('image')) {
-
-                foreach ($request->file('image') as $image) {
-                    // บันทึกไฟล์รูปภาพลงในระบบ
-                    $imageName = time() . '_' . $image->getClientOriginalName();
-                    $image->move(public_path('/assets/upload_image'), $imageName);
-                    $image_url = '/assets/upload_image/' . $imageName;
-
-                    // เพิ่มข้อมูล media ลงในตาราง pp_media
-                    $media = new Media();
-                    $media->property_media = $image_url;
-                    $media->file_type = '1'; // 1 คือ image
-                    $media->created_by = '1';
-                    $media->update_by = '1';
-                    $media->id_property = $id_property; // ระบุคีย์นอก id_property ที่เกี่ยวข้อง
-                    $media->save();
+            if ($request->hasFile('image') || $request->hasFile('video')) {
+                $mediaData = [];
+                if ($request->hasFile('image')) {
+                    foreach ($request->file('image') as $image) {
+                        $imageName = time() . '_' . $image->getClientOriginalName();
+                        $image->move(public_path('/assets/upload_image'), $imageName);
+                        $image_url = '/assets/upload_image/' . $imageName;
+                        $mediaData[] = [
+                            'property_media' => $image_url,
+                            'file_type' => '1',
+                            'created_by' => '1',
+                            'update_by' => '1',
+                            'update_at' => date('Y-m-d H:i:s'),
+                            'create_at' => date('Y-m-d H:i:s'),
+                            'id_property' => $id_property,
+                        ];
+                    }
                 }
-            }
-
-            if ($request->hasFile('video')) {
-                foreach ($request->file('video') as $video) {
-                    // บันทึกไฟล์วิดีโอลงในระบบ
-                    $videoName = time() . '_' . $video->getClientOriginalName();
-                    $video->move(public_path('/assets/upload_video'), $videoName);
-                    $video_url = '/assets/upload_video/' . $videoName;
-                    // เพิ่มข้อมูล media ลงในตาราง pp_media
-                    $media = new Media();
-                    $media->property_media = $video_url;
-                    $media->file_type = '2'; // 2 คือ video
-                    $media->created_by = '1';
-                    $media->update_by = '1';
-                    $media->id_property = $id_property; // ระบุคีย์นอก id_property ที่เกี่ยวข้อง
-                    $media->save();
+                if ($request->hasFile('video')) {
+                    foreach ($request->file('video') as $video) {
+                        $videoName = time() . '_' . $video->getClientOriginalName();
+                        $video->move(public_path('/assets/upload_video'), $videoName);
+                        $video_url = '/assets/upload_video/' . $videoName;
+                        $mediaData[] = [
+                            'property_media' => $video_url,
+                            'file_type' => '2',
+                            'created_by' => '1',
+                            'update_by' => '1',
+                            'update_at' => date('Y-m-d H:i:s'),
+                            'create_at' => date('Y-m-d H:i:s'),
+                            'id_property' => $id_property,
+                        ];
+                    }
                 }
+                DB::table('pp_media')->insert($mediaData);
             }
         }
         return redirect('addproperty?id_property=' . $id_property)

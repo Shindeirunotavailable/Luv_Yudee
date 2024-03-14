@@ -138,14 +138,17 @@
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
-                                                        @foreach ($data['media'] as $media)
+                                                        @if (isset($data['id_property']))
+                                                            <div class="row">
+                                                                @foreach ($data['media'] as $media)
                                                                         @if ($media->id_property == $data['id_property'] && $media->file_type === 2)
                                                                             <div class="col-4 mt-0 mb-4 m-2 row justify-content-center mb-6">
                                                                                 <video src="{{ $media->property_media }}" controls style="width: 75%;" ></video>
                                                                             </div>
                                                                         @endif
                                                                 @endforeach
-
+                                                            </div>
+                                                        @endif
                                                     </div>
                                             <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right " name="property_stage" value="2">Submit</button>
                                         </div>
