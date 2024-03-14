@@ -178,6 +178,12 @@
     /* ชั่วคราว */
     margin-top:-80px;
 }
+
+/* @media (max-width: 2560px)and (min-width: 1440px) {
+    .dashboard__content {
+        padding: 60px 60px 100vh!important ;
+    }
+} */
 @media (max-width: 426px) {
     .dashboard__content {
         margin-top:0px;
@@ -505,6 +511,12 @@ input:focus-visible {
     width: 100%;
 }
 
+@media (min-width: 768px){
+
+    .dashboard-navigation .dropbtn {
+        margin-bottom: 100px;
+    }
+}
 .dashboard-navigation .dropdown-content a.-is-active {
     background-color: #0071bc;
     color: #fff
@@ -731,11 +743,11 @@ input[type="submit"] {
     /* ชั่วคราว */
     /* padding-bottom: 40px; */
 }
-@media (max-width: 768px) and (min-width: 427px){
+/* @media (max-width: 768px) and (min-width: 427px){
     .tab-content-ds {
         padding-top: 120px;
     }
-}
+} */
 @media (max-width: 426px) {
     .tab-content-ds {
         margin-top:0px;
@@ -802,14 +814,24 @@ input[type="submit"] {
     background-color: #f7f7f7
 }
 /* .footer100vh{
-    height: 100vh;
+    height: 120vh;
 } */
-@media(min-width: 2560px) {
-    .footer110vh {
+ /* @media(max-width: 2560px) {
+    .footer100vh {
         height: 100vh;
     }
-}
+} */
+
+
 label.required:after {
     content: " *";
     color: red;
+}
+
+.media-map{
+    width:100%;
+    height:450px;
+}
+.mt-footer{
+    margin-top: 43px !important;
 }
