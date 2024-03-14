@@ -68,20 +68,22 @@
                             </div>
                             
                             <div class="colorRed" id="ShowErrorEmail"></div>
+
                             
-                            @if (session('success'))
+                            
+                            {{-- @if (session('success'))
                                 <input type="hidden" id="newsletter">
-                                    {{-- <div class="alert alert-success">
+                                    <div class="alert alert-success">
                                         {{ session('success') }}
-                                    </div> --}}
+                                    </div>
                             @endif
 
                             @if (session('warning'))
                                 <input type="hidden" id="newslettererror">
-                                    {{-- <div class="alert alert-danger">
+                                    <div class="alert alert-danger">
                                         {{ session('warning') }}
-                                    </div> --}}
-                            @endif
+                                    </div>
+                            @endif --}}
                         </form>
                     
                         </div>

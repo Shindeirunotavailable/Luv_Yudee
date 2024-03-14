@@ -282,48 +282,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*้home-email */
-function onSubmitemail(event) {
-    var emailInput = $('#home-email');
-    var emailValue = emailInput.val();
-    var showErrorDiv = $('#ShowErrorEmail');
-    // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
-    emailInput.removeClass('border-danger is-valid');
-    if (emailValue.trim() === '') {
-        showErrorDiv.text('Please enter a valid email');
-        emailInput.addClass('border-danger');
-        event.preventDefault(); // ป้องกันการ submit แบบปกติ
-    } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-        showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
-        emailInput.addClass('border-danger');
-        event.preventDefault();
-    } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
-      showErrorDiv.text('Please enter a part following .');
-      emailInput.addClass('border-danger');
-      event.preventDefault();
-    } else {
-        emailInput.addClass('is-valid');
-        showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
-    }
-    document.getElementById("home_email").submit();
-}
+// function onSubmitemail(event) {
+//     var emailInput = $('#home-email');
+//     var emailValue = emailInput.val();
+//     var showErrorDiv = $('#ShowErrorEmail');
+//     // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
+//     emailInput.removeClass('border-danger is-valid');
+//     if (emailValue.trim() === '') {
+//         showErrorDiv.text('Please enter a valid email');
+//         emailInput.addClass('border-danger');
+//         event.preventDefault(); // ป้องกันการ submit แบบปกติ
+//     } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+//         showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+//         emailInput.addClass('border-danger');
+//         event.preventDefault();
+//     } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+//       showErrorDiv.text('Please enter a part following .');
+//       emailInput.addClass('border-danger');
+//       event.preventDefault();
+//     } else {
+//         emailInput.addClass('is-valid');
+//         showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+//     }
+//     document.getElementById("home_email").submit();
+// }
 /*------------------------------------------- */
+
 /*เเจ้งเตือน ตอนส่งเมล */
 
-if($('#newsletter').length){
-  // alert("You have successfully subscribed to our newsletter.");
-  Swal.fire({
-    icon: "success",
-    text: "ขอบคุณสำหรับการสมัครรับข่าวสารค่ะ",
-    confirmButtonColor: "#0071BC",
-  });
-}
-if($('#newslettererror').length){
-  Swal.fire({
-    icon: "error",
-    text: "คุณได้สมัครรับข่าวสารไปเเล้วค่ะ",
-    confirmButtonColor: "#0071BC",
-  });
-}
+// if($('#newsletter').length){
+//   // alert("You have successfully subscribed to our newsletter.");
+//   Swal.fire({
+//     icon: "success",
+//     text: "ขอบคุณสำหรับการสมัครรับข่าวสารค่ะ",
+//     confirmButtonColor: "#0071BC",
+//   });
+// }
+// if($('#newslettererror').length){
+//   Swal.fire({
+//     icon: "error",
+//     text: "คุณได้สมัครรับข่าวสารไปเเล้วค่ะ",
+//     confirmButtonColor: "#0071BC",
+//   });
+// }
 
 // $(document).ready(function () {
 //   $("#home_email").submit(function (e) {
@@ -347,6 +348,7 @@ if($('#newslettererror').length){
 //     })
 //   })
 // })
+
 //============================ js non ==============================//
 
 // เช็คค่าว่างใน input
@@ -403,7 +405,57 @@ if($('#newslettererror').length){
         $('#modalStart').prop('checked', true);
       });
   });
-  
+
+
+
+  function onSubmitemail(event) {
+    var emailInput = $('#home-email');
+    var emailValue = emailInput.val();
+    var showErrorDiv = $('#ShowErrorEmail');
+    // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
+    emailInput.removeClass('border-danger is-valid');
+    if (emailValue.trim() === '') {
+        showErrorDiv.text('Please enter a valid email');
+        emailInput.addClass('border-danger');
+        event.preventDefault(); // ป้องกันการ submit แบบปกติ
+    } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+        showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+        emailInput.addClass('border-danger');
+        event.preventDefault();
+    } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+      showErrorDiv.text('Please enter a part following .');
+      emailInput.addClass('border-danger');
+      event.preventDefault();
+    } else {
+        emailInput.addClass('is-valid');
+        showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+    }
+    // document.getElementById("home_email").submit();
+    var formData = $("#home_email").serialize();
+        $.ajax({
+            type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+            url: $("#home_email").attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+            data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+            success: function (response) {
+                if (response.success) {
+
+                  Swal.fire({
+                    icon: "success",
+                    text: "ขอบคุณสำหรับการสมัครรับข่าวสารค่ะ",
+                    confirmButtonColor: "#0071BC",
+                  });
+
+                } else {
+                    Swal.fire({
+                    icon: "warning",
+                    text: "คุณได้สมัครรับข่าวสารไปเเล้วค่ะ",
+                    confirmButtonColor: "#0071BC",
+                  });
+
+                }
+            }
+        });
+}
 
 
 

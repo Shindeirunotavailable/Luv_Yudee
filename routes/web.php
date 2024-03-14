@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::any('home' , 'App\Http\Controllers\HomeController@home');
 Route::any('home_email' , 'App\Http\Controllers\HomeController@home_email');
+Route::any('review' , 'App\Http\Controllers\ReviewsController@review');
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
 

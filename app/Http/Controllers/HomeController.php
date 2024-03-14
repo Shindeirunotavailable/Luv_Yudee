@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use App\Models\createAccount;
-use App\Models\Newsletter;
+// use App\Models\Newsletter;
 use App\Models\pp_Newsletter;
 use App\Mail\news;
 
@@ -76,12 +76,15 @@ class HomeController extends Controller
         $existingEmail = pp_Newsletter::Gethome($username);
         $existingUser = createAccount::Getemail($username);
 
-        if ($existingEmail) {
+        if ($existingEmail || $existingUser) {
             // ถ้ามีอีเมลนี้อยู่แล้ว
-            return redirect('/home')->with('warning', 'This email is already subscribed.');
-        }elseif ($existingUser){
-            return redirect('/home')->with('warning', 'This email is already subscribed.');
+            // return redirect('/home')->with('warning', 'This email is already subscribed.');
+            $errorMessages = '';
+                return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
         }
+        // elseif ($existingUser){
+        //     return redirect('/home')->with('warning', 'This email is already subscribed.');
+        // }
          else {
             // ถ้ายังไม่มีอีเมลนี้ในฐานข้อมูล
             $data = [
@@ -95,7 +98,9 @@ class HomeController extends Controller
             mail::to($username)->send(new news($username));
     
             // ไปที่หน้า home พร้อมกับข้อความเตือน
-            return redirect('/home')->with('success', 'You have successfully subscribed to our newsletter.');
+            // return redirect('/home')->with('success', 'You have successfully subscribed to our newsletter.');
+            $errorMessages = '';
+            return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
         }
     }
 }
