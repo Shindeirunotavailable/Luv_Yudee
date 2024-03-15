@@ -89,7 +89,7 @@ class PropertyController extends Controller
                     $mediaData[] = [
                         'media_property' => $image_url,
                         'media_file_type' => '1',
-                        'created_by' => '1',
+                        'create_by' => '1',
                         'update_by' => '0',
                         'update_datetime' => date('Y-m-d H:i:s'),
                         'create_datetime' => date('Y-m-d H:i:s'),
@@ -109,7 +109,7 @@ class PropertyController extends Controller
                     $mediaData[] = [
                         'media_property' => $video_url,
                         'media_file_type' => '2',
-                        'created_by' => '1',
+                        'create_by' => '1',
                         'update_by' => '0',
                         'update_datetime' => date('Y-m-d H:i:s'),
                         'create_datetime' => date('Y-m-d H:i:s'),
@@ -137,7 +137,7 @@ class PropertyController extends Controller
                         $mediaData[] = [
                             'media_property' => $image_url,
                             'media_file_type' => '1',
-                            'created_by' => '1',
+                            'create_by' => '1',
                             'update_by' => '1',
                             'update_datetime' => date('Y-m-d H:i:s'),
                             'create_datetime' => date('Y-m-d H:i:s'),
@@ -153,7 +153,7 @@ class PropertyController extends Controller
                         $mediaData[] = [
                             'media_property' => $video_url,
                             'media_file_type' => '2',
-                            'created_by' => '1',
+                            'create_by' => '1',
                             'update_by' => '1',
                             'update_datetime' => date('Y-m-d H:i:s'),
                             'create_datetime' => date('Y-m-d H:i:s'),
@@ -163,6 +163,7 @@ class PropertyController extends Controller
                 }
                 DB::table('pp_media')->insert($mediaData);
             }
+
         }
         return redirect('addproperty?id_property=' . $id_property)
             ->with('success', 'message')
@@ -224,10 +225,12 @@ class PropertyController extends Controller
     // public function showproperty()
     // {
     //     $blogs = DB::table('pp_properties')->get();
-    //     return view('myproperties', compact('blogs'));
+    //     return view('dashboard.myproperty', compact('blogs'));
     // }
 
-
+    // public function showproperty1(){
+    //     return view("dashboard.myproperty");
+    // }
 
 }
 
