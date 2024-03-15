@@ -26,8 +26,7 @@ class ReviewsController extends Controller
             'update_datetime' => date('Y-m-d H:i:s'),
         ];
         
-        DB::table('reviews')->insert($data);
-        $userreview = DB::table('reviews')->get();
+        DB::table('pp_reviews')->insert($data);
         return redirect('/property');
     }
 }
