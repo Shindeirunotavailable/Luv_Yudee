@@ -353,7 +353,7 @@ $('#submitlocation').click(function(event) {
     var address = $('#address');
     var latitudeInput = $('#latitudeInput');
     var longitudeInput = $('#longitudeInput');
-    var errorAddress = '<div class="invalid-feedback additional-message">' + 'รุณาระบุข้อมูล Address ' + '</div>';
+    var errorAddress = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล Address ' + '</div>';
     var errorLatitude = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล Latitude ' + '</div>';
     var errorLongitude = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล Longitude ' + '</div>';
 

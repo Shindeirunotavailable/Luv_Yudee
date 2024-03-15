@@ -700,13 +700,13 @@ input[type="submit"] {
 @media (max-width: 1025px) and (min-width: 769px){
 
     .ck-editor {
-        width: 514px !important;
+        width: 604px !important;
     }
 }
 @media (max-width: 769px) and (min-width: 426px){
 
     .ck-editor {
-        width: 528px !important;
+        width: 648px !important;
     }
 }
 @media (max-width: 426px) and (min-width: 376px){
