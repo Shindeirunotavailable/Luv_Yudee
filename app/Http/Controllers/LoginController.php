@@ -247,6 +247,7 @@ class LoginController extends Controller
             // ค้นหาข้อมูลในตาราง password_resets ที่มี token และ email_token ตรงกับที่รับมา
             $passwordReset = DB::table('password_resets')
                                 ->where('resetToken', $token)
+                                ->where('created_by', '>=', now()->subMinutes(30))
                                 ->first();
 
             // ตรวจสอบว่าพบข้อมูลหรือไม่
@@ -264,8 +265,6 @@ class LoginController extends Controller
     public function resetPassword1(Request $request)
     {
         // dd($request->all());
-        // ตรวจสอบความถูกต้องของอีเมล์
-    
         // ค้นหาผู้ใช้จากอีเมล์
         $user = createAccount::Getemail($request->email);
 
