@@ -122,16 +122,16 @@
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div> --}}
                                                         @if (isset($data['id_property']))
                                                             <div class="row">
-                                                                @foreach ($data['media'] as $media)
-                                                                        @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
-                                                                            <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                                {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า asset($media->media_property) ถ้าuploadลงserver --}}
-                                                                                <table class="mediatable">
-                                                                                    <tr class="align-items-center">
-                                                                                      <th class="pt-2">Image</th>
-                                                                                      <th class="pt-2">Action</th>
-                                                                                    </tr>
+                                                                    <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
+                                                                        {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า asset($media->media_property) ถ้าuploadลงserver --}}
 
+                                                                            <table class="mediatable">
+                                                                                <tr class="align-items-center">
+                                                                                <th class="pt-2">Image</th>
+                                                                                <th class="pt-2">Action</th>
+                                                                                </tr>
+                                                                            @foreach ($data['media'] as $media)
+                                                                                @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
                                                                                     <tr class="align-items-center">
                                                                                         <td class="p-4">
                                                                                             <img src="{{ asset($media->media_property) }}" alt="Property Image" class="imagemedia">
@@ -141,10 +141,10 @@
                                                                                             <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
                                                                                         </td>
                                                                                     </tr>
-                                                                                </table>
-                                                                            </div>
-                                                                        @endif
-                                                                @endforeach
+                                                                                @endif
+                                                                            @endforeach
+                                                                            </table>
+                                                                    </div>
                                                             </div>
                                                         @endif
                                                     </div>
@@ -157,27 +157,28 @@
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
 
                                                             @if (isset($data['id_property']))
-                                                            <div class="row">
-                                                                    @foreach ($data['media'] as $media)
-                                                                            @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
+                                                                <div class="row">
+                                                                    <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
                                                                             <table class="mediatable">
                                                                                 <tr class="align-items-center">
                                                                                   <th class="pt-2">Video</th>
                                                                                   <th class="pt-2">Action</th>
                                                                                 </tr>
-
-                                                                                <tr class="align-items-center">
-                                                                                    <td class="p-4">
-                                                                                        <video src="{{ asset($media->media_property) }}" controls class="videomedia" ></video>
-                                                                                    </td>
-                                                                                    <td class="p-4 trash-td ">
-                                                                                        <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
-                                                                                    </td>
-                                                                                </tr>
+                                                                                @foreach ($data['media'] as $media)
+                                                                                    @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
+                                                                                        <tr class="align-items-center">
+                                                                                            <td class="p-4">
+                                                                                                <video src="{{ asset($media->media_property) }}" controls class="videomedia" ></video>
+                                                                                            </td>
+                                                                                            <td class="p-4 trash-td ">
+                                                                                                <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    @endif
+                                                                                @endforeach
                                                                             </table>
-                                                                            @endif
-                                                                    @endforeach
-                                                            </div>
+                                                                    </div>
+                                                                </div>
                                                             @endif
 
                                                     </div>
