@@ -46,7 +46,7 @@
                             @if (isset($data['id_property']))
                                 <input type="hidden"  name="id_property" value="{{$data['id_property']}}" >
                             @endif
-                            <div class="tab-content-ds footer100vh" id="nav-tabContent">
+                            <div class="tab-content-ds " id="nav-tabContent">
 
                                 <div class="tab-pane fade {{ !isset($data['property']->property_stage) || $data['property']->property_stage=='1' ? 'show active' : '' }}" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
@@ -101,7 +101,7 @@
                                                         </div>
                                                     </div>
                                                 </div >
-                                            <button type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right" name="property_stage" value="1">Submit</button>
+                                            <button type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600" name="property_stage" value="1">Submit</button>
                                         </div>
                                 </div>
 
@@ -115,35 +115,42 @@
                                                     <h4 class="fw-600 title fs-17 mb-10" id="errormedia">Upload photos of your property</h4>
                                                     <div class=" ">
                                                         <div class="col-sm-4 mb-4 mt-3">
-                                                            <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 " id="imageLabel">Select Image</label>
+                                                            <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="imageLabel">Select Image</label>
                                                             <input name="image[]" type="file" class="custom-file-input" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
 
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div> --}}
-                                                        @if (isset($data['id_property']))
+                                                        @if (isset($data['id_property'])  )
                                                             <div class="row">
                                                                     <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
                                                                         {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า asset($media->media_property) ถ้าuploadลงserver --}}
 
-                                                                            <table class="mediatable">
-                                                                                <tr class="align-items-center">
-                                                                                <th class="pt-2">Image</th>
-                                                                                <th class="pt-2">Action</th>
-                                                                                </tr>
-                                                                            @foreach ($data['media'] as $media)
-                                                                                @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
-                                                                                    <tr class="align-items-center">
-                                                                                        <td class="p-4">
-                                                                                            <img src="{{ asset($media->media_property) }}" alt="Property Image" class="imagemedia">
-                                                                                            <input type="hidden" name="image_url" value="{{ asset($media->media_property) }}">
-                                                                                        </td>
-                                                                                        <td class="p-4 trash-td ">
-                                                                                            <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                @endif
-                                                                            @endforeach
-                                                                            </table>
+                                                                        {{-- @foreach ($data['media'] as $media) --}}
+                                                                            {{-- @if(isset($media) && isset($media->id_media)) --}}
+                                                                                <table class="mediatable " >
+                                                                                    {{-- @if (isset($data['media']) && $data['media']->isNotEmpty() && $data['media']->first(function ($media) { return $media->media_property && $media->media_file_type === 1; })) --}}
+                                                                                    @if (isset($data['media']) && $data['media']->isNotEmpty() && $data['media']->first()->media_file_type === 1)
+                                                                                        <tr class="align-items-center">
+                                                                                            <th class="pt-2">Image</th>
+                                                                                            <th class="pt-2">Action</th>
+                                                                                        </tr>
+                                                                                    @endif
+                                                                                    @foreach ($data['media'] as $media)
+                                                                                        @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
+                                                                                            <tr class="align-items-center">
+                                                                                                <td class="p-4">
+                                                                                                    <img src="{{ asset($media->media_property) }}" alt="Property Image" class="imagemedia">
+                                                                                                    <input type="hidden" name="image_url" value="{{ asset($media->media_property) }}">
+                                                                                                </td>
+                                                                                                <td class="p-4 trash-td ">
+                                                                                                    <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        @endif
+                                                                                    @endforeach
+                                                                                </table>
+                                                                            {{-- @endif --}}
+                                                                        {{-- @endforeach --}}
                                                                     </div>
                                                             </div>
                                                         @endif
@@ -151,7 +158,7 @@
                                                     <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
                                                     <div class=" ">
                                                         <div class="col-sm-4 mb-4 mt-3">
-                                                            <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4" id="videoLabel">Select Video</label>
+                                                            <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="videoLabel">Select Video</label>
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
@@ -160,10 +167,12 @@
                                                                 <div class="row">
                                                                     <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
                                                                             <table class="mediatable">
+                                                                                @if (isset($data['media']) && $data['media']->isNotEmpty() && $data['media']->first()->media_file_type === 2)
                                                                                 <tr class="align-items-center">
-                                                                                  <th class="pt-2">Video</th>
-                                                                                  <th class="pt-2">Action</th>
+                                                                                    <th class="pt-2">Image</th>
+                                                                                    <th class="pt-2">Action</th>
                                                                                 </tr>
+                                                                            @endif
                                                                                 @foreach ($data['media'] as $media)
                                                                                     @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
                                                                                         <tr class="align-items-center">
@@ -182,7 +191,7 @@
                                                             @endif
 
                                                     </div>
-                                            <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right " name="property_stage" value="2">Submit</button>
+                                            <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 " name="property_stage" value="2">Submit</button>
                                         </div>
                                 </div>
 
@@ -280,7 +289,7 @@
 
                                                 </div>
 
-                                                <button type="submit" name="property_stage" value="3" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                                <button type="submit" name="property_stage" value="3" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
                                         </div>
                                 </div>
 
@@ -357,7 +366,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" name="property_stage" value="4" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" name="property_stage" value="4" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
                                     </div>
                                 </div>
 
@@ -390,7 +399,7 @@
                                                     @endforeach
                                             </div>
                                         </div>
-                                        <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right">Submit</button>
+                                        <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
                                     </div>
 
                                 </div>
@@ -406,6 +415,7 @@
         </div>
 
     </div>
+    <div class="footer100vh"></div>
     <footer class="mb-1 pt-30 m-0 mt-footer ">
         <div class="container">
             <div class="row items-center justify-content-center justify-content-md-between">
