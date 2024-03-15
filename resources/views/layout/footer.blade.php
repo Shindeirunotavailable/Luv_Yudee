@@ -69,19 +69,23 @@
                             
                             <div class="colorRed" id="ShowErrorEmail"></div>
 
-                            @if (session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
+                            
+                            
+                            {{-- @if (session('success'))
+                                <input type="hidden" id="newsletter">
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
                             @endif
 
                             @if (session('warning'))
-                                <div class="alert alert-danger">
-                                    {{ session('warning') }}
-                                </div>
-                            @endif
+                                <input type="hidden" id="newslettererror">
+                                    <div class="alert alert-danger">
+                                        {{ session('warning') }}
+                                    </div>
+                            @endif --}}
                         </form>
-
+                    
                         </div>
                         <div class="social-style1 light-style py-2">
                             <a href="#"><i class="fab fa-facebook-f list-inline-item"></i></a>
