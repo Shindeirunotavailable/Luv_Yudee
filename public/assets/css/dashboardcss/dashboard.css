@@ -816,7 +816,7 @@ input[type="submit"] {
 /* .footer100vh{
     height: 120vh;
 } */
- @media(max-width: 2560px) {
+ @media(min-width: 2559px) {
     .footer100vh {
         height: 100vh;
     }
