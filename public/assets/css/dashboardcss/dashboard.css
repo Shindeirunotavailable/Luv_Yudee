@@ -835,3 +835,12 @@ label.required:after {
 .mt-footer{
     margin-top: 43px !important;
 }
+
+.trash-delete {
+    color: white;
+    transition: color 0.3s;
+  }
+
+  .trash-delete:hover {
+    color: black;
+  }

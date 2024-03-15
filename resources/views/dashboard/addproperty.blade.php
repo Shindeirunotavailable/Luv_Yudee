@@ -100,7 +100,7 @@
                                                         </div>
                                                     </div>
                                                 </div >
-                                            <button data-target="#nav-media-tab" type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right" name="property_stage" value="1">Submit</button>
+                                            <button type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right" name="property_stage" value="1">Submit</button>
                                         </div>
                                 </div>
 
@@ -122,9 +122,12 @@
                                                         @if (isset($data['id_property']))
                                                             <div class="row">
                                                                 @foreach ($data['media'] as $media)
-                                                                        @if ($media->id_property == $data['id_property'] && $media->file_type === 1)
+                                                                        @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
                                                                             <div class="col-2 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                                <img src="{{ $media->property_media }}" alt="Property Image" style="width: 100%;">
+                                                                                {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า $media->media_property ถ้าuploadลงserver --}}
+                                                                                <img src="{{ $media->media_property }}" alt="Property Image" style="width: 100%;">
+                                                                                    <input type="hidden" name="image_url" value="{{ $media->media_property }}">
+                                                                                    {{-- <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a> --}}
                                                                             </div>
                                                                         @endif
                                                                 @endforeach
@@ -138,22 +141,25 @@
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
-                                                        @if (isset($data['id_property']))
+
+                                                            @if (isset($data['id_property']))
                                                             <div class="row">
-                                                                @foreach ($data['media'] as $media)
-                                                                        @if ($media->id_property == $data['id_property'] && $media->file_type === 2)
-                                                                            <div class="col-4 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                                <video src="{{ $media->property_media }}" controls style="width: 75%;" ></video>
-                                                                            </div>
-                                                                        @endif
-                                                                @endforeach
+                                                                    @foreach ($data['media'] as $media)
+                                                                            @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
+                                                                                <div class="col-4 mt-0 mb-4 m-2 row justify-content-center mb-6">
+                                                                                    <video src="{{ $media->media_property }}" controls style="width: 100%;" ></video>
+                                                                                    {{-- <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a> --}}
+                                                                                </div>
+
+                                                                            @endif
+                                                                    @endforeach
                                                             </div>
-                                                        @endif
+                                                            @endif
+
                                                     </div>
                                             <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right " name="property_stage" value="2">Submit</button>
                                         </div>
                                 </div>
-
                                 <div class="tab-pane fade{{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'show active' : '' }}" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                             @if($message = Session::get('success') && $data['property']->property_stage=='3')

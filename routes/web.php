@@ -47,4 +47,6 @@ Route::any('property' , 'App\Http\Controllers\HomeController@property');
 Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnect');
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
-Route::post('delete_image', 'App\Http\Controllers\PropertyController@deleteImage')->name('delete_image');
+Route::get('delete_image/{id_media}', 'App\Http\Controllers\PropertyController@deleteMedia')->name('deleteMedia');
+
+Route::any('myproperties','App\Http\Controllers\PropertyController@showproperty');

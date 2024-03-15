@@ -102,16 +102,19 @@
                                 </div>
 
                                 {{-- <div class="sidebar_list_item">
-                                    <a class="items-center-db    " href="#">
+                                    <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
+                                    data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
+                                    aria-selected="false" href="#v-myproperty">
                                         <i class="fa-solid fa-house mr-d-15"></i>My Properties</a>
-                                </div>
+                                </div> --}}
 
-                                <div class="sidebar_list_item"><a class="items-center-db    " href="#">
+                                {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
                                         <i class="fa-solid fa-heart mr-d-15"></i>My Favorites</a>
                                 </div>
                                 <div class="sidebar_list_item"><a class="items-center-db    " href="#">
                                         <i class="fa-solid fa-magnifying-glass mr-d-15"></i>Saved Search</a>
                                 </div> --}}
+
                                 <div class="sidebar_list_item"><a class="items-center-db    " id="v-review-tab"
                                     data-toggle="tab" data-target="#v-review" role="tab" aria-controls="v-review"
                                     aria-selected="false" href="#v-review">
@@ -145,6 +148,11 @@
                     <div class="tab-pane fade show active" id="v-add-property" role="tabpanel"
                         aria-labelledby="v-add-property-tab" tabindex="0">
                         @include('dashboard.addproperty')
+                    </div>
+
+                    <div class="tab-pane fade show active" id="v-myproperty" role="tabpanel"
+                        aria-labelledby="v-myproperty-tab" tabindex="0">
+                        @include('dashboard.myproperty')
                     </div>
 
                     <div class="tab-pane fade" id="v-profile" role="tabpanel" aria-labelledby="v-profile-tab"

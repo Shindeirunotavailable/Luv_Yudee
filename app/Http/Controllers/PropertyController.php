@@ -87,12 +87,12 @@ class PropertyController extends Controller
                     $image->move(public_path('/assets/upload_image'), $imageName);
                     $image_url = '/assets/upload_image/' . $imageName;
                     $mediaData[] = [
-                        'property_media' => $image_url,
-                        'file_type' => '1',
+                        'media_property' => $image_url,
+                        'media_file_type' => '1',
                         'created_by' => '1',
                         'update_by' => '0',
-                        'update_at' => date('Y-m-d H:i:s'),
-                        'create_at' => date('Y-m-d H:i:s'),
+                        'update_datetime' => date('Y-m-d H:i:s'),
+                        'create_datetime' => date('Y-m-d H:i:s'),
                         'id_property' => $id_property,
                     ];
                 }
@@ -107,12 +107,12 @@ class PropertyController extends Controller
                     $video->move(public_path('/assets/upload_video'), $videoName);
                     $video_url = '/assets/upload_video/' . $videoName;
                     $mediaData[] = [
-                        'property_media' => $video_url,
-                        'file_type' => '2',
+                        'media_property' => $video_url,
+                        'media_file_type' => '2',
                         'created_by' => '1',
                         'update_by' => '0',
-                        'update_at' => date('Y-m-d H:i:s'),
-                        'create_at' => date('Y-m-d H:i:s'),
+                        'update_datetime' => date('Y-m-d H:i:s'),
+                        'create_datetime' => date('Y-m-d H:i:s'),
                         'id_property' => $id_property,
                     ];
                 }
@@ -127,8 +127,6 @@ class PropertyController extends Controller
             $data['create_by'] = 1;
             $data['property_status'] = 1;
             $id_property = DB::table('pp_properties')->insertGetId($data);
-
-
             if ($request->hasFile('image') || $request->hasFile('video')) {
                 $mediaData = [];
                 if ($request->hasFile('image')) {
@@ -137,12 +135,12 @@ class PropertyController extends Controller
                         $image->move(public_path('/assets/upload_image'), $imageName);
                         $image_url = '/assets/upload_image/' . $imageName;
                         $mediaData[] = [
-                            'property_media' => $image_url,
-                            'file_type' => '1',
+                            'media_property' => $image_url,
+                            'media_file_type' => '1',
                             'created_by' => '1',
                             'update_by' => '1',
-                            'update_at' => date('Y-m-d H:i:s'),
-                            'create_at' => date('Y-m-d H:i:s'),
+                            'update_datetime' => date('Y-m-d H:i:s'),
+                            'create_datetime' => date('Y-m-d H:i:s'),
                             'id_property' => $id_property,
                         ];
                     }
@@ -153,12 +151,12 @@ class PropertyController extends Controller
                         $video->move(public_path('/assets/upload_video'), $videoName);
                         $video_url = '/assets/upload_video/' . $videoName;
                         $mediaData[] = [
-                            'property_media' => $video_url,
-                            'file_type' => '2',
+                            'media_property' => $video_url,
+                            'media_file_type' => '2',
                             'created_by' => '1',
                             'update_by' => '1',
-                            'update_at' => date('Y-m-d H:i:s'),
-                            'create_at' => date('Y-m-d H:i:s'),
+                            'update_datetime' => date('Y-m-d H:i:s'),
+                            'create_datetime' => date('Y-m-d H:i:s'),
                             'id_property' => $id_property,
                         ];
                     }
@@ -169,6 +167,25 @@ class PropertyController extends Controller
         return redirect('addproperty?id_property=' . $id_property)
             ->with('success', 'message')
             ;
+    }
+
+    // deleteMedia
+    public function deleteMedia($id_media)
+    {
+            $media = DB::table('pp_media')->where('id_media', $id_media)->first();
+
+        if ($media) {
+            $file_url = public_path($media->media_property);
+
+            if (File::exists($file_url));
+            // dd($file_url);
+            {
+                File::delete($file_url);
+                // dd($file_url);
+            }
+            DB::table('pp_media')->where('id_media', $id_media)->delete();
+            return redirect()->back();
+        }
     }
 
     // ProvinceController
@@ -204,19 +221,11 @@ class PropertyController extends Controller
         return response()->json(['options' => '']);
     }
 
-    public function deleteImage(Request $request)
-{
-    dd($request);
-    $imageUrl = $request['property_image_url'];
-
-    // Delete image file from storage
-    if (File::exists($imageUrl)) {
-        File::delete($imageUrl);
-    }
-    // Delete image record from database
-    DB::table('pp_properties')->where('property_image_url', $imageUrl)->delete();
-    return redirect()->back()->with('success', 'Image deleted successfully');
-}
+    // public function showproperty()
+    // {
+    //     $blogs = DB::table('pp_properties')->get();
+    //     return view('myproperties', compact('blogs'));
+    // }
 
 
 
