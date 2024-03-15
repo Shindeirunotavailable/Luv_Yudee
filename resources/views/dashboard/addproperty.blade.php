@@ -85,11 +85,12 @@
 
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Property Status</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10" id="">Property Status</label>
                                                             <select id="propertystatus" name="type[]" class="form-control" multiple >
                                                                 <option value="1"{{ isset($data['property']->property_type) && in_array('1', explode(',', $data['property']->property_type)) ? "selected" : "" }}>ขาย</option>
                                                                 <option value="2"{{ isset($data['property']->property_type) && in_array('2', explode(',', $data['property']->property_type)) ? "selected" : "" }}>เช่า</option>
                                                             </select>
+                                                            <div id="errorstatus"></div>
                                                         </div>
                                                     </div>
 
@@ -100,7 +101,7 @@
                                                         </div>
                                                     </div>
                                                 </div >
-                                            <button data-target="#nav-media-tab" type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right" name="property_stage" value="1">Submit</button>
+                                            <button type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right" name="property_stage" value="1">Submit</button>
                                         </div>
                                 </div>
 
@@ -121,13 +122,29 @@
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div> --}}
                                                         @if (isset($data['id_property']))
                                                             <div class="row">
-                                                                @foreach ($data['media'] as $media)
-                                                                        @if ($media->id_property == $data['id_property'] && $media->file_type === 1)
-                                                                            <div class="col-2 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                                <img src="{{ $media->property_media }}" alt="Property Image" style="width: 100%;">
-                                                                            </div>
-                                                                        @endif
-                                                                @endforeach
+                                                                    <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
+                                                                        {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า asset($media->media_property) ถ้าuploadลงserver --}}
+
+                                                                            <table class="mediatable">
+                                                                                <tr class="align-items-center">
+                                                                                <th class="pt-2">Image</th>
+                                                                                <th class="pt-2">Action</th>
+                                                                                </tr>
+                                                                            @foreach ($data['media'] as $media)
+                                                                                @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
+                                                                                    <tr class="align-items-center">
+                                                                                        <td class="p-4">
+                                                                                            <img src="{{ asset($media->media_property) }}" alt="Property Image" class="imagemedia">
+                                                                                            <input type="hidden" name="image_url" value="{{ asset($media->media_property) }}">
+                                                                                        </td>
+                                                                                        <td class="p-4 trash-td ">
+                                                                                            <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                @endif
+                                                                            @endforeach
+                                                                            </table>
+                                                                    </div>
                                                             </div>
                                                         @endif
                                                     </div>
@@ -138,17 +155,32 @@
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
                                                         {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
-                                                        @if (isset($data['id_property']))
-                                                            <div class="row">
-                                                                @foreach ($data['media'] as $media)
-                                                                        @if ($media->id_property == $data['id_property'] && $media->file_type === 2)
-                                                                            <div class="col-4 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                                <video src="{{ $media->property_media }}" controls style="width: 75%;" ></video>
-                                                                            </div>
-                                                                        @endif
-                                                                @endforeach
-                                                            </div>
-                                                        @endif
+
+                                                            @if (isset($data['id_property']))
+                                                                <div class="row">
+                                                                    <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
+                                                                            <table class="mediatable">
+                                                                                <tr class="align-items-center">
+                                                                                  <th class="pt-2">Video</th>
+                                                                                  <th class="pt-2">Action</th>
+                                                                                </tr>
+                                                                                @foreach ($data['media'] as $media)
+                                                                                    @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
+                                                                                        <tr class="align-items-center">
+                                                                                            <td class="p-4">
+                                                                                                <video src="{{ asset($media->media_property) }}" controls class="videomedia" ></video>
+                                                                                            </td>
+                                                                                            <td class="p-4 trash-td ">
+                                                                                                <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    @endif
+                                                                                @endforeach
+                                                                            </table>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+
                                                     </div>
                                             <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right " name="property_stage" value="2">Submit</button>
                                         </div>
