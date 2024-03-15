@@ -41,28 +41,6 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
 
 
-        $('#loginform').submit(function (event) {
-            event.preventDefault(); // ป้องกันการส่งฟอร์ม
-            var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
-            $.ajax({
-                type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
-                url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
-                data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
-                success: function (response) {
-                  console.log(response);
-
-                    if (response.success) {
-                        // ถ้าเข้าสู่ระบบสำเร็จ
-                        window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
-                    } else {
-                        // ถ้าเข้าสู่ระบบไม่สำเร็จ
-                        $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
-                        $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
-
-                    }
-                }
-            });
-        });
 
 
   
@@ -90,28 +68,66 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
     ///////////////////////  login //////////////////////
 
-
-function onSubmitLogin() {
-  $("#loginform").submit();
-}
-
+  
 // เช็คค่าว่างหน้า login
-      // $(".card").click(function() {
-      //   const forms = $('.needs-validation');
-      //     forms.on('submit', function(event) {
-      //       const PasswordFrom = $('#password');
-      //       if( !PasswordFrom.val()  ){
-      //         PasswordFrom.addClass('is-invalid');
-      //         event.preventDefault();
-      //         event.stopPropagation();
-      //       } else {
-      //         PasswordFrom.removeClass('is-invalid');
-      //         PasswordFrom.addClass('is-valid');
-      //       }
-      
-      //     });
-      //   });
+      $("#loginform").click(function() {
+        const forms = $('.needs-validation');
+          forms.on('submit', function(event) {
+            const PasswordFrom = $('#password');
+            if( !PasswordFrom.val()  ){
+              PasswordFrom.addClass('is-invalid');
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              PasswordFrom.removeClass('is-invalid');
+              PasswordFrom.addClass('is-valid');
+            }
+            event.preventDefault(); // ป้องกันการส่งฟอร์ม
+            var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
+            $.ajax({
+                type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+                url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+                data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+                success: function (response) {
+                  console.log(response);
 
+                    if (response.success) {
+                        // ถ้าเข้าสู่ระบบสำเร็จ
+                        window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
+                    } else {
+                        // ถ้าเข้าสู่ระบบไม่สำเร็จ
+                        $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                        $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+
+                    }
+                }
+            });     
+          });
+        });
+
+
+        // $('#loginform').submit(function (event) {
+        //     event.preventDefault(); // ป้องกันการส่งฟอร์ม
+        //     var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
+        //     $.ajax({
+        //         type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+        //         url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+        //         data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+        //         success: function (response) {
+        //           console.log(response);
+
+        //             if (response.success) {
+        //                 // ถ้าเข้าสู่ระบบสำเร็จ
+        //                 window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
+        //             } else {
+        //                 // ถ้าเข้าสู่ระบบไม่สำเร็จ
+        //                 $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+        //                 $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+
+        //             }
+        //         }
+        //     });
+        // });
  
 
       // เปิด-ปิด password 
@@ -150,35 +166,29 @@ function onSubmitLogin() {
 //     });
 
 
-  
-
-
-$('#modal_email').on('input', function(event) {
-  var emailInput = $('#modal_email');
-  var emailValue = emailInput.val();
-  var showErrorDiv = $('#ShowError');
-  // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
-  emailInput.removeClass('border-danger is-valid');
-
-
-  if (emailValue.trim() === '') {
-      showErrorDiv.text('Please enter a valid email');
-      emailInput.addClass('border-danger');
-      event.preventDefault(); // ป้องกันการ submit แบบปกติ
-  } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-      showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
-      emailInput.addClass('border-danger');
-      event.preventDefault();
-  } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
-    showErrorDiv.text('Please enter a part following .');
-    emailInput.addClass('border-danger');
-    event.preventDefault();
-  } else {
-      emailInput.addClass('is-valid');
-      showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
-  }      
-});
-
+  $('#modal_email').on('input', function(event) {
+      var emailInput = $('#modal_email');
+      var emailValue = emailInput.val();
+      var showErrorDiv = $('#ShowError');
+      // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
+      emailInput.removeClass('border-danger is-valid');
+      if (emailValue.trim() === '') {
+          showErrorDiv.text('Please enter a valid email');
+          emailInput.addClass('border-danger');
+          event.preventDefault(); // ป้องกันการ submit แบบปกติ
+      } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+          showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+          emailInput.addClass('border-danger');
+          event.preventDefault();
+      } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+        showErrorDiv.text('Please enter a part following .');
+        emailInput.addClass('border-danger');
+        event.preventDefault();
+      } else {
+          emailInput.addClass('is-valid');
+          showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+      }      
+  });
 
     function onSubmitRegister(event) {
     var emailInput = $('#modal_email');
@@ -199,6 +209,8 @@ $('#modal_email').on('input', function(event) {
     showerrorPassword.text('');
     showerrorconfirm.text('');
 
+
+
     if(emailValue.trim() === '' && !password.val() && !confirm.val() && !nameInput.val()){
       showErrorDiv.text('Please enter a valid email');
       emailInput.addClass('border-danger');
@@ -214,7 +226,6 @@ $('#modal_email').on('input', function(event) {
       confirm.removeClass('is-invalid');
       nameInput.removeClass('is-invalid');
       nameInput.addClass('is-valid');
-
     }
 
     if (emailValue.trim() === '') {
@@ -347,3 +358,85 @@ $('#modal_email').on('input', function(event) {
     $('#createAccount').modal('show');
   }
   
+
+
+
+
+  // หน้า reset Password  
+
+  $("#resetPasswordForm").click(function() {
+    const forms = $('.needs-validation');
+      forms.on('submit', function(event) {
+        const PasswordFrom = $('#modal_password');
+        const confirmFrom = $('#modal_confirmPassword');
+        const PasswordFromValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        var showerrorPassword = $('#errorPassword');
+        var showerrorconfirm = $('#errorconfirm');
+
+        if( !PasswordFrom.val() && !confirmFrom.val()){
+          PasswordFrom.addClass('is-invalid');
+          confirmFrom.addClass('is-invalid');
+          event.preventDefault();
+          event.stopPropagation();
+        } else if(PasswordFrom.val() && !confirmFrom.val() ){
+          PasswordFrom.removeClass('is-invalid');
+          PasswordFrom.addClass('is-valid');
+
+          confirmFrom.addClass('is-invalid');
+          event.preventDefault();
+          event.stopPropagation();
+        }else if(!PasswordFrom.val() && confirmFrom.val() ){
+          PasswordFrom.addClass('is-invalid');
+          PasswordFrom.removeClass('is-valid');
+          confirmFrom.removeClass('is-invalid');
+          confirmFrom.addClass('is-valid');
+          event.preventDefault();
+          event.stopPropagation();
+        }
+          else {
+          PasswordFrom.removeClass('is-invalid');
+          PasswordFrom.addClass('is-valid');
+          confirmFrom.removeClass('is-invalid');
+          confirmFrom.addClass('is-valid');
+        }
+
+        if (confirmFrom.val() !== PasswordFrom.val()) {
+
+            showerrorconfirm.text('Passwords do not match');
+            confirmFrom.addClass('border-danger');
+            PasswordFrom.addClass('border-danger');
+
+            confirmFrom.removeClass('is-valid');
+            PasswordFrom.removeClass('is-valid');
+            confirmFrom.removeClass('is-invalid');
+            PasswordFrom.removeClass('is-invalid');
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            confirmFrom.removeClass('border-danger ');
+            PasswordFrom.removeClass('border-danger ');
+            showerrorconfirm.text('');
+        }
+         if (!PasswordFromValidation.test(PasswordFrom.val())) {
+          showerrorPassword.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
+          showerrorconfirm.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
+          PasswordFrom.addClass('border-danger ');
+          confirmFrom.addClass('border-danger ');
+  
+          PasswordFrom.removeClass('is-valid');
+          PasswordFrom.removeClass('is-invalid');
+          confirmFrom.removeClass('is-valid');
+          confirmFrom.removeClass('is-invalid');
+  
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          showerrorPassword.text('');
+          PasswordFrom.removeClass('border-danger ');
+          confirmFrom.removeClass('border-danger ');
+        }
+        
+      });
+    });
+
+
