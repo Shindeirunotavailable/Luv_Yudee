@@ -338,11 +338,13 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
                     $('#successMessageModel').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
                     $('#hiddensuccessModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+                    $('#hiddenErrorModal').addClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
                 } else {
                     // ถ้าเข้าสู่ระบบไม่สำเร็จ
                     $('#statusMessageModel').text(response.messageError); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
                     $('#hiddenErrorModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+                    $('#hiddensuccessModal').addClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
                 }
             }
