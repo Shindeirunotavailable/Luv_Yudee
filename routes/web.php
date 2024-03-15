@@ -35,8 +35,10 @@ route::any('forget-password','App\Http\Controllers\LoginController@forgetPasswor
 route::any('register','App\Http\Controllers\LoginController@register');  // สมัคร
 route::any('loginform','App\Http\Controllers\LoginController@loginform');  // เข้าสู่ระบบ
 route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // กู้รหัสผ่าน
-Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
+Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout'); // logout
 
+Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword'); 
+Route::any('resetPassword1', 'App\Http\Controllers\LoginController@resetPassword1'); 
 
 
  // -----------------------------------function test Route ------------------------------------

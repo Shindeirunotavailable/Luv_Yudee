@@ -14,6 +14,7 @@ use App\Models\createAccount;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use PharIo\Manifest\Url;
+use Illuminate\Support\Facades\Password;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
@@ -98,8 +99,7 @@ class LoginController extends Controller
         }
     }
     
-    public function logout()
-    {
+    public function logout(){
         Auth::logout();
         session()->forget('user_email');
         return redirect('/login');
@@ -160,10 +160,7 @@ class LoginController extends Controller
     // }
 
     
-
-
-        public function register(Request $request)
-    {
+        public function register(Request $request){
         $this->validate($request, [
             'modal_email'=>'required',
             'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
@@ -179,19 +176,16 @@ class LoginController extends Controller
             },]
         ]);
         // รับข้อมูลจาก request
-        $email = $request->input('modal_email');
-        $password = $request->input('modal_password');
-        $username = $request->input('modal_name');
-        $existingUser = createAccount::Getemail($email);
-
+            $email = $request->input('modal_email');
+            $password = $request->input('modal_password');
+            $username = $request->input('modal_name');
+            $existingUser = createAccount::Getemail($email);
         if ($existingUser) {
             // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
             if ($existingUser->status >= 1) {
                 $errorMessages = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
                 return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
-
             }
-
         } else {
             // บันทึกข้อมูล
             $data = [
@@ -200,13 +194,10 @@ class LoginController extends Controller
                 'password' => bcrypt($password),
                 'create_datetime'=> date('Y-m-d H:i:s'),
                 'update_datetime'=> date('Y-m-d H:i:s'),
-
             ];
             DB::table('user')->insert($data);
             // Mail::to($email)->send(new WelcomeEmail());
             Mail::to($email)->send(new WelcomeEmail($username));
-
-            // return back()->with('status', 'สมัครสมาชิกเสร็จสิ้น');
             $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
             return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
 
@@ -221,33 +212,77 @@ class LoginController extends Controller
 
         // ค้นหา email ในฐานข้อมูล
         $foundEmail = DB::table('user')->where('email', $forgetEmail)->first();
-        $errorMessages = [];
-
         if ($foundEmail) {
             // สร้าง token สำหรับการ reset password
             $resetToken = Str::random(60);
             // บันทึก token และเวลาที่สร้างลงในตาราง password_resets
             DB::table('password_resets')->updateOrInsert(
                 ['email' => $forgetEmail],
-                // ['token' => bcrypt($resetToken), 'created_by' => date('Y-m-d H:i:s')]
-                ['token' => bcrypt($resetToken)]
-
+                ['resetToken' => $resetToken, 'created_at' => now()]
             );
-
             // ส่งอีเมล์ reset password
             Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
-            $errorMessages[] = 'ส่งอีเมล์สำหรับกู้รหัสให้แล้ว';
+            return back()->with('status', 'ส่งอีเมล์สำหรับกู้รหัสให้แล้ว');
+
+
         } else {
             // ถ้าไม่เจอ email ในฐานข้อมูล
-            $errorMessages[]  = 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง';
+            $errorMessages = 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง';
+            return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
         }
-
-        return back()->withErrors($errorMessages)->withInput();
+        
     }
 
+    // ---------------------------------------------- หน้า resetPassword -------------------------------------------------
+
+    public function resetPassword(Request $request)
+        {
+            // ดึงค่า token และ email_token ที่รับมาจากแบบฟอร์ม
+            $token = $request->input('resetToken');
+            $emailToken = $request->input('email_token');
+
+            // ค้นหาข้อมูลในตาราง password_resets ที่มี token และ email_token ตรงกับที่รับมา
+            $passwordReset = DB::table('password_resets')
+                                ->where('resetToken', $token)
+                                ->first();
+
+            // ตรวจสอบว่าพบข้อมูลหรือไม่
+            if ($passwordReset) {
+                // ถ้าพบข้อมูล ให้นำอีเมล์ที่ตรงกับ token นี้มาแสดงในฟอร์ม
+                $email = $passwordReset->email;
+                return view('login.resetPassword', compact('email'));
+            } else {
+                // ถ้าไม่พบข้อมูล ให้แสดงข้อความแจ้งเตือนหรือดำเนินการต่อตามที่ต้องการ
+                return view('login.login')->with('error', 'Invalid token or email token.');
+            }
+        }
+
+        
+    public function resetPassword1(Request $request)
+    {
+        // dd($request->all());
+        // ตรวจสอบความถูกต้องของอีเมล์
+    
+        // ค้นหาผู้ใช้จากอีเมล์
+        $user = createAccount::Getemail($request->email);
+
+        // dd($user);
+        if ($user) {
+            createAccount::editPassword($request->email,bcrypt($request->password));
+            return view('login.login');
+
+        } 
+            else {
+            $errorMessages = 'User not found.';
+            return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+
+        }
+    }
     
 
-    // ---------------------------------------------- หน้า Content -------------------------------------------------
+  
+
+    // // ---------------------------------------------- หน้า Content -------------------------------------------------
 
 
     public function contact()

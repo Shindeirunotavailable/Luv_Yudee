@@ -30,7 +30,7 @@ class ResetPasswordEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('login.resetpassword')
+        return $this->view('login.mailresetpassword')
                     ->with(['resetToken' => $this->resetToken])
                     ->subject('Reset Password Yudee');
 
