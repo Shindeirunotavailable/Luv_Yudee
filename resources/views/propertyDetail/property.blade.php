@@ -866,32 +866,31 @@
                             </div>
                         </div>
                     </section>
-
                     <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0">
                             <div class="card-body pt-0 ">
                                 <h3 class="fw-600 fs-16 lh-2 text-heading mb-4">Write A Review</h3>
-                                <form>
-
+                                <form action="{{ url('/review') }}"  method="POST" id="form_review" class="needs-validation" novalidate>
+                                    @csrf
                                     <div class="form-group mb-4 d-flex justify-content-start">
                                         <div class="rate-input">
-                                            <input type="radio" id="star5" name="rate" value="5">
+                                            <input type="radio" id="star5" name="star" value="5">
                                             <label for="star5" title="text" class="mb-0 mr-1 lh-1">
                                                 <i class="fas fa-star"></i>
                                             </label>
-                                            <input type="radio" id="star4" name="rate" value="4">
+                                            <input type="radio" id="star4" name="star" value="4">
                                             <label for="star4" title="text" class="mb-0 mr-1 lh-1">
                                                 <i class="fas fa-star"></i>
                                             </label>
-                                            <input type="radio" id="star3" name="rate" value="3">
+                                            <input type="radio" id="star3" name="star" value="3">
                                             <label for="star3" title="text" class="mb-0 mr-1 lh-1">
                                                 <i class="fas fa-star"></i>
                                             </label>
-                                            <input type="radio" id="star2" name="rate" value="2">
+                                            <input type="radio" id="star2" name="star" value="2">
                                             <label for="star2" title="text" class="mb-0 mr-1 lh-1">
                                                 <i class="fas fa-star"></i>
                                             </label>
-                                            <input type="radio" id="star1" name="rate" value="1">
+                                            <input type="radio" id="star1" name="star" value="1">
                                             <label for="star1" title="text" class="mb-0 mr-1 lh-1">
                                                 <i class="fas fa-star"></i>
                                             </label>
@@ -901,27 +900,32 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group mb-4">
-                                                <input placeholder="Your Name"
-                                                    class="form-control-pp form-control-pp-lg border-0" type="text"
-                                                    name="name">
+                                                <input placeholder="Your Name" class="form-control form-control-pp form-control-pp-lg" type="text" name="name" id="name" required >
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid name.
+                                                    </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group mb-4">
-                                                <input type="email" placeholder="Email" name="email"
-                                                    class="form-control-pp form-control-pp-lg border-0">
+                                                <input type="email" placeholder="Email" name="email" id="email" required class="form-control form-control-pp form-control-pp-lg">
+                                                {{-- <div class="invalid-feedback">
+                                                    Please provide a valid email.
+                                                </div> --}}
+                                                <div class="colorRed" id="ShowErrorEmail"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <textarea class="form-control-pp form-control-pp-lg border-0 textarea-pp" placeholder="Your Review" name="message"
-                                            rows="5"></textarea>
+                                        <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content" id="content" rows="5"></textarea>
+                                            <div class="invalid-feedback">
+                                                Please enter a message in the textarea.
+                                            </div>
                                     </div>
-                                    {{-- เอา btn-t-white ออก btn-block --}}
-                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb"
-                                        id="submitModalBtn"> Submit </button>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb"> Submit </button>
 
                                 </form>
+                                
                             </div>
                         </div>
                     </section>

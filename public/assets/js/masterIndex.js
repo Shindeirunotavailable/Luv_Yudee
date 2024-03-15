@@ -282,33 +282,72 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*้home-email */
-function onSubmitemail(event) {
-    var emailInput = $('#home-email');
-    var emailValue = emailInput.val();
-    var showErrorDiv = $('#ShowErrorEmail');
-    // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
-    emailInput.removeClass('border-danger is-valid');
-    if (emailValue.trim() === '') {
-        showErrorDiv.text('Please enter a valid email');
-        emailInput.addClass('border-danger');
-        event.preventDefault(); // ป้องกันการ submit แบบปกติ
-    } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-        showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
-        emailInput.addClass('border-danger');
-        event.preventDefault();
-    } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
-      showErrorDiv.text('Please enter a part following .');
-      emailInput.addClass('border-danger');
-      event.preventDefault();
-    } else {
-        emailInput.addClass('is-valid');
-        showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
-    }
-    document.getElementById("home_email").submit();
-}
+// function onSubmitemail(event) {
+//     var emailInput = $('#home-email');
+//     var emailValue = emailInput.val();
+//     var showErrorDiv = $('#ShowErrorEmail');
+//     // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
+//     emailInput.removeClass('border-danger is-valid');
+//     if (emailValue.trim() === '') {
+//         showErrorDiv.text('Please enter a valid email');
+//         emailInput.addClass('border-danger');
+//         event.preventDefault(); // ป้องกันการ submit แบบปกติ
+//     } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+//         showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+//         emailInput.addClass('border-danger');
+//         event.preventDefault();
+//     } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+//       showErrorDiv.text('Please enter a part following .');
+//       emailInput.addClass('border-danger');
+//       event.preventDefault();
+//     } else {
+//         emailInput.addClass('is-valid');
+//         showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+//     }
+//     document.getElementById("home_email").submit();
+// }
 /*------------------------------------------- */
 
+/*เเจ้งเตือน ตอนส่งเมล */
 
+// if($('#newsletter').length){
+//   // alert("You have successfully subscribed to our newsletter.");
+//   Swal.fire({
+//     icon: "success",
+//     text: "ขอบคุณสำหรับการสมัครรับข่าวสารค่ะ",
+//     confirmButtonColor: "#0071BC",
+//   });
+// }
+// if($('#newslettererror').length){
+//   Swal.fire({
+//     icon: "error",
+//     text: "คุณได้สมัครรับข่าวสารไปเเล้วค่ะ",
+//     confirmButtonColor: "#0071BC",
+//   });
+// }
+
+// $(document).ready(function () {
+//   $("#home_email").submit(function (e) {
+//     e.preventDefault();
+
+//     let formUrl = $(this).attr("action");
+//     let reqMethod = $(this).attr("method");
+//     let formData = $(this).serialize();
+
+//     $.ajax ({
+//       url: formUrl,
+//       type: reqMethod,
+//       data: formData,
+//       success: function(data) {
+//         if (data.status == "success"){ 
+//           Swal.fire("SweetAlert2 is working!");
+//         }else {
+//           Swal.fire("SweetAlert2 is !");
+//         }
+//       }
+//     })
+//   })
+// })
 
 //============================ js non ==============================//
 
@@ -366,5 +405,159 @@ function onSubmitemail(event) {
         $('#modalStart').prop('checked', true);
       });
   });
-  
 
+  function onSubmitemail(event) {
+    var emailInput = $('#home-email');
+    var emailValue = emailInput.val();
+    var showErrorDiv = $('#ShowErrorEmail');
+    // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
+    emailInput.removeClass('border-danger is-valid');
+    if (emailValue.trim() === '') {
+        showErrorDiv.text('Please enter a valid email');
+        emailInput.addClass('border-danger');
+        event.preventDefault(); // ป้องกันการ submit แบบปกติ
+    } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+        showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+        emailInput.addClass('border-danger');
+        event.preventDefault();
+    } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+      showErrorDiv.text('Please enter a part following .');
+      emailInput.addClass('border-danger');
+      event.preventDefault();
+    } else {
+        emailInput.addClass('is-valid');
+        showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+    }
+    // document.getElementById("home_email").submit();
+    var formData = $("#home_email").serialize();
+        $.ajax({
+            type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+            url: $("#home_email").attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+            data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+            success: function (response) {
+                if (response.success) {
+
+                  Swal.fire({
+                    icon: "success",
+                    text: "ขอบคุณสำหรับการสมัครรับข่าวสารค่ะ",
+                    confirmButtonColor: "#0071BC",
+                  });
+
+                } else {
+                    Swal.fire({
+                    icon: "warning",
+                    text: "คุณได้สมัครรับข่าวสารไปเเล้วค่ะ",
+                    confirmButtonColor: "#0071BC",
+                  });
+
+                }
+            }
+        });
+}
+
+$("#form_review").click(function() {
+  const forms = $('.needs-validation');
+    forms.on('submit', function(event) {
+      var emailInput = $('#email');
+      var emailValue = emailInput.val();
+      var showErrorDiv = $('#ShowErrorEmail');
+      const namereview = $('#name');
+      const contentreview = $('#content')
+
+      emailInput.removeClass('border-danger is-valid');
+      if (emailValue.trim() === '') {
+        showErrorDiv.text('Please enter a valid email');
+        emailInput.addClass('border-danger');
+        event.preventDefault(); // ป้องกันการ submit แบบปกติ
+      } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+          showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+          emailInput.addClass('border-danger');
+          event.preventDefault();
+      } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+        showErrorDiv.text('Please enter a part following .');
+        emailInput.addClass('border-danger');
+        event.preventDefault();
+      } else {
+          emailInput.addClass('is-valid');
+          showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+      }
+      if( !namereview.val()  ){
+        namereview.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        namereview.removeClass('is-invalid');
+        namereview.addClass('is-valid');
+      }
+      if( !contentreview.val()  ){
+        contentreview.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        contentreview.removeClass('is-invalid');
+        contentreview.addClass('is-valid');
+      }
+
+    });
+  });
+
+  // $("#form_review").click(function() {
+  //   const forms = $('.needs-validation');
+  //     forms.on('submit', function(event) {
+  //       // var emailInput = $('#email');
+  //       const namereview = $('#name');
+  //       const emailreview = $('#email');
+  //       const contentreview = $('#content')
+  //       if( !namereview.val()&&!emailreview.val() && !contentreview.val()){ // ! ไม่มีค่า
+  //         namereview.addClass('is-invalid'); //กรอบเเดง
+  //         emailreview.addClass('is-invalid');
+  //         contentreview.addClass('is-invalid');
+  //         event.preventDefault();
+  //         event.stopPropagation();
+  //       } else if (namereview.val() && !emailreview.val()){ // ! ไม่มีค่า
+  //         namereview.removeClass('is-invalid'); //ลบกรอบเเดง
+  //         namereview.addClass('is-valid'); //เพิ่มกรอบเขียว
+  //         emailreview.addClass('is-invalid');
+  //         event.preventDefault();
+  //         event.stopPropagation();
+  //       } else if (emailreview.val() && !namereview.val()){ // ! ไม่มีค่า
+  //         emailreview.removeClass('is-invalid'); //ลบกรอบเเดง
+  //         emailreview.addClass('is-valid'); //เพิ่มกรอบเขียว
+  //         namereview.addClass('is-invalid');
+  //         event.preventDefault();
+  //         event.stopPropagation();
+  //       } else if (emailreview.val() && !contentreview.val()){ // ! ไม่มีค่า
+  //         emailreview.removeClass('is-invalid'); //ลบกรอบเเดง
+  //         emailreview.addClass('is-valid'); //เพิ่มกรอบเขียว
+  //         contentreview.addClass('is-invalid');
+  //         event.preventDefault();
+  //         event.stopPropagation();
+  //       } else if (contentreview.val() && !emailreview.val()){ // ! ไม่มีค่า
+  //         contentreview.removeClass('is-invalid'); //ลบกรอบเเดง
+  //         contentreview.addClass('is-valid'); //เพิ่มกรอบเขียว
+  //         emailreview.addClass('is-invalid');
+  //         event.preventDefault();
+  //         event.stopPropagation();
+  //       }
+  //       else {
+  //         emailreview.removeClass('is-invalid');
+  //         emailreview.addClass('is-valid');
+  //         contentreview.removeClass('is-invalid');
+  //         contentreview.addClass('is-valid');
+  //       }
+  //     });
+  //   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
