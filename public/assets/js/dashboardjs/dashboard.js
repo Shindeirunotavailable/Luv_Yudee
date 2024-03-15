@@ -273,11 +273,14 @@ $('#submitdescription').click(function(event) {
     var forms = $('.needs-validation');
     var titleproperty = $('#titleproperty');
     var price = $('#price');
+    var propertystatus = $('#propertystatus');
+    var errorstatus = $('#errorstatus');
     var errorTitleproperty = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล Title' + '</div>';
     var errorPrice = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล price' + '</div>';
+    var errorPropertystatus = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล status' + '</div>';
 
 
-    if( !titleproperty.val() || !price.val() ){
+    if( !titleproperty.val() || !price.val() || propertystatus.val().length === 0){
         if( !titleproperty.val()){
             titleproperty.addClass('is-invalid');
             titleproperty.next('.additional-message').remove();
@@ -287,7 +290,11 @@ $('#submitdescription').click(function(event) {
             price.addClass('is-invalid');
             price.next('.additional-message').remove();
             price.after(errorPrice)
-
+        }
+        if (propertystatus.val().length === 0) {
+            errorstatus.addClass('is-invalid');
+            errorstatus.next('.additional-message').remove();
+            errorstatus.after(errorPropertystatus)
         }
         event.preventDefault();
         event.stopPropagation();
@@ -299,6 +306,12 @@ $('#submitdescription').click(function(event) {
         });
 
         price.on('input', function() {
+            if ($(this).val()) {
+                $(this).removeClass('is-invalid');
+            }
+        });
+
+        propertystatus.on('input', function() {
             if ($(this).val()) {
                 $(this).removeClass('is-invalid');
             }

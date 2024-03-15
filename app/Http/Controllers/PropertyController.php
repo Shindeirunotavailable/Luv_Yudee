@@ -224,7 +224,7 @@ class PropertyController extends Controller
 
     // public function showproperty()
     // {
-    //     $blogs = DB::table('pp_media')->get();
+    //     $blogs = DB::table('pp_properties')->get();
     //     return view('dashboard.myproperty', compact('blogs'));
     // }
 

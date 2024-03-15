@@ -841,6 +841,27 @@ label.required:after {
     transition: color 0.3s;
   }
 
-  .trash-delete:hover {
+.trash-delete:hover {
     color: black;
-  }
+}
+
+.imagemedia{
+    width: 20%;
+    height: 100px;
+}
+
+.videomedia{
+    width: 30%;
+    height: 100px;
+}
+
+.mediatable {
+    border: 0px solid black;
+    background-color: #f7f7f7;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+}
+.trash-td {
+    width: 25%!important;
+}
