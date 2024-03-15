@@ -218,7 +218,10 @@ class LoginController extends Controller
             // บันทึก token และเวลาที่สร้างลงในตาราง password_resets
             DB::table('password_resets')->updateOrInsert(
                 ['email' => $forgetEmail],
-                ['resetToken' => $resetToken, 'created_at' => now()]
+                ['resetToken' => $resetToken, 
+                'created_by' => now(),
+                'update_by' => now(),
+                ]
             );
             // ส่งอีเมล์ reset password
             Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
