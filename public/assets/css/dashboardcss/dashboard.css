@@ -816,11 +816,11 @@ input[type="submit"] {
 /* .footer100vh{
     height: 120vh;
 } */
- /* @media(max-width: 2560px) {
+ @media(max-width: 2560px) {
     .footer100vh {
         height: 100vh;
     }
-} */
+}
 
 
 label.required:after {

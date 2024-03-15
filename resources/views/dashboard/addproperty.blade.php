@@ -124,10 +124,10 @@
                                                                 @foreach ($data['media'] as $media)
                                                                         @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
                                                                             <div class="col-2 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                                {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า $media->media_property ถ้าuploadลงserver --}}
-                                                                                <img src="{{ $media->media_property }}" alt="Property Image" style="width: 100%;">
-                                                                                    <input type="hidden" name="image_url" value="{{ $media->media_property }}">
-                                                                                    {{-- <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a> --}}
+                                                                                {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า asset($media->media_property) ถ้าuploadลงserver --}}
+                                                                                <img src="{{ asset($media->media_property) }}" alt="Property Image" style="width: 100%;">
+                                                                                    <input type="hidden" name="image_url" value="{{ asset($media->media_property) }}">
+                                                                                    <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
                                                                             </div>
                                                                         @endif
                                                                 @endforeach
@@ -147,8 +147,8 @@
                                                                     @foreach ($data['media'] as $media)
                                                                             @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
                                                                                 <div class="col-4 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                                    <video src="{{ $media->media_property }}" controls style="width: 100%;" ></video>
-                                                                                    {{-- <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a> --}}
+                                                                                    <video src="{{ asset($media->media_property) }}" controls style="width: 100%;" ></video>
+                                                                                    <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
                                                                                 </div>
 
                                                                             @endif

@@ -273,7 +273,7 @@ $('#submitdescription').click(function(event) {
     var forms = $('.needs-validation');
     var titleproperty = $('#titleproperty');
     var price = $('#price');
-    var errorTitleproperty = '<div class="invalid-feedback additional-message">' + 'รุณาระบุข้อมูล Title' + '</div>';
+    var errorTitleproperty = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล Title' + '</div>';
     var errorPrice = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูล price' + '</div>';
 
 
