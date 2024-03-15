@@ -150,10 +150,10 @@
                         @include('dashboard.addproperty')
                     </div>
 
-                    <div class="tab-pane fade show active" id="v-myproperty" role="tabpanel"
+                    {{-- <div class="tab-pane fade show active" id="v-myproperty" role="tabpanel"
                         aria-labelledby="v-myproperty-tab" tabindex="0">
                         @include('dashboard.myproperty')
-                    </div>
+                    </div> --}}
 
                     <div class="tab-pane fade" id="v-profile" role="tabpanel" aria-labelledby="v-profile-tab"
                         tabindex="0">
