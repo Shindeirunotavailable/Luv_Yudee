@@ -96,21 +96,21 @@ function onSubmitLogin() {
 }
 
 // เช็คค่าว่างหน้า login
-      $(".card").click(function() {
-        const forms = $('.needs-validation');
-          forms.on('submit', function(event) {
-            const PasswordFrom = $('#password');
-            if( !PasswordFrom.val()  ){
-              PasswordFrom.addClass('is-invalid');
-              event.preventDefault();
-              event.stopPropagation();
-            } else {
-              PasswordFrom.removeClass('is-invalid');
-              PasswordFrom.addClass('is-valid');
-            }
+      // $(".card").click(function() {
+      //   const forms = $('.needs-validation');
+      //     forms.on('submit', function(event) {
+      //       const PasswordFrom = $('#password');
+      //       if( !PasswordFrom.val()  ){
+      //         PasswordFrom.addClass('is-invalid');
+      //         event.preventDefault();
+      //         event.stopPropagation();
+      //       } else {
+      //         PasswordFrom.removeClass('is-invalid');
+      //         PasswordFrom.addClass('is-valid');
+      //       }
       
-          });
-        });
+      //     });
+      //   });
 
  
 
