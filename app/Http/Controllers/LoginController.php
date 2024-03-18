@@ -258,14 +258,15 @@ class LoginController extends Controller
             // ส่งอีเมล์ reset password
             Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
             $errorMessage = "ส่งอีเมล์สำเร็จ";
+            return response()->json(['success' => true, 'message' => $errorMessage]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
 
         } else {
             // ถ้าไม่เจอ email ในฐานข้อมูล
             $errorMessage = "ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง";
+            return response()->json(['success' => false, 'messageError' => $errorMessage]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
 
         }
     
-        return $errorMessage;
     }
     
     

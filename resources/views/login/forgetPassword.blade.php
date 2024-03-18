@@ -8,7 +8,7 @@
                 </button>
             </div>
 
-            
+
             <div class="hidden" id="hiddenErrorModal1">
                 <div class="alert alert-danger" role="alert">
                     <div id="statusMessageModel1"></div>
@@ -22,17 +22,20 @@
             </div>
 
 
-            <div  class="modal-body" >
-                <form action="{{ url('/lostpassword') }}"  method="POST" id="lostPasswordForm">
+            <div class="modal-body">
+                <form action="{{ url('/lostpassword') }}" method="POST" id="lostPasswordForm">
                     @csrf
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
-                        <input type="email" name="forgetEmail" id="forgetEmail" class="form-control " placeholder="Enter Email" required>
+                        <input type="email" name="forgetEmail" id="forgetEmail" class="form-control "
+                            placeholder="Enter Email" required>
                         <div id="ErrorlostPassword" style="color: red"></div>
+                        <div id="successlostPassword" style="crgb(0, 255, 85)r: red"></div>
 
                     </div>
                     <div class="pt-20 pb-20  text-center">
-                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="submiLostPassword"  > <i class="fa-regular fa-paper-plane "></i> Submit</button> 
+                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="submiLostPassword">
+                            <i class="fa-regular fa-paper-plane "></i> Submit</button>
                     </div>
                 </form>
             </div>
@@ -44,9 +47,9 @@
 
 <script>
     var getUrl = window.location;
-    var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
-    var csrf = $("meta[name='csrf-token']").attr("content");  //token 
-        $('#lostPasswordForm').submit(function(event) {
+    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
+    var csrf = $("meta[name='csrf-token']").attr("content"); //token 
+    $('#lostPasswordForm').submit(function(event) {
         event.preventDefault();
         var email = $("#forgetEmail").val();
         $.ajax({
@@ -58,9 +61,18 @@
             },
             success: function(response) {
                 console.log(response);
-                $('#ErrorlostPassword').html(response);
+                // $('#ErrorlostPassword').html(response);
+
+                if (response.success) {
+                    $('#successlostPassword').text(response
+                    .message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                } else {
+                    // ถ้าเข้าสู่ระบบไม่สำเร็จ
+                    $('#ErrorlostPassword').text(response
+                    .messageError); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                }
             }
         });
     });
 </script>
-  </script>
+</script>

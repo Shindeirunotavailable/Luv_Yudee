@@ -96,7 +96,6 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                 data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
                 success: function (response) {
                   console.log(response);
-
                     if (response.success) {
                         // ถ้าเข้าสู่ระบบสำเร็จ
                         window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
