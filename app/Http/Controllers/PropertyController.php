@@ -23,21 +23,27 @@ class PropertyController extends Controller
     {
         $id_property = $request['id_property'];
         $property = Property::property($id_property);
+        $blogs = DB::table('pp_properties')
+        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')->get();
 
+        $media = DB::table('pp_media')->get();
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
         $this->data['districts'] = District::all();
         $this->data['amenities'] = Amenities::all();
 
-        $this->data['media'] = Media::all();
+        $this->data['media'] = $media;
         $this->data['property'] = $property;
+
+        $this->data['blogs'] = $blogs;
 
 
         if (isset($request['id_property'])) {
             $this->data['id_property'] = $request['id_property'];
         }
-        return view('dashboard.sidebardashboard')->with('data', $this->data);
+        return view('dashboard.sidebardashboard')->with('data', $this->data)
+        ;
     }
 
     // PropertyController
@@ -222,11 +228,14 @@ class PropertyController extends Controller
         return response()->json(['options' => '']);
     }
 
-    // public function showproperty()
-    // {
-    //     $blogs = DB::table('pp_properties')->get();
-    //     return view('dashboard.myproperty', compact('blogs'));
-    // }
+    public function showproperty()
+    {
+        $blogs = DB::table('pp_properties')
+        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+        ->get();
+        $this->data['blogs'] = $blogs;
+        return view('dashboard.myproperty',compact('blogs'))->with('data', $this->data);
+    }
 
     // public function showproperty1(){
     //     return view("dashboard.myproperty");

@@ -171,7 +171,55 @@ $(document).ready(function() {
     }
 
 
-    //Upload Image
+    //Upload Image show image
+    // $(document).ready(function() {
+    //     if ($('#customIMG').length) {
+    //         $('#customIMG').on('change', function(e) {
+    //             var fileList = $('#fileList');
+    //             fileList.html('');
+
+    //             var files = e.target.files;
+    //             for (var i = 0; i < files.length; i++) {
+    //                 var file = files[i];
+
+    //                 var colDiv = $('<div></div>').addClass('col-2');
+
+    //                 var img = $('<img />').attr('src', URL.createObjectURL(file)).css({
+    //                     'width': '100%',
+    //                     'margin-bottom': '20px'
+    //                 });
+    //                 colDiv.append(img);
+    //                 fileList.append(colDiv);
+    //             }
+    //         });
+    //     }
+    //     if ($('#customVdo').length) {
+    //         $('#customVdo').on('change', function(e) {
+    //             var VdoList = $('#VdoList');
+    //             VdoList.html('');
+
+    //             var files = e.target.files;
+    //             for (var i = 0; i < files.length; i++) {
+    //                 var file = files[i];
+
+    //                 var colDiv = $('<div></div>').addClass('col-4');
+
+    //                 var video = $('<video></video>').attr({
+    //                     'src': URL.createObjectURL(file),
+    //                     'controls': true
+    //                 }).css({
+    //                     'width': '100%',
+    //                     'margin-bottom': '20px'
+    //                 });
+    //                 colDiv.append(video);
+    //                 VdoList.append(colDiv);
+    //             }
+    //         });
+    //     }
+
+    // });
+
+    //Upload Image show name
     $(document).ready(function() {
         if ($('#customIMG').length) {
             $('#customIMG').on('change', function(e) {
@@ -184,11 +232,8 @@ $(document).ready(function() {
 
                     var colDiv = $('<div></div>').addClass('col-2');
 
-                    var img = $('<img />').attr('src', URL.createObjectURL(file)).css({
-                        'width': '100%',
-                        'margin-bottom': '20px'
-                    });
-                    colDiv.append(img);
+                    var fileName = $('<span></span>').text(file.name).css('display', 'block');
+                    colDiv.append(fileName);
                     fileList.append(colDiv);
                 }
             });
@@ -204,14 +249,8 @@ $(document).ready(function() {
 
                     var colDiv = $('<div></div>').addClass('col-4');
 
-                    var video = $('<video></video>').attr({
-                        'src': URL.createObjectURL(file),
-                        'controls': true
-                    }).css({
-                        'width': '100%',
-                        'margin-bottom': '20px'
-                    });
-                    colDiv.append(video);
+                    var fileName = $('<span></span>').text(file.name).css('display', 'block');
+                    colDiv.append(fileName);
                     VdoList.append(colDiv);
                 }
             });
@@ -313,7 +352,7 @@ $('#submitdescription').click(function(event) {
 
         propertystatus.on('input', function() {
             if ($(this).val()) {
-                $(this).removeClass('is-invalid');
+                $(errorstatus).removeClass('is-invalid');
             }
         });
 });
