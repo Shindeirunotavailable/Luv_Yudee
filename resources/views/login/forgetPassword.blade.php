@@ -8,28 +8,24 @@
                 </button>
             </div>
 
-
-            <div class="hidden" id="hiddenErrorModal1">
-                <div class="alert alert-danger" role="alert">
-                    <div id="statusMessageModel1"></div>
-                </div>
-            </div>
-
-            <div class="hidden" id="hiddensuccessModal">
-                <div class="alert alert-success" role="alert">
-                    <div id="successMessageModel"></div>
-                </div>
-            </div>
-
-
             <div class="modal-body">
                 <form action="{{ url('/lostpassword') }}" method="POST" id="lostPasswordForm">
-                    @csrf
+                    @csrf               
+                    <div class="hidden" id="hiddenErrorlostPassword">
+                        <div class="alert alert-danger" role="alert">
+                            <div id="ErrorlostPassword"></div>
+                        </div>
+                    </div>
+
+                    <div class="hidden" id="hiddensuccesslostPassword">
+                        <div class="alert alert-success" role="alert">
+                            <div id="successlostPassword"></div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
                         <input type="email" name="forgetEmail" id="forgetEmail" class="form-control "
                             placeholder="Enter Email" required>
-                        <div id="ErrorlostPassword" style="color: red"></div>
                         <div id="successlostPassword" style="crgb(0, 255, 85)r: red"></div>
 
                     </div>
@@ -61,18 +57,20 @@
             },
             success: function(response) {
                 console.log(response);
-                // $('#ErrorlostPassword').html(response);
-
                 if (response.success) {
-                    $('#successlostPassword').text(response
-                    .message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                    $('#forgetEmail').val("");
+                    $('#successlostPassword').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                    $('#hiddenErrorlostPassword').addClass('hidden');
+                    $('#hiddensuccesslostPassword').removeClass('hidden')
+
                 } else {
                     // ถ้าเข้าสู่ระบบไม่สำเร็จ
-                    $('#ErrorlostPassword').text(response
-                    .messageError); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                    $('#ErrorlostPassword').text(response.messageError); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                    $('#hiddenErrorlostPassword').removeClass('hidden');
+                    $('#hiddensuccesslostPassword').addClass('hidden')
+
                 }
             }
         });
     });
-</script>
 </script>

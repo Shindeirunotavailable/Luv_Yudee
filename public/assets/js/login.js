@@ -110,6 +110,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
           });
         });
 
+        
 
         // $('#loginform').submit(function (event) {
         //     event.preventDefault(); // ป้องกันการส่งฟอร์ม
