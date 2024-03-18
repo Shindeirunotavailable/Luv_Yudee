@@ -8,23 +8,30 @@
                 </button>
             </div>
 
+            
+            <div class="hidden" id="hiddenErrorModal">
+                <div class="alert alert-danger" role="alert">
+                    <div id="statusMessageModel"></div>
+                </div>
+            </div>
+
+            <div class="hidden" id="hiddensuccessModal">
+                <div class="alert alert-success" role="alert">
+                    <div id="successMessageModel"></div>
+                </div>
+            </div>
+
+
             <div  class="modal-body" >
-                <form action="{{ url('/lostpassword') }}"  method="POST">
+                <form action="{{ url('/lostpassword') }}"  method="POST" id="lostPasswordForm">
                     @csrf
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
                         <input type="email" name="forgetEmail" id="forgetEmail" class="form-control " placeholder="Enter Email" required>
                     </div>
-
                     <div class="pt-20 pb-20  text-center">
-
-                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
-                        id="submitModal"> <i class="fa-regular fa-paper-plane "></i> Submit
-                       </button> 
-
+                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="submitModal"  > <i class="fa-regular fa-paper-plane "></i> Submit</button> 
                     </div>
-
-                
                 </form>
             </div>
         </div>

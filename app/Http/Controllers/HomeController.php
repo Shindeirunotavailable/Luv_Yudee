@@ -74,9 +74,9 @@ class HomeController extends Controller
 
         // $existingEmail = DB::table('newsletters')->where('email', $username)->first();
         $existingEmail = pp_Newsletter::Gethome($username);
-        $existingUser = createAccount::Getemail($username);
+        // $existingUser = createAccount::Getemail($username);
 
-        if ($existingEmail || $existingUser) {
+        if ($existingEmail) {
             // ถ้ามีอีเมลนี้อยู่แล้ว
             // return redirect('/home')->with('warning', 'This email is already subscribed.');
             $errorMessages = '';
@@ -104,5 +104,6 @@ class HomeController extends Controller
         }
     }
 }
+
 
 

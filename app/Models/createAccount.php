@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class createAccount extends Model 
 {
+    
+    const CREATED_AT = 'create_datetime	';
+    const UPDATED_AT = 'update_datetime';
+
     public static function Getemail($username){
 
         $existingUser = DB::table('user')->where('email', $username)->first();
@@ -15,6 +19,9 @@ class createAccount extends Model
         return $existingUser;
     }
 
-    const CREATED_AT = 'create_datetime	';
-    const UPDATED_AT = 'update_datetime';
+    public static function editPassword($email,$password){
+        DB::table('user')->where('email', $email)->update(['password'=>$password]);
+
+    }
+
 }
