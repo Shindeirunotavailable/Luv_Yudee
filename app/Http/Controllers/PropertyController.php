@@ -233,7 +233,8 @@ class PropertyController extends Controller
         $blogs = DB::table('pp_properties')
         ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
         ->get();
-        return view('dashboard.myproperty',compact('blogs'));
+        $this->data['blogs'] = $blogs;
+        return view('dashboard.myproperty',compact('blogs'))->with('data', $this->data);
     }
 
     // public function showproperty1(){

@@ -50,3 +50,4 @@ Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
 Route::get('delete_image/{id_media}', 'App\Http\Controllers\PropertyController@deleteMedia')->name('deleteMedia');
 
+Route::any('myproperties','App\Http\Controllers\PropertyController@showproperty');
