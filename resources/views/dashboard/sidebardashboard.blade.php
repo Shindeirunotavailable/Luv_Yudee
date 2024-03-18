@@ -80,7 +80,7 @@
                         <div id="v-tabs-tab" role="tablist" >
 
                             <div>
-                                <p class="fs-15 font-weight-normal ff-heading mt-0">MAIN</p>
+                                {{-- <p class="fs-15 font-weight-normal ff-heading mt-0">MAIN</p> --}}
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
                                         <i class="fa-solid fa-chart-line mr-d-15"></i>Dashboard</a>
                                 </div>
@@ -150,7 +150,7 @@
                         @include('dashboard.addproperty')
                     </div>
 
-                    {{-- <div class="tab-pane fade show active" id="v-myproperty" role="tabpanel"
+                    {{-- <div class="tab-pane fade" id="v-myproperty" role="tabpanel"
                         aria-labelledby="v-myproperty-tab" tabindex="0">
                         @include('dashboard.myproperty')
                     </div> --}}

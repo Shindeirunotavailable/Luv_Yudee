@@ -118,40 +118,36 @@
                                                             <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="imageLabel">Select Image</label>
                                                             <input name="image[]" type="file" class="custom-file-input" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
-
-                                                        {{-- <div class="col-sm-12 mt-0 row justify-content-center"  id="fileList"></div> --}}
+                                                        {{-- row justify-content-center --}}
+                                                        <div class="col-sm-12 mt-0 row "  id="fileList"></div>
                                                         @if (isset($data['id_property'])  )
                                                             <div class="row">
-                                                                    <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                        {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า asset($media->media_property) ถ้าuploadลงserver --}}
-
-                                                                        {{-- @foreach ($data['media'] as $media) --}}
-                                                                            {{-- @if(isset($media) && isset($media->id_media)) --}}
-                                                                                <table class="mediatable " >
-                                                                                    {{-- @if (isset($data['media']) && $data['media']->isNotEmpty() && $data['media']->first(function ($media) { return $media->media_property && $media->media_file_type === 1; })) --}}
-                                                                                    @if (isset($data['media']) && $data['media']->isNotEmpty() && $data['media']->first()->media_file_type === 1)
-                                                                                        <tr class="align-items-center">
-                                                                                            <th class="pt-2">Image</th>
-                                                                                            <th class="pt-2">Action</th>
-                                                                                        </tr>
-                                                                                    @endif
-                                                                                    @foreach ($data['media'] as $media)
-                                                                                        @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
-                                                                                            <tr class="align-items-center">
-                                                                                                <td class="p-4">
-                                                                                                    <img src="{{ asset($media->media_property) }}" alt="Property Image" class="imagemedia">
-                                                                                                    <input type="hidden" name="image_url" value="{{ asset($media->media_property) }}">
-                                                                                                </td>
-                                                                                                <td class="p-4 trash-td ">
-                                                                                                    <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        @endif
-                                                                                    @endforeach
-                                                                                </table>
-                                                                            {{-- @endif --}}
-                                                                        {{-- @endforeach --}}
-                                                                    </div>
+                                                                <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
+                                                                    {{-- ต้องเพิ่ม ('/yuudee' .) ไว้หน้า asset($media->media_property) ถ้าuploadลงserver --}}
+                                                                    <table class="mediatable " >
+                                                                        @if (isset($data['media']) && $data['media']->isNotEmpty())
+                                                                            @if ($data['media']->where('media_property', true)->where('media_file_type', 1)->where('id_property', $data['id_property'])->isNotEmpty())
+                                                                                <tr class="align-items-center">
+                                                                                    <th class="pt-2">Image</th>
+                                                                                    <th class="pt-2">Action</th>
+                                                                                </tr>
+                                                                            @endif
+                                                                        @endif
+                                                                        @foreach ($data['media'] as $media)
+                                                                            @if ($media->id_property == $data['id_property'] && $media->media_file_type === 1)
+                                                                                <tr class="align-items-center">
+                                                                                    <td class="p-4">
+                                                                                        <img src="{{ asset($media->media_property) }}" alt="Property Image" class="imagemedia">
+                                                                                        <input type="hidden" name="image_url" value="{{ asset($media->media_property) }}">
+                                                                                    </td>
+                                                                                    <td class="p-4 trash-td ">
+                                                                                        <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </table>
+                                                                </div>
                                                             </div>
                                                         @endif
                                                     </div>
@@ -161,31 +157,33 @@
                                                             <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="videoLabel">Select Video</label>
                                                             <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
-                                                        {{-- <div class="col-sm-12 mt-0 row justify-content-center" id="VdoList"></div> --}}
+                                                        <div class="col-sm-12 mt-0 row " id="VdoList"></div>
 
                                                             @if (isset($data['id_property']))
                                                                 <div class="row">
                                                                     <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
-                                                                            <table class="mediatable">
-                                                                                @if (isset($data['media']) && $data['media']->isNotEmpty() && $data['media']->first()->media_file_type === 2)
-                                                                                <tr class="align-items-center">
-                                                                                    <th class="pt-2">Image</th>
-                                                                                    <th class="pt-2">Action</th>
-                                                                                </tr>
-                                                                            @endif
-                                                                                @foreach ($data['media'] as $media)
-                                                                                    @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
-                                                                                        <tr class="align-items-center">
-                                                                                            <td class="p-4">
-                                                                                                <video src="{{ asset($media->media_property) }}" controls class="videomedia" ></video>
-                                                                                            </td>
-                                                                                            <td class="p-4 trash-td ">
-                                                                                                <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    @endif
-                                                                                @endforeach
-                                                                            </table>
+                                                                        <table class="mediatable">
+                                                                            @if (isset($data['media']) && $data['media']->isNotEmpty())
+                                                                                @if ($data['media']->where('media_property', true)->where('media_file_type', 2)->where('id_property', $data['id_property'])->isNotEmpty())
+                                                                                    <tr class="align-items-center">
+                                                                                        <th class="pt-2">Image</th>
+                                                                                        <th class="pt-2">Action</th>
+                                                                                     </tr>
+                                                                                @endif
+                                                                             @endif
+                                                                            @foreach ($data['media'] as $media)
+                                                                                @if ($media->id_property == $data['id_property'] && $media->media_file_type === 2)
+                                                                                    <tr class="align-items-center">
+                                                                                        <td class="p-4">
+                                                                                            <video src="{{ asset($media->media_property) }}" controls class="videomedia" ></video>
+                                                                                        </td>
+                                                                                        <td class="p-4 trash-td ">
+                                                                                            <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                @endif
+                                                                            @endforeach
+                                                                        </table>
                                                                     </div>
                                                                 </div>
                                                             @endif
@@ -416,23 +414,93 @@
 
     </div>
     <div class="footer100vh"></div>
+
     <footer class="mb-1 pt-30 m-0 mt-footer ">
-        <div class="container">
-            <div class="row items-center justify-content-center justify-content-md-between">
-                <div class="col-auto ">
-                    <div class="copyright-widget">
-                        <p class="text-ap">© Homez 2024 <a href="https://themeforest.net/user/ib-themes"
-                                target="_blank" rel="noopener noreferrer">ib-themes</a> - All rights reserved</p>
+        <section class="footer-style1 at-home4 pt-60 pb-0 bdrs-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="footer-widget light-style mb-4 mb-lg-5">
+                            <a class="footer-logo"href="{{url("home")}}">
+                                <img class="mb-10" src="{{ asset('/assets/images/YuuDee2-logo.png') }}" alt="YuuDee2-logo.png"  />
+                            </a>
+
+                            <div class="row ml-1 mb-4 mb-lg-5">
+                                <div class="contact-info w-100">
+                                    <p class="text mb-0">58 Howard Street #2 San Francisco</p>
+                                </div>
+                                <div class="contact-info w-100">
+                                    <p class="text mb-0">hi@homez.com</p>
+                                </div>
+                                <div class="contact-info w-100">
+                                    <p class="text mb-0">+(0) 123 050 945 02</p>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-auto">
-                    <div class="footer_bottom_right_widgets text-center text-lg-end">
-                        <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a
-                                href="#">Sitemap</a></p>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-5">
+                            <div class="link-style1 light-style">
+                                <h6 class="fw-700">Popular Search</h6>
+                                <ul class="link-list ps-0 pl-0">
+                                    <li><a href="#">Apartment for Rent</a></li>
+                                    <li><a href="#">Apartment Low to Hide</a></li>
+                                    <li><a href="#">Offices for Buy</a></li>
+                                    <li><a href="#">Offices for Rent</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-5">
+                            <div class="link-style1 light-style mb-3">
+                                <h6 class="fw-700">Quick Links</h6>
+                                <ul class="ps-0 pl-0">
+                                    <li><a href="#">Terms of Use</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Pricing Plans</a></li>
+                                    <li><a href="#">Our Services</a></li>
+                                    <li><a href="#">Contact Support</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="footer-widget mb-4 mb-lg-5">
+                            <div class="mailchimp-widget mb-30">
+                                <form action="{{ url('/home_email') }}"  method="POST" class="needs-validation" id="home_email">
+                                    @csrf
+                                    <h6 class="title mb-30 fw-700">Sign Up for Our Newsletter</h6>
+                                    <div class="mailchimp-style1 at-home4 white-version">
+                                        <input type="email" id="home-email" class="form-control" placeholder="Your Email" name="email">
+
+
+                                        <button type="submit" class="g-recaptcha"
+                                            data-sitekey="{{config('services.recaptcha.site_key')}}" data-callback='onSubmitemail' data-action='home'>
+                                            <i class="fa-solid fa-rocket"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="colorRed" id="ShowErrorEmail"></div>
+                                </form>
+                                <div class="social-style1 light-style py-2">
+                                    <a href="#"><i class="fab fa-facebook-f list-inline-item"></i></a>
+                                    <a href="#"><i class="fab fa-twitter list-inline-item"></i></a>
+                                    <a href="#"><i class="fab fa-instagram list-inline-item"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in list-inline-item"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+        </section>
+
     </footer>
 
 </div>
