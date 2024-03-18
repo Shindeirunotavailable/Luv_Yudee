@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use PharIo\Manifest\Url;
 use Illuminate\Support\Facades\Password;
-
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 
@@ -105,6 +105,8 @@ class LoginController extends Controller
         return redirect('/login');
     }
 
+
+    
     // ------------------------------------- สมัครสมาชิก -------------------------------------------------
 
 
@@ -206,10 +208,39 @@ class LoginController extends Controller
     }
     // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
+    // public function lostpassword(Request $request)
+    // {
+    //     $forgetEmail = $request->input('forgetEmail');
+
+    //     // ค้นหา email ในฐานข้อมูล
+    //     $foundEmail = DB::table('user')->where('email', $forgetEmail)->first();
+    //     if ($foundEmail) {
+    //         // สร้าง token สำหรับการ reset password
+    //         $resetToken = Str::random(60);
+    //         // บันทึก token และเวลาที่สร้างลงในตาราง password_resets
+    //         DB::table('password_resets')->updateOrInsert(
+    //             ['email' => $forgetEmail],
+    //             ['resetToken' => $resetToken, 
+    //             'created_by' => now(),
+    //             'update_by' => now(),
+    //             ]
+    //         );
+    //         // ส่งอีเมล์ reset password
+    //         Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
+    //         return response()->json(['success' => true, 'message' => 'ส่งอีเมล์สำหรับกู้รหัสให้แล้ว']);
+
+    //     } else {
+    //         // ถ้าไม่เจอ email ในฐานข้อมูล
+    //         return response()->json(['success' => false, 'message' => 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง']);
+    //     }
+        
+    // }
+
+
     public function lostpassword(Request $request)
     {
         $forgetEmail = $request->input('forgetEmail');
-
+    
         // ค้นหา email ในฐานข้อมูล
         $foundEmail = DB::table('user')->where('email', $forgetEmail)->first();
         if ($foundEmail) {
@@ -218,23 +249,30 @@ class LoginController extends Controller
             // บันทึก token และเวลาที่สร้างลงในตาราง password_resets
             DB::table('password_resets')->updateOrInsert(
                 ['email' => $forgetEmail],
-                ['resetToken' => $resetToken, 
-                'created_by' => now(),
-                'update_by' => now(),
+                [
+                    'resetToken' => $resetToken,
+                    'created_by' => now(),
+                    'update_by' => now(),
                 ]
             );
             // ส่งอีเมล์ reset password
             Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
-            return back()->with('status', 'ส่งอีเมล์สำหรับกู้รหัสให้แล้ว');
-
+            $errorMessage = "ส่งอีเมล์สำเร็จ";
 
         } else {
             // ถ้าไม่เจอ email ในฐานข้อมูล
-            $errorMessages = 'ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง';
-            return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+            $errorMessage = "ไม่พบอีเมล์นี้ในระบบ กรุณาลองใหม่อีกครั้ง";
+
         }
-        
+    
+        return $errorMessage;
     }
+    
+    
+
+
+
+
 
     // ---------------------------------------------- หน้า resetPassword -------------------------------------------------
 
@@ -261,18 +299,15 @@ class LoginController extends Controller
             }
         }
 
-        
-    public function resetPassword1(Request $request)
+     // ---------------------------------------------- หน้า resetPassword -------------------------------------------------
+       
+    public function newPassword(Request $request)
     {
-        // dd($request->all());
         // ค้นหาผู้ใช้จากอีเมล์
         $user = createAccount::Getemail($request->email);
-
-        // dd($user);
         if ($user) {
             createAccount::editPassword($request->email,bcrypt($request->password));
             return view('login.login');
-
         } 
             else {
             $errorMessages = 'User not found.';

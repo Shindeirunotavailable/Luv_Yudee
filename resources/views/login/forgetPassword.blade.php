@@ -9,9 +9,9 @@
             </div>
 
             
-            <div class="hidden" id="hiddenErrorModal">
+            <div class="hidden" id="hiddenErrorModal1">
                 <div class="alert alert-danger" role="alert">
-                    <div id="statusMessageModel"></div>
+                    <div id="statusMessageModel1"></div>
                 </div>
             </div>
 
@@ -28,9 +28,11 @@
                     <div class="form-group">
                         <label class="label-700 pl-10">Email</label>
                         <input type="email" name="forgetEmail" id="forgetEmail" class="form-control " placeholder="Enter Email" required>
+                        <div id="ErrorlostPassword" style="color: red"></div>
+
                     </div>
                     <div class="pt-20 pb-20  text-center">
-                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="submitModal"  > <i class="fa-regular fa-paper-plane "></i> Submit</button> 
+                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block" id="submiLostPassword"  > <i class="fa-regular fa-paper-plane "></i> Submit</button> 
                     </div>
                 </form>
             </div>
@@ -38,3 +40,27 @@
     </div>
 </div>
 
+
+
+<script>
+    var getUrl = window.location;
+    var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
+    var csrf = $("meta[name='csrf-token']").attr("content");  //token 
+        $('#lostPasswordForm').submit(function(event) {
+        event.preventDefault();
+        var email = $("#forgetEmail").val();
+        $.ajax({
+            type: "POST",
+            url: baseUrl + "lostpassword", // ระบุ URL ที่จะส่ง Request ไป
+            data: {
+                _token: csrf,
+                forgetEmail: email
+            },
+            success: function(response) {
+                console.log(response);
+                $('#ErrorlostPassword').html(response);
+            }
+        });
+    });
+</script>
+  </script>

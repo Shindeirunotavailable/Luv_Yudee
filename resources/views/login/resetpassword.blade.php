@@ -25,12 +25,11 @@
 
                                                   
                         </div>
-                            <form action="{{ url('/resetPassword1') }}" method="POST" class="needs-validation" id="resetPasswordForm">
+                            <form action="{{ url('/newPassword') }}" method="POST" class="needs-validation" id="resetPasswordForm">
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700 pl-5">Email</label>
-                                    {{-- <input type="email" name="email_token" id="email_token" class="form-control" placeholder="Enter Email"> --}}
-                                    <input type="email" name="email" id="modal_email" class="form-control" placeholder="Enter Email" value="{{ $email }}">
+                                    <input type="email" name="email" id="modal_email" class="form-control" placeholder="Enter Email" value="{{ $email }}" readonly>
                                     <div class="colorRed" id="errorEmail"></div>
                                     <div class="invalid-feedback">
                                         <a> กรุณากรอก Email</a>
