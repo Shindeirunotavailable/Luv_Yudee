@@ -157,7 +157,7 @@ $(document).ready(function() {
             }
         });
     });
-
+// CKeditor
     if (document.querySelector('#editor')) {
         ClassicEditor
             .create(document.querySelector('#editor'), {
@@ -170,8 +170,68 @@ $(document).ready(function() {
             });
     }
 
+    if (document.querySelector('#showeditor')) {
+        ClassicEditor
+            .create(document.querySelector('#showeditor'), {
+                 removePlugins: [ '' ],
 
-    //Upload Image
+                 toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
+                 , 'NumberedList' ]
+            } )
+            .catch(error => {
+            });
+    }
+
+
+    //Upload Image show image
+    // $(document).ready(function() {
+    //     if ($('#customIMG').length) {
+    //         $('#customIMG').on('change', function(e) {
+    //             var fileList = $('#fileList');
+    //             fileList.html('');
+
+    //             var files = e.target.files;
+    //             for (var i = 0; i < files.length; i++) {
+    //                 var file = files[i];
+
+    //                 var colDiv = $('<div></div>').addClass('col-2');
+
+    //                 var img = $('<img />').attr('src', URL.createObjectURL(file)).css({
+    //                     'width': '100%',
+    //                     'margin-bottom': '20px'
+    //                 });
+    //                 colDiv.append(img);
+    //                 fileList.append(colDiv);
+    //             }
+    //         });
+    //     }
+    //     if ($('#customVdo').length) {
+    //         $('#customVdo').on('change', function(e) {
+    //             var VdoList = $('#VdoList');
+    //             VdoList.html('');
+
+    //             var files = e.target.files;
+    //             for (var i = 0; i < files.length; i++) {
+    //                 var file = files[i];
+
+    //                 var colDiv = $('<div></div>').addClass('col-4');
+
+    //                 var video = $('<video></video>').attr({
+    //                     'src': URL.createObjectURL(file),
+    //                     'controls': true
+    //                 }).css({
+    //                     'width': '100%',
+    //                     'margin-bottom': '20px'
+    //                 });
+    //                 colDiv.append(video);
+    //                 VdoList.append(colDiv);
+    //             }
+    //         });
+    //     }
+
+    // });
+
+    //Upload Image show name
     $(document).ready(function() {
         if ($('#customIMG').length) {
             $('#customIMG').on('change', function(e) {
@@ -184,11 +244,8 @@ $(document).ready(function() {
 
                     var colDiv = $('<div></div>').addClass('col-2');
 
-                    var img = $('<img />').attr('src', URL.createObjectURL(file)).css({
-                        'width': '100%',
-                        'margin-bottom': '20px'
-                    });
-                    colDiv.append(img);
+                    var fileName = $('<span></span>').text(file.name).css('display', 'block');
+                    colDiv.append(fileName);
                     fileList.append(colDiv);
                 }
             });
@@ -204,14 +261,8 @@ $(document).ready(function() {
 
                     var colDiv = $('<div></div>').addClass('col-4');
 
-                    var video = $('<video></video>').attr({
-                        'src': URL.createObjectURL(file),
-                        'controls': true
-                    }).css({
-                        'width': '100%',
-                        'margin-bottom': '20px'
-                    });
-                    colDiv.append(video);
+                    var fileName = $('<span></span>').text(file.name).css('display', 'block');
+                    colDiv.append(fileName);
                     VdoList.append(colDiv);
                 }
             });
@@ -313,7 +364,7 @@ $('#submitdescription').click(function(event) {
 
         propertystatus.on('input', function() {
             if ($(this).val()) {
-                $(this).removeClass('is-invalid');
+                $(errorstatus).removeClass('is-invalid');
             }
         });
 });
@@ -458,10 +509,17 @@ $('#submitdetail').click(function(event) {
 
     var floor = $('#floor');
     var room = $('#room');
+    var bedrooms = $('#bedrooms');
+    var bathrooms = $('#bathrooms');
+    var interior_size = $('#interior_size');
     var errorFloor = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Floor' + '</div>';
     var errorRoom = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Rooms' + '</div>';
 
-    if (!floor.val() || !room.val()) {
+    var errorBedrooms = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน bedrooms' + '</div>';
+    var errorBathrooms = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน bathrooms' + '</div>';
+    var errorSize = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Size' + '</div>';
+
+    if (!floor.val() || !room.val() || !bedrooms.val() || !bathrooms.val() || !interior_size.val()) {
         if (!floor.val()) {
             floor.addClass('is-invalid');
             floor.next('.additional-message').remove();
@@ -472,6 +530,24 @@ $('#submitdetail').click(function(event) {
             room.addClass('is-invalid');
             room.next('.additional-message').remove();
             room.after(errorRoom);
+        }
+
+        if (!bedrooms.val()) {
+            bedrooms.addClass('is-invalid');
+            bedrooms.next('.additional-message').remove();
+            bedrooms.after(errorBedrooms);
+        }
+
+        if (!bathrooms.val()) {
+            bathrooms.addClass('is-invalid');
+            bathrooms.next('.additional-message').remove();
+            bathrooms.after(errorBathrooms);
+        }
+
+        if (!interior_size.val()) {
+            interior_size.addClass('is-invalid');
+            interior_size.next('.additional-message').remove();
+            interior_size.after(errorSize);
         }
 
         event.preventDefault();
@@ -485,6 +561,24 @@ $('#submitdetail').click(function(event) {
     });
 
     room.on('input', function() {
+        if ($(this).val()) {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    bedrooms.on('input', function() {
+        if ($(this).val()) {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    bathrooms.on('input', function() {
+        if ($(this).val()) {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    interior_size.on('input', function() {
         if ($(this).val()) {
             $(this).removeClass('is-invalid');
         }

@@ -16,6 +16,7 @@ $('.register').click(function(){ //$.register คือชื่อ class ขอ
                     $('#modal-data').html(data ); 
                     $('#modal-data .modal').modal({backdrop: 'static',keyboard: true});
                     $('.overlay').hide();
+                
                 }
             });
 })
@@ -31,44 +32,48 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
         dataType: "html", // ประเภทการรับข้อมูลกลับมา
         data:{"_token":csrf}, //ส่งตัวแปร
         success: function(data) {
-            // console.log(data)
+          
             $('#modal-data').html(data ); 
             $('#modal-data .modal').modal({backdrop: 'static',keyboard: true});
             $('.overlay').hide();
+        
         }
     });
 })
 
+// $('#lostPasswordForm').submit(function (event) {
+//   event.preventDefault(); // ป้องกันการส่งฟอร์ม
+//   var formData = $("#lostPasswordForm").serialize();
+//   $.ajax({
+//       type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+//       url: $("#lostPasswordForm").attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+//       data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+//       success: function (response) {
+//           console.log(response);
+//           if (response.success) {
+//               // ถ้าสำเร็จในการลืมรหัสผ่าน
+//               window.location.href = "{{ route('login') }}"; // ทำการ redirect ไปยังหน้า login
+//               $('#modal-data').html(response); // แสดงข้อมูลใน modal
+//               $('#modal-data .modal').modal({ backdrop: 'static', keyboard: true }); // เปิด modal
+//               $('.overlay').hide();
+//           } else {
+//               // ถ้าเข้าสู่ระบบไม่สำเร็จ
+//               $('#statusMessageModel1').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessageModel1"
+//               $('#hiddenErrorModal1').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+//               $('#modal-data').html(response); // แสดงข้อมูลใน modal
+//               $('#forgetPassword').modal('show'); // เปิด modal
+//           }
+//       }
+//   });
+// });
 
 
 
 
-  
-    // $('#registerBtn').click(function (event) {
-    //       event.preventDefault(); // ป้องกันการส่งฟอร์ม
-    //       var formData = $("#registerForm").serialize();
-    //       $.ajax({
-    //           type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
-    //           url: $("#registerForm").attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
-    //           data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
-    //           success: function (response) {
-    //             console.log(response);
-    //               if (response.success) {
-    //                   // ถ้าเข้าสู่ระบบสำเร็จ
-    //                   window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
-    //               } else {
-    //                   // ถ้าเข้าสู่ระบบไม่สำเร็จ
-    //                   $('#statusMessageModel').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
-    //                   $('#hiddenErrorModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
-    //               }
-    //           }
-    //       });
-    //   });
 
-    ///////////////////////  login //////////////////////
 
-  
+    ///////////////////////  login //////////////////////  
 // เช็คค่าว่างหน้า login
       $("#loginform").click(function() {
         const forms = $('.needs-validation');
@@ -78,6 +83,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
               PasswordFrom.addClass('is-invalid');
               event.preventDefault();
               event.stopPropagation();
+              return;
             } else {
               PasswordFrom.removeClass('is-invalid');
               PasswordFrom.addClass('is-valid');
@@ -90,7 +96,6 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                 data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
                 success: function (response) {
                   console.log(response);
-
                     if (response.success) {
                         // ถ้าเข้าสู่ระบบสำเร็จ
                         window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
@@ -105,6 +110,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
           });
         });
 
+        
 
         // $('#loginform').submit(function (event) {
         //     event.preventDefault(); // ป้องกันการส่งฟอร์ม
@@ -142,10 +148,9 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
       });
 
 
-    ///////////////////////  modal //////////////////////
+    ///////////////////////  หน้าสมัครสมาชิก //////////////////////
 
-    
-     
+  
 // รับ function จากหน้าสมัคร//
 // $('body').on('click', '#forgetPassword', function() {
 //         var forms = $('.needs-validation');
@@ -205,11 +210,11 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
     emailInput.removeClass('border-danger is-valid');
     password.removeClass('is-invalid is-valid border-danger ');
     confirm.removeClass('is-invalid is-valid border-danger ');
+    nameInput.removeClass('is-invalid is-valid border-danger ');
+
     showErrorDiv.text('');
     showerrorPassword.text('');
     showerrorconfirm.text('');
-
-
 
     if(emailValue.trim() === '' && !password.val() && !confirm.val() && !nameInput.val()){
       showErrorDiv.text('Please enter a valid email');
@@ -293,7 +298,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
    // ตรวจสอบว่า modal_password และ modal_confirmPassword ตรงกันหรือไม่
     if (confirm.val() !== password.val()) {
-      showerrorconfirm.text('Passwords do not match');
+        showerrorconfirm.text('Passwords do not match');
         confirm.addClass('border-danger');
         password.addClass('border-danger');
 
@@ -338,11 +343,25 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
                     $('#successMessageModel').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
                     $('#hiddensuccessModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+                    $('#hiddenErrorModal').addClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+                    $('#statusMessageModel').text(""); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                    $('#modal_name').val("");
+                    $('#modal_email').val("");
+                    $('#modal_password').val("");
+                    $('#modal_confirmPassword').val("");
+                    emailInput.removeClass('border-danger is-valid');
+                    password.removeClass('is-invalid is-valid border-danger ');
+                    confirm.removeClass('is-invalid is-valid border-danger ');
+                    nameInput.removeClass('is-invalid is-valid border-danger ');
+                    showErrorDiv.text('');
+                    showerrorPassword.text('');
+                    showerrorconfirm.text('');
 
                 } else {
                     // ถ้าเข้าสู่ระบบไม่สำเร็จ
                     $('#statusMessageModel').text(response.messageError); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
                     $('#hiddenErrorModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+                    $('#hiddensuccessModal').addClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
                 }
             }
@@ -360,83 +379,102 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
   
 
 
-
-
-  // หน้า reset Password  
+    ///////////////////////   หน้า reset Password   //////////////////////
 
   $("#resetPasswordForm").click(function() {
     const forms = $('.needs-validation');
-      forms.on('submit', function(event) {
-        const PasswordFrom = $('#modal_password');
-        const confirmFrom = $('#modal_confirmPassword');
-        const PasswordFromValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-        var showerrorPassword = $('#errorPassword');
-        var showerrorconfirm = $('#errorconfirm');
-
-        if( !PasswordFrom.val() && !confirmFrom.val()){
-          PasswordFrom.addClass('is-invalid');
-          confirmFrom.addClass('is-invalid');
-          event.preventDefault();
-          event.stopPropagation();
-        } else if(PasswordFrom.val() && !confirmFrom.val() ){
-          PasswordFrom.removeClass('is-invalid');
-          PasswordFrom.addClass('is-valid');
-
-          confirmFrom.addClass('is-invalid');
-          event.preventDefault();
-          event.stopPropagation();
-        }else if(!PasswordFrom.val() && confirmFrom.val() ){
-          PasswordFrom.addClass('is-invalid');
-          PasswordFrom.removeClass('is-valid');
-          confirmFrom.removeClass('is-invalid');
-          confirmFrom.addClass('is-valid');
-          event.preventDefault();
-          event.stopPropagation();
-        }
-          else {
-          PasswordFrom.removeClass('is-invalid');
-          PasswordFrom.addClass('is-valid');
-          confirmFrom.removeClass('is-invalid');
-          confirmFrom.addClass('is-valid');
-        }
-
-        if (confirmFrom.val() !== PasswordFrom.val()) {
-
-            showerrorconfirm.text('Passwords do not match');
-            confirmFrom.addClass('border-danger');
-            PasswordFrom.addClass('border-danger');
-
-            confirmFrom.removeClass('is-valid');
-            PasswordFrom.removeClass('is-valid');
-            confirmFrom.removeClass('is-invalid');
-            PasswordFrom.removeClass('is-invalid');
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            confirmFrom.removeClass('border-danger ');
-            PasswordFrom.removeClass('border-danger ');
-            showerrorconfirm.text('');
-        }
-         if (!PasswordFromValidation.test(PasswordFrom.val())) {
-          showerrorPassword.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
-          showerrorconfirm.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
-          PasswordFrom.addClass('border-danger ');
-          confirmFrom.addClass('border-danger ');
+    forms.on('submit', function(event) {
+      const PasswordFrom = $('#modal_password');
+      const confirmFrom = $('#modal_confirmPassword');
+      const PasswordFromValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      var showerrorPassword = $('#errorPassword');
+      var showerrorconfirm = $('#errorconfirm');
   
-          PasswordFrom.removeClass('is-valid');
-          PasswordFrom.removeClass('is-invalid');
-          confirmFrom.removeClass('is-valid');
-          confirmFrom.removeClass('is-invalid');
+      confirmFrom.removeClass('is-invalid is-valid border-danger ');
+      PasswordFrom.removeClass('is-invalid is-valid border-danger ');
+      showerrorPassword.text('');
+      showerrorconfirm.text('');
   
-          event.preventDefault();
-          event.stopPropagation();
-        } else {
-          showerrorPassword.text('');
-          PasswordFrom.removeClass('border-danger ');
-          confirmFrom.removeClass('border-danger ');
-        }
-        
-      });
+      if (!PasswordFrom.val() && !confirmFrom.val()) {
+        PasswordFrom.addClass('is-invalid');
+        confirmFrom.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+        return; 
+      } else if (PasswordFrom.val() && !confirmFrom.val()) {
+        PasswordFrom.removeClass('is-invalid');
+        PasswordFrom.addClass('is-valid');
+  
+        confirmFrom.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+        return; 
+      } else if (!PasswordFrom.val() && confirmFrom.val()) {
+        PasswordFrom.addClass('is-invalid');
+        PasswordFrom.removeClass('is-valid');
+        confirmFrom.removeClass('is-invalid');
+        confirmFrom.addClass('is-valid');
+        event.preventDefault();
+        event.stopPropagation();
+        return; 
+      } else {
+        PasswordFrom.removeClass('is-invalid');
+        PasswordFrom.addClass('is-valid');
+        confirmFrom.removeClass('is-invalid');
+        confirmFrom.addClass('is-valid');
+      }
+  
+      if (confirmFrom.val() !== PasswordFrom.val()) {
+        showerrorconfirm.text('Passwords do not match');
+        confirmFrom.addClass('border-danger');
+        PasswordFrom.addClass('border-danger');
+  
+        confirmFrom.removeClass('is-valid');
+        PasswordFrom.removeClass('is-valid');
+        confirmFrom.removeClass('is-invalid');
+        PasswordFrom.removeClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+        return; 
+      } else {
+        confirmFrom.removeClass('border-danger ');
+        PasswordFrom.removeClass('border-danger ');
+        showerrorconfirm.text('');
+      }
+  
+      if (!PasswordFromValidation.test(PasswordFrom.val())) {
+        showerrorPassword.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
+        showerrorconfirm.text('รหัสผ่านควรมีความยาว 8-20 ตัวอักษรขึ้น และต้องประกอบด้วยตัวเลขอย่างน้อย 1 ตัว ตัวอักษร 1 ตัว และเครื่องหมาย 1 ตัว');
+        PasswordFrom.addClass('border-danger ');
+        confirmFrom.addClass('border-danger ');
+  
+        PasswordFrom.removeClass('is-valid');
+        PasswordFrom.removeClass('is-invalid');
+        confirmFrom.removeClass('is-valid');
+        confirmFrom.removeClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+        return; 
+      } else {
+        showerrorPassword.text('');
+        showerrorconfirm.text('');
+        PasswordFrom.removeClass('border-danger ');
+        confirmFrom.removeClass('border-danger ');
+      }
     });
+  });
+  
+      ///////////////////////   หน้าlost your password   //////////////////////
 
 
+
+  $('body').on('click', '#forgetPassword', function() {
+    $('#forgetPassword form').submit(function() {
+      requestLostPassword();
+    });
+  });
+
+  function requestLostPassword(){
+    // console.log('aaa');
+    
+  }

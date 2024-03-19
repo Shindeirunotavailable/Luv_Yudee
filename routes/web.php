@@ -31,7 +31,7 @@ Route::any('review','App\Http\Controllers\PropertyController@review');
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
 
  // -----------------------------------main function  route non ------------------------------------
-route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
+route::any('login','App\Http\Controllers\LoginController@login')->name('login'); // เปิดหน้า Login
 route::any('contact','App\Http\Controllers\LoginController@contact'); // เปิดหน้า contact
 route::any('search_result','App\Http\Controllers\LoginController@search_result'); // เปิดหน้า details
 
@@ -43,8 +43,8 @@ route::any('loginform','App\Http\Controllers\LoginController@loginform');  // �
 route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // กู้รหัสผ่าน
 Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout'); // logout
 
-Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword'); 
-Route::any('resetPassword1', 'App\Http\Controllers\LoginController@resetPassword1'); 
+Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword');
+Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');
 
 
  // -----------------------------------function test Route ------------------------------------
@@ -56,5 +56,3 @@ Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnec
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
 Route::get('delete_image/{id_media}', 'App\Http\Controllers\PropertyController@deleteMedia')->name('deleteMedia');
-
-Route::any('myproperties','App\Http\Controllers\PropertyController@showproperty');
