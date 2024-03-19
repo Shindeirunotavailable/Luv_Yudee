@@ -42,8 +42,8 @@
 
 <script>
     var getUrl = window.location;
-    // var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
-    var baseUrl = getUrl.protocol + "//" + getUrl.host  + "/yuudee/"; // สำหรับอัพขึ้น server
+    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
+    // var baseUrl = getUrl.protocol + "//" + getUrl.host  + "/yuudee/"; // สำหรับอัพขึ้น server
 
     var csrf = $("meta[name='csrf-token']").attr("content"); //token 
     $('#lostPasswordForm').submit(function(event) {
@@ -57,7 +57,7 @@
                 forgetEmail: email
             },
             success: function(response) {
-                console.log(response);
+                // console.log(response);
                 if (response.success) {
                     $('#forgetEmail').val("");
                     $('#successlostPassword').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"

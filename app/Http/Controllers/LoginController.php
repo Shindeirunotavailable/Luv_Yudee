@@ -102,7 +102,7 @@ class LoginController extends Controller
     public function logout(){
         Auth::logout();
         session()->forget('user_email');
-        return redirect('/login');
+        return redirect()->route('login');
     }
 
 
@@ -240,7 +240,6 @@ class LoginController extends Controller
     public function lostpassword(Request $request)
     {
         $forgetEmail = $request->input('forgetEmail');
-    
         // ค้นหา email ในฐานข้อมูล
         $foundEmail = DB::table('user')->where('email', $forgetEmail)->first();
         if ($foundEmail) {
@@ -252,8 +251,7 @@ class LoginController extends Controller
                 [
                     'resetToken' => $resetToken,
                     'create_datetime' => now(),
-                    'update_datetime' => now(),
-                    
+                    'update_datetime' => now(),                    
                 ]
             );
             // ส่งอีเมล์ reset password
@@ -283,7 +281,6 @@ class LoginController extends Controller
             // ดึงค่า token และ email_token ที่รับมาจากแบบฟอร์ม
             $token = $request->input('resetToken');
             $emailToken = $request->input('email_token');
-
             // ค้นหาข้อมูลในตาราง password_resets ที่มี token และ email_token ตรงกับที่รับมา
             $passwordReset = DB::table('password_resets')
                                 ->where('resetToken', $token)
@@ -297,18 +294,27 @@ class LoginController extends Controller
                 return view('login.resetpassword', compact('email'));
             } else {
                 // ถ้าไม่พบข้อมูล ให้แสดงข้อความแจ้งเตือนหรือดำเนินการต่อตามที่ต้องการ
-                return view('login.login')->with('error', 'Invalid token or email token.');
+                // return view('login.login')->with('error', 'Invalid token or email token.');
+                return redirect()->route('login')->with('error', 'Invalid token or email token.');;
+
             }
         }
 
        
     public function newPassword(Request $request)
     {
+        // $foundEmail = DB::table('user')->where('email', $request->email)->first();
         // ค้นหาผู้ใช้จากอีเมล์
+        // dd($foundEmail,$foundEmail->id,$foundEmail->name);
         $user = createAccount::Getemail($request->email);
         if ($user) {
-            createAccount::editPassword($request->email,bcrypt($request->password));
-            return view('login.login');
+            $data = [
+                'password' => bcrypt($request->password),
+                'update_by' =>$user->id,
+                'update_datetime'=> date('Y-m-d H:i:s'),
+            ];
+            createAccount::editPassword($data, $request->email);
+            return redirect()->route('login');
         } 
             else {
             $errorMessages = 'User not found.';
@@ -317,9 +323,7 @@ class LoginController extends Controller
         }
     }
     
-
-  
-
+    
     // // ---------------------------------------------- หน้า Content -------------------------------------------------
 
 
