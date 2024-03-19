@@ -67,7 +67,7 @@
                                 </button> 
                             </div>
                             
-                            <div class="colorRed" id="ShowErrorEmail"></div>
+                            <div class="colorRed" id="ShowErrorEmailFooter"></div>
 
                             
                             
