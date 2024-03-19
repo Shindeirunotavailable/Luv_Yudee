@@ -294,14 +294,13 @@ class LoginController extends Controller
             if ($passwordReset) {
                 // ถ้าพบข้อมูล ให้นำอีเมล์ที่ตรงกับ token นี้มาแสดงในฟอร์ม
                 $email = $passwordReset->email;
-                return view('login.resetPassword', compact('email'));
+                return view('login.resetpassword', compact('email'));
             } else {
                 // ถ้าไม่พบข้อมูล ให้แสดงข้อความแจ้งเตือนหรือดำเนินการต่อตามที่ต้องการ
                 return view('login.login')->with('error', 'Invalid token or email token.');
             }
         }
 
-     // ---------------------------------------------- หน้า resetPassword -------------------------------------------------
        
     public function newPassword(Request $request)
     {
