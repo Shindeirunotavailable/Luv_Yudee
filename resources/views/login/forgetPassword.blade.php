@@ -42,8 +42,8 @@
 
 <script>
     var getUrl = window.location;
-    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
-    // var baseUrl = getUrl.protocol + "//" + getUrl.host  + "/yuudee/"; // สำหรับอัพขึ้น server
+    // var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
+    var baseUrl = getUrl.protocol + "//" + getUrl.host  + "/yuudee/"; // สำหรับอัพขึ้น server
 
     var csrf = $("meta[name='csrf-token']").attr("content"); //token 
     $('#lostPasswordForm').submit(function(event) {
