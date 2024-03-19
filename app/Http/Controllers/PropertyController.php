@@ -181,6 +181,7 @@ class PropertyController extends Controller
     {
             $media = DB::table('pp_media')->where('id_media', $id_media)->first();
 
+            // dd($media);
         if ($media) {
             $file_url = public_path($media->media_property);
 
@@ -228,14 +229,14 @@ class PropertyController extends Controller
         return response()->json(['options' => '']);
     }
 
-    public function showproperty()
-    {
-        $blogs = DB::table('pp_properties')
-        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
-        ->get();
-        $this->data['blogs'] = $blogs;
-        return view('dashboard.myproperty',compact('blogs'))->with('data', $this->data);
-    }
+    // public function showproperty()
+    // {
+    //     $blogs = DB::table('pp_properties')
+    //     ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+    //     ->get();
+    //     $this->data['blogs'] = $blogs;
+    //     return view('dashboard.myproperty',compact('blogs'))->with('data', $this->data);
+    // }
 
     // public function showproperty1(){
     //     return view("dashboard.myproperty");

@@ -320,7 +320,7 @@
         </div>
     </div>
     <div class="footer100vh"></div>
-
+{{--
     <footer class="mb-1 pt-30 m-0 mt-footer ">
         <section class="footer-style1 at-home4 pt-60 pb-0 bdrs-12">
             <div class="container">
@@ -382,7 +382,7 @@
                                     @csrf
                                     <h6 class="title mb-30 fw-700">Sign Up for Our Newsletter</h6>
                                     <div class="mailchimp-style1 at-home4 white-version">
-                                        <input type="email" id="home-email" class="form-control" placeholder="Your Email" name="email">
+                                        <input type="email" id="" class="form-control" placeholder="Your Email" name="email">
 
 
                                         <button type="submit" class="g-recaptcha"
@@ -407,5 +407,5 @@
 
         </section>
 
-    </footer>
+    </footer> --}}
 </div>
