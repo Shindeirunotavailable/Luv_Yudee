@@ -466,12 +466,15 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
   
       ///////////////////////   หน้าlost your password   //////////////////////
 
+
+
+  $('body').on('click', '#forgetPassword', function() {
+    $('#forgetPassword form').submit(function() {
+      requestLostPassword();
+    });
+  });
+
+  function requestLostPassword(){
+    console.log('aaa');
     
-
-
-
-
-  
-    if($('#modalsuccess').length){
-      $('#forgetPassword').modal('show');
-    }
+  }
