@@ -26,7 +26,6 @@ class createAccount extends Model
 
     public static function editPassword($data ,$email){
         DB::table('user')->where('email', $email)->update($data);
-
     }
 
 }

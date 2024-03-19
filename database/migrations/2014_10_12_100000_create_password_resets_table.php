@@ -21,7 +21,7 @@ class CreatePasswordResetsTable extends Migration
             $table->id('id_password_reset');
             $table->string('email')->index();
             $table->string('resetToken');
-            $table->string('status')->default(1);
+            $table->string('status')->default(0);
             $table->datetime('create_datetime')->nullable();
             $table->datetime('update_datetime')->nullable();
         });
