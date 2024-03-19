@@ -12,7 +12,6 @@
                     <div class="card cardBox">
                         <div class="card-body">
                             <div class="text-center">
-                                {{-- <img src="https://img5.pic.in.th/file/secure-sv1/YuuDee2.png" class="logo-sm logo-md"> --}}
                                 <h2 class="mb-3 pt-3 font-weight-bold">Sign in</h2>
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
 
@@ -21,6 +20,8 @@
                                         <div id="statusMessage"></div>
                                     </div>
                                 </div>
+
+
                                 {{-- @if ($errors->any())
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         <input type="hidden" value="1" id="modalError">

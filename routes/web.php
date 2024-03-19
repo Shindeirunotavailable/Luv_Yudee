@@ -27,7 +27,7 @@ Route::any('review' , 'App\Http\Controllers\ReviewsController@review');
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
 
  // -----------------------------------main function  route non ------------------------------------
-route::any('login','App\Http\Controllers\LoginController@login'); // เปิดหน้า Login
+route::any('login','App\Http\Controllers\LoginController@login')->name('login'); // เปิดหน้า Login
 route::any('contact','App\Http\Controllers\LoginController@contact'); // เปิดหน้า contact
 route::any('search_result','App\Http\Controllers\LoginController@search_result'); // เปิดหน้า details
 
@@ -40,7 +40,7 @@ route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword'); 
 Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout'); // logout
 
 Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword');
-Route::any('resetPassword1', 'App\Http\Controllers\LoginController@resetPassword1');
+Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');
 
 
  // -----------------------------------function test Route ------------------------------------
