@@ -23,27 +23,21 @@ class PropertyController extends Controller
     {
         $id_property = $request['id_property'];
         $property = Property::property($id_property);
-        $blogs = DB::table('pp_properties')
-        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')->get();
 
-        $media = DB::table('pp_media')->get();
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
         $this->data['districts'] = District::all();
         $this->data['amenities'] = Amenities::all();
 
-        $this->data['media'] = $media;
+        $this->data['media'] = Media::all();
         $this->data['property'] = $property;
-
-        $this->data['blogs'] = $blogs;
 
 
         if (isset($request['id_property'])) {
             $this->data['id_property'] = $request['id_property'];
         }
-        return view('dashboard.sidebardashboard')->with('data', $this->data)
-        ;
+        return view('dashboard.sidebardashboard')->with('data', $this->data);
     }
 
     // PropertyController
@@ -228,52 +222,16 @@ class PropertyController extends Controller
         return response()->json(['options' => '']);
     }
 
-    public function showproperty()
-    {
-        $blogs = DB::table('pp_properties')
-        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
-        ->get();
-        $this->data['blogs'] = $blogs;
-        return view('dashboard.myproperty',compact('blogs'))->with('data', $this->data);
-    }
+    // public function showproperty()
+    // {
+    //     $blogs = DB::table('pp_properties')->get();
+    //     return view('dashboard.myproperty', compact('blogs'));
+    // }
 
     // public function showproperty1(){
     //     return view("dashboard.myproperty");
     // }
 
-    public function review(Request $request){
-        // dd('review');
-        
-        // dd($request);
-        $star = $request->input('star');
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $content = $request->input('content');
-
-        $data = [
-            'review_star' => $star,
-            'review_name' => $name,
-            'review_email' => $email,
-            'review_content' => $content,
-            'create_datetime' => date('Y-m-d H:i:s'),
-            'update_datetime' => date('Y-m-d H:i:s'),
-        ];
-        
-        DB::table('pp_reviews')->insert($data);
-        $pp_reviews=DB::table('pp_reviews')->get();
-        dd($pp_review);
-
-
-        // return redirect('/property');
-        return view('propertyDetail.property')-> with('data', $pp_reviews);
-        // return view('propertyDetail.property', ['pp_reviews' => $pp_reviews]);
-        // return redirect('property')->with('pp_reviews', $pp_reviews);
-
-
-        // ใช้ได้
-        // Session::put('pp_reviews', $pp_reviews);
-        // return redirect('property');
-
-    }
+    
 }
 

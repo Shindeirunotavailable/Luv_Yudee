@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //check email footer
   function onSubmitemail(event) {
-    console.log('footer');
+    // console.log('footer');
     var emailInput = $('#home-email');
     var emailValue = emailInput.val();
     var showErrorDivFooter = $('#ShowErrorEmailFooter');
@@ -502,10 +502,23 @@ $("#form_review").click(function() {
         contentreview.removeClass('is-invalid');
         contentreview.addClass('is-valid');
       }
-
+        var formData = $("#form_review").serialize();
+        $.ajax({
+          type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+          url: $("#form_review").attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+          data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+          success: function () {
+                Swal.fire({
+                  icon: "success",
+                  text: "ขอบคุณสำหรับการสมัครรับข่าวสารค่ะ",
+                  confirmButtonColor: "#0071BC",
+                });
+          }
+      });
     });
   });
 
+  
   // $("#form_review").click(function() {
   //   const forms = $('.needs-validation');
   //     forms.on('submit', function(event) {

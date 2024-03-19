@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Session;
 class ReviewsController extends Controller
 {
     public function review(Request $request){
-        dd('review');
         
         // dd($request);
         $star = $request->input('star');
@@ -27,15 +26,14 @@ class ReviewsController extends Controller
             'create_datetime' => date('Y-m-d H:i:s'),
             'update_datetime' => date('Y-m-d H:i:s'),
         ];
-        
         DB::table('pp_reviews')->insert($data);
         $pp_reviews=DB::table('pp_reviews')->get();
-        dd($pp_review);
+        // return view('propertyDetail.property')-> with('data', $pp_reviews);
 
+        // return redirect('/property')-> with('data', $pp_reviews);
 
-        // return redirect('/property');
-        return view('propertyDetail.property')-> with('data', $pp_reviews);
-        // return view('propertyDetail.property', ['pp_reviews' => $pp_reviews]);
+        return response()->json(['data',$pp_reviews]);
+
         // return redirect('property')->with('pp_reviews', $pp_reviews);
 
 

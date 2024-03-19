@@ -635,9 +635,8 @@
                                     Reviews</h3>
                                 {{-- @if(Session::has('pp_reviews')) --}}
                                 {{-- @foreach (Session::get('pp_reviews') as $item ) --}}
-                                {{-- @if (isset($data)) --}}
-                                    
-                                
+
+                                @if (isset($data))
                                 @foreach ($data as $item)
                                 {{-- <input type="hidden" id="numberInput" min="1" max="5" value={{$item->review_star}}> --}}
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
@@ -691,7 +690,7 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                {{-- @endif --}}
+                                @endif
 
                                 {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                     <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
@@ -824,7 +823,7 @@
                                                 Please enter a message in the textarea.
                                             </div>
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb"> Submit </button>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb" id="popup_review"> Submit </button>
 
                                 </form>
                                 
