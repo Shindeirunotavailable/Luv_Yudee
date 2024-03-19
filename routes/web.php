@@ -39,8 +39,8 @@ route::any('loginform','App\Http\Controllers\LoginController@loginform');  // �
 route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // กู้รหัสผ่าน
 Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout'); // logout
 
-Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword'); 
-Route::any('resetPassword1', 'App\Http\Controllers\LoginController@resetPassword1'); 
+Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword');
+Route::any('resetPassword1', 'App\Http\Controllers\LoginController@resetPassword1');
 
 
  // -----------------------------------function test Route ------------------------------------
@@ -52,5 +52,3 @@ Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnec
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
 Route::get('delete_image/{id_media}', 'App\Http\Controllers\PropertyController@deleteMedia')->name('deleteMedia');
-
-Route::any('myproperties','App\Http\Controllers\PropertyController@showproperty');

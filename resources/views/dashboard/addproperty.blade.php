@@ -314,20 +314,20 @@
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bedrooms</label>
-                                                    <input type="number" name="bedrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_bedrooms) ? $data['property']->property_bedrooms : ""}}">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt required">Bedrooms</label>
+                                                    <input type="number" name="bedrooms" id="bedrooms"  class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_bedrooms) ? $data['property']->property_bedrooms : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Bathrooms</label>
-                                                    <input type="number" name="bathrooms" class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_bathrooms) ? $data['property']->property_bathrooms : ""}}">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt required">Bathrooms</label>
+                                                    <input type="number" name="bathrooms" id="bathrooms"  class="form-control" placeholder="Rooms" value="{{isset($data['property']->property_bathrooms) ? $data['property']->property_bathrooms : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">
                                                 <div class="mb-d-20">
-                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt">Interior Size</label>
-                                                    <input type="text" name="interior_size" class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->property_interior_size) ? $data['property']->property_interior_size : ""}}">
+                                                    <label class="heading-color ff-heading font-weight-600 mb-d-10 fs-dt required">Size</label>
+                                                    <input type="text" name="interior_size" id="interior_size"  class="form-control" data-type="decimalinput" placeholder="Sqm" value="{{isset($data['property']->property_interior_size) ? $data['property']->property_interior_size : ""}}">
                                                 </div>
                                             </div>
                                             <div class="col-5 col-xl-4 col-6-dt">

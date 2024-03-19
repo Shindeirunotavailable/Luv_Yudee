@@ -157,10 +157,22 @@ $(document).ready(function() {
             }
         });
     });
-
+// CKeditor
     if (document.querySelector('#editor')) {
         ClassicEditor
             .create(document.querySelector('#editor'), {
+                 removePlugins: [ '' ],
+
+                 toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
+                 , 'NumberedList' ]
+            } )
+            .catch(error => {
+            });
+    }
+
+    if (document.querySelector('#showeditor')) {
+        ClassicEditor
+            .create(document.querySelector('#showeditor'), {
                  removePlugins: [ '' ],
 
                  toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
@@ -497,10 +509,17 @@ $('#submitdetail').click(function(event) {
 
     var floor = $('#floor');
     var room = $('#room');
+    var bedrooms = $('#bedrooms');
+    var bathrooms = $('#bathrooms');
+    var interior_size = $('#interior_size');
     var errorFloor = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Floor' + '</div>';
     var errorRoom = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Rooms' + '</div>';
 
-    if (!floor.val() || !room.val()) {
+    var errorBedrooms = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน bedrooms' + '</div>';
+    var errorBathrooms = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน bathrooms' + '</div>';
+    var errorSize = '<div class="invalid-feedback additional-message">' + 'กรุณาระบุข้อมูลจำนวน Size' + '</div>';
+
+    if (!floor.val() || !room.val() || !bedrooms.val() || !bathrooms.val() || !interior_size.val()) {
         if (!floor.val()) {
             floor.addClass('is-invalid');
             floor.next('.additional-message').remove();
@@ -511,6 +530,24 @@ $('#submitdetail').click(function(event) {
             room.addClass('is-invalid');
             room.next('.additional-message').remove();
             room.after(errorRoom);
+        }
+
+        if (!bedrooms.val()) {
+            bedrooms.addClass('is-invalid');
+            bedrooms.next('.additional-message').remove();
+            bedrooms.after(errorBedrooms);
+        }
+
+        if (!bathrooms.val()) {
+            bathrooms.addClass('is-invalid');
+            bathrooms.next('.additional-message').remove();
+            bathrooms.after(errorBathrooms);
+        }
+
+        if (!interior_size.val()) {
+            interior_size.addClass('is-invalid');
+            interior_size.next('.additional-message').remove();
+            interior_size.after(errorSize);
         }
 
         event.preventDefault();
@@ -524,6 +561,24 @@ $('#submitdetail').click(function(event) {
     });
 
     room.on('input', function() {
+        if ($(this).val()) {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    bedrooms.on('input', function() {
+        if ($(this).val()) {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    bathrooms.on('input', function() {
+        if ($(this).val()) {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    interior_size.on('input', function() {
         if ($(this).val()) {
             $(this).removeClass('is-invalid');
         }
