@@ -251,8 +251,9 @@ class LoginController extends Controller
                 ['email' => $forgetEmail],
                 [
                     'resetToken' => $resetToken,
-                    'created_by' => now(),
-                    'update_by' => now(),
+                    'create_datetime' => now(),
+                    'update_datetime' => now(),
+                    
                 ]
             );
             // ส่งอีเมล์ reset password
@@ -286,21 +287,20 @@ class LoginController extends Controller
             // ค้นหาข้อมูลในตาราง password_resets ที่มี token และ email_token ตรงกับที่รับมา
             $passwordReset = DB::table('password_resets')
                                 ->where('resetToken', $token)
-                                ->where('created_by', '>=', now()->subMinutes(30))
+                                ->where('create_datetime', '>=', now()->subMinutes(30))
                                 ->first();
 
             // ตรวจสอบว่าพบข้อมูลหรือไม่
             if ($passwordReset) {
                 // ถ้าพบข้อมูล ให้นำอีเมล์ที่ตรงกับ token นี้มาแสดงในฟอร์ม
                 $email = $passwordReset->email;
-                return view('login.resetPassword', compact('email'));
+                return view('login.resetpassword', compact('email'));
             } else {
                 // ถ้าไม่พบข้อมูล ให้แสดงข้อความแจ้งเตือนหรือดำเนินการต่อตามที่ต้องการ
                 return view('login.login')->with('error', 'Invalid token or email token.');
             }
         }
 
-     // ---------------------------------------------- หน้า resetPassword -------------------------------------------------
        
     public function newPassword(Request $request)
     {

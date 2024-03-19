@@ -7,7 +7,6 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <div class="modal-body">
                 <form action="{{ url('/lostpassword') }}" method="POST" id="lostPasswordForm">
                     @csrf               
@@ -43,7 +42,9 @@
 
 <script>
     var getUrl = window.location;
-    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
+    // var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
+    var baseUrl = getUrl.protocol + "//" + getUrl.host  + "/yuudee/"; // สำหรับอัพขึ้น server
+
     var csrf = $("meta[name='csrf-token']").attr("content"); //token 
     $('#lostPasswordForm').submit(function(event) {
         event.preventDefault();
