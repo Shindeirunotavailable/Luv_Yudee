@@ -19,8 +19,13 @@ class createAccount extends Model
         return $existingUser;
     }
 
-    public static function editPassword($email,$password){
-        DB::table('user')->where('email', $email)->update(['password'=>$password]);
+    // public static function editPassword($email,$password){
+    //     DB::table('user')->where('email', $email)->update(['password'=>$password,'update_datetime'=>date('Y-m-d H:i:s')]);
+
+    // }
+
+    public static function editPassword($data ,$email){
+        DB::table('user')->where('email', $email)->update($data);
 
     }
 

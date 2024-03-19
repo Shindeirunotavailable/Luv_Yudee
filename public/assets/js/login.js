@@ -475,6 +475,6 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
   });
 
   function requestLostPassword(){
-    console.log('aaa');
+    // console.log('aaa');
     
   }
