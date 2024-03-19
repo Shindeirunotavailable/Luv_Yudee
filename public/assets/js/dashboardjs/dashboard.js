@@ -569,7 +569,6 @@ $(document).ready(function() {
         });
     }
 
-    // ตรวจสอบการทำงานของฟังก์ชัน confirmation
     $('.trash-delete').on('click', function(event) {
         confirmation(event);
     });
