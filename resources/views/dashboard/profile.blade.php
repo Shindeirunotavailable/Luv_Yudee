@@ -38,11 +38,14 @@
                                         <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Contact information</h3>
                                         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-row mx-n4">
-                                            <div class="form-group col-md-6 px-4">
-                                                <label for="firstName" class="text-heading">First name</label>
-                                                <input type="text" class="form-control form-control-lg "
-                                                    id="firstName" name="firsName">
-                                            </div>
+                                            @if(session('user_name'))
+                                                <div class="form-group col-md-6 px-4">
+                                                    <label for="firstName" class="text-heading">First name</label>
+                                                    <input type="text" class="form-control form-control-lg "
+                                                        id="firstName" name="firsName" value="{{ session('user_name') }}">
+                                                </div>
+                                            @endif
+
                                             <div class="form-group col-md-6 px-4">
                                                 <label for="lastName" class="text-heading">Last name</label>
                                                 <input type="text" class="form-control form-control-lg "
@@ -62,11 +65,16 @@
                                             </div>
                                         </div>
                                         <div class="form-row mx-n4">
-                                            <div class="form-group col-md-6 px-4 mb-md-0">
-                                                <label for="email" class="text-heading">Email</label>
-                                                <input type="email" class="form-control form-control-lg "
-                                                    id="email" name="email">
-                                            </div>
+                                        
+                                            @if(session('user_email'))
+                                                <div class="form-group col-md-6 px-4 mb-md-0">
+                                                    <label for="email" class="text-heading">Email</label>
+                                                    <input type="email" class="form-control form-control-lg"
+                                                        id="email" name="email" value="{{ session('user_email') }}">
+                                                </div>
+                                            @endif
+
+
                                             <div class="form-group col-md-6 px-4 mb-md-0">
                                                 <label for="skype" class="text-heading">Skype</label>
                                                 <input type="text" class="form-control form-control-lg "

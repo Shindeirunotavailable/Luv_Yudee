@@ -38,10 +38,10 @@
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
                             <span class="d-xl-block">Login / Register</span>
                         </a> --}}
-                        @if(session('user_email'))
+                        @if(session('user_name'))
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                                <span>{{ session('user_email') }}</span>
+                                <span>{{ session('user_name') }}</span>
                             </button>
                             <div class="dropdown-menu">
                                 <a href="{{ route('logout') }}" class="logout-btn dropdown-item">Logout</a>                              

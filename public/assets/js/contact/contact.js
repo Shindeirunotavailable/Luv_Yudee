@@ -33,3 +33,9 @@
     //   });
     // });
 
+    $('body').on('click', '#contentForm', function() {
+        var forms = $('.needs-validation');
+        $('#submitContact').submit(function(event) {
+          console.log('aaa');
+        });
+    });

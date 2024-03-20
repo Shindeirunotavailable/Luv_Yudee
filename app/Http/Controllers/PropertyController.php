@@ -42,8 +42,7 @@ class PropertyController extends Controller
         if (isset($request['id_property'])) {
             $this->data['id_property'] = $request['id_property'];
         }
-        return view('dashboard.sidebardashboard')->with('data', $this->data)
-        ;
+        return view('dashboard.sidebardashboard')->with('data', $this->data);
     }
 
     // PropertyController

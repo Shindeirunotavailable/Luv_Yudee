@@ -16,8 +16,8 @@
                             <div class="pb-10 pt-10">
                                 <h4>Have questions? Get in touch!</h4>
                             </div>
-                            {{-- <form action="{{ url('/contentstone') }}"  method="POST" class="needs-validation" novalidate> --}}
-                            <form class="needs-validation">
+                            <form action="{{ url('/contentstone') }}"  method="POST" class="needs-validation" id="contentForm">
+                            {{-- <form class="needs-validation"> --}}
                                 @csrf
                                 <div class="form-group">
                                     <label class="label-700">First Name</label>
