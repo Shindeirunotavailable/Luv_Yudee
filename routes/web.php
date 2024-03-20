@@ -28,7 +28,7 @@ Route::any('review' , 'App\Http\Controllers\ReviewsController@review');
 
  // -----------------------------------main function  route non ------------------------------------
 route::any('login','App\Http\Controllers\LoginController@login')->name('login'); // เปิดหน้า Login
-route::any('contact','App\Http\Controllers\LoginController@contact'); // เปิดหน้า contact
+route::any('contact','App\Http\Controllers\LoginController@contact')->name('contact'); // เปิดหน้า contact
 route::any('search_result','App\Http\Controllers\LoginController@search_result'); // เปิดหน้า details
 
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน

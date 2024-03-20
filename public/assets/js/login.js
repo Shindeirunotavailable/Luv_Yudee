@@ -348,7 +348,9 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                     text: "You clicked the button!",
                     icon: "success",
                     confirmButtonColor: "#0071BC",
-
+                    customClass: {
+                      confirmButton: 'swal-confirm-button',
+                    }
                   });
 
                     $('#createAccount').modal('hide');

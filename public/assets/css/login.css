@@ -120,3 +120,8 @@ background: #eee;
 .swal2-center{
   padding-bottom: 25%;
 }
+
+.swal-confirm-button {
+  width: 360px;
+  border-radius: 60px !important;
+}
