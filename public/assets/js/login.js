@@ -346,7 +346,9 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                   Swal.fire({
                     title: "Create account success",
                     text: "You clicked the button!",
-                    icon: "success"
+                    icon: "success",
+                    confirmButtonColor: "#0071BC",
+
                   });
 
                     $('#createAccount').modal('hide');

@@ -43,7 +43,7 @@ Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword'
 Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  //ส่งค่าnewPassword
 
 
-route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // เปิดหน้า contact
+route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
 
 
 

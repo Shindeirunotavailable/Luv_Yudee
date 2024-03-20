@@ -13,8 +13,27 @@
                 <div class="col-12 col-lg-5 pb-30">
                     <div class="card cardBox">
                         <div class="card-body ">
+
+                            @if (session('status'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <input type="hidden" value="1" id="modalsuccess">
+                                    <strong> {{ session('status') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
+                            @if (session('error'))
+                                <div class="alert alert-danger  alert-dismissible fade show" role="alert">
+                                    <input type="hidden" value="1" id="modalsuccess">
+                                    <strong> {{ session('error') }}</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif                            
                             <div class="pb-10 pt-10">
-                                <h4>Have questions? Get in touch!</h4>
+                                <h4>Have questions?</h4>
                             </div>
                             <form action="{{ url('/contentstone') }}"  method="POST" class="needs-validation" id="contentForm">
                             {{-- <form class="needs-validation"> --}}

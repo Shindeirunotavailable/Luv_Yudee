@@ -208,7 +208,7 @@ class LoginController extends Controller
         } else {
             // ถ้าไม่พบข้อมูล ให้แสดงข้อความแจ้งเตือนหรือดำเนินการต่อตามที่ต้องการ
             // return view('login.login')->with('error', 'Invalid token or email token.');
-            return redirect()->route('login')->with('error', 'เกินเวลาที่กำหนดกรุณากรอกขอรหัสผ่านใหม่');;
+            return redirect()->route('login')->with('error', 'เกินเวลาที่กำหนดกรุณากรอกขอรหัสผ่านใหม่');
         }
     }
 
@@ -257,27 +257,52 @@ class LoginController extends Controller
     }
 
 
+    // public function contentstone(Request $request)
+    // {
+    //     $email = $request->input('email');
+    //     $email = DB::table('users')->where('email', $email)->first();
+    //     // dd($request->all());
+    //     if ($email) {
+    //         $data = [
+    //             'name' => $request->name,
+    //             'lastname' => $request->lastname,
+    //             'email' => $request->email,
+    //             'description' => $request->description
+    //         ];
+    //         DB::table('contacts')->insert($data);
+    //         return redirect('/content')->with('status', 'เรียบร้อย');
+    //     } else {
+    //         // ถ้าไม่เจอ email ในฐานข้อมูล
+    //         return redirect('/contact')->with('error', 'ไม่พบอีเมล์หรือผู้ใช้งานในระบบ');
+    //     }
+    // }
+
+
     public function contentstone(Request $request)
     {
-        $email = $request->input('email');
-        $email = DB::table('createaccounts')->where('Username', $email)->first();
-        if ($email) {
-            // ถ้าเจอ email ในฐานข้อมูล
+        // dd($request->all());
+        $username = $request->input('firstName');
+        $lastname = $request->input('lastName');
+        $email = $request->input('contactEmail');
+        $description = $request->input('description');
+
+        $existingUser = createAccount::Getemail($email);
+        if ($existingUser) {
             $data = [
-                'name' => $request->name,
-                'lastname' => $request->lastname,
-                'email' => $request->email,
-                'textarea' => $request->textarea
+                'name' => $username,
+                'lastname' => $lastname,
+                'email' => $email,
+                'description' => $description,
+                'create_datetime' => date('Y-m-d H:i:s'),
+                'update_datetime' => date('Y-m-d H:i:s'),
             ];
-            DB::table('contents')->insert($data);
-            return redirect('/content');
+            DB::table('contacts')->insert($data);
+            return redirect('/content')->with('status', 'เรียบร้อย');
+
         } else {
-            // ถ้าไม่เจอ email ในฐานข้อมูล
-            $errorMessages = 'ไม่พบอีเมล์หรือผู้ใช้งานในระบบ';
-            return redirect('/content')->with('errorMessages', $errorMessages);
+            return redirect('/contact')->with('error', 'ไม่พบอีเมล์หรือผู้ใช้งานในระบบ');
         }
     }
-
 
 
     // ---------------------------------------------- หน้า Details -------------------------------------------------

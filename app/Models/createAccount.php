@@ -12,9 +12,9 @@ class createAccount extends Model
     const CREATED_AT = 'create_datetime	';
     const UPDATED_AT = 'update_datetime';
 
-    public static function Getemail($username){
+    public static function Getemail($email){
 
-        $existingUser = DB::table('users')->where('email', $username)->first();
+        $existingUser = DB::table('users')->where('email', $email)->first();
 
         return $existingUser;
     }
