@@ -297,16 +297,36 @@ class LoginController extends Controller
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
             DB::table('contacts')->insert($data);
-            // return redirect()->with('status', 'เรียบร้อย')->route('contact');
             return redirect('/contact')->with('status', 'เรียบร้อย');
-
-
         } else {
             return redirect('/contact')->with('error', 'ไม่พบอีเมล์หรือผู้ใช้งานในระบบ');
         }
     }
+    // ---------------------------------------------- หน้า Details -------------------------------------------------
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     // ---------------------------------------------- หน้า Details -------------------------------------------------
 
 

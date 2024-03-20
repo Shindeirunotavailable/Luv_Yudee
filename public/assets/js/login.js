@@ -345,13 +345,14 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                   
                   Swal.fire({
                     title: "Create account success",
-                    text: "You clicked the button!",
                     icon: "success",
                     confirmButtonColor: "#0071BC",
+                    confirmButtonText: "Close",
                     customClass: {
                       confirmButton: 'swal-confirm-button',
                     }
                   });
+                  
 
                     $('#createAccount').modal('hide');
                     $('#successMessageModel').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
