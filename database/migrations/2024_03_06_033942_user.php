@@ -23,6 +23,7 @@ class User extends Migration
             $table->dateTime('update_datetime')->useCurrent();
             $table->tinyInteger('create_by')->default(0); 
             $table->tinyInteger('update_by')->default(0); 
+            $table->rememberToken();
             $table->timestamps();
         });
     }

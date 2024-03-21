@@ -9,7 +9,6 @@
                     <div class="container">
                         <div class="row ">
                             <div class="col-md-6">
-
                                 <div class="card mb-6">
                                     <div class="card-body px-6 pt-6 pb-5">
                                         <div class="row">
@@ -18,10 +17,14 @@
                                                 <p class=" fs-mp mb-4 ">Upload your profile photo.</p>
                                             </div>
                                             <div class="col-sm-8 col-xl-12 col-xxl-5 text-center">
-                                                <img src="https://homez-reactjs.ibthemespro.com/images/listings/profile-1.jpg" alt="My Profile" class="mx-auto d-block img">
+                                                <img src="https://homez-reactjs.ibthemespro.com/images/listings/profile-1.jpg"
+                                                    alt="My Profile" class="mx-auto d-block img">
                                                 <div class="custom-file mt-4 h-auto">
-                                                    <input type="file" class="custom-file-input" hidden="" id="customFile" name="file">
-                                                    <button type="submit" class="afterButton rounded-pill btn-lg mt-2" >Upload profile image</button>
+                                                    <input type="file" class="custom-file-input" hidden=""
+                                                        id="customFile" name="file">
+                                                    <button type="submit"
+                                                        class="afterButton rounded-pill btn-lg mt-2">Upload profile
+                                                        image</button>
                                                 </div>
                                             </div>
                                             <p class="col-sm-12 d-flex justify-content-center">
@@ -38,11 +41,15 @@
                                         <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Contact information</h3>
                                         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-row mx-n4">
-                                            <div class="form-group col-md-6 px-4">
-                                                <label for="firstName" class="text-heading">First name</label>
-                                                <input type="text" class="form-control form-control-lg "
-                                                    id="firstName" name="firsName">
-                                            </div>
+                                            @if (session('user_name'))
+                                                <div class="form-group col-md-6 px-4">
+                                                    <label for="firstName" class="text-heading">First name</label>
+                                                    <input type="text" class="form-control form-control-lg "
+                                                        id="firstName" name="firsName"
+                                                        value="{{ session('user_name') }}">
+                                                </div>
+                                            @endif
+
                                             <div class="form-group col-md-6 px-4">
                                                 <label for="lastName" class="text-heading">Last name</label>
                                                 <input type="text" class="form-control form-control-lg "
@@ -62,11 +69,17 @@
                                             </div>
                                         </div>
                                         <div class="form-row mx-n4">
-                                            <div class="form-group col-md-6 px-4 mb-md-0">
-                                                <label for="email" class="text-heading">Email</label>
-                                                <input type="email" class="form-control form-control-lg "
-                                                    id="email" name="email">
-                                            </div>
+
+                                            @if (session('user_email'))
+                                                <div class="form-group col-md-6 px-4 mb-md-0">
+                                                    <label for="email" class="text-heading">Email</label>
+                                                    <input type="email" class="form-control form-control-lg"
+                                                        id="email" name="email"
+                                                        value="{{ session('user_email') }}">
+                                                </div>
+                                            @endif
+
+
                                             <div class="form-group col-md-6 px-4 mb-md-0">
                                                 <label for="skype" class="text-heading">Skype</label>
                                                 <input type="text" class="form-control form-control-lg "
@@ -82,8 +95,8 @@
                                         <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                                         <div class="form-group mb-0">
                                             <label for="title" class="text-heading">Title / Posittion</label>
-                                            <input type="text" class="form-control form-control-lg "
-                                                id="title" name="title">
+                                            <input type="text" class="form-control form-control-lg " id="title"
+                                                name="title">
                                         </div>
                                     </div>
                                 </div>
@@ -96,43 +109,43 @@
 
 
                                 <div class="card mb-6 ">
-                                        <div class="card-body  pt-6 pb-5">
-                                            <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">User detail</h3>
-                                            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                                            </p>
-                                            <div class="form-group">
-                                                <label for="facebook" class="text-heading">Facebook Url</label>
-                                                <input type="url" class="form-control form-control-lg "
-                                                    id="facebook" name="facebook">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="pinterest" class="text-heading">Pinterest Url</label>
-                                                <input type="url" class="form-control form-control-lg "
-                                                    id="pinterest" name="pinterest">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="instagram" class="text-heading">Instagram Url</label>
-                                                <input type="url" class="form-control form-control-lg "
-                                                    id="instagram" name="instagram">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="twitter" class="text-heading">Twitter Url</label>
-                                                <input type="url" class="form-control form-control-lg "
-                                                    id="twitter" name="twitter">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="linkedin" class="text-heading">Linkedin Url</label>
-                                                <input type="url" class="form-control form-control-lg "
-                                                    id="linkedin" name="linkedin">
-                                            </div>
-                                            <div class="form-group mb-7">
-                                                <label for="website" class="text-heading">Website Url <span
-                                                        class="text-muted">(without http)</span>
-                                                </label>
-                                                <input type="url" class="form-control form-control-lg "
-                                                    id="website" name="website">
-                                            </div>
+                                    <div class="card-body  pt-6 pb-5">
+                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">User detail</h3>
+                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                        </p>
+                                        <div class="form-group">
+                                            <label for="facebook" class="text-heading">Facebook Url</label>
+                                            <input type="url" class="form-control form-control-lg " id="facebook"
+                                                name="facebook">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="pinterest" class="text-heading">Pinterest Url</label>
+                                            <input type="url" class="form-control form-control-lg "
+                                                id="pinterest" name="pinterest">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="instagram" class="text-heading">Instagram Url</label>
+                                            <input type="url" class="form-control form-control-lg "
+                                                id="instagram" name="instagram">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="twitter" class="text-heading">Twitter Url</label>
+                                            <input type="url" class="form-control form-control-lg "
+                                                id="twitter" name="twitter">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="linkedin" class="text-heading">Linkedin Url</label>
+                                            <input type="url" class="form-control form-control-lg "
+                                                id="linkedin" name="linkedin">
+                                        </div>
+                                        <div class="form-group mb-7">
+                                            <label for="website" class="text-heading">Website Url <span
+                                                    class="text-muted">(without http)</span>
+                                            </label>
+                                            <input type="url" class="form-control form-control-lg "
+                                                id="website" name="website">
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="card">
@@ -171,14 +184,14 @@
 
                         <div class="d-flex justify-content-end flex-wrap">
                             {{-- เอา btn-t-white ออก --}}
-                             <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
-                                class="afterButton rounded-pill btn-lg mt-2">Delete Profile
-                                <i class="fa-solid fa-arrow-right"></i></a>
+                            <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
+                                    class="afterButton rounded-pill btn-lg mt-2">Delete Profile
+                                    <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                             {{-- เอา btn-t-white ออก --}}
                             <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
-                                class="afterButton rounded-pill btn-lg mt-2">Update Profile
-                                <i class="fa-solid fa-arrow-right"></i></a>
+                                    class="afterButton rounded-pill btn-lg mt-2">Update Profile
+                                    <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
 
                         </div>
@@ -191,7 +204,7 @@
         </div>
         <div class="footer100vh"></div>
 
-    {{-- <footer class="mb-1 pt-30 m-0 mt-footer ">
+        {{-- <footer class="mb-1 pt-30 m-0 mt-footer ">
         <section class="footer-style1 at-home4 pt-60 pb-0 bdrs-12">
             <div class="container">
                 <div class="row">
@@ -279,4 +292,3 @@
 
     </footer> --}}
     </div>
-
