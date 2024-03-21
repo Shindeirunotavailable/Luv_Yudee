@@ -18,8 +18,4 @@ class Property extends Model
                return $query->get();
             }
     }
-    public function media()
-    {
-        return $this->hasMany(Media::class, 'id_property');
-    }
 }
