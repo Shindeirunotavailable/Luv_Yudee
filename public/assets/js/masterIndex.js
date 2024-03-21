@@ -252,35 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
       offcanvasElement.classList.remove('show');
   });
 });
-
-
-
-// function onSubmitRegister(event) {
-//   var emailInput = $('#modal_email');
-//   var emailValue = emailInput.val();
-//   var showErrorDiv = $('#ShowError');
-//   // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
-//   emailInput.removeClass('border-danger is-valid');
-//   if (emailValue.trim() === '') {
-//       showErrorDiv.text('Please enter a valid email');
-//       emailInput.addClass('border-danger');
-//       event.preventDefault(); // ป้องกันการ submit แบบปกติ
-//   } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-//       showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
-//       emailInput.addClass('border-danger');
-//       event.preventDefault();
-//   } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
-//     showErrorDiv.text('Please enter a part following .');
-//     emailInput.addClass('border-danger');
-//     event.preventDefault();
-//   } else {
-//       emailInput.addClass('is-valid');
-//       showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
-//   }
-//   document.getElementById("registerForm").submit();
-// }
-
-
 /*้home-email */
 // function onSubmitemail(event) {
 //     var emailInput = $('#home-email');
@@ -463,29 +434,30 @@ $("#form_review").click(function() {
   console.log('review');
   const forms = $('.needs-validation');
     forms.on('submit', function(event) {
-      var emailInput = $('#email');
-      var emailValue = emailInput.val();
-      var showErrorDiv = $('#ShowErrorEmail');
+      // var emailInput = $('#email');
+      // var emailValue = emailInput.val();
+      // var showErrorDiv = $('#ShowErrorEmail');
       const namereview = $('#name');
       const contentreview = $('#content')
+      const emailreview = $('#email');
 
-      emailInput.removeClass('border-danger is-valid');
-      if (emailValue.trim() === '') {
-        showErrorDiv.text('Please enter a valid email');
-        emailInput.addClass('border-danger');
-        event.preventDefault(); // ป้องกันการ submit แบบปกติ
-      } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-          showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
-          emailInput.addClass('border-danger');
-          event.preventDefault();
-      } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
-        showErrorDiv.text('Please enter a part following .');
-        emailInput.addClass('border-danger');
-        event.preventDefault();
-      } else {
-          emailInput.addClass('is-valid');
-          showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
-      }
+      // emailInput.removeClass('border-danger is-valid');
+      // if (emailValue.trim() === '') {
+      //   showErrorDiv.text('Please enter a valid email');
+      //   emailInput.addClass('border-danger');
+      //   event.preventDefault(); // ป้องกันการ submit แบบปกติ
+      // } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
+      //     showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+      //     emailInput.addClass('border-danger');
+      //     event.preventDefault();
+      // } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
+      //   showErrorDiv.text('Please enter a part following .');
+      //   emailInput.addClass('border-danger');
+      //   event.preventDefault();
+      // } else {
+      //     emailInput.addClass('is-valid');
+      //     showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+      // }
       if( !namereview.val()  ){
         namereview.addClass('is-invalid');
         event.preventDefault();
@@ -493,6 +465,14 @@ $("#form_review").click(function() {
       } else {
         namereview.removeClass('is-invalid');
         namereview.addClass('is-valid');
+      }
+      if( !emailreview.val()  ){
+        emailreview.addClass('is-invalid');
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        emailreview.removeClass('is-invalid');
+        emailreview.addClass('is-valid');
       }
       if( !contentreview.val()  ){
         contentreview.addClass('is-invalid');
@@ -505,53 +485,6 @@ $("#form_review").click(function() {
       
     });
   });
-
-  // $("#form_review").click(function() {
-  //   const forms = $('.needs-validation');
-  //     forms.on('submit', function(event) {
-  //       // var emailInput = $('#email');
-  //       const namereview = $('#name');
-  //       const emailreview = $('#email');
-  //       const contentreview = $('#content')
-  //       if( !namereview.val()&&!emailreview.val() && !contentreview.val()){ // ! ไม่มีค่า
-  //         namereview.addClass('is-invalid'); //กรอบเเดง
-  //         emailreview.addClass('is-invalid');
-  //         contentreview.addClass('is-invalid');
-  //         event.preventDefault();
-  //         event.stopPropagation();
-  //       } else if (namereview.val() && !emailreview.val()){ // ! ไม่มีค่า
-  //         namereview.removeClass('is-invalid'); //ลบกรอบเเดง
-  //         namereview.addClass('is-valid'); //เพิ่มกรอบเขียว
-  //         emailreview.addClass('is-invalid');
-  //         event.preventDefault();
-  //         event.stopPropagation();
-  //       } else if (emailreview.val() && !namereview.val()){ // ! ไม่มีค่า
-  //         emailreview.removeClass('is-invalid'); //ลบกรอบเเดง
-  //         emailreview.addClass('is-valid'); //เพิ่มกรอบเขียว
-  //         namereview.addClass('is-invalid');
-  //         event.preventDefault();
-  //         event.stopPropagation();
-  //       } else if (emailreview.val() && !contentreview.val()){ // ! ไม่มีค่า
-  //         emailreview.removeClass('is-invalid'); //ลบกรอบเเดง
-  //         emailreview.addClass('is-valid'); //เพิ่มกรอบเขียว
-  //         contentreview.addClass('is-invalid');
-  //         event.preventDefault();
-  //         event.stopPropagation();
-  //       } else if (contentreview.val() && !emailreview.val()){ // ! ไม่มีค่า
-  //         contentreview.removeClass('is-invalid'); //ลบกรอบเเดง
-  //         contentreview.addClass('is-valid'); //เพิ่มกรอบเขียว
-  //         emailreview.addClass('is-invalid');
-  //         event.preventDefault();
-  //         event.stopPropagation();
-  //       }
-  //       else {
-  //         emailreview.removeClass('is-invalid');
-  //         emailreview.addClass('is-valid');
-  //         contentreview.removeClass('is-invalid');
-  //         contentreview.addClass('is-valid');
-  //       }
-  //     });
-  //   });
 
   
 

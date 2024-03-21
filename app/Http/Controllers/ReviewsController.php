@@ -36,4 +36,9 @@ class ReviewsController extends Controller
         // return redirect('property');
 
     }
+
+    public function deletereview($id_review){
+        DB::table('pp_reviews')->where('id_review',$id_review)->delete();
+        return redirect('/addproperty');
+    }
 }

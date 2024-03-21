@@ -63,12 +63,25 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                                <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
+                                            <div class="row mb-1 align-items-center">
+                                                <div class="col-sm-10 mb-2 mb-sm-0  ">
+                                                    <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="d-flex justify-content-sm-end justify-content-center mb-0">
+                                                        <!-- เพิ่มปุ่มอนุมัติ -->
+                                                        <a href="#" class="btn btn-success btn-sm mr-2 text-white">อนุมัติ</a>
+                                                        <!-- เพิ่มปุ่มลบ -->
+                                                        <a href="{{route('deletereview',['id_review'=>$item->id_review])}}" class="btn btn-danger btn-sm text-white">ลบ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                {{-- <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p> --}}
                                                 <div class="d-flex justify-content-sm-start justify-content-center">
                                                     <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
-                                                    <a href="#"
-                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                    <a href="#" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                 </div>
+                                                
                                         </div>
                                     </div>
                                 </div>
@@ -276,11 +289,11 @@
 
 
 
-
+                                
                                 <div class="col-md-12">
                                     {{-- เอา btn-t-white ออก --}}
                                     <div class="position-relative bdrb1 pt-d-30 pb20"><a href="#"
-                                            class="ud-btn afterButton btn-t-white">Show all 134 reviews
+                                            class="ud-btn  btn-t-white">Show all 134 reviews
 
                                             <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
