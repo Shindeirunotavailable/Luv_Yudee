@@ -546,6 +546,7 @@ $(document).ready(function() {
         var urlToRedirect = event.currentTarget.getAttribute('href');
 
         Swal.fire({
+            position: "center",
             title: "Are you sure?",
             text: "You won't be able to revert this!",
             icon: "warning",
@@ -560,6 +561,7 @@ $(document).ready(function() {
                 Swal.fire("Delete!", "Your file has been deleted", "success");
             } else {
                 Swal.fire({
+                    position: "center",
                     title: "Cancelled",
                     text: "The media is safe",
                     icon: "error",

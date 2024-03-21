@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 use App\Models\Property;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Media;
+use App\Models\login;
+
 use App\Models\Amenities;
 use App\Models\Province;
 use App\Models\Amphure;
@@ -26,6 +29,9 @@ class PropertyController extends Controller
         $id_property = $request['id_property'];
         $property = Property::property($id_property);
 
+        $blogs = DB::table('pp_properties')
+        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')->get();
+        $media = DB::table('pp_media')->get();
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
@@ -35,6 +41,8 @@ class PropertyController extends Controller
         $this->data['media'] = Media::all();
         $this->data['pp_reviews'] = Reviews::all();
         $this->data['property'] = $property;
+        $this->data['media'] = $media;
+        $this->data['blogs'] = $blogs;
 
 
         if (isset($request['id_property'])) {
@@ -46,8 +54,7 @@ class PropertyController extends Controller
     // PropertyController
     public function updatedata(Request $request)
     {
-
-        date_default_timezone_set('Asia/Bangkok');
+        // date_default_timezone_set('Asia/Bangkok');
         $data = array(
             'property_title' => $request['title'],
             'property_description' => json_encode($request['description']),
@@ -73,61 +80,64 @@ class PropertyController extends Controller
             'property_notes' => $request['notes'],
             'property_amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
             'property_stage' => $request['property_stage'],
-
-
         );
+        $id_user = DB::table('users')->where('id', $request->id)->value('id');
+
         if (isset($request['id_property'])) {
             $id_property = $request['id_property'];
             $data['update_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 2;
             DB::table('pp_properties')->where('id_property', $id_property)->update($data);
 
-            if ($request->hasFile('image')) {
-                $mediaData = [];
-                foreach ($request->file('image') as $image) {
-                    $imageName = time() . '_' . $image->getClientOriginalName();
-                    $image->move(public_path('/assets/upload_image'), $imageName);
-                    $image_url = '/assets/upload_image/' . $imageName;
-                    $mediaData[] = [
-                        'media_property' => $image_url,
-                        'media_file_type' => '1',
-                        'create_by' => '1',
-                        'update_by' => '0',
-                        'update_datetime' => date('Y-m-d H:i:s'),
-                        'create_datetime' => date('Y-m-d H:i:s'),
-                        'id_property' => $id_property,
-                    ];
+            // if ($request->hasFile('image') || $request->hasFile('video')) {
+                if ($request->hasFile('image')) {
+                    $mediaData = [];
+                    foreach ($request->file('image') as $image) {
+                        $imageName = time() . '_' . $image->getClientOriginalName();
+                        $image->move(public_path('/assets/upload_image'), $imageName);
+                        $image_url = '/assets/upload_image/' . $imageName;
+                        $mediaData[] = [
+                            'media_property' => $image_url,
+                            'media_file_type' => '1',
+                            'create_by' => '1',
+                            'update_datetime' => date('Y-m-d H:i:s'),
+                            'create_datetime' => date('Y-m-d H:i:s'),
+                            'id_property' => $id_property,
+                        ];
+                    }
+                    DB::table('pp_media')->insert($mediaData);
                 }
-                DB::table('pp_media')->insert($mediaData);
-            }
 
-            if ($request->hasFile('video')) {
-                $mediaData = [];
-                foreach ($request->file('video') as $video) {
-                    $videoName = time() . '_' . $video->getClientOriginalName();
-                    $video->move(public_path('/assets/upload_video'), $videoName);
-                    $video_url = '/assets/upload_video/' . $videoName;
-                    $mediaData[] = [
-                        'media_property' => $video_url,
-                        'media_file_type' => '2',
-                        'create_by' => '1',
-                        'update_by' => '0',
-                        'update_datetime' => date('Y-m-d H:i:s'),
-                        'create_datetime' => date('Y-m-d H:i:s'),
-                        'id_property' => $id_property,
-                    ];
+                if ($request->hasFile('video')) {
+                    $mediaData = [];
+                    foreach ($request->file('video') as $video) {
+                        $videoName = time() . '_' . $video->getClientOriginalName();
+                        $video->move(public_path('/assets/upload_video'), $videoName);
+                        $video_url = '/assets/upload_video/' . $videoName;
+                        $mediaData[] = [
+                            'media_property' => $video_url,
+                            'media_file_type' => '2',
+                            'create_by' => '1',
+                            'update_datetime' => date('Y-m-d H:i:s'),
+                            'create_datetime' => date('Y-m-d H:i:s'),
+                            'id_property' => $id_property,
+                        ];
+                    }
+                    DB::table('pp_media')->insert($mediaData);
                 }
-                DB::table('pp_media')->insert($mediaData);
-            }
+            // }
+
         } else {
-
+            $id = Auth::id();
             $data['update_datetime'] = date('Y-m-d H:i:s');
             $data['create_datetime'] = date('Y-m-d H:i:s');
             $data['update_by'] = 1;
-            $data['create_by'] = 1;
+            $data['create_by'] = $id;
             $data['property_status'] = 1;
+            $data['id'] = $id;
             $id_property = DB::table('pp_properties')->insertGetId($data);
-            if ($request->hasFile('image') || $request->hasFile('video')) {
+
+            // if ($request->hasFile('image') || $request->hasFile('video')) {
                 $mediaData = [];
                 if ($request->hasFile('image')) {
                     foreach ($request->file('image') as $image) {
@@ -138,7 +148,6 @@ class PropertyController extends Controller
                             'media_property' => $image_url,
                             'media_file_type' => '1',
                             'create_by' => '1',
-                            'update_by' => '1',
                             'update_datetime' => date('Y-m-d H:i:s'),
                             'create_datetime' => date('Y-m-d H:i:s'),
                             'id_property' => $id_property,
@@ -154,7 +163,6 @@ class PropertyController extends Controller
                             'media_property' => $video_url,
                             'media_file_type' => '2',
                             'create_by' => '1',
-                            'update_by' => '1',
                             'update_datetime' => date('Y-m-d H:i:s'),
                             'create_datetime' => date('Y-m-d H:i:s'),
                             'id_property' => $id_property,
@@ -162,12 +170,10 @@ class PropertyController extends Controller
                     }
                 }
                 DB::table('pp_media')->insert($mediaData);
-            }
+            // }
 
         }
-        return redirect('addproperty?id_property=' . $id_property)
-            ->with('success', 'message')
-            ;
+        return redirect('addproperty?id_property=' . $id_property)->with('success', 'message');
     }
 
     // deleteMedia
