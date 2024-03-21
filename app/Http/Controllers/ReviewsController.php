@@ -31,13 +31,6 @@ class ReviewsController extends Controller
         // return view('propertyDetail.property')-> with('data', $pp_reviews);
 
         return redirect('/property')-> with('data', $pp_reviews);
-
-        // return response()->json(['data' => $pp_reviews]);
-
-
-        // return redirect('property')->with('pp_reviews', $pp_reviews);
-
-
         // ใช้ได้
         // Session::put('pp_reviews', $pp_reviews);
         // return redirect('property');

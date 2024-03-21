@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reviews extends Model
 {
-    // protected $table = 'pp_reviews';
+    protected $table = 'pp_reviews';
 }

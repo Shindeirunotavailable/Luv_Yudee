@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                         <img src="{{ asset('/assets/images/review-2.jpg') }}"
                                             alt="Viola Austin" class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -277,7 +277,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
 
 
