@@ -30,9 +30,10 @@ class ReviewsController extends Controller
         $pp_reviews=DB::table('pp_reviews')->get();
         // return view('propertyDetail.property')-> with('data', $pp_reviews);
 
-        // return redirect('/property')-> with('data', $pp_reviews);
+        return redirect('/property')-> with('data', $pp_reviews);
 
-        return response()->json(['data',$pp_reviews]);
+        // return response()->json(['data' => $pp_reviews]);
+
 
         // return redirect('property')->with('pp_reviews', $pp_reviews);
 
