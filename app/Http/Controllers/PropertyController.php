@@ -30,7 +30,6 @@ class PropertyController extends Controller
         $blogs = DB::table('pp_properties')
         ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')->get();
         $media = DB::table('pp_media')->get();
-        $users = DB::table('users')->get();
 
         $this->data['provinces'] = Province::all();
         $this->data['amphures'] = Amphure::all();
@@ -40,7 +39,6 @@ class PropertyController extends Controller
 
         $this->data['property'] = $property;
         $this->data['media'] = $media;
-        $this->data['users'] = $users;
         $this->data['blogs'] = $blogs;
 
 
