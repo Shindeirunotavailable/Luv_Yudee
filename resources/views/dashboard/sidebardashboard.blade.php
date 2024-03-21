@@ -58,9 +58,11 @@
                                         aria-selected="false" href="#v-profile">
                                         <i class="fa-solid fa-circle-user mr-d-15"></i>My Profile</a>
                                 </div>
-                                <div class="sidebar_list_item"><a class="items-center-db    " href="#"> <i
-                                            class="fa-solid fa-right-from-bracket mr-d-15"></i>Logout</a>
+
+                                <div class="sidebar_list_item"><a class="items-center-db" href="#"> 
+                                    <i class="fa-solid fa-right-from-bracket mr-d-15"></i>Logout</a>
                                 </div>
+
                             </div>
                         </ul>
                     </div>
@@ -130,11 +132,15 @@
                                         aria-selected="false" href="#v-profile">
                                         <i class="fa-solid fa-circle-user mr-d-15"> </i>My Profile</a>
                                 </div>
-                                <div class="sidebar_list_item"><a class="items-center-db    " href="#">
+                                @if(session('user_name'))    
+                                <div class="sidebar_list_item"><a class="items-center-db" href="{{ route('logout') }}">
                                         <i class="fa-solid fa-right-from-bracket mr-d-15"></i>Logout</a>
                                 </div>
+                                @endif
                             </div>
 
+       
+                        
 
                         </div>
 

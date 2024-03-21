@@ -59,6 +59,16 @@
             success: function(response) {
                 // console.log(response);
                 if (response.success) {
+                    Swal.fire({
+                    title: "Create account success",
+                    icon: "success",
+                    confirmButtonColor: "#0071BC",
+                    confirmButtonText: "Close",
+                    customClass: {
+                      confirmButton: 'swal-confirm-button',
+                    }
+                  });
+                    $('#forgetPassword').modal('hide');
                     $('#forgetEmail').val("");
                     $('#successlostPassword').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
                     $('#hiddenErrorlostPassword').addClass('hidden');
