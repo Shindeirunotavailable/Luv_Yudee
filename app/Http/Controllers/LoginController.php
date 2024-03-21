@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\login;
 use App\Models\createAccount;
+use App\Models\resetPassword;
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use PharIo\Manifest\Url;
@@ -304,8 +306,18 @@ class LoginController extends Controller
     public function newPassword(Request $request)
     {
         // $foundEmail = DB::table('user')->where('email', $request->email)->first();
-        // ค้นหาผู้ใช้จากอีเมล์
-        // dd($foundEmail,$foundEmail->id,$foundEmail->name);
+        $foundEmail = resetPassword::GetEmailRestPassword($request->email);
+
+        if ($foundEmail) {
+            $data = [
+                'status' => "1",
+                'update_datetime'=> date('Y-m-d H:i:s'),
+
+            ];
+            resetPassword::modelresetPassword($data, $request->email);
+        }
+        // dd($foundEmail,$foundEmail->id_password_reset,$foundEmail->status);
+
         $user = createAccount::Getemail($request->email);
         if ($user) {
             $data = [
@@ -313,6 +325,7 @@ class LoginController extends Controller
                 'update_by' =>$user->id,
                 'update_datetime'=> date('Y-m-d H:i:s'),
             ];
+
             createAccount::editPassword($data, $request->email);
             return redirect()->route('login');
         } 

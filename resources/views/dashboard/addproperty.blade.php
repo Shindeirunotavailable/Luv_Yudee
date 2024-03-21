@@ -1,4 +1,5 @@
 @csrf
+
 <div class="dashboard__main pl-d-0-md ">
     <div class="dashboard__content property-page bg-f7 ">
         <div class="row align-items-center pb-d-40">
@@ -116,10 +117,10 @@
                                                     <div class=" ">
                                                         <div class="col-sm-4 mb-4 mt-3">
                                                             <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="imageLabel">Select Image</label>
-                                                            <input name="image[]" type="file" class="custom-file-input" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
+                                                            <input name="image[]" type="file" class="custom-file-input d-none" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
                                                         {{-- row justify-content-center --}}
-                                                        <div class="col-sm-12 mt-0 row "  id="fileList"></div>
+                                                        <div class="col-sm-12 mt-0 row mb-4 "  id="fileList"></div>
                                                         @if (isset($data['id_property'])  )
                                                             <div class="row">
                                                                 <div class="col-12 mt-0 mb-4 m-2 row justify-content-center mb-6">
@@ -141,7 +142,7 @@
                                                                                         <input type="hidden" name="image_url" value="{{ asset($media->media_property) }}">
                                                                                     </td>
                                                                                     <td class="p-4 trash-td ">
-                                                                                        <a href="{{ route('deleteMedia',$media->id_media) }}" type="submit"  class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                                        <a href="{{ route('deleteMedia',$media->id_media) }}" class=" btn-danger btn-sm mt-2 fa-solid fa-trash fs-20 trash-delete"></a>
                                                                                     </td>
                                                                                 </tr>
                                                                             @endif
@@ -151,13 +152,14 @@
                                                             </div>
                                                         @endif
                                                     </div>
-                                                    <h4 class="fw-600 title fs-17 mb-10">Video Option</h4>
+                                                    <h4 class="fw-600 title fs-17 mb-10 mt-4">Video Option</h4>
                                                     <div class=" ">
                                                         <div class="col-sm-4 mb-4 mt-3">
                                                             <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="videoLabel">Select Video</label>
-                                                            <input name="video[]" type="file" class="custom-file-input" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
+
+                                                            <input name="video[]" type="file" class="custom-file-input d-none" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
-                                                        <div class="col-sm-12 mt-0 row " id="VdoList"></div>
+                                                        <div class="col-sm-12 mt-0 row mb-4" id="VdoList"></div>
 
                                                             @if (isset($data['id_property']))
                                                                 <div class="row">
@@ -504,3 +506,32 @@
     </footer>
 
 </div>
+{{-- <script>
+    function confirmation(event) {
+        var urlToRedirect = event.currentTarget.getAttribute('href');
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#0071bc",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+        .then((willDelete) => {
+            if (willDelete.isConfirmed) {
+                window.location.href = urlToRedirect;
+                Swal.fire("Delete!", "Your file has been deleted", "success");
+            } else {
+                Swal.fire({
+                title: "Cancelled",
+                text: "The media is safe",
+                icon: "error",
+                confirmButtonColor: "#0071bc",
+        })
+
+            }
+        });
+    }
+</script> --}}

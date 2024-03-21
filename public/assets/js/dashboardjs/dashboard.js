@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $(".dropbtn").click(function() {
         var dropdownContent = $(this).next(".dropdown-content");
@@ -53,31 +52,6 @@ $(document).ready(function() {
     $('#districts').select2();
 
 });
-// $(document).ready(function() {
-//     // อัปเดตป้ายกำกับของรูปภาพ
-//     function updateImage(input) {
-//         var fileName = input.files[0].name;
-//         var label = $('#imageLabel');
-//         label.html(fileName);
-//     }
-
-//     // อัปเดตป้ายกำกับของวิดีโอ
-//     function updateVideoLabel(input) {
-//         var fileName = input.files[0].name;
-//         var label = $('#videoLabel');
-//         label.html(fileName);
-//     }
-
-//     // รับอีเวนต์ change จาก input รูปภาพ
-//     $('#customIMG').change(function() {
-//         updateImage(this);
-//     });
-
-//     // รับอีเวนต์ change จาก input วิดีโอ
-//     $('#customVdo').change(function() {
-//         updateVideoLabel(this);
-//     });
-// });
 
 // map
     $(document).ready(function() {
@@ -182,55 +156,6 @@ $(document).ready(function() {
             });
     }
 
-
-    //Upload Image show image
-    // $(document).ready(function() {
-    //     if ($('#customIMG').length) {
-    //         $('#customIMG').on('change', function(e) {
-    //             var fileList = $('#fileList');
-    //             fileList.html('');
-
-    //             var files = e.target.files;
-    //             for (var i = 0; i < files.length; i++) {
-    //                 var file = files[i];
-
-    //                 var colDiv = $('<div></div>').addClass('col-2');
-
-    //                 var img = $('<img />').attr('src', URL.createObjectURL(file)).css({
-    //                     'width': '100%',
-    //                     'margin-bottom': '20px'
-    //                 });
-    //                 colDiv.append(img);
-    //                 fileList.append(colDiv);
-    //             }
-    //         });
-    //     }
-    //     if ($('#customVdo').length) {
-    //         $('#customVdo').on('change', function(e) {
-    //             var VdoList = $('#VdoList');
-    //             VdoList.html('');
-
-    //             var files = e.target.files;
-    //             for (var i = 0; i < files.length; i++) {
-    //                 var file = files[i];
-
-    //                 var colDiv = $('<div></div>').addClass('col-4');
-
-    //                 var video = $('<video></video>').attr({
-    //                     'src': URL.createObjectURL(file),
-    //                     'controls': true
-    //                 }).css({
-    //                     'width': '100%',
-    //                     'margin-bottom': '20px'
-    //                 });
-    //                 colDiv.append(video);
-    //                 VdoList.append(colDiv);
-    //             }
-    //         });
-    //     }
-
-    // });
-
     //Upload Image show name
     $(document).ready(function() {
         if ($('#customIMG').length) {
@@ -321,7 +246,6 @@ function formatCurrency(input, blur) {
 }
 // Event Handling
 $('#submitdescription').click(function(event) {
-    var forms = $('.needs-validation');
     var titleproperty = $('#titleproperty');
     var price = $('#price');
     var propertystatus = $('#propertystatus');
@@ -370,7 +294,6 @@ $('#submitdescription').click(function(event) {
 });
 
 $('#submitmedia').click(function(event) {
-    var forms = $('.needs-validation');
 
     var customIMG = $('#customIMG');
     var customVdo = $('#customVdo');
@@ -412,7 +335,6 @@ $('#submitmedia').click(function(event) {
 
 
 $('#submitlocation').click(function(event) {
-    var forms = $('.needs-validation');
 
     var address = $('#address');
     var latitudeInput = $('#latitudeInput');
@@ -505,7 +427,6 @@ $('#submitlocation').click(function(event) {
 
 
 $('#submitdetail').click(function(event) {
-    var forms = $('.needs-validation');
 
     var floor = $('#floor');
     var room = $('#room');
@@ -615,4 +536,40 @@ $('#submitamenitie').click(function(event) {
     });
 
     validateCheckboxes();
+});
+
+// delete media alert
+
+$(document).ready(function() {
+    function confirmation(event) {
+        event.preventDefault();
+        var urlToRedirect = event.currentTarget.getAttribute('href');
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#0071bc",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+        .then((willDelete) => {
+            if (willDelete.isConfirmed) {
+                window.location.href = urlToRedirect;
+                Swal.fire("Delete!", "Your file has been deleted", "success");
+            } else {
+                Swal.fire({
+                    title: "Cancelled",
+                    text: "The media is safe",
+                    icon: "error",
+                    confirmButtonColor: "#0071bc",
+                })
+            }
+        });
+    }
+
+    $('.trash-delete').on('click', function(event) {
+        confirmation(event);
+    });
 });

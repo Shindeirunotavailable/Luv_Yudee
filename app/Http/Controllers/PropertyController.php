@@ -79,7 +79,6 @@ class PropertyController extends Controller
             $data['update_by'] = 2;
             DB::table('pp_properties')->where('id_property', $id_property)->update($data);
 
-            // Update image and video URLs if new files are uploaded
             if ($request->hasFile('image')) {
                 $mediaData = [];
                 foreach ($request->file('image') as $image) {
@@ -96,7 +95,6 @@ class PropertyController extends Controller
                         'id_property' => $id_property,
                     ];
                 }
-                // Insert media data using Query Builder
                 DB::table('pp_media')->insert($mediaData);
             }
 
@@ -116,7 +114,6 @@ class PropertyController extends Controller
                         'id_property' => $id_property,
                     ];
                 }
-                // Insert media data using Query Builder
                 DB::table('pp_media')->insert($mediaData);
             }
         } else {
@@ -174,15 +171,12 @@ class PropertyController extends Controller
     public function deleteMedia($id_media)
     {
             $media = DB::table('pp_media')->where('id_media', $id_media)->first();
-
         if ($media) {
             $file_url = public_path($media->media_property);
 
             if (File::exists($file_url));
-            // dd($file_url);
             {
                 File::delete($file_url);
-                // dd($file_url);
             }
             DB::table('pp_media')->where('id_media', $id_media)->delete();
             return redirect()->back();
@@ -221,17 +215,5 @@ class PropertyController extends Controller
         }
         return response()->json(['options' => '']);
     }
-
-    // public function showproperty()
-    // {
-    //     $blogs = DB::table('pp_properties')->get();
-    //     return view('dashboard.myproperty', compact('blogs'));
-    // }
-
-    // public function showproperty1(){
-    //     return view("dashboard.myproperty");
-    // }
-
-    
 }
 
