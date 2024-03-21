@@ -632,55 +632,67 @@
                         <div class="card border-0 ">
                             <div class="card-body p-0">
                                 <h3 class="fw-600 fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
-                                    5 Reviews</h3>
+                                    Reviews</h3>
+                                {{-- @if(Session::has('pp_reviews')) --}}
+                                {{-- @foreach (Session::get('pp_reviews') as $item ) --}}
 
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                    <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
-                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                        style="width: 84px; height: 84px; object-fit: cover;">
-                                    <div class="media-body">
-                                        <div class="row mb-1 align-items-center">
-                                            <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
-                                            </div>
+                                @if (isset($data))
+                                @foreach ($data as $item)
+                                {{-- <input type="hidden" id="numberInput" min="1" max="5" value={{$item->review_star}}> --}}
+                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                        <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                            class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                            style="width: 84px; height: 84px; object-fit: cover;">
+                                        <div class="media-body">
+                                            <div class="row mb-1 align-items-center">
+                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                    <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
+                                                </div>
 
-                                            <div class="col-sm-6">
-                                                <ul
-                                                    class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                    <li class="list-inline-item mr-0">
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                        </span>
-                                                        <span class="align-item-right text-warning">
-                                                            <i class="fas fa-star"></i>
-                                                    </li>
-                                                </ul>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                        <li class="list-inline-item mr-0">
+                                                            {{-- <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i>
+                                                            </span>
+                                                            <span class="align-item-right text-warning">
+                                                                <i class="fas fa-star"></i> --}}
+                                                                @php
+                                                                    $star = $item->review_star;
+                                                                @endphp
+
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                @if ($i <= $star)
+                                                                    <span class="fa fa-star text-warning"></span>
+                                                                @else
+                                                                    <span class="fa fa-star text-secondary"></span>
+                                                                @endif
+                                                                @endfor
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
+                                                <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
+                                                <div class="d-flex justify-content-sm-start justify-content-center">
+                                                    <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
+                                                    <a href="#"
+                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                </div>
                                         </div>
-                                            <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                always keeping your WordPress themes up to date. Your level of support
-                                                and
-                                                dedication
-                                                is second to none.
-                                            </p>
-                                            <div class="d-flex justify-content-sm-start justify-content-center">
-                                                <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
-                                                <a href="#"
-                                                    class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-                                            </div>
                                     </div>
-                                </div>
+                                    @endforeach
+                                @endif
 
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
+                                {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                     <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
                                         class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
                                         style="width: 84px; height: 84px; object-fit: cover;">
@@ -724,148 +736,38 @@
                                                         class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                 </div>
                                         </div>
-                                </div>
-
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                    <img src="{{ asset('/assets/images/review-3.jpg') }}" alt="Nettie Singleton"
-                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                        style="width: 84px; height: 84px; object-fit: cover;">
-                                        <div class="media-body">
-                                            <div class="row mb-1 align-items-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
-                                                </div>
-
-                                                <div class="col-sm-6">
-                                                    <ul
-                                                        class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                        <li class="list-inline-item mr-0">
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                                <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                    always keeping your WordPress themes up to date. Your level of support
-                                                    and
-                                                    dedication
-                                                    is second to none.
-                                                </p>
-                                                <div class="d-flex justify-content-sm-start justify-content-center">
-                                                    <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
-                                                    <a href="#"
-                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-                                                </div>
-                                        </div>
-                                </div>
-
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                    <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Vernon Fisher"
-                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                        style="width: 84px; height: 84px; object-fit: cover;">
-                                        <div class="media-body">
-                                            <div class="row mb-1 align-items-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
-                                                </div>
-
-                                                <div class="col-sm-6">
-                                                    <ul
-                                                        class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                        <li class="list-inline-item mr-0">
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                                <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                    always keeping your WordPress themes up to date. Your level of support
-                                                    and
-                                                    dedication
-                                                    is second to none.
-                                                </p>
-                                                <div class="d-flex justify-content-sm-start justify-content-center">
-                                                    <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
-                                                    <a href="#"
-                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-                                                </div>
-                                        </div>
-                                </div>
-
-                                <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                    <img src="{{ asset('/assets/images/review-4.png') }}" alt="Harry Iglesias"
-                                        class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                        style="width: 84px; height: 84px; object-fit: cover;">
-                                        <div class="media-body">
-                                            <div class="row mb-1 align-items-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
-                                                </div>
-
-                                                <div class="col-sm-6">
-                                                    <ul
-                                                        class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                        <li class="list-inline-item mr-0">
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                                <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                    always keeping your WordPress themes up to date. Your level of support
-                                                    and
-                                                    dedication
-                                                    is second to none.
-                                                </p>
-                                                <div class="d-flex justify-content-sm-start justify-content-center">
-                                                    <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
-                                                    <a href="#"
-                                                        class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-                                                </div>
-                                        </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
+                        {{-- <table class="table table-bordered text-center">
+                            <thead>
+                                <tr>
+                                    <th>review_star</th>
+                                    <th>review_name</th>
+                                    <th>review_email</th>
+                                    <th>review_content</th>
+                                    <th>create_datetime</th>
+                                    <th>update_datetime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(Session::has('pp_reviews'))
+                                    @foreach (Session::get('pp_reviews') as $item )
+                                    <tr>
+                                        <td>{{$item->review_star}}</td>
+                                        <td>{{$item->review_name}}</td>
+                                        <td>{{$item->review_email}}</td>
+                                        <td>{{$item->review_content}}</td>
+                                        <td>{{$item->create_datetime}}</td>
+                                        <td>{{$item->update_datetime}}</td>
+                                    </tr>
+                                    @endforeach
+                                @endif
+    
+                            </tbody>
+                        </table> --}}
                     </section>
+                    
                     <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0">
                             <div class="card-body pt-0 ">
@@ -896,7 +798,6 @@
                                             </label>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group mb-4">
@@ -922,7 +823,7 @@
                                                 Please enter a message in the textarea.
                                             </div>
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb"> Submit </button>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb" id="form_review"> Submit </button>
 
                                 </form>
                                 

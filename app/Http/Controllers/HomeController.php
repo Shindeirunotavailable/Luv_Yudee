@@ -46,7 +46,11 @@ class HomeController extends Controller
     // earth
 
     public function property(){
-        return view(".propertyDetail.property");
+        
+        $pp_reviews=DB::table('pp_reviews')->get();
+        return view(".propertyDetail.property")->with('data',$pp_reviews);
+        
+
     }
 
 
