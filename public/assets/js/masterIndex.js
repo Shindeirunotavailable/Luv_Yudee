@@ -406,27 +406,30 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
+
+//check email footer
   function onSubmitemail(event) {
+    // console.log('footer');
     var emailInput = $('#home-email');
     var emailValue = emailInput.val();
-    var showErrorDiv = $('#ShowErrorEmail');
+    var showErrorDivFooter = $('#ShowErrorEmailFooter');
     // ล้างคลาสทั้งหมดก่อนที่จะตรวจสอบใหม่
     emailInput.removeClass('border-danger is-valid');
     if (emailValue.trim() === '') {
-        showErrorDiv.text('Please enter a valid email');
+        showErrorDivFooter.text('Please enter a valid email');
         emailInput.addClass('border-danger');
         event.preventDefault(); // ป้องกันการ submit แบบปกติ
     } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-        showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
+        showErrorDivFooter.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
         emailInput.addClass('border-danger');
         event.preventDefault();
     } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
-      showErrorDiv.text('Please enter a part following .');
+      showErrorDivFooter.text('Please enter a part following .');
       emailInput.addClass('border-danger');
       event.preventDefault();
     } else {
         emailInput.addClass('is-valid');
-        showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
+        showErrorDivFooter.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
     }
     // document.getElementById("home_email").submit();
     var formData = $("#home_email").serialize();
@@ -455,7 +458,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 }
 
+//check review
 $("#form_review").click(function() {
+  console.log('review');
   const forms = $('.needs-validation');
     forms.on('submit', function(event) {
       var emailInput = $('#email');
@@ -497,7 +502,7 @@ $("#form_review").click(function() {
         contentreview.removeClass('is-invalid');
         contentreview.addClass('is-valid');
       }
-
+      
     });
   });
 
@@ -547,6 +552,9 @@ $("#form_review").click(function() {
   //       }
   //     });
   //   });
+
+  
+
 
 
 

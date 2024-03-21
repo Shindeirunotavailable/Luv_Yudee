@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use App\Models\Reviews;
+use Illuminate\Support\Facades\Session;
 
 class ReviewsController extends Controller
 {
@@ -25,8 +26,14 @@ class ReviewsController extends Controller
             'create_datetime' => date('Y-m-d H:i:s'),
             'update_datetime' => date('Y-m-d H:i:s'),
         ];
-        
         DB::table('pp_reviews')->insert($data);
-        return redirect('/property');
+        $pp_reviews=DB::table('pp_reviews')->get();
+        // return view('propertyDetail.property')-> with('data', $pp_reviews);
+
+        return redirect('/property')-> with('data', $pp_reviews);
+        // ใช้ได้
+        // Session::put('pp_reviews', $pp_reviews);
+        // return redirect('property');
+
     }
 }
