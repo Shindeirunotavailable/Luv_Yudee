@@ -22,24 +22,12 @@
                                 </div>
 
 
-                                {{-- @if ($errors->any())
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <input type="hidden" value="1" id="modalError">
-                                        <strong>{{ $errors->first() }}</strong>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                @endif --}}
-
                                 @if (session('error'))
-                                    <div class="alert alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong> {{ session('error') }}</strong>
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
+                                        <div class="alert alert alert-danger alert-dismissible fade show" role="alert" id="errorsession">
+                                            <strong> {{ session('error') }}</strong>
+                                        </div>
                                 @endif
+
                             </div>
                             {{-- <form action="{{ url('/login') }}"  method="POST" class="needs-validation" novalidate> --}}
                             <form action="{{ url('/loginform') }}" method="POST" class="needs-validation" id="loginform">

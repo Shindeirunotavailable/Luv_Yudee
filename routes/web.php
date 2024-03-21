@@ -39,13 +39,12 @@ route::any('loginform','App\Http\Controllers\LoginController@loginform');  // �
 route::any('lostpassword','App\Http\Controllers\LoginController@lostpassword');  // ส่งค่าเมล์กู้Password
 Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout'); // logout
 
-Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword');
+Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword');  //เปิดหน้า resetPassword
 Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  //ส่งค่าnewPassword
-
-
 route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
 
 
+route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
 
 
  // -----------------------------------function test Route ------------------------------------

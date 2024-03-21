@@ -167,9 +167,10 @@ class PropertyController extends Controller
             }
 
         }
-        return redirect('addproperty?id_property=' . $id_property)
-            ->with('success', 'message')
-            ;
+        // return redirect('addproperty?id_property=' . $id_property)
+        //     ->with('success', 'message')
+        //     ;
+            return redirect('addproperty?id_property=' . $id_property)->route('addproperty')->with('success', 'message');
     }
 
     // deleteMedia
