@@ -15,13 +15,11 @@
                                 <h2 class="mb-3 pt-3 font-weight-bold">Sign in</h2>
                                 <label class="mb-5 ">Sign in with this account across the following sites.</label>
 
-                                <div class="hidden" id="hiddenError">
+                                {{-- <div class="hidden" id="hiddenError">
                                     <div class="alert alert-danger" role="alert">
                                         <div id="statusMessage"></div>
                                     </div>
-                                </div>
-
-
+                                </div> --}}                            
                                 @if (session('error'))
                                         <div class="alert alert alert-danger alert-dismissible fade show" role="alert" id="errorsession">
                                             <strong> {{ session('error') }}</strong>

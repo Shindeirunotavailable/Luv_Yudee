@@ -88,6 +88,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
             } else {
               PasswordFrom.removeClass('is-invalid');
               PasswordFrom.addClass('is-valid');
+            
             }
             event.preventDefault(); // ป้องกันการส่งฟอร์ม
             var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
@@ -103,7 +104,11 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                         window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
                     } else {
                         // ถ้าเข้าสู่ระบบไม่สำเร็จ
-                        $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                        $('#errorsession').text(''); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+
+                        $('#errorsession').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+
+
                         $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
                     }
