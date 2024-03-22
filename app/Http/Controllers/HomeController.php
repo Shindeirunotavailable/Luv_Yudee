@@ -45,11 +45,15 @@ class HomeController extends Controller
 
     // earth
 
+    public function review(){
+        return view(".dashboard.review");
+    }
+
     public function property(){
-        
+
         $pp_reviews=DB::table('pp_reviews')->get();
         return view(".propertyDetail.property")->with('data',$pp_reviews);
-        
+
 
     }
 
@@ -63,15 +67,15 @@ class HomeController extends Controller
                     'response' => $value,
                     'remoteip' => \request()->ip()
                 ]);
-                
+
                 $g_recaptcha_result = $g_recaptcha->json();
-    
+
                 if (!$g_recaptcha_result['success']) {
                     $fail("The {$attribute} is invalid.");
                 }
             },]
         ]);
-        
+
 
         // รับข้อมูลจาก request
         $username = $request->input('email');
@@ -96,11 +100,11 @@ class HomeController extends Controller
                 'create_datetime' => date('Y-m-d H:i:s'),
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
-    
+
             // เพิ่มข้อมูลในตาราง pp_newsletters
             DB::table('pp_newsletters')->insert($data);
             mail::to($username)->send(new news($username));
-    
+
             // ไปที่หน้า home พร้อมกับข้อความเตือน
             // return redirect('/home')->with('success', 'You have successfully subscribed to our newsletter.');
             $errorMessages = '';
