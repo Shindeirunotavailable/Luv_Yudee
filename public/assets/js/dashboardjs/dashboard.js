@@ -607,7 +607,14 @@ $(document).ready(function() {
         .then((willDelete) => {
             if (willDelete.isConfirmed) {
                 window.location.href = urlToRedirect;
-                Swal.fire("Delete!", "Your file has been deleted", "success");
+                Swal.fire({
+                    position: "center",
+                    title: "Delete",
+                    text: "Your file has been deleted",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             } else {
                 Swal.fire({
                     position: "center",
