@@ -633,12 +633,9 @@
                             <div class="card-body p-0">
                                 <h3 class="fw-600 fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
                                     Reviews</h3>
-                                {{-- @if(Session::has('pp_reviews')) --}}
-                                {{-- @foreach (Session::get('pp_reviews') as $item ) --}}
 
                                 @if (isset($data))
                                 @foreach ($data as $item)
-                                {{-- <input type="hidden" id="numberInput" min="1" max="5" value={{$item->review_star}}> --}}
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                         <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
                                             class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -652,20 +649,6 @@
                                                 <div class="col-sm-6">
                                                     <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
                                                         <li class="list-inline-item mr-0">
-                                                            {{-- <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i>
-                                                            </span>
-                                                            <span class="align-item-right text-warning">
-                                                                <i class="fas fa-star"></i> --}}
                                                                 @php
                                                                     $star = $item->review_star;
                                                                 @endphp

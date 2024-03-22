@@ -79,6 +79,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
         const forms = $('.needs-validation');
           forms.on('submit', function(event) {
             const PasswordFrom = $('#password');
+            
             if( !PasswordFrom.val()  ){
               PasswordFrom.addClass('is-invalid');
               event.preventDefault();
@@ -87,6 +88,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
             } else {
               PasswordFrom.removeClass('is-invalid');
               PasswordFrom.addClass('is-valid');
+            
             }
             event.preventDefault(); // ป้องกันการส่งฟอร์ม
             var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
@@ -102,7 +104,11 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                         window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
                     } else {
                         // ถ้าเข้าสู่ระบบไม่สำเร็จ
-                        $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                        $('#errorsession').text(''); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+
+                        $('#errorsession').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+
+
                         $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
                     }
@@ -353,7 +359,6 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                     }
                   });
                   
-
                     $('#createAccount').modal('hide');
                     $('#successMessageModel').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
                     $('#hiddensuccessModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
@@ -373,6 +378,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
                 } else {
                     // ถ้าเข้าสู่ระบบไม่สำเร็จ
+                    $('#error').val(""); 
                     $('#statusMessageModel').text(response.messageError); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
                     $('#hiddenErrorModal').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
                     $('#hiddensuccessModal').addClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
@@ -482,14 +488,21 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
       ///////////////////////   หน้าlost your password   //////////////////////
 
 
-
-  $('body').on('click', '#forgetPassword', function() {
-    $('#forgetPassword form').submit(function() {
-      requestLostPassword();
-    });
-  });
-
-  function requestLostPassword(){
-    // console.log('aaa');
+      $(document).ready(function() {
+        // ตรวจสอบว่า session error มีค่าหรือไม่
+        console.log('aa');
+        var sessionError = "{{ session('error') }}";
     
-  }
+        // ถ้า session error มีค่า ให้ซ่อน hiddenError
+        if (sessionError) {
+            $('#hiddenError').addClass('hidden');
+        } else {
+            $('#hiddenError').removeClass('hidden');
+        }
+    
+        // เมื่อมีการปิดแจ้งเตือน error ใน session
+        $('#errorsession').on('closed.bs.alert', function() {
+            $('#hiddenError').removeClass('hidden');
+        });
+    });
+    
