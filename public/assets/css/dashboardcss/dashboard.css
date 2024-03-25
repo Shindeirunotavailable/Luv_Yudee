@@ -883,3 +883,8 @@ tr:nth-child(even) {
 .showcard{
     width: 21rem;
 }
+
+.showproperty{
+    width: 90%;
+    height: 100px;
+}

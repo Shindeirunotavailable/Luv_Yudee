@@ -86,8 +86,6 @@ class PropertyController extends Controller
             'property_amenities' => $request['amenities'] ? implode(',', $request['amenities']) : null,
             'property_stage' => $request['property_stage'],
         );
-        $id_user = DB::table('users')->where('id', $request->id)->value('id');
-
         if (isset($request['id_property'])) {
             $id_property = $request['id_property'];
             $data['update_datetime'] = date('Y-m-d H:i:s');
@@ -199,7 +197,8 @@ class PropertyController extends Controller
     }
 
     // deleteProperty
-    public function deleteProperty($id_media, $id_property)
+
+public function deleteProperty($id_media, $id_property)
 {
     $media = DB::table('pp_media')->where('id_media', $id_media)->first();
     if ($media) {
@@ -207,11 +206,11 @@ class PropertyController extends Controller
         if (File::exists($file_url)) {
             File::delete($file_url);
         }
-        DB::table('pp_media')->where('id_media', $id_media)->delete();
         DB::table('pp_properties')->where('id_property', $id_property)->delete();
         return redirect()->back();
     }
 }
+
 
 
     // ProvinceController

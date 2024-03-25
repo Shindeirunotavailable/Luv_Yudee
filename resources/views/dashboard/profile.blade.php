@@ -1,14 +1,7 @@
-<div class="dashboard__main pl-d-0-md">
-    <div class="dashboard__content property-page bg-f7">
-        <div class="row justify-content-center">
-            <div class="bg-f7">
-                <div class="container">
-                    <div class="col-lg-12 pt-10 ">
-                        <div class="mb-6">
-                            <h2 class="fw-600 mb-0 text-heading fs-mp-h">My Profile</h2>
-                            <p class="">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
-                        </div>
-                    </div>
+    <div class="dashboard__main pl-d-0-md">
+        <div class="dashboard__content property-page bg-f7">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
                     @if (session('status'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <input type="hidden" value="1" id="modalsuccess">
@@ -231,5 +224,6 @@
                 </div>            
             </div>
         </div>
+        @include('dashboard.footerdashboard')
     </div>
 </div> 
