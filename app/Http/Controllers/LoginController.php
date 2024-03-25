@@ -13,6 +13,7 @@ use App\Models\login;
 use App\Models\createAccount;
 use App\Models\resetPassword;
 use App\Models\profile;
+use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
@@ -344,7 +345,6 @@ class LoginController extends Controller
 
     public function profliestone(Request $request)
     {
-        // dd($request->all());
         $username = $request->input('firstName');
         $lastname = $request->input('lastName');
         $email = $request->input('email');
@@ -359,7 +359,6 @@ class LoginController extends Controller
         $instagram = $request->input('instagram');
         $pinterest = $request->input('pinterest');
         $facebook = $request->input('facebook');
-
         $profile = DB::table('profiles')->where('email', $email)->first();
         if ($profile) {
             DB::table('profiles')->where('email', $email)->update([
@@ -377,6 +376,7 @@ class LoginController extends Controller
                 'facebook' => $facebook,
                 'update_by' => $userId,
                 'update_datetime' => date('Y-m-d H:i:s'),
+
             ]);
         } else {
             // ถ้าไม่พบข้อมูลในตาราง profiles ให้ทำการเพิ่มข้อมูลใหม่
@@ -389,13 +389,17 @@ class LoginController extends Controller
                 'update_by' => $userId,
                 'create_datetime' => date('Y-m-d H:i:s'),
                 'update_datetime' => date('Y-m-d H:i:s'),
+
             ]);
         }
         $pp_profiles=DB::table('profiles')->get();
-        return redirect('/addproperty')-> with('data', $pp_profiles);
-
+        // return redirect('/addproperty')-> with('data', $pp_profiles);
+        return response()->json(['success' => true, 'message' => 'Testajax']);
     }
 
+
+
+    
     public function getProfile(){
         $profiles = Profile::all(); // ดึงข้อมูลทั้งหมดจากตาราง "profiles"
         return view('property', ['profiles' => $profiles]);
@@ -404,6 +408,24 @@ class LoginController extends Controller
 
 
 
+    // ทดสอบระบบ อัพโหลดรูป
+    public function upload(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('assets/imageUser'), $imageName);
+    
+            // บันทึกที่อยู่ของรูปภาพลงในฐานข้อมูล
+            $profile = new Profile;
+            $profile->image = $imageName;
+            $profile->save();
+    
+            return back()->with('success', 'Image Upload successful');
+        } else {
+            return back()->with('error', 'Please choose an image file');
+        }
+    }
 
 
 
@@ -432,7 +454,7 @@ class LoginController extends Controller
 
     public function test()
     {
-        return view("login.test");
+        return view("test");
     }
 
 }

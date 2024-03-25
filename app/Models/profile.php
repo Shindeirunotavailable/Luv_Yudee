@@ -9,5 +9,6 @@ class profile extends Model
 {
     protected $table = 'profiles';
     protected $fillable = ['name', 'lastname', 'phone', 'mobile', 'email'];
+    public $timestamps = false; // ไม่ใช้งาน timestamps
 
 }

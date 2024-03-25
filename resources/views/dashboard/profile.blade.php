@@ -27,6 +27,13 @@
                             </button>
                         </div>
                     @endif
+
+                    <div class="hidden" id="hiddensuccessUpdate">
+                        <div class="alert alert-success" role="alert">
+                            <div id="successUpdate"></div>
+                        </div>
+                    </div>
+
                     <form action="{{ url('/profliestone') }}" method="POST" class="needs-validation" id="profileForm">
                         @csrf
                         <div class="row">    
@@ -42,7 +49,7 @@
                                                         </div>
                                                         <div class="avatar-upload">
                                                             <div class="avatar-edit">
-                                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="image"/>
                                                                 <label for="imageUpload"></label>
                                                             </div>
                                                             <div class="avatar-preview">
@@ -50,7 +57,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="input-group mb-3">
+                                                        {{-- <div class="input-group mb-3">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                                                             </div>
@@ -58,7 +65,7 @@
                                                                 <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                                                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                                             </div>
-                                                        </div>  
+                                                        </div>   --}}
                                                     </div>
                                                 </div>                 
                                             </div>
@@ -115,23 +122,9 @@
                                                     </div>
                                                 </div>                 
                                             </div> 
-                                            <div class="pb-10">
-                                                <div class="card cardBox">
-                                                    <div class="card-body p-3">
-                                                        <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">User detail</h4>
-                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
-                                                        </div>
-                                                        <div class="form-group pt-10">
-                                                            <label>Title / Posittion</label>
-                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" id="title" name="title" value={{$item->title}}>
-                                                        </div>
-                                                    </div>
-                                                </div>                 
-                                            </div>  
                                         </div>
                                         <div class="col-md-6 col-12 col-lg-6">
-                                            <div class="pt-10">
+                                            <div class="pb-10">
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
@@ -181,6 +174,20 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="pb-10">
+                                                <div class="card cardBox">
+                                                    <div class="card-body p-3">
+                                                        <div class="text-left">
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">User detail</h4>
+                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                        </div>
+                                                        <div class="form-group pt-10">
+                                                            <label>Title / Posittion</label>
+                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" id="title" name="title" value={{$item->title}}>
+                                                        </div>
+                                                    </div>
+                                                </div>                 
+                                            </div>                                              
                                             <div class="d-flex justify-content-end flex-wrap">
                                                 <div class="position-relative  pt-d-30 mr-2 ">
                                                         <button type="submit" class="afterButton rounded-pill btn-lg" id="">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,7 @@ route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); 
 route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
 
 route::any('test','App\Http\Controllers\LoginController@test'); // ส่งค่า proflie
+route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
 
 
  // -----------------------------------function test Route ------------------------------------
