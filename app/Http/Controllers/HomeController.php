@@ -45,9 +45,9 @@ class HomeController extends Controller
 
     // earth
 
-    public function review(){
-        return view(".dashboard.review");
-    }
+    // public function review(){
+    //     return view(".dashboard.review");
+    // }
 
     public function property(){
 
