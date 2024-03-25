@@ -53,6 +53,7 @@ Route::view('/addproperty', 'dashboard.sidebardashboard');
 
 // earth
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
+Route::any('review' , 'App\Http\Controllers\HomeController@review');
 //sidebarแรกคือชื่อURL ด้นหลังของ @ คือชื่อเมธอดที่จะถูกเรียก
 Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnect')->middleware('auth')->name('addproperty');
 
@@ -61,4 +62,4 @@ Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnec
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
 Route::get('delete_image/{id_media}', 'App\Http\Controllers\PropertyController@deleteMedia')->name('deleteMedia');
-
+// Route::get('deleteProperty/{id_property}', 'App\Http\Controllers\PropertyController@deleteProperty')->name('deleteProperty');

@@ -179,6 +179,7 @@ class PropertyController extends Controller
 
         }
         return redirect('addproperty?id_property=' . $id_property)->with('success', 'message');
+
     }
 
     // deleteMedia
@@ -196,6 +197,22 @@ class PropertyController extends Controller
             return redirect()->back();
         }
     }
+
+    // deleteProperty
+    public function deleteProperty($id_media, $id_property)
+{
+    $media = DB::table('pp_media')->where('id_media', $id_media)->first();
+    if ($media) {
+        $file_url = public_path($media->media_property);
+        if (File::exists($file_url)) {
+            File::delete($file_url);
+        }
+        DB::table('pp_media')->where('id_media', $id_media)->delete();
+        DB::table('pp_properties')->where('id_property', $id_property)->delete();
+        return redirect()->back();
+    }
+}
+
 
     // ProvinceController
     public function db_provinces(Request $request)
