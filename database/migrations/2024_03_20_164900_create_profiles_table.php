@@ -20,9 +20,17 @@ class CreateProfilesTable extends Migration
             $table->string('phone',10)->nullable();
             $table->string('mobile',10)->nullable();
             $table->string('email',50)->nullable();
-            $table->tinyInteger('update_by'); 
-            $table->dateTime('create_datetime');
-            $table->dateTime('update_datetime');
+            $table->string('skype',50)->nullable();
+            $table->string('title')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('pinterest')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('website')->nullable();
+            $table->tinyInteger('update_by')->nullable(); 
+            $table->dateTime('create_datetime')->nullable();
+            $table->dateTime('update_datetime')->nullable();
         });
     }
 

@@ -98,17 +98,12 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                 url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
                 data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
                 success: function (response) {
-                  console.log(response);
                     if (response.success) {
-                        // ถ้าเข้าสู่ระบบสำเร็จ
                         window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
                     } else {
                         // ถ้าเข้าสู่ระบบไม่สำเร็จ
                         $('#errorsession').text(''); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
-
                         $('#errorsession').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
-
-
                         $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
                     }
@@ -490,7 +485,6 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
       $(document).ready(function() {
         // ตรวจสอบว่า session error มีค่าหรือไม่
-        console.log('aa');
         var sessionError = "{{ session('error') }}";
     
         // ถ้า session error มีค่า ให้ซ่อน hiddenError

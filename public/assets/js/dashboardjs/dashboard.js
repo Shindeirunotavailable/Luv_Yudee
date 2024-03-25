@@ -633,3 +633,14 @@ $(document).ready(function() {
 });
 
 
+
+$(document).ready(function() {
+    $(".tab-btn").click(function() {
+        var targetId = $(this).attr("data-target");
+        $(".tab-pane").not(targetId).removeClass("active show");
+    });
+});
+
+
+
+

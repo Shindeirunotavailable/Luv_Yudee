@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class profile extends Model
 {
-    use HasFactory;
+    protected $table = 'profiles';
+    protected $fillable = ['name', 'lastname', 'phone', 'mobile', 'email'];
+    public $timestamps = false; // ไม่ใช้งาน timestamps
+
 }

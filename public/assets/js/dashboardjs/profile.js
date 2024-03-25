@@ -5,8 +5,83 @@ $('#profileForm').on('submit', function(event) {
  
     ContactinFormation(event);
     passwordCheck(event);
+    validSession(event);
 
   });
+
+
+  $('#profileForm').submit(function (event) {
+    event.preventDefault(); // ป้องกันการส่งฟอร์ม
+    var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
+    $.ajax({
+        type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+        url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+        data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+        success: function (response) {
+            if (response.success) {
+
+                Swal.fire({
+                    title: "Create account success",
+                    icon: "success",
+                    confirmButtonColor: "#0071BC",
+                    confirmButtonText: "Close",
+                    customClass: {
+                      confirmButton: 'swal-confirm-button',
+                    }
+                  });
+
+                //  $('#successUpdate').text(response.message); 
+                //  $('#hiddensuccessUpdate').removeClass('hidden'); 
+            } else {
+                // ถ้าเข้าสู่ระบบไม่สำเร็จ
+                $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+
+            }
+        }
+    });
+});
+
+
+
+
+  function validSession(event){
+    const facebook = $('#facebook');
+    const pinterest = $('#pinterest');
+    const instagram = $('#instagram');
+    const twitter = $('#twitter');
+    const linkedin = $('#linkedin');
+    const website = $('#website'); 
+
+    if( facebook.val() || pinterest.val() || instagram.val() || twitter.val() || linkedin.val() || website.val()){
+      facebook.addClass('is-valid');
+      pinterest.addClass('is-valid');
+      instagram.addClass('is-valid');
+      twitter.addClass('is-valid');
+      linkedin.addClass('is-valid');
+      website.addClass('is-valid');
+      return;
+    }  else if( !facebook.val() || !pinterest.val() || !instagram.val() || !twitter.val() || !linkedin.val() || !website.val()){
+      facebook.removeClass('is-valid');
+      pinterest.removeClass('is-valid');
+      instagram.removeClass('is-valid');
+      twitter.removeClass('is-valid');
+      linkedin.removeClass('is-valid');
+      website.removeClass('is-valid');
+      return;
+    } 
+    
+    else {
+      facebook.removeClass('is-valid');
+      pinterest.removeClass('is-valid');
+      instagram.removeClass('is-valid');
+      twitter.removeClass('is-valid');
+      linkedin.removeClass('is-valid');
+      website.removeClass('is-valid');
+
+    }
+  
+  }
 
 function ContactinFormation(event){
   var firstNameforms = $('#firstName');
@@ -56,6 +131,35 @@ function ContactinFormation(event){
     emailfrom.addClass('is-valid');
   } 
 
+  event.preventDefault(); // ป้องกันการส่งฟอร์ม
+  var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
+  $.ajax({
+      type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+      url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+      data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+      success: function (response) {
+          if (response.success) {
+
+              Swal.fire({
+                  title: "Create account success",
+                  icon: "success",
+                  confirmButtonColor: "#0071BC",
+                  confirmButtonText: "Close",
+                  customClass: {
+                    confirmButton: 'swal-confirm-button',
+                  }
+                });
+
+              //  $('#successUpdate').text(response.message); 
+              //  $('#hiddensuccessUpdate').removeClass('hidden'); 
+          } else {
+              // ถ้าเข้าสู่ระบบไม่สำเร็จ
+              $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+              $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+
+          }
+      }
+  });
 
 }
 
@@ -115,6 +219,20 @@ if (!passwordValidation.test(password.val())) {
 
   }
 
-
-
+ 
 }
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+          $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+          $('#imagePreview').hide();
+          $('#imagePreview').fadeIn(650);
+      }
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+$("#imageUpload").change(function() {
+  readURL(this);
+});
