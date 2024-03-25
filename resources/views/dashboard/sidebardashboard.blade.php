@@ -11,7 +11,7 @@
                             <a href="#" class="dashboard-navigation-header"> Dashboard Navigation</a>
                         </button>
                         <ul class="dropdown-content show">
-                            <div>
+                            {{-- <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-0">MAIN</p>
                                 <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
                                             class="fa-solid fa-chart-line mr-d-15"></i>Dashboard</a>
@@ -19,7 +19,7 @@
                                 <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
                                             class="fa-solid fa-comment-dots mr-d-15"></i>Message</a>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-d-30">MANAGE LISTINGS</p>
                                 <div class="sidebar_list_item ">
@@ -29,17 +29,19 @@
                                     <i class="fa-solid fa-file-circle-plus mr-d-15"></i>Add New Property</a>
                                 </div>
 
-                                <div class="sidebar_list_item">
-                                    <a class="items-center-db    " href="#">
-                                    <i class="fa-solid fa-house mr-d-15"></i></i>My Properties</a>
-                                </div>
+                                {{-- <div class="sidebar_list_item">
+                                    <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
+                                    data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
+                                    aria-selected="false" href="#v-myproperty">
+                                        <i class="fa-solid fa-house-chimney mr-d-15"></i>My Properties</a>
+                                </div> --}}
 
-                                <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
+                                {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
                                             class="fa-solid fa-heart mr-d-15"></i>My Favorites</a>
                                 </div>
                                 <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
                                             class="fa-solid fa-magnifying-glass mr-d-15"></i>Saved Search</a>
-                                </div>
+                                </div> --}}
                                 <div class="sidebar_list_item"><a class="items-center-db    " id="v-review-tab"
                                     data-toggle="tab" data-target="#v-review" role="tab" aria-controls="v-review"
                                     aria-selected="false" href="#v-review">
@@ -48,9 +50,9 @@
                             </div>
                             <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-d-30">MANAGE ACCOUNT</p>
-                                <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
+                                {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
                                             class="fa-solid fa-file-contract mr-d-15"></i>My Package</a>
-                                </div>
+                                </div> --}}
 
                                 <div class="sidebar_list_item">
                                     <a class="items-center-db    " id="v-profile-tab" data-toggle="tab"
@@ -106,9 +108,8 @@
                                     <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
                                     data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
                                     aria-selected="false" href="#v-myproperty">
-                                        <i class="fa-solid fa-house mr-d-15"></i>My Properties</a>
+                                        <i class="fa-solid fa-house-chimney mr-d-15"></i>My Properties</a>
                                 </div> --}}
-
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
                                         <i class="fa-solid fa-heart mr-d-15"></i>My Favorites</a>
                                 </div>
