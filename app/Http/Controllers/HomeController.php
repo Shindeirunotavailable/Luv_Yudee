@@ -52,10 +52,10 @@ class HomeController extends Controller
 
     public function property(){
 
-        $pp_reviews=DB::table('pp_reviews')->get();
-        return view(".propertyDetail.property")->with('data',$pp_reviews);
-        // $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
-        // return view('.propertyDetail.property')->with('data', $showrivew);
+        // $pp_reviews=DB::table('pp_reviews')->get();
+        // return view(".propertyDetail.property")->with('data',$pp_reviews);
+        $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
+        return view('.propertyDetail.property')->with('data', $showrivew);
     }
 
 

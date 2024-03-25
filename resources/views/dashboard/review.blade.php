@@ -71,9 +71,9 @@
                                                             <div class="d-flex justify-content-sm-end justify-content-center mb-0">
                                                                 @if ($item["review_status"]==true)
                                                                     <!-- เพิ่มปุ่มอนุมัติ -->
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติ</a>
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-success btn-sm mr-2 text-white">รอการอนุมัติ</a>
                                                                 @else
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-secondary btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-secondary  btn-sm mr-2 text-white">รอการอนุมัติ</a>
                                                                 @endif
                                                                 
                                                                 <!-- เพิ่มปุ่มลบ -->
