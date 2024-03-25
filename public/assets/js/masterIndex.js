@@ -486,7 +486,30 @@ $("#form_review").click(function() {
     });
   });
 
-  
+  //popup เเจ้งเดือน รอรีวิว
+  $(document).ready(function() {
+    function confirmation(event) {
+        event.preventDefault();
+        
+        Swal.fire({
+            position: "center",
+            icon: "warning",
+            text: "กรุณารอการอนุมัติรีวิวจากเจ้าหน้าที่",
+            confirmButtonColor: "#0071BC",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('#form_review').submit();
+            }
+        });
+    }
+
+    $('.wait-al').on('click', function(event) {
+        confirmation(event);
+    });
+});
+
+
+
 
 
 

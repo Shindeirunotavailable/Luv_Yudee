@@ -821,7 +821,7 @@
                                                 Please enter a message in the textarea.
                                             </div>
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb" id="form_review"> Submit </button>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
 
                                 </form>
                                 
