@@ -93,6 +93,7 @@
                                     @endforeach
                                 @endif
                                 {{$data['pp_reviews']->links()}}
+                                
                                 {{-- <div class="col-md-12 ">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                         <img src="{{ asset('/assets/images/review-4.png') }}"
