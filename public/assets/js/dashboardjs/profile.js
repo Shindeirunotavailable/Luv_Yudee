@@ -10,37 +10,37 @@ $('#profileForm').on('submit', function(event) {
   });
 
 
-//   $('#profileForm').submit(function (event) {
-//     event.preventDefault(); // ป้องกันการส่งฟอร์ม
-//     var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
-//     $.ajax({
-//         type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
-//         url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
-//         data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
-//         success: function (response) {
-//             if (response.success) {
+  $('#profileForm').submit(function (event) {
+    event.preventDefault(); // ป้องกันการส่งฟอร์ม
+    var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
+    $.ajax({
+        type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+        url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+        data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+        success: function (response) {
+            if (response.success) {
 
-//                 Swal.fire({
-//                     title: "Create account success",
-//                     icon: "success",
-//                     confirmButtonColor: "#0071BC",
-//                     confirmButtonText: "Close",
-//                     customClass: {
-//                       confirmButton: 'swal-confirm-button',
-//                     }
-//                   });
+                Swal.fire({
+                    title: "Create account success",
+                    icon: "success",
+                    confirmButtonColor: "#0071BC",
+                    confirmButtonText: "Close",
+                    customClass: {
+                      confirmButton: 'swal-confirm-button',
+                    }
+                  });
 
-//                 //  $('#successUpdate').text(response.message); 
-//                 //  $('#hiddensuccessUpdate').removeClass('hidden'); 
-//             } else {
-//                 // ถ้าเข้าสู่ระบบไม่สำเร็จ
-//                 $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
-//                 $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+                //  $('#successUpdate').text(response.message); 
+                //  $('#hiddensuccessUpdate').removeClass('hidden'); 
+            } else {
+                // ถ้าเข้าสู่ระบบไม่สำเร็จ
+                $('#statusMessage').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
 
-//             }
-//         }
-//     });
-// });
+            }
+        }
+    });
+});
 
 
 
