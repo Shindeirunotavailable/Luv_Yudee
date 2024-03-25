@@ -5,8 +5,48 @@ $('#profileForm').on('submit', function(event) {
  
     ContactinFormation(event);
     passwordCheck(event);
+    validSession(event);
 
   });
+
+
+  function validSession(event){
+    const facebook = $('#facebook');
+    const pinterest = $('#pinterest');
+    const instagram = $('#instagram');
+    const twitter = $('#twitter');
+    const linkedin = $('#linkedin');
+    const website = $('#website'); 
+
+    if( facebook.val() || pinterest.val() || instagram.val() || twitter.val() || linkedin.val() || website.val()){
+      facebook.addClass('is-valid');
+      pinterest.addClass('is-valid');
+      instagram.addClass('is-valid');
+      twitter.addClass('is-valid');
+      linkedin.addClass('is-valid');
+      website.addClass('is-valid');
+      return;
+    }  else if( !facebook.val() || !pinterest.val() || !instagram.val() || !twitter.val() || !linkedin.val() || !website.val()){
+      facebook.removeClass('is-valid');
+      pinterest.removeClass('is-valid');
+      instagram.removeClass('is-valid');
+      twitter.removeClass('is-valid');
+      linkedin.removeClass('is-valid');
+      website.removeClass('is-valid');
+      return;
+    } 
+    
+    else {
+      facebook.removeClass('is-valid');
+      pinterest.removeClass('is-valid');
+      instagram.removeClass('is-valid');
+      twitter.removeClass('is-valid');
+      linkedin.removeClass('is-valid');
+      website.removeClass('is-valid');
+
+    }
+  
+  }
 
 function ContactinFormation(event){
   var firstNameforms = $('#firstName');
@@ -115,6 +155,20 @@ if (!passwordValidation.test(password.val())) {
 
   }
 
-
-
+ 
 }
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+          $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+          $('#imagePreview').hide();
+          $('#imagePreview').fadeIn(650);
+      }
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+$("#imageUpload").change(function() {
+  readURL(this);
+});

@@ -42,9 +42,9 @@ Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logou
 Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword');  //เปิดหน้า resetPassword
 Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  //ส่งค่าnewPassword
 route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
-
-
 route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
+
+route::any('test','App\Http\Controllers\LoginController@test'); // ส่งค่า proflie
 
 
  // -----------------------------------function test Route ------------------------------------

@@ -71,8 +71,7 @@
                             <div class="text-center mt-3">
                                 {{-- <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up?
                                     <span class="colorBlue">Create an account. </span> </a> --}}
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#createAccount"> Not signed
-                                    up?
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#createAccount"> Not signed up?
                                     <span class="colorBlue">Create an account. </span> </a>
                             </div>
                         </div>

@@ -26,6 +26,7 @@
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
          <link href="{{ asset('/assets/css/contact/contact.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า contact -- --}}
          <link href="{{ asset('/assets/css/searchResulte/searchResulte.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า searchResulte -- --}}
+         <link href="{{ asset('/assets/css/dashboardcss/profile.css') }}" rel="stylesheet" type="text/css"/> {{-- -- Css หน้า profile -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
          <link href="{{ asset('/assets/css/dashboardcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>

@@ -1,229 +1,228 @@
-    <div class="dashboard__main pl-d-0-md">
-        <div class="dashboard__content property-page bg-f7">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                @if (session('status'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <input type="hidden" value="1" id="modalsuccess">
-                        <strong> {{ session('status') }}</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+<div class="dashboard__main pl-d-0-md">
+    <div class="dashboard__content property-page bg-f7">
+        <div class="row justify-content-center">
+            <div class="bg-f7">
+                <div class="container">
+                    <div class="col-lg-12 pt-10 ">
+                        <div class="mb-6">
+                            <h2 class="fw-600 mb-0 text-heading fs-mp-h">My Profile</h2>
+                            <p class="">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
+                        </div>
                     </div>
-                @endif
-                @if (session('error'))
-                    <div class="alert alert-danger  alert-dismissible fade show" role="alert">
-                        <input type="hidden" value="1" id="modalsuccess">
-                        <strong> {{ session('error') }}</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                @endif
-                    <div class="mb-6">
-                        <h2 class="fw-600 mb-0 text-heading fs-mp-h">My Profile</h2>
-                        <p class="">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
-                    </div>
+                    @if (session('status'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <input type="hidden" value="1" id="modalsuccess">
+                            <strong> {{ session('status') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger  alert-dismissible fade show" role="alert">
+                            <input type="hidden" value="1" id="modalsuccess">
+                            <strong> {{ session('error') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <form action="{{ url('/profliestone') }}" method="POST" class="needs-validation" id="profileForm">
                         @csrf
-                        <div class="container">
-                        <div class="row ">
-                            <div class="col-md-6">
-                                <div class="card mb-6">
-                                    <div class="card-body px-6 pt-6 pb-5">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-xl-12 col-xxl-7 ">
-                                                <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Photo</h3>
-                                                <p class=" fs-mp mb-4 ">Upload your profile photo.</p>
+                        <div class="row">    
+                            @if (isset($data))
+                                @foreach ($data['profiles'] as $item)                    
+                                        <div class="col-md-6 col-12 col-lg-6">
+                                            <div class="pb-10">
+                                                <div class="card cardBox">
+                                                    <div class="card-body p-3">
+                                                        <div class="text-left">
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">Photo</h4>
+                                                            <label>Upload your profile photo.</label>
+                                                        </div>
+                                                        <div class="avatar-upload">
+                                                            <div class="avatar-edit">
+                                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                                <label for="imageUpload"></label>
+                                                            </div>
+                                                            <div class="avatar-preview">
+                                                                <div id="imagePreview" style="background-image: url(https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg);">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                                            </div>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                </div>                 
                                             </div>
-                                            <div class="col-sm-8 col-xl-12 col-xxl-5 text-center">
-                                                <img src="https://homez-reactjs.ibthemespro.com/images/listings/profile-1.jpg"
-                                                    alt="My Profile" class="mx-auto d-block img">
-                                                <div class="custom-file mt-4 h-auto">
-                                                    <input type="file" class="custom-file-input" hidden="">
-                                                    <button type="submit"
-                                                        class="afterButton rounded-pill btn-lg mt-2">Upload profile
-                                                        image</button>
+
+
+                                            <div class="pb-10">
+                                                <div class="card cardBox">
+                                                    <div class="card-body p-3">
+                                                        <div class="text-left">
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">Contact information</h4>
+                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                        </div>
+                                                        @if (session('user_id'))
+                                                            <div class="form-group col-md-6 px-4">
+                                                                <input type="hidden" class="form-control form-control-lg "
+                                                                    id="user_id" name="user_id"
+                                                                    value="{{ session('user_id') }}">
+                                                            </div>
+                                                        @endif                                                
+                                                        <div class="row pt-10">
+                                                            <div class="col-12 col-lg-6">
+                                                                <label>First name</label>
+                                                                <input type="text" class="form-control " id="firstName" name="firstName" value={{$item->name}}>                                                
+                                                            </div>
+                                                            <div class="col-12 col-lg-6">
+                                                                <label>Last name</label>
+                                                                <input type="text" class="form-control" placeholder="Last name"  id="lastName" name="lastName" value={{$item->lastname}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row pt-10">
+                                                            <div class="col-12 col-lg-6">
+                                                                <label>First name</label>
+                                                                <input type="text" class="form-control" placeholder="First name"  id="phone" name="phone"   value={{$item->phone}}>
+                                                            </div>
+                                                            <div class="col-12 col-lg-6">
+                                                                <label>Last name</label>
+                                                                <input type="text" class="form-control" placeholder="Last name" id="mobile" name="mobile" value={{$item->mobile}}>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row pt-10">
+                                                            @if (session('user_email'))
+                                                                <div class="col-12 col-lg-6">
+                                                                    <label>First name</label>
+                                                                    <input type="text" class="form-control" placeholder="First name" id="email" name="email" value="{{ session('user_email') }}" readonly>
+                                                                </div>                                      
+                                                            @endif
+                                                        
+                                                        
+                                                            <div class="col-12 col-lg-6">
+                                                                <label>Last name</label>
+                                                                <input type="text" class="form-control" placeholder="Last name" id="skype" name="skype" value={{$item->skype}}>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                 
+                                            </div> 
+                                            <div class="pb-10">
+                                                <div class="card cardBox">
+                                                    <div class="card-body p-3">
+                                                        <div class="text-left">
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">User detail</h4>
+                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                        </div>
+                                                        <div class="form-group pt-10">
+                                                            <label>Title / Posittion</label>
+                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" id="title" name="title" value={{$item->title}}>
+                                                        </div>
+                                                    </div>
+                                                </div>                 
+                                            </div>  
+                                        </div>
+                                        <div class="col-md-6 col-12 col-lg-6">
+                                            <div class="pt-10">
+                                                <div class="card cardBox">
+                                                    <div class="card-body p-3">
+                                                        <div class="text-left">
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">User detail</h4>
+                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="label-700 pl-5">Facebook Url</label>
+                                                            <input type="text" name="facebook" id="facebook" class="form-control " placeholder="Enter Your Facebook" value={{$item->facebook}}>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="label-700 pl-5">Pinterest Url</label>
+                                                            <input type="text" name="pinterest" id="pinterest" class="form-control " placeholder="Enter Your Pinterest" value={{$item->pinterest}}>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="label-700 pl-5">Instagram Url</label>
+                                                            <input type="text" name="instagram" id="instagram" class="form-control "
+                                                                placeholder="Enter Your Instagram" value={{$item->instagram}}>
+                                                            <div class="invalid-feedback">
+                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="label-700 pl-5">Twitter Url</label>
+                                                            <input type="text" name="twitter" id="twitter" class="form-control "
+                                                                placeholder="Enter Your Twitter" value={{$item->twitter}}>
+                                                            <div class="invalid-feedback">
+                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="label-700 pl-5">Linkedin Url</label>
+                                                            <input type="text" name="linkedin" id="linkedin" class="form-control "
+                                                                placeholder="Enter Your Linkedin" value={{$item->linkedin}}>
+                                                            <div class="invalid-feedback">
+                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="label-700 pl-5">Website Url</label>
+                                                            <input type="text" name="website" id="website" class="form-control "
+                                                                placeholder="Enter Your name" value={{$item->website}}>
+                                                            <div class="invalid-feedback">
+                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <p class="col-sm-12 d-flex justify-content-center">
-                                                *minimum 500px x 500px
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="card mb-6">
-                                    <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Contact information</h3>
-                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-
-                                        @if (session('user_id'))
-                                            <div class="form-group col-md-6 px-4">
-                                                <input type="hidden" class="form-control form-control-lg "
-                                                    id="user_id" name="user_id"
-                                                    value="{{ session('user_id') }}">
-                                            </div>
-                                        @endif
-
-                                        <div class="form-row mx-n4">
-                                            @if (session('user_name'))
-                                                <div class="form-group col-md-6 px-4">
-                                                    <label for="firstName" class="text-heading">First name</label>
-                                                    <input type="text" class="form-control form-control-lg "
-                                                        id="firstName" name="firsName"
-                                                        value="{{ session('user_name') }}">
+                                            <div class="d-flex justify-content-end flex-wrap">
+                                                <div class="position-relative  pt-d-30 mr-2 ">
+                                                        <button type="submit" class="afterButton rounded-pill btn-lg" id="">
+                                                            Delete Profile  <i class="fa-solid fa-arrow-right"></i>
+                                                    </button>
                                                 </div>
-                                            @endif
-
-                                            <div class="form-group col-md-6 px-4">
-                                                <label for="lastName" class="text-heading">Last name</label>
-                                                <input type="text" class="form-control form-control-lg "
-                                                    id="lastName" name="lastname">
-                                            </div>
-                                        </div>
-                                        <div class="form-row mx-n4">
-                                            <div class="form-group col-md-6 px-4">
-                                                <label for="phone" class="text-heading">Phone</label>
-                                                <input type="text" class="form-control form-control-lg "
-                                                    id="phone" name="phone">
-                                            </div>
-                                            <div class="form-group col-md-6 px-4">
-                                                <label for="mobile" class="text-heading">Mobile</label>
-                                                <input type="text" class="form-control form-control-lg "
-                                                    id="mobile" name="mobile">
-                                            </div>
-                                        </div>
-                                        <div class="form-row mx-n4">
-                                            @if (session('user_email'))
-                                                <div class="form-group col-md-6 px-4 mb-md-0">
-                                                    <label for="email" class="text-heading">Email</label>
-                                                    <input type="email" class="form-control form-control-lg"
-                                                        id="email" name="email"
-                                                        value="{{ session('user_email') }}" readonly>
+                                                <div class="position-relative  pt-d-30  mr-2 ">
+                                                    <button type="submit" class="afterButton rounded-pill btn-lg" id="profileSubmit">
+                                                        Update Profile  <i class="fa-solid fa-arrow-right"></i>
+                                                    </button>
                                                 </div>
-                                            @endif
-                                            <div class="form-group col-md-6 px-4 mb-md-0">
-                                                <label for="skype" class="text-heading">Skype</label>
-                                                <input type="text" class="form-control form-control-lg "
-                                                    id="skype" name="skype">
                                             </div>
+                                            {{-- <div class="pt-10 ">
+                                                <div class="card cardBox">
+                                                    <div class="card-body p-3">
+                                                        <div class="text-left">
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">Password</h4>
+                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                        </div>
+                                                        <div class="form-group pt-10">
+                                                            <label>Title / Posittion</label>
+                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+                                                        </div>
+                                                        <div class="form-group pt-10">
+                                                            <label>Title / Posittion</label>
+                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+                                                        </div>
+                                                        <div class="form-group pt-10">
+                                                            <label>Title / Posittion</label>
+                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+                                                        </div>
+                                                    </div>
+                                                </div>                 
+                                            </div>  --}}
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-6 mb-lg-0">
-                                    <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">User detail</h3>
-                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                        <div class="form-group mb-0">
-                                            <label for="title" class="text-heading">Title / Posittion</label>
-                                            <input type="text" class="form-control form-control-lg " id="title"
-                                                name="title">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="card mb-6 ">
-                                    <div class="card-body  pt-6 pb-5">
-                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">User detail</h3>
-                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                                        </p>
-                                        <div class="form-group">
-                                            <label for="facebook" class="text-heading">Facebook Url</label>
-                                            <input type="url" class="form-control form-control-lg " id="facebook"
-                                                name="facebook">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="pinterest" class="text-heading">Pinterest Url</label>
-                                            <input type="url" class="form-control form-control-lg "
-                                                id="pinterest" name="pinterest">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="instagram" class="text-heading">Instagram Url</label>
-                                            <input type="url" class="form-control form-control-lg "
-                                                id="instagram" name="instagram">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="twitter" class="text-heading">Twitter Url</label>
-                                            <input type="url" class="form-control form-control-lg "
-                                                id="twitter" name="twitter">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="linkedin" class="text-heading">Linkedin Url</label>
-                                            <input type="url" class="form-control form-control-lg "
-                                                id="linkedin" name="linkedin">
-                                        </div>
-                                        <div class="form-group mb-7">
-                                            <label for="website" class="text-heading">Website Url <span
-                                                    class="text-muted">(without http)</span>
-                                            </label>
-                                            <input type="url" class="form-control form-control-lg "
-                                                id="website" name="website">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body px-6 pt-6 pb-5">
-                                        <h3 class="fw-600 card-title mb-0 text-heading fs-mp-h">Change password</h3>
-                                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                                        </p>
-                                        <div class="form-group">
-                                            <label for="oldPassword" class="text-heading">Old Password</label>
-                                            <input type="text" class="form-control form-control-lg "
-                                                id="oldPassword" name="oldPassword">
-                                        </div>
-
-
-                                        <div class="form-row mx-n4">
-                                            <div class="form-group col-md-6 col-lg-12 col-xxl-6 px-4">
-                                                <label for="newPassword" class="text-heading">New Password</label>
-                                                <input type="password" class="form-control form-control-lg "
-                                                    id="newPassword" name="newPassword">
-                                                    <div class="colorRed" id="errorpassword"></div>
-    
-                                            </div>
-                                            <div class="form-group col-md-6 col-lg-12 col-xxl-6 px-4">
-                                                <label for="confirmNewPassword" class="text-heading">Confirm New
-                                                    Password</label>
-                                                <input type="password" class="form-control form-control-lg "
-                                                    id="confirmNewPassword" name="confirmNewPassword">
-                                                    <div class="colorRed" id="errorconfirm"></div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
+                                @endforeach                     
+                            @endif    
                         </div>
+                    </form>
 
-                        <div class="d-flex justify-content-end flex-wrap">
-                            {{-- เอา btn-t-white ออก --}}
-                            <div class="position-relative  pt-d-30 pb20 mr-2 "><a href="#"
-                                    class="afterButton rounded-pill btn-lg mt-2">Delete Profile
-                                    <i class="fa-solid fa-arrow-right"></i></a>
-                            </div>
-                            {{-- เอา btn-t-white ออก --}}
-                            <div class="position-relative  pt-d-30 pb20 mr-2 ">
-                                {{-- <a href="#" class="afterButton rounded-pill btn-lg mt-2">Update Profile
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a> --}}
-
-                                <button type="submit" class="afterButton rounded-pill btn-lg" id="profileSubmit">
-                                     Update Profile  <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </form>
-                </div>
+                </div>            
             </div>
         </div>
     </div>
+</div> 
