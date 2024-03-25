@@ -278,12 +278,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-
-
                                 <div class="col-md-12">
                                     {{-- เอา btn-t-white ออก --}}
                                     <div class="position-relative bdrb1 pt-d-30 pb20"><a href="#"
@@ -292,31 +286,34 @@
                                             <i class="fa-solid fa-arrow-right"></i></a>
                                     </div>
                                 </div>
+                            </div>
+                            {{-- <div class="mt30">
+                                <div class="mbp_pagination text-center">
+                                    <ul class="page_navigation">
 
-                    {{-- <div class="mt30">
-                        <div class="mbp_pagination text-center">
-                            <ul class="page_navigation">
+                                        <li class="page-item"><span class="page-link pointer" href="#"><span
+                                                    class="fas fa-angle-left"></span></span></li>
 
-                                <li class="page-item"><span class="page-link pointer" href="#"><span
-                                            class="fas fa-angle-left"></span></span></li>
-
-                                <li class="page-item"><span class="page-link pointer" href="#">1</span></li>
-                                <li class="page-item active"><span class="page-link pointer" href="#">2</span>
-                                </li>
-                                <li class="page-item"><span class="page-link pointer" href="#">3</span></li>
-                                <li class="page-item"><span class="page-link pointer" href="#">4</span></li>
-                                <li class="page-item"><span class="page-link pointer" href="#">5</span></li>
+                                        <li class="page-item"><span class="page-link pointer" href="#">1</span></li>
+                                        <li class="page-item active"><span class="page-link pointer" href="#">2</span>
+                                        </li>
+                                        <li class="page-item"><span class="page-link pointer" href="#">3</span></li>
+                                        <li class="page-item"><span class="page-link pointer" href="#">4</span></li>
+                                        <li class="page-item"><span class="page-link pointer" href="#">5</span></li>
 
 
-                                <li class="page-item pointer"><span class="page-link" href="#"><span
-                                            class="fas fa-angle-right"></span></span></li>
-                            </ul>
-                            <p class="mt10 pagination_page_count text-center">1-8 of 300+ property available</p>
+                                        <li class="page-item pointer"><span class="page-link" href="#"><span
+                                                    class="fas fa-angle-right"></span></span></li>
+                                    </ul>
+                                    <p class="mt10 pagination_page_count text-center">1-8 of 300+ property available</p>
+                                </div>
+                            </div> --}}
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer100vh"></div>
+@include('dashboard.footerdashboard')
 </div>
+

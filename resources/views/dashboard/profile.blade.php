@@ -226,4 +226,5 @@
                 </div>
             </div>
         </div>
+        @include('dashboard.footerdashboard')
     </div>
