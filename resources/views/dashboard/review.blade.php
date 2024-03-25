@@ -33,59 +33,64 @@
                                 </div>
 
                                 @if (isset($data))
-                                @foreach ($data['pp_reviews'] as $item)
-                                <div class="col-md-12">
-                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                        <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
-                                            class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                            style="width: 84px; height: 84px; object-fit: cover;">
-                                        <div class="media-body">
-                                            <div class="row mb-1 align-items-center">
-                                                <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                    <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
-                                                </div>
+                                    @foreach ($data['pp_reviews'] as $item)
+                                        <div class="col-md-12">
+                                            <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                                <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                                    class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                                    style="width: 84px; height: 84px; object-fit: cover;">
+                                                <div class="media-body">
+                                                    <div class="row mb-1 align-items-center">
+                                                        <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
+                                                        </div>
 
-                                                <div class="col-sm-6">
-                                                    <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                        <li class="list-inline-item mr-0">
-                                                                @php
-                                                                    $star = $item->review_star;
-                                                                @endphp
+                                                        <div class="col-sm-6">
+                                                            <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                                <li class="list-inline-item mr-0">
+                                                                        @php
+                                                                            $star = $item->review_star;
+                                                                        @endphp
 
-                                                                @for ($i = 1; $i <= 5; $i++)
-                                                                @if ($i <= $star)
-                                                                    <span class="fa fa-star text-warning"></span>
-                                                                @else
-                                                                    <span class="fa fa-star text-secondary"></span>
-                                                                @endif
-                                                                @endfor
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-1 align-items-center">
-                                                <div class="col-sm-10 mb-2 mb-sm-0  ">
-                                                    <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                        <!-- เพิ่มปุ่มอนุมัติ -->
-                                                        <a href="#" class="btn btn-success btn-sm mr-2 text-white">อนุมัติ</a>
-                                                        <!-- เพิ่มปุ่มลบ -->
-                                                        <a href="{{route('deletereview',['id_review'=>$item->id_review])}}" class="btn btn-danger btn-sm text-white">ลบ</a>
+                                                                        @for ($i = 1; $i <= 5; $i++)
+                                                                        @if ($i <= $star)
+                                                                            <span class="fa fa-star text-warning"></span>
+                                                                        @else
+                                                                            <span class="fa fa-star text-secondary"></span>
+                                                                        @endif
+                                                                        @endfor
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
+                                                    <div class="row mb-1 align-items-center">
+                                                        <div class="col-sm-10 mb-2 mb-sm-0  ">
+                                                            <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <div class="d-flex justify-content-sm-end justify-content-center mb-0">
+                                                                @if ($item["review_status"]==true)
+                                                                    <!-- เพิ่มปุ่มอนุมัติ -->
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติ</a>
+                                                                @else
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-secondary btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
+                                                                @endif
+                                                                
+                                                                <!-- เพิ่มปุ่มลบ -->
+                                                                <a href="{{route('deletereview',['id_review'=>$item->id_review])}}" class="btn btn-danger btn-sm text-white">ลบ</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        {{-- <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p> --}}
+                                                        <div class="d-flex justify-content-sm-start justify-content-center">
+                                                            <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
+                                                            <a href="#" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                        </div>
+                                                        
                                                 </div>
                                             </div>
-                                                {{-- <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p> --}}
-                                                <div class="d-flex justify-content-sm-start justify-content-center">
-                                                    <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
-                                                    <a href="#" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-                                                </div>
-                                                
                                         </div>
-                                    </div>
-                                </div>
-                                @endforeach
+                                    @endforeach
                                 @endif
 
                                 {{-- <div class="col-md-12">

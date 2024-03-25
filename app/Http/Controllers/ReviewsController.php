@@ -39,6 +39,16 @@ class ReviewsController extends Controller
 
     public function deletereview($id_review){
         DB::table('pp_reviews')->where('id_review',$id_review)->delete();
+        // return redirect('/addproperty');
+        return redirect()->back();
+    }
+
+    public function change($id_review){
+        $pp_reviews=DB::table('pp_reviews')->where('id_review',$id_review)->first();
+        $data=[
+            'review_status'=>!$pp_reviews->review_status
+        ];
+        $pp_reviews=DB::table('pp_reviews')->where('id_review',$id_review)->update($data);
         return redirect('/addproperty');
     }
 }

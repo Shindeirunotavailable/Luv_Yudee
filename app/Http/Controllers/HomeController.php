@@ -9,6 +9,7 @@ use App\Models\createAccount;
 // use App\Models\Newsletter;
 use App\Models\pp_Newsletter;
 use App\Mail\news;
+use App\Models\Reviews;
 
 
 
@@ -49,8 +50,8 @@ class HomeController extends Controller
         
         $pp_reviews=DB::table('pp_reviews')->get();
         return view(".propertyDetail.property")->with('data',$pp_reviews);
-        
-
+        // $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
+        // return view('.propertyDetail.property')->with('data', $showrivew);
     }
 
 

@@ -23,6 +23,7 @@ Route::any('home' , 'App\Http\Controllers\HomeController@home');
 Route::any('home_email' , 'App\Http\Controllers\HomeController@home_email');
 Route::any('review' , 'App\Http\Controllers\ReviewsController@review')->middleware('auth');
 Route::get('deletereview/{id_review}' , 'App\Http\Controllers\ReviewsController@deletereview')->name('deletereview');
+Route::get('change/{id_review}' , 'App\Http\Controllers\ReviewsController@change')->name('change');
 
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
