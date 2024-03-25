@@ -400,10 +400,10 @@ class LoginController extends Controller
 
 
     
-    public function getProfile(){
-        $profiles = Profile::all(); // ดึงข้อมูลทั้งหมดจากตาราง "profiles"
-        return view('property', ['profiles' => $profiles]);
-    }
+    // public function getProfile(){
+    //     $profiles = Profile::all(); // ดึงข้อมูลทั้งหมดจากตาราง "profiles"
+    //     return view('property', ['profiles' => $profiles]);
+    // }
     
 
 

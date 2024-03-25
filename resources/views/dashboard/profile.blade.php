@@ -2,25 +2,6 @@
         <div class="dashboard__content property-page bg-f7">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    @if (session('status'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <input type="hidden" value="1" id="modalsuccess">
-                            <strong> {{ session('status') }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger  alert-dismissible fade show" role="alert">
-                            <input type="hidden" value="1" id="modalsuccess">
-                            <strong> {{ session('error') }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-
                     <div class="hidden" id="hiddensuccessUpdate">
                         <div class="alert alert-success" role="alert">
                             <div id="successUpdate"></div>
@@ -193,28 +174,6 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            {{-- <div class="pt-10 ">
-                                                <div class="card cardBox">
-                                                    <div class="card-body p-3">
-                                                        <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">Password</h4>
-                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
-                                                        </div>
-                                                        <div class="form-group pt-10">
-                                                            <label>Title / Posittion</label>
-                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-                                                        </div>
-                                                        <div class="form-group pt-10">
-                                                            <label>Title / Posittion</label>
-                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-                                                        </div>
-                                                        <div class="form-group pt-10">
-                                                            <label>Title / Posittion</label>
-                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-                                                        </div>
-                                                    </div>
-                                                </div>                 
-                                            </div>  --}}
                                         </div>
                                 @endforeach                     
                             @endif    
@@ -226,4 +185,3 @@
         </div>
         @include('dashboard.footerdashboard')
     </div>
-</div> 

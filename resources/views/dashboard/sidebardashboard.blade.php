@@ -170,8 +170,6 @@
                         tabindex="0">
                         @include('dashboard.review')
                     </div>
-
-
                 </div>
 
             </div>
