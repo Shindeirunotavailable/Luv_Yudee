@@ -38,8 +38,6 @@
     </div>
 </div>
 
-
-
 <script>
     var getUrl = window.location;
     var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;
@@ -60,7 +58,7 @@
                 // console.log(response);
                 if (response.success) {
                     Swal.fire({
-                    title: "Create account success",
+                    title: "Lost Password Success",
                     icon: "success",
                     confirmButtonColor: "#0071BC",
                     confirmButtonText: "Close",

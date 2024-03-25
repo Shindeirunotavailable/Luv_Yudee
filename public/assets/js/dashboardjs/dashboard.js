@@ -273,6 +273,15 @@ $('#submitdescription').click(function(event) {
         }
         event.preventDefault();
         event.stopPropagation();
+    }else {
+        // หากข้อมูลถูกต้อง ให้แสดง SweetAlert และส่งฟอร์ม
+        Swal.fire({
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        $('#submit-form').submit(); // ส่งฟอร์ม
     }
         titleproperty.on('input', function() {
             if ($(titleproperty).val()) {
@@ -310,7 +319,16 @@ $('#submitmedia').click(function(event) {
     } else {
         errormedia.removeClass('is-invalid');
         errormedia.next('.additional-message').remove();
+        Swal.fire({
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        $('#submit-form').submit();
     }
+
+
 
     customIMG.on('input', function() {
         if (!$(this).val() && !customVdo.val()) {
@@ -387,6 +405,14 @@ $('#submitlocation').click(function(event) {
         }
         event.preventDefault();
         event.stopPropagation();
+    }else {
+        Swal.fire({
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        $('#submit-form').submit();
     }
     address.on('input', function() {
         if ($(this).val()) {
@@ -473,6 +499,14 @@ $('#submitdetail').click(function(event) {
 
         event.preventDefault();
         event.stopPropagation();
+    }else {
+        Swal.fire({
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        $('#submit-form').submit();
     }
 
     floor.on('input', function() {
@@ -505,40 +539,55 @@ $('#submitdetail').click(function(event) {
         }
     });
 });
+// Event Handling End
 
-
-$('#submitamenitie').click(function(event) {
+// checkbox อย่างเดียว
+// สร้างฟังก์ชันสำหรับการตรวจสอบ checkbox
+function validateCheckboxes() {
     var checkboxes = $('.checkbox-style1 input[type="checkbox"]');
     var errorMessage = 'กรุณาเลือกอย่างน้อย1รายการ';
     var errorElement = '<div class="invalid-feedback">' + errorMessage + '</div>';
     var error = $('#error');
     var isChecked = false;
-
-    function validateCheckboxes() {
-        isChecked = false;
-        checkboxes.each(function() {
-            if ($(this).is(':checked')) {
-                isChecked = true;
-                return false;
-            }
-        });
-        if (!isChecked) {
-            error.next('.invalid-feedback').remove();
-            error.addClass('is-invalid').after(errorElement);
-            event.preventDefault();
-        } else {
-            error.removeClass('is-invalid').next('.invalid-feedback').remove();
+    checkboxes.each(function() {
+        if ($(this).is(':checked')) {
+            isChecked = true;
+            return false;
         }
-    }
-
-    checkboxes.change(function() {
-        validateCheckboxes();
     });
 
+    if (!isChecked) {
+        error.next('.invalid-feedback').remove();
+        error.addClass('is-invalid').after(errorElement);
+        return false;
+    } else {
+        error.removeClass('is-invalid').next('.invalid-feedback').remove();
+        return true;
+    }
+}
+$('.checkbox-style1 input[type="checkbox"]').change(function() {
     validateCheckboxes();
 });
+$('#submitamenitie').click(function(event) {
+    if (validateCheckboxes()) {
+        // หาก checkbox ถูกต้อง ให้ทำการส่ง form
+        $('#submit-form').submit();
 
-// delete media alert
+        // แสดง SweetAlert
+        Swal.fire({
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    } else {
+        // หาก checkbox ไม่ถูกต้อง ไม่ต้องทำอะไรเพิ่มเติม
+        event.preventDefault();
+    }
+});
+
+// checkbox end
+
 
 $(document).ready(function() {
     function confirmation(event) {
@@ -558,7 +607,14 @@ $(document).ready(function() {
         .then((willDelete) => {
             if (willDelete.isConfirmed) {
                 window.location.href = urlToRedirect;
-                Swal.fire("Delete!", "Your file has been deleted", "success");
+                Swal.fire({
+                    position: "center",
+                    title: "Delete",
+                    text: "Your file has been deleted",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             } else {
                 Swal.fire({
                     position: "center",
@@ -575,3 +631,5 @@ $(document).ready(function() {
         confirmation(event);
     });
 });
+
+

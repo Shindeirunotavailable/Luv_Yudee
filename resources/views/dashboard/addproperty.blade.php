@@ -42,7 +42,7 @@
                             </nav>
 
 
-                        <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
+                        <form method="POST" id="addpropertyfrom" action="{{ route('properties') }}" enctype="multipart/form-data">
                             @csrf
                             @if (isset($data['id_property']))
                                 <input type="hidden"  name="id_property" value="{{$data['id_property']}}" >
@@ -102,7 +102,7 @@
                                                         </div>
                                                     </div>
                                                 </div >
-                                            <button type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600" name="property_stage" value="1">Submit</button>
+                                            <button type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 submitproperty" name="property_stage" value="1">Submit</button>
                                         </div>
                                 </div>
 
@@ -191,7 +191,7 @@
                                                             @endif
 
                                                     </div>
-                                            <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 " name="property_stage" value="2">Submit</button>
+                                            <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 submitproperty " name="property_stage" value="2">Submit</button>
                                         </div>
                                 </div>
 
@@ -289,7 +289,7 @@
 
                                                 </div>
 
-                                                <button type="submit" name="property_stage" value="3" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
+                                                <button type="submit" name="property_stage" value="3" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 submitproperty">Submit</button>
                                         </div>
                                 </div>
 
@@ -366,7 +366,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" name="property_stage" value="4" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
+                                        <button type="submit" name="property_stage" value="4" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 submitproperty">Submit</button>
                                     </div>
                                 </div>
 
@@ -399,7 +399,7 @@
                                                     @endforeach
                                             </div>
                                         </div>
-                                        <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
+                                        <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 submitproperty">Submit</button>
                                     </div>
 
                                 </div>
@@ -506,32 +506,4 @@
     </footer>
 
 </div>
-{{-- <script>
-    function confirmation(event) {
-        var urlToRedirect = event.currentTarget.getAttribute('href');
 
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#0071bc",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        })
-        .then((willDelete) => {
-            if (willDelete.isConfirmed) {
-                window.location.href = urlToRedirect;
-                Swal.fire("Delete!", "Your file has been deleted", "success");
-            } else {
-                Swal.fire({
-                title: "Cancelled",
-                text: "The media is safe",
-                icon: "error",
-                confirmButtonColor: "#0071bc",
-        })
-
-            }
-        });
-    }
-</script> --}}
