@@ -429,84 +429,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 }
 
-//check review
-$("#form_review").click(function() {
-  console.log('review');
-  const forms = $('.needs-validation');
-    forms.on('submit', function(event) {
-      // var emailInput = $('#email');
-      // var emailValue = emailInput.val();
-      // var showErrorDiv = $('#ShowErrorEmail');
-      const namereview = $('#name');
-      const contentreview = $('#content')
-      const emailreview = $('#email');
 
-      // emailInput.removeClass('border-danger is-valid');
-      // if (emailValue.trim() === '') {
-      //   showErrorDiv.text('Please enter a valid email');
-      //   emailInput.addClass('border-danger');
-      //   event.preventDefault(); // ป้องกันการ submit แบบปกติ
-      // } else if (emailValue.indexOf('@') === -1 || emailValue.indexOf('.') === -1) {
-      //     showErrorDiv.text('Please include an @ in the email address. "' + emailValue + '" is missing @ or . is incomplete.');
-      //     emailInput.addClass('border-danger');
-      //     event.preventDefault();
-      // } else if (emailValue.split('.').length < 2 || emailValue.split('.').pop().trim() === '') {
-      //   showErrorDiv.text('Please enter a part following .');
-      //   emailInput.addClass('border-danger');
-      //   event.preventDefault();
-      // } else {
-      //     emailInput.addClass('is-valid');
-      //     showErrorDiv.text(''); // ล้างข้อความแจ้งเตือนหากไม่มีข้อผิดพลาด
-      // }
-      if( !namereview.val()  ){
-        namereview.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
-      } else {
-        namereview.removeClass('is-invalid');
-        namereview.addClass('is-valid');
-      }
-      if( !emailreview.val()  ){
-        emailreview.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
-      } else {
-        emailreview.removeClass('is-invalid');
-        emailreview.addClass('is-valid');
-      }
-      if( !contentreview.val()  ){
-        contentreview.addClass('is-invalid');
-        event.preventDefault();
-        event.stopPropagation();
-      } else {
-        contentreview.removeClass('is-invalid');
-        contentreview.addClass('is-valid');
-      }
-      
-    });
-  });
+
 
   //popup เเจ้งเดือน รอรีวิว
-  $(document).ready(function() {
-    function confirmation(event) {
-        event.preventDefault();
+//   $(document).ready(function() {
+//     function confirmation(event) {
+//         event.preventDefault();
         
-        Swal.fire({
-            position: "center",
-            icon: "warning",
-            text: "กรุณารอการอนุมัติรีวิวจากเจ้าหน้าที่",
-            confirmButtonColor: "#0071BC",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $('#form_review').submit();
-            }
-        });
-    }
+//         Swal.fire({
+//             position: "center",
+//             icon: "warning",
+//             text: "กรุณารอการอนุมัติรีวิวจากเจ้าหน้าที่",
+//             confirmButtonColor: "#0071BC",
+//         }).then((result) => {
+//             if (result.isConfirmed) {
+//                 $('#form_review').submit();
+//             }
+//         });
+//     }
 
-    $('.wait-al').on('click', function(event) {
-        confirmation(event);
-    });
-});
+//     $('.wait-al').on('click', function(event) {
+//         confirmation(event);
+//     });
+// });
 
 
 

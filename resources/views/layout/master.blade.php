@@ -86,6 +86,7 @@
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
     <script src="{{ asset('/assets/js/dashboardjs/profile.js') }}"></script>  {{-- -- Css หน้า profile -- --}}
     <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
+    <script src="{{ asset('/assets/js/propertyjs/review.js') }}"></script>
     <script src="{{ asset('/assets/js/login.js') }}"></script> {{-- -- Css หน้า Login -- --}}
     <script src="{{ asset('/assets/js/searchResulte/searchResulte.js') }}"></script> {{-- -- Css หน้า searchResulte -- --}}
     <script src="{{ asset('/assets/js/contact/contact.js') }}"></script> {{-- -- Css หน้า contact -- --}}

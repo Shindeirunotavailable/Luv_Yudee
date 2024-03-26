@@ -43,7 +43,7 @@ class PropertyController extends Controller
 
         $this->data['media'] = Media::all();
         // $this->data['pp_reviews'] = Reviews::all();
-        $this->data['pp_reviews'] = Reviews::paginate(2);
+        $this->data['pp_reviews'] = Reviews::paginate(5);
         $this->data['profiles'] = profile::all();
 
         $this->data['property'] = $property;
