@@ -73,7 +73,7 @@
                                                                     <!-- เพิ่มปุ่มอนุมัติ -->
                                                                     <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
                                                                 @else
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-warning  btn-sm mr-2 text-white approve-success">รอการอนุมัติ</a>
                                                                 @endif
                                                                 
                                                                 <!-- เพิ่มปุ่มลบ -->
