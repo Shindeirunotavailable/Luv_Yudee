@@ -52,11 +52,11 @@
 </head>
 
 <body>
-    @if (!request()->is('emails'))
+    @if (!request()->is('emails','indexadmin'))
         @include('layout.menu')
     @endif
         @yield('content')
-    @if(!request()->is('addproperty','emails'))
+    @if(!request()->is('addproperty'))
         @include('layout.footer')
     @endif
 

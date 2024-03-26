@@ -32,7 +32,7 @@ Route::get('change/{id_review}' , 'App\Http\Controllers\ReviewsController@change
  // -----------------------------------main function  route non ------------------------------------
 route::any('login','App\Http\Controllers\LoginController@login')->name('login'); // เปิดหน้า Login
 route::any('contact','App\Http\Controllers\LoginController@contact')->name('contact'); // เปิดหน้า contact
-route::any('search_result','App\Http\Controllers\LoginController@search_result'); // เปิดหน้า details
+route::any('search_result','App\Http\Controllers\LoginController@search_result'); // เปิดหน้า search_result
 
 route::any('create-account','App\Http\Controllers\LoginController@createAccount'); //modal สร้างรหัสผ่าน
 route::any('forget-password','App\Http\Controllers\LoginController@forgetPassword');  //modal กู้รหัสผ่าน
@@ -46,9 +46,14 @@ Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword'
 Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  //ส่งค่าnewPassword
 route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
 route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
+// route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
 
-route::any('test','App\Http\Controllers\LoginController@test'); // ส่งค่า proflie
-route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
+ // ----------------------------------- dashboard admin ------------------------------------
+
+ route::any('test','App\Http\Controllers\LoginController@test')->middleware('IsAdmin')->name('test'); // ส่งค่า proflie
+ route::any('indexadmin','App\Http\Controllers\adminController@indexadmin')->middleware('IsAdmin')->name('indexadmin'); // ส่งค่า proflie
+
+
 
 
  // -----------------------------------function test Route ------------------------------------

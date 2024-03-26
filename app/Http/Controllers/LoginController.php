@@ -57,25 +57,51 @@ class LoginController extends Controller
     // ------------------------------------- เข้าสู่ระบบ -------------------------------------------------
 
 
+    // public function loginform(Request $request)
+    // {
+    //     $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
+    //     if ($account && Hash::check($request->password, $account->password)) {
+    //         // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
+    //         Auth::login($account);
+    //         $request->session()->put([
+    //             'user_name' => $account->name,
+    //             'user_email' => $account->email,
+    //             'user_id' => $account->id,
+    //         ]);
+
+    //         return response()->json(['success' => true, 'redirect' => '/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+    //     } else {
+    //         $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
+    //         return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+    //     }
+    // }
+
     public function loginform(Request $request)
-    {
-        $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
-        if ($account && Hash::check($request->password, $account->password)) {
-            // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
-            Auth::login($account);
-            $request->session()->put([
-                'user_name' => $account->name,
-                'user_email' => $account->email,
-                'user_id' => $account->id,
-            ]);
+{
+    $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
+    if ($account && Hash::check($request->password, $account->password)) {
+        // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
+        Auth::login($account);
+        $request->session()->put([
+            'user_name' => $account->name,
+            'user_email' => $account->email,
+            'user_id' => $account->id,
+        ]);
 
-            return response()->json(['success' => true, 'redirect' => '/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+        // เช็คว่าเป็นแอดมินหรือไม่
+        if ($account->Isadmin == 1) {
+            return response()->json(['success' => true, 'redirect' => '/indexadmin']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
         } else {
-            $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
-            return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+            return response()->json(['success' => true, 'redirect' => '/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
         }
+    } else {
+        $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
+        return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
     }
+}
 
+
+    
     public function logout()
     {
         Auth::logout();
@@ -392,19 +418,10 @@ class LoginController extends Controller
 
             ]);
         }
-        $pp_profiles=DB::table('profiles')->get();
-        // return redirect('/addproperty')-> with('data', $pp_profiles);
         return response()->json(['success' => true, 'message' => 'Testajax']);
     }
 
 
-
-    
-    // public function getProfile(){
-    //     $profiles = Profile::all(); // ดึงข้อมูลทั้งหมดจากตาราง "profiles"
-    //     return view('property', ['profiles' => $profiles]);
-    // }
-    
 
 
 
