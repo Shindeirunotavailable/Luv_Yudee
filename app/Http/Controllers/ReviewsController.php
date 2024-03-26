@@ -30,10 +30,9 @@ class ReviewsController extends Controller
         $pp_reviews=DB::table('pp_reviews')->get();
         // return view('propertyDetail.property')-> with('data', $pp_reviews);
 
-        return redirect('/property')-> with('data', $pp_reviews);
-        // ใช้ได้
-        // Session::put('pp_reviews', $pp_reviews);
-        // return redirect('property');
+        return response()->json(['success' => true, 'message' => 'Testajax']);
+        // return redirect('/property')-> with('data', $pp_reviews);
+       
 
     }
 

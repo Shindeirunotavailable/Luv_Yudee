@@ -667,14 +667,15 @@
                                                 <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
                                                 <div class="d-flex justify-content-sm-start justify-content-center">
                                                     <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
-                                                    <a href="#"
+                                                    <a href="javascript::void(0)" onclick="reply(this)" 
                                                         class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                 </div>
+                                                
                                         </div>
                                     </div>
                                     @endforeach
                                 @endif
-
+                                
                                 {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                     <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
                                         class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -722,6 +723,7 @@
                                 </div> --}}
                             </div>
                         </div>
+                        
                         {{-- <table class="table table-bordered text-center">
                             <thead>
                                 <tr>
