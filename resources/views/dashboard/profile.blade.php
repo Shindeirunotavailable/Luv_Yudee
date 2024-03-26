@@ -108,16 +108,22 @@
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Facebook Url</label>
                                                             <input type="text" name="facebook" id="facebook" class="form-control " placeholder="Enter Your Facebook" value={{$item->facebook}}>
+                                                            <div class="valid-feedback">
+                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Pinterest Url</label>
                                                             <input type="text" name="pinterest" id="pinterest" class="form-control " placeholder="Enter Your Pinterest" value={{$item->pinterest}}>
+                                                            <div class="valid-feedback">
+                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Instagram Url</label>
                                                             <input type="text" name="instagram" id="instagram" class="form-control "
                                                                 placeholder="Enter Your Instagram" value={{$item->instagram}}>
-                                                            <div class="invalid-feedback">
+                                                            <div class="valid-feedback">
                                                                 <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
                                                             </div>
                                                         </div>
@@ -125,7 +131,7 @@
                                                             <label class="label-700 pl-5">Twitter Url</label>
                                                             <input type="text" name="twitter" id="twitter" class="form-control "
                                                                 placeholder="Enter Your Twitter" value={{$item->twitter}}>
-                                                            <div class="invalid-feedback">
+                                                            <div class="valid-feedback">
                                                                 <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
                                                             </div>
                                                         </div>
@@ -133,15 +139,15 @@
                                                             <label class="label-700 pl-5">Linkedin Url</label>
                                                             <input type="text" name="linkedin" id="linkedin" class="form-control "
                                                                 placeholder="Enter Your Linkedin" value={{$item->linkedin}}>
-                                                            <div class="invalid-feedback">
-                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
+                                                                <div class="valid-feedback">
+                                                                    <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Website Url</label>
                                                             <input type="text" name="website" id="website" class="form-control "
                                                                 placeholder="Enter Your name" value={{$item->website}}>
-                                                            <div class="invalid-feedback">
+                                                            <div class="valid-feedback">
                                                                 <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
                                                             </div>
                                                         </div>

@@ -364,7 +364,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                     $('#modal_password').val("");
                     $('#modal_confirmPassword').val("");
                     emailInput.removeClass('border-danger is-valid');
-                    password.removeClass('is-invalid is-valid border-danger ');
+                    password.removeClass('is-invalid is-valid border-danger');
                     confirm.removeClass('is-invalid is-valid border-danger ');
                     nameInput.removeClass('is-invalid is-valid border-danger ');
                     showErrorDiv.text('');
