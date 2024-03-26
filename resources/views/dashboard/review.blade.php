@@ -17,8 +17,8 @@
                                 <div class="col-lg-12">
                                     <div
                                         class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
-                                        <h6 class="fw-600 fs-17 mb15">reviews</h6>
-                                        <div
+                                        <h6 class="fw-600 fs-17 mb15">Reviews</h6>
+                                        {{-- <div
                                             class="page_control_shorting d-flex align-items-center justify-content-center justify-content-sm-end">
                                             <div class="pcs_dropdown mb15 d-flex align-items-center"><span
                                                     style="min-width: 60px;">Sort by</span><select class="form-select">
@@ -28,7 +28,7 @@
                                                     <option>Price Low</option>
                                                     <option>Price High</option>
                                                 </select></div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
 
@@ -73,7 +73,7 @@
                                                                     <!-- เพิ่มปุ่มอนุมัติ -->
                                                                     <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
                                                                 @else
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-warning  btn-sm mr-2 text-white approve-success">รอการอนุมัติ</a>
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
                                                                 @endif
                                                                 
                                                                 <!-- เพิ่มปุ่มลบ -->

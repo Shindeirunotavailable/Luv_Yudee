@@ -141,32 +141,63 @@ $('#form_review').submit(function (event) {
   }
   
 
-  $(document).ready(function() {
-    function confirmation(event) {
-        event.preventDefault();
-        var urlToRedirect = event.currentTarget.getAttribute('href');
+  // $(document).ready(function() {
+  //   function confirmation(event) {
+  //       event.preventDefault();
+  //       var urlToRedirect = event.currentTarget.getAttribute('href');
   
-        Swal.fire({
-          position: "center",
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#0071bc",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!"
+  //       Swal.fire({
+  //         position: "center",
+  //         title: "Are you sure?",
+  //         text: "You won't be able to revert this!",
+  //         icon: "warning",
+  //         showCancelButton: true,
+  //         confirmButtonColor: "#0071bc",
+  //         cancelButtonColor: "#d33",
+  //         confirmButtonText: "Yes, delete it!"
+  //     })
+  //     .then((willDelete) => {
+  //         if (willDelete.isConfirmed) {
+  //             window.location.href = urlToRedirect;
+              
+  //         } else {
+              
+  //         }
+  //     });
+  //   }
+  
+  //   $('.approve-success').on('click', function(event) {
+  //       confirmation(event);
+  //   });
+  // });
+
+
+  $(document).ready(function() {
+    function confirmation(event){
+      event.preventDefault();
+      var urlToRedirect=ev.currentTarget.getAttribute('href');
+  
+      swal({
+        title:"Are you Sure delete ?",
+        icon: "warning",
+        buttons: true,
+        dangerMode : true,
       })
-      .then((willDelete) => {
-          if (willDelete.isConfirmed) {
-              window.location.href = urlToRedirect;
-              
-          } else {
-              
-          }
+  
+      .then((willCancel)=>
+      {
+        if(willCancel)
+        {
+          window.location.href=urlToRedirect;
+        }
       });
     }
-  
-    $('.approve-success').on('click', function(event) {
-        confirmation(event);
+    
+      $('.approve-success').on('click', function(event) {
+          confirmation(event);
+      });
     });
-  });
+  
+
+ 
+  
