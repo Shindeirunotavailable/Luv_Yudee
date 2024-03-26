@@ -249,7 +249,5 @@ class PropertyController extends Controller
         return response()->json(['options' => '']);
     }
 
-
-
 }
 
