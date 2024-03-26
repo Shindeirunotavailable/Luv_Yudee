@@ -175,6 +175,17 @@ class PropertyController extends Controller
 
     }
 
+    public function approve($id_property)
+    {
+        $blogs=DB::table('pp_properties')->where('id_property', $id_property)->first();
+        $data = [
+            'property_approve' => !$blogs->property_approve
+        ];
+        $blogs=DB::table('pp_properties')->where('id_property', $id_property)->update($data);
+        return redirect()->back();
+
+    }
+
     // deleteMedia
     public function deleteMedia($id_media)
     {
@@ -193,21 +204,18 @@ class PropertyController extends Controller
 
     // deleteProperty
 
-public function deleteProperty($id_media, $id_property)
-{
-    $media = DB::table('pp_media')->where('id_media', $id_media)->first();
-    if ($media) {
-        $file_url = public_path($media->media_property);
-        if (File::exists($file_url)) {
-            File::delete($file_url);
+    public function deleteProperty($id_media, $id_property)
+    {
+        $media = DB::table('pp_media')->where('id_media', $id_media)->first();
+        if ($media) {
+            $file_url = public_path($media->media_property);
+            if (File::exists($file_url)) {
+                File::delete($file_url);
+            }
+            DB::table('pp_properties')->where('id_property', $id_property)->delete();
+            return redirect()->back();
         }
-        DB::table('pp_properties')->where('id_property', $id_property)->delete();
-        return redirect()->back();
     }
-}
-
-
-
     // ProvinceController
     public function db_provinces(Request $request)
     {
@@ -240,5 +248,6 @@ public function deleteProperty($id_media, $id_property)
         }
         return response()->json(['options' => '']);
     }
+
 }
 

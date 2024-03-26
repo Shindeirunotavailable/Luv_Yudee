@@ -55,11 +55,8 @@ Route::view('/addproperty', 'dashboard.sidebardashboard');
 Route::any('property' , 'App\Http\Controllers\HomeController@property');
 //sidebarแรกคือชื่อURL ด้นหลังของ @ คือชื่อเมธอดที่จะถูกเรียก
 Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnect')->middleware('auth')->name('addproperty');
-
-// Route::any('addproperty','App\Http\Controllers\PropertyController@databaseconnect')->name('addproperty');
-
 Route::post('db_provinces','App\Http\Controllers\PropertyController@db_provinces')->name('db_provinces');
 Route::post('properties', 'App\Http\Controllers\PropertyController@updatedata')->name('properties');
 Route::get('delete_image/{id_media}', 'App\Http\Controllers\PropertyController@deleteMedia')->name('deleteMedia');
-// Route::get('deleteProperty/{id_property}', 'App\Http\Controllers\PropertyController@deleteProperty')->name('deleteProperty');
-// Route::get('deleteProperty/{id_media}/{id_property}', 'App\Http\Controllers\PropertyController@deleteProperty')->name('deleteProperty');
+Route::get('deleteProperty/{id_media}/{id_property}', 'App\Http\Controllers\PropertyController@deleteProperty')->name('deleteProperty');
+Route::get('approve/{id_property}', 'App\Http\Controllers\PropertyController@approve')->name('approve');

@@ -75,7 +75,7 @@ $(document).ready(function() {
         });
     });
 
-// db_provinces
+    // db_provinces
         var getUrl = window.location;
         var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" ;// เพิ่ม/yuudee/ก่อนอัพขึ้นserver
         var lang = document.documentElement.lang;
@@ -131,7 +131,7 @@ $(document).ready(function() {
             }
         });
     });
-// CKeditor
+    // CKeditor
     if (document.querySelector('#editor')) {
         ClassicEditor
             .create(document.querySelector('#editor'), {
@@ -143,19 +143,6 @@ $(document).ready(function() {
             .catch(error => {
             });
     }
-
-    if (document.querySelector('#showeditor')) {
-        ClassicEditor
-            .create(document.querySelector('#showeditor'), {
-                 removePlugins: [ '' ],
-
-                 toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
-                 , 'NumberedList' ]
-            } )
-            .catch(error => {
-            });
-    }
-
     //Upload Image show name
     $(document).ready(function() {
         if ($('#customIMG').length) {
@@ -281,7 +268,7 @@ $('#submitdescription').click(function(event) {
             showConfirmButton: false,
             timer: 1500
         });
-        $('#submit-form').submit(); // ส่งฟอร์ม
+        // $('#submit-form').submit(); // ส่งฟอร์ม
     }
         titleproperty.on('input', function() {
             if ($(titleproperty).val()) {
@@ -325,7 +312,7 @@ $('#submitmedia').click(function(event) {
             showConfirmButton: false,
             timer: 1500
         });
-        $('#submit-form').submit();
+        // $('#submit-form').submit();
     }
 
 
@@ -412,7 +399,7 @@ $('#submitlocation').click(function(event) {
             showConfirmButton: false,
             timer: 1500
         });
-        $('#submit-form').submit();
+        // $('#submit-form').submit();
     }
     address.on('input', function() {
         if ($(this).val()) {
@@ -506,7 +493,7 @@ $('#submitdetail').click(function(event) {
             showConfirmButton: false,
             timer: 1500
         });
-        $('#submit-form').submit();
+        // $('#submit-form').submit();
     }
 
     floor.on('input', function() {
@@ -571,7 +558,7 @@ $('.checkbox-style1 input[type="checkbox"]').change(function() {
 $('#submitamenitie').click(function(event) {
     if (validateCheckboxes()) {
         // หาก checkbox ถูกต้อง ให้ทำการส่ง form
-        $('#submit-form').submit();
+        // $('#submit-form').submit();
 
         // แสดง SweetAlert
         Swal.fire({
