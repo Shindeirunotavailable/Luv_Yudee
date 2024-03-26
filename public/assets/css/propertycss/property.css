@@ -145,11 +145,11 @@
 
   .card-img-pp-overlay {
     position: absolute;
-    top: 0;
+    top: 150px;
     right: 0;
-    bottom: 0;
+    bottom: 150px;
     left: 0;
-    padding: .625rem
+    /* padding: .625rem */
   }
 
   .card-img-pp,.card-img-pp-top {

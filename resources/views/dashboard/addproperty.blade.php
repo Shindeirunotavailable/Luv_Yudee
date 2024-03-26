@@ -399,8 +399,10 @@
                                                     @endforeach
                                             </div>
                                         </div>
-                                        <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
-                                        <button value="1" href="{{url("addproperty")}}" class="  btn-sm mt-2 fs-20 fa-solid fa-pen-to-square ">test</button>
+                                        @if (isset($data['id_property']))
+                                            <a href="{{ url('addproperty') }}" type="submit" name="property_stage" value="1"  class="ml-2 afterButton rounded-pill btn-lg mt-2 float-right fw-600">finish</a>
+                                        @endif
+                                            <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
                                     </div>
 
                                 </div>
