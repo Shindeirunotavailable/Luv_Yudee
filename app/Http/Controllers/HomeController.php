@@ -49,13 +49,26 @@ class HomeController extends Controller
     //     return view(".dashboard.review");
     // }
 
+    // public function property(){
+
+    //     $pp_reviews=DB::table('pp_reviews')->get();
+    //     return view(".propertyDetail.property")->with('data',$pp_reviews);
+
+
+    // }
     public function property(){
+        $blogs = DB::table('pp_properties')
+            ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+            ->get();
 
-        $pp_reviews=DB::table('pp_reviews')->get();
-        return view(".propertyDetail.property")->with('data',$pp_reviews);
+        $pp_reviews = DB::table('pp_reviews')->get();
 
-
+        return view(".propertyDetail.property")->with([
+            'blogs' => $blogs,
+            'data' => $pp_reviews
+        ]);
     }
+
 
 
     public function home_email(Request $request)
