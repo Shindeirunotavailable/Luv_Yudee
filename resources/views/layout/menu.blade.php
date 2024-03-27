@@ -57,7 +57,7 @@
                     
                     
 
-                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}">
+                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}" id="btnAddproperty">
                             Add Property
                             <i class="fa-solid fa-arrow-right fa-lg"></i>
                         </a>

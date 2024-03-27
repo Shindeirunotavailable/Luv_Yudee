@@ -659,14 +659,15 @@
                                                 <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
                                                 <div class="d-flex justify-content-sm-start justify-content-center">
                                                     <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
-                                                    <a href="#"
+                                                    <a href="javascript::void(0)" onclick="reply(this)" 
                                                         class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                 </div>
+                                                
                                         </div>
                                     </div>
                                     @endforeach
                                 @endif
-
+                                
                                 {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                     <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
                                         class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -714,6 +715,7 @@
                                 </div> --}}
                             </div>
                         </div>
+                        
                         {{-- <table class="table table-bordered text-center">
                             <thead>
                                 <tr>
@@ -774,23 +776,38 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        @if (session('user_name'))
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-4">
+                                                    <input placeholder="Your Name" class="form-control form-control-pp form-control-pp-lg" value="{{ session('user_name') }}" type="text" name="name" id="name" readonly >
+                                                        <div class="invalid-feedback">
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        @else
                                         <div class="col-sm-6">
                                             <div class="form-group mb-4">
-                                                <input placeholder="Your Name" class="form-control form-control-pp form-control-pp-lg" type="text" name="name" id="name" required >
+                                                <input placeholder="Your Name" class="form-control form-control-pp form-control-pp-lg"  type="text" name="name" id="name">
                                                     <div class="invalid-feedback">
-                                                        Please provide a valid name.
                                                     </div>
                                             </div>
                                         </div>
+                                        @endif
+                                        @if (session('user_email'))
                                         <div class="col-sm-6">
                                             <div class="form-group mb-4">
-                                                <input type="email" placeholder="Email" name="email" id="email" required class="form-control form-control-pp form-control-pp-lg">
-                                                {{-- <div class="invalid-feedback">
-                                                    Please provide a valid email.
-                                                </div> --}}
+                                                <input type="email" placeholder="Email" name="email" id="email" value="{{ session('user_email') }}" readonly class="form-control form-control-pp form-control-pp-lg">
                                                 <div class="colorRed" id="ShowErrorEmail"></div>
                                             </div>
                                         </div>
+                                        @else
+                                        <div class="col-sm-6">
+                                            <div class="form-group mb-4">
+                                                <input type="email" placeholder="Email" name="email" id="email" class="form-control form-control-pp form-control-pp-lg">
+                                                <div class="colorRed" id="ShowErrorEmail"></div>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
                                     <div class="form-group ">
                                         <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content" id="content" rows="5"></textarea>
@@ -798,7 +815,7 @@
                                                 Please enter a message in the textarea.
                                             </div>
                                     </div>
-                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb" id="form_review"> Submit </button>
+                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
 
                                 </form>
 

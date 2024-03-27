@@ -12,14 +12,12 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\login;
 use App\Models\createAccount;
 use App\Models\resetPassword;
+use App\Models\profile;
+use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
-use PharIo\Manifest\Url;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Validator;
+
 
 class LoginController extends Controller
 {
@@ -59,25 +57,51 @@ class LoginController extends Controller
     // ------------------------------------- เข้าสู่ระบบ -------------------------------------------------
 
 
+    // public function loginform(Request $request)
+    // {
+    //     $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
+    //     if ($account && Hash::check($request->password, $account->password)) {
+    //         // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
+    //         Auth::login($account);
+    //         $request->session()->put([
+    //             'user_name' => $account->name,
+    //             'user_email' => $account->email,
+    //             'user_id' => $account->id,
+    //         ]);
+
+    //         return response()->json(['success' => true, 'redirect' => '/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+    //     } else {
+    //         $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
+    //         return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+    //     }
+    // }
+
     public function loginform(Request $request)
-    {
-        $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
-        if ($account && Hash::check($request->password, $account->password)) {
-            // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
-            Auth::login($account);
-            $request->session()->put([
-                'user_name' => $account->name,
-                'user_email' => $account->email,
-                'user_id' =>$account->id,
-            ]);
+{
+    $account = Login::where('email', $request->email)->first(); // ค้นหาบัญชีโดยใช้อีเมล
+    if ($account && Hash::check($request->password, $account->password)) {
+        // ถ้าพบบัญชีและรหัสผ่านถูกต้อง
+        Auth::login($account);
+        $request->session()->put([
+            'user_name' => $account->name,
+            'user_email' => $account->email,
+            'user_id' => $account->id,
+        ]);
 
-            return response()->json(['success' => true, 'redirect' =>'/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+        // เช็คว่าเป็นแอดมินหรือไม่
+        if ($account->Isadmin == 1) {
+            return response()->json(['success' => true, 'redirect' => '/indexadmin']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
         } else {
-            $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
-            return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+            return response()->json(['success' => true, 'redirect' => '/addproperty']); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
         }
+    } else {
+        $errorMessages = 'อีเมล์หรือรหัสผ่านไม่ถูกต้อง'; // ถ้าไม่พบบัญชีหรือรหัสผ่านไม่ถูกต้อง
+        return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
     }
+}
 
+
+    
     public function logout()
     {
         Auth::logout();
@@ -128,12 +152,19 @@ class LoginController extends Controller
                 'create_datetime' => date('Y-m-d H:i:s'),
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
-            DB::table('users')->insert($data);
+            $profileData = [
+                'email' => $email,
+                'name' => $username,
+                'create_datetime' => date('Y-m-d H:i:s'),
+                'update_datetime' => date('Y-m-d H:i:s'),
+            ];
+            DB::table('users')->insert($data);          
+            DB::table('profiles')->insert($profileData); 
+            
             // Mail::to($email)->send(new WelcomeEmail());
             Mail::to($email)->send(new WelcomeEmail($username));
             $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
             return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
-
         }
     }
     // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
@@ -169,11 +200,11 @@ class LoginController extends Controller
     public function lostpassword(Request $request)
     {
         $forgetEmail = $request->input('forgetEmail');
-        
+
         // ค้นหาอีเมล์ในตาราง 'users'
         $foundEmail = DB::table('users')->where('email', $forgetEmail)->first();
-        $found = DB::table('password_resets')->where([['email', $forgetEmail],['status',1]])->first();
-        
+        $found = DB::table('password_resets')->where([['email', $forgetEmail], ['status', 1]])->first();
+
         if ($foundEmail) {
             // สร้าง token สำหรับการ reset password
             $resetToken = Str::random(60);
@@ -199,7 +230,7 @@ class LoginController extends Controller
                     ]
                 );
             }
-            
+
             // ส่งอีเมล์ reset password
             Mail::to($forgetEmail)->send(new ResetPasswordEmail($resetToken));
             $errorMessage = "ส่งอีเมล์สำเร็จ";
@@ -210,7 +241,7 @@ class LoginController extends Controller
             return response()->json(['success' => false, 'messageError' => $errorMessage]);
         }
     }
-    
+
     // ---------------------------------------------- หน้า resetPassword -------------------------------------------------
 
     // public function resetPassword(Request $request)
@@ -236,37 +267,36 @@ class LoginController extends Controller
 
     //     }        
     // }
-    
+
     public function resetPassword(Request $request)
-        {
-            // ดึงค่า token และ email_token ที่รับมาจากแบบฟอร์ม
-            $token = $request->input('resetToken');
-            $emailToken = $request->input('email_token');
-            
-            // ค้นหาข้อมูลในตาราง password_resets ที่มี token และ email_token ตรงกับที่รับมา
-            $passwordReset = DB::table('password_resets')
-                                ->where('resetToken', $token)
-                                ->where('create_datetime', '>=', now()->subMinutes(30))
-                                ->first();
+    {
+        // ดึงค่า token และ email_token ที่รับมาจากแบบฟอร์ม
+        $token = $request->input('resetToken');
+        $emailToken = $request->input('email_token');
 
-            // ตรวจสอบว่าพบข้อมูลที่ตรงกับ token หรือไม่
-            if ($passwordReset) {
-                // ถ้าพบข้อมูล ให้นำอีเมล์ที่ตรงกับ token นี้มาแสดงในฟอร์ม
-                $email = $passwordReset->email;
-                return view('login.resetpassword', compact('email'));
-            } else {
-                // ถ้าไม่พบ token หรือเกินเวลาที่กำหนด ให้ทำการอัพเดต status เป็น 0
-                DB::table('password_resets')
-                    ->where('resetToken', $token)
-                    ->update(['status' => 0, 'update_datetime' => now()]);
-                    
-                // ทำการ redirect ไปยังหน้า login พร้อมส่งข้อความแจ้งเตือน
-                return redirect()->route('login')->with('error', 'เกินเวลาที่กำหนดกรุณากรอกขอรหัสผ่านใหม่');
-            }
-   
+        // ค้นหาข้อมูลในตาราง password_resets ที่มี token และ email_token ตรงกับที่รับมา
+        $passwordReset = DB::table('password_resets')
+            ->where('resetToken', $token)
+            ->where('create_datetime', '>=', now()->subMinutes(30))
+            ->first();
+
+        // ตรวจสอบว่าพบข้อมูลที่ตรงกับ token หรือไม่
+        if ($passwordReset) {
+            // ถ้าพบข้อมูล ให้นำอีเมล์ที่ตรงกับ token นี้มาแสดงในฟอร์ม
+            $email = $passwordReset->email;
+            return view('login.resetpassword', compact('email'));
+        } else {
+            // ถ้าไม่พบ token หรือเกินเวลาที่กำหนด ให้ทำการอัพเดต status เป็น 0
+            DB::table('password_resets')
+                ->where('resetToken', $token)
+                ->update(['status' => 0, 'update_datetime' => now()]);
+
+            // ทำการ redirect ไปยังหน้า login พร้อมส่งข้อความแจ้งเตือน
+            return redirect()->route('login')->with('error', 'เกินเวลาที่กำหนดกรุณากรอกขอรหัสผ่านใหม่');
         }
+    }
 
-    
+
 
     public function newPassword(Request $request)
     {
@@ -301,17 +331,16 @@ class LoginController extends Controller
     }
 
 
-    
+
 
 
     // // ---------------------------------------------- หน้า Content -------------------------------------------------
 
 
     public function contact()
-    { 
+    {
         return view("contact.contact");
     }
-
 
     public function contentstone(Request $request)
     {
@@ -340,57 +369,98 @@ class LoginController extends Controller
     // ---------------------------------------------- หน้า profile -------------------------------------------------
 
 
-public function profliestone(Request $request){
-    // dd($request->all());
-    $username = $request->input('firstName');
-    $lastname = $request->input('lastName');
-    $email = $request->input('email');
-    $phone = $request->input('phone');
-    $mobile = $request->input('mobile');
-    $userId = $request->input('user_id');
+    public function profliestone(Request $request)
+    {
+        $username = $request->input('firstName');
+        $lastname = $request->input('lastName');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $mobile = $request->input('mobile');
+        $userId = $request->input('user_id');
+        $skype = $request->input('skype');
+        $title = $request->input('title');
+        $website = $request->input('website');
+        $linkedin = $request->input('linkedin');
+        $twitter = $request->input('twitter');
+        $instagram = $request->input('instagram');
+        $pinterest = $request->input('pinterest');
+        $facebook = $request->input('facebook');
+        $profile = DB::table('profiles')->where('email', $email)->first();
+        if ($profile) {
+            DB::table('profiles')->where('email', $email)->update([
+                'name' => $username,
+                'lastname' => $lastname,
+                'phone' => $phone,
+                'mobile' => $mobile,
+                'skype' => $skype,
+                'title' => $title,
+                'website' => $website,
+                'linkedin' => $linkedin,
+                'twitter' => $twitter,
+                'instagram' => $instagram,
+                'pinterest' => $pinterest,
+                'facebook' => $facebook,
+                'update_by' => $userId,
+                'update_datetime' => date('Y-m-d H:i:s'),
 
-    $profile = DB::table('profiles')->where('email', $email)->first();
-    // $existingUser = createAccount::Getemail($email);
+            ]);
+        } else {
+            // ถ้าไม่พบข้อมูลในตาราง profiles ให้ทำการเพิ่มข้อมูลใหม่
+            DB::table('profiles')->insert([
+                'name' => $username,
+                'lastname' => $lastname,
+                'email' => $email,
+                'phone' => $phone,
+                'mobile' => $mobile,
+                'update_by' => $userId,
+                'create_datetime' => date('Y-m-d H:i:s'),
+                'update_datetime' => date('Y-m-d H:i:s'),
 
-    if ($profile) {
-        $data = [
-            'name' => $username,
-            'lastname' => $lastname,
-            'email' => $email,
-            'phone' => $phone,
-            'mobile' => $mobile,
-            'update_by'=>$userId,
-            'create_datetime' => date('Y-m-d H:i:s'),
-            'update_datetime' => date('Y-m-d H:i:s'),
-        ];
-        DB::table('profiles')->insert($data);
-        return redirect('/profile')->with('status', 'เรียบร้อย');
-          
-    } else {
-        return redirect('/profile')->with('error', 'ไม่พบอีเมล์หรือผู้ใช้งานในระบบ');
+            ]);
+        }
+        return response()->json(['success' => true, 'message' => 'Testajax']);
     }
-}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // ทดสอบระบบ อัพโหลดรูป
+    public function upload(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('assets/imageUser'), $imageName);
     
+            // บันทึกที่อยู่ของรูปภาพลงในฐานข้อมูล
+            $profile = new Profile;
+            $profile->image = $imageName;
+            $profile->save();
+    
+            return back()->with('success', 'Image Upload successful');
+        } else {
+            return back()->with('error', 'Please choose an image file');
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ---------------------------------------------- หน้า Details -------------------------------------------------
 
 
@@ -398,4 +468,10 @@ public function profliestone(Request $request){
     {
         return view("searchResult.searchResult");
     }
+
+    public function test()
+    {
+        return view("test");
+    }
+
 }

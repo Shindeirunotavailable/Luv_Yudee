@@ -26,6 +26,7 @@
          <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า Login -- --}}
          <link href="{{ asset('/assets/css/contact/contact.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า contact -- --}}
          <link href="{{ asset('/assets/css/searchResulte/searchResulte.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า searchResulte -- --}}
+         <link href="{{ asset('/assets/css/dashboardcss/profile.css') }}" rel="stylesheet" type="text/css"/> {{-- -- Css หน้า profile -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
          <link href="{{ asset('/assets/css/dashboardcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
@@ -51,11 +52,11 @@
 </head>
 
 <body>
-    @if (!request()->is('emails'))
+    @if (!request()->is('emails','indexadmin'))
         @include('layout.menu')
     @endif
         @yield('content')
-    @if(!request()->is('addproperty','emails'))
+    @if(!request()->is('addproperty'))
         @include('layout.footer')
     @endif
 
@@ -85,6 +86,7 @@
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
     <script src="{{ asset('/assets/js/dashboardjs/profile.js') }}"></script>  {{-- -- Css หน้า profile -- --}}
     <script src="{{ asset('/assets/js/masterIndex.js') }}"></script>
+    <script src="{{ asset('/assets/js/propertyjs/review.js') }}"></script>
     <script src="{{ asset('/assets/js/login.js') }}"></script> {{-- -- Css หน้า Login -- --}}
     <script src="{{ asset('/assets/js/searchResulte/searchResulte.js') }}"></script> {{-- -- Css หน้า searchResulte -- --}}
     <script src="{{ asset('/assets/js/contact/contact.js') }}"></script> {{-- -- Css หน้า contact -- --}}

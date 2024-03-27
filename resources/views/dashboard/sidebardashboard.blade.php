@@ -139,19 +139,13 @@
                                 </div>
                                 @endif
                             </div>
-
-
-
-
                         </div>
-
-
                     </div>
                 </div>
 
                 <div class="tab-content-ds" id="v-tabs-tabContent">
 
-                    <div class="tab-pane fade show active" id="v-add-property" role="tabpanel"
+                    <div class="tab-pane fade active show " id="v-add-property" role="tabpanel"
                         aria-labelledby="v-add-property-tab" tabindex="0">
                         @include('dashboard.addproperty')
                     </div>
@@ -170,8 +164,6 @@
                         tabindex="0">
                         @include('dashboard.review')
                     </div>
-
-
                 </div>
 
             </div>
