@@ -1,156 +1,148 @@
 @extends('layout.master')
 @section('content')
     <main>
-        <section class="section-pp">
-            <div class="container-pp-fluid">
-                <div class="position-relative zoomIn ">
 
-                    <div class="position-absolute pos-fixed-top-right z-index-2">
-                        <ul class="list-inline pt-4 pr-5">
+            <section class="section-pp">
+                <div class="container-pp-fluid">
+                    <div class="position-relative zoomIn ">
 
-                            <li class="list-inline-item mr-2">
-                                <a href="#" data-toggle="tooltip" title=""
-                                    class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
-                                    data-original-title="Favourite">
-                                    <i class="fa-solid fa-heart"></i>
-                                </a>
-                            </li>
+                        <div class="position-absolute pos-fixed-top-right z-index-2">
+                            <ul class="list-inline pt-4 pr-5">
 
-                            <li class="list-inline-item mr-2">
-                                <button {{-- เอา btn-white หลัง btn ออก --}}
-                                    class="btn-1 btn-white-1 p-0 d-flex align-items-center justify-content-center tooltip-icon text-heading bg-hover-primary hover-white rounded-circle border-0 shadow-none"
-                                    type="button" data-placement="top" data-toggle="popover" data-container="body"
-                                    data-content='
-                                        <ul class="list-inline mb-0 fs-22">
-                                            <li class="list-inline-item">
-                                                <i class="fab fa-twitter"></i>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <i class="fab fa-facebook"></i>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <i class="fa-brands fa-youtube"></i>
-                                            </li>
-                                        </ul>'
-                                    data-html="true" data-original-title="" title="">
-                                    <i class="fa-solid fa-share-nodes"></i>
-                                </button>
-                            </li>
+                                <li class="list-inline-item mr-2">
+                                    <a href="#" data-toggle="tooltip" title=""
+                                        class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
+                                        data-original-title="Favourite">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+                                </li>
+
+                                <li class="list-inline-item mr-2">
+                                    <button
+                                        class="btn-1 btn-white-1 p-0 d-flex align-items-center justify-content-center tooltip-icon text-heading bg-hover-primary hover-white rounded-circle border-0 shadow-none"
+                                        type="button" data-placement="top" data-toggle="popover" data-container="body"
+                                        data-content='
+                                            <ul class="list-inline mb-0 fs-22">
+                                                <li class="list-inline-item">
+                                                    <i class="fab fa-twitter"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fab fa-facebook"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa-brands fa-youtube"></i>
+                                                </li>
+                                            </ul>'
+                                        data-html="true" data-original-title="" title="">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </button>
+                                </li>
 
 
-                            <li class="list-inline-item">
-                                <a href="#" data-toggle="tooltip" title=""
-                                    class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
-                                    data-original-title="Print">
-                                    <i class="fa-solid fa-print"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-pp-fluid">
-                <div class="row galleries m-n1 py-2">
-                    <div class="col-lg-6 p-1 ">
-                        <div class="item item-size-4-3">
-                            <div class="card p-0 hover-zoom-in">
-                                <a href="{{ asset('/assets/images/property-1.jpg') }}" class="card-img-pp"
-                                    data-gtf-mfp="true" data-gallery-id="01">
-                                    <img src="{{ asset('/assets/images/property-1.jpg') }}">
-                                </a>
-                            </div>
+                                <li class="list-inline-item">
+                                    <a href="#" data-toggle="tooltip" title=""
+                                        class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
+                                        data-original-title="Print">
+                                        <i class="fa-solid fa-print"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 p-1 ">
-                        <div class="row m-n1">
-                            <div class="col-md-6 p-1 ">
-                                <div class="item item-size-4-3">
-                                    <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-2.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-2.jpg') }}">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-1">
-                                <div class="item item-size-4-3">
-                                    <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-3.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-3.jpg') }}">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-1">
-                                <div class="item item-size-4-3">
-                                    <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-4.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-4.jpg') }}">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 p-1">
-                                <div class="item item-size-4-3">
-                                    <div class="card p-0 hover-zoom-in">
-                                        <a href="{{ asset('/assets/images/property-5.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                            <img src="{{ asset('/assets/images/property-5.jpg') }}">
-                                        </a>
-                                        <div class=" hidden">
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                                data-gtf-mfp="true" data-gallery-id="01">
-                                            </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                                data-gtf-mfp="true" data-gallery-id="01">
-                                            </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                                data-gtf-mfp="true" data-gallery-id="01">
-                                            </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                                data-gtf-mfp="true" data-gallery-id="01">
-                                            </a>
-                                            <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                                data-gtf-mfp="true" data-gallery-id="01">
-                                            </a>
+                </div>
 
-                                        </div>
+                @php
+                $id_property = request('id_property');
+                @endphp
+                {{-- <input  name="id_property" value="{{$id_property}}" > --}}
+                {{-- {{dd($id_property);}} --}}
+                <div class="container-pp-fluid">
+                    <div class="row galleries m-n1 py-2">
+                    @foreach ($blogs as $blog)
+                        @php
+                        $firstMedia = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                        @endphp
 
-                                        <a href="#"
-                                            class="card-img-pp-overlay d-flex flex-column align-items-center justify-content-center hover-image bg-dark-opacity-04">
-                                            <p class="fs-48 font-weight-600 text-white lh-1 mb-4">+12</p>
-                                            <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase">
-                                                View more</p>
-                                        </a>
-                                    </div>
+                        <div class="col-lg-6 p-1 ">
+                            <div class="item item-size-4-3">
+                                <div class="card p-0 hover-zoom-in">
+                                    <a href="{{ $firstMedia->media_property }}" class="card-img-pp"
+                                        data-gtf-mfp="true" data-gallery-id="01">
+                                        <img src="{{ $firstMedia->media_property }}">
+                                    </a>
                                 </div>
+                            </div>
+                        </div>
+                        @break
+                    @endforeach
+                        <div class="col-lg-6 p-1 ">
+                            <div class="row m-n1">
+                                @foreach ($blogs as $blog)
+                                    @php
+                                        $remainingMedias = $blogs->where('id_property', $id_property)->unique('id_media')->slice(1);
+                                        $count = 0;
+                                        $totalMedias = $remainingMedias->count(); // นับจำนวนรูปภาพทั้งหมดที่เหลือ
+                                        $totalMediasInDatabase = $blogs->where('id_property', $id_property)->unique('id_media')->count();
+                                        $remainingMediasCount = $totalMediasInDatabase - 5 ;
+                                    @endphp
+                                        @foreach ($remainingMedias as $item)
+                                            @if ($count < 4)
+                                                <div class="col-md-6 p-1">
+                                                    <div class="item item-size-4-3">
+                                                        <div class="card p-0 hover-zoom-in">
+                                                            <a href="{{ $item->media_property }}" class="card-img-pp"
+                                                                data-gtf-mfp="true" data-gallery-id="01">
+                                                                <img src="{{ $item->media_property }}">
+                                                            </a>
+                                                            @if ($count >= 3  && $totalMedias > 4 )
+                                                                    <div class="card-img-pp-overlay  d-flex flex-column align-items-center justify-content-center hover-image ">
+                                                                        <p class="fs-48 font-weight-600 text-dark lh-1 mb-4">+{{ $remainingMediasCount }}</p>
+                                                                        <p class="fs-16 font-weight-bold text-dark lh-1625 text-uppercase"> View more </p>
+                                                                    </div>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @php $count++; @endphp
+                                            @endif
+
+                                        @endforeach
+                                        <!-- ไม่เกี่ยวกับรูปใหญ่สุด -->
+                                        @foreach ($remainingMedias as $item)
+                                        @if ($count >= 8)
+                                                <a href="{{ $item->media_property }}" class="card-img-pp"data-gtf-mfp="true" data-gallery-id="01"></a>
+                                            @endif
+                                            @php $count++; @endphp
+                                        @endforeach
+                                        @break
+                                @endforeach
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-pp ">
-                <nav aria-label="breadcrumb ">
-                    <ol class="breadcrumb pb-0 pl-0 bg-white">
-                        <li class="breadcrumb-item fs-12 letter-spacing-087">
-                            <a href=".">Home</a>
-                        </li>
-                        <li class="breadcrumb-item fs-12 letter-spacing-087">
-                            <a href="#">Listing</a>
-                        </li>
-                        <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
-                            Boulevard</li>
-                    </ol>
-                </nav>
-            </div>
-        </section>
+
+                </form>
+                <div class="container-pp ">
+                    <nav aria-label="breadcrumb ">
+                        <ol class="breadcrumb pb-0 pl-0 bg-white">
+                            <li class="breadcrumb-item fs-12 letter-spacing-087">
+                                <a href=".">Home</a>
+                            </li>
+                            <li class="breadcrumb-item fs-12 letter-spacing-087">
+                                <a href="#">Listing</a>
+                            </li>
+                            <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
+                                Boulevard</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
 
         <div class="container-md-pp ">
             <div class="row">
@@ -746,11 +738,11 @@
                                     </tr>
                                     @endforeach
                                 @endif
-    
+
                             </tbody>
                         </table> --}}
                     </section>
-                    
+
                     <section class="pt-6 border-bottom-pp section-pp">
                         <div class="card border-0">
                             <div class="card-body pt-0 ">
@@ -809,7 +801,7 @@
                                     <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb" id="form_review"> Submit </button>
 
                                 </form>
-                                
+
                             </div>
                         </div>
                     </section>
