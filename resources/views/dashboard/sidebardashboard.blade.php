@@ -124,7 +124,7 @@
                                 </div>
                             <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30">MANAGE ACCOUNT</p>
-                                {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
+                                {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="">
                                         <i class="fa-solid fa-file-contract mr-d-15"></i>My Package</a>
                                 </div> --}}
                                 <div class="sidebar_list_item">
