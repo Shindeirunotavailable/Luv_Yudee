@@ -96,7 +96,7 @@
                             <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30">MANAGE LISTINGS</p>
 
-                                <div class="sidebar_list_item ">
+                                <div class="sidebar_list_item">
                                     <a class="items-center-db -is-active active" id="v-add-property-tab" data-toggle="tab"
                                         data-target="#v-add-property" role="tab" aria-controls="v-add-property"
                                         aria-selected="false" href="#v-add-property">
@@ -104,12 +104,12 @@
                                     </a>
                                 </div>
 
-                                {{-- <div class="sidebar_list_item">
+                                <div class="sidebar_list_item">
                                     <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
                                     data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
                                     aria-selected="false" href="#v-myproperty">
-                                        <i class="fa-solid fa-house-chimney mr-d-15"></i>My Properties</a>
-                                </div> --}}
+                                    <i class="fa-solid fa-house-chimney mr-d-15"></i>My Properties</a>
+                                </div>
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
                                         <i class="fa-solid fa-heart mr-d-15"></i>My Favorites</a>
                                 </div>
@@ -124,7 +124,7 @@
                                 </div>
                             <div>
                                 <p class="fs-15 font-weight-normal ff-heading mt-d-30">MANAGE ACCOUNT</p>
-                                {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
+                                {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="">
                                         <i class="fa-solid fa-file-contract mr-d-15"></i>My Package</a>
                                 </div> --}}
                                 <div class="sidebar_list_item">
@@ -146,14 +146,15 @@
                 <div class="tab-content-ds" id="v-tabs-tabContent">
 
                     <div class="tab-pane fade active show " id="v-add-property" role="tabpanel"
-                        aria-labelledby="v-add-property-tab" tabindex="0">
+                        aria-labelledby="v-add-property-tab"
+                        tabindex="0">
                         @include('dashboard.addproperty')
                     </div>
 
-                    {{-- <div class="tab-pane fade" id="v-myproperty" role="tabpanel"
-                        aria-labelledby="v-myproperty-tab" tabindex="0">
+                    <div class="tab-pane fade" id="v-myproperty" role="tabpanel" aria-labelledby="v-myproperty-tab"
+                        tabindex="0">
                         @include('dashboard.myproperty')
-                    </div> --}}
+                    </div>
 
                     <div class="tab-pane fade" id="v-profile" role="tabpanel" aria-labelledby="v-profile-tab"
                         tabindex="0">

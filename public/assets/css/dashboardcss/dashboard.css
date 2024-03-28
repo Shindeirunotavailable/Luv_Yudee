@@ -866,6 +866,14 @@ label.required:after {
     width: 25%!important;
 }
 
+.table th {
+    vertical-align: middle!important;
+    text-align: center;
+}
+.table td {
+    vertical-align: middle!important;
+}
+
 tr:nth-child(even) {
     background-color: #ffffff;
   }

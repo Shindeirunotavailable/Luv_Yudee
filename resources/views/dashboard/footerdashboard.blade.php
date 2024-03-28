@@ -10,15 +10,15 @@
                             </a>
 
                             <div class="row ml-1 mb-4 mb-lg-5">
-                                <div class="contact-info w-100">
+                                {{-- <div class="contact-info w-100">
                                     <p class="text mb-0">58 Howard Street #2 San Francisco</p>
-                                </div>
+                                </div> --}}
                                 <div class="contact-info w-100">
-                                    <p class="text mb-0">hi@homez.com</p>
+                                    <p class="text mb-0">Email : yuudee.info@gmail.com</p>
                                 </div>
-                                <div class="contact-info w-100">
+                                {{-- <div class="contact-info w-100">
                                     <p class="text mb-0">+(0) 123 050 945 02</p>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div>
@@ -27,28 +27,24 @@
                     <div class="col-sm-6 col-lg-3">
                         <div class="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-5">
                             <div class="link-style1 light-style">
-                                <h6 class="fw-700">Popular Search</h6>
+                                {{-- <h6 class="fw-700">Popular Search</h6>
                                 <ul class="link-list ps-0 pl-0">
                                     <li><a href="#">Apartment for Rent</a></li>
                                     <li><a href="#">Apartment Low to Hide</a></li>
                                     <li><a href="#">Offices for Buy</a></li>
                                     <li><a href="#">Offices for Rent</a></li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-5">
                             <div class="link-style1 light-style mb-3">
-                                <h6 class="fw-700">Quick Links</h6>
-                                <ul class="ps-0 pl-0">
-                                    <li><a href="#">Terms of Use</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Pricing Plans</a></li>
-                                    <li><a href="#">Our Services</a></li>
-                                    <li><a href="#">Contact Support</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">FAQs</a></li>
+                                <h6 class="fw-700">Sitemap</h6>
+                                <ul class="link-list ps-0 pl-0">
+                                    <li><a href="{{url("home")}}">Home</a></li>
+                                    <li><a href="{{url("property")}}">Property</a></li>
+                                    <li><a href="{{url("contact")}}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -69,8 +65,26 @@
                                         </button>
                                     </div>
 
-                                    <div class="colorRed" id="ShowErrorEmail"></div>
+                                    <div class="colorRed" id="ShowErrorEmailFooter"></div>
+
+
+
+                                    {{-- @if (session('success'))
+                                        <input type="hidden" id="newsletter">
+                                            <div class="alert alert-success">
+                                                {{ session('success') }}
+                                            </div>
+                                    @endif
+
+                                    @if (session('warning'))
+                                        <input type="hidden" id="newslettererror">
+                                            <div class="alert alert-danger">
+                                                {{ session('warning') }}
+                                            </div>
+                                    @endif --}}
                                 </form>
+
+
                                 <div class="social-style1 light-style py-2">
                                     <a href="#"><i class="fab fa-facebook-f list-inline-item"></i></a>
                                     <a href="#"><i class="fab fa-twitter list-inline-item"></i></a>
@@ -84,5 +98,25 @@
             </div>
 
         </section>
+
+        <section class="footer-style11 at-home4  pb-3 pt-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="text-lg-start">
+                            <p class="copyright-text  mb-0 texts-pad ">© 2024
+                                <a class="copyright-text" href="https://themeforest.net/user/ib-themes" target="_blank" rel="noopener noreferrer">yuudee.com</a>
+                                    | All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="scrollToHome" style="cursor: pointer;">
+            <i class="fas fa-angle-up"></i>
+        </div>
 
     </footer>
