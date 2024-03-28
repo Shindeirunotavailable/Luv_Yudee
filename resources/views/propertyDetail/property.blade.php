@@ -600,7 +600,6 @@
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
                             </div>
                         </section>
-                @endforeach
 
 
 
@@ -844,6 +843,82 @@
                                         </div>
                                         @endforeach
                                     @endif
+
+                                    {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
+                                        <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
+                                            class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                            style="width: 84px; height: 84px; object-fit: cover;">
+                                            <div class="media-body">
+                                                <div class="row mb-1 align-items-center">
+                                                    <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                        <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <ul
+                                                            class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                            <li class="list-inline-item mr-0">
+                                                                <span class="align-item-right text-warning">
+                                                                    <i class="fas fa-star"></i>
+                                                                </span>
+                                                                <span class="align-item-right text-warning">
+                                                                    <i class="fas fa-star"></i>
+                                                                </span>
+                                                                <span class="align-item-right text-warning">
+                                                                    <i class="fas fa-star"></i>
+                                                                </span>
+                                                                <span class="align-item-right text-warning">
+                                                                    <i class="fas fa-star"></i>
+                                                                </span>
+                                                                <span class="align-item-right text-warning">
+                                                                    <i class="fas fa-star"></i>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                    <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
+                                                        always keeping your WordPress themes up to date. Your level of support
+                                                        and
+                                                        dedication
+                                                        is second to none.
+                                                    </p>
+                                                    <div class="d-flex justify-content-sm-start justify-content-center">
+                                                        <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
+                                                        <a href="#"
+                                                            class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                    </div>
+                                            </div>
+                                    </div> --}}
+                                </div>
+                            </div>
+
+                            {{-- <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th>review_star</th>
+                                        <th>review_name</th>
+                                        <th>review_email</th>
+                                        <th>review_content</th>
+                                        <th>create_datetime</th>
+                                        <th>update_datetime</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if(Session::has('pp_reviews'))
+                                        @foreach (Session::get('pp_reviews') as $item )
+                                        <tr>
+                                            <td>{{$item->review_star}}</td>
+                                            <td>{{$item->review_name}}</td>
+                                            <td>{{$item->review_email}}</td>
+                                            <td>{{$item->review_content}}</td>
+                                            <td>{{$item->create_datetime}}</td>
+                                            <td>{{$item->update_datetime}}</td>
+                                        </tr>
+                                        @endforeach
+                                    @endif
+
+                                </tbody>
+                            </table> --}}
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
@@ -925,6 +1000,8 @@
                         </section>
 
                     </article>
+                    @break
+                @endforeach
 
 
                 <aside class="col-lg-4 pl-xl-4 pdr-0 primary-sidebar sidebar-sticky  ">
@@ -1079,529 +1156,391 @@
         <section class="section-pp md-mb-80">
             <div class="container-pp ">
                 <h4 class="fw-600 fs-22 text-heading ">Similar Homes You May Like</h4>
-                <div class="slick-list draggable" style="height: 100%;">
-                    <div class="slick-track sm-box">
-                        <div class="col-md-12 ">
-                            <div class="slick-slider ">
 
-                                <div class=" slick-slide-box slick-active d-flex justify-content-between"
-                                    style="width: 400px;" tabindex="0" data-slick-index="2" aria-hidden="false">
-                                    <div class="card  shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
-                                            <img src="{{ asset('/assets/images/properties-1.jpg') }}"
-                                                alt="Affordable Urban House">
-                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
-                                                <div>
-                                                    <span class="badge-pp mr-2 badge-pp-orange">featured</span>
-                                                    <span class="badge-pp mr-2 badge-pp-indigo">for Sale</span>
-                                                </div>
-                                                <ul class="list-inline mb-0 mt-auto hover-image">
-                                                    <li class="list-inline-item mr-2" data-toggle="tooltip"
-                                                        title="" data-original-title="9 Images">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-images"></i><span class="pl-1">9</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item" data-toggle="tooltip" title=""
-                                                        data-original-title="2 Video">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-play-circle"></i><span
-                                                                class="pl-1">2</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-body pt-3">
-                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
-                                                    class="text-dark hover-primary" tabindex="0">Home in Metric Way</a>
-                                            </h2>
-                                            <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
-                                                Los Angeles</p>
-                                            <div class="row no-gutters">
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
+                <div class="max-width1460-con position-relative mr-auto ml-auto mt-4">
+                    <div class="row">
+                        <div class="col-lg-12 aos-init aos-animate pl-0 pr-0" data-aos="fade-up" data-aos-delay="300">
+                            <div class="pro-city-slider position-relative ">
+                                <div class="swipersss swiper-initialized swiper-horizontal swiper-pointer swiper-backface-hidden">
+                                    <div class="swiper-wrapper pb-20">
+
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="block-text text-center">
+                                                            <b class="font-size-13">FEATURED</b>
+                                                        </div>
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-02.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4
+                                                                bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title="" data-original-title="Size">
-                                                        <div class="list-inline fa-sq">
-                                                            <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
-                                                            2000 Sq.Ft
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                            <p class="fs-price mb-0">$1.250.000</p>
-                                            <ul class="list-inline mb-0">
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-blue bg-accent border-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i class="fas fa-heart"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-body hover-secondary bg-hover-accent border-hover-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Compare"><i
-                                                            class="fas fa-exchange-alt"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class=" slick-slide-box slick-active d-flex justify-content-between"
-                                    style="width: 400px;" tabindex="0" data-slick-index="1" aria-hidden="false">
-                                    <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
-                                            <img src="{{ asset('/assets/images/properties-2.jpg') }}"
-                                                alt="Garden Gingerbread House">
-                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
-                                                <div>
-                                                    <span class="badge-pp mr-2 badge-pp-orange">featured</span>
-                                                    <span class="badge-pp mr-2 badge-pp-indigo">for Sale</span>
-                                                </div>
-                                                <ul class="list-inline mb-0 mt-auto hover-image">
-                                                    <li class="list-inline-item mr-2" data-toggle="tooltip"
-                                                        title="" data-original-title="9 Images">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-images"></i><span class="pl-1">9</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item" data-toggle="tooltip" title=""
-                                                        data-original-title="2 Video">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-play-circle"></i><span
-                                                                class="pl-1">2</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-body pt-3">
-                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
-                                                    class="text-dark hover-primary" tabindex="0">Garden Gingerbread
-                                                    House</a></h2>
-                                            <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
-                                                Los Angeles</p>
-                                            <div class="row no-gutters">
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-05.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a>
+                                                        </h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i>
+                                                                4 bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title="" data-original-title="Size">
-                                                        <div class="list-inline fa-sq">
-                                                            <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
-                                                            2200 Sq.Ft
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                            <p class="fs-price mb-0">$550<span
-                                                    class="text-gray-light font-weight-500 fs-14"> / month</span></p>
-                                            <ul class="list-inline mb-0">
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i
-                                                            class="fa-regular fa-heart"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-body hover-secondary bg-hover-accent border-hover-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Compare"><i
-                                                            class="fas fa-exchange-alt"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class=" slick-slide-box slick-active d-flex justify-content-between"
-                                    style="width: 400px;" tabindex="0" data-slick-index="2" aria-hidden="false">
-                                    <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
-                                            <img src="{{ asset('/assets/images/properties-3.jpg') }}"
-                                                alt="Affordable Urban House">
-                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
-                                                <div>
-                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
-                                                </div>
-                                                <ul class="list-inline mb-0 mt-auto hover-image">
-                                                    <li class="list-inline-item mr-2" data-toggle="tooltip"
-                                                        title="" data-original-title="9 Images">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-images"></i><span class="pl-1">9</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item" data-toggle="tooltip" title=""
-                                                        data-original-title="2 Video">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-play-circle"></i><span
-                                                                class="pl-1">2</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-body pt-3">
-                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
-                                                    class="text-dark hover-primary" tabindex="0">Affordable Urban
-                                                    House</a></h2>
-                                            <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
-                                                Los Angeles</p>
-                                            <div class="row no-gutters">
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="block-text text-center">
+                                                            <b class="font-size-13">FEATURED</b>
+                                                        </div>
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-06.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4
+                                                                bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title="" data-original-title="Size">
-                                                        <div class="list-inline fa-sq">
-                                                            <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
-                                                            2000 Sq.Ft
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                            <p class="fs-price mb-0">$1.250.000</p>
-                                            <ul class="list-inline mb-0">
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i
-                                                            class="fa-regular fa-heart"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-body hover-secondary bg-hover-accent border-hover-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Compare"><i
-                                                            class="fas fa-exchange-alt"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class=" slick-slide-box slick-active d-flex justify-content-between"
-                                    style="width: 400px;" tabindex="0" data-slick-index="3" aria-hidden="false">
-                                    <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
-                                            <img src="{{ asset('/assets/images/properties-4.jpg') }}"
-                                                alt="Affordable Urban House">
-                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
-                                                <div>
-                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
-                                                </div>
-                                                <ul class="list-inline mb-0 mt-auto hover-image">
-                                                    <li class="list-inline-item mr-2" data-toggle="tooltip"
-                                                        title="" data-original-title="9 Images">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-images"></i><span class="pl-1">9</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item" data-toggle="tooltip" title=""
-                                                        data-original-title="2 Video">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-play-circle"></i><span
-                                                                class="pl-1">2</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-body pt-3">
-                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
-                                                    class="text-dark hover-primary" tabindex="0">Affordable Urban
-                                                    House</a></h2>
-                                            <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
-                                                Los Angeles</p>
-                                            <div class="row no-gutters">
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="block-text text-center ">
+                                                            <b class="font-size-13">FEATURED</b>
+                                                        </div>
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-07.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4
+                                                                bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title="" data-original-title="Size">
-                                                        <div class="list-inline fa-sq">
-                                                            <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
-                                                            2000 Sq.Ft
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                            <p class="fs-price mb-0">$1.250.000</p>
-                                            <ul class="list-inline mb-0">
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i
-                                                            class="fa-regular fa-heart"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-body hover-secondary bg-hover-accent border-hover-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Compare"><i
-                                                            class="fas fa-exchange-alt"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class=" slick-slide-box slick-active d-flex justify-content-between"
-                                    style="width: 400px;" tabindex="0" data-slick-index="4" aria-hidden="false">
-                                    <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
-                                            <img src="{{ asset('/assets/images/properties-5.jpg') }}"
-                                                alt="Affordable Urban House">
-                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
-                                                <div>
-                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
-                                                </div>
-                                                <ul class="list-inline mb-0 mt-auto hover-image">
-                                                    <li class="list-inline-item mr-2" data-toggle="tooltip"
-                                                        title="" data-original-title="9 Images">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-images"></i><span class="pl-1">9</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item" data-toggle="tooltip" title=""
-                                                        data-original-title="2 Video">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-play-circle"></i><span
-                                                                class="pl-1">2</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-body pt-3">
-                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
-                                                    class="text-dark hover-primary" tabindex="0">Affordable Urban
-                                                    House</a></h2>
-                                            <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
-                                                Los Angeles</p>
-                                            <div class="row no-gutters">
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-02.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4
+                                                                bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="Size">
-                                                        <div class="list-inline fa-sq">
-                                                            <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
-                                                            2000 Sq.Ft
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                            <p class="fs-price mb-0">$1.250.000</p>
-                                            <ul class="list-inline mb-0">
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i
-                                                            class="fa-regular fa-heart"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-body hover-secondary bg-hover-accent border-hover-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Compare"><i
-                                                            class="fas fa-exchange-alt"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class=" slick-slide-box slick-active d-flex justify-content-between"
-                                    style="width: 400px;" tabindex="0" data-slick-index="5" aria-hidden="false">
-                                    <div class="card shadow-hover-2 mr-2">
-                                        <div class="hover-change-image bg-hover-overlay rounded-lg card-img-pp-top">
-                                            <img src="{{ asset('/assets/images/properties-6.jpg') }}"
-                                                alt="Affordable Urban House">
-                                            <div class="card-img-pp-overlay p-2 d-flex flex-column">
-                                                <div>
-                                                    <span class="badge-pp mr-2 badge-pp-primary">for Sale</span>
-                                                </div>
-                                                <ul class="list-inline mb-0 mt-auto hover-image">
-                                                    <li class="list-inline-item mr-2" data-toggle="tooltip"
-                                                        title="" data-original-title="9 Images">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-images"></i><span class="pl-1">9</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="list-inline-item" data-toggle="tooltip" title=""
-                                                        data-original-title="2 Video">
-                                                        <a href="#" class="text-white hover-primary"
-                                                            tabindex="0">
-                                                            <i class="far fa-play-circle"></i><span
-                                                                class="pl-1">2</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-body pt-3">
-                                            <h2 class="fw-600 card-title fs-14 lh-2 mb-0"><a href="#"
-                                                    class="text-dark hover-primary" tabindex="0">Affordable Urban
-                                                    House</a></h2>
-                                            <p class="card-text font-weight-500 text-gray-light mb-2">1421 San Pedro St,
-                                                Los Angeles</p>
-                                            <div class="row no-gutters">
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bedroom">
-                                                        <i class="fa-solid fa-bed text-blue mr-2"></i>3 Bedroom
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="block-text text-center ">
+                                                            <b class="font-size-13">FEATURED</b>
+                                                        </div>
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-05.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4
+                                                                bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 ">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="3 Bathrooms">
-                                                        <i class="fa-solid fa-shower text-blue mr-2"></i> 3 Bathroom
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="list-inline-item text-gray font-weight-500 fs-12 d-flex align-items-center ml-pp"
-                                                        data-toggle="tooltip" title=""
-                                                        data-original-title="Size">
-                                                        <div class="list-inline fa-sq">
-                                                            <i
-                                                                class="fa-solid fa-up-right-and-down-left-from-center text-blue mr-2"></i>
-                                                            2000 Sq.Ft
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                            <p class="fs-price mb-0">$1.250.000</p>
-                                            <ul class="list-inline mb-0">
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center  bg-accent border-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Wishlist"><i
-                                                            class="fa-regular fa-heart"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"
-                                                        class="tooltip-icon border rounded-circle d-inline-flex align-items-center justify-content-center text-body hover-secondary bg-hover-accent border-hover-accent"
-                                                        data-toggle="tooltip" title="" tabindex="0"
-                                                        data-original-title="Compare"><i
-                                                            class="fas fa-exchange-alt"></i></a>
-                                                </li>
-                                            </ul>
+
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="block-text text-center">
+                                                            <b class="font-size-13">FEATURED</b>
+                                                        </div>
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-06.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4
+                                                                bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-07.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a>
+                                                        </h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i>
+                                                                4 bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
+                                            <div class="card box-shadow-lightblue mb-30">
+                                                <div class="card-body p-0">
+                                                    <div class="img-block ">
+                                                        <div class="block-text text-center ">
+                                                            <b class="font-size-13">FEATURED</b>
+                                                        </div>
+                                                        <div class="text-block text-center">
+                                                            <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
+                                                        </div>
+                                                        <img src="{{ asset('/assets/images/properties-grid-02.jpg') }}" alt="listings"
+                                                            class="card-img-top img-sell">
+                                                    </div>
+
+                                                    <div class="p-10">
+                                                        <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
+                                                        <p class="list-text">San Diego City, CA, USA</p>
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
+                                                                bed</a>
+                                                            <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i> 4
+                                                                bath</a>
+                                                            <a href="javascript:void(0)" class="mr-10"> <i
+                                                                    class="fa-brands fa-uncharted"></i> 900 sqft</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent">
+                                                    <div class="d-flex ">
+                                                        <div class="flex-grow-1">
+                                                            <label class="label-700">For Rent</label>
+                                                        </div>
+                                                        <div class="flex-row-reverse">
+                                                            <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                            <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                            <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="swiper-pagination"></div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 

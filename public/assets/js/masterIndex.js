@@ -18,7 +18,7 @@ var swiper = new Swiper(".swiperess", {
   spaceBetween: 28,
   slidesPerGroup: 1,
   loop: true,
-  
+
   centerSlide: "true",
   grapCurser: "true",
   fade: "true",
@@ -147,7 +147,7 @@ var swiper = new Swiper(".swiperes", {
   slidesPerGroup: 1,
   loop: true,
   // loopFillGroupWithBlank: true,
-  
+
   autoplay: {
     delay: 3000,  //Autoplay delay in milliseconds ทำให้มันสไลด์เอง
   },
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.menusbar').addEventListener('click', function() {
       // เลือก element ที่มีคลาส 'offcanvas offcanvas-start mobile_menu-canvas'
       var offcanvasElement = document.querySelector('.offcanvas.offcanvas-start.mobile_menus-canvas');
-      
+
       // เพิ่มหรือลบคลาส 'show' ขึ้นอยู่กับว่ามีหรือไม่มีในปัจจุบัน
       if (offcanvasElement.classList.contains('show')) {
           offcanvasElement.classList.remove('show');
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.sidebar-close-icon').addEventListener('click', function() {
       // เลือก element ที่มีคลาส 'offcanvas offcanvas-start mobile_menu-canvas'
       var offcanvasElement = document.querySelector('.offcanvas.offcanvas-start.mobile_menus-canvas');
-      
+
       // ลบคลาส 'show'
       offcanvasElement.classList.remove('show');
   });
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //       type: reqMethod,
 //       data: formData,
 //       success: function(data) {
-//         if (data.status == "success"){ 
+//         if (data.status == "success"){
 //           Swal.fire("SweetAlert2 is working!");
 //         }else {
 //           Swal.fire("SweetAlert2 is !");
@@ -340,14 +340,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// function alertText(){  
+// function alertText(){
 //   var form = $('#password');
 //   console.log(form.val().length);
-  
+
 //     if (form.val().length === 0) {
 //        $('#textAlert').removeClass('d-none');
 //       return false
-    
+
 //     }
 //       return true
 // }
@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //   $(document).ready(function() {
 //     function confirmation(event) {
 //         event.preventDefault();
-        
+
 //         Swal.fire({
 //             position: "center",
 //             icon: "warning",
@@ -470,4 +470,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  
+
