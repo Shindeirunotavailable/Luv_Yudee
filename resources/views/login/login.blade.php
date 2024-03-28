@@ -5,6 +5,8 @@
     {{ $item }}
 @endforeach --}}
 
+
+
     <div class="container h-60vh">
         <div class="imagbackground ">
             <div class="row pt-13 ">
@@ -19,9 +21,17 @@
                                     <div class="alert alert-danger" role="alert">
                                         <div id="statusMessage"></div>
                                     </div>
-                                </div> --}}                            
+                                </div> --}}     
+                                
+                                
+                                 <div class="hidden" id="hiddenError">
+                                    <div class="alert alert-danger" role="alert">
+                                        <div id="errorsession"></div>
+                                    </div>
+                                </div>   
+
                                 @if (session('error'))
-                                        <div class="alert alert alert-danger alert-dismissible fade show" role="alert" id="errorsession">
+                                        <div class="alert alert alert-danger" role="alert" id="errorsession">
                                             <strong> {{ session('error') }}</strong>
                                         </div>
                                 @endif

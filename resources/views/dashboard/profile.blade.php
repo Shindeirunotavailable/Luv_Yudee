@@ -8,11 +8,13 @@
                         </div>
                     </div>
 
+                    {{-- @foreach ($data['blogs']->where('id', Auth::id())->unique('id_property') as $item) --}}
+                    
                     <form action="{{ url('/profliestone') }}" method="POST" class="needs-validation" id="profileForm">
                         @csrf
                         <div class="row">    
                             @if (isset($data))
-                                @foreach ($data['profiles'] as $item)                    
+                                @foreach ($data['profiles']->where('id_review', Auth::id())->unique('id_review')  as $item)                    
                                         <div class="col-md-6 col-12 col-lg-6">
                                             <div class="pb-10">
                                                 <div class="card cardBox">
@@ -71,26 +73,26 @@
                                                         </div>
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
-                                                                <label>First name</label>
-                                                                <input type="text" class="form-control" placeholder="First name"  id="phone" name="phone"   value={{$item->phone}}>
+                                                                <label>phone</label>
+                                                                <input type="text" class="form-control" placeholder="ํYour phone"  id="phone" name="phone"   value={{$item->phone}}>
                                                             </div>
                                                             <div class="col-12 col-lg-6">
-                                                                <label>Last name</label>
-                                                                <input type="text" class="form-control" placeholder="Last name" id="mobile" name="mobile" value={{$item->mobile}}>
+                                                                <label>mobile</label>
+                                                                <input type="text" class="form-control" placeholder="ํYour mobile" id="mobile" name="mobile" value={{$item->mobile}}>
                                                             </div>
                                                         </div>
                                                         <div class="row pt-10">
                                                             @if (session('user_email'))
                                                                 <div class="col-12 col-lg-6">
-                                                                    <label>First name</label>
-                                                                    <input type="text" class="form-control" placeholder="First name" id="email" name="email" value="{{ session('user_email') }}" readonly>
+                                                                    <label>email</label>
+                                                                    <input type="text" class="form-control" placeholder="ํYour Email" id="email" name="email" value="{{ session('user_email') }}" readonly>
                                                                 </div>                                      
                                                             @endif
                                                         
                                                         
                                                             <div class="col-12 col-lg-6">
-                                                                <label>Last name</label>
-                                                                <input type="text" class="form-control" placeholder="Last name" id="skype" name="skype" value={{$item->skype}}>
+                                                                <label>skype</label>
+                                                                <input type="text" class="form-control" placeholder="ํYour skype" id="skype" name="skype" value={{$item->skype}}>
                                                             </div>
                                                         </div>
                                                     </div>
