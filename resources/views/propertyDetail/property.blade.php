@@ -54,9 +54,11 @@
                     </div>
                 </div>
 
+
                 @php
                 $id_property = request('id_property');
                 @endphp
+
                 {{-- <input  name="id_property" value="{{$id_property}}" > --}}
                 {{-- {{dd($id_property);}} --}}
                 <div class="container-pp-fluid">
@@ -166,7 +168,33 @@
                             <div class="d-sm-flex justify-content-sm-between ">
                                 <div>
                                     <h2 class="fw-600 fs-30 text-heading font-bold mb-0">{{$info->property_title}}</h2>
-                                    <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i> {{$info->property_address}}</p>
+                                    <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>
+                                        @foreach($provinces as $province)
+                                            @if($info->property_provinces == $province->id)
+                                                {{ $province->name_th }}
+                                            @endif
+                                        @endforeach
+
+                                        @foreach($amphures as $amphure)
+                                            @if($info->property_amphures == $amphure->id)
+                                                {{ $amphure->name_th }}
+                                            @endif
+                                        @endforeach
+
+                                        @foreach($districts as $district)
+                                            @if($info->property_districts == $district->id)
+                                                {{ $district->name_th }}
+                                            @endif
+                                        @endforeach
+
+                                        @foreach($districts as $district)
+                                            @if($info->property_districts == $district->id)
+                                                {{ $district->zip_code }}
+                                            @endif
+                                        @endforeach
+
+
+                                    </p>
                                 </div>
 
                                 <div class="mt-2 text-lg-right">
@@ -410,173 +438,17 @@
                             <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2>
                             <ul class="list-unstyled mb-0 row pt-2 ">
 
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('1', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('1', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Attic court
-                                </li>
+                                @foreach($pp_amenities as $amenity)
+                                @if(isset($info->property_amenities) && in_array($amenity->id_amenities, explode(',', $info->property_amenities)))                                        <li class="col-sm-3 col-6 mb-2">
+                                            <i class="fa-solid fa-check mr-2 text-blue"></i>{{ $amenity->name_amenities }}
+                                        </li>
+                                    @else
+                                        <li class="col-sm-3 col-6 mb-2 decoration">
+                                            <i class="fa-solid fa-xmark mr-2 text-danger"></i>{{ $amenity->name_amenities }}
+                                        </li>
+                                    @endif
 
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('2', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('2', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Basketball court
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('3', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('3', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Air Conditioning
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('4', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('4', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Lawn
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('5', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('5', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Swimming Pool
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('6', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('6', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Barbeque
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('7', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('7', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Microwave
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('8', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('8', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif TV Cable
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('9', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('9', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Dryer
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('10', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('10', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Outdoor Shower
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('11', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('11', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Washer
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('12', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('12', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Gym
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('13', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('13', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Ocean view
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('14', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('14', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Private space
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('15', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('15', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Lake view
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('16', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('16', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Wine cellar
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('17', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('17', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Front yard
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('18', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('18', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Refrigerator
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('19', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('19', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif WiFi
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('20', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('20', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Laundry
-                                </li>
-
-                                <li class="col-sm-3 col-6 mb-2 {{ isset($info->property_amenities) && !in_array('21', explode(',', $info->property_amenities)) ? 'decoration' : '' }}">
-                                    @if(isset($info->property_amenities) && in_array('21', explode(',', $info->property_amenities)))
-                                        <i class="fa-solid fa-check mr-2 text-blue"></i>
-                                        @else
-                                        <i class="fa-solid fa-xmark mr-2 text-danger"></i>
-                                    @endif Sauna
-                                </li>
+                                @endforeach
 
                             </ul>
 

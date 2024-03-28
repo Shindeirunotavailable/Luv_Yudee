@@ -576,49 +576,48 @@ $('#submitamenitie').click(function(event) {
 // checkbox end
 
 
-$(document).ready(function() {
-    function confirmation(event) {
-        event.preventDefault();
-        var urlToRedirect = event.currentTarget.getAttribute('href');
+// $(document).ready(function() {
+//     function confirmation(event) {
+//         event.preventDefault();
+//         var urlToRedirect = event.currentTarget.getAttribute('href');
 
-        Swal.fire({
-            position: "center",
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#0071bc",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        })
-        .then((willDelete) => {
-            if (willDelete.isConfirmed) {
-                window.location.href = urlToRedirect;
-                Swal.fire({
-                    position: "center",
-                    title: "Delete",
-                    text: "Your file has been deleted",
-                    icon: "success",
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            } else {
-                Swal.fire({
-                    position: "center",
-                    title: "Cancelled",
-                    text: "The media is safe",
-                    icon: "error",
-                    confirmButtonColor: "#0071bc",
-                })
-            }
-        });
-    }
+//         Swal.fire({
+//             position: "center",
+//             title: "Are you sure?",
+//             text: "You won't be able to revert this!",
+//             icon: "warning",
+//             showCancelButton: true,
+//             confirmButtonColor: "#0071bc",
+//             cancelButtonColor: "#d33",
+//             confirmButtonText: "Yes, delete it!"
+//         })
+//         .then((willDelete) => {
+//             if (willDelete.isConfirmed) {
+//                 window.location.href = urlToRedirect;
+//                 Swal.fire({
+//                     position: "center",
+//                     title: "Delete",
+//                     text: "Your file has been deleted",
+//                     icon: "success",
+//                     showConfirmButton: false,
+//                     timer: 1500
+//                 })
+//             } else {
+//                 Swal.fire({
+//                     position: "center",
+//                     title: "Cancelled",
+//                     text: "The media is safe",
+//                     icon: "error",
+//                     confirmButtonColor: "#0071bc",
+//                 })
+//             }
+//         });
+//     }
 
-    $('.trash-delete').on('click', function(event) {
-        confirmation(event);
-    });
-});
-
+//     $('.trash-delete').on('click', function(event) {
+//         confirmation(event);
+//     });
+// });
 
 
 $(document).ready(function() {
@@ -627,7 +626,166 @@ $(document).ready(function() {
         $(".tab-pane").not(targetId).removeClass("active show");
     });
 });
+//รออนุมัติ
+$(document).ready(function(){
+    // จัดการคลิกที่ลิงก์
+    $('a[id^="approve_property_"]').click(function(e){
+        e.preventDefault(); // ยกเลิกการทำงานของลิงก์
 
+        // ดึง URL และ id_property จากลิงก์
+        var url = $(this).attr('href');
+        var id_property = $(this).attr('id').split('_')[2];
 
+        // แสดง SweetAlert
+        Swal.fire({
+            title: 'ยืนยันการอนุมัติ?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#0071BC',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ยืนยัน',
+            cancelButtonText: 'ยกเลิก'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // ทำการเปลี่ยนสถานะโดยใช้ Ajax
+                $.ajax({
+                    type: 'GET',
+                    url: url,
+                    success: function(data) {
+                        // หากทำการเปลี่ยนสถานะสำเร็จ
+                        Swal.fire({
+                          title: 'อนุมัติเรียบร้อย!',
+                          icon: 'success',
+                          confirmButtonColor: '#0071BC',
+                      }).then((result) => {
+                            // ทำการอัพเดตสถานะของปุ่ม
+                            $('#approve_review_'+id_property).removeClass('btn-warning').addClass('btn-success').text('อนุมัติแล้ว');
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        // หากเกิดข้อผิดพลาดในการเปลี่ยนสถานะ
+                        Swal.fire(
+                            'ข้อผิดพลาด!',
+                            'เกิดข้อผิดพลาดในการอนุมัติรีวิว',
+                            'error'
+                        );
+                    }
+                });
+            }
+        });
+    });
+});
 
+//อนุมัติ
+$(document).ready(function(){
+    // จัดการคลิกที่ลิงก์
+    $('a[id^="approve_property_"]').click(function(e){
+        e.preventDefault(); // ยกเลิกการทำงานของลิงก์
 
+        // ดึง URL และ id_property จากลิงก์
+        var url = $(this).attr('href');
+        var id_property = $(this).attr('id').split('_')[2];
+        var $button = $(this); // เก็บอ้างอิงปุ่มที่ถูกคลิกไว้ในตัวแปร
+
+        // ตรวจสอบสถานะปุ่ม
+        if ($button.hasClass('disabled')) {
+            return false; // ถ้าปุ่มถูกปิดใช้งานให้ไม่ทำงาน
+        }
+
+        // แสดง SweetAlert
+        var swalText = ($button.hasClass('btn-success')) ? 'ยืนยันการยกเลิกอนุมัติ?' : 'ยืนยันการอนุมัติ?';
+        Swal.fire({
+            title: swalText,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#0071BC',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ยืนยัน',
+            cancelButtonText: 'ยกเลิก'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // ทำการเปลี่ยนสถานะโดยใช้ Ajax
+                $.ajax({
+                    type: 'GET',
+                    url: url,
+                    success: function(data) {
+                        // หากทำการเปลี่ยนสถานะสำเร็จ
+                        var newClass = ($button.hasClass('btn-success')) ? 'btn-warning' : 'btn-success';
+                        var newText = ($button.hasClass('btn-success')) ? 'รอการอนุมัติ' : 'อนุมัติแล้ว';
+                        Swal.fire({
+                          title: (newClass === 'btn-success') ? 'อนุมัติเรียบร้อย!' : 'ยกเลิกอนุมัติเรียบร้อย!',
+                          text: '',
+                          icon: 'success',
+                          confirmButtonColor: '#0071BC',
+                      }).then((result) => {
+                            // ทำการอัพเดตสถานะของปุ่ม
+                            $button.removeClass('btn-warning btn-success').addClass(newClass).text(newText);
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        // หากเกิดข้อผิดพลาดในการเปลี่ยนสถานะ
+                        Swal.fire(
+                            'ข้อผิดพลาด!',
+                            (newClass === 'btn-success') ? 'เกิดข้อผิดพลาดในการยกเลิกอนุมัติรีวิว' : 'เกิดข้อผิดพลาดในการอนุมัติรีวิว',
+                            'error'
+                        );
+                    }
+                });
+            }
+        });
+    });
+  });
+
+  $(document).ready(function(){
+    // จัดการคลิกที่ลิงก์ลบ
+    $('a.trash-delete').click(function(e){
+        e.preventDefault(); // ยกเลิกการทำงานของลิงก์
+
+        // ดึง URL และ id_review จากลิงก์
+        var url = $(this).attr('href');
+        var $rowToDelete = $(this).closest('tr'); // ระบุแถวที่ต้องการลบ
+
+        // แสดง SweetAlert
+        Swal.fire({
+            title: 'คุณแน่ใจหรือไม่ที่ต้องการลบ?',
+            text: 'การกระทำนี้ไม่สามารถยกเลิกได้!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#0071BC',
+            confirmButtonText: 'ใช่, ลบเลย!',
+            cancelButtonText: 'ยกเลิก'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // ทำการลบโดยใช้ Ajax
+                $.ajax({
+                  type: 'GET',
+                  url: url,
+                  success: function(data) {
+                      // หากการลบสำเร็จ
+                      Swal.fire({
+                          title: 'ลบเรียบร้อย!',
+                          text: '',
+                          icon: 'success',
+                          confirmButtonColor: '#0071BC', // กำหนดสีเขียวสำหรับปุ่มยืนยัน
+                      });
+
+                      // ลบแถวที่มีข้อมูลที่ถูกลบออกจากตาราง
+                      $rowToDelete.fadeOut(500, function() {
+                          $(this).remove();
+                      });
+                  },
+                  error: function(xhr, status, error) {
+                      // หากเกิดข้อผิดพลาดในการลบ
+                      Swal.fire(
+                          'ข้อผิดพลาด!',
+                          'เกิดข้อผิดพลาดในการลบ',
+                          'error'
+                      );
+                  }
+              });
+
+            }
+        });
+    });
+  });

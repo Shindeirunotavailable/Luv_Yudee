@@ -61,12 +61,21 @@ class HomeController extends Controller
         $blogs = DB::table('pp_properties')
             ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
             ->get();
+        $provinces = DB::table('provinces')->get();
+        $amphures = DB::table('amphures')->get();
+        $districts = DB::table('districts')->get();
+        $pp_amenities = DB::table('pp_amenities')->get();
 
-
+        // dd($provinces);
         $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
         return view(".propertyDetail.property")->with([
             'blogs' => $blogs,
+            'provinces' => $provinces,
+            'amphures' => $amphures,
+            'districts' => $districts,
+            'pp_amenities' => $pp_amenities,
             'data' => $showrivew
+
         ]);
         // $pp_reviews=DB::table('pp_reviews')->get();
         // return view(".propertyDetail.property")->with('data',$pp_reviews);
