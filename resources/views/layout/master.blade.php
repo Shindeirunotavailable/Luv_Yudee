@@ -27,6 +27,7 @@
          <link href="{{ asset('/assets/css/contact/contact.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า contact -- --}}
          <link href="{{ asset('/assets/css/searchResulte/searchResulte.css') }}" rel="stylesheet" type="text/css" /> {{-- -- Css หน้า searchResulte -- --}}
          <link href="{{ asset('/assets/css/dashboardcss/profile.css') }}" rel="stylesheet" type="text/css"/> {{-- -- Css หน้า profile -- --}}
+         <link href="{{ asset('/assets/css/admincss/admin.css') }}" rel="stylesheet" type="text/css"/> {{-- -- Css หน้า admin -- --}}
 
          {{-- <link href="{{ asset('/assets/css/login.css') }}" rel="stylesheet" type="text/css" /> --}}
          <link href="{{ asset('/assets/css/dashboardcss/dashboard.css') }}" rel="stylesheet" type="text/css"/>
@@ -52,11 +53,11 @@
 </head>
 
 <body>
-    @if (!request()->is('emails','indexadmin'))
+    @if (!request()->is('emails'))
         @include('layout.menu')
     @endif
         @yield('content')
-    @if(!request()->is('addproperty'))
+    @if(!request()->is('addproperty','indexadmin'))
         @include('layout.footer')
     @endif
 
