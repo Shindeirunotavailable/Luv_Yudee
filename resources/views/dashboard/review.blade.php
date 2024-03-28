@@ -1,13 +1,13 @@
 <div class="dashboard__main pl-d-0-md">
     <div class="dashboard__content property-page bg-f7">
-        <div class="row align-items-center pb-d-40">
+        {{-- <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
                     <h2 class="fw-600">Reviews</h2>
                     <p class="text-ap">We are glad to see you again!</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="row ">
             <div class="col-xl-12">
                 <div class="ps-widget bg-white bdrs-12 default-box-shadow2 p-d-30 mb-6 overflow-hidden position-relative">
@@ -34,7 +34,7 @@
 
                                 @if (isset($data))
                                     @foreach ($data['pp_reviews'] as $item)
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 review-item">
                                             <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                                 <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
                                                     class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -71,13 +71,13 @@
                                                             <div class="d-flex justify-content-sm-end justify-content-center mb-0">
                                                                 @if ($item["review_status"]==true)
                                                                     <!-- เพิ่มปุ่มอนุมัติ -->
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" id="approve_review_{{$item->id_review}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
                                                                 @else
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
+                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" id="approve_review_{{$item->id_review}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
                                                                 @endif
                                                                 
                                                                 <!-- เพิ่มปุ่มลบ -->
-                                                                <a href="{{route('deletereview',['id_review'=>$item->id_review])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-delete"></a>
+                                                                <a href="{{route('deletereview',['id_review'=>$item->id_review])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -92,7 +92,7 @@
                                         </div>
                                     @endforeach
                                 @endif
-                                {{$data['pp_reviews']->links()}}
+                                {{-- {{$data['pp_reviews']->links()}} --}}
                                 
                                 {{-- <div class="col-md-12 ">
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">

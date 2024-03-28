@@ -3586,3 +3586,90 @@ textarea.form-control-lg {
      background-image: linear-gradient(45deg, #3a9ad9 50%, transparent 50%) ; /* สีตอนกำลังจะเปลี่ยนพื้นหลัง */
      background-position: 0 !important; /* ต่ำแหน่งสีพื้นหลัง */
    }
+
+
+
+/* 
+   
+   .comments {
+    margin-top: 20px;
+  }
+  
+  .comment {
+    margin-bottom: 10px;
+  }
+  
+  .comment-text {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .reply-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .reply-input {
+    margin-top: 10px;
+  }
+  
+  .reply-input input[type="text"] {
+    width: calc(100% - 70px);
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .reply-input button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .comments-section {
+    width: 100%;
+}
+
+.comment {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.review-icon {
+    margin-right: 8px;
+    margin-bottom: 0;
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+}
+
+.text-heading {
+    font-weight: 600;
+}
+
+.text-warning {
+    color: #ffc107;
+}
+
+.text-secondary {
+    color: #6c757d;
+}
+
+.reply-link {
+    color: #007bff;
+    border-left: 1px solid #343a40;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.reply-link:hover {
+    color: #0056b3;
+}
+
+.border-dark {
+    border-color: #343a40 !important;
+} */
