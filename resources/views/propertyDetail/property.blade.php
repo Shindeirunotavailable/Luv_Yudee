@@ -600,6 +600,7 @@
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
                             </div>
                         </section>
+                @endforeach
 
 
 
@@ -843,82 +844,6 @@
                                         </div>
                                         @endforeach
                                     @endif
-
-                                    {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
-                                        <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
-                                            class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                            style="width: 84px; height: 84px; object-fit: cover;">
-                                            <div class="media-body">
-                                                <div class="row mb-1 align-items-center">
-                                                    <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                        <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-                                                        <ul
-                                                            class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
-                                                            <li class="list-inline-item mr-0">
-                                                                <span class="align-item-right text-warning">
-                                                                    <i class="fas fa-star"></i>
-                                                                </span>
-                                                                <span class="align-item-right text-warning">
-                                                                    <i class="fas fa-star"></i>
-                                                                </span>
-                                                                <span class="align-item-right text-warning">
-                                                                    <i class="fas fa-star"></i>
-                                                                </span>
-                                                                <span class="align-item-right text-warning">
-                                                                    <i class="fas fa-star"></i>
-                                                                </span>
-                                                                <span class="align-item-right text-warning">
-                                                                    <i class="fas fa-star"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                    <p class="mb-3 m-mb-3 ">Very good and fast support during the week. Thanks for
-                                                        always keeping your WordPress themes up to date. Your level of support
-                                                        and
-                                                        dedication
-                                                        is second to none.
-                                                    </p>
-                                                    <div class="d-flex justify-content-sm-start justify-content-center">
-                                                        <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
-                                                        <a href="#"
-                                                            class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-                                                    </div>
-                                            </div>
-                                    </div> --}}
-                                </div>
-                            </div>
-
-                            {{-- <table class="table table-bordered text-center">
-                                <thead>
-                                    <tr>
-                                        <th>review_star</th>
-                                        <th>review_name</th>
-                                        <th>review_email</th>
-                                        <th>review_content</th>
-                                        <th>create_datetime</th>
-                                        <th>update_datetime</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @if(Session::has('pp_reviews'))
-                                        @foreach (Session::get('pp_reviews') as $item )
-                                        <tr>
-                                            <td>{{$item->review_star}}</td>
-                                            <td>{{$item->review_name}}</td>
-                                            <td>{{$item->review_email}}</td>
-                                            <td>{{$item->review_content}}</td>
-                                            <td>{{$item->create_datetime}}</td>
-                                            <td>{{$item->update_datetime}}</td>
-                                        </tr>
-                                        @endforeach
-                                    @endif
-
-                                </tbody>
-                            </table> --}}
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
@@ -1000,7 +925,6 @@
                         </section>
 
                     </article>
-                @endforeach
 
 
                 <aside class="col-lg-4 pl-xl-4 pdr-0 primary-sidebar sidebar-sticky  ">
