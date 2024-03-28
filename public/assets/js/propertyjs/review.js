@@ -251,59 +251,59 @@ $(document).ready(function(){
 });
 
 //ลบ
-// $(document).ready(function(){
-//   // จัดการคลิกที่ลิงก์ลบ
-//   $('a.trash-deletes').click(function(e){
-//       e.preventDefault(); // ยกเลิกการทำงานของลิงก์
+$(document).ready(function(){
+  // จัดการคลิกที่ลิงก์ลบ
+  $('a.trash-deletes').click(function(e){
+      e.preventDefault(); // ยกเลิกการทำงานของลิงก์
 
-//       // ดึง URL และ id_review จากลิงก์
-//       var url = $(this).attr('href');
-//       var $rowToDelete = $(this).closest('tr'); // ระบุแถวที่ต้องการลบ
+      // ดึง URL และ id_review จากลิงก์
+      var url = $(this).attr('href');
+      var $rowToDelete = $(this).closest('tr'); // ระบุแถวที่ต้องการลบ
 
-//       // แสดง SweetAlert
-//       Swal.fire({
-//           title: 'คุณแน่ใจหรือไม่ที่ต้องการลบ?',
-//           text: 'การกระทำนี้ไม่สามารถยกเลิกได้!',
-//           icon: 'warning',
-//           showCancelButton: true,
-//           confirmButtonColor: '#d33',
-//           cancelButtonColor: '#0071BC',
-//           confirmButtonText: 'ใช่, ลบเลย!',
-//           cancelButtonText: 'ยกเลิก'
-//       }).then((result) => {
-//           if (result.isConfirmed) {
-//               // ทำการลบโดยใช้ Ajax
-//               $.ajax({
-//                 type: 'GET',
-//                 url: url,
-//                 success: function(data) {
-//                     // หากการลบสำเร็จ
-//                     Swal.fire({
-//                         title: 'ลบเรียบร้อย!',
-//                         text: '',
-//                         icon: 'success',
-//                         confirmButtonColor: '#0071BC', // กำหนดสีเขียวสำหรับปุ่มยืนยัน
-//                     });
+      // แสดง SweetAlert
+      Swal.fire({
+          title: 'คุณแน่ใจหรือไม่ที่ต้องการลบ?',
+          text: 'การกระทำนี้ไม่สามารถยกเลิกได้!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#0071BC',
+          confirmButtonText: 'ใช่, ลบเลย!',
+          cancelButtonText: 'ยกเลิก'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              // ทำการลบโดยใช้ Ajax
+              $.ajax({
+                type: 'GET',
+                url: url,
+                success: function(data) {
+                    // หากการลบสำเร็จ
+                    Swal.fire({
+                        title: 'ลบเรียบร้อย!',
+                        text: '',
+                        icon: 'success',
+                        confirmButtonColor: '#0071BC', // กำหนดสีเขียวสำหรับปุ่มยืนยัน
+                    });
             
-//                     // ลบแถวที่มีข้อมูลที่ถูกลบออกจากตาราง
-//                     $rowToDelete.fadeOut(500, function() {
-//                         $(this).remove();
-//                     });
-//                 },
-//                 error: function(xhr, status, error) {
-//                     // หากเกิดข้อผิดพลาดในการลบ
-//                     Swal.fire(
-//                         'ข้อผิดพลาด!',
-//                         'เกิดข้อผิดพลาดในการลบ',
-//                         'error'
-//                     );
-//                 }
-//             });
+                    // ลบแถวที่มีข้อมูลที่ถูกลบออกจากตาราง
+                    $rowToDelete.fadeOut(500, function() {
+                        $(this).remove();
+                    });
+                },
+                error: function(xhr, status, error) {
+                    // หากเกิดข้อผิดพลาดในการลบ
+                    Swal.fire(
+                        'ข้อผิดพลาด!',
+                        'เกิดข้อผิดพลาดในการลบ',
+                        'error'
+                    );
+                }
+            });
             
-//           }
-//       });
-//   });
-// });
+          }
+      });
+  });
+});
 
 $(document).ready(function(){
     // จัดการคลิกที่ลิงก์ลบ
@@ -317,12 +317,11 @@ $(document).ready(function(){
         // แสดง SweetAlert
         Swal.fire({
             title: 'คุณแน่ใจหรือไม่ที่ต้องการลบ?',
-            text: 'การกระทำนี้ไม่สามารถยกเลิกได้!',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
             cancelButtonColor: '#0071BC',
-            confirmButtonText: 'ใช่, ลบเลย!',
+            confirmButtonText: 'ใช่',
             cancelButtonText: 'ยกเลิก'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -365,38 +364,38 @@ $(document).ready(function(){
 
 
  
-//  document.addEventListener("DOMContentLoaded", function() {
-//   const replyBtns = document.querySelectorAll('.reply-btn');
+ document.addEventListener("DOMContentLoaded", function() {
+  const replyBtns = document.querySelectorAll('.reply-btn');
 
-//   replyBtns.forEach(btn => {
-//     btn.addEventListener('click', function() {
-//       const parentComment = this.parentElement;
-//       const repliesSection = parentComment.querySelector('.replies');
-//       const replyInput = document.createElement('div');
-//       replyInput.classList.add('reply-input');
-//       replyInput.innerHTML = `
-//         <input type="text" placeholder="Type your reply...">
-//         <button class="submit-reply">Submit</button>
-//       `;
-//       repliesSection.appendChild(replyInput);
-//       const submitBtn = replyInput.querySelector('.submit-reply');
-//       submitBtn.addEventListener('click', function() {
-//         const replyText = replyInput.querySelector('input').value;
-//         if (replyText.trim() !== '') {
-//           const newReply = document.createElement('p');
-//           newReply.textContent = replyText;
-//           repliesSection.appendChild(newReply);
-//           replyInput.style.display = 'none';
-//         }
-//       });
-//     });
-//   });
-// });
-// $(document).ready(function() {
-//   $('.reply-link').click(function(e) {
-//       e.preventDefault();
-//       $(this).closest('.media-body').find('.reply-form').toggle();
-//   });
-// });
+  replyBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const parentComment = this.parentElement;
+      const repliesSection = parentComment.querySelector('.replies');
+      const replyInput = document.createElement('div');
+      replyInput.classList.add('reply-input');
+      replyInput.innerHTML = `
+        <input type="text" placeholder="Type your reply...">
+        <button class="submit-reply">Submit</button>
+      `;
+      repliesSection.appendChild(replyInput);
+      const submitBtn = replyInput.querySelector('.submit-reply');
+      submitBtn.addEventListener('click', function() {
+        const replyText = replyInput.querySelector('input').value;
+        if (replyText.trim() !== '') {
+          const newReply = document.createElement('p');
+          newReply.textContent = replyText;
+          repliesSection.appendChild(newReply);
+          replyInput.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+$(document).ready(function() {
+  $('.reply-link').click(function(e) {
+      e.preventDefault();
+      $(this).closest('.media-body').find('.reply-form').toggle();
+  });
+});
 
   
