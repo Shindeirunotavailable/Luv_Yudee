@@ -673,7 +673,7 @@
                                 <div class="card-body p-0">
                                     <h3 class="fw-600 fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
                                         Reviews</h3>
-    
+
                                     @if (isset($data))
                                     @foreach ($data as $item)
                                         <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
@@ -685,14 +685,14 @@
                                                     <div class="col-sm-6 mb-2 mb-sm-0  ">
                                                         <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
                                                     </div>
-    
+
                                                     <div class="col-sm-6">
                                                         <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
                                                             <li class="list-inline-item mr-0">
                                                                     @php
                                                                         $star = $item->review_star;
                                                                     @endphp
-    
+
                                                                     @for ($i = 1; $i <= 5; $i++)
                                                                     @if ($i <= $star)
                                                                         <span class="fa fa-star text-warning"></span>
@@ -707,10 +707,10 @@
                                                     <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
                                                     <div class="d-flex justify-content-sm-start justify-content-center">
                                                         <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
-                                                        <a href="javascript:void(0)" onclick="reply(this)" 
+                                                        <a href="javascript:void(0)" onclick="reply(this)"
                                                             class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                     </div>
-                                                    
+
                                             </div>
                                         </div>
                                         @endforeach
@@ -769,8 +769,8 @@
                                             @endforeach
                                         @endif
                                     </div> --}}
-                                    
-                                    
+
+
                                     {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                         <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
                                             class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -780,7 +780,7 @@
                                                     <div class="col-sm-6 mb-2 mb-sm-0  ">
                                                         <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                                     </div>
-    
+
                                                     <div class="col-sm-6">
                                                         <ul
                                                             class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
@@ -819,7 +819,7 @@
                                 </div>
                             </div>
                         </section>
-                        
+
                         <section class="pt-6 border-bottom-pp section-pp">
                             <div class="card border-0">
                                 <div class="card-body pt-0 ">
@@ -891,9 +891,9 @@
                                                 </div>
                                         </div>
                                         <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
-    
+
                                     </form>
-                                    
+
                                 </div>
                             </div>
                         </section>
