@@ -145,11 +145,11 @@
 
   .card-img-pp-overlay {
     position: absolute;
-    top: 0;
+    top: 150px;
     right: 0;
-    bottom: 0;
+    bottom: 150px;
     left: 0;
-    padding: .625rem
+    /* padding: .625rem */
   }
 
   .card-img-pp,.card-img-pp-top {
@@ -1158,4 +1158,18 @@
     .m-mb-3 {
         margin: 1rem!important;
     }
+}
+
+.decoration{
+    text-decoration: line-through;
+}
+
+.swipersss {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
 }
