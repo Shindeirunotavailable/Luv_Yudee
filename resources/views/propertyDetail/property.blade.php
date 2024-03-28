@@ -673,7 +673,7 @@
                                 <div class="card-body p-0">
                                     <h3 class="fw-600 fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
                                         Reviews</h3>
-
+    
                                     @if (isset($data))
                                     @foreach ($data as $item)
                                         <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
@@ -685,14 +685,14 @@
                                                     <div class="col-sm-6 mb-2 mb-sm-0  ">
                                                         <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
                                                     </div>
-
+    
                                                     <div class="col-sm-6">
                                                         <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
                                                             <li class="list-inline-item mr-0">
                                                                     @php
                                                                         $star = $item->review_star;
                                                                     @endphp
-
+    
                                                                     @for ($i = 1; $i <= 5; $i++)
                                                                     @if ($i <= $star)
                                                                         <span class="fa fa-star text-warning"></span>
@@ -707,15 +707,70 @@
                                                     <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
                                                     <div class="d-flex justify-content-sm-start justify-content-center">
                                                         <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
-                                                        <a href="javascript::void(0)" onclick="reply(this)"
+                                                        <a href="javascript:void(0)" onclick="reply(this)" 
                                                             class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                     </div>
-
+                                                    
                                             </div>
                                         </div>
                                         @endforeach
                                     @endif
-
+                                    {{-- <div class="comments-section">
+                                        @if (isset($data))
+                                            @foreach ($data as $item)
+                                                <div class="comment">
+                                                    <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                                        <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                                            class="review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                                            style="width: 84px; height: 84px; object-fit: cover;">
+                                                        <div class="media-body">
+                                                            <div class="row mb-1 align-items-center">
+                                                                <div class="col-sm-6 mb-2 mb-sm-0">
+                                                                    <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
+                                                                        <li class="list-inline-item mr-0">
+                                                                            @php
+                                                                                $star = $item->review_star;
+                                                                            @endphp
+                                                                            @for ($i = 1; $i <= 5; $i++)
+                                                                                @if ($i <= $star)
+                                                                                    <span class="fa fa-star text-warning"></span>
+                                                                                @else
+                                                                                    <span class="fa fa-star text-secondary"></span>
+                                                                                @endif
+                                                                            @endfor
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <p class="mb-3 m-mb-3">{{$item->review_content}}</p>
+                                                            <div class="d-flex justify-content-sm-start justify-content-center">
+                                                                <p class="mb-0 text-muted fs-13 lh-1">{{$item->create_datetime}}</p>
+                                                                <a href="#" class="reply-link mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                            </div>
+                                                            <br>
+                                                            <!-- Reply form -->
+                                                            <div class="reply-form" style="display: none;">
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content" id="content" rows="5"></textarea>
+                                                                    <div class="invalid-feedback">
+                                                                        Please enter a message in the textarea.
+                                                                    </div>
+                                                                    <br>
+                                                                    <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
+                                                                </div>
+                                                            </div>
+                                                            <!-- End reply form -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    </div> --}}
+                                    
+                                    
                                     {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
                                         <img src="{{ asset('/assets/images/review-2.jpg') }}" alt="Viola Austin"
                                             class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -725,7 +780,7 @@
                                                     <div class="col-sm-6 mb-2 mb-sm-0  ">
                                                         <h4 class="fw-600 mb-0 text-heading fs-14">Danny Fox</h4>
                                                     </div>
-
+    
                                                     <div class="col-sm-6">
                                                         <ul
                                                             class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
@@ -763,37 +818,37 @@
                                     </div> --}}
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                    
-                    <section class="pt-6 border-bottom-pp section-pp">
-                        <div class="card border-0">
-                            <div class="card-body pt-0 ">
-                                <h3 class="fw-600 fs-16 lh-2 text-heading mb-4">Write A Review</h3>
-                                <form action="{{ url('/review') }}"  method="POST" id="form_review" class="needs-validation" novalidate>
-                                    @csrf
-                                    <div class="form-group mb-4 d-flex justify-content-start">
-                                        <div class="rate-input">
-                                            <input type="radio" id="star5" name="star" value="5">
-                                            <label for="star5" title="text" class="mb-0 mr-1 lh-1">
-                                                <i class="fas fa-star"></i>
-                                            </label>
-                                            <input type="radio" id="star4" name="star" value="4">
-                                            <label for="star4" title="text" class="mb-0 mr-1 lh-1">
-                                                <i class="fas fa-star"></i>
-                                            </label>
-                                            <input type="radio" id="star3" name="star" value="3">
-                                            <label for="star3" title="text" class="mb-0 mr-1 lh-1">
-                                                <i class="fas fa-star"></i>
-                                            </label>
-                                            <input type="radio" id="star2" name="star" value="2">
-                                            <label for="star2" title="text" class="mb-0 mr-1 lh-1">
-                                                <i class="fas fa-star"></i>
-                                            </label>
-                                            <input type="radio" id="star1" name="star" value="1">
-                                            <label for="star1" title="text" class="mb-0 mr-1 lh-1">
-                                                <i class="fas fa-star"></i>
-                                            </label>
+                        </section>
+                        
+                        <section class="pt-6 border-bottom-pp section-pp">
+                            <div class="card border-0">
+                                <div class="card-body pt-0 ">
+                                    <h3 class="fw-600 fs-16 lh-2 text-heading mb-4">Write A Review</h3>
+                                    <form action="{{ url('/review') }}"  method="POST" id="form_review" class="needs-validation" novalidate>
+                                        @csrf
+                                        <div class="form-group mb-4 d-flex justify-content-start">
+                                            <div class="rate-input">
+                                                <input type="radio" id="star5" name="star" value="5">
+                                                <label for="star5" title="text" class="mb-0 mr-1 lh-1">
+                                                    <i class="fas fa-star"></i>
+                                                </label>
+                                                <input type="radio" id="star4" name="star" value="4">
+                                                <label for="star4" title="text" class="mb-0 mr-1 lh-1">
+                                                    <i class="fas fa-star"></i>
+                                                </label>
+                                                <input type="radio" id="star3" name="star" value="3">
+                                                <label for="star3" title="text" class="mb-0 mr-1 lh-1">
+                                                    <i class="fas fa-star"></i>
+                                                </label>
+                                                <input type="radio" id="star2" name="star" value="2">
+                                                <label for="star2" title="text" class="mb-0 mr-1 lh-1">
+                                                    <i class="fas fa-star"></i>
+                                                </label>
+                                                <input type="radio" id="star1" name="star" value="1">
+                                                <label for="star1" title="text" class="mb-0 mr-1 lh-1">
+                                                    <i class="fas fa-star"></i>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             @if (session('user_name'))
@@ -836,9 +891,9 @@
                                                 </div>
                                         </div>
                                         <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
-
+    
                                     </form>
-
+                                    
                                 </div>
                             </div>
                         </section>
