@@ -364,38 +364,38 @@ $(document).ready(function(){
 
 
  
- document.addEventListener("DOMContentLoaded", function() {
-  const replyBtns = document.querySelectorAll('.reply-btn');
+//  document.addEventListener("DOMContentLoaded", function() {
+//   const replyBtns = document.querySelectorAll('.reply-btn');
 
-  replyBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const parentComment = this.parentElement;
-      const repliesSection = parentComment.querySelector('.replies');
-      const replyInput = document.createElement('div');
-      replyInput.classList.add('reply-input');
-      replyInput.innerHTML = `
-        <input type="text" placeholder="Type your reply...">
-        <button class="submit-reply">Submit</button>
-      `;
-      repliesSection.appendChild(replyInput);
-      const submitBtn = replyInput.querySelector('.submit-reply');
-      submitBtn.addEventListener('click', function() {
-        const replyText = replyInput.querySelector('input').value;
-        if (replyText.trim() !== '') {
-          const newReply = document.createElement('p');
-          newReply.textContent = replyText;
-          repliesSection.appendChild(newReply);
-          replyInput.style.display = 'none';
-        }
-      });
-    });
-  });
-});
-$(document).ready(function() {
-  $('.reply-link').click(function(e) {
-      e.preventDefault();
-      $(this).closest('.media-body').find('.reply-form').toggle();
-  });
-});
+//   replyBtns.forEach(btn => {
+//     btn.addEventListener('click', function() {
+//       const parentComment = this.parentElement;
+//       const repliesSection = parentComment.querySelector('.replies');
+//       const replyInput = document.createElement('div');
+//       replyInput.classList.add('reply-input');
+//       replyInput.innerHTML = `
+//         <input type="text" placeholder="Type your reply...">
+//         <button class="submit-reply">Submit</button>
+//       `;
+//       repliesSection.appendChild(replyInput);
+//       const submitBtn = replyInput.querySelector('.submit-reply');
+//       submitBtn.addEventListener('click', function() {
+//         const replyText = replyInput.querySelector('input').value;
+//         if (replyText.trim() !== '') {
+//           const newReply = document.createElement('p');
+//           newReply.textContent = replyText;
+//           repliesSection.appendChild(newReply);
+//           replyInput.style.display = 'none';
+//         }
+//       });
+//     });
+//   });
+// });
+// $(document).ready(function() {
+//   $('.reply-link').click(function(e) {
+//       e.preventDefault();
+//       $(this).closest('.media-body').find('.reply-form').toggle();
+//   });
+// });
 
   

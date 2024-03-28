@@ -634,7 +634,7 @@
                                 <h3 class="fw-600 fs-16 lh-2 text-heading mb-0 d-inline-block pr-4 border-bottom-pp border-primary">
                                     Reviews</h3>
 
-                                {{-- @if (isset($data))
+                                @if (isset($data))
                                 @foreach ($data as $item)
                                     <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                         <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
@@ -674,8 +674,8 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                @endif --}}
-                                <div class="comments-section">
+                                @endif
+                                {{-- <div class="comments-section">
                                     @if (isset($data))
                                         @foreach ($data as $item)
                                             <div class="comment">
@@ -728,7 +728,7 @@
                                             </div>
                                         @endforeach
                                     @endif
-                                </div>
+                                </div> --}}
                                 
                                 
                                 {{-- <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center ">
