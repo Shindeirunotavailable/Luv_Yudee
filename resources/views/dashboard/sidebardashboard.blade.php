@@ -165,10 +165,7 @@
                         tabindex="0">
                         @include('dashboard.review')
                     </div>
-                </div>
-
-            </div>
-        </div>
+ </div>
     </aside>
 
 @endsection

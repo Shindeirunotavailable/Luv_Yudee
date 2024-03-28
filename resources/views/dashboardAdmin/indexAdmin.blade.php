@@ -148,7 +148,7 @@
                     <div class="tab-pane fade active show " id="v-add-property" role="tabpanel"
                         aria-labelledby="v-add-property-tab" tabindex="0">
                         @include('dashboard.addproperty')
-                    </div>
+                    </div> 
 
                     {{-- <div class="tab-pane fade" id="v-myproperty" role="tabpanel"
                         aria-labelledby="v-myproperty-tab" tabindex="0">
@@ -160,10 +160,10 @@
                         @include('dashboardAdmin.adminProfile')
                     </div>
 
-                    {{-- <div class="tab-pane fade" id="v-review" role="tabpanel" aria-labelledby="v-review-tab"
+                    <div class="tab-pane fade" id="v-review" role="tabpanel" aria-labelledby="v-review-tab"
                         tabindex="0">
                         @include('dashboard.review')
-                    </div> --}}
+                    </div>
                 </div>
 
             </div>
