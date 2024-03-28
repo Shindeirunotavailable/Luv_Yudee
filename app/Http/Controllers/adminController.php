@@ -17,7 +17,7 @@ class adminController extends Controller
     public function index()
     {
         $profiles = Profile::all(); // ดึงข้อมูลทั้งหมดจากตาราง profiles
-        return view('login.login', ['profiles' => $profiles]);
+        return view('dashboardAdmin.indexAdmin', ['profiles' => $profiles]);
     }
     
  

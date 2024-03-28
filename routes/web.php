@@ -53,6 +53,7 @@ route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); 
  route::any('test','App\Http\Controllers\LoginController@test')->middleware('IsAdmin')->name('test'); // ส่งค่า proflie
  route::any('indexadmin','App\Http\Controllers\adminController@indexadmin')->middleware('IsAdmin')->name('indexadmin'); // ส่งค่า proflie
 
+ Route::any('adminIndex','App\Http\Controllers\adminController@adminIndex')->name('adminIndex');
 
 
 
