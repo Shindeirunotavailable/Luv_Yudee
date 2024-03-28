@@ -137,7 +137,7 @@ $(document).ready(function() {
             .create(document.querySelector('#editor'), {
                  removePlugins: [ '' ],
 
-                 toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'Link', 'InsertTable', 'BlockQuote', 'BulletedList'
+                 toolbar: [ 'Undo', 'Redo', 'Heading', 'Bold', 'Italic', 'BlockQuote', 'BulletedList'
                  , 'NumberedList' ]
             } )
             .catch(error => {

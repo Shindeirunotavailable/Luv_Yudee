@@ -102,6 +102,9 @@
                                                         </div>
                                                     </div>
                                                 </div >
+                                                @if (isset($data['id_property'])&& $data['property']->property_stage=='1')
+                                                    <a href="{{ url('addproperty') }}" type="submit" name="property_stage" value="1"  class="ml-2 afterButton rounded-pill btn-lg mt-2 float-right fw-600">finish</a>
+                                                @endif
                                             <button type="submit" id="submitdescription" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600" name="property_stage" value="1">Submit</button>
                                         </div>
                                 </div>
@@ -191,6 +194,9 @@
                                                             @endif
 
                                                     </div>
+                                                    @if (isset($data['id_property'])&& $data['property']->property_stage=='2')
+                                                        <a href="{{ url('addproperty') }}" type="submit" name="property_stage" value="1"  class="ml-2 afterButton rounded-pill btn-lg mt-2 float-right fw-600">finish</a>
+                                                    @endif
                                             <button type="submit" id="submitmedia" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600 " name="property_stage" value="2">Submit</button>
                                         </div>
                                 </div>
@@ -288,7 +294,9 @@
                                                         </div>
 
                                                 </div>
-
+                                                @if (isset($data['id_property'])&& $data['property']->property_stage=='3')
+                                                    <a href="{{ url('addproperty') }}" type="submit" name="property_stage" value="1"  class="ml-2 afterButton rounded-pill btn-lg mt-2 float-right fw-600">finish</a>
+                                                @endif
                                                 <button type="submit" name="property_stage" value="3" id="submitlocation" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
                                         </div>
                                 </div>
@@ -366,6 +374,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @if (isset($data['id_property'])&& $data['property']->property_stage=='4')
+                                            <a href="{{ url('addproperty') }}" type="submit" name="property_stage" value="1"  class="ml-2 afterButton rounded-pill btn-lg mt-2 float-right fw-600">finish</a>
+                                        @endif
                                         <button type="submit" name="property_stage" value="4" id="submitdetail" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
                                     </div>
                                 </div>
@@ -399,7 +410,7 @@
                                                     @endforeach
                                             </div>
                                         </div>
-                                        @if (isset($data['id_property']))
+                                        @if (isset($data['id_property'])&& $data['property']->property_stage=='5')
                                             <a href="{{ url('addproperty') }}" type="submit" name="property_stage" value="1"  class="ml-2 afterButton rounded-pill btn-lg mt-2 float-right fw-600">finish</a>
                                         @endif
                                             <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>

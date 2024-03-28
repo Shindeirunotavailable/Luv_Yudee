@@ -56,7 +56,6 @@ class PropertyController extends Controller
         }
         return view('dashboard.sidebardashboard')->with('data', $this->data);
     }
-
     // PropertyController
     public function updatedata(Request $request)
     {
@@ -180,7 +179,7 @@ class PropertyController extends Controller
         return redirect('addproperty?id_property=' . $id_property)->with('success', 'message');
 
     }
-
+    // approve
     public function approve($id_property)
     {
         $blogs=DB::table('pp_properties')->where('id_property', $id_property)->first();
@@ -191,7 +190,6 @@ class PropertyController extends Controller
         return redirect()->back();
 
     }
-
     // deleteMedia
     public function deleteMedia($id_media)
     {
@@ -209,19 +207,21 @@ class PropertyController extends Controller
     }
 
     // deleteProperty
-
     public function deleteProperty($id_media, $id_property)
-    {
-        $media = DB::table('pp_media')->where('id_media', $id_media)->first();
-        if ($media) {
-            $file_url = public_path($media->media_property);
-            if (File::exists($file_url)) {
-                File::delete($file_url);
-            }
-            DB::table('pp_properties')->where('id_property', $id_property)->delete();
-            return redirect()->back();
+{
+    // ดึงรายการรูปภาพที่มี id_property เดียวกับ id_property ที่ถูกลบ
+    $mediasToDelete = DB::table('pp_media')->where('id_property', $id_property)->get();
+    // ลบรูปภาพและข้อมูลในตาราง pp_media ที่ตรงกับ id_property ที่ถูกลบ
+    foreach ($mediasToDelete as $media) {
+        $file_url = public_path($media->media_property);
+        if (File::exists($file_url)) {
+            File::delete($file_url);
         }
+        DB::table('pp_media')->where('id_media', $media->id_media)->delete();
     }
+    DB::table('pp_properties')->where('id_property', $id_property)->delete();
+    return redirect()->back();
+}
     // ProvinceController
     public function db_provinces(Request $request)
     {

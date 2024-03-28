@@ -61,6 +61,8 @@ class HomeController extends Controller
         $blogs = DB::table('pp_properties')
             ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
             ->get();
+
+
         $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
         return view(".propertyDetail.property")->with([
             'blogs' => $blogs,
