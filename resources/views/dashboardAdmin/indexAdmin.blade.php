@@ -145,10 +145,10 @@
 
                 <div class="tab-content-ds" id="v-tabs-tabContent">
 
-                    {{-- <div class="tab-pane fade active show " id="v-add-property" role="tabpanel"
+                    <div class="tab-pane fade active show " id="v-add-property" role="tabpanel"
                         aria-labelledby="v-add-property-tab" tabindex="0">
                         @include('dashboard.addproperty')
-                    </div> --}}
+                    </div>
 
                     {{-- <div class="tab-pane fade" id="v-myproperty" role="tabpanel"
                         aria-labelledby="v-myproperty-tab" tabindex="0">
