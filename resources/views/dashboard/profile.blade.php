@@ -14,7 +14,8 @@
                         @csrf
                         <div class="row">    
                             @if (isset($data))
-                                @foreach ($data['profiles']->where('id_review', Auth::id())->unique('id_review')  as $item)                    
+                             @foreach ($data['profiles'] as $item)
+                                {{-- @foreach ($data['profiles']->where('id_review', Auth::id())->unique('id_review')  as $item)                     --}}
                                         <div class="col-md-6 col-12 col-lg-6">
                                             <div class="pb-10">
                                                 <div class="card cardBox">

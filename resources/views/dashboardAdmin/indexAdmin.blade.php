@@ -162,7 +162,7 @@
 
                     <div class="tab-pane fade" id="v-review" role="tabpanel" aria-labelledby="v-review-tab"
                         tabindex="0">
-                        @include('dashboard.review')
+                        @include('dashboardAdmin.reviewAdmin')
                     </div>
                 </div>
 
