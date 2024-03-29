@@ -100,7 +100,7 @@ class LoginController extends Controller
     }
 
 
-    
+
     public function logout()
     {
         Auth::logout();
@@ -157,9 +157,9 @@ class LoginController extends Controller
                 'create_datetime' => date('Y-m-d H:i:s'),
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
-            DB::table('users')->insert($data);          
-            DB::table('profiles')->insert($profileData); 
-            
+            DB::table('users')->insert($data);
+            DB::table('profiles')->insert($profileData);
+
             // Mail::to($email)->send(new WelcomeEmail());
             Mail::to($email)->send(new WelcomeEmail($username));
             $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
@@ -264,7 +264,7 @@ class LoginController extends Controller
     //     } else{
     //         return redirect()->route('login')->with('error', 'เกินเวลาที่กำหนดกรุณากรอกขอรหัสผ่านใหม่');
 
-    //     }        
+    //     }
     // }
 
     public function resetPassword(Request $request)
@@ -431,12 +431,12 @@ class LoginController extends Controller
             $image = $request->file('image');
             $imageName = time().'.'.$image->getClientOriginalExtension();
             $image->move(public_path('assets/imageUser'), $imageName);
-    
+
             // บันทึกที่อยู่ของรูปภาพลงในฐานข้อมูล
             $profile = new Profile;
             $profile->image = $imageName;
             $profile->save();
-    
+
             return back()->with('success', 'Image Upload successful');
         } else {
             return back()->with('error', 'Please choose an image file');
@@ -465,7 +465,23 @@ class LoginController extends Controller
 
     public function search_result()
     {
-        return view("searchResult.searchResult");
+        $blogs = DB::table('pp_properties')
+            ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+            ->get();
+        $provinces = DB::table('provinces')->get();
+        $amphures = DB::table('amphures')->get();
+        $districts = DB::table('districts')->get();
+        $pp_amenities = DB::table('pp_amenities')->get();
+
+        return view("searchResult.searchResult")->with([
+            'blogs' => $blogs,
+            'provinces' => $provinces,
+            'amphures' => $amphures,
+            'districts' => $districts,
+            'pp_amenities' => $pp_amenities,
+
+        ]);
+
     }
 
     public function test()

@@ -66,7 +66,6 @@ class HomeController extends Controller
         $districts = DB::table('districts')->get();
         $pp_amenities = DB::table('pp_amenities')->get();
 
-        // dd($provinces);
         $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
         return view(".propertyDetail.property")->with([
             'blogs' => $blogs,
