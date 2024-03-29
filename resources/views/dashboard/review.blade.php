@@ -34,7 +34,7 @@
 
                                 @if (isset($data))
                                     @foreach ($data['pp_reviews'] as $item)
-                                    {{-- @foreach ($data['pp_reviews']->where('id_review', Auth::id())->unique('id_review')  as $item) --}}
+                                    {{-- @foreach ($data['pp_reviews']->where('create_by', Auth::id())->unique('id_review')  as $item) --}}
                                         <div class="col-md-12 review-item">
                                             <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                                 <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"

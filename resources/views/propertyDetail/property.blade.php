@@ -845,6 +845,13 @@
                                             </div>
                                             @endif
                                         </div>
+                                        @if (session('user_id'))
+                                            <div class="form-group col-md-6 px-4">
+                                                <input type="hidden" class="form-control form-control-lg "
+                                                    id="user_id" name="user_id"
+                                                    value="{{ session('user_id') }}">
+                                            </div>
+                                        @endif           
                                         <div class="form-group ">
                                             <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content" id="content" rows="5"></textarea>
                                                 <div class="invalid-feedback">
@@ -861,7 +868,7 @@
 
                     </article>
 
-
+                   
 
                 <aside class="col-lg-4 pl-xl-4 pdr-0 primary-sidebar sidebar-sticky  ">
                     <div class="make-me-sticky hide-all ">
