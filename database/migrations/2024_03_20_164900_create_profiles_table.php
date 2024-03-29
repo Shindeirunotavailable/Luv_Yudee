@@ -14,7 +14,7 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id('id_review');
+            $table->id('id_profiles');
             $table->string('name',50)->nullable();
             $table->string('lastname',50)->nullable();
             $table->string('phone',10)->nullable();
@@ -29,6 +29,7 @@ class CreateProfilesTable extends Migration
             $table->string('linkedin')->nullable();
             $table->string('website')->nullable();
             $table->tinyInteger('update_by')->nullable(); 
+            $table->tinyInteger('create_by')->nullable();
             $table->dateTime('create_datetime')->nullable();
             $table->dateTime('update_datetime')->nullable();
         });
