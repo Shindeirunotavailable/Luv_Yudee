@@ -167,43 +167,47 @@
 
                             <div class="d-sm-flex justify-content-sm-between ">
                                 <div>
-                                    <h2 class="fw-600 fs-30 text-heading font-bold mb-0">{{$info->property_title}}</h2>
+                                    <h2 class="fw-600 fs-30 text-heading font-bold mb-0">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</h2>
                                     <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>
                                         @foreach($provinces as $province)
                                             @if($info->property_provinces == $province->id)
-                                                {{ $province->name_th }}
+                                            <a class="text-muted">{{ $province->name_th }}</a>
+                                            @else
+                                                <a class="text-muted"> N/A</a>
                                             @endif
+                                            @break
                                         @endforeach
 
                                         @foreach($amphures as $amphure)
                                             @if($info->property_amphures == $amphure->id)
-                                                {{ $amphure->name_th }}
+                                            <a class="text-muted">{{ $amphure->name_th }}</a>
                                             @endif
                                         @endforeach
 
                                         @foreach($districts as $district)
                                             @if($info->property_districts == $district->id)
-                                                {{ $district->name_th }}
+                                            <a class="text-muted">{{ $district->name_th }}</a>
+
                                             @endif
                                         @endforeach
 
                                         @foreach($districts as $district)
                                             @if($info->property_districts == $district->id)
-                                                {{ $district->zip_code }}
+                                            <a class="text-muted">{{ $district->zip_code }}</a>
                                             @endif
                                         @endforeach
-
 
                                     </p>
                                 </div>
 
                                 <div class="mt-2 text-lg-right">
-                                    <p class="fs-22 text-heading font-bold mb-0 font-weight-600">฿ {{$info->property_price}}</p>
-                                    <p class="mb-0">฿ {{$info->property_psm}}/SqFt</p>
+                                    <p class="fs-22 text-heading font-bold mb-0 font-weight-600">{{ isset($info->property_price) ? '฿ ' . $info->property_price : ' N/A' }}</p>
+                                    <p class="mb-0 text-muted">{{ isset($info->property_psm) ? '฿ ' . $info->property_psm  . ' /SqFt' : ' N/A' }}</p>
                                 </div>
                             </div>
                             <h2 class="fw-600 fs-22 text-heading font-bold mb-0">Description</h2>
-                            <p class="mb-6 lh-md pt-2 ">{!! $info->property_description ? json_decode($info->property_description) : '' !!}
+                            <p class="mb-6 lh-md pt-2 ">
+                                {!! isset($info->property_description) && $info->property_description !== 'null' ? json_decode($info->property_description) : ' N/A' !!}
                             </p>
                         </section>
 
@@ -249,7 +253,7 @@
                                                 YEAR BUILT
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
-                                                {{$info->property_year_build}}
+                                                {{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}
                                             </p>
                                         </div>
                                     </div>
@@ -265,7 +269,7 @@
                                                 Floor
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
-                                                {{$info->property_floor_amount}}
+                                                {{ isset($info->property_floor_amount) ? $info->property_floor_amount : ' N/A' }}
                                             </p>
                                         </div>
                                     </div>
@@ -281,7 +285,7 @@
                                                 BATHROOMS
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
-                                                {{$info->property_bathrooms}}
+                                                {{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}
                                             </p>
                                         </div>
                                     </div>
@@ -297,7 +301,7 @@
                                                 BEDROOMS
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
-                                                {{$info->property_bedrooms}}
+                                                {{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}
                                             </p>
                                         </div>
                                     </div>
@@ -313,7 +317,7 @@
                                                 SQFT
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
-                                                {{$info->property_interior_size}}
+                                                {{ isset($info->property_interior_size) ? $info->property_interior_size : ' N/A' }}
                                             </p>
                                         </div>
                                     </div>
@@ -329,7 +333,7 @@
                                                 GARAGE
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
-                                                {{$info->property_garage}}
+                                                {{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}
                                             </p>
                                         </div>
                                     </div>
@@ -372,7 +376,7 @@
 
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Price</dt>
-                                    <dd>$ {{$info->property_price}}</dd>
+                                    <dd>{{ isset($info->property_price) ? '$ ' . $info->property_price : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Property type</dt>
@@ -394,15 +398,15 @@
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Rooms</dt>
-                                    <dd>{{$info->property_rooms}}</dd>
+                                    <dd>{{ isset($info->property_rooms) ? $info->property_rooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Bedrooms</dt>
-                                    <dd>{{$info->property_bedrooms}}</dd>
+                                    <dd>{{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Size</dt>
-                                    <dd>{{$info->property_interior_size}} SqFt</dd>
+                                    <dd>{{ isset($info->property_interior_size) ? $info->property_interior_size . ' SqFt' : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt>
@@ -410,19 +414,19 @@
                                 </dl> --}}
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Garage</dt>
-                                    <dd>{{$info->property_garage}}</dd>
+                                    <dd>{{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt>
-                                    <dd>{{$info->property_bathrooms}}</dd>
+                                    <dd>{{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Garage size</dt>
-                                    <dd>{{$info->property_garage_size}} SqFt</dd>
+                                    <dd>{{ isset($info->property_garage_size) ? $info->property_garage_size . ' SqFt' : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Year build</dt>
-                                    <dd>{{$info->property_year_build}}</dd>
+                                    <dd>{{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="offset-sm-6 col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Label</dt>
@@ -439,7 +443,8 @@
                             <ul class="list-unstyled mb-0 row pt-2 ">
 
                                 @foreach($pp_amenities as $amenity)
-                                @if(isset($info->property_amenities) && in_array($amenity->id_amenities, explode(',', $info->property_amenities)))                                        <li class="col-sm-3 col-6 mb-2">
+                                @if(isset($info->property_amenities) && in_array($amenity->id_amenities, explode(',', $info->property_amenities)))
+                                        <li class="col-sm-3 col-6 mb-2">
                                             <i class="fa-solid fa-check mr-2 text-blue"></i>{{ $amenity->name_amenities }}
                                         </li>
                                     @else

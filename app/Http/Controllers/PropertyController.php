@@ -33,7 +33,9 @@ class PropertyController extends Controller
         $property = Property::property($id_property);
 
         $blogs = DB::table('pp_properties')
-        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')->get();
+        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+        ->select('pp_properties.*', 'pp_media.*')
+        ->get();
         $media = DB::table('pp_media')->get();
 
         $this->data['provinces'] = Province::all();
@@ -92,7 +94,6 @@ class PropertyController extends Controller
             $data['update_by'] = 2;
             DB::table('pp_properties')->where('id_property', $id_property)->update($data);
 
-            // if ($request->hasFile('image') || $request->hasFile('video')) {
                 if ($request->hasFile('image')) {
                     $mediaData = [];
                     foreach ($request->file('image') as $image) {
@@ -128,7 +129,6 @@ class PropertyController extends Controller
                     }
                     DB::table('pp_media')->insert($mediaData);
                 }
-            // }
 
         } else {
             $id = Auth::id();
@@ -140,7 +140,6 @@ class PropertyController extends Controller
             $data['id'] = $id;
             $id_property = DB::table('pp_properties')->insertGetId($data);
 
-            // if ($request->hasFile('image') || $request->hasFile('video')) {
                 $mediaData = [];
                 if ($request->hasFile('image')) {
                     foreach ($request->file('image') as $image) {
@@ -173,7 +172,6 @@ class PropertyController extends Controller
                     }
                 }
                 DB::table('pp_media')->insert($mediaData);
-            // }
 
         }
         return redirect('addproperty?id_property=' . $id_property)->with('success', 'message');
