@@ -65,7 +65,7 @@
                     <div class="row galleries m-n1 py-2">
                     @foreach ($blogs as $blog)
                         @php
-                        $firstMedia = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                        $firstMedia = $blogs->where('id_property', $id_property)->where('media_file_type', 1)->unique('id_media')->first();
                         @endphp
 
                         <div class="col-lg-6 p-1 ">
@@ -84,10 +84,18 @@
                             <div class="row m-n1">
                                 @foreach ($blogs as $blog)
                                     @php
-                                        $remainingMedias = $blogs->where('id_property', $id_property)->unique('id_media')->slice(1);
+                                        // $remainingMedias = $blogs->where('id_property', $id_property)->unique('id_media')->slice(1);
+                                        $remainingMedias = $blogs->where('id_property', $id_property)
+                                            ->where('media_file_type', 1)
+                                            ->unique('id_media')
+                                            ->slice(1);
                                         $count = 0;
                                         $totalMedias = $remainingMedias->count(); // นับจำนวนรูปภาพทั้งหมดที่เหลือ
-                                        $totalMediasInDatabase = $blogs->where('id_property', $id_property)->unique('id_media')->count();
+                                        // $totalMediasInDatabase = $blogs->where('id_property', $id_property)->unique('id_media')->count();
+                                        $totalMediasInDatabase = $blogs->where('id_property', $id_property)
+                                            ->where('media_file_type', 1) // เพิ่มเงื่อนไขที่นี่
+                                            ->unique('id_media')
+                                            ->count();
                                         $remainingMediasCount = $totalMediasInDatabase - 5 ;
                                     @endphp
                                         @foreach ($remainingMedias as $item)
@@ -112,16 +120,24 @@
                                             @endif
 
                                         @endforeach
+                                        @for ($i = $count; $i < 4; $i++)
+                                            <div class="col-md-6 p-1">
+                                                <div class="item item-size-4-3">
+                                                    <div class="card p-0 hover-zoom-in">
+                                                        <img src="{{ asset('/assets/images/noimg.jpg') }}" alt="No Image" class="card-img-pp">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endfor
                                         <!-- ไม่เกี่ยวกับรูปใหญ่สุด -->
                                         @foreach ($remainingMedias as $item)
-                                        @if ($count >= 8)
+                                            @if ($count >= 8)
                                                 <a href="{{ $item->media_property }}" class="card-img-pp"data-gtf-mfp="true" data-gallery-id="01"></a>
                                             @endif
                                             @php $count++; @endphp
                                         @endforeach
                                         @break
                                 @endforeach
-
 
                             </div>
                         </div>
@@ -458,11 +474,23 @@
                             </ul>
 
                         </section>
-                        {{-- error --}}
+
                         <section class="pt-6 border-bottom-pp section-pp">
                             <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Virtual Tour</h4>
-                            <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
-                                class="w-100"></iframe>
+                            @foreach ($blogs as $blog)
+                                @php
+                                    $videoMedias = $blogs->where('id_property', $id_property)->where('media_file_type', 2);
+                                @endphp
+
+                                @if ($videoMedias->isNotEmpty())
+                                    @foreach ($videoMedias as $videoMedia)
+                                        <video src="{{ asset($videoMedia->media_property) }}" controls allowfullscreen="" class="w-100"></video>
+                                    @endforeach
+                                @else
+                                    <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen="" class="w-100"></iframe>
+                                @endif
+                                @break
+                            @endforeach
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
@@ -471,14 +499,8 @@
                                 <input type="text" class="form-control hidden" name="latitude" id="latitudeInput" placeholder="Enter latitude"  value="{{($info->property_latitude) ? $info->property_latitude : ""}}">
                                 <input type="text" class="form-control hidden" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{($info->property_longitude) ? $info->property_longitude : ""}}">
                                 <iframe id="mapFrame" class="media-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                {{-- <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1704791449392!5m2!1sth!2sth"
-                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
                             </div>
                         </section>
-
-
 
 
 
