@@ -1,5 +1,4 @@
 @csrf
-
 <div class="dashboard__main pl-d-0-md ">
     <div class="dashboard__content property-page bg-f7 ">
         <div class="row align-items-center pb-d-40">
@@ -40,8 +39,6 @@
                                     </button>
                                 </div>
                             </nav>
-
-
                         <form method="POST" action="{{ route('properties') }}" enctype="multipart/form-data">
                             @csrf
                             @if (isset($data['id_property']))

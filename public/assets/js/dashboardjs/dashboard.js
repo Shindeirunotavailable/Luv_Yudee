@@ -789,3 +789,29 @@ $(document).ready(function(){
         });
     });
   });
+
+  $(document).on('click', 'a', function(event) {
+    var url = window.location.href;
+    var urlParams = new URLSearchParams(window.location.search);
+    urlParams.forEach(function(value, key) {
+        url = removeURLParameter(url, key);
+    });
+    window.history.pushState({}, '', url);
+});
+
+function removeURLParameter(url, parameter) {
+    var urlParts = url.split('?');
+    if (urlParts.length >= 2) {
+        var prefix = encodeURIComponent(parameter) + '=';
+        var params = urlParts[1].split(/[&;]/g);
+        for (var i = params.length; i-- > 0;) {
+            if (params[i].lastIndexOf(prefix, 0) !== -1) {
+                params.splice(i, 1);
+            }
+        }
+        url = urlParts[0] + '' + params.join('&');
+        return url;
+    } else {
+        return url;
+    }
+}

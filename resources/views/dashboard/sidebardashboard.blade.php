@@ -107,7 +107,7 @@
                                 <div class="sidebar_list_item">
                                     <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
                                     data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
-                                    aria-selected="false" href="#v-myproperty">
+                                    aria-selected="false" href="#v-myproperty" onclick="changeTab()">
                                     <i class="fa-solid fa-house-chimney mr-d-15"></i>My Properties</a>
                                 </div>
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
@@ -119,7 +119,7 @@
 
                                 <div class="sidebar_list_item"><a class="items-center-db    " id="v-review-tab"
                                     data-toggle="tab" data-target="#v-review" role="tab" aria-controls="v-review"
-                                    aria-selected="false" href="#v-review">
+                                    aria-selected="false" href="#v-review" onclick="changeTab()">
                                         <i class="fa-solid fa-message mr-d-15"></i>Reviews</a></div>
                                 </div>
                             <div>
@@ -169,3 +169,63 @@
     </aside>
 
 @endsection
+
+
+{{-- <script>
+    // เมื่อมีการเปลี่ยนแท็บ
+    function changeTab() {
+        // สร้าง URL จากหน้าปัจจุบัน
+        var url = window.location.href;
+
+        // หาช่องว่างหลัง ?id_property=2 และตัดออก
+        var index = url.indexOf('?id_property=2');
+        if (index !== -1) {
+            url = url.substring(0, index);
+        }
+
+        // ส่งไปยัง URL ใหม่โดยไม่ refresh หน้า
+        window.history.pushState({}, '', url);
+    }
+</script> --}}
+
+{{-- <script>
+    // เมื่อมีการเปลี่ยนแท็บ
+    function changeTab() {
+        // สร้าง URL จากหน้าปัจจุบัน
+        var url = window.location.href;
+
+        // หา parameter ทั้งหมดใน URL
+        var urlParams = new URLSearchParams(window.location.search);
+
+        // ลบ parameter ทั้งหมดออกจาก URL
+        urlParams.forEach(function(value, key) {
+            url = removeURLParameter(url, key);
+        });
+
+        // ส่งไปยัง URL ใหม่โดยไม่ refresh หน้า
+        window.history.pushState({}, '', url);
+    }
+
+    // ฟังก์ชันเพื่อลบ parameter ออกจาก URL
+    function removeURLParameter(url, parameter) {
+        // สร้าง URL ใหม่โดยลบ parameter ที่ระบุออก
+        var urlParts = url.split('?');
+        if (urlParts.length >= 2) {
+            var prefix = encodeURIComponent(parameter) + '=';
+            var params = urlParts[1].split(/[&;]/g);
+
+            // วนลูปเพื่อหาและลบ parameter ที่ต้องการ
+            for (var i = params.length; i-- > 0;) {
+                if (params[i].lastIndexOf(prefix, 0) !== -1) {
+                    params.splice(i, 1);
+                }
+            }
+
+            // สร้าง URL ใหม่โดยเชื่อม params ที่เหลือกันและคืนค่า URL ใหม่
+            url = urlParts[0] + '' + params.join('&');
+            return url;
+        } else {
+            return url;
+        }
+    }
+</script> --}}
