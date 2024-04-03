@@ -1,67 +1,55 @@
 @extends('layout.master')
 @section('content')
-<main>
-    <section class="section-pp">
-        <div class="container-pp-fluid">
-            <div class="position-relative zoomIn ">
+    <main>
 
-                <div class="position-absolute pos-fixed-top-right z-index-2">
-                    <ul class="list-inline pt-4 pr-5">
+            <section class="section-pp">
+                <div class="container-pp-fluid">
+                    <div class="position-relative zoomIn ">
 
-                        <li class="list-inline-item mr-2">
-                            <a href="#" data-toggle="tooltip" title=""
-                                class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
-                                data-original-title="Favourite">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </li>
+                        <div class="position-absolute pos-fixed-top-right z-index-2">
+                            <ul class="list-inline pt-4 pr-5">
 
-                        <li class="list-inline-item mr-2">
-                            <button {{-- เอา btn-white หลัง btn ออก --}}
-                                class="btn-1 btn-white-1 p-0 d-flex align-items-center justify-content-center tooltip-icon text-heading bg-hover-primary hover-white rounded-circle border-0 shadow-none"
-                                type="button" data-placement="top" data-toggle="popover" data-container="body"
-                                data-content='
-                                    <ul class="list-inline mb-0 fs-22">
-                                        <li class="list-inline-item">
-                                            <i class="fab fa-twitter"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="fab fa-facebook"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="fa-brands fa-youtube"></i>
-                                        </li>
-                                    </ul>'
-                                data-html="true" data-original-title="" title="">
-                                <i class="fa-solid fa-share-nodes"></i>
-                            </button>
-                        </li>
+                                <li class="list-inline-item mr-2">
+                                    <a href="#" data-toggle="tooltip" title=""
+                                        class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
+                                        data-original-title="Favourite">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+                                </li>
+
+                                <li class="list-inline-item mr-2">
+                                    <button
+                                        class="btn-1 btn-white-1 p-0 d-flex align-items-center justify-content-center tooltip-icon text-heading bg-hover-primary hover-white rounded-circle border-0 shadow-none"
+                                        type="button" data-placement="top" data-toggle="popover" data-container="body"
+                                        data-content='
+                                            <ul class="list-inline mb-0 fs-22">
+                                                <li class="list-inline-item">
+                                                    <i class="fab fa-twitter"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fab fa-facebook"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa-brands fa-youtube"></i>
+                                                </li>
+                                            </ul>'
+                                        data-html="true" data-original-title="" title="">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </button>
+                                </li>
 
 
-                        <li class="list-inline-item">
-                            <a href="#" data-toggle="tooltip" title=""
-                                class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
-                                data-original-title="Print">
-                                <i class="fa-solid fa-print"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-pp-fluid">
-            <div class="row galleries m-n1 py-2">
-                <div class="col-lg-6 p-1 ">
-                    <div class="item item-size-4-3">
-                        <div class="card p-0 hover-zoom-in">
-                            <a href="{{ asset('/assets/images/property-1.jpg') }}" class="card-img-pp"
-                                data-gtf-mfp="true" data-gallery-id="01">
-                                <img src="{{ asset('/assets/images/property-1.jpg') }}">
-                            </a>
+                                <li class="list-inline-item">
+                                    <a href="#" data-toggle="tooltip" title=""
+                                        class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
+                                        data-original-title="Print">
+                                        <i class="fa-solid fa-print"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -83,9 +71,9 @@
                         <div class="col-lg-6 p-1 ">
                             <div class="item item-size-4-3">
                                 <div class="card p-0 hover-zoom-in">
-                                    <a href="{{ asset('/assets/images/property-2.jpg') }}" class="card-img-pp"
+                                    <a href="{{ $firstMedia->media_property }}" class="card-img-pp"
                                         data-gtf-mfp="true" data-gallery-id="01">
-                                        <img src="{{ asset('/assets/images/property-2.jpg') }}">
+                                        <img src="{{ $firstMedia->media_property }}">
                                     </a>
                                 </div>
                             </div>
@@ -155,43 +143,24 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container-pp ">
-            <nav aria-label="breadcrumb ">
-                <ol class="breadcrumb pb-0 pl-0 bg-white">
-                    <li class="breadcrumb-item fs-12 letter-spacing-087">
-                        <a href=".">Home</a>
-                    </li>
-                    <li class="breadcrumb-item fs-12 letter-spacing-087">
-                        <a href="#">Listing</a>
-                    </li>
-                    <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
-                        Boulevard</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
 
-    <div class="container-md-pp ">
-        <div class="row">
-            <article class="col-lg-8  pr-xl-7 mt-5">
-                <section class="m-top border-bottom-pp">
-                    <ul class="list-inline d-sm-flex align-items-sm-center">
-                        <li class="list-inline-item badge-pp badge-pp-orange">Featured</li>
-                        <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li>
-                        <li class="list-inline-item mr-2 mt-2 mt-sm-0"><i class="fa-regular fa-clock mr-1"></i>2months
-                            ago
-                        </li>
-                        <li class="list-inline-item mt-2 mt-sm-0"><i class="fa-regular fa-eye mr-1"></i>1039views
-                        </li>
-                    </ul>
+                </form>
+                <div class="container-pp ">
+                    <nav aria-label="breadcrumb ">
+                        <ol class="breadcrumb pb-0 pl-0 bg-white">
+                            <li class="breadcrumb-item fs-12 letter-spacing-087">
+                                <a href=".">Home</a>
+                            </li>
+                            <li class="breadcrumb-item fs-12 letter-spacing-087">
+                                <a href="#">Listing</a>
+                            </li>
+                            <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
+                                Boulevard</li>
+                        </ol>
+                    </nav>
+                </div>
+            </section>
 
-                    <div class="d-sm-flex justify-content-sm-between ">
-                        <div>
-                            <h2 class="fw-600 fs-30 text-heading font-bold mb-0">Villa on Hollywood Boulevard</h2>
-                            <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>ที่อยู่บ้าน</p>
-                        </div>
 
         <div class="container-md-pp ">
             <div class="row">
@@ -246,8 +215,6 @@
 
                                     </p>
                                 </div>
-                            </div>
-                        </div>
 
                                 <div class="mt-2 text-lg-right">
                                     <p class="fs-22 text-heading font-bold mb-0 font-weight-600">{{ isset($info->property_price) ? '฿ ' . $info->property_price : ' N/A' }}</p>
@@ -482,37 +449,10 @@
                                     <dd>Bestseller</dd>
                                 </dl> --}}
 
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2  ">
-                                    <i class="fa-solid fa-bath text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        BATHROOMS
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        2
-                                    </p>
-                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-bed text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        BEDROOMS
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        3
-                                    </p>
-                                </div>
+                            <div class="container-pp list-head">
                             </div>
-                        </div>
+                        </section>
 
                         <section class="pt-6 border-bottom-pp section-pp ">
                             <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2>
@@ -528,7 +468,6 @@
                                             <i class="fa-solid fa-xmark mr-2 text-danger"></i>{{ $amenity->name_amenities }}
                                         </li>
                                     @endif
-
                                 @endforeach
 
                             </ul>
@@ -560,293 +499,197 @@
                                 <input type="text" class="form-control hidden" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{($info->property_longitude) ? $info->property_longitude : ""}}">
                                 <iframe id="mapFrame" class="media-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-warehouse text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        GARAGE
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        1
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-scroll text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        STATUS
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        Active
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
+                        </section>
                         <section class="pt-6 section-pp">
                             <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
                             <div class="card border-0 ">
                                 <div class="card-body p-0">
                                     <div class="row">
 
-                    </div>
-                    <div class="container-pp list-head">
-                    </div>
-                </section>
+                                        <div class="col-sm-6 mb-6 mb-sm-0  ">
+                                            <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
 
-                <section class="pt-6 border-bottom-pp section-pp ">
-                    <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2>
-                    <ul class="list-unstyled mb-0 row pt-2 ">
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Fireplace
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Fireplace
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Basement
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Cooling
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Basement
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Cooling
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining
-                                room</del>
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i
-                                class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining
-                                room</del>
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i
-                                class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
-                        </li>
-                    </ul>
-
-                </section>
-                {{-- error --}}
-                <section class="pt-6 border-bottom-pp section-pp">
-                    <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Virtual Tour</h4>
-                    <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
-                        class="w-100"></iframe>
-                </section>
-
-                <section class="pt-6 border-bottom-pp section-pp">
-                    <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Location</h2>
-                    <div class="d-flex justify-content-center ">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1704791449392!5m2!1sth!2sth"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </section>
-
-                <section class="pt-6 section-pp">
-                    <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
-                    <div class="card border-0 ">
-                        <div class="card-body p-0">
-                            <div class="row">
-
-                                <div class="col-sm-6 mb-6 mb-sm-0  ">
-                                    <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
-
-                                        <h5 class="fw-600 fs-16 lh-2 text-heading mb-6 ">
-                                            Avarage User Rating
-                                        </h5>
-                                        <p class="fs-40 text-heading font-weight-bold lh-1">4.6 <span
-                                                class="fs-18 text-gray-light font-weight-normal">/5</span>
-                                        </p>
-                                        <div class="list-inline ">
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-gray-04 text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-sm-6 pt-2">
-                                    <h5 class="fw-600 fs-16 lh-2 text-heading ">
-                                        Rating Breakdown
-                                    </h5>
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    style="width: 60%" aria-valuenow="60" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted px-1">60%</div>
-                                    </div>
-
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    style="width: 40%" aria-valuenow="40" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted px-1">40%</div>
-                                    </div>
-
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                <h5 class="fw-600 fs-16 lh-2 text-heading mb-6 ">
+                                                    Avarage User Rating
+                                                </h5>
+                                                <p class="fs-40 text-heading font-weight-bold lh-1">4.6 <span
+                                                        class="fs-18 text-gray-light font-weight-normal">/5</span>
+                                                </p>
+                                                <div class="list-inline ">
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-gray-04 text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="text-muted px-1">0%</div>
-                                    </div>
 
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+
+                                        <div class="col-sm-6 pt-2">
+                                            <h5 class="fw-600 fs-16 lh-2 text-heading ">
+                                                Rating Breakdown
+                                            </h5>
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            style="width: 60%" aria-valuenow="60" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
                                                 </div>
+                                                <div class="text-muted px-1">60%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            style="width: 40%" aria-valuenow="40" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">40%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">0%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">0%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">0%</div>
                                             </div>
                                         </div>
-                                        <div class="text-muted px-1">0%</div>
-                                    </div>
-
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted px-1">0%</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                </section>
-
+                        </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
                             <div class="card border-0 ">
@@ -1064,13 +907,6 @@
                                             </div>
                                             @endif
                                         </div>
-                                        @if (session('user_id'))
-                                            <div class="form-group col-md-6 px-4">
-                                                <input type="hidden" class="form-control form-control-lg "
-                                                    id="user_id" name="user_id"
-                                                    value="{{ session('user_id') }}">
-                                            </div>
-                                        @endif
                                         <div class="form-group ">
                                             <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content" id="content" rows="5"></textarea>
                                                 <div class="invalid-feedback">
@@ -1086,7 +922,8 @@
                         </section>
 
                     </article>
-
+                    @break
+                @endforeach
 
 
                 <aside class="col-lg-4 pl-xl-4 pdr-0 primary-sidebar sidebar-sticky  ">
