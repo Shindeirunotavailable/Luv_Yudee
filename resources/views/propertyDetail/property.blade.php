@@ -249,10 +249,10 @@
                                                         @break
                                                     @case(3)
                                                     ทาวน์เฮาส์
-                                                    @break
+                                                        @break
                                                     @case(4)
                                                     อพาร์ทเมนท์
-                                                    @break
+                                                        @break
                                                 @endswitch
                                             </p>
                                         </div>

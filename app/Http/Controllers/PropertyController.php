@@ -176,7 +176,6 @@ class PropertyController extends Controller
 
         }
         return redirect('addproperty?id_property=' . $id_property)->with('success', 'message');
-
     }
     // approve
     public function approve($id_property)
@@ -219,6 +218,12 @@ class PropertyController extends Controller
         }
         DB::table('pp_media')->where('id_media', $media->id_media)->delete();
     }
+    DB::table('pp_properties')->where('id_property', $id_property)->delete();
+    return redirect()->back();
+    }
+
+    public function deletenomediaProperty($id_property)
+    {
     DB::table('pp_properties')->where('id_property', $id_property)->delete();
     return redirect()->back();
     }
