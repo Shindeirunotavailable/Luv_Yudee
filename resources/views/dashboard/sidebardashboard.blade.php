@@ -104,12 +104,12 @@
                                     </a>
                                 </div>
 
-                                {{-- <div class="sidebar_list_item">
+                                <div class="sidebar_list_item">
                                     <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
                                     data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
                                     aria-selected="false" href="#v-myproperty">
                                     <i class="fa-solid fa-house-chimney mr-d-15"></i>My Properties</a>
-                                </div> --}}
+                                </div>
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
                                         <i class="fa-solid fa-heart mr-d-15"></i>My Favorites</a>
                                 </div>
@@ -151,10 +151,10 @@
                         @include('dashboard.addproperty')
                     </div>
 
-                    {{-- <div class="tab-pane fade" id="v-myproperty" role="tabpanel" aria-labelledby="v-myproperty-tab"
+                    <div class="tab-pane fade" id="v-myproperty" role="tabpanel" aria-labelledby="v-myproperty-tab"
                         tabindex="0">
                         @include('dashboard.myproperty')
-                    </div> --}}
+                    </div>
 
                     <div class="tab-pane fade" id="v-profile" role="tabpanel" aria-labelledby="v-profile-tab"
                         tabindex="0">
