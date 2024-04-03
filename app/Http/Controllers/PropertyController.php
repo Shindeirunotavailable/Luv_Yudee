@@ -28,6 +28,7 @@ class PropertyController extends Controller
     {
         $pp_reviews=DB::table('pp_reviews')->get();
         $profiles=DB::table('profiles')->get();
+        $id = Auth::id();
 
         $id_property = $request['id_property'];
         $property = Property::property($id_property);

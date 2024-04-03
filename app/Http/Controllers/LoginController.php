@@ -151,15 +151,18 @@ class LoginController extends Controller
                 'create_datetime' => date('Y-m-d H:i:s'),
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
+            $userId = DB::table('users')->insertGetId($data); // เพิ่มและรับค่า id ที่เพิ่มลงในฐานข้อมูล
+
             $profileData = [
                 'email' => $email,
                 'name' => $username,
+                'create_by' => $userId, // ใช้ id ของผู้ใช้ที่เพิ่มไปลงในฐานข้อมูล
+
                 'create_datetime' => date('Y-m-d H:i:s'),
                 'update_datetime' => date('Y-m-d H:i:s'),
             ];
-            DB::table('users')->insert($data);
+            // DB::table('users')->insert($data);
             DB::table('profiles')->insert($profileData);
-
             // Mail::to($email)->send(new WelcomeEmail());
             Mail::to($email)->send(new WelcomeEmail($username));
             $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
@@ -370,6 +373,7 @@ class LoginController extends Controller
 
     public function profliestone(Request $request)
     {
+        $id = Auth::id();
         $username = $request->input('firstName');
         $lastname = $request->input('lastName');
         $email = $request->input('email');
@@ -400,6 +404,7 @@ class LoginController extends Controller
                 'pinterest' => $pinterest,
                 'facebook' => $facebook,
                 'update_by' => $userId,
+                'create_by' => $id,
                 'update_datetime' => date('Y-m-d H:i:s'),
 
             ]);

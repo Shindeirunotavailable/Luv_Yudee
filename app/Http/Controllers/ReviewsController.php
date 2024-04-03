@@ -17,6 +17,7 @@ class ReviewsController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
         $content = $request->input('content');
+        $create_by = $request->input('user_id');
 
         $data = [
             'review_star' => $star,
@@ -25,6 +26,7 @@ class ReviewsController extends Controller
             'review_content' => $content,
             'create_datetime' => date('Y-m-d H:i:s'),
             'update_datetime' => date('Y-m-d H:i:s'),
+            'create_by' => $create_by, // ใช้ id ของผู้ใช้ที่เพิ่มไปลงในฐานข้อมูล
         ];
         DB::table('pp_reviews')->insert($data);
         $pp_reviews=DB::table('pp_reviews')->get();
