@@ -790,7 +790,7 @@ $(document).ready(function(){
     });
   });
 
-  $(document).on('click', 'a', function(event) {
+  $(document).on('click', 'a[onclick="changeTab()"]', function(event) {
     var url = window.location.href;
     var urlParams = new URLSearchParams(window.location.search);
     urlParams.forEach(function(value, key) {
@@ -815,3 +815,4 @@ function removeURLParameter(url, parameter) {
         return url;
     }
 }
+

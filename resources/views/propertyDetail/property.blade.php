@@ -10,7 +10,7 @@
                             <ul class="list-inline pt-4 pr-5">
 
                                 <li class="list-inline-item mr-2">
-                                    <a href="#" data-toggle="tooltip" title=""
+                                    <a href="javascript:void(0)" data-toggle="tooltip" title=""
                                         class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
                                         data-original-title="Favourite">
                                         <i class="fa-solid fa-heart"></i>
@@ -43,7 +43,7 @@
 
 
                                 <li class="list-inline-item">
-                                    <a href="#" data-toggle="tooltip" title=""
+                                    <a href="javascript:void(0)" data-toggle="tooltip" title=""
                                         class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
                                         data-original-title="Print">
                                         <i class="fa-solid fa-print"></i>
@@ -152,7 +152,7 @@
                                 <a href=".">Home</a>
                             </li>
                             <li class="breadcrumb-item fs-12 letter-spacing-087">
-                                <a href="#">Listing</a>
+                                <a href="javascript:void(0)">Listing</a>
                             </li>
                             <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
                                 Boulevard</li>
@@ -185,13 +185,14 @@
                                 <div>
                                     <h2 class="fw-600 fs-30 text-heading font-bold mb-0">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</h2>
                                     <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>
+                                        @if(is_null($info->property_provinces))
+                                            <a class="text-muted">N/A</a>
+                                        @endif
+
                                         @foreach($provinces as $province)
                                             @if($info->property_provinces == $province->id)
                                             <a class="text-muted">{{ $province->name_th }}</a>
-                                            @else
-                                                <a class="text-muted"> N/A</a>
                                             @endif
-                                            @break
                                         @endforeach
 
                                         @foreach($amphures as $amphure)
@@ -486,7 +487,9 @@
                                         <video src="{{ asset($videoMedia->media_property) }}" controls allowfullscreen="" class="w-100"></video>
                                     @endforeach
                                 @else
-                                    <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen="" class="w-100"></iframe>
+                                    {{-- <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen="" class="w-100"></iframe> --}}
+                                    <img src="{{ asset('/assets/images/novideo.png') }}" alt="No Image" class="w-100">
+
                                 @endif
                                 @break
                             @endforeach
@@ -772,7 +775,7 @@
                                                             <p class="mb-3 m-mb-3">{{$item->review_content}}</p>
                                                             <div class="d-flex justify-content-sm-start justify-content-center">
                                                                 <p class="mb-0 text-muted fs-13 lh-1">{{$item->create_datetime}}</p>
-                                                                <a href="#" class="reply-link mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                                <a href="javascript:void(0)" class="reply-link mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                             </div>
                                                             <br>
                                                             <!-- Reply form -->
@@ -835,7 +838,7 @@
                                                     </p>
                                                     <div class="d-flex justify-content-sm-start justify-content-center">
                                                         <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
-                                                        <a href="#"
+                                                        <a href="javascript:void(0)"
                                                             class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                     </div>
                                             </div>
@@ -944,13 +947,13 @@
                                                         value="option1">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center mt-3">
-                                                            <a href="#" class="d-block agent-icon mr-3">
+                                                            <a href="javascript:void(0)" class="d-block agent-icon mr-3">
                                                                 <img class="img-angent"
                                                                     src="{{ asset('/assets/images/agent-1.jpg') }}"
                                                                     class="rounded-circle" alt="agent-2">
                                                             </a>
                                                             <div>
-                                                                <a href="#"
+                                                                <a href="javascript:void(0)"
                                                                     class="d-block text-dark font-weight-500 lh-15 hover-primary">Oliver
                                                                     Beddows</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Sales Excutive</p>
@@ -988,13 +991,13 @@
                                                         id="inlineRadio2" value="option2">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center">
-                                                            <a href="#" class="d-block agent-icon mr-3">
+                                                            <a href="javascript:void(0)" class="d-block agent-icon mr-3">
                                                                 <img class="img-angent"
                                                                     src="{{ asset('/assets/images/agent-2.jpg') }}"
                                                                     class="rounded-circle" alt="agent-1">
                                                             </a>
                                                             <div>
-                                                                <a href="#"
+                                                                <a href="javascript:void(0)"
                                                                     class="d-block text-dark font-weight-500 lh-15 hover-primary">Max
                                                                     Kordex</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Real estate broker</p>
@@ -1086,8 +1089,84 @@
                             <div class="pro-city-slider position-relative ">
                                 <div class="swipersss swiper-initialized swiper-horizontal swiper-pointer swiper-backface-hidden">
                                     <div class="swiper-wrapper pb-20">
+                                        @foreach ($blogs as $blog)
+                                            @php
+                                            $info = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                                            @endphp
 
-                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
+                                            <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
+                                                <div class="card box-shadow-lightblue mb-30">
+                                                    <div class="card-body p-0">
+                                                        <div class="img-block ">
+                                                            <div class="block-text text-center">
+                                                                <b class="font-size-13">FEATURED</b>
+                                                            </div>
+                                                            <div class="text-block text-center">
+                                                                <a href="javascript:void(0)" class="font-weight-500">{{ isset($info->property_price) ? '฿ ' . $info->property_price : ' N/A' }}</a>
+                                                            </div>
+                                                            <img src="{{ $info->media_property }}" alt="listings" class="card-img-top img-sell">
+                                                        </div>
+                                                        <div class="p-10">
+                                                            <h6 class="card-title"><a href="javascript:void(0)">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</a></h6>
+                                                            <p class="list-text">
+                                                                @if(is_null($info->property_provinces))
+                                                                    <a class="text-muted">N/A</a>
+                                                                @endif
+
+                                                                @foreach($provinces as $province)
+                                                                    @if($info->property_provinces == $province->id)
+                                                                    <a class="text-muted">{{ $province->name_th }}</a>
+                                                                    @endif
+                                                                @endforeach
+
+                                                                @foreach($amphures as $amphure)
+                                                                    @if($info->property_amphures == $amphure->id)
+                                                                    <a class="text-muted">{{ $amphure->name_th }}</a>
+                                                                    @endif
+                                                                @endforeach
+
+                                                                @foreach($districts as $district)
+                                                                    @if($info->property_districts == $district->id)
+                                                                    <a class="text-muted">{{ $district->name_th }}</a>
+
+                                                                    @endif
+                                                                @endforeach
+
+                                                                @foreach($districts as $district)
+                                                                    @if($info->property_districts == $district->id)
+                                                                    <a class="text-muted">{{ $district->zip_code }}</a>
+                                                                    @endif
+                                                                @endforeach
+                                                            </p>
+                                                            <div class="d-flex align-items-center">
+                                                                <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i>
+                                                                    {{ isset($info->property_bedrooms) ? $info->property_bedrooms . ' bed' : ' N/A' }}
+                                                                </a>
+                                                                <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i>
+                                                                    {{ isset($info->property_bathrooms) ? $info->property_bathrooms . ' bath' : ' N/A' }}
+                                                                </a>
+                                                                <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i>
+                                                                    {{ isset($info->property_interior_size) ? $info->property_interior_size . ' sqft' : ' N/A' }}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer bg-transparent">
+                                                        <div class="d-flex ">
+                                                            <div class="flex-grow-1">
+                                                                <label class="label-700">For Rent</label>
+                                                            </div>
+                                                            <div class="flex-row-reverse">
+                                                                <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                                <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                                <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        {{-- <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
                                             <div class="card box-shadow-lightblue mb-30">
                                                 <div class="card-body p-0">
                                                     <div class="img-block ">
@@ -1455,7 +1534,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
+
                                     </div>
                                     <div class="swiper-pagination"></div>
                                 </div>
@@ -1473,7 +1553,7 @@
                 <img class="img-angent" src="{{ asset('/assets/images/agent-3.png') }}" alt="Irene Wallace"
                     class="mr-4 rounded-circle">
                 <div class="media-body">
-                    <a href="#" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
+                    <a href="javascript:void(0)" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
                     <span class="fs-13 lh-2">Sales Excutive</span>
                 </div>
             </div>
