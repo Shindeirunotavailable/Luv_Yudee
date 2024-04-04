@@ -11,13 +11,24 @@ $('#profileForm').on('submit', function(event) {
 
 
   $('#profileForm').submit(function (event) {
-    event.preventDefault(); // ป้องกันการส่งฟอร์ม
     var firstNameforms = $('#firstName');
     var lastNameforms = $('#lastName');
     var phoneforms = $('#phone');
     var mobileform = $('#mobile');
     var emailfrom = $('#email');
-  
+    
+    if(!firstNameforms.val() &&!lastNameforms.val() && !phoneforms.val() && !mobileform.val() && !emailfrom.val()   ){
+      firstNameforms.addClass('is-invalid');
+      lastNameforms.addClass('is-invalid');
+      phoneforms.addClass('is-invalid');
+      mobileform.addClass('is-invalid');
+      emailfrom.addClass('is-invalid');
+
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
     if( !firstNameforms.val()  ){
       firstNameforms.addClass('is-invalid');
       event.preventDefault();
