@@ -20,6 +20,10 @@ use Illuminate\Http\Request;
 });*/
 
 
+Route::get('email', function () {
+    return view('login/emails');
+});
+
 Route::any('home' , 'App\Http\Controllers\HomeController@home');
 Route::any('home_email' , 'App\Http\Controllers\HomeController@home_email');
 Route::any('review' , 'App\Http\Controllers\ReviewsController@review')->middleware('auth');
@@ -47,7 +51,6 @@ Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  
 route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
 route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
 route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
-
  // ----------------------------------- dashboard admin ------------------------------------
 
  route::any('test','App\Http\Controllers\LoginController@test')->middleware('IsAdmin')->name('test'); // ส่งค่า proflie

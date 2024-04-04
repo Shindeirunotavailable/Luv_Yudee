@@ -27,9 +27,12 @@
                                     @foreach ($data['profiles'] as $item)
                                         <div class="col-md-12 review-item">
                                             <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                                <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
-                                                {{-- <div id="imagePreview" class="showproperty" style="background-image: url('{{ $item->imageuser ?? 'https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg' }}');"></div> --}}
-
+                                                    @if(!empty($item->imageuser))
+                                                        <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                    @else
+                                                        <img src="{{ asset('/assets/images/user2.jpg') }}" alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                    @endif
+                                            
                                                 <div class="media-body">
                                                     <div class="row mb-1 align-items-center">
                                                         <div class="col-sm-6 mb-2 mb-sm-0  ">
