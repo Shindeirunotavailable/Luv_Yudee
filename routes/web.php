@@ -46,16 +46,17 @@ Route::any('resetPassword', 'App\Http\Controllers\LoginController@resetPassword'
 Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  //ส่งค่าnewPassword
 route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
 route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
-// route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
+route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
 
  // ----------------------------------- dashboard admin ------------------------------------
 
  route::any('test','App\Http\Controllers\LoginController@test')->middleware('IsAdmin')->name('test'); // ส่งค่า proflie
+
  route::any('indexadmin','App\Http\Controllers\adminController@indexadmin')->middleware('IsAdmin')->name('indexadmin'); // ส่งค่า proflie
 
  Route::any('adminIndex','App\Http\Controllers\adminController@adminIndex')->name('adminIndex')->middleware('IsAdmin');
 
-
+ Route::get('deleteporfile/{create_by}' , 'App\Http\Controllers\adminController@deleteporfile')->name('deleteporfile');
 
  // -----------------------------------function test Route ------------------------------------
 //  Route::view('/addproperty', 'dashboard.sidebardashboard');

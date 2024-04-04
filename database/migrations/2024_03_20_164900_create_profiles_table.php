@@ -28,6 +28,7 @@ class CreateProfilesTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('website')->nullable();
+            $table->string('imageuser')->nullable();
             $table->tinyInteger('update_by')->nullable(); 
             $table->tinyInteger('create_by')->nullable();
             $table->dateTime('create_datetime')->nullable();
