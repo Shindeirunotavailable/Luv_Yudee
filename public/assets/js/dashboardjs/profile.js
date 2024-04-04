@@ -250,14 +250,14 @@ function readURL(input) {
   if (input.files && input.files[0]) {
       var reader = new FileReader();
       reader.onload = function(e) {
-          $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-          $('#imagePreview').hide();
-          $('#imagePreview').fadeIn(650);
+          $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
       }
       reader.readAsDataURL(input.files[0]);
+  } else {
+      $('#imagePreview').css('background-image', 'url(https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg)');
   }
 }
-$("#imageUpload").change(function() {
+$("#imageuser").change(function() {
   readURL(this);
 });
 
