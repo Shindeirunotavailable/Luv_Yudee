@@ -636,7 +636,7 @@
                                         Reviews</h3>
 
                                     @if (isset($data))
-                                    @foreach ($data as $item)
+                                    @foreach ($data as $review)
                                         <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                             <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
                                                 class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
@@ -644,14 +644,14 @@
                                             <div class="media-body">
                                                 <div class="row mb-1 align-items-center">
                                                     <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                        <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
+                                                        <h4 class="fw-600 mb-0 text-heading fs-14">{{$review->review_name}}</h4>
                                                     </div>
 
                                                     <div class="col-sm-6">
                                                         <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
                                                             <li class="list-inline-item mr-0">
                                                                     @php
-                                                                        $star = $item->review_star;
+                                                                        $star = $review->review_star;
                                                                     @endphp
 
                                                                     @for ($i = 1; $i <= 5; $i++)
@@ -665,17 +665,112 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                    <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
+                                                    <p class="mb-3 m-mb-3 ">{{$review->review_content}}</p>
                                                     <div class="d-flex justify-content-sm-start justify-content-center">
-                                                        <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
-                                                        <a href="javascript:void(0)" onclick="reply(this)"
-                                                            class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                        <p class="mb-0 text-muted fs-13 lh-1 ">{{$review->create_datetime}}</p>
+                                                        <a href="javascript:void(0)" onclick="openReplyModal('{{ $review->id_review }}')" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+  
                                                     </div>
+
+
+                                                    {{-- @if (isset($data))
+                                                    @foreach ($pp_reply->where('id_review', $review->id_review) as $reply)
+                                        <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                            <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                                class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                                style="width: 84px; height: 84px; object-fit: cover;">
+                                            <div class="media-body">
+                                                <div class="row mb-1 align-items-center">
+                                                    <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                        <h4 class="fw-600 mb-0 text-heading fs-14">{{$reply->reply_name}}</h4>
+                                                    </div>
+                                                </div>
+                                                    <p class="mb-3 m-mb-3 ">{{$reply->reply_content}}</p>
+                                                    <div class="d-flex justify-content-sm-start justify-content-center">
+                                                        <p class="mb-0 text-muted fs-13 lh-1 ">{{$reply->create_datetime}}</p>
+                                                        <a href="javascript:void(0)" onclick="openReplyModal('{{ $reply->id_review }}')" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+  
+                                                    </div>
+                                                    @endforeach
+                                    @endif --}}
+                                                    
+
+                                                    <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="replyModalLabel">Reply</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <!-- แบบฟอร์มการตอบกลับ -->
+                                                                    <form action="{{ url('/reply') }}" method="POST" id="form_reply_modal" class="needs-validation" novalidate>
+                                                                        @csrf
+                                                                        <input type="hidden" class="form-control form-control-lg" id="id_review_modal" name="id_review">
+                                                                        <div class="row">
+                                                                            @if (session('user_name'))
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="form-group mb-4">
+                                                                                        <input placeholder="Your Name" class="form-control form-control-pp form-control-pp-lg" value="{{ session('user_name') }}" type="text" name="name_reply" id="name_reply" readonly >
+                                                                                            <div class="invalid-feedback">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            @else
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group mb-4">
+                                                                                    <input placeholder="Your Name" class="form-control form-control-pp form-control-pp-lg"  type="text" name="name_reply" id="name_reply">
+                                                                                        <div class="invalid-feedback">
+                                                                                        </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            @endif
+                                                                            @if (session('user_email'))
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group mb-4">
+                                                                                    <input type="email" placeholder="Email" name="email_reply" id="email_reply" value="{{ session('user_email') }}" readonly class="form-control form-control-pp form-control-pp-lg">
+                                                                                    <div class="colorRed" id="ShowErrorEmail"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            @else
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group mb-4">
+                                                                                    <input type="email" placeholder="Email" name="email_reply" id="email_reply" class="form-control form-control-pp form-control-pp-lg">
+                                                                                    <div class="colorRed" id="ShowErrorEmail"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            @endif
+                                                                        </div>
+                                                                        
+                                                                        @if (session('user_id'))
+                                                                            <div class="form-group col-md-6 px-4">
+                                                                                <input type="hidden" class="form-control form-control-lg "
+                                                                                    id="user_id" name="user_id"
+                                                                                    value="{{ session('user_id') }}">
+                                                                            </div>
+                                                                        @endif           
+                                                                        <div class="form-group ">
+                                                                            <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content_reply" id="content_reply" rows="5"></textarea>
+                                                                                <div class="invalid-feedback">
+                                                                                    Please enter a message in the textarea.
+                                                                                </div>
+                                                                        </div>
+                                                                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_reply"> Submit </button>
+                                                                    
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
 
                                             </div>
                                         </div>
                                         @endforeach
                                     @endif
+                                    
                                     {{-- <div class="comments-section">
                                         @if (isset($data))
                                             @foreach ($data as $item)
@@ -845,6 +940,7 @@
                                             </div>
                                             @endif
                                         </div>
+                                        
                                         @if (session('user_id'))
                                             <div class="form-group col-md-6 px-4">
                                                 <input type="hidden" class="form-control form-control-lg "

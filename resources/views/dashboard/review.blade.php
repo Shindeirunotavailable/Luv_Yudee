@@ -33,8 +33,8 @@
                                 </div>
 
                                 @if (isset($data))
-                                    @foreach ($data['pp_reviews'] as $item)
-                                    {{-- @foreach ($data['pp_reviews']->where('create_by', Auth::id())->unique('id_review')  as $item) --}}
+                                    @foreach ($data['pp_reviews'] as $review)
+                                    {{-- @foreach ($data['pp_reviews']->where('create_by', Auth::id())->unique('id_review')  as $review) --}}
                                         <div class="col-md-12 review-item">
                                             <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
                                                 <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
@@ -43,14 +43,14 @@
                                                 <div class="media-body">
                                                     <div class="row mb-1 align-items-center">
                                                         <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->review_name}}</h4>
+                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$review->review_name}}</h4>
                                                         </div>
 
                                                         <div class="col-sm-6">
                                                             <ul class="list-inline d-flex justify-content-sm-end justify-content-center mb-0">
                                                                 <li class="list-inline-item mr-0">
                                                                         @php
-                                                                            $star = $item->review_star;
+                                                                            $star = $review->review_star;
                                                                         @endphp
 
                                                                         @for ($i = 1; $i <= 5; $i++)
@@ -66,33 +66,119 @@
                                                     </div>
                                                     <div class="row mb-1 align-items-center">
                                                         <div class="col-sm-8 mb-2 mb-sm-0  ">
-                                                            <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p>
+                                                            <p class="mb-3 m-mb-3 ">{{$review->review_content}}</p>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                                @if ($item["review_status"]==true)
+                                                                @if ($review["review_status"]==true)
                                                                     <!-- เพิ่มปุ่มอนุมัติ -->
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" id="approve_review_{{$item->id_review}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
+                                                                    <a href="{{route('change',['id_review'=>$review->id_review])}}" id="approve_review_{{$review->id_review}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
                                                                 @else
-                                                                    <a href="{{route('change',['id_review'=>$item->id_review])}}" id="approve_review_{{$item->id_review}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
+                                                                    <a href="{{route('change',['id_review'=>$review->id_review])}}" id="approve_review_{{$review->id_review}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
                                                                 @endif
                                                                 
                                                                 <!-- เพิ่มปุ่มลบ -->
-                                                                <a href="{{route('deletereview',['id_review'=>$item->id_review])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
+                                                                <a href="{{route('deletereview',['id_review'=>$review->id_review])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                        {{-- <p class="mb-3 m-mb-3 ">{{$item->review_content}}</p> --}}
+                                                        {{-- <p class="mb-3 m-mb-3 ">{{$review->review_content}}</p> --}}
                                                         <div class="d-flex justify-content-sm-start justify-content-center">
-                                                            <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
+                                                            <p class="mb-0 text-muted fs-13 lh-1 ">{{$review->create_datetime}}</p>
                                                             {{-- <a href="#" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a> --}}
                                                         </div>
                                                         
                                                 </div>
                                             </div>
                                         </div>
+                                        @if (isset($data))
+                                        @foreach ($data['pp_reply']->where('id_review', $review->id_review) as $reply)
+                                        <div class="col-md-11 review-item ml-auto">
+                                            <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                                <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                                    class="review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                                    style="width: 84px; height: 84px; object-fit: cover;">
+                                                <div class="media-body">
+                                                    <div class="row mb-1 align-items-center">
+                                                        <div class="col-sm-6 mb-2 mb-sm-0">
+                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$reply->reply_name}}</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-1 align-items-center">
+                                                        <div class="col-sm-8 mb-2 mb-sm-0">
+                                                            <p class="mb-3 m-mb-3 ">{{$reply->reply_content}}</p>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="d-flex justify-content-sm-end justify-content-center mb-0">
+                                                                @if ($reply["reply_status"]==true)
+                                                                    <a href="{{route('changereply',['id_reply'=>$reply->id_reply])}}"
+                                                                        id="approve_review_{{$reply->id_reply}}"
+                                                                        class="btn btn-success btn-sm mr-2 text-white">อนุมัติแล้ว</a>
+                                                                @else
+                                                                    <a href="{{route('changereply',['id_reply'=>$reply->id_reply])}}"
+                                                                        id="approve_review_{{$reply->id_reply}}"
+                                                                        class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
+                                                                @endif
+                                                                <a href="{{route('deletereply',['id_reply'=>$reply->id_reply])}}"
+                                                                    class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-sm-start justify-content-center">
+                                                        <p class="mb-0 text-muted fs-13 lh-1 ">{{$reply->create_datetime}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                        @endif
                                     @endforeach
                                 @endif
+
+
+
+                                {{-- @if (isset($data))
+                                    @foreach ($data['pp_reply'] as $item)
+                                        <div class="col-md-11 review-item ml-auto">
+                                            <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                                <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                                    class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                                    style="width: 84px; height: 84px; object-fit: cover;">
+                                                <div class="media-body">
+                                                    <div class="row mb-1 align-items-center">
+                                                        <div class="col-sm-6 mb-2 mb-sm-0  ">
+                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->reply_name}}</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-1 align-items-center">
+                                                        <div class="col-sm-8 mb-2 mb-sm-0  ">
+                                                            <p class="mb-3 m-mb-3 ">{{$item->reply_content}}</p>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="d-flex justify-content-sm-end justify-content-center mb-0">
+                                                                @if ($item["reply_status"]==true)
+                                                                    <!-- เพิ่มปุ่มอนุมัติ -->
+                                                                    <a href="{{route('changereply',['id_reply'=>$item->id_reply])}}" id="approve_review_{{$item->id_reply}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
+                                                                @else
+                                                                    <a href="{{route('changereply',['id_reply'=>$item->id_reply])}}" id="approve_review_{{$item->id_reply}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
+                                                                @endif
+                                                                
+                                                                <!-- เพิ่มปุ่มลบ -->
+                                                                <a href="{{route('deletereply',['id_reply'=>$item->id_reply])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        <div class="d-flex justify-content-sm-start justify-content-center">
+                                                            <p class="mb-0 text-muted fs-13 lh-1 ">{{$item->create_datetime}}</p>
+                                                        </div>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif --}}
+
+                               
                                 {{-- {{$data['pp_reviews']->links()}} --}}
                                 
                                 {{-- <div class="col-md-12 ">
