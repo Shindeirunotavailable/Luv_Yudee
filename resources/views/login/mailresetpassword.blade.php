@@ -83,7 +83,7 @@
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            background-color: #007bff; /* สีน้ำเงิน */
+            background-color: #0071bc; /* สีน้ำเงิน */
             color: #ffffff; /* สีขาว */
             font-size: 16px;
             cursor: pointer;
@@ -91,7 +91,7 @@
         }
 
         button.reset-btn:hover {
-            background-color: #0056b3; /* เพิ่มเติมเข้มขึ้นเล็กน้อยเมื่อ hover */
+            background-color: #015b97; /* เพิ่มเติมเข้มขึ้นเล็กน้อยเมื่อ hover */
         }
 
         .img{

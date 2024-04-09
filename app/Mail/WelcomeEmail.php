@@ -12,15 +12,19 @@ class WelcomeEmail extends Mailable
     use Queueable, SerializesModels;
 
     public $username;  // เพิ่ม property นี้
+    public $token;  // เพิ่ม property นี้
+
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($username) // แก้ constructor เพิ่ม $username
+    public function __construct($username, $token) // แก้ constructor เพิ่ม $username
     {
         $this->username = $username; // กำหนดค่าให้กับ property
+        $this->token = $token; // เพิ่มการกำหนดค่าให้กับ property token
+
     }
 
     /**

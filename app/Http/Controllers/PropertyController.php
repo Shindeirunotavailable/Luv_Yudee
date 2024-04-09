@@ -17,6 +17,7 @@ use App\Models\Province;
 use App\Models\Amphure;
 use App\Models\District;
 use App\Models\Reviews;
+use App\Models\Reply;
 use App\Models\profile;
 
 class PropertyController extends Controller
@@ -27,6 +28,7 @@ class PropertyController extends Controller
     public function databaseconnect(Request $request)
     {
         $pp_reviews=DB::table('pp_reviews')->get();
+        $pp_reply=DB::table('pp_reply')->get();
         $profiles=DB::table('profiles')->get();
         $id = Auth::id();
 
@@ -46,6 +48,7 @@ class PropertyController extends Controller
 
         $this->data['media'] = Media::all();
         $this->data['pp_reviews'] = Reviews::all();
+        $this->data['pp_reply'] = Reply::all();
         // $this->data['pp_reviews'] = Reviews::paginate(5);
         $this->data['profiles'] = profile::all();
 

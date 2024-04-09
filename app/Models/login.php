@@ -10,8 +10,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class login extends Authenticatable
 {
     protected $table = 'users';
-    const CREATED_AT = 'created_datetime';
-    const UPDATED_AT = 'updated_datetime';
+    // const CREATED_AT = 'created_datetime';
+    // const UPDATED_AT = 'updated_datetime';
 
 
 }

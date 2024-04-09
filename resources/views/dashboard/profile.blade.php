@@ -63,7 +63,8 @@
                                                                     id="user_id" name="user_id"
                                                                     value="{{ session('user_id') }}">
                                                             </div>
-                                                        @endif                                                
+                                                        @endif              
+                                                        <input type="hidden" class="form-control " id="nameUser" name="nameUser">      
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
                                                                 <label>First name</label>
