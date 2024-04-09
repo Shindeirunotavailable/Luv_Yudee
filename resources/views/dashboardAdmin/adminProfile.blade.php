@@ -18,11 +18,17 @@
                         <div class="mbp_pagination_comments">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
+                                    {{-- <div class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
                                         <h6 class="fw-600 fs-17 mb15">profiles</h6>
+                                    </div> --}}
+                                    <div class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
+                                        <h5 class="font-weight-600">profiles</h5>
+                                        <div class="search_area">
+                                            <input type="text" class="form-control form-control-text" id="searchUser" placeholder="search User"><span>
+                                            <i class="fa-solid fa-magnifying-glass"></i></span>
+                                        </div>                                    
                                     </div>
                                 </div>
-
                                 @if (isset($data))
                                     @foreach ($data['profiles'] as $item)
                                         <div class="col-md-12 review-item">

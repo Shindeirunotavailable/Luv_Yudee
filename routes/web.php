@@ -51,6 +51,9 @@ Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  
 route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
 route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
 route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
+
+route::get('/verify-email/{token}','App\Http\Controllers\LoginController@verifyEmail')->name('verify.email'); // ส่งค่า proflie
+
  // ----------------------------------- dashboard admin ------------------------------------
 
  route::any('test','App\Http\Controllers\LoginController@test')->middleware('IsAdmin')->name('test'); // ส่งค่า proflie

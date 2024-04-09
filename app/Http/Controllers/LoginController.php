@@ -115,60 +115,144 @@ class LoginController extends Controller
 
 
 
-    public function register(Request $request)
-    {
-        $this->validate($request, [
-            'modal_email' => 'required',
-            'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
-                $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
-                    'secret' => config('services.recaptcha.secret_key'),
-                    'response' => $value,
-                    'remoteip' => \request()->ip()
-                ]);
-                $g_recaptcha_result = $g_recaptcha->json();
-                if (!$g_recaptcha_result['success']) {
-                    $fail("The {$attribute} is invalid.");
-                }
-            },]
-        ]);
-        // รับข้อมูลจาก request
-        $email = $request->input('modal_email');
-        $password = $request->input('modal_password');
-        $username = $request->input('modal_name');
-        $existingUser = createAccount::Getemail($email);
-        if ($existingUser) {
-            // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
-            if ($existingUser->status >= 1) {
-                $errorMessages = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
-                return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+    // public function register(Request $request)
+    // {
+    //     //recaptcha
+    //     $this->validate($request, [
+    //         'modal_email' => 'required',
+    //         'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
+    //             $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
+    //                 'secret' => config('services.recaptcha.secret_key'),
+    //                 'response' => $value,
+    //                 'remoteip' => \request()->ip()
+    //             ]);
+    //             $g_recaptcha_result = $g_recaptcha->json();
+    //             if (!$g_recaptcha_result['success']) {
+    //                 $fail("The {$attribute} is invalid.");
+    //             }
+    //         },]
+    //     ]);
+        
+    //     // รับข้อมูลจาก request
+    //     $email = $request->input('modal_email');
+    //     $password = $request->input('modal_password');
+    //     $username = $request->input('modal_name');
+    //     $existingUser = createAccount::Getemail($email);
+    //     if ($existingUser) {
+    //         // ถ้ามีผู้ใช้นี้อยู่ในระบบและ status เป็น 1,2
+    //         if ($existingUser->status >= 1) {
+    //             $errorMessages = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+    //             return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
+    //         }
+    //     } else {
+    //         // บันทึกข้อมูล
+    //         $data = [
+    //             'email' => $email,
+    //             'name' => $username,
+    //             'password' => bcrypt($password),
+    //             'create_datetime' => date('Y-m-d H:i:s'),
+    //             'update_datetime' => date('Y-m-d H:i:s'),
+    //         ];
+    //         $userId = DB::table('users')->insertGetId($data); // เพิ่มและรับค่า id ที่เพิ่มลงในฐานข้อมูล
+
+    //         $profileData = [
+    //             'email' => $email,
+    //             'name' => $username,
+    //             'create_by' => $userId, // ใช้ id ของผู้ใช้ที่เพิ่มไปลงในฐานข้อมูล
+    //             'create_datetime' => date('Y-m-d H:i:s'),
+    //             'update_datetime' => date('Y-m-d H:i:s'),
+    //         ];
+    //         DB::table('profiles')->insert($profileData); 
+    //         Mail::to($email)->send(new WelcomeEmail($username));
+    //         $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
+    //         return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+    //     }
+    // }
+
+
+public function register(Request $request)
+{
+    //recaptcha
+    $this->validate($request, [
+        'modal_email' => 'required',
+        'g-recaptcha-response' => ['required', function ($attribute, $value, $fail) {
+            $g_recaptcha = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
+                'secret' => config('services.recaptcha.secret_key'),
+                'response' => $value,
+                'remoteip' => \request()->ip()
+            ]);
+            $g_recaptcha_result = $g_recaptcha->json();
+            if (!$g_recaptcha_result['success']) {
+                $fail("The {$attribute} is invalid.");
             }
-        } else {
-            // บันทึกข้อมูล
-            $data = [
-                'email' => $email,
-                'name' => $username,
-                'password' => bcrypt($password),
-                'create_datetime' => date('Y-m-d H:i:s'),
-                'update_datetime' => date('Y-m-d H:i:s'),
-            ];
-            $userId = DB::table('users')->insertGetId($data); // เพิ่มและรับค่า id ที่เพิ่มลงในฐานข้อมูล
+        },]
+    ]);
 
-            $profileData = [
-                'email' => $email,
-                'name' => $username,
-                'create_by' => $userId, // ใช้ id ของผู้ใช้ที่เพิ่มไปลงในฐานข้อมูล
-
-                'create_datetime' => date('Y-m-d H:i:s'),
-                'update_datetime' => date('Y-m-d H:i:s'),
-            ];
-            // DB::table('users')->insert($data);          
-            DB::table('profiles')->insert($profileData); 
-            // Mail::to($email)->send(new WelcomeEmail());
-            Mail::to($email)->send(new WelcomeEmail($username));
-            $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
-            return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+    // รับข้อมูลจาก request
+    $email = $request->input('modal_email');
+    $password = $request->input('modal_password');
+    $username = $request->input('modal_name');
+    $existingUser = createAccount::Getemail($email);
+    if ($existingUser) {
+        if ($existingUser->status >= 1) {
+            $errorMessages = 'มีผู้ใช้คนนี้อยู่ในระบบอยู่แล้ว';
+            return response()->json(['success' => false, 'messageError' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
         }
+    } else {
+        // สร้างและเก็บ token สำหรับการยืนยันอีเมล์
+        $token = Str::random(60);
+        // บันทึกข้อมูลผู้ใช้
+        $data = [
+            'email' => $email,
+            'name' => $username,
+            'password' => bcrypt($password),
+            'create_datetime' => now(),
+            'update_datetime' => now(),
+            'remember_token' => $token, // เพิ่มการกำหนดค่า token
+        ];
+        $userId = DB::table('users')->insertGetId($data); // เพิ่มและรับค่า id ที่เพิ่มลงในฐานข้อมูล
+
+        // บันทึกข้อมูลโปรไฟล์
+        $profileData = [
+            'email' => $email,
+            'name' => $username,
+            'create_by' => $userId,
+            'create_datetime' => now(),
+            'update_datetime' => now(),
+        ];
+        DB::table('profiles')->insert($profileData);
+        // ส่งอีเมล์ยืนยัน
+        Mail::to($email)->send(new WelcomeEmail($username, $token));
+
+        $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
+        return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
     }
+}
+
+
+public function verifyEmail($token)
+{
+    // ค้นหาข้อมูลผู้ใช้จาก token
+    $user = login::where('remember_token', $token)->first();
+    
+    if ($user) {
+        // อัปเดตสถานะของผู้ใช้เป็น 2
+        $user->status = 2;
+        $user->update_datetime = now(); // อัปเดตเวลาอัปเดตเป็นปัจจุบัน
+        $user->save();
+    
+        // ทำสิ่งที่คุณต้องการหลังจากการยืนยันอีเมล์ เช่น redirect หน้าไปยังหน้าแรก
+         return redirect()->route('login')->with('success', 'ยืนยันอีเมล์สำเร็จแล้ว');
+
+    } else {
+        // หากไม่พบผู้ใช้ ทำสิ่งที่คุณต้องการ เช่น redirect ไปยังหน้าที่ต้องการ
+        return redirect()->route('login')->with('error', 'ไม่สามารถยืนยันอีเมล์ได้');
+
+    }
+}
+
+
+
     // ------------------------------------- ลืมรหัสผ่าน -------------------------------------------------
 
 
@@ -464,8 +548,16 @@ public function upload(Request $request)
         $instagram = $request->input('instagram');
         $pinterest = $request->input('pinterest');
         $facebook = $request->input('facebook');
+        $fullname =$request->input('nameUser');
 
     $profile = DB::table('profiles')->where('email', $email)->first();
+
+    if($profile){
+        DB::table('users')->where('email', $email)->update([
+            'name' => $fullname,
+        ]);
+    }
+
     if ($profile) {
 
         // if ($request->hasFile('imageuser')) {
