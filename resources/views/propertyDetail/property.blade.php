@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
 
-    <main>
+    <main >
 
             <section class="section-pp">
                 <div class="container-pp-fluid">
@@ -125,7 +125,7 @@
                                             <div class="col-md-6 p-1">
                                                 <div class="item item-size-4-3">
                                                     <div class="card p-0 hover-zoom-in">
-                                                        <img src="{{ asset('/assets/images/noimg.jpg') }}" alt="No Image" class="card-img-pp">
+                                                        <img src="{{ asset('/assets/images/noimg.jpg') }}" alt="No Image" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -1727,5 +1727,8 @@
             </div>
         </div>
     </main>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+
 @endsection
+

@@ -47,3 +47,7 @@ var swiper = new Swiper(".swipersss", {
         },
       }
   });
+
+  $(window).on("load", function() {
+    $(".loader-wrapper").fadeOut("slow");
+});
