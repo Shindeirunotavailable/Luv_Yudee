@@ -692,8 +692,31 @@
   
                                                     </div>
                                                     @endforeach
-                                    @endif --}}
+                                    @endif
+                                                     --}}
                                                     
+                                                     @if (isset($data))
+                                                    @foreach ($pp_reply->where('id_review', $review->id_review) as $reply)
+                                                    <br>
+                                                        <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
+                                                            <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
+                                                                class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
+                                                                style="width: 84px; height: 84px; object-fit: cover;">
+                                                            <div class="media-body">
+                                                                <div class="row mb-1 align-items-center">
+                                                                    <div class="col-sm-6 mb-2 mb-sm-0">
+                                                                        <h4 class="fw-600 mb-0 text-heading fs-14">{{$reply->reply_name}}</h4>
+                                                                    </div>
+                                                                </div>
+                                                                <p class="mb-3 m-mb-3 ">{{$reply->reply_content}}</p>
+                                                                <div class="d-flex justify-content-sm-start justify-content-center">
+                                                                    <p class="mb-0 text-muted fs-13 lh-1 ">{{$reply->create_datetime}}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+
 
                                                     <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="replyModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">

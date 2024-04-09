@@ -69,6 +69,7 @@ class HomeController extends Controller
         $pp_reply = DB::table('pp_reply')->get();
         // dd($provinces);
         $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
+        $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
         return view(".propertyDetail.property")->with([
             'blogs' => $blogs,
             'provinces' => $provinces,
@@ -83,7 +84,7 @@ class HomeController extends Controller
         // return view(".propertyDetail.property")->with('data',$pp_reviews);
 
     }
-
+    
 
 
     public function home_email(Request $request)

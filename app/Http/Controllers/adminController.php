@@ -13,13 +13,14 @@ use App\Models\Province;
 use App\Models\Amphure;
 use App\Models\District;
 use App\Models\Reviews;
-
+use App\Models\Reply;
 
 class adminController extends Controller
 {
     public function indexadmin(Request $request)
     {
         $pp_reviews=DB::table('pp_reviews')->get();
+        $pp_reply=DB::table('pp_reply')->get();
         $profiles=DB::table('profiles')->get();
         $id_property = $request['id_property'];
         $property = Property::property($id_property);
@@ -32,6 +33,7 @@ class adminController extends Controller
         $this->data['amenities'] = Amenities::all();
         $this->data['media'] = Media::all();
         $this->data['pp_reviews'] = Reviews::all();
+        $this->data['pp_reply'] = Reply::all();
         // $this->data['pp_reviews'] = Reviews::paginate(5);
         $this->data['profiles'] = profile::all();
         $this->data['property'] = $property;
