@@ -11,13 +11,24 @@ $('#profileForm').on('submit', function(event) {
 
 
   $('#profileForm').submit(function (event) {
-    event.preventDefault(); // ป้องกันการส่งฟอร์ม
     var firstNameforms = $('#firstName');
     var lastNameforms = $('#lastName');
     var phoneforms = $('#phone');
     var mobileform = $('#mobile');
     var emailfrom = $('#email');
-  
+    
+    if(!firstNameforms.val() &&!lastNameforms.val() && !phoneforms.val() && !mobileform.val() && !emailfrom.val()   ){
+      firstNameforms.addClass('is-invalid');
+      lastNameforms.addClass('is-invalid');
+      phoneforms.addClass('is-invalid');
+      mobileform.addClass('is-invalid');
+      emailfrom.addClass('is-invalid');
+
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
     if( !firstNameforms.val()  ){
       firstNameforms.addClass('is-invalid');
       event.preventDefault();
@@ -250,14 +261,14 @@ function readURL(input) {
   if (input.files && input.files[0]) {
       var reader = new FileReader();
       reader.onload = function(e) {
-          $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-          $('#imagePreview').hide();
-          $('#imagePreview').fadeIn(650);
+          $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
       }
       reader.readAsDataURL(input.files[0]);
+  } else {
+      $('#imagePreview').css('background-image', 'url(https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg)');
   }
 }
-$("#imageUpload").change(function() {
+$("#imageuser").change(function() {
   readURL(this);
 });
 

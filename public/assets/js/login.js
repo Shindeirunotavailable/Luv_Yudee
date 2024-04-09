@@ -154,8 +154,7 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
 
   
 // รับ function จากหน้าสมัคร//
-// $('body').on('click', '#forgetPassword', function() {
-//         var forms = $('.needs-validation');
+  //         var forms = $('.needs-validation');
 //         $('.modal-body form').submit(function(event) {
 //           onChange(event);
 //         });
