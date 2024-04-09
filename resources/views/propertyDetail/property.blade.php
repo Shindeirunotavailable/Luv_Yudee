@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+
     <main>
 
             <section class="section-pp">
@@ -110,7 +111,7 @@
                                                             @if ($count >= 3  && $totalMedias > 4 )
                                                                     <div class="card-img-pp-overlay  d-flex flex-column align-items-center justify-content-center hover-image ">
                                                                         <p class="fs-48 font-weight-600 text-dark lh-1 mb-4">+{{ $remainingMediasCount }}</p>
-                                                                        <p class="fs-16 font-weight-bold text-dark lh-1625 text-uppercase"> View more </p>
+                                                                        <p class="fs-16 font-weight-bold text-dark lh-1625 text-uppercase"> View more </p>{{-- ดูเพิ่มเติม --}}
                                                                     </div>
                                                             @endif
                                                         </div>
@@ -149,13 +150,19 @@
                     <nav aria-label="breadcrumb ">
                         <ol class="breadcrumb pb-0 pl-0 bg-white">
                             <li class="breadcrumb-item fs-12 letter-spacing-087">
-                                <a href=".">Home</a>
+                                <a href="{{url("home")}}">Home</a> {{-- หน้าหลัก --}}
                             </li>
                             <li class="breadcrumb-item fs-12 letter-spacing-087">
-                                <a href="javascript:void(0)">Listing</a>
+                                <a href="{{url("search_result")}}">Listing</a> {{-- รายการ --}}
                             </li>
-                            <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
-                                Boulevard</li>
+                            @foreach ($blogs as $blog)
+                                @php
+                                $info = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                                @endphp
+                                <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">
+                                    {{$info->property_title}}</li>
+                                @break
+                            @endforeach
                         </ol>
                     </nav>
                 </div>
@@ -172,12 +179,13 @@
                     <article class="col-lg-8  pr-xl-7 mt-5">
                         <section class="m-top border-bottom-pp">
                             <ul class="list-inline d-sm-flex align-items-sm-center">
-                                <li class="list-inline-item badge-pp badge-pp-orange">Featured</li>
-                                <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li>
-                                <li class="list-inline-item mr-2 mt-2 mt-sm-0"><i class="fa-regular fa-clock mr-1"></i>2months
-                                    ago
+                                <li class="list-inline-item badge-pp badge-pp-orange">Featured</li> {{-- โดดเด่น --}}
+                                <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li> {{-- สำหรับขาย --}}
+                                <li class="list-inline-item mr-2 mt-2 mt-sm-0">
+                                    <i class="fa-regular fa-clock mr-1"></i>2 months ago {{-- 2 เดือนก่อน --}}
                                 </li>
-                                <li class="list-inline-item mt-2 mt-sm-0"><i class="fa-regular fa-eye mr-1"></i>1039views
+                                <li class="list-inline-item mt-2 mt-sm-0">
+                                    <i class="fa-regular fa-eye mr-1"></i>1039views {{-- จำนวนการดู 1039 ครั้ง --}}
                                 </li>
                             </ul>
 
@@ -222,14 +230,14 @@
                                     <p class="mb-0 text-muted">{{ isset($info->property_psm) ? '฿ ' . $info->property_psm  . ' /SqFt' : ' N/A' }}</p>
                                 </div>
                             </div>
-                            <h2 class="fw-600 fs-22 text-heading font-bold mb-0">Description</h2>
+                            <h2 class="fw-600 fs-22 text-heading font-bold mb-0">Description</h2> {{-- คำอธิบาย --}}
                             <p class="mb-6 lh-md pt-2 ">
                                 {!! isset($info->property_description) && $info->property_description !== 'null' ? json_decode($info->property_description) : ' N/A' !!}
                             </p>
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Facts and Features</h2>
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Facts and Features</h2> {{-- คุณสมบัติ --}}
                             <div class="row pt-3">
                                 <div class="col-lg-3 col-6 mt-4 ">
                                     <div class="media ">
@@ -238,7 +246,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                Type
+                                                Type {{-- ชนิด --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 @switch($info->property_category)
@@ -267,7 +275,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                YEAR BUILT
+                                                YEAR BUILT {{-- ปีที่สร้าง --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}
@@ -283,7 +291,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                Floor
+                                                Floor {{-- ชั้น --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_floor_amount) ? $info->property_floor_amount : ' N/A' }}
@@ -299,7 +307,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                BATHROOMS
+                                                BATHROOMS {{-- ห้องน้ำ --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}
@@ -315,7 +323,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                BEDROOMS
+                                                BEDROOMS {{-- ห้องนอน --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}
@@ -331,7 +339,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                SQFT
+                                                SQFT {{-- ตารางฟุต --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_interior_size) ? $info->property_interior_size : ' N/A' }}
@@ -347,7 +355,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                GARAGE
+                                                GARAGE {{-- โรงรถ --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}
@@ -363,7 +371,7 @@
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                STATUS
+                                                STATUS {{-- สถานะ --}}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 @switch($info->property_category)
@@ -384,7 +392,7 @@
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Additional Details</h2>
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Additional Details {{-- รายละเอียดเพิ่มเติม --}}</h2>
                             <div class="row pt-2">
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Property ID</dt>
@@ -392,7 +400,7 @@
                                 </dl> --}}
 
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Price</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Price</dt> {{-- ราคา --}}
                                     <dd>{{ isset($info->property_price) ? '$ ' . $info->property_price : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
@@ -400,7 +408,7 @@
                                     <dd>Apartment, bar, cafe, villa</dd>
                                 </dl> --}}
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Property status</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Property status</dt> {{-- สถานะทรัพย์สิน --}}
                                     <dd>
                                         @switch($info->property_category)
                                             @case(1)
@@ -414,15 +422,15 @@
                                 </dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Rooms</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Rooms</dt> {{-- ห้องทั้งหมด --}}
                                     <dd>{{ isset($info->property_rooms) ? $info->property_rooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Bedrooms</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Bedrooms</dt> {{-- ห้องนอน --}}
                                     <dd>{{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Size</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Size</dt> {{-- ขนาด --}}
                                     <dd>{{ isset($info->property_interior_size) ? $info->property_interior_size . ' SqFt' : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
@@ -430,19 +438,19 @@
                                     <dd>2</dd>
                                 </dl> --}}
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Garage</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Garage</dt> {{-- โรงรถ --}}
                                     <dd>{{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt> {{-- ห้องน้ำ --}}
                                     <dd>{{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Garage size</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Garage size</dt> {{-- ขนาดโรงรถ --}}
                                     <dd>{{ isset($info->property_garage_size) ? $info->property_garage_size . ' SqFt' : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Year build</dt>
+                                    <dt class="w-110px fs-14  text-heading pr-2">Year build</dt> {{-- ปีที่สร้าง --}}
                                     <dd>{{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="offset-sm-6 col-sm-6 mb-0 d-flex">
@@ -456,7 +464,7 @@
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp ">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2>
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2> {{-- สิ่งอำนวยความสะดวก --}}
                             <ul class="list-unstyled mb-0 row pt-2 ">
 
                                 @foreach($pp_amenities as $amenity)
@@ -476,7 +484,7 @@
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Virtual Tour</h4>
+                            <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Virtual Tour</h4> {{-- ทัวร์เสมือนจริง --}}
                             @foreach ($blogs as $blog)
                                 @php
                                     $videoMedias = $blogs->where('id_property', $id_property)->where('media_file_type', 2);
@@ -496,7 +504,7 @@
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Location</h2>
+                            <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Location</h2> {{-- ที่ตั้ง --}}
                             <div class="d-flex justify-content-center ">
                                 <input type="text" class="form-control hidden" name="latitude" id="latitudeInput" placeholder="Enter latitude"  value="{{($info->property_latitude) ? $info->property_latitude : ""}}">
                                 <input type="text" class="form-control hidden" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{($info->property_longitude) ? $info->property_longitude : ""}}">
@@ -504,6 +512,12 @@
                             </div>
                         </section>
 
+
+
+
+
+
+                        {{-- เอาของpodมาวาง --}}
                         <section class="pt-6 section-pp">
                             <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
                             <div class="card border-0 ">
@@ -924,6 +938,15 @@
                                 </div>
                             </div>
                         </section>
+                        {{-- เอาของpodมาวาง --}}
+
+
+
+
+
+
+
+
 
                     </article>
                     @break
@@ -1089,83 +1112,83 @@
                             <div class="pro-city-slider position-relative ">
                                 <div class="swipersss swiper-initialized swiper-horizontal swiper-pointer swiper-backface-hidden">
                                     <div class="swiper-wrapper pb-20">
-                                        @foreach ($blogs as $blog)
-                                            @php
-                                            $info = $blogs->where('id_property', $id_property)->unique('id_media')->first();
-                                            @endphp
 
-                                            <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
-                                                <div class="card box-shadow-lightblue mb-30">
-                                                    <div class="card-body p-0">
-                                                        <div class="img-block ">
-                                                            <div class="block-text text-center">
-                                                                <b class="font-size-13">FEATURED</b>
+                                        @foreach ($blogs->where('property_approve', 1)->unique('id_property') as $info)
+                                            @if($info->id_property != $id_property)
+                                                <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
+                                                    <div class="card box-shadow-lightblue mb-30">
+                                                        <div class="card-body p-0">
+                                                            <div class="img-block ">
+                                                                <div class="block-text text-center">
+                                                                    <b class="font-size-13">FEATURED</b>
+                                                                </div>
+                                                                <div class="text-block text-center">
+                                                                    <a href="javascript:void(0)" class="font-weight-500">{{ isset($info->property_price) ? '฿ ' . $info->property_price : ' N/A' }}</a>
+                                                                </div>
+                                                                <img src="{{ $info->media_property }}" alt="listings" class="card-img-top img-sell">
                                                             </div>
-                                                            <div class="text-block text-center">
-                                                                <a href="javascript:void(0)" class="font-weight-500">{{ isset($info->property_price) ? '฿ ' . $info->property_price : ' N/A' }}</a>
+                                                            <div class="p-10">
+                                                                <h6 class="card-title"><a href="{{ '?id_property=' . $info->id_property }}">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</a></h6>
+                                                                <p class="list-text">
+                                                                    @if(is_null($info->property_provinces))
+                                                                        <a class="text-muted">N/A</a>
+                                                                    @endif
+
+                                                                    @foreach($provinces as $province)
+                                                                        @if($info->property_provinces == $province->id)
+                                                                        <a class="text-muted">{{ $province->name_th }}</a>
+                                                                        @endif
+                                                                    @endforeach
+
+                                                                    @foreach($amphures as $amphure)
+                                                                        @if($info->property_amphures == $amphure->id)
+                                                                        <a class="text-muted">{{ $amphure->name_th }}</a>
+                                                                        @endif
+                                                                    @endforeach
+
+                                                                    @foreach($districts as $district)
+                                                                        @if($info->property_districts == $district->id)
+                                                                        <a class="text-muted">{{ $district->name_th }}</a>
+
+                                                                        @endif
+                                                                    @endforeach
+
+                                                                    @foreach($districts as $district)
+                                                                        @if($info->property_districts == $district->id)
+                                                                        <a class="text-muted">{{ $district->zip_code }}</a>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </p>
+                                                                <div class="d-flex align-items-center">
+                                                                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i>
+                                                                        {{ isset($info->property_bedrooms) ? $info->property_bedrooms . ' bed' : ' N/A' }}
+                                                                    </a>
+                                                                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i>
+                                                                        {{ isset($info->property_bathrooms) ? $info->property_bathrooms . ' bath' : ' N/A' }}
+                                                                    </a>
+                                                                    <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i>
+                                                                        {{ isset($info->property_interior_size) ? $info->property_interior_size . ' sqft' : ' N/A' }}
+                                                                    </a>
+                                                                </div>
                                                             </div>
-                                                            <img src="{{ $info->media_property }}" alt="listings" class="card-img-top img-sell">
                                                         </div>
-                                                        <div class="p-10">
-                                                            <h6 class="card-title"><a href="javascript:void(0)">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</a></h6>
-                                                            <p class="list-text">
-                                                                @if(is_null($info->property_provinces))
-                                                                    <a class="text-muted">N/A</a>
-                                                                @endif
-
-                                                                @foreach($provinces as $province)
-                                                                    @if($info->property_provinces == $province->id)
-                                                                    <a class="text-muted">{{ $province->name_th }}</a>
-                                                                    @endif
-                                                                @endforeach
-
-                                                                @foreach($amphures as $amphure)
-                                                                    @if($info->property_amphures == $amphure->id)
-                                                                    <a class="text-muted">{{ $amphure->name_th }}</a>
-                                                                    @endif
-                                                                @endforeach
-
-                                                                @foreach($districts as $district)
-                                                                    @if($info->property_districts == $district->id)
-                                                                    <a class="text-muted">{{ $district->name_th }}</a>
-
-                                                                    @endif
-                                                                @endforeach
-
-                                                                @foreach($districts as $district)
-                                                                    @if($info->property_districts == $district->id)
-                                                                    <a class="text-muted">{{ $district->zip_code }}</a>
-                                                                    @endif
-                                                                @endforeach
-                                                            </p>
-                                                            <div class="d-flex align-items-center">
-                                                                <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i>
-                                                                    {{ isset($info->property_bedrooms) ? $info->property_bedrooms . ' bed' : ' N/A' }}
-                                                                </a>
-                                                                <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i>
-                                                                    {{ isset($info->property_bathrooms) ? $info->property_bathrooms . ' bath' : ' N/A' }}
-                                                                </a>
-                                                                <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i>
-                                                                    {{ isset($info->property_interior_size) ? $info->property_interior_size . ' sqft' : ' N/A' }}
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-transparent">
-                                                        <div class="d-flex ">
-                                                            <div class="flex-grow-1">
-                                                                <label class="label-700">For Rent</label>
-                                                            </div>
-                                                            <div class="flex-row-reverse">
-                                                                <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
-                                                                <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
-                                                                <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
+                                                        <div class="card-footer bg-transparent">
+                                                            <div class="d-flex ">
+                                                                <div class="flex-grow-1">
+                                                                    <label class="label-700">For Rent</label>
+                                                                </div>
+                                                                <div class="flex-row-reverse">
+                                                                    <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                                    <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                                    <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @endif
                                         @endforeach
+
                                         {{-- <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
                                             <div class="card box-shadow-lightblue mb-30">
                                                 <div class="card-body p-0">
@@ -1452,7 +1475,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
                                             <div class="card box-shadow-lightblue mb-30">
@@ -1534,7 +1557,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
 
                                     </div>
                                     <div class="swiper-pagination"></div>
