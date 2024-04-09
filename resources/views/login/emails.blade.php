@@ -77,22 +77,6 @@
             color: #007bff; /* สีน้ำเงิน */
         }
 
-        button.reset-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff; /* สีน้ำเงิน */
-            color: #ffffff; /* สีขาว */
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button.reset-btn:hover {
-            background-color: #0056b3; /* เพิ่มเติมเข้มขึ้นเล็กน้อยเมื่อ hover */
-        }
 
         .img{
             width: 50%;
@@ -101,6 +85,22 @@
 
         .pt-40{
             padding-top: 40px;
+        }
+
+        .confirmation-button {
+            display: inline-block;
+            background-color: #0071bc; /* สีน้ำเงิน */
+            color: white !important;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .centered-link {
+            margin-left: 35%;
         }
 
     </style>
@@ -119,6 +119,13 @@
             โปรดอย่าลังเลที่จะติดต่อทีมงานของเราหรือใช้แบบฟอร์มติดต่อที่มีอยู่บนเว็บไซต์ของเรา</p>
         <p>อีกครั้งขอบคุณที่เลือกใช้ Yuudee สำหรับความต้องการด้านอสังหาริมทรัพย์ของคุณ
             เรายินดีที่จะช่วยคุณให้ได้บ้านในฝันของคุณ</p>
+
+            <div class="centered-link">
+                <a href="{{ route('verify.email', $token) }}" class="confirmation-button" >คลิกที่นี่เพื่อยืนยันอีเมล์ของคุณ</a>
+
+                 {{-- <a class="confirmation-button" href="{{ route('verify.email', $token) }}">คลิกที่นี่เพื่อยืนยันอีเมล์ของคุณ</a> --}}
+            </div>
+
         <p class="signature">ขอแสดงความนับถือ<br>ทีม Yuudee</p>
         <footer>
             <p>อีเมลฉบับนี้เป็นการแจ้งข้อมูลอัตโนมัติ กรุณาอย่าตอบกลับอีเมลนี้</p>

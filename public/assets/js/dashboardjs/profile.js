@@ -2,12 +2,21 @@
       
 $('#profileForm').on('submit', function(event) {
     var forms = $('.needs-validation');
- 
+
+    var fname = $('#firstName').val();
+    var lname = $('#lastName').val();
+    var fullName = fname + " " + lname;
+    $('#nameUser').val(fullName);
+
     ContactinFormation(event);
     passwordCheck(event);
     validSession(event);
 
   });
+
+  
+
+
 
 
   $('#profileForm').submit(function (event) {
@@ -273,6 +282,26 @@ $("#imageuser").change(function() {
 });
 
 
+$(document).ready(function(){
+  $('#searchUser').on('keyup', function(){
+      var searchText = $(this).val().toLowerCase();
+      $('.review-item').each(function(){
+          var name = $(this).find('.text-heading').text().toLowerCase();
+          var email = $(this).find('.font-700:contains('+searchText+')').text().toLowerCase();
+          var phone = $(this).find('.font-700:contains('+searchText+')').text().toLowerCase();
+          if(name.includes(searchText) || email.includes(searchText) || phone.includes(searchText)){
+              $(this).show();
+          }else{
+              $(this).hide();
+          }
+      });
+  });
+});
+
+
+
+
+
 //////////////////////////////////////////////////// test js ///////////////////////////////////////////////
 
 // $(".trash-delete").click(function() {
@@ -375,3 +404,4 @@ $('.del-review').click(function (event) {
 //   });
 // });
 
+ 
