@@ -20,12 +20,9 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">Photo</h4>
-                                                            <label>Upload your profile photo.</label>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold"> {{ GoogleTranslate::trans('รูปภาพ', session()->get('locale')) }}</h4>
+                                                            <label>{{ GoogleTranslate::trans('อัพโหลดรูปภาพโปรไฟล์ของคุณ', session()->get('locale')) }}</label>
                                                         </div>
-
-
-
                                                         <div class="avatar-upload">
                                                             <div class="avatar-edit">
                                                                 <input type='file' id="imageuser" accept=".png, .jpg, .jpeg"  name="imageuser">
@@ -54,8 +51,7 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">Contact information</h4>
-                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('ข้อมูลติดต่อ', session()->get('locale')) }}</h4>
                                                         </div>
                                                         @if (session('user_id'))
                                                             <div class="form-group col-md-6 px-4">
@@ -67,28 +63,28 @@
                                                         <input type="hidden" class="form-control " id="nameUser" name="nameUser">      
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
-                                                                <label>First name</label>
+                                                                <label>{{ GoogleTranslate::trans('ชื่อ', session()->get('locale')) }}</label>
                                                                 <input type="text" class="form-control " id="firstName" name="firstName" value={{$item->name}}>                                                
                                                             </div>
                                                             <div class="col-12 col-lg-6">
-                                                                <label>Last name</label>
+                                                                <label>{{ GoogleTranslate::trans('นามสุกล', session()->get('locale')) }}</label>
                                                                 <input type="text" class="form-control" placeholder="Last name"  id="lastName" name="lastName" value={{$item->lastname}}>
                                                             </div>
                                                         </div>
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
-                                                                <label>phone</label>
+                                                                <label>{{ GoogleTranslate::trans('เบอร์โทรมือถือ', session()->get('locale')) }}</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour phone"  id="phone" name="phone"   value={{$item->phone}}>
                                                             </div>
                                                             <div class="col-12 col-lg-6">
-                                                                <label>mobile</label>
+                                                                <label>{{ GoogleTranslate::trans('เบอร์บ้าน', session()->get('locale')) }}</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour mobile" id="mobile" name="mobile" value={{$item->mobile}}>
                                                             </div>
                                                         </div>
                                                         <div class="row pt-10">
                                                             @if (session('user_email'))
                                                                 <div class="col-12 col-lg-6">
-                                                                    <label>email</label>
+                                                                    <label>{{ GoogleTranslate::trans('อีเมล์', session()->get('locale')) }}</label>
                                                                     <input type="text" class="form-control" placeholder="ํYour Email" id="email" name="email" value="{{ session('user_email') }}" readonly>
                                                                 </div>                                      
                                                             @endif
@@ -108,54 +104,35 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">User detail</h4>
-                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('รายละเอียดติดต่อผ่านช่องทางโซเชียล', session()->get('locale')) }}</h4>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Facebook Url</label>
                                                             <input type="text" name="facebook" id="facebook" class="form-control " placeholder="Enter Your Facebook" value={{$item->facebook}}>
-                                                            <div class="valid-feedback">
-                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
-                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Pinterest Url</label>
                                                             <input type="text" name="pinterest" id="pinterest" class="form-control " placeholder="Enter Your Pinterest" value={{$item->pinterest}}>
-                                                            <div class="valid-feedback">
-                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
-                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Instagram Url</label>
                                                             <input type="text" name="instagram" id="instagram" class="form-control "
                                                                 placeholder="Enter Your Instagram" value={{$item->instagram}}>
-                                                            <div class="valid-feedback">
-                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
-                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Twitter Url</label>
                                                             <input type="text" name="twitter" id="twitter" class="form-control "
                                                                 placeholder="Enter Your Twitter" value={{$item->twitter}}>
-                                                            <div class="valid-feedback">
-                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
-                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Linkedin Url</label>
                                                             <input type="text" name="linkedin" id="linkedin" class="form-control "
                                                                 placeholder="Enter Your Linkedin" value={{$item->linkedin}}>
-                                                                <div class="valid-feedback">
-                                                                    <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
-                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Website Url</label>
                                                             <input type="text" name="website" id="website" class="form-control "
                                                                 placeholder="Enter Your name" value={{$item->website}}>
-                                                            <div class="valid-feedback">
-                                                                <a> กรุณากรอก กรอกชื่อผู้ใช้งาน</a>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -164,8 +141,7 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">User detail</h4>
-                                                            <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('เกี่ยวกับฉัน', session()->get('locale')) }} </h4>
                                                         </div>
                                                         <div class="form-group pt-10">
                                                             <label>Title / Posittion</label>
@@ -182,7 +158,7 @@
                                                 </div> --}}
                                                 <div class="position-relative  pt-d-30  mr-2 ">
                                                     <button type="submit" class="afterButton rounded-pill btn-lg" id="profileSubmit">
-                                                        Update Profile  <i class="fa-solid fa-arrow-right"></i>
+                                                        Update Profile<i class="fa-solid fa-arrow-right"></i>
                                                     </button>
                                                 </div>
                                             </div>
@@ -197,3 +173,12 @@
         </div>
         @include('dashboard.footerdashboard')
     </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$('.changeLanguage').change(function(event){
+    var url = "{{ route('google.translate.change') }}";
+    window.location.href = url+"?lang="+$(this).val()
+})
+</script>
