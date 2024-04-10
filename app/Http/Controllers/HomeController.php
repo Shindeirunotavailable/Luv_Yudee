@@ -11,6 +11,7 @@ use App\Models\pp_Newsletter;
 use App\Mail\news;
 use App\Models\Reviews;
 use App\Models\Reply;
+use App\Models\profile;
 
 
 
@@ -67,6 +68,7 @@ class HomeController extends Controller
         $districts = DB::table('districts')->get();
         $pp_amenities = DB::table('pp_amenities')->get();
         $pp_reply = DB::table('pp_reply')->get();
+        $profiles=DB::table('profiles')->get();
         // dd($provinces);
         $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
         $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
@@ -77,7 +79,8 @@ class HomeController extends Controller
             'districts' => $districts,
             'pp_amenities' => $pp_amenities,
             'data' => $showrivew,
-            'pp_reply' => $pp_reply
+            'pp_reply' => $pp_reply,
+            'profiles' => $profiles
 
         ]);
         // $pp_reviews=DB::table('pp_reviews')->get();

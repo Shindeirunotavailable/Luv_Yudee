@@ -638,9 +638,17 @@
                                     @if (isset($data))
                                     @foreach ($data as $review)
                                         <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                            <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
-                                                class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                                style="width: 84px; height: 84px; object-fit: cover;">
+
+                                            @if (isset($data))
+                                                @foreach ($profiles ->where('create_by', $review->create_by)->unique('id_profiles') as $item)
+                                                    @if (!empty($item->imageuser))
+                                                        <img src="{{ $item->imageuser }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                    @else
+                                                        <img src="{{ asset('/assets/images/user2.jpg') }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                    @endif
+                                                @endforeach
+                                            @endif
+                                            
                                             <div class="media-body">
                                                 <div class="row mb-1 align-items-center">
                                                     <div class="col-sm-6 mb-2 mb-sm-0  ">
@@ -699,9 +707,15 @@
                                                     @foreach ($pp_reply->where('id_review', $review->id_review) as $reply)
                                                     <br>
                                                         <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                                            <img src="{{ asset('/assets/images/review-1.jpg') }}" alt="Danny Fox"
-                                                                class=" review-icon mr-sm-8 mb-sm-0 img-fluid"
-                                                                style="width: 84px; height: 84px; object-fit: cover;">
+                                                            @if (isset($data))
+                                                            @foreach ( $profiles->where('create_by', $reply->create_by)->unique('id_profiles') as $item)
+                                                                @if (!empty($item->imageuser))
+                                                                    <img src="{{ $item->imageuser }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                                @else
+                                                                    <img src="{{ asset('/assets/images/user2.jpg') }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                                @endif
+                                                            @endforeach
+                                                        @endif
                                                             <div class="media-body">
                                                                 <div class="row mb-1 align-items-center">
                                                                     <div class="col-sm-6 mb-2 mb-sm-0">
