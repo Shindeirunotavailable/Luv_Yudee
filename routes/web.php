@@ -51,18 +51,21 @@ Route::any('newPassword', 'App\Http\Controllers\LoginController@newPassword');  
 route::any('contentstone','App\Http\Controllers\LoginController@contentstone'); // ส่งค่า contact
 route::any('profliestone','App\Http\Controllers\LoginController@profliestone'); // ส่งค่า proflie
 route::any('upload','App\Http\Controllers\LoginController@upload'); // ส่งค่า proflie
+route::get('/verify-email/{token}','App\Http\Controllers\LoginController@verifyEmail')->name('verify.email'); // ส่งค่ายืนยันอีเมล์
 
-route::get('/verify-email/{token}','App\Http\Controllers\LoginController@verifyEmail')->name('verify.email'); // ส่งค่า proflie
+
+Route::get('google/translate','App\Http\Controllers\GoogleTranslateController@googleTranslate')->name('google.translate');
+Route::get('google/translate/change','App\Http\Controllers\GoogleTranslateController@googleTranslateChange')->name('google.translate.change');
+
 
  // ----------------------------------- dashboard admin ------------------------------------
 
  route::any('test','App\Http\Controllers\LoginController@test')->middleware('IsAdmin')->name('test'); // ส่งค่า proflie
-
- route::any('indexadmin','App\Http\Controllers\adminController@indexadmin')->middleware('IsAdmin')->name('indexadmin'); // ส่งค่า proflie
-
+ route::any('indexadmin','App\Http\Controllers\adminController@indexadmin')->middleware('IsAdmin')->name('indexadmin'); // เปิดหน้า admin
  Route::any('adminIndex','App\Http\Controllers\adminController@adminIndex')->name('adminIndex')->middleware('IsAdmin');
+ Route::get('deleteporfile/{create_by}' , 'App\Http\Controllers\adminController@deleteporfile')->name('deleteporfile'); // ลบผู้ใช้งานเว็บ
+//  Route::get('showporfile/{id_profiles}', 'App\Http\Controllers\adminController@showporfile')->name('showprofile');
 
- Route::get('deleteporfile/{create_by}' , 'App\Http\Controllers\adminController@deleteporfile')->name('deleteporfile');
 
  // -----------------------------------function test Route ------------------------------------
 //  Route::view('/addproperty', 'dashboard.sidebardashboard');

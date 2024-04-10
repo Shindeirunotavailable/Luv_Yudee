@@ -14,6 +14,7 @@ use App\Models\createAccount;
 use App\Models\resetPassword;
 use App\Models\profile;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\App;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;

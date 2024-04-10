@@ -38,7 +38,14 @@
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
                             <span class="d-xl-block">Login / Register</span>
                         </a> --}}
-                        @if(session('user_name'))
+                    <div class="pcs_dropdown">
+                        <select class="form-select changeLanguage">
+                            <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}> ไทย</option>
+                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>
+                            <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>China</option>
+                        </select>
+                    </div>
+                    @if(session('user_name'))
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                                 <span>{{ session('user_name') }}</span>
@@ -54,7 +61,7 @@
                         </a>
                     @endif
                     
-                    
+
                     
 
                         <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}" id="btnAddproperty">
