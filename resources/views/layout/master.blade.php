@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
+<html lang="{{ str_replace('_', '-', app()->getLocale() ?? 'en') }}">
+
 <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/images/YuuDee2.png">

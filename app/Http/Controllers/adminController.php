@@ -60,6 +60,25 @@ class adminController extends Controller
         return redirect()->back();
     }
 
+    // public function showporfile($id_profiles){
+    //     $profile = DB::table('profiles')->where('id_profiles', $id_profiles)->first();
+    //     return view("dashboardAdmin.indexAdmin", ['profile' => $profile]);
+    // }
+    
+    public function showporfile($id_profiles){
+    $profile = Profile::where('id_profiles', $id_profiles)->first();
+
+    // ตรวจสอบว่าพบข้อมูลรายการหรือไม่
+    if (!$profile) {
+        abort(404);
+    }
+
+    return view('dashboardAdmin.indexAdmin', compact('profile'));
+}
+
+
+    
+
 
 
 

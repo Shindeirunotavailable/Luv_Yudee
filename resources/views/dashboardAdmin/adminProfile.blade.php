@@ -6,8 +6,8 @@
         <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
-                    <h2 class="fw-600">Admin Profiles</h2>
-                    <p class="text-ap">We are glad to see you again!</p>
+                    <h2 class="fw-600">{{ GoogleTranslate::trans('จัดการข้อมูลผู้ใช้งาน', session()->get('locale')) }}</h2>
+                    <p class="text-ap">{{ GoogleTranslate::trans('บริหารจัดการข้อมูลผู้ใช้งาน', session()->get('locale')) }}</p>
                 </div>
             </div>
         </div>
@@ -18,14 +18,11 @@
                         <div class="mbp_pagination_comments">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    {{-- <div class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
-                                        <h6 class="fw-600 fs-17 mb15">profiles</h6>
-                                    </div> --}}
                                     <div class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
-                                        <h5 class="font-weight-600">profiles</h5>
+                                        <h5 class="font-weight-600">{{ GoogleTranslate::trans('โปรไฟล์', session()->get('locale')) }}</h5>
                                         <div class="search_area">
                                             <input type="text" class="form-control form-control-text" id="searchUser" placeholder="search User"><span>
-                                            <i class="fa-solid fa-magnifying-glass"></i></span>
+                                            <i class="fa-solid fa-magnifying-glass"></i> </span>
                                         </div>                                    
                                     </div>
                                 </div>
@@ -42,28 +39,32 @@
                                                 <div class="media-body">
                                                     <div class="row mb-1 align-items-center">
                                                         <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->name}} {{$item->lastname}}</h4>
+                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->name}} {{$item->lastname}} </h4>
+                                                            {{-- <h4>{{ GoogleTranslate::trans($item->name, session()->get('locale')) }}</h4> --}}
                                                         </div>
                                                     </div>
                                                     <div class="row mb-1 align-items-center">
+                                                        {{ GoogleTranslate::trans('', session()->get('locale')) }}
                                                         <div class="col-sm-8 mb-2 mb-sm-0  ">
-                                                            <label class="pl-3 font-700" >Phone number : {{$item->phone}}</label><br>
-                                                            <label class="pl-3 font-700" >mobile number : {{$item->mobile}}</label><br>
-                                                            <label class="pl-3 font-700">E-mail : {{$item->email}}</label>
+                                                            <label class="pl-3 font-700" >{{ GoogleTranslate::trans('เบอร์มือถือ', session()->get('locale')) }} : {{$item->phone}}</label><br>
+                                                            <label class="pl-3 font-700" >{{ GoogleTranslate::trans('เบอร์บ้าน', session()->get('locale')) }} : {{$item->mobile}}</label><br>
+                                                            <label class="pl-3 font-700">{{ GoogleTranslate::trans('อีเมล์', session()->get('locale')) }} : {{$item->email}}</label>
                                                         </div>
                                                         
                                                         <div class="col-sm-4">
                                                             <div class="d-flex justify-content-sm-end justify-content-center mb-0">
                                                                 <!-- ปุ่มรายละเอียด -->
-                                                                {{-- <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" id="approve_review_{{$item->create_by}}" class="btn btn-info btn-sm mr-2 text-white color-yuudee"> --}}
-                                                                    <a  class="btn btn-info btn-sm mr-2 text-white color-yuudee"  data-toggle="modal" data-target="#staticBackdrop">
-                                                                    <i class="fa-solid fa-list"></i> รายละเอียด</a>
+                                                                {{-- <a href="{{ route('showporfile', ['id_profiles' => $item->id_profiles]) }}" class="btn btn-info btn-sm mr-2 text-white color-yuudee" data-toggle="modal" data-target="#staticBackdrop">
+                                                                    <i class="fa-solid fa-list"></i> รายละเอียด
+                                                                </a> --}}
+                                                                <a class="btn btn-info btn-sm mr-2 text-white color-yuudee" data-toggle="modal" data-target="#staticBackdrop">
+                                                                    <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', session()->get('locale')) }}
+                                                                </a>
                                                                 <!-- เพิ่มปุ่มลบ -->
                                                                 <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                        
+                                                    </div>   
                                                 </div>
                                             </div>
                                         </div>
@@ -87,39 +88,41 @@
         <div class="modal-dialog modal-xl">
           <div class="modal-content modal-xl">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Profile User</h5>
+              <h5 class="modal-title" id="staticBackdropLabel">{{ GoogleTranslate::trans('โปรไฟล์ผู้ใช้งาน', session()->get('locale')) }}</h5>
+
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body modal-xl">
                 @if (isset($data))
-                    @foreach ($data['profiles'] as $item)
+                @foreach ($data['profiles']->unique('id_profiles') as $item)
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
                                     <div class="text-left">
-                                        <h4 class="mb-3 pt-3 font-weight-bold">Contact information</h4>
-                                        <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                        <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('ช่องทางการติดต่อ', session()->get('locale')) }}</h4>
+
+                                        <label>{{ GoogleTranslate::trans('รายละเอียดติดต่อผู้ใช้งาน', session()->get('locale')) }}</label>
                                     </div>
                                     <div class="form-group pt-10">
-                                        <label>First name</label>
+                                        <label>{{ GoogleTranslate::trans('ชื่อ', session()->get('locale')) }}</label>
                                         <input type="text" class="form-control"  placeholder="Example input placeholder" id="title" name="title" value={{$item->name}}>
                                     </div>
                                     <div class="form-group pt-10">
-                                        <label>Last name</label>
+                                        <label>{{ GoogleTranslate::trans('นามสุกล', session()->get('locale')) }}</label>
                                         <input type="text" class="form-control"  placeholder="Example input placeholder" id="title" name="title" value={{$item->lastname}}>
                                     </div>
                                     <div class="form-group pt-10">
-                                        <label>phone</label>
+                                        <label>{{ GoogleTranslate::trans('เบอร์มือถือ', session()->get('locale')) }}</label>
                                         <input type="text" class="form-control"  placeholder="Example input placeholder" id="title" name="title" value={{$item->phone}}>
                                     </div>
                                     <div class="form-group pt-10">
-                                        <label>mobile</label>
+                                        <label>{{ GoogleTranslate::trans('เบอร์บ้าน', session()->get('locale')) }}</label>
                                         <input type="text" class="form-control" placeholder="Example input placeholder" id="title" name="title" value={{$item->mobile}}>
                                     </div>
                                     <div class="form-group pt-10">
-                                        <label>email</label>
+                                        <label>{{ GoogleTranslate::trans('อีเมล์', session()->get('locale')) }}</label>
                                         <input type="text" class="form-control" placeholder="Example input placeholder" id="title" name="title" value={{$item->email}}>
                                     </div>
                                     <div class="form-group pt-10">
@@ -133,8 +136,8 @@
                             <div class="card cardBox">
                                 <div class="card-body p-3">
                                     <div class="text-left">
-                                        <h4 class="mb-3 pt-3 font-weight-bold">User detail</h4>
-                                        <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit</label>
+                                        <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('รายละเอียดผู้ใช้งาน', session()->get('locale')) }}</h4>
+                                        <label>{{ GoogleTranslate::trans('รายละเอียดติดต่อผ่านช่องทางโซเชียล', session()->get('locale')) }}</label>
                                     </div>
                                     <div class="form-group pt-10">
                                         <label>Facebook Url</label>
@@ -183,3 +186,12 @@
           </div>
         </div>
     </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$('.changeLanguage').change(function(event){
+    var url = "{{ route('google.translate.change') }}";
+    window.location.href = url+"?lang="+$(this).val()
+})
+</script>
