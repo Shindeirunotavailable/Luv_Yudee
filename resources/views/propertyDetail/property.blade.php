@@ -173,16 +173,33 @@
             <div class="row">
                 @foreach ($blogs as $blog)
                         @php
-                        $info = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                            $info = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                            $postDate = new DateTime($blog->update_datetime);
+                            // วันปัจจุบัน
+                            $currentDate = new DateTime();
+                            // คำนวณระยะเวลาที่ผ่านมา
+                            $interval = $postDate->diff($currentDate);
+                            // กำหนดค่าเริ่มต้นของข้อความ
+                            $timeAgo = '';
+                            // ตรวจสอบและกำหนดข้อความตามระยะเวลาที่ผ่านมา
+                            if ($interval->y > 0) {
+                                $timeAgo = $interval->y . ' years ago';
+                            } elseif ($interval->m > 0) {
+                                $timeAgo = $interval->m . ' months ago';
+                            } elseif ($interval->d > 0) {
+                                $timeAgo = $interval->d . ' days ago';
+                            } else {
+                                $timeAgo = 'Just now';
+                            }
                         @endphp
-
+                    {{-- {{dd($postDate);}} --}}
                     <article class="col-lg-8  pr-xl-7 mt-5">
                         <section class="m-top border-bottom-pp">
                             <ul class="list-inline d-sm-flex align-items-sm-center">
                                 <li class="list-inline-item badge-pp badge-pp-orange">Featured</li> {{-- โดดเด่น --}}
                                 <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li> {{-- สำหรับขาย --}}
                                 <li class="list-inline-item mr-2 mt-2 mt-sm-0">
-                                    <i class="fa-regular fa-clock mr-1"></i>2 months ago {{-- 2 เดือนก่อน --}}
+                                    <i class="fa-regular fa-clock mr-1"></i>{{$timeAgo}}
                                 </li>
                                 <li class="list-inline-item mt-2 mt-sm-0">
                                     <i class="fa-regular fa-eye mr-1"></i>1039views {{-- จำนวนการดู 1039 ครั้ง --}}
@@ -484,7 +501,7 @@
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Virtual Tour</h4> {{-- ทัวร์เสมือนจริง --}}
+                            <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Video Tour</h4> {{-- วิดีโอทัวร์ --}}
                             @foreach ($blogs as $blog)
                                 @php
                                     $videoMedias = $blogs->where('id_property', $id_property)->where('media_file_type', 2);

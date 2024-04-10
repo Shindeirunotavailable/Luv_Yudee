@@ -7,7 +7,6 @@
                     <h2 class="fw-600">Add New Property</h2>
                     <p class="text-ap">We are glad to see you again!</p>
                 </div>
-
             </div>
         </div>
         <div class="row d-flex">
@@ -117,7 +116,8 @@
                                                     <div class=" ">
                                                         <div class="col-sm-4 mb-4 mt-3">
                                                             <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="imageLabel">Select Image</label>
-                                                            <input name="image[]" type="file" class="custom-file-input d-none" id="customIMG"  accept="image/*" {{-- onchange="updateImage(this)"--}} multiple>
+                                                            {{-- <input name="image[]" type="file" class="custom-file-input d-none" id="customIMG"  accept="image/*" multiple> --}}
+                                                            <input name="image[]" type="file" class="custom-file-input d-none" id="customIMG"  accept=".png, .jpg, .jpeg" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
                                                         {{-- row justify-content-center --}}
                                                         <div class="col-sm-12 mt-0 row mb-4 "  id="fileList"></div>
