@@ -3,6 +3,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale() ?? 'en') }}">
 
 <head>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner">
+        </span></span>
+    </div>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/images/YuuDee2.png">
     <title>yuudee ขาย เช่า อสังหาริมทรัพย์ </title>
@@ -94,9 +98,6 @@
     <script src="{{ asset('/assets/js/searchResulte/searchResulte.js') }}"></script> {{-- -- Css หน้า searchResulte -- --}}
     <script src="{{ asset('/assets/js/contact/contact.js') }}"></script> {{-- -- Css หน้า contact -- --}}
 
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner">
-        </span></span>
-    </div>
+
 </body>
 </html>

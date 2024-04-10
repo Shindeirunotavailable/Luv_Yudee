@@ -1,6 +1,8 @@
 @extends('layout.master')
 @section('content')
-
+<?php
+$locale = session()->get('locale', 'th');
+?>
     <main >
 
             <section class="section-pp">
@@ -487,11 +489,13 @@
                                 @foreach($pp_amenities as $amenity)
                                 @if(isset($info->property_amenities) && in_array($amenity->id_amenities, explode(',', $info->property_amenities)))
                                         <li class="col-sm-3 col-6 mb-2">
-                                            <i class="fa-solid fa-check mr-2 text-blue"></i>{{ $amenity->name_amenities }}
+                                            <i class="fa-solid fa-check mr-2 text-blue"></i>{{ GoogleTranslate::trans($amenity->name_amenities, $locale) }}
+                                            {{-- {{ $amenity->name_amenities }} --}}
                                         </li>
                                     @else
                                         <li class="col-sm-3 col-6 mb-2 decoration">
-                                            <i class="fa-solid fa-xmark mr-2 text-danger"></i>{{ $amenity->name_amenities }}
+                                            <i class="fa-solid fa-xmark mr-2 text-danger"></i>{{ GoogleTranslate::trans($amenity->name_amenities, $locale) }}
+                                            {{-- {{ $amenity->name_amenities }} --}}
                                         </li>
                                     @endif
                                 @endforeach
@@ -1746,6 +1750,14 @@
     </main>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$('.changeLanguage').change(function(event){
+    var url = "{{ route('google.translate.change') }}";
+    window.location.href = url+"?lang="+$(this).val()
+})
+</script>
+
 
 @endsection
 

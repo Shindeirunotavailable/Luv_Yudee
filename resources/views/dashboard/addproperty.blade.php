@@ -4,8 +4,8 @@
         <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
-                    <h2 class="fw-600">Add New Property</h2>
-                    <p class="text-ap">We are glad to see you again!</p>
+                    <h2 class="fw-600">{{ GoogleTranslate::trans('เพิ่มสินทรัพย์ใหม่', $locale) }}</h2>
+                    <p class="text-ap">{{ GoogleTranslate::trans('เราดีใจที่ได้พบคุณอีกครั้ง', $locale) }}</p>
                 </div>
             </div>
         </div>
@@ -18,23 +18,27 @@
                                     <button id="" class="nav-link-ap {{ !isset($data['property']->property_stage) || $data['property']->property_stage=='1' ? 'active' : '' }} font-weight-600 ml-3" id="nav-description-tab"
                                         data-toggle="tab" data-target="#nav-description" type="button" role="tab"
                                         aria-controls="nav-description" aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='1' ? 'true' : 'false' }}">
-                                        1. Description
+                                        {{ GoogleTranslate::trans('1. คำอธิบาย', $locale) }}
                                     </button>
                                     <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'active' : '' }} font-weight-600" id="nav-media-tab" data-toggle="tab"
                                         data-target="#nav-media" type="button" role="tab" aria-controls="nav-media"
-                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'true' : 'false' }}">2. Media
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'true' : 'false' }}">
+                                        {{ GoogleTranslate::trans('2. สื่อ', $locale) }}
                                     </button>
                                     <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'active' : '' }} font-weight-600" id="nav-location-tab" data-toggle="tab"
                                         data-target="#nav-location" type="button" role="tab" aria-controls="nav-location"
-                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'true' : 'false' }}">3. Location
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'true' : 'false' }}">
+                                        {{ GoogleTranslate::trans('3. ที่ตั้ง', $locale) }}
                                     </button>
                                     <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='4' ? 'active' : '' }} font-weight-600" id="nav-detail-tab" data-toggle="tab"
                                         data-target="#nav-detail" type="button" role="tab" aria-controls="nav-detail"
-                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='4' ? 'true' : 'false' }}">4. Detail
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='4' ? 'true' : 'false' }}">
+                                        {{ GoogleTranslate::trans('4. รายละเอียด', $locale) }}
                                     </button>
                                     <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='5' ? 'active' : '' }} font-weight-600" id="nav-amenities-tab" data-toggle="tab"
                                         data-target="#nav-amenities" type="button" role="tab" aria-controls="nav-amenities"
-                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='5' ? 'true' : 'false' }}">5. Amenities
+                                        aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='5' ? 'true' : 'false' }}">
+                                        {{ GoogleTranslate::trans('5. สิ่งอำนวยความสะดวก', $locale) }}
                                     </button>
                                 </div>
                             </nav>
@@ -49,43 +53,43 @@
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                             @if($message = Session::get('success') && $data['property']->property_stage=='1')
                                                 <div class="alert alert-success alert-block">
-                                                    <strong>Property Uploaded Successfully</strong>
+                                                    <strong>{{ GoogleTranslate::trans('อัปโหลดทรัพย์สินเรียบร้อยแล้ว', $locale) }}</strong>
                                                 </div>
                                             @endif
-                                            <h4 id="test" class="fw-600 title fs-17 mb-6">Property Description</h4>
+                                            <h4 id="test" class="fw-600 title fs-17 mb-6">{{ GoogleTranslate::trans('ข้อมูลทรัพย์สิน', $locale) }}</h4>
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Title </label>
-                                                            <input type="text" class="form-control" placeholder="Your Name" id="titleproperty"  name="title" value="{{isset($data['property']->property_title) ? $data['property']->property_title : ""}}">
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">{{ GoogleTranslate::trans('ชื่อ', $locale) }}</label>
+                                                            <input type="text" class="form-control" placeholder="Your title" id="titleproperty"  name="title" value="{{isset($data['property']->property_title) ? $data['property']->property_title : ""}}">
 
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Description</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">{{ GoogleTranslate::trans('คำอธิบาย', $locale) }}</label>
                                                             <textarea name="description" id="editor">{{isset($data['property']->property_description)? json_decode($data['property']->property_description) :""}}</textarea>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">Select Category</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10">{{ GoogleTranslate::trans('เลือกประเภท', $locale) }}</label>
                                                             <select id="selectcategory" name="category" class="form-select" >
-                                                                <option value="1"{{ isset($data['property']->property_category) && $data['property']->property_category =='1' ? 'selected' :""}}>คอนโด</option>
-                                                                <option value="2"{{ isset($data['property']->property_category) && $data['property']->property_category =='2' ? 'selected' :""}}>บ้าน</option>
-                                                                <option value="3"{{ isset($data['property']->property_category) && $data['property']->property_category =='3' ? 'selected' :""}}>ทาวน์เฮาส์</option>
-                                                                <option value="4"{{ isset($data['property']->property_category) && $data['property']->property_category =='4' ? 'selected' :""}}>อพาร์ทเมนท์</option>
+                                                                <option value="1"{{ isset($data['property']->property_category) && $data['property']->property_category =='1' ? 'selected' :""}}>{{ GoogleTranslate::trans('คอนโด', $locale) }}</option>
+                                                                <option value="2"{{ isset($data['property']->property_category) && $data['property']->property_category =='2' ? 'selected' :""}}>{{ GoogleTranslate::trans('บ้าน', $locale) }}</option>
+                                                                <option value="3"{{ isset($data['property']->property_category) && $data['property']->property_category =='3' ? 'selected' :""}}>{{ GoogleTranslate::trans('ทาวน์เฮาส์', $locale) }}</option>
+                                                                <option value="4"{{ isset($data['property']->property_category) && $data['property']->property_category =='4' ? 'selected' :""}}>{{ GoogleTranslate::trans('อพาร์ทเมนท์', $locale) }}</option>
                                                             </select>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-d-20">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10" id="">Property Status</label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10" id="">{{ GoogleTranslate::trans('สถานะทรัพย์สิน', $locale) }}</label>
                                                             <select id="propertystatus" name="type[]" class="form-control" multiple >
-                                                                <option value="1"{{ isset($data['property']->property_type) && in_array('1', explode(',', $data['property']->property_type)) ? "selected" : "" }}>ขาย</option>
-                                                                <option value="2"{{ isset($data['property']->property_type) && in_array('2', explode(',', $data['property']->property_type)) ? "selected" : "" }}>เช่า</option>
+                                                                <option value="1"{{ isset($data['property']->property_type) && in_array('1', explode(',', $data['property']->property_type)) ? "selected" : "" }}>{{ GoogleTranslate::trans('ขาย', $locale) }}</option>
+                                                                <option value="2"{{ isset($data['property']->property_type) && in_array('2', explode(',', $data['property']->property_type)) ? "selected" : "" }}>{{ GoogleTranslate::trans('เช่า', $locale) }}</option>
                                                             </select>
                                                             <div id="errorstatus"></div>
                                                         </div>
@@ -93,7 +97,7 @@
 
                                                     <div class="col-sm-6 col-xl-4">
                                                         <div class="mb-6">
-                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">Price in baht </label>
+                                                            <label class="heading-color ff-heading font-weight-600 mb-d-10 required">{{ GoogleTranslate::trans('ราคา', $locale) }} </label>
                                                             <input type="text" name="price" id="price" class="form-control" data-type="decimalinput" placeholder="0.00" value="{{ isset($data['property']->property_price) && is_numeric($data['property']->property_price) ? $data['property']->property_price :""}}">
                                                         </div>
                                                     </div>
@@ -109,13 +113,13 @@
                                         <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                             @if($message = Session::get('success') && $data['property']->property_stage=='2')
                                                 <div class="alert alert-success alert-block">
-                                                    <strong>Media Uploaded Successfully</strong>
+                                                    <strong> {{ GoogleTranslate::trans('อัปโหลดสื่อสำเร็จแล้ว', $locale) }}</strong>
                                                 </div>
                                             @endif
-                                                    <h4 class="fw-600 title fs-17 mb-10" id="errormedia">Upload photos of your property</h4>
+                                                    <h4 class="fw-600 title fs-17 mb-10" id="errormedia"> {{ GoogleTranslate::trans('อัปโหลดรูปถ่ายทรัพย์สินของคุณ', $locale) }}</h4>
                                                     <div class=" ">
                                                         <div class="col-sm-4 mb-4 mt-3">
-                                                            <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="imageLabel">Select Image</label>
+                                                            <label for="customIMG" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="imageLabel">{{ GoogleTranslate::trans('เลือกรูปภาพ', $locale) }}</label>
                                                             {{-- <input name="image[]" type="file" class="custom-file-input d-none" id="customIMG"  accept="image/*" multiple> --}}
                                                             <input name="image[]" type="file" class="custom-file-input d-none" id="customIMG"  accept=".png, .jpg, .jpeg" {{-- onchange="updateImage(this)"--}} multiple>
                                                         </div>
@@ -129,8 +133,8 @@
                                                                         @if (isset($data['media']) && $data['media']->isNotEmpty())
                                                                             @if ($data['media']->where('media_property', true)->where('media_file_type', 1)->where('id_property', $data['id_property'])->isNotEmpty())
                                                                                 <tr class="align-items-center">
-                                                                                    <th class="pt-2">Image</th>
-                                                                                    <th class="pt-2">Action</th>
+                                                                                    <th class="pt-2">{{ GoogleTranslate::trans('รูปภาพ', $locale) }}</th>
+                                                                                    <th class="pt-2">{{ GoogleTranslate::trans('การกระทำ', $locale) }}</th>
                                                                                 </tr>
                                                                             @endif
                                                                         @endif
@@ -152,10 +156,10 @@
                                                             </div>
                                                         @endif
                                                     </div>
-                                                    <h4 class="fw-600 title fs-17 mb-10 mt-4">Video Option</h4>
+                                                    <h4 class="fw-600 title fs-17 mb-10 mt-4">{{ GoogleTranslate::trans('อัพโหลดวิดีโอ', $locale) }}</h4>
                                                     <div class=" ">
                                                         <div class="col-sm-4 mb-4 mt-3">
-                                                            <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="videoLabel">Select Video</label>
+                                                            <label for="customVdo" class="fs-15 afterButton rounded-pill btn-lg upload-button btn-block mt-4 fw-600" id="videoLabel">{{ GoogleTranslate::trans('เลือกวิดีโอ', $locale) }}</label>
 
                                                             <input name="video[]" type="file" class="custom-file-input d-none" id="customVdo" accept="video/*" {{--onchange="updateVideoLabel(this)"--}} multiple/>
                                                         </div>
@@ -168,8 +172,8 @@
                                                                             @if (isset($data['media']) && $data['media']->isNotEmpty())
                                                                                 @if ($data['media']->where('media_property', true)->where('media_file_type', 2)->where('id_property', $data['id_property'])->isNotEmpty())
                                                                                     <tr class="align-items-center">
-                                                                                        <th class="pt-2">Image</th>
-                                                                                        <th class="pt-2">Action</th>
+                                                                                        <th class="pt-2">{{ GoogleTranslate::trans('วิดีโอ', $locale) }}</th>
+                                                                                        <th class="pt-2">{{ GoogleTranslate::trans('การกระทำ', $locale) }}</th>
                                                                                      </tr>
                                                                                 @endif
                                                                              @endif
@@ -382,10 +386,10 @@
                                     <div class="ps-widget bg-white bdrs-12 p-d-30 overflow-hidden position-relative">
                                         @if($message = Session::get('success') && $data['property']->property_stage=='5')
                                                 <div class="alert alert-success alert-block">
-                                                    <strong>Amenities Uploaded Successfully</strong>
+                                                    <strong>{{ GoogleTranslate::trans('อัปโหลดสิ่งอำนวยความสะดวกสำเร็จแล้ว', $locale) }}</strong>
                                                 </div>
                                             @endif
-                                        <h4 class="fw-600 title fs-17 mb-6 " id="error">Select Amenities</h4>
+                                        <h4 class="fw-600 title fs-17 mb-6 " id="error">{{ GoogleTranslate::trans('เลือกสิ่งอำนวยความสะดวก', $locale) }}</h4>
                                         <div class="row">
                                             <div  class="row-ap flex-lg-row flex-wrap">
                                                 @php
@@ -397,7 +401,8 @@
                                                         <div class="col-sm-12 col-md-6 col-lg-4">
                                                             <div class="checkbox-style1">
                                                                 @foreach ($chunk as $amenity)
-                                                                <label class="checkbox-ap">{{ $amenity['name_amenities'] }}
+                                                                <label class="checkbox-ap">{{ GoogleTranslate::trans($amenity['name_amenities'], $locale) }}
+                                                                    {{-- {{ $amenity['name_amenities'] }} --}}
                                                                     <input type="checkbox" name="amenities[]" id="amenities{{ $amenity['id_amenities'] }}" value="{{ $amenity['id_amenities'] }}" {{ in_array($amenity['id_amenities'], $amenities) ? 'checked' : '' }}>
                                                                     <span class="checkmark"></span>
                                                                 </label>
@@ -405,6 +410,7 @@
                                                             </div>
                                                         </div>
                                                     @endforeach
+
                                             </div>
                                         </div>
                                         @if (isset($data['id_property'])&& $data['property']->property_stage=='5')
@@ -412,9 +418,7 @@
                                         @endif
                                             <button type="submit" id="submitamenitie" name="property_stage" value="5" class="afterButton rounded-pill btn-lg mt-2 float-right fw-600">Submit</button>
                                     </div>
-
                                 </div>
-
                             </div>
 
                         </form>
