@@ -103,6 +103,7 @@ $('#form_review').submit(function (event) {
   });
   
   function onSubmitReview (event){
+    console.log('555555')
     const forms = $('.needs-validation');
     const namereview = $('#name');
     const contentreview = $('#content')
@@ -398,4 +399,212 @@ $(document).ready(function(){
 //   });
 // });
 
+// function toggleReplyForm(link) {
+//     // หา div.form-group ใน element ที่มีลิงก์ที่ถูกคลิก
+//     var formGroup = link.closest('.media').querySelector('.form-group');
+//     if (formGroup) {
+//         // ถ้ามี div.form-group แล้ว
+//         if (formGroup.classList.contains('d-none')) {
+//             // ถ้ามันมี class d-none ให้ลบ class นี้ออก
+//             formGroup.classList.remove('d-none');
+//         } else {
+//             // ถ้าไม่มี class d-none ให้เพิ่ม class นี้เข้าไป
+//             formGroup.classList.add('d-none');
+//         }
+//     }
+// }
+
+// $('#form_reply').submit(function (event) {
+//     event.preventDefault(); // ป้องกันการส่งฟอร์ม
+//     onSubmitReply(event);
   
+//       var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
+//       $.ajax({
+//           type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+//           url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+//           data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+//           success: function (response) {
+//               if (response.success) {
+//                 Swal.fire({
+//                     position: "center",
+//                     icon: "success",
+//                     text: "กรุณารอการอนุมัติรีวิวจากเจ้าหน้าที่",
+//                     confirmButtonColor: "#0071BC",
+//                 })
+//                 $('#content').val("");
+//                 $('#content').removeClass('is-invalid is-valid');
+//                 $('#name').removeClass('is-invalid is-valid');
+//                 $('#email').removeClass('is-invalid is-valid');
+//                 $('input[name="star"]').prop('checked', false);
+  
+  
+//               } else {
+                
+//               }
+//           }
+//       });
+          
+//   });
+  
+//   function onSubmitReply (event){
+//     const forms = $('.needs-validation');
+//     const namereply = $('#name_reply');
+//     const contentreply = $('#content_reply')
+//     const emailreply = $('#email_reply');
+  
+//     if( !namereply.val()  ){
+//       namereply.addClass('is-invalid');
+//       event.preventDefault();
+//       event.stopPropagation();
+//       return;
+//     } else {
+//       namereply.removeClass('is-invalid');
+//       namereply.addClass('is-valid');
+//     }
+//     if( !emailreply.val()  ){
+//       emailreply.addClass('is-invalid');
+//       event.preventDefault();
+//       event.stopPropagation();
+//       return;
+  
+//     } else {
+//       emailreply.removeClass('is-invalid');
+//       emailreply.addClass('is-valid');
+//     }
+//     if( !contentreply.val()  ){
+//       contentreply.addClass('is-invalid');
+//       event.preventDefault();
+//       event.stopPropagation();
+//       return;
+  
+//     } else {
+//       contentreply.removeClass('is-invalid');
+//       contentreply.addClass('is-valid');
+//     }
+   
+//   }
+
+
+
+
+
+
+   
+        
+function openReplyModal(id_review) {
+    // กำหนดค่า id_review ให้กับ input hidden ใน modal
+    document.getElementById('id_review_modal').value = id_review;
+    // เปิด modal
+    $('#replyModal').modal('show');
+}
+
+
+// function toggleReplyForm(link) {
+//     var formGroup = link.parentElement.nextElementSibling;
+//     if (formGroup) {
+//         if (formGroup.classList.contains('d-none')) {
+//             formGroup.classList.remove('d-none');
+//         } else {
+//             formGroup.classList.add('d-none');
+//         }
+//     }
+// }
+
+$(document).on('submit', '#form_reply_modal', function(event) {
+    event.preventDefault(); // ป้องกันการส่งฟอร์ม
+    onSubmitReply(event);
+
+    var formData = $(this).serialize(); // เก็บข้อมูลฟอร์มเข้าตัวแปร formData
+    $.ajax({
+        type: 'POST', // ใช้เมธอด POST ส่งข้อมูล
+        url: $(this).attr('action'), // ใช้ URL ที่กำหนดใน attribute action ของฟอร์ม
+        data: formData, // ส่งข้อมูลที่เก็บไว้ในตัวแปร formData
+        success: function(response) {
+            if (response.success) {
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    text: "กรุณารอการอนุมัติรีวิวจากเจ้าหน้าที่",
+                    confirmButtonColor: "#0071BC",
+                });
+                $('#content_reply').val("");
+                $('#content_reply').removeClass('is-invalid is-valid');
+                $('#name_reply').removeClass('is-invalid is-valid');
+                $('#email_reply').removeClass('is-invalid is-valid');
+            } else {
+                // กรณีไม่สำเร็จ คุณสามารถทำอะไรก็ได้ตามความเหมาะสม
+            }
+        }
+    });
+});
+
+function onSubmitReply(event) {
+    const namereply = $('#name_reply');
+    const contentreply = $('#content_reply');
+    const emailreply = $('#email_reply');
+    if( !namereply.val()  ){
+              namereply.addClass('is-invalid');
+              event.preventDefault();
+              event.stopPropagation();
+              return;
+            } else {
+              namereply.removeClass('is-invalid');
+              namereply.addClass('is-valid');
+            }
+            if( !emailreply.val()  ){
+              emailreply.addClass('is-invalid');
+              event.preventDefault();
+              event.stopPropagation();
+              return;
+          
+            } else {
+              emailreply.removeClass('is-invalid');
+              emailreply.addClass('is-valid');
+            }
+            if( !contentreply.val()  ){
+              contentreply.addClass('is-invalid');
+              event.preventDefault();
+              event.stopPropagation();
+              return;
+          
+            } else {
+              contentreply.removeClass('is-invalid');
+              contentreply.addClass('is-valid');
+            }
+           
+          }
+        
+
+
+    // function onSubmitReply(event) {
+    //     const namereply = $('#name_reply');
+    //     const contentreply = $('#content_reply');
+    //     const emailreply = $('#email_reply');
+    
+    //     if (!namereply.val()) {
+    //         namereply.removeClass('is-valid').addClass('is-invalid');
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //         return;
+    //     } else {
+    //         namereply.removeClass('is-invalid').addClass('is-valid');
+    //     }
+    //     if (!emailreply.val()) {
+    //         emailreply.removeClass('is-valid').addClass('is-invalid');
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //         return;
+    //     } else {
+    //         emailreply.removeClass('is-invalid').addClass('is-valid');
+    //     }
+    //     if (!contentreply.val()) {
+    //         contentreply.removeClass('is-valid').addClass('is-invalid');
+    //         event.preventDefault();
+    //         event.stopPropagation();
+    //         return;
+    //     } else {
+    //         contentreply.removeClass('is-invalid').addClass('is-valid');
+    //     }
+    // }
+
+

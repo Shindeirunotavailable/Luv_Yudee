@@ -10,6 +10,7 @@ use App\Models\createAccount;
 use App\Models\pp_Newsletter;
 use App\Mail\news;
 use App\Models\Reviews;
+use App\Models\Reply;
 
 
 
@@ -65,23 +66,25 @@ class HomeController extends Controller
         $amphures = DB::table('amphures')->get();
         $districts = DB::table('districts')->get();
         $pp_amenities = DB::table('pp_amenities')->get();
-
+        $pp_reply = DB::table('pp_reply')->get();
         // dd($provinces);
         $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
+        $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
         return view(".propertyDetail.property")->with([
             'blogs' => $blogs,
             'provinces' => $provinces,
             'amphures' => $amphures,
             'districts' => $districts,
             'pp_amenities' => $pp_amenities,
-            'data' => $showrivew
+            'data' => $showrivew,
+            'pp_reply' => $pp_reply
 
         ]);
         // $pp_reviews=DB::table('pp_reviews')->get();
         // return view(".propertyDetail.property")->with('data',$pp_reviews);
 
     }
-
+    
 
 
     public function home_email(Request $request)
