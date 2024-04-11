@@ -1,3 +1,5 @@
+<?php $locale = session()->get('locale', 'th'); ?>
+
     <div class="dashboard__main pl-d-0-md">
         <div class="dashboard__content property-page bg-f7">
             <div class="row justify-content-center">
@@ -20,8 +22,8 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold"> {{ GoogleTranslate::trans('รูปภาพ', session()->get('locale')) }}</h4>
-                                                            <label>{{ GoogleTranslate::trans('อัพโหลดรูปภาพโปรไฟล์ของคุณ', session()->get('locale')) }}</label>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold"> {{ GoogleTranslate::trans('รูปภาพ', $locale) }}</h4>
+                                                            <label>{{ GoogleTranslate::trans('อัพโหลดรูปภาพโปรไฟล์ของคุณ', $locale) }}</label>
                                                         </div>
                                                         <div class="avatar-upload">
                                                             <div class="avatar-edit">
@@ -51,7 +53,7 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('ข้อมูลติดต่อ', session()->get('locale')) }}</h4>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('ข้อมูลติดต่อ', $locale) }}</h4>
                                                         </div>
                                                         @if (session('user_id'))
                                                             <div class="form-group col-md-6 px-4">
@@ -63,28 +65,28 @@
                                                         <input type="hidden" class="form-control " id="nameUser" name="nameUser">      
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
-                                                                <label>{{ GoogleTranslate::trans('ชื่อ', session()->get('locale')) }}</label>
+                                                                <label>{{ GoogleTranslate::trans('ชื่อ', $locale) }}</label>
                                                                 <input type="text" class="form-control " id="firstName" name="firstName" value={{$item->name}}>                                                
                                                             </div>
                                                             <div class="col-12 col-lg-6">
-                                                                <label>{{ GoogleTranslate::trans('นามสุกล', session()->get('locale')) }}</label>
+                                                                <label>{{ GoogleTranslate::trans('นามสุกล', $locale) }}</label>
                                                                 <input type="text" class="form-control" placeholder="Last name"  id="lastName" name="lastName" value={{$item->lastname}}>
                                                             </div>
                                                         </div>
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
-                                                                <label>{{ GoogleTranslate::trans('เบอร์โทรมือถือ', session()->get('locale')) }}</label>
+                                                                <label>{{ GoogleTranslate::trans('เบอร์โทรมือถือ', $locale) }}</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour phone"  id="phone" name="phone"   value={{$item->phone}}>
                                                             </div>
                                                             <div class="col-12 col-lg-6">
-                                                                <label>{{ GoogleTranslate::trans('เบอร์บ้าน', session()->get('locale')) }}</label>
+                                                                <label>{{ GoogleTranslate::trans('เบอร์บ้าน', $locale) }}</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour mobile" id="mobile" name="mobile" value={{$item->mobile}}>
                                                             </div>
                                                         </div>
                                                         <div class="row pt-10">
                                                             @if (session('user_email'))
                                                                 <div class="col-12 col-lg-6">
-                                                                    <label>{{ GoogleTranslate::trans('อีเมล์', session()->get('locale')) }}</label>
+                                                                    <label>{{ GoogleTranslate::trans('อีเมล์', $locale) }}</label>
                                                                     <input type="text" class="form-control" placeholder="ํYour Email" id="email" name="email" value="{{ session('user_email') }}" readonly>
                                                                 </div>                                      
                                                             @endif
@@ -104,7 +106,7 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('รายละเอียดติดต่อผ่านช่องทางโซเชียล', session()->get('locale')) }}</h4>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('รายละเอียดติดต่อผ่านช่องทางโซเชียล', $locale) }}</h4>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Facebook Url</label>
@@ -141,7 +143,7 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('เกี่ยวกับฉัน', session()->get('locale')) }} </h4>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('เกี่ยวกับฉัน', $locale) }} </h4>
                                                         </div>
                                                         <div class="form-group pt-10">
                                                             <label>Title / Posittion</label>
