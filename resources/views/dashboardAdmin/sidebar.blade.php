@@ -1,3 +1,4 @@
+<?php $locale = session()->get('locale', 'th'); ?>
 
             <div class="dashboard__sidebar  d-side-block" >
                 <div class="dashboard_sidebar_list" role="tablist">
@@ -20,7 +21,7 @@
                     </div>
                     <div class="sidebar_list_item">
                         <a class="items-center-db">
-                            <i class="fa-solid fa-circle-user mr-d-15"></i>My Profile
+                            <i class="fa-solid fa-circle-user mr-d-15"></i>{{ GoogleTranslate::trans('โปรไฟล์ผู้ใช้งาน', $locale) }}
                         </a>
                     </div>
                     @if(session('user_name'))
