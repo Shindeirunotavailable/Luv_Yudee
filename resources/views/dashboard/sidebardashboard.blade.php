@@ -10,7 +10,7 @@ $locale = session()->get('locale', 'th');
                     <div id="v-tabs1-tab" role="tablist" >
                         <button class="dropbtn dashboard-navigation-header">
                             <i class="fa-solid fa-bars pr-d-5"> </i>
-                            <a href="#" class="dashboard-navigation-header">{{ GoogleTranslate::trans('เมนูแดชบอร์ด', session()->get('locale')) }}</a>
+                            <a href="#" class="dashboard-navigation-header">{{ GoogleTranslate::trans('เมนูแดชบอร์ด', $locale) }}</a>
                         </button>
                         <ul class="dropdown-content show">
                             {{-- <div>
@@ -23,19 +23,19 @@ $locale = session()->get('locale', 'th');
                                 </div>
                             </div> --}}
                             <div>
-                                <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-d-30">{{ GoogleTranslate::trans('รายชื่อเมนู', session()->get('locale')) }}</p>
+                                <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-d-30">{{ GoogleTranslate::trans('รายชื่อเมนู', $locale) }}</p>
                                 <div class="sidebar_list_item ">
                                     <a class="items-center-db -is-active active" id="v-add-property-tab" data-toggle="tab"
                                     data-target="#v-add-property" role="tab" aria-controls="v-add-property"
                                     aria-selected="false" href="#v-add-property">
-                                    <i class="fa-solid fa-file-circle-plus mr-d-15"></i>{{ GoogleTranslate::trans('เพิ่มสินทรัพย์ใหม่', session()->get('locale')) }}</a>
+                                    <i class="fa-solid fa-file-circle-plus mr-d-15"></i>{{ GoogleTranslate::trans('เพิ่มอสังหาริมทรัพย์ใหม่', $locale) }}</a>
                                 </div>
 
                                 <div class="sidebar_list_item">
                                     <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
                                     data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
                                     aria-selected="false" href="#v-myproperty">
-                                        <i class="fa-solid fa-house-chimney mr-d-15"></i>{{ GoogleTranslate::trans('สินทรัพย์ของฉัน', session()->get('locale')) }}</a>
+                                        <i class="fa-solid fa-house-chimney mr-d-15"></i>{{ GoogleTranslate::trans('อสังหาริมทรัพย์ของฉัน', $locale) }}</a>
                                 </div>
 
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
@@ -47,11 +47,11 @@ $locale = session()->get('locale', 'th');
                                 <div class="sidebar_list_item"><a class="items-center-db    " id="v-review-tab"
                                     data-toggle="tab" data-target="#v-review" role="tab" aria-controls="v-review"
                                     aria-selected="false" href="#v-review">
-                                    <i class="fa-solid fa-message mr-d-15"></i>{{ GoogleTranslate::trans('รีวิว', session()->get('locale')) }}</a>
+                                    <i class="fa-solid fa-message mr-d-15"></i>{{ GoogleTranslate::trans('รีวิว', $locale) }}</a>
                                 </div>
                             </div>
                             <div>
-                                <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-d-30">{{ GoogleTranslate::trans('จัดการบัญชี', session()->get('locale')) }}</p>
+                                <p class="fs-15 font-weight-normal ff-heading mt-d-30 pl-d-30 mt-d-30">{{ GoogleTranslate::trans('จัดการบัญชี', $locale) }}</p>
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#"><i
                                             class="fa-solid fa-file-contract mr-d-15"></i>My Package</a>
                                 </div> --}}
@@ -60,11 +60,11 @@ $locale = session()->get('locale', 'th');
                                     <a class="items-center-db    " id="v-profile-tab" data-toggle="tab"
                                         data-target="#v-profile" role="tab" aria-controls="v-profile"
                                         aria-selected="false" href="#v-profile">
-                                        <i class="fa-solid fa-circle-user mr-d-15"></i>{{ GoogleTranslate::trans('โปรไฟล์ของฉัน', session()->get('locale')) }}</a>
+                                        <i class="fa-solid fa-circle-user mr-d-15"></i>{{ GoogleTranslate::trans('โปรไฟล์ของฉัน', $locale) }}</a>
                                 </div>
 
                                 <div class="sidebar_list_item"><a class="items-center-db" href="#">
-                                    <i class="fa-solid fa-right-from-bracket mr-d-15"></i>{{ GoogleTranslate::trans('ออกจากระบบ', session()->get('locale')) }}</a>
+                                    <i class="fa-solid fa-right-from-bracket mr-d-15"></i>{{ GoogleTranslate::trans('ออกจากระบบ', $locale) }}</a>
                                 </div>
 
                             </div>
@@ -96,13 +96,13 @@ $locale = session()->get('locale', 'th');
 
                             </div>
                             <div>
-                                <p class="fs-15 font-weight-normal ff-heading mt-d-30">{{ GoogleTranslate::trans('รายชื่อเมนู', session()->get('locale')) }}</p>
+                                <p class="fs-15 font-weight-normal ff-heading mt-d-30">{{ GoogleTranslate::trans('รายชื่อเมนู', $locale) }}</p>
 
                                 <div class="sidebar_list_item">
                                     <a class="items-center-db -is-active active" id="v-add-property-tab" data-toggle="tab"
                                         data-target="#v-add-property" role="tab" aria-controls="v-add-property"
                                         aria-selected="false" href="#v-add-property">
-                                        <i class="fa-solid fa-file-circle-plus mr-d-15"></i>{{ GoogleTranslate::trans('เพิ่มสินทรัพย์ใหม่', session()->get('locale')) }}
+                                        <i class="fa-solid fa-file-circle-plus mr-d-15"></i>{{ GoogleTranslate::trans('เพิ่มอสังหาริมทรัพย์ใหม่', $locale) }}
                                     </a>
                                 </div>
 
@@ -110,7 +110,7 @@ $locale = session()->get('locale', 'th');
                                     <a class="items-center-db " id="v-myproperty-tab" data-toggle="tab"
                                     data-target="#v-myproperty" role="tab" aria-controls="v-myproperty"
                                     aria-selected="false" href="#v-myproperty" onclick="changeTab()">
-                                    <i class="fa-solid fa-house-chimney mr-d-15"></i>{{ GoogleTranslate::trans('สินทรัพย์ของฉัน', session()->get('locale')) }}</a>
+                                    <i class="fa-solid fa-house-chimney mr-d-15"></i>{{ GoogleTranslate::trans('อสังหาริมทรัพย์ของฉัน', $locale) }}</a>
                                 </div>
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="#">
                                         <i class="fa-solid fa-heart mr-d-15"></i>My Favorites</a>
@@ -122,10 +122,10 @@ $locale = session()->get('locale', 'th');
                                 <div class="sidebar_list_item"><a class="items-center-db    " id="v-review-tab"
                                     data-toggle="tab" data-target="#v-review" role="tab" aria-controls="v-review"
                                     aria-selected="false" href="#v-review" onclick="changeTab()">
-                                        <i class="fa-solid fa-message mr-d-15"></i>{{ GoogleTranslate::trans('รีวิว', session()->get('locale')) }}</a></div>
+                                        <i class="fa-solid fa-message mr-d-15"></i>{{ GoogleTranslate::trans('รีวิว', $locale) }}</a></div>
                                 </div>
                             <div>
-                                <p class="fs-15 font-weight-normal ff-heading mt-d-30">{{ GoogleTranslate::trans('จัดการบัญชี', session()->get('locale')) }}</p>
+                                <p class="fs-15 font-weight-normal ff-heading mt-d-30">{{ GoogleTranslate::trans('จัดการบัญชี', $locale) }}</p>
                                 {{-- <div class="sidebar_list_item"><a class="items-center-db    " href="">
                                         <i class="fa-solid fa-file-contract mr-d-15"></i>My Package</a>
                                 </div> --}}
@@ -133,11 +133,11 @@ $locale = session()->get('locale', 'th');
                                     <a class="items-center-db    " id="v-profile-tab" data-toggle="tab"
                                         data-target="#v-profile" role="tab" aria-controls="v-profile"
                                         aria-selected="false" href="#v-profile" onclick="changeTab()">
-                                        <i class="fa-solid fa-circle-user mr-d-15"> </i>{{ GoogleTranslate::trans('โปรไฟล์ของฉัน', session()->get('locale')) }}</a>
+                                        <i class="fa-solid fa-circle-user mr-d-15"> </i>{{ GoogleTranslate::trans('โปรไฟล์ของฉัน', $locale) }}</a>
                                 </div>
                                 @if(session('user_name'))
                                 <div class="sidebar_list_item"><a class="items-center-db" href="{{ route('logout') }}">
-                                        <i class="fa-solid fa-right-from-bracket mr-d-15"></i>{{ GoogleTranslate::trans('ออกจากระบบ', session()->get('locale')) }}</a>
+                                        <i class="fa-solid fa-right-from-bracket mr-d-15"></i>{{ GoogleTranslate::trans('ออกจากระบบ', $locale) }}</a>
                                 </div>
                                 @endif
                             </div>
@@ -182,5 +182,5 @@ $locale = session()->get('locale', 'th');
 $('.changeLanguage').change(function(event){
     var url = "{{ route('google.translate.change') }}";
     window.location.href = url+"?lang="+$(this).val()
-})
+});
 </script>
