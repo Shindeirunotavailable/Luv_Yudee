@@ -76,12 +76,12 @@
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                                @if ($review["review_status"]==true)
+                                                                {{-- @if ($review["review_status"]==true)
                                                                     <!-- เพิ่มปุ่มอนุมัติ -->
                                                                     <a href="{{route('change',['id_review'=>$review->id_review])}}" id="approve_review_{{$review->id_review}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติเเล้ว</a>
                                                                 @else
                                                                     <a href="{{route('change',['id_review'=>$review->id_review])}}" id="approve_review_{{$review->id_review}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
-                                                                @endif
+                                                                @endif --}}
                                                                 
                                                                 <!-- เพิ่มปุ่มลบ -->
                                                                 <a href="{{route('deletereview',['id_review'=>$review->id_review])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
@@ -122,12 +122,15 @@
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                                    @if ($reply["reply_status"]==true)
+                                                                    {{-- @if ($reply["reply_status"]==true)
                                                                         <a href="{{route('changereply',['id_reply'=>$reply->id_reply])}}" id="approve_review_{{$reply->id_reply}}" class="btn btn-success btn-sm mr-2 text-white">อนุมัติแล้ว</a>
                                                                     @else
                                                                         <a href="{{route('changereply',['id_reply'=>$reply->id_reply])}}" id="approve_review_{{$reply->id_reply}}" class="btn btn-warning  btn-sm mr-2 text-white">รอการอนุมัติ</a>
+                                                                    @endif --}}
+                                                                    {{-- <a href="{{route('deletereply',['id_reply'=>$reply->id_reply])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a> --}}
+                                                                    @if ($reply->create_by == Auth::id())
+                                                                        <a href="{{ route('deletereply', ['id_reply' => $reply->id_reply]) }}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                                     @endif
-                                                                    <a href="{{route('deletereply',['id_reply'=>$reply->id_reply])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                                 </div>
                                                             </div>
                                                         </div>

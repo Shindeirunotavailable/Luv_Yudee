@@ -7,13 +7,13 @@
     <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>CN</option>
 </select>
 
-<p class="text-ap">{{ GoogleTranslate::trans('บริหารจัดการข้อมูลผู้ใช้งาน', session()->get('locale')) }}</p>
+{{-- <p class="text-ap">{{ GoogleTranslate::trans('บริหารจัดการข้อมูลผู้ใช้งาน', session()->get('locale')) }}</p> --}}
 
 
 <?php
-// $locale = session()->get('locale', 'th');
+$locale = session()->get('locale', 'th');
 ?>
-{{-- <p class="text-ap">{{ GoogleTranslate::trans('บริหารจัดการข้อมูลผู้ใช้งาน', $locale) }}</p> --}}
+<p class="text-ap">{{ GoogleTranslate::trans('บริหารจัดการข้อมูลผู้ใช้งาน', $locale) }}</p>
 
 
 

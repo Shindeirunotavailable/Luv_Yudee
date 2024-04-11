@@ -4,7 +4,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-auto">
                     <div class="d-flex align-items-center justify-content-between">
-                        <div class="logos mr-40">
+                        <div class="logos mr-40 mr-md-0">
                             <a class="header-logo logo1" href="{{url("home")}}">
                                 <img src="{{ asset('/assets/images/YuuDee2.png') }}" class="s-logo">
                             </a>
@@ -132,6 +132,15 @@
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
+                                    </li>
+                                    <li class="menuitem-root submenu-root css-pw link-li">
+                                        <div class="pcs_dropdown menu-button">
+                                            <select class="form-select changeLanguage">
+                                                <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}> ไทย</option>
+                                                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>
+                                                <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>China</option>
+                                            </select>
+                                        </div>
                                     </li>
                                 </ul>
                             </nav>
