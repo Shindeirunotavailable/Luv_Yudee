@@ -38,9 +38,10 @@
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
                             <span class="d-xl-block">Login / Register</span>
                         </a> --}}
+
                     <div class="pcs_dropdown">
                         <select class="form-select changeLanguage">
-                            <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}> ไทย</option>
+                            <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}>ภาษาไทย</option>
                             <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>
                             <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>China</option>
                         </select>
@@ -63,11 +64,23 @@
                     
 
                     
+                        @if(Auth::check() && Auth::user()->Isadmin == 1)
+                            <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7" href="{{ url("indexadmin") }}" id="btnAddproperty">
+                                Add Property
+                                <i class="fa-solid fa-arrow-right fa-lg"></i>
+                            </a>
+                        @else
+                            <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7" href="{{ url("addproperty") }}" id="btnAddproperty">
+                                Add Property
+                                <i class="fa-solid fa-arrow-right fa-lg"></i>
+                            </a>
+                        @endif
 
-                        <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}" id="btnAddproperty">
+                
+                        {{-- <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7"href="{{url("addproperty")}}" id="btnAddproperty">
                             Add Property
                             <i class="fa-solid fa-arrow-right fa-lg"></i>
-                        </a>
+                        </a> --}}
                         <a class="sidemenus-btn filter-btn-right" href="#" id="toggleSidebar" data-bs-toggle="offcanvas" data-bs-target="#SidebarPanel" aria-controls="SidebarPanelLabel"> </a>
                     </div>
                 </div>
