@@ -50,9 +50,9 @@
                                                 @if (isset($data))
                                                 @foreach ($data['profiles']->where('create_by', $review->create_by)->unique('id_profiles') as $item)
                                                     @if (!empty($item->imageuser))
-                                                        <img src="{{ $item->imageuser }}" alt="{{ $item->username }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                        <img src="{{ $item->imageuser }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
                                                     @else
-                                                        <img src="{{ asset('/assets/images/user2.jpg') }}" alt="{{ $item->username }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                        <img src="{{ asset('/assets/images/user2.jpg') }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
                                                     @endif
                                                 @endforeach
                                             @endif
@@ -115,9 +115,9 @@
                                                     @if (isset($data))
                                                         @foreach ($data['profiles']->where('create_by', $reply->create_by)->unique('id_profiles') as $item)
                                                             @if (!empty($item->imageuser))
-                                                                <img src="{{ $item->imageuser }}" alt="{{ $item->username }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                                <img src="{{ $item->imageuser }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
                                                             @else
-                                                                <img src="{{ asset('/assets/images/user2.jpg') }}" alt="{{ $item->username }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                                <img src="{{ asset('/assets/images/user2.jpg') }}" alt="{{ $item->imageuser }}" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
                                                             @endif
                                                         @endforeach
                                                     @endif

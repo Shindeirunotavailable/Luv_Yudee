@@ -211,7 +211,6 @@ public function register(Request $request)
         DB::table('profiles')->insert($profileData);
         // ส่งอีเมล์ยืนยัน
         Mail::to($email)->send(new WelcomeEmail($username, $token));
-
         $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
         return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
     }

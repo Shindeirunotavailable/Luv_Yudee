@@ -32,7 +32,7 @@ Route::get('deletereview/{id_review}' , 'App\Http\Controllers\ReviewsController@
 Route::get('change/{id_review}' , 'App\Http\Controllers\ReviewsController@change')->name('change');
 Route::get('deletereply/{id_reply}' , 'App\Http\Controllers\ReviewsController@deletereply')->name('deletereply');
 Route::get('changereply/{id_reply}' , 'App\Http\Controllers\ReviewsController@changereply')->name('changereply');
-Route::any('indextest' , 'App\Http\Controllers\HomeController@indextest');
+// Route::any('indextest' , 'App\Http\Controllers\HomeController@indextest');
 
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');

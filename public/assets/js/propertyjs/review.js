@@ -576,35 +576,4 @@ function onSubmitReply(event) {
         
 
 
-    // function onSubmitReply(event) {
-    //     const namereply = $('#name_reply');
-    //     const contentreply = $('#content_reply');
-    //     const emailreply = $('#email_reply');
-    
-    //     if (!namereply.val()) {
-    //         namereply.removeClass('is-valid').addClass('is-invalid');
-    //         event.preventDefault();
-    //         event.stopPropagation();
-    //         return;
-    //     } else {
-    //         namereply.removeClass('is-invalid').addClass('is-valid');
-    //     }
-    //     if (!emailreply.val()) {
-    //         emailreply.removeClass('is-valid').addClass('is-invalid');
-    //         event.preventDefault();
-    //         event.stopPropagation();
-    //         return;
-    //     } else {
-    //         emailreply.removeClass('is-invalid').addClass('is-valid');
-    //     }
-    //     if (!contentreply.val()) {
-    //         contentreply.removeClass('is-valid').addClass('is-invalid');
-    //         event.preventDefault();
-    //         event.stopPropagation();
-    //         return;
-    //     } else {
-    //         contentreply.removeClass('is-invalid').addClass('is-valid');
-    //     }
-    // }
-
 

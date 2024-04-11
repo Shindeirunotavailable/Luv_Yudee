@@ -3673,3 +3673,15 @@ textarea.form-control-lg {
 .border-dark {
     border-color: #343a40 !important;
 } */
+
+.dropdown-flag img {
+    width: 10px; /* เปลี่ยนขนาดของภาพธง */
+    height: 15px;
+    margin-right: 5px; /* ปรับระยะห่างของภาพธง */
+    border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
+  }
+
+.test111{
+    width: 30px; /* เปลี่ยนขนาดของภาพธง */
+    height: 30px;
+}
