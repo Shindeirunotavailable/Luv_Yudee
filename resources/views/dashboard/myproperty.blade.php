@@ -7,8 +7,8 @@ $locale = session()->get('locale', 'th');
         <div class="row align-items-center pb-d-40">
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
-                    <h2 class="fw-600">{{ GoogleTranslate::trans('อสังหาริมทรัพย์ของฉัน', $locale) }}</h2>
-                    <p class="text-ap">{{ GoogleTranslate::trans('เราดีใจที่ได้พบคุณอีกครั้ง', $locale) }}</p>
+                    <h2 class="fw-600">Test My Property</h2>
+                    <p class="text-ap">We are glad to see you again!</p>
                 </div>
             </div>
         </div>
@@ -20,12 +20,12 @@ $locale = session()->get('locale', 'th');
                         <table class="table table-striped">
                             <thead class="t-head color-yuudee">
                                 <tr>
-                                    <th scope="col" class="text-white">{{ GoogleTranslate::trans('รูปภาพ', $locale) }}</th>
-                                    <th scope="col" class="text-white">{{ GoogleTranslate::trans('ชื่อรายการ', $locale) }}</th>
-                                    <th scope="col" class="text-white">{{ GoogleTranslate::trans('วันที่สร้าง', $locale) }}</th>
-                                    <th scope="col" class="text-white">{{ GoogleTranslate::trans('วันที่อัปเดต', $locale) }}</th>
-                                    <th scope="col" class="text-white">{{ GoogleTranslate::trans('สถานะ', $locale) }}</th>
-                                    <th scope="col" class="text-white">{{ GoogleTranslate::trans('การกระทำ', $locale) }}</th>
+                                    <th scope="col" class="text-white">Image</th>
+                                    <th scope="col" class="text-white">Listing title</th>
+                                    <th scope="col" class="text-white">Date Create</th>
+                                    <th scope="col" class="text-white">Update Create</th>
+                                    <th scope="col" class="text-white">Status</th>
+                                    <th scope="col" class="text-white">Action</th>
                                 </tr>
                             </thead>
                             @foreach ($data['blogs']->where('id', Auth::id())->unique('id_property') as $item)
@@ -86,12 +86,12 @@ $locale = session()->get('locale', 'th');
                                         <td class="vam text-center">
                                             @if (!is_null($item->id_media) && !is_null($item->id_property))
                                                     @if ($item->property_approve)
-                                                            <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-success btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('อนุมัติ', $locale) }}</a>
+                                                            <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-success btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">อนุมัติ</a>
                                                         @else
-                                                            <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-warning btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('รออนุมัติ', $locale) }}</a>
+                                                            <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-warning btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">รออนุมัติ</a>
                                                     @endif
                                                 @else
-                                                <a href="javascript:void(0)" class="m-2 btn-danger btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('ข้อมูลไม่ครบ', $locale) }}</a>
+                                                <a href="javascript:void(0)" class="m-2 btn-danger btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">ข้อมูลไม่ครบ</a>
                                             @endif
                                         </td>
                                         <td class="vam text-center">

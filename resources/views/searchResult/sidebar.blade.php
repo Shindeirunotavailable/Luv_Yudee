@@ -1,83 +1,83 @@
     {{-- side-bar --}}
     <ul class="list-group  list-sidebar-style mb-30 box-shadow">
         <li class="list-group-item">
-            <h6 class="font-weight-600">{{ GoogleTranslate::trans('ค้นหาบ้านของคุณ', $locale) }}</h6>
+            <h6 class="font-weight-600">Find your home</h6>
             <div class="search_area">
-                <input type="text" class="form-control form-control-text " placeholder="{{ GoogleTranslate::trans('คุณกำลังมองหาอะไรอยู่?', $locale) }}"><span>
+                <input type="text" class="form-control form-control-text " placeholder="What are you looking for?"><span>
                 <i class="fa-solid fa-magnifying-glass"></i></span>
             </div>
         </li>
 
         <li class="list-group-item">
-            <h6 class="font-weight-600">{{ GoogleTranslate::trans('สถานะการขาย', $locale) }}</h6>
+            <h6 class="font-weight-600">Listing Status</h6>
             <div class="radio-element">
 
                 <div class="form-check">
                     <input class="form-check-input radio-style" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
                         checked>
                     <label class="form-check-label font-style" for="exampleRadios1">
-                        {{ GoogleTranslate::trans('ทั้งหมด', $locale) }}
+                        All
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input radio-style" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                     <label class="form-check-label font-style" for="exampleRadios2">
-                        {{ GoogleTranslate::trans('ซื้อ', $locale) }}
+                        Buy
                     </label>
                 </div>
                 <div class="form-check ">
                     <input class="form-check-input radio-style" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
                     <label class="form-check-label font-style" for="exampleRadios3">
-                        {{ GoogleTranslate::trans('เช่า', $locale) }}
+                        Rent
                     </label>
                 </div>
             </div>
         </li>
 
         <li class="list-group-item">
-            <h6 class="font-weight-600">{{ GoogleTranslate::trans('ประเภทอสังหาริมทรัพย์', $locale) }}</h6>
+            <h6 class="font-weight-600">Property Type</h6>
 
             <div class="form-check  custom-checkbox">
                 <input class="form-check-input  checkboox-all custom-control-input " type="checkbox" value="" id="All"  onclick="selectAll()">
                 <label class="form-check-label custom-control-label font-style" for="All">
-                    {{ GoogleTranslate::trans('ทั้งหมด', $locale) }}
+                    All
                 </label>
             </div>
             <div class="form-check custom-checkbox">
                 <input class="form-check-input  checkboox-all custom-control-input " type="checkbox" value="" id="Houses" onclick="checkAll()">
                 <label class="form-check-label custom-control-label font-style" for="Houses">
-                    {{ GoogleTranslate::trans('บ้าน', $locale) }}
+                    Houses
                 </label>
             </div>
             <div class="form-check custom-checkbox">
                 <input class="form-check-input checkboox-all custom-control-input " type="checkbox" value="" id="Apartments" onclick="checkAll()">
                 <label class="form-check-label custom-control-label font-style" for="Apartments">
-                    {{ GoogleTranslate::trans('อพาร์ตเมนต์', $locale) }}
+                    Apartments
                 </label>
             </div>
             <div class="form-check  custom-checkbox">
                 <input class="form-check-input checkboox-all custom-control-input " type="checkbox" value="" id="Office" onclick="checkAll()">
                 <label class="form-check-label custom-control-label font-style" for="Office">
-                    {{ GoogleTranslate::trans('สำนักงาน', $locale) }}
+                    Office
                 </label>
             </div>
             <div class="form-check custom-checkbox">
                 <input class="form-check-input checkboox-all custom-control-input " type="checkbox" value="" id="Villa" onclick="checkAll()">
                 <label class="form-check-label custom-control-label font-style" for="Villa">
-                    {{ GoogleTranslate::trans('วิลล่า', $locale) }}
+                    Villa
                 </label>
             </div>
 
         </li>
         <li class="list-group-item">
-            <h6 class="font-weight-600">{{ GoogleTranslate::trans('ช่วงราคา', $locale) }}</h6>
+            <h6 class="font-weight-600">Price Range</h6>
 
               <div class="row">
                 <div class="col-12">
                     <div class="form-check  custom-checkbox">
                         <input class="form-check-input custom-control-input checkboox-price " type="checkbox" value="" id="averageAll" onclick="priceAll()" >
                         <label class="form-check-label custom-control-label font-style" for="averageAll">
-                            {{ GoogleTranslate::trans('ทั้งหมด', $locale) }}
+                            All
                         </label>
                     </div>
                 </div>
@@ -117,22 +117,22 @@
         </li>
         <li class="list-group-item">
               <div class="form-group">
-                <h6 class="font-weight-600">{{ GoogleTranslate::trans('ที่ตั้ง', $locale) }}</h6>
+                <h6 class="font-weight-600">Location</h6>
                 <select class="form-control" id="exampleFormControlSelect1">
-                    <option>{{ GoogleTranslate::trans('กรุงเทพ', $locale) }}</option>
-                    <option>{{ GoogleTranslate::trans('ปทุมธานี', $locale) }}</option>
-                    <option>{{ GoogleTranslate::trans('นนทบุรี', $locale) }}</option>
-                    <option>{{ GoogleTranslate::trans('อยุธยา', $locale) }}</option>
+                  <option>bangkok</option>
+                  <option>Pathum Thani</option>
+                  <option>Nonthaburi</option>
+                  <option>Ayutthaya</option>
                 </select>
               </div>
         </li>
 
         <li class="list-group-item">
-            <h6 class="font-weight-600">{{ GoogleTranslate::trans('ห้องนอน', $locale) }}</h6>
+            <h6 class="font-weight-600">Bedrooms</h6>
             <div class="d-flex justify-content-center">
                 <div class="selection">
                     <input type="radio" id="any" name="Bedrooms" checked>
-                    <label for="any">{{ GoogleTranslate::trans('เท่าใดก็ได้', $locale) }}</label>
+                    <label for="any">any</label>
                 </div>
                 <div class="selection">
                     <input type="radio" id="plus1" name="Bedrooms">
@@ -158,11 +158,11 @@
         </li>
 
         <li class="list-group-item">
-            <h6 class="font-weight-600">{{ GoogleTranslate::trans('ห้องน้ำ', $locale) }}</h6>
+            <h6 class="font-weight-600">Bathrooms</h6>
             <div class="d-flex justify-content-center">
                 <div class="selection">
                     <input type="radio" id="anyBathrooms" name="Bathrooms" checked>
-                    <label for="anyBathrooms">{{ GoogleTranslate::trans('เท่าใดก็ได้', $locale) }}</label>
+                    <label for="anyBathrooms">any</label>
                 </div>
                 <div class="selection">
                     <input type="radio" id="plus1Bathrooms" name="Bathrooms">
@@ -192,7 +192,7 @@
             <button type="submit"
             class="btn btn-primary afterButton rounded-pill w-100 "
             id="submitModal">
-            <i class="fa-solid fa-magnifying-glass"></i> {{ GoogleTranslate::trans('ค้นหา', $locale) }}
+            <i class="fa-solid fa-magnifying-glass"></i> search
             </button>
 
         </li>
@@ -201,11 +201,11 @@
 
                 <a href="javascript:void(0)">
                     <span class="fa fa-repeat"></span>
-                    <u>{{ GoogleTranslate::trans('รีเซ็ตตัวกรองทั้งหมด', $locale) }}</u>
+                    <u>Reset all filters</u>
                 </a>
                 <a href="javascript:void(0)">
                     <span class="fa fa-star"></span>
-                    <u>{{ GoogleTranslate::trans('บันทึกการค้นหา', $locale) }}</u>
+                    <u>Save Search</u>
                 </a>
 
             </div>
@@ -213,4 +213,3 @@
 
     </ul>
     {{-- end side-bar --}}
-
