@@ -30,13 +30,14 @@
                                         <div class="search_area">
                                             <input type="text" class="form-control form-control-text" id="searchUser" placeholder="search User">
                                             <span><i class="fa-solid fa-magnifying-glass"></i> </span>
-                                        </div>                                    
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-12">
-                                    <div class="table-wrap">
-                                        <table class="table">
-                                            <thead class="color-yuudee">
+
+                                    <div class="col-12 col-lg-12">
+                                        <div class="table-wrap">
+                                            <table class="table">
+                                                <thead class="color-yuudee">
                                                 <tr>
                                                     <th class="text-white">#</th>
                                                     <th class="text-white ">โปรไฟล์</th>
@@ -118,6 +119,7 @@
             <div class="modal-body modal-xl">
                 @if (isset($data))
                 @foreach ($data['profiles']->unique('id_profiles') as $item)
+                {{-- @if ($item->id_profiles == $item->id_profiles) --}}
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
@@ -151,8 +153,8 @@
                                         <input type="text" class="form-control" placeholder="Example input placeholder" id="title" name="title" value={{$item->skype}}>
                                     </div>
                                 </div>
-                            </div>                 
-                        </div>      
+                            </div>
+                        </div>
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
@@ -185,8 +187,8 @@
                                         <input type="text" class="form-control"  placeholder="Example input placeholder" id="title" name="title" value={{$item->website}}>
                                     </div>
                                 </div>
-                            </div>                 
-                        </div>   
+                            </div>
+                        </div>
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
@@ -199,8 +201,9 @@
                                         <input type="text" class="form-control"  placeholder="Example input placeholder" id="title" name="title" value={{$item->title}}>
                                     </div>
                                 </div>
-                            </div>                 
-                        </div>   
+                            </div>
+                        </div>
+                        {{-- @endif --}}
                     @endforeach
                 @endif
             </div>
@@ -209,7 +212,7 @@
     </div>
 
 
-    
+
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
@@ -217,4 +220,25 @@ $('.changeLanguage').change(function(event){
     var url = "{{ route('google.translate.change') }}";
     window.location.href = url+"?lang="+$(this).val()
 })
+</script>
+<script>
+    function showUserProfile(profileId) {
+        // ทำการดึงโปรไฟล์ผู้ใช้งานด้วย AJAX request
+        $.ajax({
+            url: '/user/profile/' + profileId, // เปลี่ยนเส้นทาง URL ตามโครงสร้างของโมเดลของคุณ
+            method: 'GET',
+            success: function(data) {
+                // เมื่อรับข้อมูลโปรไฟล์ผู้ใช้งานเรียบร้อยแล้ว
+                // ให้แสดง Modal และใส่ข้อมูลที่ได้รับลงไปใน Modal ดังนี้
+                $('#modalTitle').text(data.name + ' ' + data.lastname);
+                $('#phoneInput').val(data.phone);
+                $('#mobileInput').val(data.mobile);
+                $('#emailInput').val(data.email);
+                // เพิ่มฟิลด์อื่น ๆ ตามต้องการ
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
 </script>

@@ -209,7 +209,7 @@
         <li class="list-group-item">
             <button type="submit"
             class="btn btn-primary afterButton rounded-pill w-100 "
-            id="submitModal"> 
+            id="submitModal">
             <i class="fa-solid fa-magnifying-glass"></i> search
             </button>
         </li>

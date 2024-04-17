@@ -36,7 +36,9 @@ class PropertyController extends Controller
         $property = Property::property($id_property);
 
         $blogs = DB::table('pp_properties')
-        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')->get();
+        ->leftjoin('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+        ->select('pp_properties.*', 'pp_media.id_media', 'pp_media.media_property', 'pp_media.media_file_type')
+        ->get();
         $media = DB::table('pp_media')->get();
 
         $this->data['provinces'] = Province::all();
@@ -96,7 +98,6 @@ class PropertyController extends Controller
             $data['update_by'] = 2;
             DB::table('pp_properties')->where('id_property', $id_property)->update($data);
 
-            // if ($request->hasFile('image') || $request->hasFile('video')) {
                 if ($request->hasFile('image')) {
                     $mediaData = [];
                     foreach ($request->file('image') as $image) {
@@ -132,7 +133,6 @@ class PropertyController extends Controller
                     }
                     DB::table('pp_media')->insert($mediaData);
                 }
-            // }
 
         } else {
             $id = Auth::id();
@@ -144,9 +144,9 @@ class PropertyController extends Controller
             $data['id'] = $id;
             $id_property = DB::table('pp_properties')->insertGetId($data);
 
-            // if ($request->hasFile('image') || $request->hasFile('video')) {
                 $mediaData = [];
                 if ($request->hasFile('image')) {
+
                     foreach ($request->file('image') as $image) {
                         $imageName = time() . '_' . $image->getClientOriginalName();
                         $image->move(public_path('/assets/upload_image'), $imageName);
@@ -177,11 +177,9 @@ class PropertyController extends Controller
                     }
                 }
                 DB::table('pp_media')->insert($mediaData);
-            // }
 
         }
         return redirect('addproperty?id_property=' . $id_property)->with('success', 'message');
-
     }
     // approve
     public function approve($id_property)
@@ -194,6 +192,7 @@ class PropertyController extends Controller
         return redirect()->back();
 
     }
+
     // deleteMedia
     public function deleteMedia($id_media)
     {
@@ -212,7 +211,7 @@ class PropertyController extends Controller
 
     // deleteProperty
     public function deleteProperty($id_media, $id_property)
-{
+    {
     // ดึงรายการรูปภาพที่มี id_property เดียวกับ id_property ที่ถูกลบ
     $mediasToDelete = DB::table('pp_media')->where('id_property', $id_property)->get();
     // ลบรูปภาพและข้อมูลในตาราง pp_media ที่ตรงกับ id_property ที่ถูกลบ
@@ -225,7 +224,14 @@ class PropertyController extends Controller
     }
     DB::table('pp_properties')->where('id_property', $id_property)->delete();
     return redirect()->back();
-}
+    }
+
+    public function deletenomediaProperty($id_property)
+    {
+    DB::table('pp_properties')->where('id_property', $id_property)->delete();
+    return redirect()->back();
+    }
+
     // ProvinceController
     public function db_provinces(Request $request)
     {

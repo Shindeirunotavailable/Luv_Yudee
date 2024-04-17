@@ -82,13 +82,13 @@ class LoginController extends Controller
     }
 
 
-    
-
-    
 
 
 
-    
+
+
+
+
     public function logout()
     {
         Auth::logout();
@@ -120,10 +120,10 @@ class LoginController extends Controller
     //             }
     //         },]
     //     ]);
-        
+
     //     // รับข้อมูลจาก request
     //     $email = $request->input('modal_email');
-    //     $password = $request->input('modal_password');
+    //     $password = $request->input('modal_        password');
     //     $username = $request->input('modal_name');
     //     $existingUser = createAccount::Getemail($email);
     //     if ($existingUser) {
@@ -150,10 +150,10 @@ class LoginController extends Controller
     //             'create_datetime' => date('Y-m-d H:i:s'),
     //             'update_datetime' => date('Y-m-d H:i:s'),
     //         ];
-    //         DB::table('profiles')->insert($profileData); 
+    //         DB::table('profiles')->insert($profileData);
     //         Mail::to($email)->send(new WelcomeEmail($username));
     //         $errorMessages = 'สมัครสมาชิกเสร็จสิ้น';
-    //         return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
+    //         return response()->json( ['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
     //     }
     // }
 
@@ -221,18 +221,18 @@ public function verifyEmail($token)
 {
     // ค้นหาข้อมูลผู้ใช้จาก token
     $user = login::where('remember_token', $token)->first();
-    
+
     if ($user) {
         // อัปเดตสถานะของผู้ใช้เป็น 2
         $user->status = 2;
         $user->update_datetime = now(); // อัปเดตเวลาอัปเดตเป็นปัจจุบัน
         $user->save();
-    
-        // ทำสิ่งที่คุณต้องการหลังจากการยืนยันอีเมล์ เช่น redirect หน้าไปยังหน้าแรก
+
+        // ทำสิ่งที่คุณต้องการหลังจากการยืนยันอีเมล์ เช่น     redirect หน้าไปยังหน้าแรก
          return redirect()->route('login')->with('success', 'ยืนยันอีเมล์สำเร็จแล้ว');
 
     } else {
-        // หากไม่พบผู้ใช้ ทำสิ่งที่คุณต้องการ เช่น redirect ไปยังหน้าที่ต้องการ
+        // หากไม่พบผู้ใช้ ทำสิ่งที่คุณต้องการ เช่น redir    ect ไปยังหน้าที่ต้องการ
         return redirect()->route('login')->with('error', 'ไม่สามารถยืนยันอีเมล์ได้');
 
     }
@@ -338,7 +338,7 @@ public function verifyEmail($token)
     //     } else{
     //         return redirect()->route('login')->with('error', 'เกินเวลาที่กำหนดกรุณากรอกขอรหัสผ่านใหม่');
 
-    //     }        
+    //     }
     // }
 
     public function resetPassword(Request $request)
@@ -496,7 +496,7 @@ public function verifyEmail($token)
     //     return response()->json(['success' => true, 'message' => 'Testajax']);
     // }
 
-    
+
 
 // public function upload(Request $request)
 // {
@@ -633,7 +633,23 @@ public function upload(Request $request)
 
     public function search_result()
     {
-        return view("searchResult.searchResult");
+        $blogs = DB::table('pp_properties')
+            ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+            ->get();
+        $provinces = DB::table('provinces')->get();
+        $amphures = DB::table('amphures')->get();
+        $districts = DB::table('districts')->get();
+        $pp_amenities = DB::table('pp_amenities')->get();
+
+        return view("searchResult.searchResult")->with([
+            'blogs' => $blogs,
+            'provinces' => $provinces,
+            'amphures' => $amphures,
+            'districts' => $districts,
+            'pp_amenities' => $pp_amenities,
+
+        ]);
+
     }
 
     public function test()

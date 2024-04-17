@@ -11,7 +11,7 @@
         <li class="list-group-item">
             <h6 class="font-weight-600">Listing Status</h6>
             <div class="radio-element">
-            
+
                 <div class="form-check">
                     <input class="form-check-input radio-style" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
                         checked>
@@ -71,7 +71,7 @@
         </li>
         <li class="list-group-item">
             <h6 class="font-weight-600">Price Range</h6>
-              
+
               <div class="row">
                 <div class="col-12">
                     <div class="form-check  custom-checkbox">
@@ -186,12 +186,12 @@
                 </div>
             </div>
         </li>
-   
+
         <li class="list-group-item">
-      
+
             <button type="submit"
             class="btn btn-primary afterButton rounded-pill w-100 "
-            id="submitModal"> 
+            id="submitModal">
             <i class="fa-solid fa-magnifying-glass"></i> search
             </button>
 
@@ -213,4 +213,3 @@
 
     </ul>
     {{-- end side-bar --}}
-

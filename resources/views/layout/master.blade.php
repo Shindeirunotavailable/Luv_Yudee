@@ -3,6 +3,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale() ?? 'en') }}">
 
 <head>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner">
+        </span></span>
+    </div>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/images/YuuDee2.png">
     <title>yuudee ขาย เช่า อสังหาริมทรัพย์ </title>
@@ -16,7 +20,7 @@
 
          {{-- --CSS SWIPER -- --}}
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-         
+
          <!-- Include Select2 from CDN -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 
@@ -84,7 +88,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Include sweet from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <script type="module" crossorigin="" src="{{ asset('/assets/js/dashboardjs/dashboard.js') }}"></script>
     <script type="module" crossorigin="" src="{{ asset('/assets/js/propertyjs/property.js') }}"></script>
     <script src="{{ asset('/assets/js/dashboardjs/profile.js') }}"></script>  {{-- -- Css หน้า profile -- --}}

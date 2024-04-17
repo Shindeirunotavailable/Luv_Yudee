@@ -87,7 +87,7 @@ class HomeController extends Controller
         // return view(".propertyDetail.property")->with('data',$pp_reviews);
 
     }
-    
+
 
 
     public function home_email(Request $request)

@@ -648,7 +648,7 @@
                                                     @endif
                                                 @endforeach
                                             @endif
-                                            
+
                                             <div class="media-body">
                                                 <div class="row mb-1 align-items-center">
                                                     <div class="col-sm-6 mb-2 mb-sm-0  ">
@@ -677,7 +677,7 @@
                                                     <div class="d-flex justify-content-sm-start justify-content-center">
                                                         <p class="mb-0 text-muted fs-13 lh-1 ">{{$review->create_datetime}}</p>
                                                         <a href="javascript:void(0)" onclick="openReplyModal('{{ $review->id_review }}')" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-  
+
                                                     </div>
 
 
@@ -697,12 +697,12 @@
                                                     <div class="d-flex justify-content-sm-start justify-content-center">
                                                         <p class="mb-0 text-muted fs-13 lh-1 ">{{$reply->create_datetime}}</p>
                                                         <a href="javascript:void(0)" onclick="openReplyModal('{{ $reply->id_review }}')" class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
-  
+
                                                     </div>
                                                     @endforeach
                                     @endif
                                                      --}}
-                                                    
+
                                                      @if (isset($data))
                                                     @foreach ($pp_reply->where('id_review', $review->id_review) as $reply)
                                                     <br>
@@ -780,14 +780,14 @@
                                                                             </div>
                                                                             @endif
                                                                         </div>
-                                                                        
+
                                                                         @if (session('user_id'))
                                                                             <div class="form-group col-md-6 px-4">
                                                                                 <input type="hidden" class="form-control form-control-lg "
                                                                                     id="user_id" name="user_id"
                                                                                     value="{{ session('user_id') }}">
                                                                             </div>
-                                                                        @endif           
+                                                                        @endif
                                                                         <div class="form-group ">
                                                                             <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content_reply" id="content_reply" rows="5"></textarea>
                                                                                 <div class="invalid-feedback">
@@ -795,19 +795,19 @@
                                                                                 </div>
                                                                         </div>
                                                                         <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_reply"> Submit </button>
-                                                                    
+
                                                                     </form>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
+
 
                                             </div>
                                         </div>
                                         @endforeach
                                     @endif
-                                    
+
                                     {{-- <div class="comments-section">
                                         @if (isset($data))
                                             @foreach ($data as $item)
@@ -977,14 +977,14 @@
                                             </div>
                                             @endif
                                         </div>
-                                        
+
                                         @if (session('user_id'))
                                             <div class="form-group col-md-6 px-4">
                                                 <input type="hidden" class="form-control form-control-lg "
                                                     id="user_id" name="user_id"
                                                     value="{{ session('user_id') }}">
                                             </div>
-                                        @endif           
+                                        @endif
                                         <div class="form-group ">
                                             <textarea class="form-control form-control-pp form-control-pp-lg textarea-pp" placeholder="Your Review" required name="content" id="content" rows="5"></textarea>
                                                 <div class="invalid-feedback">
@@ -1001,7 +1001,7 @@
 
                     </article>
 
-                   
+
 
                 <aside class="col-lg-4 pl-xl-4 pdr-0 primary-sidebar sidebar-sticky  ">
                     <div class="make-me-sticky hide-all ">
