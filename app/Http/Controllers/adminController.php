@@ -22,6 +22,8 @@ class adminController extends Controller
         $pp_reviews=DB::table('pp_reviews')->get();
         $pp_reply=DB::table('pp_reply')->get();
         $profiles=DB::table('profiles')->get();
+        $users=DB::table('users')->get();
+
         $id_property = $request['id_property'];
         $property = Property::property($id_property);
         $blogs = DB::table('pp_properties')
@@ -36,6 +38,8 @@ class adminController extends Controller
         $this->data['pp_reply'] = Reply::all();
         // $this->data['pp_reviews'] = Reviews::paginate(5);
         $this->data['profiles'] = profile::all();
+        $this->data['users'] = login::all();
+
         $this->data['property'] = $property;
         $this->data['media'] = $media;
         $this->data['blogs'] = $blogs;
@@ -46,11 +50,19 @@ class adminController extends Controller
     }
 
 
-    public function index()
-    {
-        $profiles = Profile::all(); // ดึงข้อมูลทั้งหมดจากตาราง profiles
-        return view('dashboardAdmin.indexAdmin', ['profiles' => $profiles]);
+    // public function index()
+    // {
+    //     $profiles = Profile::all(); // ดึงข้อมูลทั้งหมดจากตาราง profiles
+    //     return view('dashboardAdmin.indexAdmin', ['profiles' => $profiles]);
+    // }
+
+    public function index() {
+        $profiles = Profile::all(); // ดึงข้อมูลโปรไฟล์ทั้งหมด
+        $users = login::all(); // ดึงข้อมูลผู้ใช้ทั้งหมด
+        return view('dashboardAdmin.adminProfile', ['data' => ['profiles' => $profiles, 'users' => $users]]);
     }
+    
+    
 
     
     public function deleteporfile($create_by){
@@ -72,12 +84,21 @@ class adminController extends Controller
     if (!$profile) {
         abort(404);
     }
-
     return view('dashboardAdmin.indexAdmin', compact('profile'));
 }
 
 
-    
+public function getProfile($id_profile)
+{
+    $profile = Profile::findOrFail($id_profile);
+    // ให้คืนค่า HTML ของโปรไฟล์ผู้ใช้ไปยัง JavaScript
+    return response()->json([
+        'html' => view('profile_modal', compact('profile'))->render()
+    ]);
+}
+
+
+
 
 
 
