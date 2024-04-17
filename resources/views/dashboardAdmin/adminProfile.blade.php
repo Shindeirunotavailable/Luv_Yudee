@@ -24,10 +24,10 @@
                                         <div class="search_area">
                                             <input type="text" class="form-control form-control-text" id="searchUser" placeholder="search User"><span>
                                             <i class="fa-solid fa-magnifying-glass"></i> </span>
-                                        </div>                                    
+                                        </div>
                                     </div>
                                 </div>
-                                
+
                                     <div class="col-12 col-lg-12">
                                         <div class="table-wrap">
                                             <table class="table">
@@ -81,7 +81,7 @@
                                                     @else
                                                         <img src="{{ asset('/assets/images/user2.jpg') }}" alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
                                                     @endif
-                                            
+
                                                 <div class="media-body">
                                                     <div class="row mb-1 align-items-center">
                                                         <div class="col-sm-6 mb-2 mb-sm-0  ">
@@ -95,7 +95,7 @@
                                                             <label class="pl-3 font-700" >{{ GoogleTranslate::trans('เบอร์บ้าน', $locale) }} : {{$item->mobile}}</label><br>
                                                             <label class="pl-3 font-700">{{ GoogleTranslate::trans('อีเมล์', $locale) }} : {{$item->email}}</label>
                                                         </div>
-                                                        
+
                                                         <div class="col-sm-4">
                                                             <div class="d-flex justify-content-sm-end justify-content-center mb-0">
                                                                 <a class="btn btn-info btn-sm mr-2 text-white color-yuudee" data-toggle="modal" data-target="#staticBackdrop">
@@ -104,7 +104,7 @@
                                                                 <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                             </div>
                                                         </div>
-                                                    </div>   
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -137,6 +137,7 @@
             <div class="modal-body modal-xl">
                 @if (isset($data))
                 @foreach ($data['profiles']->unique('id_profiles') as $item)
+                {{-- @if ($item->id_profiles == $item->id_profiles) --}}
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
@@ -170,8 +171,8 @@
                                         <input type="text" class="form-control" placeholder="Example input placeholder" id="title" name="title" value={{$item->skype}}>
                                     </div>
                                 </div>
-                            </div>                 
-                        </div>      
+                            </div>
+                        </div>
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
@@ -204,8 +205,8 @@
                                         <input type="text" class="form-control"  placeholder="Example input placeholder" id="title" name="title" value={{$item->website}}>
                                     </div>
                                 </div>
-                            </div>                 
-                        </div>   
+                            </div>
+                        </div>
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
@@ -218,8 +219,9 @@
                                         <input type="text" class="form-control"  placeholder="Example input placeholder" id="title" name="title" value={{$item->title}}>
                                     </div>
                                 </div>
-                            </div>                 
-                        </div>   
+                            </div>
+                        </div>
+                        {{-- @endif --}}
                     @endforeach
                 @endif
             </div>
@@ -228,7 +230,7 @@
     </div>
 
 
-    
+
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
@@ -236,4 +238,25 @@ $('.changeLanguage').change(function(event){
     var url = "{{ route('google.translate.change') }}";
     window.location.href = url+"?lang="+$(this).val()
 })
+</script>
+<script>
+    function showUserProfile(profileId) {
+        // ทำการดึงโปรไฟล์ผู้ใช้งานด้วย AJAX request
+        $.ajax({
+            url: '/user/profile/' + profileId, // เปลี่ยนเส้นทาง URL ตามโครงสร้างของโมเดลของคุณ
+            method: 'GET',
+            success: function(data) {
+                // เมื่อรับข้อมูลโปรไฟล์ผู้ใช้งานเรียบร้อยแล้ว
+                // ให้แสดง Modal และใส่ข้อมูลที่ได้รับลงไปใน Modal ดังนี้
+                $('#modalTitle').text(data.name + ' ' + data.lastname);
+                $('#phoneInput').val(data.phone);
+                $('#mobileInput').val(data.mobile);
+                $('#emailInput').val(data.email);
+                // เพิ่มฟิลด์อื่น ๆ ตามต้องการ
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
 </script>
