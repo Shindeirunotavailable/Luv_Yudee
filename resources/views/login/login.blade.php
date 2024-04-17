@@ -62,7 +62,7 @@
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="d-flex justify-content-between">
                                     <div class="pt-10">
-                                        <label class="label-700"> <input type="checkbox" name="remember_me" id="remember_me">  {{ GoogleTranslate::trans(' จดจำผู้ใช้งาน', $locale) }}</label>
+                                        <label class="label-700"> <input type="checkbox" name="rememberPassword" id="rememberPassword">  {{ GoogleTranslate::trans(' จดจำผู้ใช้งาน', $locale) }}</label>
 
                                     </div>
                                     
