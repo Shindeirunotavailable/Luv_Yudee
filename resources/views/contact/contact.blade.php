@@ -1,8 +1,6 @@
 @extends('layout.master')
 @section('content')
 
-<?php $locale = session()->get('locale', 'th'); ?>
-
     <section class="p-0">
         <iframe class="content-map contact-page" loading="lazy"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.180657387966!2d100.52433797576472!3d13.828188095519033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1704780060715!5m2!1sth!2sth"
@@ -36,13 +34,13 @@
                                 </div>
                             @endif                            
                             <div class="pb-10 pt-10">
-                                <h4>{{ GoogleTranslate::trans('มีข้อสงสัยหรือไม่ ?', $locale) }}</h4>
+                                <h4>Have questions? Get in touch!</h4>
                             </div>
                             <form action="{{ url('/contentstone') }}"  method="POST" class="needs-validation" id="contentForm">
                             {{-- <form class="needs-validation"> --}}
                                 @csrf
                                 <div class="form-group">
-                                    <label class="label-700">{{ GoogleTranslate::trans('ชื่อ', $locale) }}</label>
+                                    <label class="label-700">First Name</label>
                                     <input type="text" name="firstName" id="firstName" class="form-control "
                                         placeholder="Enter First Name">
                                     <div class="invalid-feedback">
@@ -50,7 +48,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-700">{{ GoogleTranslate::trans('นามสุกล', $locale) }}</label>
+                                    <label class="label-700">Last Name</label>
                                     <input type="text" name="lastName" id="lastName" class="form-control "
                                         placeholder="Enter Last Name">
                                     <div class="invalid-feedback">
@@ -58,13 +56,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-700">{{ GoogleTranslate::trans('อีเมล์', $locale) }}</label>
+                                    <label class="label-700">Email</label>
                                     <input type="Email" name="contactEmail" id="contactEmail" class="form-control "
                                         placeholder="Enter Email" required>
 
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-700">{{ GoogleTranslate::trans('รายละเอียดทีสงสัย', $locale) }}</label>
+                                    <label class="label-700">Textarea</label>
                                     <textarea cols="30" rows="4" placeholder="There are many variations of passages." id="description"
                                         name="description" class="form-control"></textarea>
                                     <div class="invalid-feedback">
@@ -80,8 +78,8 @@
                 </div>
                 <div class="col-lg-5 offset-lg-2 align-self-end mt-40">
                     <div class="text-center">
-                        <h2>{{ GoogleTranslate::trans('Yudee เว็บไซต์อันดับหนึ่งสำหรับซื้อ ขาย บ้านอสังหาริมทรัพย์', $locale) }} </h2> 
-                        <label>{{ GoogleTranslate::trans(' การซื้อขายอสังหาริมทรัพย์ไม่เพียงแค่การทำธุรกิจ เราเชื่อว่าเป็นการสร้างความสัมพันธ์ที่ยั่งยืน ด้วยประสบการณ์และความเชี่ยวชาญของเรา เราจะนำทางคุณในการตัดสินใจที่ดีที่สุดในการลงทุนในอสังหาริมทรัพย์', $locale) }}</label>
+                        <h2>We’d Love To Hear From You.</h2> 
+                        <label>We are here to answer any question you may have. As a partner of corporates, realton has more than 9,000 offices of all sizes and all potential of session.</label>
                     </div>
                 </div>
 
@@ -95,7 +93,7 @@
                 <div class="row mb-20">
                     <div class="col-lg-12">
                         <div class="text-center">
-                            <h2>{{ GoogleTranslate::trans('เยี่ยมชมสำนักงานของเรา', $locale) }}</h2>
+                            <h2>Visit Our Office</h2>
                         </div>
                     </div>
                 </div>
@@ -151,11 +149,10 @@
                 <div class="card-body ">
                     <div class="row">
                         <div class="col-lg-7 text-center">
-                            <h2>{{ GoogleTranslate::trans('หากต้องการความช่วยเหลือ', $locale) }}</h2>
-                            <p>{{ GoogleTranslate::trans('หากต้องการความช่วยเหลือโทร', $locale) }}</p>
+                            <h2>Need help? Talk to our expert.</h2>
+                            <p>Talk to our experts or Browse through more properties.</p>
                         </div>
                         <div class="col-lg-5 text-center">
-                            <a href=""></a>
 
                             {{-- <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
                                 <span class="fa-solid fa-sliders text-white"></span> <b class="text-white">search</b>
@@ -177,17 +174,6 @@
         </div>
     </section>
 
-    {{-- 
-    <div class="scrollToHome" style="cursor: pointer;">
-        <i class="fas fa-angle-up"></i>
-    </div> --}}
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script>
-$('.changeLanguage').change(function(event){
-    var url = "{{ route('google.translate.change') }}";
-    window.location.href = url+"?lang="+$(this).val()
-})
-</script>
 
 @endsection
 

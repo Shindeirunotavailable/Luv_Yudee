@@ -4,15 +4,7 @@
 
 
 
-{{-- @if (isset($data))
-    @foreach ($data['profiles'] as $review)
-        @if (isset($data))
-            @foreach ($data['users']->where('id', $review->create_by)->unique('id') as $item)
-                {{$item->name}}
-            @endforeach
-        @endif
-    @endforeach
-@endif    --}}
+ 
 
 
 
@@ -41,11 +33,10 @@
                                         </div>                                    
                                     </div>
                                 </div>
-                                
-                                    <div class="col-12 col-lg-12">
-                                        <div class="table-wrap">
-                                            <table class="table">
-                                                <thead class="color-yuudee">
+                                <div class="col-12 col-lg-12">
+                                    <div class="table-wrap">
+                                        <table class="table">
+                                            <thead class="color-yuudee">
                                                 <tr>
                                                     <th class="text-white">#</th>
                                                     <th class="text-white ">โปรไฟล์</th>
@@ -56,39 +47,51 @@
                                                     <th class="text-left text-white">สถานะ</th>
                                                     <th>&nbsp;</th>
                                                 </tr>
-                                                </thead>
+                                            </thead>
                                             <tbody>
-                                            @if (isset($data))
-                                                @foreach ($data['profiles'] as $item)
-                                                <tr class="alert" role="alert">
-                                                    <th scope="row">{{ $loop->iteration }}</th> <!-- เปลี่ยนจากการใช้ตัวแปรคอนเตอร์เป็นการใช้ loop->iteration -->
-                                                    <th scope="row" class="pl-10">
-                                                        @if(!empty($item->imageuser))
-                                                            <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
-                                                        @else
-                                                            <img src="{{ asset('/assets/images/user2.jpg') }}" alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                @if (isset($data))
+                                                    @foreach ($data['profiles'] as $item)
+                                                        @if (isset($data))
+                                                            @foreach ($data['users']->where('id', $item->create_by)->unique('id') as $user)
+                                                                <tr class="alert" role="alert">
+                                                                    <th scope="row">{{ $loop->iteration }}</th> <!-- เปลี่ยนจากการใช้ตัวแปรคอนเตอร์เป็นการใช้ loop->iteration -->
+                                                                    <th scope="row" class="pl-10">
+                                                                        @if(!empty($item->imageuser))
+                                                                            <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                                        @else
+                                                                            <img src="{{ asset('/assets/images/user2.jpg') }}" alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
+                                                                        @endif
+                                                                    </th>
+                                                                    <td>{{$item->name}} {{$item->lastname}}</td>
+                                                                    <td>{{$item->phone}}</td>
+                                                                    <td>{{$item->mobile}}</td>
+                                                                    <td>{{$item->email}}</td>
+                                                                    <td>
+                                                                        @if ($user)
+                                                                            @if ($user->status == 1)
+                                                                                ยังไม่ได้ยืนยัน
+                                                                            @else
+                                                                                ยืนยัน
+                                                                            @endif
+                                                                        @endif
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="d-flex justify-content-sm-end justify-content-center mb-0">
+                                                                            <a class="btn btn-info btn-sm mr-2 text-white color-yuudee profile" data-toggle="modal" data-target="#staticBackdrop">
+                                                                                <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', $locale) }}
+                                                                            </a>
+                                                                            <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
                                                         @endif
-                                                    </th>
-                                                    <td>{{$item->name}} {{$item->lastname}}</td>
-                                                    <td>{{$item->phone}}</td>
-                                                    <td>{{$item->mobile}}</td>
-                                                    <td>{{$item->email}}</td>
-                                                    <td>สถานะความเป็นแค่เพื่อนของฟ้า</td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                            <a class="btn btn-info btn-sm mr-2 text-white color-yuudee profile" data-toggle="modal" data-target="#staticBackdrop">
-                                                                <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', $locale) }}
-                                                            </a>
-                                                            <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-                                            @endif
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            </tbody>
+                                        </table>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>

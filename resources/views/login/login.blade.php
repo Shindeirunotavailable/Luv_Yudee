@@ -1,12 +1,5 @@
 @extends('layout.master')
 @section('content')
-    {{--
-@ foreach ($count as $item)
-    {{ $item }}
-@endforeach --}}
-
-<?php $locale = session()->get('locale', 'th'); ?>
-
 
     <div class="container h-60vh">
         <div class="imagbackground ">
@@ -15,8 +8,8 @@
                     <div class="card cardBox">
                         <div class="card-body">
                             <div class="text-center">
-                                <h2 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('เข้าสู่ระบบ', $locale) }}</h2>
-                                <label class="mb-5 ">{{ GoogleTranslate::trans('ลงชื่อผู้ใช้เพื่อเข้าสู่ระบบเว็บไซต์ YuDee', $locale) }}</label>
+                                <h2 class="mb-3 pt-3 font-weight-bold">Sign in</h2>
+                                <label class="mb-5 ">Sign in with this account across the following sites.</label>
 
                                 {{-- <div class="hidden" id="hiddenError">
                                     <div class="alert alert-danger" role="alert">
@@ -42,12 +35,12 @@
                             <form action="{{ url('/loginform') }}" method="POST" class="needs-validation" id="loginform">
                                 @csrf
                                 <div class="form-group">
-                                    <label class="label-700">{{ GoogleTranslate::trans('อีเมล์', $locale) }}</label>
+                                    <label class="label-700">Email</label>
                                     <input type="email" name="email" id="email" class="form-control "
                                         placeholder="Enter Email" required>
                                 </div>
                                 <div class="form-group box-search">
-                                    <label class="label-700">{{ GoogleTranslate::trans('รหัสผ่าน', $locale) }}</label>
+                                    <label class="label-700">Password</label>
                                     <div class="d-flex justify-content-end">
                                         <span toggle="#password"
                                             class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
@@ -62,12 +55,12 @@
                                 <!-- ลืมรหัสผ่าน และ Checkbox -->
                                 <div class="d-flex justify-content-between">
                                     <div class="pt-10">
-                                        <label class="label-700"> <input type="checkbox" name="rememberPassword" id="rememberPassword">  {{ GoogleTranslate::trans(' จดจำผู้ใช้งาน', $locale) }}</label>
+                                        <label class="label-700"> <input type="checkbox" name="rememberPassword" id="rememberPassword"> Remember me</label>
 
                                     </div>
                                     
                                     <div class="text-right">
-                                        <button type="button" class="btn Forgetpassword text-left" id="lost-password">{{ GoogleTranslate::trans('ลืมรหัสผ่าน', $locale) }}</button>
+                                        <button type="button" class="btn Forgetpassword text-left" id="lost-password">Lost your password?</button>
                                     </div>
                                 </div>
 
@@ -88,10 +81,10 @@
                             </form>
 
                             <div class="text-center mt-3">
-                                {{-- <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up?
+                                {{-- <a href="javascript:void(0)" class="register" id="myBtn"> Not signed up? 
                                     <span class="colorBlue">Create an account. </span> </a> --}}
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#createAccount">  {{ GoogleTranslate::trans('ไม่มีบัญชีผู้ใช้งาน', $locale) }}
-                                    <span class="colorBlue"> {{ GoogleTranslate::trans('สมัครสมาชิก', $locale) }}</span> </a>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#createAccount">Not signed up? 
+                                    <span class="colorBlue">Create an account.</span> </a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +134,7 @@
                         <form action="{{ url('/register') }}" method="POST" class="needs-validation" id="registerForm">
                             @csrf
                             <div class="form-group">
-                                <label class="label-700 pl-5">{{ GoogleTranslate::trans('ชื่อผู้ใช้', $locale) }}</label>
+                                <label class="label-700 pl-5">Username</label>
                                 <input type="text" name="modal_name" id="modal_name" class="form-control "
                                     placeholder="Enter Your name">
                                 <div class="invalid-feedback">
@@ -149,13 +142,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="label-700 pl-5">{{ GoogleTranslate::trans('อีเมล์', $locale) }}</label>
+                                <label class="label-700 pl-5">Email</label>
                                 <input type="Email" name="modal_email" id="modal_email" class="form-control "
                                     placeholder="Enter Email">
                                 <div class="colorRed" id="ShowError"></div>
                             </div>
                             <div class="form-group">
-                                <label class="label-700 pl-5">{{ GoogleTranslate::trans('รหัสผ่าน', $locale) }}</label>
+                                <label class="label-700 pl-5">Password</label>
                                 <div class="d-flex justify-content-end">
                                     <span toggle="#modal_password"
                                         class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
@@ -168,7 +161,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="label-700 pl-5">{{ GoogleTranslate::trans('ยืนยันรหัสผ่าน', $locale) }}</label>
+                                <label class="label-700 pl-5">Confirm Password</label>
                                 <div class="d-flex justify-content-end">
                                     <span toggle="#modal_confirmPassword"
                                         class="fa fa-fw fa-eye field-icon toggle-password icon-style"></span>
@@ -197,17 +190,5 @@
 
     </div>
 
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script>
-    $('.changeLanguage').change(function(event){
-        var url = "{{ route('google.translate.change') }}";
-        window.location.href = url+"?lang="+$(this).val()
-    })
-    </script>
 
 @endsection

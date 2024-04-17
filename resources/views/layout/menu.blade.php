@@ -39,13 +39,13 @@
                             <span class="d-xl-block">Login / Register</span>
                         </a> --}}
 
-                    <div class="pcs_dropdown">
+                    {{-- <div class="pcs_dropdown">
                         <select class="form-select changeLanguage">
                             <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}>ภาษาไทย</option>
                             <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>
                             <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>China</option>
                         </select>
-                    </div>
+                    </div> --}}
                     @if(session('user_name'))
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
@@ -146,7 +146,7 @@
                                             </span>
                                         </a>
                                     </li>
-                                    <li class="menuitem-root submenu-root css-pw link-li">
+                                    {{-- <li class="menuitem-root submenu-root css-pw link-li">
                                         <div class="pcs_dropdown menu-button">
                                             <select class="form-select changeLanguage">
                                                 <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}> ไทย</option>
@@ -154,7 +154,7 @@
                                                 <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>China</option>
                                             </select>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </nav>
                         </div>
