@@ -71,6 +71,8 @@ Route::get('google/translate/change','App\Http\Controllers\GoogleTranslateContro
 //  Route::get('showporfile/{id_profiles}', 'App\Http\Controllers\adminController@showporfile')->name('showprofile');
 
 
+Route::get('/getProfile/{id_profile}', 'App\Http\Controllers\adminController@getProfile'); //แสดงข้อมูล
+
  // -----------------------------------function test Route ------------------------------------
 //  Route::view('/addproperty', 'dashboard.sidebardashboard');
 Route::view('/addproperty', 'dashboard.sidebardashboard');

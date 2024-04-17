@@ -2,6 +2,20 @@
 
 <?php $locale = session()->get('locale', 'th'); ?>
 
+
+
+{{-- @if (isset($data))
+    @foreach ($data['profiles'] as $review)
+        @if (isset($data))
+            @foreach ($data['users']->where('id', $review->create_by)->unique('id') as $item)
+                {{$item->name}}
+            @endforeach
+        @endif
+    @endforeach
+@endif    --}}
+
+
+
 <div class="dashboard__main pl-d-0-md">
     <div class="dashboard__content property-page bg-f7">
         <div class="row align-items-center pb-d-40">
@@ -22,8 +36,8 @@
                                     <div class="total_review d-sm-flex align-items-center justify-content-between mb-d-20 mt60">
                                         <h5 class="font-weight-600">{{ GoogleTranslate::trans('โปรไฟล์', $locale) }}</h5>
                                         <div class="search_area">
-                                            <input type="text" class="form-control form-control-text" id="searchUser" placeholder="search User"><span>
-                                            <i class="fa-solid fa-magnifying-glass"></i> </span>
+                                            <input type="text" class="form-control form-control-text" id="searchUser" placeholder="search User">
+                                            <span><i class="fa-solid fa-magnifying-glass"></i> </span>
                                         </div>
                                     </div>
                                 </div>
@@ -33,19 +47,22 @@
                                             <table class="table">
                                                 <thead class="color-yuudee">
                                                 <tr>
-                                                    <th class="text-white">โปรไฟล์</th>
+                                                    <th class="text-white">#</th>
+                                                    <th class="text-white ">โปรไฟล์</th>
                                                     <th class="text-left text-white">ชื่อ นามสุกล</th>
                                                     <th class="text-left text-white">เบอร์มือถือ</th>
                                                     <th class="text-left text-white">เบอร์บ้าน</th>
                                                     <th class="text-left text-white">Email</th>
+                                                    <th class="text-left text-white">สถานะ</th>
                                                     <th>&nbsp;</th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
-                                                @if (isset($data))
+                                            <tbody>
+                                            @if (isset($data))
                                                 @foreach ($data['profiles'] as $item)
                                                 <tr class="alert" role="alert">
-                                                    <th scope="row">
+                                                    <th scope="row">{{ $loop->iteration }}</th> <!-- เปลี่ยนจากการใช้ตัวแปรคอนเตอร์เป็นการใช้ loop->iteration -->
+                                                    <th scope="row" class="pl-10">
                                                         @if(!empty($item->imageuser))
                                                             <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
                                                         @else
@@ -56,9 +73,10 @@
                                                     <td>{{$item->phone}}</td>
                                                     <td>{{$item->mobile}}</td>
                                                     <td>{{$item->email}}</td>
+                                                    <td>สถานะความเป็นแค่เพื่อนของฟ้า</td>
                                                     <td>
                                                         <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                            <a class="btn btn-info btn-sm mr-2 text-white color-yuudee" data-toggle="modal" data-target="#staticBackdrop">
+                                                            <a class="btn btn-info btn-sm mr-2 text-white color-yuudee profile" data-toggle="modal" data-target="#staticBackdrop">
                                                                 <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', $locale) }}
                                                             </a>
                                                             <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
@@ -66,51 +84,11 @@
                                                     </td>
                                                 </tr>
                                                 @endforeach
-                                                @endif
+                                            @endif
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-
-                                {{-- @if (isset($data))
-                                    @foreach ($data['profiles'] as $item)
-                                        <div class="col-md-12 review-item">
-                                            <div class="media border-top pt-7 pb-6 d-sm-flex d-block text-sm-left text-center">
-                                                    @if(!empty($item->imageuser))
-                                                        <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
-                                                    @else
-                                                        <img src="{{ asset('/assets/images/user2.jpg') }}" alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
-                                                    @endif
-
-                                                <div class="media-body">
-                                                    <div class="row mb-1 align-items-center">
-                                                        <div class="col-sm-6 mb-2 mb-sm-0  ">
-                                                            <h4 class="fw-600 mb-0 text-heading fs-14">{{$item->name}} {{$item->lastname}} </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-1 align-items-center">
-                                                        {{ GoogleTranslate::trans('', $locale) }}
-                                                        <div class="col-sm-8 mb-2 mb-sm-0  ">
-                                                            <label class="pl-3 font-700" >{{ GoogleTranslate::trans('เบอร์มือถือ', $locale) }} : {{$item->phone}}</label><br>
-                                                            <label class="pl-3 font-700" >{{ GoogleTranslate::trans('เบอร์บ้าน', $locale) }} : {{$item->mobile}}</label><br>
-                                                            <label class="pl-3 font-700">{{ GoogleTranslate::trans('อีเมล์', $locale) }} : {{$item->email}}</label>
-                                                        </div>
-
-                                                        <div class="col-sm-4">
-                                                            <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                                <a class="btn btn-info btn-sm mr-2 text-white color-yuudee" data-toggle="modal" data-target="#staticBackdrop">
-                                                                    <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', $locale) }}
-                                                                </a>
-                                                                <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                @endif --}}
-                                {{-- {{$data['pp_reviews']->links()}} --}}
                             </div>
                         </div>
                     </div>
@@ -124,11 +102,11 @@
 
 
     {{-- model --}}
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content modal-xl">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">{{ GoogleTranslate::trans('โปรไฟล์ผู้ใช้งาน', $locale) }}</h5>
+              <h5 class="modal-title" id="staticBackdrop">{{ GoogleTranslate::trans('โปรไฟล์ผู้ใช้งาน', $locale) }}</h5>
 
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

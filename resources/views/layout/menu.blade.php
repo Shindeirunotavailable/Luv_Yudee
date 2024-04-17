@@ -39,7 +39,7 @@
                             <span class="d-xl-block">Login / Register</span>
                         </a> --}}
 
-                    <div class="pcs_dropdown">
+                    <div class="pcs_dropdown mx-xl-4">
                         <select class="form-select changeLanguage">
                             <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}>ภาษาไทย</option>
                             <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>

@@ -150,6 +150,38 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
       });
 
 
+
+// เมื่อ checkbox ถูกคลิก
+$('#rememberPassword').change(function() {
+  var emailInput = $('#email').val(); // รับค่าอีเมล์จาก input
+  var passwordInput = $('#password').val(); // รับค่ารหัสผ่านจาก input
+
+  if ($(this).prop('checked')) {
+      // ถ้า checkbox ถูกเลือกให้บันทึกรหัสผ่านใน local storage
+      localStorage.setItem('rememberedEmail', emailInput);
+      localStorage.setItem('rememberedPassword', passwordInput);
+  } else {
+      // ถ้า checkbox ไม่ถูกเลือกให้ลบข้อมูลจดจำรหัสผ่านที่บันทึกไว้ใน local storage
+      localStorage.removeItem('rememberedEmail');
+      localStorage.removeItem('rememberedPassword');
+  }
+});
+
+// เมื่อโหลดหน้าเว็บใหม่
+$(document).ready(function() {
+  var rememberedEmail = localStorage.getItem('rememberedEmail');
+  var rememberedPassword = localStorage.getItem('rememberedPassword');
+
+  if (rememberedEmail && rememberedPassword) {
+      // ถ้ามีข้อมูลใน local storage ให้เติมค่าใน input ของอีเมล์และรหัสผ่าน
+      $('#email').val(rememberedEmail);
+      $('#password').val(rememberedPassword);
+      $('#rememberPassword').prop('checked', true); // เลือก checkbox
+  }
+});
+
+
+
     ///////////////////////  หน้าสมัครสมาชิก //////////////////////
 
   

@@ -277,26 +277,33 @@ function readURL(input) {
       $('#imagePreview').css('background-image', 'url(https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg)');
   }
 }
+
 $("#imageuser").change(function() {
   readURL(this);
 });
 
 
+
+//////////////////////////////////////////////////// admin profile js ///////////////////////////////////////////////
+
 $(document).ready(function(){
   $('#searchUser').on('keyup', function(){
       var searchText = $(this).val().toLowerCase();
-      $('.review-item').each(function(){
-          var name = $(this).find('.text-heading').text().toLowerCase();
-          var email = $(this).find('.font-700:contains('+searchText+')').text().toLowerCase();
-          var phone = $(this).find('.font-700:contains('+searchText+')').text().toLowerCase();
-          if(name.includes(searchText) || email.includes(searchText) || phone.includes(searchText)){
+      $('.table tbody tr').each(function(){
+          var name = $(this).find('td:eq(1)').text().toLowerCase(); // ชื่อ
+          var lastname = $(this).find('td:eq(2)').text().toLowerCase(); // นามสกุล
+          var email = $(this).find('td:eq(4)').text().toLowerCase(); // อีเมล์
+          var phone = $(this).find('td:eq(3)').text().toLowerCase(); // เบอร์มือถือ
+          var homePhone = $(this).find('td:eq(4)').text().toLowerCase(); // เบอร์บ้าน
+          if(name.includes(searchText) || lastname.includes(searchText) || email.includes(searchText) || phone.includes(searchText) || homePhone.includes(searchText)){
               $(this).show();
-          }else{
+          } else {
               $(this).hide();
           }
       });
   });
 });
+
 
 
 
