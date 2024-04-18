@@ -437,7 +437,75 @@
                     </div>
                 </section>
 
+            
                 <section class="pt-6 section-pp">
+    
+                    <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
+                    <div class="card border-0">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-sm-6 mb-6 mb-sm-0">
+                                    <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
+                                        <h5 class="fw-600 fs-16 lh-2 text-heading mb-6">
+                                            Average User Rating
+                                        </h5>
+                                        <p class="fs-40 text-heading font-weight-bold lh-1">
+                                            {{ number_format($averageRating, 2) }}  <span class="fs-18 text-gray-light font-weight-normal">/5</span>
+                                        </p>
+                                        <div class="list-inline">
+                                            @php
+                                            $fullStars = floor($averageRating); // จำนวนดาวเต็ม
+                                            $halfStar = $averageRating - $fullStars; // คำนวณจำนวนครึ่งดาว
+                                            @endphp
+                                            @for ($i = 0; $i < $fullStars; $i++)
+                                                <li class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1"><i class="fas fa-star"></i></li>
+                                            @endfor
+                                            @if ($halfStar >= 0.5)
+                                                <li class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1"><i class="fas fa-star-half-alt"></i></li>
+                                            @endif
+                                            @if ($fullStars < 5 && $halfStar == 0.5)
+                                                <li class="list-inline-item bg-gray text-white star d-inline-flex align-items-center justify-content-center mb-1"><i class="fas fa-star"></i></li>
+                                            @endif
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                
+                                <div class="col-sm-6 pt-2">
+                                    <h5 class="fw-600 fs-16 lh-2 text-heading ">
+                                        Rating Breakdown
+                                    </h5>
+                                    @foreach (range(5, 1) as $star)
+                                        @php
+                                        $count = $starCounts[$star] ?? 0; // ตรวจสอบว่ามีข้อมูลหรือไม่ ถ้าไม่มีกำหนดให้เป็น 0
+                                        $percentage = ($count / $totalReviews) * 100;
+                                        @endphp
+                                        <div class="d-flex align-items-center mx-n1">
+                                            <ul class="list-inline d-flex px-1 mb-0">
+                                                @for ($i = 0; $i < $star; $i++)
+                                                    <li class="list-inline-item text-warning mr-1"><i class="fas fa-star"></i></li>
+                                                @endfor
+                                                @for ($i = 0; $i < 5 - $star; $i++)
+                                                    <li class="list-inline-item text-border mr-1"><i class="fas fa-star"></i></li>
+                                                @endfor
+                                            </ul>
+                                            <div class="d-block w-100 px-1">
+                                                <div class="progress-pp rating-progress-pp">
+                                                    <div class="progress-pp-bar bg-warning" role="progressbar" style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="text-muted px-1">{{ round($percentage, 2) }}%</div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{-- <section class="pt-6 section-pp">
                     <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
                     <div class="card border-0 ">
                         <div class="card-body p-0">
@@ -626,7 +694,7 @@
                         </div>
                     </div>
 
-                </section>
+                </section> --}}
 
 
                         <section class="pt-6 border-bottom-pp section-pp">

@@ -47,7 +47,7 @@ $locale = session()->get('locale', 'th');
                                         <td class="vam">
                                             <div class="list-content py-0 p-0 mt-2 mt-xxl-0 ps-xxl-4">
                                                 <div class="h6 list-title">
-                                                    <a href="{{ 'property/?id_property=' . $item->id_property }}">{{ $item->property_title }}</a>
+                                                    <a >{{ $item->property_title }}</a>
                                                 </div>
                                                     <p class="list-text mb-0 text-muted">
                                                     @if(is_null($item->property_provinces))
@@ -77,7 +77,7 @@ $locale = session()->get('locale', 'th');
                                                         @endif
                                                     @endforeach</p>
                                                     <div class="list-price">
-                                                        <a href="#">{{ isset($item->property_price) ? '฿ ' . $item->property_price : ' N/A' }}</a>
+                                                        <a >{{ isset($item->property_price) ? '฿ ' . $item->property_price : ' N/A' }}</a>
                                                     </div>
                                             </div>
                                         </td>

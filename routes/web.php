@@ -36,6 +36,9 @@ Route::get('changereply/{id_reply}' , 'App\Http\Controllers\ReviewsController@ch
 
 
 // Route::any('slider' , 'App\Http\Controllers\HomeController@slider');
+Route::any('analyzeReviews' , 'App\Http\Controllers\ReviewsController@analyzeReviews')->middleware('auth');
+
+Route::any('ReviewsTest' , 'App\Http\Controllers\ReviewsController@ReviewsTest')->middleware('auth');
 
  // -----------------------------------main function  route non ------------------------------------
 route::any('login','App\Http\Controllers\LoginController@login')->name('login'); // เปิดหน้า Login
@@ -60,6 +63,7 @@ route::get('/verify-email/{token}','App\Http\Controllers\LoginController@verifyE
 
 Route::get('google/translate','App\Http\Controllers\GoogleTranslateController@googleTranslate')->name('google.translate');
 Route::get('google/translate/change','App\Http\Controllers\GoogleTranslateController@googleTranslateChange')->name('google.translate.change');
+
 
 
  // ----------------------------------- dashboard admin ------------------------------------

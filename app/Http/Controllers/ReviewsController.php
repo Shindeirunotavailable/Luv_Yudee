@@ -34,7 +34,6 @@ class ReviewsController extends Controller
 
         return response()->json(['success' => true, 'message' => 'Testajax']);
         // return redirect('/property')-> with('data', $pp_reviews);
-       
 
     }
 
@@ -96,4 +95,51 @@ class ReviewsController extends Controller
         $pp_reply=DB::table('pp_reply')->where('id_reply',$id_reply)->update($data);
         return redirect('/addproperty');
     }
+
+    //------------------------------------------ รอลบ -----------------------------------------
+
+    public function analyzeReviews() {
+        $totalReviews = DB::table('pp_reviews')->count();
+        $totalStars = DB::table('pp_reviews')->sum('review_star');
+        $averageRating = $totalStars / $totalReviews;
+        $starCounts = [];
+        for ($i = 1; $i <= 5; $i++) {
+            $starCounts[$i] = DB::table('pp_reviews')->where('review_star', $i)->count();
+        }
+        // แสดงผลการวิเคราะห์
+        return view('.propertyDetail.test')->with([
+            'totalReviews' => $totalReviews,
+            'averageRating' => $averageRating,
+            'starCounts' => $starCounts,
+        ]);
+    }
+
+
+
+    public function ReviewsTest(Request $request){
+        
+        $star = $request->input('star');
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $content = $request->input('content');
+        $create_by = $request->input('user_id');
+        $data = [
+            'review_star' => $star,
+            'review_name' => $name,
+            'review_email' => $email,
+            'review_content' => $content,
+            'create_datetime' => date('Y-m-d H:i:s'),
+            'update_datetime' => date('Y-m-d H:i:s'),
+            'create_by' => $create_by, // ใช้ id ของผู้ใช้ที่เพิ่มไปลงในฐานข้อมูล
+        ];
+        DB::table('pp_reviews')->insert($data);
+        $pp_reviews=DB::table('pp_reviews')->get();
+        return view('propertyDetail.test')-> with('data', $pp_reviews);
+        // return redirect('/property')-> with('data', $pp_reviews);
+
+    }
+
+
+
+
 }
