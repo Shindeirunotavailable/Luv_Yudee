@@ -55,3 +55,58 @@
         }
     }
 }
+
+
+.user-confirm {
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  
+.user-confirm::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    margin-right: 5px;
+  }
+
+  .user {
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    color: #f1bb06;
+  }
+  
+  .user::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f1bb06;
+    margin-right: 5px;
+  }
+
+
+  .admin {
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    color: #06aef1;
+  }
+  
+  .admin::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #06aef1;
+    margin-right: 5px;
+  }
+
+  
