@@ -989,7 +989,7 @@
                                         @csrf
                                         <div class="form-group mb-4 d-flex justify-content-start">
                                             <div class="rate-input">
-                                                <input type="radio" id="star5" name="star" value="5">
+                                                <input type="radio" id="star5" name="star" value="5" checked>
                                                 <label for="star5" title="text" class="mb-0 mr-1 lh-1">
                                                     <i class="fas fa-star"></i>
                                                 </label>
@@ -1059,7 +1059,13 @@
                                                     Please enter a message in the textarea.
                                                 </div>
                                         </div>
-                                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
+                                        @if(Auth::check())
+                                            <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
+
+                                         @else
+                                            <a href="{{ url("addproperty") }}" class="afterButton rounded-pill btn-lg btn-block-sb wait-al text-center" id="form_review" role="button" aria-pressed="true"> Submit </a>  
+                                         @endif
+
 
                                     </form>
 

@@ -141,12 +141,6 @@ public function upload(Request $request)
 
         // }
 
-        if (!empty($profile->imageuser)) {
-            $oldImage = public_path($profile->imageuser);
-            if (file_exists($oldImage)) {
-                unlink($oldImage);
-            }
-        }
 
         if ($request->hasFile('imageuser')) {
             $image = $request->file('imageuser');

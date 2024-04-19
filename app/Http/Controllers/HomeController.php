@@ -98,13 +98,17 @@ class HomeController extends Controller
         $pp_amenities = DB::table('pp_amenities')->get();
         $pp_reply = DB::table('pp_reply')->get();
         $profiles=DB::table('profiles')->get();
+        // $totalStars = DB::table('pp_reviews')->sum('review_star');
+        // $totalReviews = DB::table('pp_reviews')->count();
+        // $averageRating = $totalStars / $totalReviews;
 
-        $totalReviews = DB::table('pp_reviews')->count();
-        $totalStars = DB::table('pp_reviews')->sum('review_star');
-        $averageRating = $totalStars / $totalReviews;
+        $totalReviews = DB::table('pp_reviews')->where('review_status', '!=', 0)->count();
+        $totalStars = DB::table('pp_reviews')->where('review_status', '!=', 0)->sum('review_star');
+        $averageRating = $totalReviews > 0 ? $totalStars / $totalReviews : 0;
+
         $starCounts = [];
         for ($i = 1; $i <= 5; $i++) {
-            $starCounts[$i] = DB::table('pp_reviews')->where('review_star', $i)->count();
+            $starCounts[$i] = DB::table('pp_reviews')->where('review_star', $i)->where('review_status', '!=', 0)->count();
         }
 
     $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();

@@ -19,6 +19,7 @@ class ReviewsController extends Controller
         $email = $request->input('email');
         $content = $request->input('content');
         $create_by = $request->input('user_id');
+
         $data = [
             'review_star' => $star,
             'review_name' => $name,
@@ -30,10 +31,8 @@ class ReviewsController extends Controller
         ];
         DB::table('pp_reviews')->insert($data);
         $pp_reviews=DB::table('pp_reviews')->get();
-        // return view('propertyDetail.property')-> with('data', $pp_reviews);
-
         return response()->json(['success' => true, 'message' => 'Testajax']);
-        // return redirect('/property')-> with('data', $pp_reviews);
+        // return response()->json(['success' => false, 'redirect' => '/addproperty']); 
 
     }
 
@@ -116,28 +115,7 @@ class ReviewsController extends Controller
 
 
 
-    public function ReviewsTest(Request $request){
-        
-        $star = $request->input('star');
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $content = $request->input('content');
-        $create_by = $request->input('user_id');
-        $data = [
-            'review_star' => $star,
-            'review_name' => $name,
-            'review_email' => $email,
-            'review_content' => $content,
-            'create_datetime' => date('Y-m-d H:i:s'),
-            'update_datetime' => date('Y-m-d H:i:s'),
-            'create_by' => $create_by, // ใช้ id ของผู้ใช้ที่เพิ่มไปลงในฐานข้อมูล
-        ];
-        DB::table('pp_reviews')->insert($data);
-        $pp_reviews=DB::table('pp_reviews')->get();
-        return view('propertyDetail.test')-> with('data', $pp_reviews);
-        // return redirect('/property')-> with('data', $pp_reviews);
-
-    }
+    
 
 
 

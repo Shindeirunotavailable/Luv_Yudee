@@ -48,6 +48,12 @@
         color: #0071bc;
       }
 
+  
+
+      .color-warning{
+        background-color: #ced115 !important;
+    }
+
       .colorRed{
         color: red;
       }

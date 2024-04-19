@@ -79,9 +79,12 @@
                                                                             <a class="btn btn-info btn-sm mr-2 text-white color-yuudee profile" data-toggle="modal" data-target="#staticBackdrop">
                                                                                 <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', $locale) }}
                                                                             </a>
+                                                                
                                                                             {{-- <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a> --}}
                                                                             @if(Auth::check() && Auth::user()->id == $item->create_by)
-                                                                                <a href="#" class="btn btn-secondary btn-sm text-white fa-solid fa-trash fs-20"></a>
+                                                                                <a class="btn btn-sm mr-2 text-white color-warning" href="{{ url("addproperty") }}">
+                                                                                    <i class="fa-solid fa-pen-to-square"></i>  {{ GoogleTranslate::trans('แก้ไข', $locale) }}
+                                                                                </a>   
                                                                             @else
                                                                                 <a href="{{ route('deleteporfile',['create_by'=>$item->create_by]) }}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                                             @endif
