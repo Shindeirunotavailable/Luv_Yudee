@@ -15,8 +15,6 @@ use App\Models\resetPassword;
 use App\Models\profile;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\App;
-use App\Models\Reviews;
-use App\Models\Reply;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
@@ -82,14 +80,6 @@ class LoginController extends Controller
             return response()->json(['success' => false, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุข้อความแจ้งเตือน
         }
     }
-
-
-
-
-
-
-
-
 
     public function logout()
     {
@@ -549,6 +539,27 @@ public function upload(Request $request)
 
     if ($profile) {
 
+        // if ($request->hasFile('imageuser')) {
+        //     $image = $request->file('imageuser');
+        //     $imageName = time() . '_' . $image->getClientOriginalName();
+        //     $image->move(public_path('assets/imagesUser'), $imageName);
+        //     $image_url = '/assets/imagesUser/' . $imageName;
+
+        //     // อัปเดตฐานข้อมูลรูปภาพ
+        //     DB::table('profiles')->where('email', $email)->update([
+        //         'imageuser' => $image_url,
+        //         'update_datetime' => now(),
+        //     ]);
+
+        // }
+
+        if (!empty($profile->imageuser)) {
+            $oldImage = public_path($profile->imageuser);
+            if (file_exists($oldImage)) {
+                unlink($oldImage);
+            }
+        }
+
         if ($request->hasFile('imageuser')) {
             $image = $request->file('imageuser');
             $imageName = time() . '_' . $image->getClientOriginalName();
@@ -560,7 +571,6 @@ public function upload(Request $request)
                 'imageuser' => $image_url,
                 'update_datetime' => now(),
             ]);
-
         }
 
         // อัปเดตฐานข้อมูลโปรไฟล์
@@ -634,13 +644,9 @@ public function upload(Request $request)
 
     }
 
-    public function test(){
-     return view(".propertyDetail.test");
-
+    public function test()
+    {
+        return view("test");
     }
-
-
-
-    
 
 }

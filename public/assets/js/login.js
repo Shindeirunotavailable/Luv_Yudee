@@ -102,9 +102,11 @@ $('.Forgetpassword').click(function(){ //$.register คือชื่อ class 
                         window.location.href = response.redirect; // redirect ไปยัง URL ที่ระบุใน response
                     } else {
                         // ถ้าเข้าสู่ระบบไม่สำเร็จ
-                        $('#errorsession').text(''); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
+                        $('#errorsession').text('');
+                        $('#sessionhidden').addClass('hidden'); 
+
                         $('#errorsession').text(response.message); // แสดงข้อความแจ้งเตือนใน div ที่มี id="statusMessage"
-                        $('#hiddenError').removeClass('hidden'); // ลบ class "hidden" ออกเพื่อแสดงข้อความแจ้งเตือน
+                        $('#hiddenError').removeClass('hidden'); 
 
                     }
                 }

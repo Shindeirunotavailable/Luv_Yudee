@@ -36,7 +36,7 @@ $locale = session()->get('locale', 'th');
                                         <th scope="row">
                                             <div class="listing-style1 dashboard-style d-xxl-flex align-items-center mb-0">
                                                 <div class="list-thumb">
-                                                    @if(isset($item->id_media) && !empty($item->id_media))
+                                                    @if(isset($item->id_media) && !empty($item->id_media) && $item->media_file_type == 1)
                                                         <img class="showproperty" src="{{ $item->media_property }}" alt="property">
                                                     @else
                                                         <img src="{{ asset('/assets/images/noimg.jpg') }}" alt="No Image" class="showproperty">
@@ -47,7 +47,7 @@ $locale = session()->get('locale', 'th');
                                         <td class="vam">
                                             <div class="list-content py-0 p-0 mt-2 mt-xxl-0 ps-xxl-4">
                                                 <div class="h6 list-title">
-                                                    <a >{{ $item->property_title }}</a>
+                                                    <a href="{{ 'property/?id_property=' . $item->id_property }}">{{ $item->property_title }}</a>
                                                 </div>
                                                     <p class="list-text mb-0 text-muted">
                                                     @if(is_null($item->property_provinces))
@@ -77,7 +77,7 @@ $locale = session()->get('locale', 'th');
                                                         @endif
                                                     @endforeach</p>
                                                     <div class="list-price">
-                                                        <a >{{ isset($item->property_price) ? '฿ ' . $item->property_price : ' N/A' }}</a>
+                                                        <a href="#">{{ isset($item->property_price) ? '฿ ' . $item->property_price : ' N/A' }}</a>
                                                     </div>
                                             </div>
                                         </td>

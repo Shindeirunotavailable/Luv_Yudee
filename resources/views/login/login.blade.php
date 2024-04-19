@@ -25,9 +25,11 @@
                                 </div>   
 
                                 @if (session('error'))
+                                    <div class="text" id="sessionhidden">
                                         <div class="alert alert alert-danger" role="alert" id="errorsession">
                                             <strong> {{ session('error') }}</strong>
                                         </div>
+                                    </div>
                                 @endif
 
                             </div>
