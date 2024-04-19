@@ -70,6 +70,11 @@
 //   });
 
 
+
+// $('#SubmitReview').submit(function (event) {
+
+// });
+
 $('#form_review').submit(function (event) {
     event.preventDefault(); // ป้องกันการส่งฟอร์ม
     onSubmitReview(event);
@@ -92,7 +97,6 @@ $('#form_review').submit(function (event) {
                 $('#name').removeClass('is-invalid is-valid');
                 $('#email').removeClass('is-invalid is-valid');
                 $('input[name="star"]').prop('checked', false);
-  
   
               } else {
                 

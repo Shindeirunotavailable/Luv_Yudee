@@ -69,9 +69,21 @@ class HomeController extends Controller
         $pp_amenities = DB::table('pp_amenities')->get();
         $pp_reply = DB::table('pp_reply')->get();
         $profiles=DB::table('profiles')->get();
-        // dd($provinces);
-        $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
-        $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
+        // $totalStars = DB::table('pp_reviews')->sum('review_star');
+        // $totalReviews = DB::table('pp_reviews')->count();
+        // $averageRating = $totalStars / $totalReviews;
+
+        $totalReviews = DB::table('pp_reviews')->where('review_status', '!=', 0)->count();
+        $totalStars = DB::table('pp_reviews')->where('review_status', '!=', 0)->sum('review_star');
+        $averageRating = $totalReviews > 0 ? $totalStars / $totalReviews : 0;
+
+        $starCounts = [];
+        for ($i = 1; $i <= 5; $i++) {
+            $starCounts[$i] = DB::table('pp_reviews')->where('review_star', $i)->where('review_status', '!=', 0)->count();
+        }
+
+    $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
+    $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
         return view(".propertyDetail.property")->with([
             'blogs' => $blogs,
             'provinces' => $provinces,
@@ -80,6 +92,9 @@ class HomeController extends Controller
             'pp_amenities' => $pp_amenities,
             'data' => $showrivew,
             'pp_reply' => $pp_reply,
+            'averageRating' => $averageRating,
+            'totalReviews' => $totalReviews,
+            'starCounts' => $starCounts,
             'profiles' => $profiles
 
         ]);
