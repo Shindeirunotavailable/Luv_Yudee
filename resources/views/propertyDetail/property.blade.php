@@ -1615,7 +1615,7 @@
             style="">
             <div class="media align-items-center">
                 <img class="img-angent" src="{{ asset('/assets/images/agent-3.png') }}" alt="Irene Wallace"
-                    class="mr-4 rounded-circle">
+                    class="mr-4 rounded-circle">    
                 <div class="media-body">
                     <a href="#" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
                     <span class="fs-13 lh-2">Sales Excutive</span>
