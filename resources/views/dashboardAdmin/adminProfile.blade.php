@@ -2,6 +2,12 @@
 
 <?php $locale = session()->get('locale', 'th'); ?>
 
+
+
+ 
+
+
+
 <div class="dashboard__main pl-d-0-md">
     <div class="dashboard__content property-page bg-f7">
         <div class="row align-items-center pb-d-40">
@@ -49,7 +55,7 @@
                                                         @if (isset($data))
                                                             @foreach ($data['users']->where('id', $item->create_by)->unique('id') as $user)
                                                                 <tr class="alert" role="alert">
-                                                                    <th scope="row">{{ $loop->iteration }}</th>
+                                                                    <th scope="row">{{ $loop->iteration }}</th> <!-- เปลี่ยนจากการใช้ตัวแปรคอนเตอร์เป็นการใช้ loop->iteration -->
                                                                     <th scope="row" class="pl-10">
                                                                         @if(!empty($item->imageuser))
                                                                             <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
@@ -63,14 +69,10 @@
                                                                     <td>{{$item->email}}</td>
                                                                     <td>
                                                                         @if ($user)
-                                                                            @if ($user->Isadmin == 1)
-                                                                                <span class="admin"> แอดมิน</span> 
+                                                                            @if ($user->status == 1)
+                                                                                ยังไม่ได้ยืนยัน
                                                                             @else
-                                                                                @if ($user->status == 1)
-                                                                                   <span class="user"> ยังไม่ได้ยืนยัน </span> 
-                                                                                @else
-                                                                                    <span class="user-confirm"> ยืนยันแล้ว </span> 
-                                                                                @endif
+                                                                                ยืนยัน
                                                                             @endif
                                                                         @endif
                                                                     </td>

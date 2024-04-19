@@ -412,24 +412,5 @@ $('.del-review').click(function (event) {
 // });
 
 
-  $('#profileSubmit, #testB, #testC').click(function(){
-      var buttonId = $(this).attr('id');
-      if(buttonId === 'profileSubmit') {
-          localStorage.setItem('activeTab', 'v-profile-tab');
-      } else if(buttonId === 'testB') {
-          localStorage.setItem('activeTab', 'nav-profile-tab');
-      } else if(buttonId === 'testC') {
-          localStorage.setItem('activeTab', 'nav-contact-tab');
-      }
-      location.reload();
-  });
-
-  $(document).ready(function() {
-    var activeTabId = localStorage.getItem('activeTab');
-    if(activeTabId) {
-        $('#' + activeTabId).tab('show');
-    }
-  });
-
 
 
