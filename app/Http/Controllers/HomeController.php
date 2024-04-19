@@ -59,56 +59,19 @@ class HomeController extends Controller
 
 
     // }
-    // public function property(){
-    //     $blogs = DB::table('pp_properties')
-    //         ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
-    //         ->get();
-    //     $provinces = DB::table('provinces')->get();
-    //     $amphures = DB::table('amphures')->get();
-    //     $districts = DB::table('districts')->get();
-    //     $pp_amenities = DB::table('pp_amenities')->get();
-    //     $pp_reply = DB::table('pp_reply')->get();
-    //     $profiles=DB::table('profiles')->get();
-    //     // dd($provinces);
-    //     $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
-    //     $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
-    //     return view(".propertyDetail.property")->with([
-    //         'blogs' => $blogs,
-    //         'provinces' => $provinces,
-    //         'amphures' => $amphures,
-    //         'districts' => $districts,
-    //         'pp_amenities' => $pp_amenities,
-    //         'data' => $showrivew,
-    //         'pp_reply' => $pp_reply,
-    //         'profiles' => $profiles
-
-    //     ]);
-
-    // }
-        
-
     public function property(){
-
         $blogs = DB::table('pp_properties')
-        ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
-        ->get();
+            ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+            ->get();
         $provinces = DB::table('provinces')->get();
         $amphures = DB::table('amphures')->get();
         $districts = DB::table('districts')->get();
         $pp_amenities = DB::table('pp_amenities')->get();
         $pp_reply = DB::table('pp_reply')->get();
         $profiles=DB::table('profiles')->get();
-
-        $totalReviews = DB::table('pp_reviews')->count();
-        $totalStars = DB::table('pp_reviews')->sum('review_star');
-        $averageRating = $totalStars / $totalReviews;
-        $starCounts = [];
-        for ($i = 1; $i <= 5; $i++) {
-            $starCounts[$i] = DB::table('pp_reviews')->where('review_star', $i)->count();
-        }
-
-    $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
-    $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
+        // dd($provinces);
+        $showrivew=Reviews::orderByDesc('id_review')->where('review_status',true)->get();
+        $pp_reply=Reply::orderBy('id_reply')->where('reply_status',true)->get();
         return view(".propertyDetail.property")->with([
             'blogs' => $blogs,
             'provinces' => $provinces,
@@ -117,14 +80,14 @@ class HomeController extends Controller
             'pp_amenities' => $pp_amenities,
             'data' => $showrivew,
             'pp_reply' => $pp_reply,
-            'totalReviews' => $totalReviews,
-            'averageRating' => $averageRating,
-            'starCounts' => $starCounts,
             'profiles' => $profiles
 
         ]);
+        // $pp_reviews=DB::table('pp_reviews')->get();
+        // return view(".propertyDetail.property")->with('data',$pp_reviews);
 
     }
+
 
 
     public function home_email(Request $request)
