@@ -36,7 +36,7 @@ $locale = session()->get('locale', 'th');
                                         <th scope="row">
                                             <div class="listing-style1 dashboard-style d-xxl-flex align-items-center mb-0">
                                                 <div class="list-thumb">
-                                                    @if(isset($item->id_media) && !empty($item->id_media))
+                                                    @if(isset($item->id_media) && !empty($item->id_media) && $item->media_file_type == 1)
                                                         <img class="showproperty" src="{{ $item->media_property }}" alt="property">
                                                     @else
                                                         <img src="{{ asset('/assets/images/noimg.jpg') }}" alt="No Image" class="showproperty">
