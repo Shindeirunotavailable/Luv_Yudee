@@ -92,6 +92,9 @@ class HomeController extends Controller
             'pp_amenities' => $pp_amenities,
             'data' => $showrivew,
             'pp_reply' => $pp_reply,
+            'averageRating' => $averageRating,
+            'totalReviews' => $totalReviews,
+            'starCounts' => $starCounts,
             'profiles' => $profiles
 
         ]);
