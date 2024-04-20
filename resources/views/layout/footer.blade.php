@@ -84,10 +84,9 @@
 
 
                         <div class="social-style1 light-style py-2">
-                            <a href="#"><i class="fab fa-facebook-f list-inline-item"></i></a>
+                            <a href="https://web.facebook.com/luvdrive?_rdc=1&_rdr"><i class="fab fa-facebook-f list-inline-item"></i></a>
                             <a href="#"><i class="fab fa-twitter list-inline-item"></i></a>
-                            <a href="#"><i class="fab fa-instagram list-inline-item"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in list-inline-item"></i></a>
+                            <a href="https://www.instagram.com/luvdrivecarrent/"><i class="fab fa-instagram list-inline-item"></i></a>
                         </div>
                     </div>
                 </div>
