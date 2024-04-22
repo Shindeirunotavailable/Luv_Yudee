@@ -131,3 +131,55 @@ background: #eee;
   width: 360px;
   border-radius: 60px !important;
 }
+
+.admin {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  color: #006eff;
+}
+
+.admin::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #006eff;
+  margin-right: 5px;
+}
+
+.user {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  color: #ece933;
+}
+
+.user::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ece933;
+  margin-right: 5px;
+}
+
+
+.user-confirm {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  color: #2eca48;
+}
+
+.user-confirm::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2eca48;
+  margin-right: 5px;
+}

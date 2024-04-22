@@ -2,12 +2,6 @@
 
 <?php $locale = session()->get('locale', 'th'); ?>
 
-
-
- 
-
-
-
 <div class="dashboard__main pl-d-0-md">
     <div class="dashboard__content property-page bg-f7">
         <div class="row align-items-center pb-d-40">
@@ -55,7 +49,7 @@
                                                         @if (isset($data))
                                                             @foreach ($data['users']->where('id', $item->create_by)->unique('id') as $user)
                                                                 <tr class="alert" role="alert">
-                                                                    <th scope="row">{{ $loop->iteration }}</th> <!-- เปลี่ยนจากการใช้ตัวแปรคอนเตอร์เป็นการใช้ loop->iteration -->
+                                                                    <th scope="row">{{ $loop->iteration }}</th>
                                                                     <th scope="row" class="pl-10">
                                                                         @if(!empty($item->imageuser))
                                                                             <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
@@ -69,10 +63,14 @@
                                                                     <td>{{$item->email}}</td>
                                                                     <td>
                                                                         @if ($user)
-                                                                            @if ($user->status == 1)
-                                                                                ยังไม่ได้ยืนยัน
+                                                                            @if ($user->Isadmin == 1)
+                                                                                <span class="admin"> แอดมิน</span> 
                                                                             @else
-                                                                                ยืนยัน
+                                                                                @if ($user->status == 1)
+                                                                                   <span class="user"> ยังไม่ได้ยืนยัน </span> 
+                                                                                @else
+                                                                                    <span class="user-confirm"> ยืนยันแล้ว </span> 
+                                                                                @endif
                                                                             @endif
                                                                         @endif
                                                                     </td>
@@ -81,12 +79,18 @@
                                                                             <a class="btn btn-info btn-sm mr-2 text-white color-yuudee profile" data-toggle="modal" data-target="#staticBackdrop">
                                                                                 <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', $locale) }}
                                                                             </a>
-                                                                
+
+
                                                                             {{-- <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a> --}}
                                                                             @if(Auth::check() && Auth::user()->id == $item->create_by)
+                                                                                @if ($user)
+                                                                                @if ($user->Isadmin == 1)
                                                                                 <a class="btn btn-sm mr-2 text-white color-warning" href="{{ url("addproperty") }}">
-                                                                                    <i class="fa-solid fa-pen-to-square"></i>  {{ GoogleTranslate::trans('แก้ไข', $locale) }}
-                                                                                </a>   
+                                                                                    <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('แก้ไข', $locale) }}
+                                                                                </a>                                                                            
+                                                                                @endif
+                                                                        @endif
+
                                                                             @else
                                                                                 <a href="{{ route('deleteporfile',['create_by'=>$item->create_by]) }}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                                             @endif
