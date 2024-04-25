@@ -19,7 +19,8 @@
                             </li>
 
                             <li class="v_list dropitem link-li">
-                                <a class="list-item link-effect" href="{{url("property")}}">
+                                {{-- <a class="list-item link-effect" href="{{url("property")}}"> --}}
+                                    <a class="list-item link-effect" href="{{url("search_result")}}">
                                     <span class="title">Property</span>
                                 </a>
                             </li>
