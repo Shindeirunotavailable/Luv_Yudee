@@ -127,21 +127,6 @@ public function upload(Request $request)
 
     if ($profile) {
 
-        // if ($request->hasFile('imageuser')) {
-        //     $image = $request->file('imageuser');
-        //     $imageName = time() . '_' . $image->getClientOriginalName();
-        //     $image->move(public_path('assets/imagesUser'), $imageName);
-        //     $image_url = '/assets/imagesUser/' . $imageName;
-
-        //     // อัปเดตฐานข้อมูลรูปภาพ
-        //     DB::table('profiles')->where('email', $email)->update([
-        //         'imageuser' => $image_url,
-        //         'update_datetime' => now(),
-        //     ]);
-
-        // }
-
-
         if ($request->hasFile('imageuser')) {
             $image = $request->file('imageuser');
             $imageName = time() . '_' . $image->getClientOriginalName();

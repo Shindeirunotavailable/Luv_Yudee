@@ -92,7 +92,7 @@
                                                         
                                                         
                                                             <div class="col-12 col-lg-6">
-                                                                <label>skype</label>
+                                                                <label>Line</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour skype" id="skype" name="skype" value={{$item->skype}}>
                                                             </div>
                                                         </div>
