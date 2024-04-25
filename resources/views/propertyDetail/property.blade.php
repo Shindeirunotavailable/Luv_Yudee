@@ -1,701 +1,736 @@
 @extends('layout.master')
 @section('content')
-<main>
-    <section class="section-pp">
-        <div class="container-pp-fluid">
-            <div class="position-relative zoomIn ">
+<?php
+$locale = session()->get('locale', 'th');
+?>
+    <main >
+{{-- ================================================================================================================================================================================================================================================================================== --}}
 
-                <div class="position-absolute pos-fixed-top-right z-index-2">
-                    <ul class="list-inline pt-4 pr-5">
+            <section class="section-pp">
+                <div class="container-pp-fluid">
+                    <div class="position-relative zoomIn ">
 
-                        <li class="list-inline-item mr-2">
-                            <a href="#" data-toggle="tooltip" title=""
-                                class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
-                                data-original-title="Favourite">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </li>
+                        <div class="position-absolute pos-fixed-top-right z-index-2">
+                            <ul class="list-inline pt-4 pr-5">
 
-                        <li class="list-inline-item mr-2">
-                            <button {{-- เอา btn-white หลัง btn ออก --}}
-                                class="btn-1 btn-white-1 p-0 d-flex align-items-center justify-content-center tooltip-icon text-heading bg-hover-primary hover-white rounded-circle border-0 shadow-none"
-                                type="button" data-placement="top" data-toggle="popover" data-container="body"
-                                data-content='
-                                    <ul class="list-inline mb-0 fs-22">
-                                        <li class="list-inline-item">
-                                            <i class="fab fa-twitter"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="fab fa-facebook"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="fa-brands fa-instagram"></i>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <i class="fa-brands fa-youtube"></i>
-                                        </li>
-                                    </ul>'
-                                data-html="true" data-original-title="" title="">
-                                <i class="fa-solid fa-share-nodes"></i>
-                            </button>
-                        </li>
+                                <li class="list-inline-item mr-2">
+                                    <a href="javascript:void(0)" data-toggle="tooltip" title=""
+                                        class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
+                                        data-original-title="Favourite">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </a>
+                                </li>
+
+                                <li class="list-inline-item mr-2">
+                                    <button
+                                        class="btn-1 btn-white-1 p-0 d-flex align-items-center justify-content-center tooltip-icon text-heading bg-hover-primary hover-white rounded-circle border-0 shadow-none"
+                                        type="button" data-placement="top" data-toggle="popover" data-container="body"
+                                        data-content='
+                                            <ul class="list-inline mb-0 fs-22">
+                                                <li class="list-inline-item">
+                                                    <i class="fab fa-twitter"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fab fa-facebook"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa-brands fa-youtube"></i>
+                                                </li>
+                                            </ul>'
+                                        data-html="true" data-original-title="" title="">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </button>
+                                </li>
 
 
-                        <li class="list-inline-item">
-                            <a href="#" data-toggle="tooltip" title=""
-                                class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
-                                data-original-title="Print">
-                                <i class="fa-solid fa-print"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-pp-fluid">
-            <div class="row galleries m-n1 py-2">
-                <div class="col-lg-6 p-1 ">
-                    <div class="item item-size-4-3">
-                        <div class="card p-0 hover-zoom-in">
-                            <a href="{{ asset('/assets/images/property-1.jpg') }}" class="card-img-pp"
-                                data-gtf-mfp="true" data-gallery-id="01">
-                                <img src="{{ asset('/assets/images/property-1.jpg') }}">
-                            </a>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0)" data-toggle="tooltip" title=""
+                                        class="d-flex align-items-center justify-content-center tooltip-icon bg-white text-heading bg-hover-primary hover-white rounded-circle"
+                                        data-original-title="Print">
+                                        <i class="fa-solid fa-print"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 p-1 ">
-                    <div class="row m-n1">
-                        <div class="col-md-6 p-1 ">
+
+
+                @php
+                $id_property = request('id_property');
+                @endphp
+
+                {{-- <input  name="id_property" value="{{$id_property}}" > --}}
+                {{-- {{dd($id_property);}} --}}
+                <div class="container-pp-fluid">
+                    <div class="row galleries m-n1 py-2">
+                    @foreach ($blogs as $blog)
+                        @php
+                        $firstMedia = $blogs->where('id_property', $id_property)->where('media_file_type', 1)->unique('id_media')->first();
+                        @endphp
+
+                        <div class="col-lg-6 p-1 ">
                             <div class="item item-size-4-3">
                                 <div class="card p-0 hover-zoom-in">
-                                    <a href="{{ asset('/assets/images/property-2.jpg') }}" class="card-img-pp"
+                                    <a href="{{ $firstMedia->media_property }}" class="card-img-pp"
                                         data-gtf-mfp="true" data-gallery-id="01">
-                                        <img src="{{ asset('/assets/images/property-2.jpg') }}">
+                                        <img src="{{ $firstMedia->media_property }}">
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 p-1">
-                            <div class="item item-size-4-3">
-                                <div class="card p-0 hover-zoom-in">
-                                    <a href="{{ asset('/assets/images/property-3.jpg') }}" class="card-img-pp"
-                                        data-gtf-mfp="true" data-gallery-id="01">
-                                        <img src="{{ asset('/assets/images/property-3.jpg') }}">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 p-1">
-                            <div class="item item-size-4-3">
-                                <div class="card p-0 hover-zoom-in">
-                                    <a href="{{ asset('/assets/images/property-4.jpg') }}" class="card-img-pp"
-                                        data-gtf-mfp="true" data-gallery-id="01">
-                                        <img src="{{ asset('/assets/images/property-4.jpg') }}">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 p-1">
-                            <div class="item item-size-4-3">
-                                <div class="card p-0 hover-zoom-in">
-                                    <a href="{{ asset('/assets/images/property-5.jpg') }}" class="card-img-pp"
-                                        data-gtf-mfp="true" data-gallery-id="01">
-                                        <img src="{{ asset('/assets/images/property-5.jpg') }}">
-                                    </a>
-                                    <div class=" hidden">
-                                        <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                        </a>
-                                        <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                        </a>
-                                        <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                        </a>
-                                        <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                        </a>
-                                        <a href="{{ asset('/assets/images/noimg.jpg') }}" class="card-img-pp"
-                                            data-gtf-mfp="true" data-gallery-id="01">
-                                        </a>
-
-                                    </div>
-
-                                    <a href="#"
-                                        class="card-img-pp-overlay d-flex flex-column align-items-center justify-content-center hover-image bg-dark-opacity-04">
-                                        <p class="fs-48 font-weight-600 text-white lh-1 mb-4">+12</p>
-                                        <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase">
-                                            View more</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-pp ">
-            <nav aria-label="breadcrumb ">
-                <ol class="breadcrumb pb-0 pl-0 bg-white">
-                    <li class="breadcrumb-item fs-12 letter-spacing-087">
-                        <a href=".">Home</a>
-                    </li>
-                    <li class="breadcrumb-item fs-12 letter-spacing-087">
-                        <a href="#">Listing</a>
-                    </li>
-                    <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">Villa on Hollywood
-                        Boulevard</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
-
-    <div class="container-md-pp ">
-        <div class="row">
-            <article class="col-lg-8  pr-xl-7 mt-5">
-                <section class="m-top border-bottom-pp">
-                    <ul class="list-inline d-sm-flex align-items-sm-center">
-                        <li class="list-inline-item badge-pp badge-pp-orange">Featured</li>
-                        <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li>
-                        <li class="list-inline-item mr-2 mt-2 mt-sm-0"><i class="fa-regular fa-clock mr-1"></i>2months
-                            ago
-                        </li>
-                        <li class="list-inline-item mt-2 mt-sm-0"><i class="fa-regular fa-eye mr-1"></i>1039views
-                        </li>
-                    </ul>
-
-                    <div class="d-sm-flex justify-content-sm-between ">
-                        <div>
-                            <h2 class="fw-600 fs-30 text-heading font-bold mb-0">Villa on Hollywood Boulevard</h2>
-                            <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>ที่อยู่บ้าน</p>
-                        </div>
-
-                        <div class="mt-2 text-lg-right">
-                            <p class="fs-22 text-heading font-bold mb-0 font-weight-600">$1.250.000</p>
-                            <p class="mb-0">$0000/SqFt</p>
-                        </div>
-                    </div>
-                    <h2 class="fw-600 fs-22 text-heading font-bold mb-0">Description</h2>
-                    <p class="mb-6 lh-md pt-2 ">Massa tempor nec feugiat nisl pretium. Egestas fringilla phasellus
-                        faucibus
-                        scelerisque eleifend donec.
-                        Porta nibh venenatis cras sed felis eget velit aliquet. Neque volutpat ac tincidunt vitae
-                        semper
-                        quis lectus. Turpis in eu mi bibendum neque
-                        egestas congue quisque. Sed elementum tempus egestas sed sed risus pretium quam. Dignissim
-                        sodales
-                        ut eu sem. Nibh mauris cursus mattis molestie a
-                        iaculis at erat pellentesque. Id interdum velit laoreet id donec ultrices tincidunt.
-                    </p>
-                </section>
-
-                <section class="pt-6 border-bottom-pp section-pp">
-                    <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Facts and Features</h2>
-                    <div class="row pt-3">
-                        <div class="col-lg-3 col-6 mt-4 ">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-house-chimney-window text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        Type
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        Single Family
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-trowel-bricks text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        YEAR BUILT
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        2020
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-temperature-arrow-up text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        HEATING
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        Radiant
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2  ">
-                                    <i class="fa-solid fa-bath text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        BATHROOMS
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        2
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-bed text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        BEDROOMS
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        3
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-house-flag text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        SQFT
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        979.0
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-warehouse text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        GARAGE
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        1
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6 mt-4">
-                            <div class="media ">
-                                <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
-                                    <i class="fa-solid fa-scroll text-blue"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                        STATUS
-                                    </h5>
-                                    <p class=" fs-ff2 font-weight-bold text-heading">
-                                        Active
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <section class="pt-6 border-bottom-pp section-pp">
-                    <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Additional Details</h2>
-                    <div class="row pt-2">
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Property ID</dt>
-                            <dd>AD-29100</dd>
-                        </dl>
-
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Price</dt>
-                            <dd>$890.000</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Property type</dt>
-                            <dd>Apartment, bar, cafe, villa</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Property status</dt>
-                            <dd>For Sale</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Rooms</dt>
-                            <dd>4</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Bedrooms</dt>
-                            <dd>3</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Size</dt>
-                            <dd>900SqFt</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt>
-                            <dd>2</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Garage</dt>
-                            <dd>1</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt>
-                            <dd>2000 SqFt</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Garage size</dt>
-                            <dd>50 SqFt</dd>
-                        </dl>
-                        <dl class="col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Year build</dt>
-                            <dd>2020</dd>
-                        </dl>
-                        <dl class="offset-sm-6 col-sm-6 mb-0 d-flex">
-                            <dt class="w-110px fs-14  text-heading pr-2">Label</dt>
-                            <dd>Bestseller</dd>
-                        </dl>
-
-                    </div>
-                    <div class="container-pp list-head">
-                    </div>
-                </section>
-
-                <section class="pt-6 border-bottom-pp section-pp ">
-                    <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2>
-                    <ul class="list-unstyled mb-0 row pt-2 ">
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Fireplace
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Balcony
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Fireplace
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Basement
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Cooling
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Basement
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-check mr-2 text-blue"></i>Cooling
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining
-                                room</del>
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i
-                                class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dining
-                                room</del>
-                        </li>
-                        <li class="col-sm-3 col-6 mb-2"><i
-                                class="fa-solid fa-xmark mr-2 text-danger "></i><del>Dishwasher</del>
-                        </li>
-                    </ul>
-
-                </section>
-                {{-- error --}}
-                <section class="pt-6 border-bottom-pp section-pp">
-                    <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Virtual Tour</h4>
-                    <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen=""
-                        class="w-100"></iframe>
-                </section>
-
-                <section class="pt-6 border-bottom-pp section-pp">
-                    <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Location</h2>
-                    <div class="d-flex justify-content-center ">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61986.891901766154!2d100.4506952486328!3d13.828182899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bfbc0283e39%3A0x203d873e226cd556!2zTHV2IERyaXZlIENhciBSZW50IGwg4LmA4Lil4Li04LifIOC5hOC4lOC4o-C5jOC4nyDguITguLLguKPguYzguYDguKPguYnguJnguJfguYwg4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4LmD4Lir4LiN4LmI!5e0!3m2!1sth!2sth!4v1704791449392!5m2!1sth!2sth"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </section>
-
-            
-                <section class="pt-6 section-pp">
-    
-                    <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
-                    <div class="card border-0">
-                        <div class="card-body p-0">
-                            <div class="row">
-                                <div class="col-sm-6 mb-6 mb-sm-0">
-                                    <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
-                                        <h5 class="fw-600 fs-16 lh-2 text-heading mb-6">
-                                            Average User Rating
-                                        </h5>
-                                        <p class="fs-40 text-heading font-weight-bold lh-1">
-                                            {{ number_format($averageRating, 2) }}  <span class="fs-18 text-gray-light font-weight-normal">/5</span>
-                                        </p>
-                                        <div class="list-inline">
-                                            @php
-                                            $fullStars = floor($averageRating); // จำนวนดาวเต็ม
-                                            $halfStar = $averageRating - $fullStars; // คำนวณจำนวนครึ่งดาว
-                                            @endphp
-                                            @for ($i = 0; $i < $fullStars; $i++)
-                                                <li class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1"><i class="fas fa-star"></i></li>
-                                            @endfor
-                                            @if ($halfStar >= 0.5)
-                                                <li class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1"><i class="fas fa-star-half-alt"></i></li>
+                        @break
+                    @endforeach
+                        <div class="col-lg-6 p-1 ">
+                            <div class="row m-n1">
+                                @foreach ($blogs as $blog)
+                                    @php
+                                        // $remainingMedias = $blogs->where('id_property', $id_property)->unique('id_media')->slice(1);
+                                        $remainingMedias = $blogs->where('id_property', $id_property)
+                                            ->where('media_file_type', 1)
+                                            ->unique('id_media')
+                                            ->slice(1);
+                                        $count = 0;
+                                        $totalMedias = $remainingMedias->count(); // นับจำนวนรูปภาพทั้งหมดที่เหลือ
+                                        // $totalMediasInDatabase = $blogs->where('id_property', $id_property)->unique('id_media')->count();
+                                        $totalMediasInDatabase = $blogs->where('id_property', $id_property)
+                                            ->where('media_file_type', 1) // เพิ่มเงื่อนไขที่นี่
+                                            ->unique('id_media')
+                                            ->count();
+                                        $remainingMediasCount = $totalMediasInDatabase - 5 ;
+                                    @endphp
+                                        @foreach ($remainingMedias as $item)
+                                            @if ($count < 4)
+                                                <div class="col-md-6 p-1">
+                                                    <div class="item item-size-4-3">
+                                                        <div class="card p-0 hover-zoom-in">
+                                                            <a href="{{ $item->media_property }}" class="card-img-pp"
+                                                                data-gtf-mfp="true" data-gallery-id="01">
+                                                                <img src="{{ $item->media_property }}">
+                                                            </a>
+                                                            @if ($count >= 3  && $totalMedias > 4 )
+                                                                    <div class="card-img-pp-overlay  d-flex flex-column align-items-center justify-content-center hover-image ">
+                                                                        <p class="fs-48 font-weight-600 text-dark lh-1 mb-4">+{{ $remainingMediasCount }}</p>
+                                                                        <p class="fs-16 font-weight-bold text-dark lh-1625 text-uppercase"> View more </p>{{-- ดูเพิ่มเติม --}}
+                                                                    </div>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @php $count++; @endphp
                                             @endif
-                                            @if ($fullStars < 5 && $halfStar == 0.5)
-                                                <li class="list-inline-item bg-gray text-white star d-inline-flex align-items-center justify-content-center mb-1"><i class="fas fa-star"></i></li>
-                                            @endif
-                                        </div>
-                                        
-                                        
-                                        
-                                    </div>
-                                </div>
-                
-                                <div class="col-sm-6 pt-2">
-                                    <h5 class="fw-600 fs-16 lh-2 text-heading ">
-                                        Rating Breakdown
-                                    </h5>
-                                    @foreach (range(5, 1) as $star)
-                                        @php
-                                        $count = $starCounts[$star] ?? 0; // ตรวจสอบว่ามีข้อมูลหรือไม่ ถ้าไม่มีกำหนดให้เป็น 0
-                                        $percentage = ($count / $totalReviews) * 100;
-                                        @endphp
-                                        <div class="d-flex align-items-center mx-n1">
-                                            <ul class="list-inline d-flex px-1 mb-0">
-                                                @for ($i = 0; $i < $star; $i++)
-                                                    <li class="list-inline-item text-warning mr-1"><i class="fas fa-star"></i></li>
-                                                @endfor
-                                                @for ($i = 0; $i < 5 - $star; $i++)
-                                                    <li class="list-inline-item text-border mr-1"><i class="fas fa-star"></i></li>
-                                                @endfor
-                                            </ul>
-                                            <div class="d-block w-100 px-1">
-                                                <div class="progress-pp rating-progress-pp">
-                                                    <div class="progress-pp-bar bg-warning" role="progressbar" style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+
+                                        @endforeach
+                                        @for ($i = $count; $i < 4; $i++)
+                                            <div class="col-md-6 p-1">
+                                                <div class="item item-size-4-3">
+                                                    <div class="card p-0 hover-zoom-in">
+                                                        <img src="{{ asset('/assets/images/noimg.jpg') }}" alt="No Image" >
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="text-muted px-1">{{ round($percentage, 2) }}%</div>
+                                        @endfor
+                                        <!-- ไม่เกี่ยวกับรูปใหญ่สุด -->
+                                        @foreach ($remainingMedias as $item)
+                                            @if ($count >= 8)
+                                                <a href="{{ $item->media_property }}" class="card-img-pp"data-gtf-mfp="true" data-gallery-id="01"></a>
+                                            @endif
+                                            @php $count++; @endphp
+                                        @endforeach
+                                        @break
+                                @endforeach
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </form>
+                <div class="container-pp ">
+                    <nav aria-label="breadcrumb ">
+                        <ol class="breadcrumb pb-0 pl-0 bg-white">
+                            <li class="breadcrumb-item fs-12 letter-spacing-087">
+                                <a href="{{url("home")}}">Home</a> {{-- หน้าหลัก --}}
+                            </li>
+                            <li class="breadcrumb-item fs-12 letter-spacing-087">
+                                <a href="{{url("search_result")}}">Listing</a> {{-- รายการ --}}
+                            </li>
+                            @foreach ($blogs as $blog)
+                                @php
+                                $info = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                                @endphp
+                                <li class="breadcrumb-item fs-12 font-weight-600 letter-spacing-087 active">
+                                    {{$info->property_title}}</li>
+                                @break
+                            @endforeach
+                        </ol>
+                    </nav>
+                </div>
+            </section>
+
+
+        <div class="container-md-pp ">
+            <div class="row">
+                @foreach ($blogs as $blog)
+                        @php
+                            $info = $blogs->where('id_property', $id_property)->unique('id_media')->first();
+                            $postDate = new DateTime($blog->update_datetime);
+                            // วันปัจจุบัน
+                            $currentDate = new DateTime();
+                            // คำนวณระยะเวลาที่ผ่านมา
+                            $interval = $postDate->diff($currentDate);
+                            // กำหนดค่าเริ่มต้นของข้อความ
+                            $timeAgo = '';
+                            // ตรวจสอบและกำหนดข้อความตามระยะเวลาที่ผ่านมา
+                            if ($interval->y > 0) {
+                                $timeAgo = $interval->y . ' years ago';
+                            } elseif ($interval->m > 0) {
+                                $timeAgo = $interval->m . ' months ago';
+                            } elseif ($interval->d > 0) {
+                                $timeAgo = $interval->d . ' days ago';
+                            } else {
+                                $timeAgo = 'Just now';
+                            }
+                        @endphp
+                    {{-- {{dd($postDate);}} --}}
+                    <article class="col-lg-8  pr-xl-7 mt-5">
+                        <section class="m-top border-bottom-pp">
+                            <ul class="list-inline d-sm-flex align-items-sm-center">
+                                <li class="list-inline-item badge-pp badge-pp-orange">Featured</li> {{-- โดดเด่น --}}
+                                <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li> {{-- สำหรับขาย --}}
+                                <li class="list-inline-item mr-2 mt-2 mt-sm-0">
+                                    <i class="fa-regular fa-clock mr-1"></i>{{$timeAgo}}
+                                </li>
+                                <li class="list-inline-item mt-2 mt-sm-0">
+                                    <i class="fa-regular fa-eye mr-1"></i>1039views {{-- จำนวนการดู 1039 ครั้ง --}}
+                                </li>
+                            </ul>
+
+                            <div class="d-sm-flex justify-content-sm-between ">
+                                <div>
+                                    <h2 class="fw-600 fs-30 text-heading font-bold mb-0">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</h2>
+                                    <p class="mb-0 text-mute"><i class="fa-solid fa-location-dot mr-2"></i>
+                                        @if(is_null($info->property_provinces))
+                                            <a class="text-muted">N/A</a>
+                                        @endif
+
+                                        @foreach($provinces as $province)
+                                            @if($info->property_provinces == $province->id)
+                                            <a class="text-muted">{{ $province->name_th }}</a>
+                                            @endif
+                                        @endforeach
+
+                                        @foreach($amphures as $amphure)
+                                            @if($info->property_amphures == $amphure->id)
+                                            <a class="text-muted">{{ $amphure->name_th }}</a>
+                                            @endif
+                                        @endforeach
+
+                                        @foreach($districts as $district)
+                                            @if($info->property_districts == $district->id)
+                                            <a class="text-muted">{{ $district->name_th }}</a>
+
+                                            @endif
+                                        @endforeach
+
+                                        @foreach($districts as $district)
+                                            @if($info->property_districts == $district->id)
+                                            <a class="text-muted">{{ $district->zip_code }}</a>
+                                            @endif
+                                        @endforeach
+
+                                    </p>
+                                </div>
+
+                                <div class="mt-2 text-lg-right">
+                                    <p class="fs-22 text-heading font-bold mb-0 font-weight-600">{{ isset($info->property_price) ? '฿ ' . $info->property_price : ' N/A' }}</p>
+                                    <p class="mb-0 text-muted">{{ isset($info->property_psm) ? '฿ ' . $info->property_psm  . ' /SqFt' : ' N/A' }}</p>
+                                </div>
+                            </div>
+                            <h2 class="fw-600 fs-22 text-heading font-bold mb-0">Description</h2> {{-- คำอธิบาย --}}
+                            <p class="mb-6 lh-md pt-2 ">
+                                {!! isset($info->property_description) && $info->property_description !== 'null' ? json_decode($info->property_description) : ' N/A' !!}
+                            </p>
+                        </section>
+
+                        <section class="pt-6 border-bottom-pp section-pp">
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Facts and Features</h2> {{-- คุณสมบัติ --}}
+                            <div class="row pt-3">
+                                <div class="col-lg-3 col-6 mt-4 ">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                            <i class="fa-solid fa-house-chimney-window text-blue"></i>
                                         </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                Type {{-- ชนิด --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                @switch($info->property_category)
+                                                    @case(1)
+                                                    คอนโด
+                                                        @break
+                                                    @case(2)
+                                                    บ้าน
+                                                        @break
+                                                    @case(3)
+                                                    ทาวน์เฮาส์
+                                                        @break
+                                                    @case(4)
+                                                    อพาร์ทเมนท์
+                                                        @break
+                                                @endswitch
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6 mt-4">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                            <i class="fa-solid fa-trowel-bricks text-blue"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                YEAR BUILT {{-- ปีที่สร้าง --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                {{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 mt-4">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                            {{-- <i class="fa-solid fa-temperature-arrow-up text-blue"></i> --}}
+                                            <i class="fa-solid fa-building text-blue"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                Floor {{-- ชั้น --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                {{ isset($info->property_floor_amount) ? $info->property_floor_amount : ' N/A' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6 mt-4">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2  ">
+                                            <i class="fa-solid fa-bath text-blue"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                BATHROOMS {{-- ห้องน้ำ --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                {{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6 mt-4">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                            <i class="fa-solid fa-bed text-blue"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                BEDROOMS {{-- ห้องนอน --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                {{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6 mt-4">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                            <i class="fa-solid fa-house-flag text-blue"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                SQFT {{-- ตารางฟุต --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                {{ isset($info->property_interior_size) ? $info->property_interior_size : ' N/A' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6 mt-4">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                            <i class="fa-solid fa-warehouse text-blue"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                GARAGE {{-- โรงรถ --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                {{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6 mt-4">
+                                    <div class="media ">
+                                        <div class="media-fa p-2 shadow-xxs-1 rounded-lg mr-2 ">
+                                            <i class="fa-solid fa-scroll text-blue"></i>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
+                                                STATUS {{-- สถานะ --}}
+                                            </h5>
+                                            <p class=" fs-ff2 font-weight-bold text-heading">
+                                                @switch($info->property_category)
+                                                    @case(1)
+                                                    ขาย
+                                                        @break
+                                                    @case(2)
+                                                    เช่า
+                                                     @break
+
+                                                @endswitch
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <section class="pt-6 border-bottom-pp section-pp">
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Additional Details {{-- รายละเอียดเพิ่มเติม --}}</h2>
+                            <div class="row pt-2">
+                                {{-- <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Property ID</dt>
+                                    <dd>AD-29100</dd>
+                                </dl> --}}
+
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Price</dt> {{-- ราคา --}}
+                                    <dd>{{ isset($info->property_price) ? '$ ' . $info->property_price : ' N/A' }}</dd>
+                                </dl>
+                                {{-- <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Property type</dt>
+                                    <dd>Apartment, bar, cafe, villa</dd>
+                                </dl> --}}
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Property status</dt> {{-- สถานะทรัพย์สิน --}}
+                                    <dd>
+                                        @switch($info->property_category)
+                                            @case(1)
+                                            ขาย
+                                                @break
+                                            @case(2)
+                                            เช่า
+                                            @break
+
+                                        @endswitch
+                                </dd>
+                                </dl>
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Rooms</dt> {{-- ห้องทั้งหมด --}}
+                                    <dd>{{ isset($info->property_rooms) ? $info->property_rooms : ' N/A' }}</dd>
+                                </dl>
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Bedrooms</dt> {{-- ห้องนอน --}}
+                                    <dd>{{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}</dd>
+                                </dl>
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Size</dt> {{-- ขนาด --}}
+                                    <dd>{{ isset($info->property_interior_size) ? $info->property_interior_size . ' SqFt' : ' N/A' }}</dd>
+                                </dl>
+                                {{-- <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt>
+                                    <dd>2</dd>
+                                </dl> --}}
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Garage</dt> {{-- โรงรถ --}}
+                                    <dd>{{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}</dd>
+                                </dl>
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt> {{-- ห้องน้ำ --}}
+                                    <dd>{{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}</dd>
+                                </dl>
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Garage size</dt> {{-- ขนาดโรงรถ --}}
+                                    <dd>{{ isset($info->property_garage_size) ? $info->property_garage_size . ' SqFt' : ' N/A' }}</dd>
+                                </dl>
+                                <dl class="col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Year build</dt> {{-- ปีที่สร้าง --}}
+                                    <dd>{{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}</dd>
+                                </dl>
+                                {{-- <dl class="offset-sm-6 col-sm-6 mb-0 d-flex">
+                                    <dt class="w-110px fs-14  text-heading pr-2">Label</dt>
+                                    <dd>Bestseller</dd>
+                                </dl> --}}
+
+                            </div>
+                            <div class="container-pp list-head">
+                            </div>
+                        </section>
+
+                        <section class="pt-6 border-bottom-pp section-pp ">
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2> {{-- สิ่งอำนวยความสะดวก --}}
+                            <ul class="list-unstyled mb-0 row pt-2 ">
+
+                                @foreach($pp_amenities as $amenity)
+                                @if(isset($info->property_amenities) && in_array($amenity->id_amenities, explode(',', $info->property_amenities)))
+                                        <li class="col-sm-3 col-6 mb-2">
+                                            <i class="fa-solid fa-check mr-2 text-blue"></i>{{ GoogleTranslate::trans($amenity->name_amenities, $locale) }}
+                                            {{-- {{ $amenity->name_amenities }} --}}
+                                        </li>
+                                    @else
+                                        <li class="col-sm-3 col-6 mb-2 decoration">
+                                            <i class="fa-solid fa-xmark mr-2 text-danger"></i>{{ GoogleTranslate::trans($amenity->name_amenities, $locale) }}
+                                            {{-- {{ $amenity->name_amenities }} --}}
+                                        </li>
+                                    @endif
+                                @endforeach
+
+                            </ul>
+
+                        </section>
+
+                        <section class="pt-6 border-bottom-pp section-pp">
+                            <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Video Tour</h4> {{-- วิดีโอทัวร์ --}}
+                            @foreach ($blogs as $blog)
+                                @php
+                                    $videoMedias = $blogs->where('id_property', $id_property)->where('media_file_type', 2);
+                                @endphp
+
+                                @if ($videoMedias->isNotEmpty())
+                                    @foreach ($videoMedias as $videoMedia)
+                                        <video src="{{ asset($videoMedia->media_property) }}" controls allowfullscreen="" class="w-100"></video>
                                     @endforeach
-                                </div>
-                                
+                                @else
+                                    {{-- <iframe height="430" src="https://my.matterport.com/show/?m=wWcGxjuUuSb" allowfullscreen="" class="w-100"></iframe> --}}
+                                    <img src="{{ asset('/assets/images/novideo.png') }}" alt="No Image" class="w-100">
+
+                                @endif
+                                @break
+                            @endforeach
+                        </section>
+
+                        <section class="pt-6 border-bottom-pp section-pp">
+                            <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Location</h2> {{-- ที่ตั้ง --}}
+                            <div class="d-flex justify-content-center ">
+                                <input type="text" class="form-control hidden" name="latitude" id="latitudeInput" placeholder="Enter latitude"  value="{{($info->property_latitude) ? $info->property_latitude : ""}}">
+                                <input type="text" class="form-control hidden" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{($info->property_longitude) ? $info->property_longitude : ""}}">
+                                <iframe id="mapFrame" class="media-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                {{-- <section class="pt-6 section-pp">
-                    <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
-                    <div class="card border-0 ">
-                        <div class="card-body p-0">
-                            <div class="row">
+                        </section>
+{{-- ================================================================================================================================================================================================================================================================================== --}}
 
-                                <div class="col-sm-6 mb-6 mb-sm-0  ">
-                                    <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
 
-                                        <h5 class="fw-600 fs-16 lh-2 text-heading mb-6 ">
-                                            Avarage User Rating
-                                        </h5>
-                                        <p class="fs-40 text-heading font-weight-bold lh-1">4.6 <span
-                                                class="fs-18 text-gray-light font-weight-normal">/5</span>
-                                        </p>
-                                        <div class="list-inline ">
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li
-                                                class="list-inline-item bg-gray-04 text-white star d-inline-flex align-items-center justify-content-center mb-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </div>
-                                    </div>
 
-                                </div>
 
-                                <div class="col-sm-6 pt-2">
-                                    <h5 class="fw-600 fs-16 lh-2 text-heading ">
-                                        Rating Breakdown
-                                    </h5>
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    style="width: 60%" aria-valuenow="60" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted px-1">60%</div>
-                                    </div>
 
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    style="width: 40%" aria-valuenow="40" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted px-1">40%</div>
-                                    </div>
 
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        {{-- เอาของpodมาวาง --}}
+                        <section class="pt-6 section-pp">
+                            <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
+                            <div class="card border-0 ">
+                                <div class="card-body p-0">
+                                    <div class="row">
+
+                                        <div class="col-sm-6 mb-6 mb-sm-0  ">
+                                            <div class="bg-gray-01 rounded-lg pt-2 px-6 pb-5 pl-4">
+
+                                                <h5 class="fw-600 fs-16 lh-2 text-heading mb-6 ">
+                                                    Avarage User Rating
+                                                </h5>
+                                                <p class="fs-40 text-heading font-weight-bold lh-1">4.6 <span
+                                                        class="fs-18 text-gray-light font-weight-normal">/5</span>
+                                                </p>
+                                                <div class="list-inline ">
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-warning text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li
+                                                        class="list-inline-item bg-gray-04 text-white star d-inline-flex align-items-center justify-content-center mb-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="text-muted px-1">0%</div>
-                                    </div>
 
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+
+                                        <div class="col-sm-6 pt-2">
+                                            <h5 class="fw-600 fs-16 lh-2 text-heading ">
+                                                Rating Breakdown
+                                            </h5>
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            style="width: 60%" aria-valuenow="60" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
                                                 </div>
+                                                <div class="text-muted px-1">60%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            style="width: 40%" aria-valuenow="40" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">40%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">0%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">0%</div>
+                                            </div>
+
+                                            <div class="d-flex align-items-center mx-n1">
+                                                <ul class="list-inline d-flex px-1 mb-0">
+                                                    <li class="list-inline-item text-warning mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    <li class="list-inline-item text-border mr-1">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                </ul>
+                                                <div class="d-block w-100 px-1">
+                                                    <div class="progress-pp rating-progress-pp">
+                                                        <div class="progress-pp-bar bg-warning" role="progressbar"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-muted px-1">0%</div>
                                             </div>
                                         </div>
-                                        <div class="text-muted px-1">0%</div>
-                                    </div>
-
-                                    <div class="d-flex align-items-center mx-n1">
-                                        <ul class="list-inline d-flex px-1 mb-0">
-                                            <li class="list-inline-item text-warning mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                            <li class="list-inline-item text-border mr-1">
-                                                <i class="fas fa-star"></i>
-                                            </li>
-                                        </ul>
-                                        <div class="d-block w-100 px-1">
-                                            <div class="progress-pp rating-progress-pp">
-                                                <div class="progress-pp-bar bg-warning" role="progressbar"
-                                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-muted px-1">0%</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                </section> --}}
-
+                        </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
                             <div class="card border-0 ">
@@ -909,7 +944,7 @@
                                                             <p class="mb-3 m-mb-3">{{$item->review_content}}</p>
                                                             <div class="d-flex justify-content-sm-start justify-content-center">
                                                                 <p class="mb-0 text-muted fs-13 lh-1">{{$item->create_datetime}}</p>
-                                                                <a href="#" class="reply-link mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
+                                                                <a href="javascript:void(0)" class="reply-link mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                             </div>
                                                             <br>
                                                             <!-- Reply form -->
@@ -972,7 +1007,7 @@
                                                     </p>
                                                     <div class="d-flex justify-content-sm-start justify-content-center">
                                                         <p class="mb-0 text-muted fs-13 lh-1 ">02 Dec 2020 at 2:40pm</p>
-                                                        <a href="#"
+                                                        <a href="javascript:void(0)"
                                                             class="mb-0 text-heading border-left border-dark hover-primary lh-1 ml-2 pl-2">Reply</a>
                                                     </div>
                                             </div>
@@ -989,7 +1024,7 @@
                                         @csrf
                                         <div class="form-group mb-4 d-flex justify-content-start">
                                             <div class="rate-input">
-                                                <input type="radio" id="star5" name="star" value="5" checked>
+                                                <input type="radio" id="star5" name="star" value="5">
                                                 <label for="star5" title="text" class="mb-0 mr-1 lh-1">
                                                     <i class="fas fa-star"></i>
                                                 </label>
@@ -1059,23 +1094,26 @@
                                                     Please enter a message in the textarea.
                                                 </div>
                                         </div>
-                                        @if(Auth::check())
-                                            <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
-
-                                         @else
-                                        <a href="{{ url("addproperty") }}" class="afterButton rounded-pill btn-lg btn-block-sb wait-al text-center" id="form_review" role="button" aria-pressed="true"> Submit </a>
-
-                                         @endif
-
+                                        <button type="submit" class="afterButton rounded-pill btn-lg btn-block-sb wait-al" id="form_review"> Submit </button>
 
                                     </form>
 
                                 </div>
                             </div>
                         </section>
+                        {{-- เอาของpodมาวาง --}}
+
+
+
+
+
+
+
+
 
                     </article>
-
+                    @break
+                @endforeach
 
 
                 <aside class="col-lg-4 pl-xl-4 pdr-0 primary-sidebar sidebar-sticky  ">
@@ -1095,13 +1133,13 @@
                                                         value="option1">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center mt-3">
-                                                            <a href="#" class="d-block agent-icon mr-3">
+                                                            <a href="javascript:void(0)" class="d-block agent-icon mr-3">
                                                                 <img class="img-angent"
                                                                     src="{{ asset('/assets/images/agent-1.jpg') }}"
                                                                     class="rounded-circle" alt="agent-2">
                                                             </a>
                                                             <div>
-                                                                <a href="#"
+                                                                <a href="javascript:void(0)"
                                                                     class="d-block text-dark font-weight-500 lh-15 hover-primary">Oliver
                                                                     Beddows</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Sales Excutive</p>
@@ -1139,13 +1177,13 @@
                                                         id="inlineRadio2" value="option2">
                                                     <div class="form-check-label ml-2">
                                                         <div class="d-flex align-items-center">
-                                                            <a href="#" class="d-block agent-icon mr-3">
+                                                            <a href="javascript:void(0)" class="d-block agent-icon mr-3">
                                                                 <img class="img-angent"
                                                                     src="{{ asset('/assets/images/agent-2.jpg') }}"
                                                                     class="rounded-circle" alt="agent-1">
                                                             </a>
                                                             <div>
-                                                                <a href="#"
+                                                                <a href="javascript:void(0)"
                                                                     class="d-block text-dark font-weight-500 lh-15 hover-primary">Max
                                                                     Kordex</a>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">Real estate broker</p>
@@ -1238,7 +1276,83 @@
                                 <div class="swipersss swiper-initialized swiper-horizontal swiper-pointer swiper-backface-hidden">
                                     <div class="swiper-wrapper pb-20">
 
-                                        <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
+                                        @foreach ($blogs->where('property_approve', 1)->unique('id_property') as $info)
+                                            @if($info->id_property != $id_property)
+                                                <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
+                                                    <div class="card box-shadow-lightblue mb-30">
+                                                        <div class="card-body p-0">
+                                                            <div class="img-block ">
+                                                                <div class="block-text text-center">
+                                                                    <b class="font-size-13">FEATURED</b>
+                                                                </div>
+                                                                <div class="text-block text-center">
+                                                                    <a href="javascript:void(0)" class="font-weight-500">{{ isset($info->property_price) ? '฿ ' . $info->property_price : ' N/A' }}</a>
+                                                                </div>
+                                                                <img src="{{ $info->media_property }}" alt="listings" class="card-img-top img-sell">
+                                                            </div>
+                                                            <div class="p-10">
+                                                                <h6 class="card-title"><a href="{{ '?id_property=' . $info->id_property }}">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</a></h6>
+                                                                <p class="list-text">
+                                                                    @if(is_null($info->property_provinces))
+                                                                        <a class="text-muted">N/A</a>
+                                                                    @endif
+
+                                                                    @foreach($provinces as $province)
+                                                                        @if($info->property_provinces == $province->id)
+                                                                        <a class="text-muted">{{ $province->name_th }}</a>
+                                                                        @endif
+                                                                    @endforeach
+
+                                                                    @foreach($amphures as $amphure)
+                                                                        @if($info->property_amphures == $amphure->id)
+                                                                        <a class="text-muted">{{ $amphure->name_th }}</a>
+                                                                        @endif
+                                                                    @endforeach
+
+                                                                    @foreach($districts as $district)
+                                                                        @if($info->property_districts == $district->id)
+                                                                        <a class="text-muted">{{ $district->name_th }}</a>
+
+                                                                        @endif
+                                                                    @endforeach
+
+                                                                    @foreach($districts as $district)
+                                                                        @if($info->property_districts == $district->id)
+                                                                        <a class="text-muted">{{ $district->zip_code }}</a>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </p>
+                                                                <div class="d-flex align-items-center">
+                                                                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i>
+                                                                        {{ isset($info->property_bedrooms) ? $info->property_bedrooms . ' bed' : ' N/A' }}
+                                                                    </a>
+                                                                    <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bath"></i>
+                                                                        {{ isset($info->property_bathrooms) ? $info->property_bathrooms . ' bath' : ' N/A' }}
+                                                                    </a>
+                                                                    <a href="javascript:void(0)" class="mr-10"> <i class="fa-brands fa-uncharted"></i>
+                                                                        {{ isset($info->property_interior_size) ? $info->property_interior_size . ' sqft' : ' N/A' }}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer bg-transparent">
+                                                            <div class="d-flex ">
+                                                                <div class="flex-grow-1">
+                                                                    <label class="label-700">For Rent</label>
+                                                                </div>
+                                                                <div class="flex-row-reverse">
+                                                                    <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
+                                                                    <i class="fa fa-heart-o mr-10 red" aria-hidden="true"></i>
+                                                                    <i class="fa-regular fa-square-plus mr-10 green" aria-hidden="true"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+
+                                        {{-- <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active">
                                             <div class="card box-shadow-lightblue mb-30">
                                                 <div class="card-body p-0">
                                                     <div class="img-block ">
@@ -1524,7 +1638,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         <div class=" col-sm-6 col-lg-6 swiper-slide swiper-slide-active ">
                                             <div class="card box-shadow-lightblue mb-30">
@@ -1607,6 +1721,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                     <div class="swiper-pagination"></div>
                                 </div>
@@ -1624,7 +1739,7 @@
                 <img class="img-angent" src="{{ asset('/assets/images/agent-3.png') }}" alt="Irene Wallace"
                     class="mr-4 rounded-circle">
                 <div class="media-body">
-                    <a href="#" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
+                    <a href="javascript:void(0)" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
                     <span class="fs-13 lh-2">Sales Excutive</span>
                 </div>
             </div>
@@ -1649,5 +1764,16 @@
             </div>
         </div>
     </main>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$('.changeLanguage').change(function(event){
+    var url = "{{ route('google.translate.change') }}";
+    window.location.href = url+"?lang="+$(this).val()
+})
+</script>
+
+
 @endsection
+
