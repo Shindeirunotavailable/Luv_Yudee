@@ -86,11 +86,9 @@ $locale = session()->get('locale', 'th');
                                         <td class="vam text-center">
                                             @if (!is_null($item->id_media) && !is_null($item->id_property))
                                                     @if ($item->property_approve)
-                                                            {{-- <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-success btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('อนุมัติ', $locale) }}</a> --}}
-                                                            <a class="m-2 btn-success btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('อนุมัติแล้ว', $locale) }}</a>
+                                                            <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-success btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('อนุมัติแล้ว', $locale) }}</a>
                                                         @else
-                                                            {{-- <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-warning btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('รออนุมัติ', $locale) }}</a> --}}
-                                                            <a class="m-2 btn-warning btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('รออนุมัติ', $locale) }}</a>
+                                                            <a href="{{ route('approve', ['id_property' => $item->id_property]) }}" id="approve_property_{{$item->id_property}}" class="m-2 btn-warning btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('รออนุมัติ', $locale) }}</a>
                                                     @endif
                                                 @else
                                                 <a href="javascript:void(0)" class="m-2 btn-danger btn-sm mt-2 text-center d-block" style="white-space: normal; width: fit-content;">{{ GoogleTranslate::trans('ข้อมูลไม่ครบ', $locale) }}</a>

@@ -1,3 +1,4 @@
+<?php $locale = session()->get('locale', 'th'); ?>
 
     <div class="dashboard__main pl-d-0-md">
         <div class="dashboard__content property-page bg-f7">
@@ -10,19 +11,19 @@
                     </div>
 
                     {{-- @foreach ($data['blogs']->where('id', Auth::id())->unique('id_property') as $item) --}}
-                    
+
                     <form action="{{ url('/upload') }}" method="POST"  enctype="multipart/form-data" id="profileForm" class="needs-validation" >
                         @csrf
-                        <div class="row">    
+                        <div class="row">
                             @if (isset($data))
-                                @foreach ($data['profiles']->where('create_by', Auth::id())->unique('id_profiles')  as $item)                    
+                                @foreach ($data['profiles']->where('create_by', Auth::id())->unique('id_profiles')  as $item)
                                         <div class="col-md-6 col-12 col-lg-6">
                                             <div class="pb-10">
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold"> Photo</h4>
-                                                            <label>Upload Profile Files</label>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold"> {{ GoogleTranslate::trans('รูปภาพ', $locale) }}</h4>
+                                                            <label>{{ GoogleTranslate::trans('อัพโหลดรูปภาพโปรไฟล์ของคุณ', $locale) }}</label>
                                                         </div>
                                                         <div class="avatar-upload">
                                                             <div class="avatar-edit">
@@ -44,7 +45,7 @@
                                                             </div>
                                                         </div>   --}}
                                                     </div>
-                                                </div>                 
+                                                </div>
                                             </div>
 
 
@@ -52,7 +53,7 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">Contact</h4>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('ข้อมูลติดต่อ', $locale) }}</h4>
                                                         </div>
                                                         @if (session('user_id'))
                                                             <div class="form-group col-md-6 px-4">
@@ -60,52 +61,52 @@
                                                                     id="user_id" name="user_id"
                                                                     value="{{ session('user_id') }}">
                                                             </div>
-                                                        @endif              
-                                                        <input type="hidden" class="form-control " id="nameUser" name="nameUser">      
+                                                        @endif
+                                                        <input type="hidden" class="form-control " id="nameUser" name="nameUser">
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
-                                                                <label>firstName</label>
-                                                                <input type="text" class="form-control " id="firstName" name="firstName" value={{$item->name}}>                                                
+                                                                <label>{{ GoogleTranslate::trans('ชื่อ', $locale) }}</label>
+                                                                <input type="text" class="form-control " id="firstName" name="firstName" value={{$item->name}}>
                                                             </div>
                                                             <div class="col-12 col-lg-6">
-                                                                <label>Last name</label>
+                                                                <label>{{ GoogleTranslate::trans('นามสุกล', $locale) }}</label>
                                                                 <input type="text" class="form-control" placeholder="Last name"  id="lastName" name="lastName" value={{$item->lastname}}>
                                                             </div>
                                                         </div>
                                                         <div class="row pt-10">
                                                             <div class="col-12 col-lg-6">
-                                                                <label>Tell</label>
+                                                                <label>{{ GoogleTranslate::trans('เบอร์โทรมือถือ', $locale) }}</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour phone"  id="phone" name="phone"   value={{$item->phone}}>
                                                             </div>
                                                             <div class="col-12 col-lg-6">
-                                                                <label>Home number</label>
+                                                                <label>{{ GoogleTranslate::trans('เบอร์บ้าน', $locale) }}</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour mobile" id="mobile" name="mobile" value={{$item->mobile}}>
                                                             </div>
                                                         </div>
                                                         <div class="row pt-10">
                                                             @if (session('user_email'))
                                                                 <div class="col-12 col-lg-6">
-                                                                    <label>email</label>
+                                                                    <label>{{ GoogleTranslate::trans('อีเมล์', $locale) }}</label>
                                                                     <input type="text" class="form-control" placeholder="ํYour Email" id="email" name="email" value="{{ session('user_email') }}" readonly>
-                                                                </div>                                      
+                                                                </div>
                                                             @endif
-                                                        
-                                                        
+
+
                                                             <div class="col-12 col-lg-6">
                                                                 <label>Line</label>
                                                                 <input type="text" class="form-control" placeholder="ํYour skype" id="skype" name="skype" value={{$item->skype}}>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>                 
-                                            </div> 
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-md-6 col-12 col-lg-6">
                                             <div class="pb-10">
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">Social Media</h4>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('รายละเอียดติดต่อผ่านช่องทางโซเชียล', $locale) }}</h4>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="label-700 pl-5">Facebook Url</label>
@@ -142,15 +143,15 @@
                                                 <div class="card cardBox">
                                                     <div class="card-body p-3">
                                                         <div class="text-left">
-                                                            <h4 class="mb-3 pt-3 font-weight-bold">About me</h4>
+                                                            <h4 class="mb-3 pt-3 font-weight-bold">{{ GoogleTranslate::trans('เกี่ยวกับฉัน', $locale) }} </h4>
                                                         </div>
                                                         <div class="form-group pt-10">
                                                             <label>Title / Posittion</label>
-                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="There are many variations of passages." id="title" name="title" value={{$item->title}}>
+                                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" id="title" name="title" value={{$item->title}}>
                                                         </div>
                                                     </div>
-                                                </div>                 
-                                            </div>                                              
+                                                </div>
+                                            </div>
                                             <div class="d-flex justify-content-end flex-wrap">
                                                 {{-- <div class="position-relative  pt-d-30 mr-2 ">
                                                         <button type="submit" class="afterButton rounded-pill btn-lg" id="">
@@ -164,14 +165,22 @@
                                                 </div>
                                             </div>
                                         </div>
-                                @endforeach                     
-                            @endif    
+                                @endforeach
+                            @endif
                         </div>
                     </form>
 
-                </div>            
+                </div>
             </div>
         </div>
         @include('dashboard.footerdashboard')
     </div>
 
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$('.changeLanguage').change(function(event){
+    var url = "{{ route('google.translate.change') }}";
+    window.location.href = url+"?lang="+$(this).val()
+})
+</script>

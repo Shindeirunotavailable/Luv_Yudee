@@ -62,7 +62,7 @@
                                                         <div class="d-flex justify-content-sm-start justify-content-center">
                                                             <p class="mb-0 text-muted fs-13 lh-1 ">{{$review->create_datetime}}</p>
                                                         </div>
-                                                        
+
                                                 </div>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@
                                 @endif
 
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

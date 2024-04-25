@@ -55,7 +55,7 @@
                                                                             <img src="{{ $item->imageuser }}" alt="Danny Fox" class="review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
                                                                         @else
                                                                             <img src="{{ asset('/assets/images/user2.jpg') }}" alt="Danny Fox" class=" review-icon mr-sm-8 mb-sm-0 img-fluid" style="width: 84px; height: 84px; object-fit: cover;">
-                                                                        @endif
+                                                                         @endif
                                                                     </th>
                                                                     <td>{{$item->name}} {{$item->lastname}}</td>
                                                                     <td>{{$item->phone}}</td>
@@ -64,22 +64,21 @@
                                                                     <td>
                                                                         @if ($user)
                                                                             @if ($user->Isadmin == 1)
-                                                                                <span class="admin"> แอดมิน</span> 
+                                                                                <span class="admin"> แอดมิน</span>
                                                                             @else
                                                                                 @if ($user->status == 1)
-                                                                                   <span class="user"> ยังไม่ได้ยืนยัน </span> 
+                                                                                   <span class="user"> ยังไม่ได้ยืนยัน </span>
                                                                                 @else
-                                                                                    <span class="user-confirm"> ยืนยันแล้ว </span> 
+                                                                                    <span class="user-confirm"> ยืนยันแล้ว </span>
                                                                                 @endif
                                                                             @endif
                                                                         @endif
                                                                     </td>
                                                                     <td>
                                                                         <div class="d-flex justify-content-sm-end justify-content-center mb-0">
-                                                                            <a class="btn btn-info btn-sm mr-2 text-white color-yuudee profile" data-toggle="modal" data-target="#staticBackdrop">
+                                                                            <a class="btn btn-info btn-sm mr-2 text-white color-yuudee profile" data-toggle="modal" data-target="#staticBackdrop" data-profile-id="{{ $item->id_profiles }}">
                                                                                 <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('รายละเอียด', $locale) }}
                                                                             </a>
-
 
                                                                             {{-- <a href="{{route('deleteporfile',['create_by'=>$item->create_by])}}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a> --}}
                                                                             @if(Auth::check() && Auth::user()->id == $item->create_by)
@@ -87,18 +86,20 @@
                                                                                 @if ($user->Isadmin == 1)
                                                                                 <a class="btn btn-sm mr-2 text-white color-warning" href="{{ url("addproperty") }}">
                                                                                     <i class="fa-solid fa-list"></i>  {{ GoogleTranslate::trans('แก้ไข', $locale) }}
-                                                                                </a>                                                                            
+                                                                                </a>
                                                                                 @endif
                                                                         @endif
 
                                                                             @else
                                                                                 <a href="{{ route('deleteporfile',['create_by'=>$item->create_by]) }}" class="btn btn-danger btn-sm text-white fa-solid fa-trash fs-20 trash-deletes"></a>
                                                                             @endif
-                                                                        
+
                                                                         </div>
                                                                     </td>
                                                                 </tr>
+
                                                             @endforeach
+
                                                         @endif
                                                     @endforeach
                                                 @endif
@@ -116,7 +117,13 @@
     @include('dashboard.footerdashboard')
 </div>
 
-
+@php
+if(isset($_POST['profileId'])) {
+    $profileId = $_POST['profileId'];
+} else {
+    $profileId = null; // หรือค่าเริ่มต้นใด ๆ ที่เหมาะสม
+}
+@endphp
 
     {{-- model --}}
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -132,7 +139,9 @@
             <div class="modal-body modal-xl">
                 @if (isset($data))
                 @foreach ($data['profiles']->unique('id_profiles') as $item)
-                {{-- @if ($item->id_profiles == $item->id_profiles) --}}
+
+                @if ($item->id_profiles == $profileId)
+
                         <div class="pb-10">
                             <div class="card cardBox">
                                 <div class="card-body p-3">
@@ -216,10 +225,12 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- @endif --}}
+                        @endif
                     @endforeach
                 @endif
             </div>
+
+
           </div>
         </div>
     </div>
@@ -235,23 +246,24 @@ $('.changeLanguage').change(function(event){
 })
 </script>
 <script>
-    function showUserProfile(profileId) {
-        // ทำการดึงโปรไฟล์ผู้ใช้งานด้วย AJAX request
-        $.ajax({
-            url: '/user/profile/' + profileId, // เปลี่ยนเส้นทาง URL ตามโครงสร้างของโมเดลของคุณ
-            method: 'GET',
-            success: function(data) {
-                // เมื่อรับข้อมูลโปรไฟล์ผู้ใช้งานเรียบร้อยแล้ว
-                // ให้แสดง Modal และใส่ข้อมูลที่ได้รับลงไปใน Modal ดังนี้
-                $('#modalTitle').text(data.name + ' ' + data.lastname);
-                $('#phoneInput').val(data.phone);
-                $('#mobileInput').val(data.mobile);
-                $('#emailInput').val(data.email);
-                // เพิ่มฟิลด์อื่น ๆ ตามต้องการ
-            },
-            error: function(error) {
-                console.log(error);
+$('.profile').click(function(event) {
+    var baseUrl = "{{ route('indexadmin') }}";
+
+    var profileId = $(this).data('profile-id');
+    console.log(profileId); // แสดงค่า profileId ใน console เพื่อตรวจสอบว่าได้รับค่าถูกต้องหรือไม่
+    $.ajax({
+            url: baseUrl , // เปลี่ยนเป็น URL ของสคริปต์ PHP ที่ใช้ดึงข้อมูลโปรไฟล์
+            type: 'POST',
+            data: { profileId: profileId }, // ส่งค่า profileId ไปยังเซิร์ฟเวอร์
+            success: function(response) {
+                // เมื่อสำเร็จในการรับข้อมูลจากเซิร์ฟเวอร์
+                // ใช้ข้อมูลที่ได้รับเพื่อแสดงใน modal
+                $('.modal-body').html(response);
             }
         });
-    }
+    });
+
 </script>
+
+
+
