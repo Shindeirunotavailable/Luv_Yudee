@@ -533,8 +533,9 @@ $locale = session()->get('locale', 'th');
                                 <iframe id="mapFrame" class="media-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </section>
+
                         <section class="pt-6 section-pp">
-    
+
                             <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
                             <div class="card border-0">
                                 <div class="card-body p-0">
@@ -562,12 +563,12 @@ $locale = session()->get('locale', 'th');
                                                         <li class="list-inline-item bg-gray text-white star d-inline-flex align-items-center justify-content-center mb-1"><i class="fas fa-star"></i></li>
                                                     @endif
                                                 </div>
-                                                
-                                                
-                                                
+
+
+
                                             </div>
                                         </div>
-                        
+
                                         <div class="col-sm-6 pt-2">
                                             <h5 class="fw-600 fs-16 lh-2 text-heading ">
                                                 Rating Breakdown
@@ -595,7 +596,7 @@ $locale = session()->get('locale', 'th');
                                                 </div>
                                             @endforeach
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -1160,7 +1161,12 @@ $locale = session()->get('locale', 'th');
                                                                 <img src="{{ $info->media_property }}" alt="listings" class="card-img-top img-sell">
                                                             </div>
                                                             <div class="p-10">
-                                                                <h6 class="card-title"><a href="{{ '?id_property=' . $info->id_property }}">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</a></h6>
+                                                                {{-- <h6 class="card-title"><a href="{{ '?id_property=' . $info->id_property }}">{{ isset($info->property_title) ? $info->property_title : ' N/A' }}</a></h6> --}}
+                                                                <h6 class="card-title">
+                                                                    <a href="{{ '?id_property=' . $info->id_property }}">
+                                                                        {{ isset($info->property_title) ? Str::limit($info->property_title, 45, '...') : 'N/A' }}
+                                                                    </a>
+                                                                </h6>
                                                                 <p class="list-text">
                                                                     @if(is_null($info->property_provinces))
                                                                         <a class="text-muted">N/A</a>
