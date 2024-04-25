@@ -28,8 +28,8 @@ $locale = session()->get('locale', 'th');
                                     <th scope="col" class="text-white">{{ GoogleTranslate::trans('การกระทำ', $locale) }}</th>
                                 </tr>
                             </thead>
-                            @foreach ($data['blogs']->where('id', Auth::id())->unique('id_property') as $item)
-                                {{-- @foreach ($data['blogs']->unique('id_property') as $item) --}}
+                            {{-- @foreach ($data['blogs']->where('id', Auth::id())->unique('id_property') as $item) --}}
+                                @foreach ($data['blogs']->unique('id_property') as $item)
 
                                 <tbody class="t-body">
                                     <tr>
