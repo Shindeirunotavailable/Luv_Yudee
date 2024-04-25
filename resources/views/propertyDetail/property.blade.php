@@ -153,10 +153,10 @@ $locale = session()->get('locale', 'th');
                     <nav aria-label="breadcrumb ">
                         <ol class="breadcrumb pb-0 pl-0 bg-white">
                             <li class="breadcrumb-item fs-12 letter-spacing-087">
-                                <a href="{{url("home")}}">Home</a> {{-- หน้าหลัก --}}
+                                <a href="{{url("home")}}">{{ GoogleTranslate::trans('หน้าหลัก', $locale) }}</a>
                             </li>
                             <li class="breadcrumb-item fs-12 letter-spacing-087">
-                                <a href="{{url("search_result")}}">Listing</a> {{-- รายการ --}}
+                                <a href="{{url("search_result")}}">{{ GoogleTranslate::trans('รายการ', $locale) }}</a>
                             </li>
                             @foreach ($blogs as $blog)
                                 @php
@@ -199,13 +199,13 @@ $locale = session()->get('locale', 'th');
                     <article class="col-lg-8  pr-xl-7 mt-5">
                         <section class="m-top border-bottom-pp">
                             <ul class="list-inline d-sm-flex align-items-sm-center">
-                                <li class="list-inline-item badge-pp badge-pp-orange">Featured</li> {{-- โดดเด่น --}}
-                                <li class="list-inline-item badge-pp badge-pp-primary">For Sale</li> {{-- สำหรับขาย --}}
+                                <li class="list-inline-item badge-pp badge-pp-orange">{{ GoogleTranslate::trans('โดดเด่น', $locale) }}</li>
+                                <li class="list-inline-item badge-pp badge-pp-primary">{{ GoogleTranslate::trans('สำหรับขาย', $locale) }}</li>
                                 <li class="list-inline-item mr-2 mt-2 mt-sm-0">
                                     <i class="fa-regular fa-clock mr-1"></i>{{$timeAgo}}
                                 </li>
                                 <li class="list-inline-item mt-2 mt-sm-0">
-                                    <i class="fa-regular fa-eye mr-1"></i>1039views {{-- จำนวนการดู 1039 ครั้ง --}}
+                                    <i class="fa-regular fa-eye mr-1"></i>{{ GoogleTranslate::trans('จำนวนการดู 1039 ครั้ง', $locale) }}
                                 </li>
                             </ul>
 
@@ -250,14 +250,14 @@ $locale = session()->get('locale', 'th');
                                     <p class="mb-0 text-muted">{{ isset($info->property_psm) ? '฿ ' . $info->property_psm  . ' /SqFt' : ' N/A' }}</p>
                                 </div>
                             </div>
-                            <h2 class="fw-600 fs-22 text-heading font-bold mb-0">Description</h2> {{-- คำอธิบาย --}}
+                            <h2 class="fw-600 fs-22 text-heading font-bold mb-0">{{ GoogleTranslate::trans('คำอธิบาย', $locale) }}</h2>
                             <p class="mb-6 lh-md pt-2 ">
                                 {!! isset($info->property_description) && $info->property_description !== 'null' ? json_decode($info->property_description) : ' N/A' !!}
                             </p>
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Facts and Features</h2> {{-- คุณสมบัติ --}}
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">{{ GoogleTranslate::trans('คุณสมบัติ', $locale) }}</h2>
                             <div class="row pt-3">
                                 <div class="col-lg-3 col-6 mt-4 ">
                                     <div class="media ">
@@ -266,21 +266,21 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                Type {{-- ชนิด --}}
+                                                {{ GoogleTranslate::trans('ชนิด', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 @switch($info->property_category)
                                                     @case(1)
-                                                    คอนโด
+                                                    {{ GoogleTranslate::trans('คอนโด', $locale) }}
                                                         @break
                                                     @case(2)
-                                                    บ้าน
+                                                    {{ GoogleTranslate::trans('บ้าน', $locale) }}
                                                         @break
                                                     @case(3)
-                                                    ทาวน์เฮาส์
+                                                    {{ GoogleTranslate::trans('ทาวน์เฮาส์', $locale) }}
                                                         @break
                                                     @case(4)
-                                                    อพาร์ทเมนท์
+                                                    {{ GoogleTranslate::trans('อพาร์ทเมนท์', $locale) }}
                                                         @break
                                                 @endswitch
                                             </p>
@@ -295,7 +295,7 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                YEAR BUILT {{-- ปีที่สร้าง --}}
+                                                {{ GoogleTranslate::trans('ปีที่สร้าง', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}
@@ -311,7 +311,7 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                Floor {{-- ชั้น --}}
+                                                {{ GoogleTranslate::trans('ชั้น', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_floor_amount) ? $info->property_floor_amount : ' N/A' }}
@@ -327,7 +327,7 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                BATHROOMS {{-- ห้องน้ำ --}}
+                                                {{ GoogleTranslate::trans('ห้องน้ำ', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}
@@ -343,7 +343,7 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                BEDROOMS {{-- ห้องนอน --}}
+                                                {{ GoogleTranslate::trans('ห้องนอน', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}
@@ -359,7 +359,7 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                SQFT {{-- ตารางฟุต --}}
+                                                {{ GoogleTranslate::trans('ตารางฟุต', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_interior_size) ? $info->property_interior_size : ' N/A' }}
@@ -375,7 +375,7 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                GARAGE {{-- โรงรถ --}}
+                                                {{ GoogleTranslate::trans('โรงรถ', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 {{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}
@@ -391,15 +391,15 @@ $locale = session()->get('locale', 'th');
                                         </div>
                                         <div class="media-body">
                                             <h5 class="fw-600 fs-ff text-uppercase letter-spacing-093 font-weight-normal ">
-                                                STATUS {{-- สถานะ --}}
+                                                {{ GoogleTranslate::trans('สถานะ', $locale) }}
                                             </h5>
                                             <p class=" fs-ff2 font-weight-bold text-heading">
                                                 @switch($info->property_category)
                                                     @case(1)
-                                                    ขาย
+                                                    {{ GoogleTranslate::trans('ขาย', $locale) }}
                                                         @break
                                                     @case(2)
-                                                    เช่า
+                                                    {{ GoogleTranslate::trans('เช่า', $locale) }}
                                                      @break
 
                                                 @endswitch
@@ -412,7 +412,7 @@ $locale = session()->get('locale', 'th');
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Additional Details {{-- รายละเอียดเพิ่มเติม --}}</h2>
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">{{ GoogleTranslate::trans('รายละเอียดเพิ่มเติม', $locale) }}</h2>
                             <div class="row pt-2">
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
                                     <dt class="w-110px fs-14  text-heading pr-2">Property ID</dt>
@@ -420,7 +420,7 @@ $locale = session()->get('locale', 'th');
                                 </dl> --}}
 
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Price</dt> {{-- ราคา --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('ราคา', $locale) }}</dt>
                                     <dd>{{ isset($info->property_price) ? '$ ' . $info->property_price : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
@@ -428,29 +428,29 @@ $locale = session()->get('locale', 'th');
                                     <dd>Apartment, bar, cafe, villa</dd>
                                 </dl> --}}
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Property status</dt> {{-- สถานะทรัพย์สิน --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('สถานะทรัพย์สิน', $locale) }}</dt>
                                     <dd>
                                         @switch($info->property_category)
                                             @case(1)
-                                            ขาย
+                                            {{ GoogleTranslate::trans('ขาย', $locale) }}
                                                 @break
                                             @case(2)
-                                            เช่า
+                                            {{ GoogleTranslate::trans('เช่า', $locale) }}
                                             @break
 
                                         @endswitch
                                 </dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Rooms</dt> {{-- ห้องทั้งหมด --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('ห้องทั้งหมด', $locale) }}</dt>
                                     <dd>{{ isset($info->property_rooms) ? $info->property_rooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Bedrooms</dt> {{-- ห้องนอน --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('ห้องนอน', $locale) }}</dt>
                                     <dd>{{ isset($info->property_bedrooms) ? $info->property_bedrooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Size</dt> {{-- ขนาด --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('ขนาด', $locale) }}</dt>
                                     <dd>{{ isset($info->property_interior_size) ? $info->property_interior_size . ' SqFt' : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="col-sm-6 mb-0 d-flex">
@@ -458,19 +458,19 @@ $locale = session()->get('locale', 'th');
                                     <dd>2</dd>
                                 </dl> --}}
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Garage</dt> {{-- โรงรถ --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('โรงรถ', $locale) }}</dt>
                                     <dd>{{ isset($info->property_garage) ? $info->property_garage : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Bathrooms</dt> {{-- ห้องน้ำ --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('ห้องน้ำ', $locale) }}</dt>
                                     <dd>{{ isset($info->property_bathrooms) ? $info->property_bathrooms : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Garage size</dt> {{-- ขนาดโรงรถ --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('ขนาดโรงรถ', $locale) }}</dt>
                                     <dd>{{ isset($info->property_garage_size) ? $info->property_garage_size . ' SqFt' : ' N/A' }}</dd>
                                 </dl>
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14  text-heading pr-2">Year build</dt> {{-- ปีที่สร้าง --}}
+                                    <dt class="w-110px fs-14  text-heading pr-2">{{ GoogleTranslate::trans('ปีที่สร้าง', $locale) }}</dt>
                                     <dd>{{ isset($info->property_year_build) ? $info->property_year_build : ' N/A' }}</dd>
                                 </dl>
                                 {{-- <dl class="offset-sm-6 col-sm-6 mb-0 d-flex">
@@ -484,7 +484,7 @@ $locale = session()->get('locale', 'th');
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp ">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">Offices Amenities</h2> {{-- สิ่งอำนวยความสะดวก --}}
+                            <h2 class="fw-600 fs-30 text-heading font-bold mt-3">{{ GoogleTranslate::trans('สิ่งอำนวยความสะดวก', $locale) }}</h2>
                             <ul class="list-unstyled mb-0 row pt-2 ">
 
                                 @foreach($pp_amenities as $amenity)
@@ -506,7 +506,7 @@ $locale = session()->get('locale', 'th');
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Video Tour</h4> {{-- วิดีโอทัวร์ --}}
+                            <h4 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">{{ GoogleTranslate::trans('วิดีโอทัวร์', $locale) }}</h4>
                             @foreach ($blogs as $blog)
                                 @php
                                     $videoMedias = $blogs->where('id_property', $id_property)->where('media_file_type', 2);
@@ -526,7 +526,7 @@ $locale = session()->get('locale', 'th');
                         </section>
 
                         <section class="pt-6 border-bottom-pp section-pp">
-                            <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">Location</h2> {{-- ที่ตั้ง --}}
+                            <h2 class="fw-600 fs-30 text-heading font-bold mb-3 mt-3">{{ GoogleTranslate::trans('ที่ตั้ง', $locale) }}</h2> {{--  --}}
                             <div class="d-flex justify-content-center ">
                                 <input type="text" class="form-control hidden" name="latitude" id="latitudeInput" placeholder="Enter latitude"  value="{{($info->property_latitude) ? $info->property_latitude : ""}}">
                                 <input type="text" class="form-control hidden" name="longitude" id="longitudeInput" placeholder="Enter longitude"  value="{{($info->property_longitude) ? $info->property_longitude : ""}}">
@@ -1012,7 +1012,7 @@ $locale = session()->get('locale', 'th');
                                                                 <a href="javascript:void(0)"
                                                                     class="d-block text-dark font-weight-500 lh-15 hover-primary">Oliver
                                                                     Beddows</a>
-                                                                <p class="mb-0 fs-13 mb-0 lh-17">Sales Excutive</p>
+                                                                <p class="mb-0 fs-13 mb-0 lh-17">{{ GoogleTranslate::trans('เจ้าหน้าที่ฝ่ายขาย', $locale) }}</p>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">
                                                                     <span>(+123)</span><span
                                                                         class="text-heading d-inline-block ml-2">1900
@@ -1054,9 +1054,9 @@ $locale = session()->get('locale', 'th');
                                                             </a>
                                                             <div>
                                                                 <a href="javascript:void(0)"
-                                                                    class="d-block text-dark font-weight-500 lh-15 hover-primary">Max
-                                                                    Kordex</a>
-                                                                <p class="mb-0 fs-13 mb-0 lh-17">Real estate broker</p>
+                                                                    class="d-block text-dark font-weight-500 lh-15 hover-primary">
+                                                                    Max Kordex</a>
+                                                                <p class="mb-0 fs-13 mb-0 lh-17">{{ GoogleTranslate::trans('นายหน้าค้าอสังหาริมทรัพย์', $locale) }}</p>
                                                                 <p class="mb-0 fs-13 mb-0 lh-17">
                                                                     <span>(+123)</span><span
                                                                         class="text-heading d-inline-block ml-2">1900
@@ -1089,7 +1089,7 @@ $locale = session()->get('locale', 'th');
                                             </div>
 
                                             <div class="mt-3 hide-on-ls show-on-ss">
-                                                <h2 class="fw-600 text-center">Contact</h2>
+                                                <h2 class="fw-600 text-center">{{ GoogleTranslate::trans('ติดต่อ', $locale) }}</h2>
                                             </div>
                                             <div class="mt-4">
                                                 <div class="form-group mb-2">
@@ -1109,11 +1109,11 @@ $locale = session()->get('locale', 'th');
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
-                                                <textarea class="form-control-pp border-0 textarea-pp" rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
+                                                <textarea class="form-control-pp border-0 textarea-pp" rows="4">{{ GoogleTranslate::trans('สวัสดี ฉันสนใจวิลล่า', $locale) }}</textarea>
                                             </div>
                                             {{-- เอา btn-t-white ออก --}}
                                             <button type="submit" class="afterButton rounded-pill btn-lg btn-block"
-                                                id="submitModalBtn"> Request Info</button>
+                                                id="submitModalBtn"> {{ GoogleTranslate::trans('ขอข้อมูล', $locale) }}</button>
                                             <div class="form-group form-check mt-2 mb-0">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                                 <label class="form-check-label fs-13" for="exampleCheck2">Egestas
@@ -1615,7 +1615,7 @@ $locale = session()->get('locale', 'th');
                     class="mr-4 rounded-circle">
                 <div class="media-body">
                     <a href="javascript:void(0)" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
-                    <span class="fs-13 lh-2">Sales Excutive</span>
+                    <span class="fs-13 lh-2">{{ GoogleTranslate::trans('เจ้าหน้าที่ฝ่ายขาย', $locale) }}</span>
                 </div>
             </div>
             <div class="ml-auto">
