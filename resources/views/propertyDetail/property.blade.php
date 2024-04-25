@@ -1419,7 +1419,7 @@ $locale = session()->get('locale', 'th');
                                                     </div>
                                                 </div>
                                                 <div class="card-footer bg-transparent">
-                                                    <div class="d-flex ">
+                                                    <div class="d-flex ">ป
                                                         <div class="flex-grow-1">
                                                             <label class="label-700">For Rent</label>
                                                         </div>
