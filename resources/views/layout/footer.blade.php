@@ -8,16 +8,9 @@
                     </a>
 
                     <div class="row ml-1 mb-4 mb-lg-5">
-                        {{-- <div class="contact-info w-100">
-                            <p class="text mb-0">58 Howard Street #2 San Francisco</p>
-                        </div> --}}
                         <div class="contact-info w-100">
                             <p class="text mb-0">Email : yuudee.info@gmail.com</p>
                         </div>
-                        {{-- <div class="contact-info w-100">
-                            <p class="text mb-0">+(0) 123 050 945 02</p>
-                        </div> --}}
-
                     </div>
                 </div>
             </div>
@@ -25,13 +18,6 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-5">
                     <div class="link-style1 light-style">
-                        {{-- <h6 class="fw-700">Popular Search</h6>
-                        <ul class="link-list ps-0 pl-0">
-                            <li><a href="#">Apartment for Rent</a></li>
-                            <li><a href="#">Apartment Low to Hide</a></li>
-                            <li><a href="#">Offices for Buy</a></li>
-                            <li><a href="#">Offices for Rent</a></li>
-                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -65,21 +51,6 @@
                             
                             <div class="colorRed" id="ShowErrorEmailFooter"></div>
 
-
-
-                            {{-- @if (session('success'))
-                                <input type="hidden" id="newsletter">
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                            @endif
-
-                            @if (session('warning'))
-                                <input type="hidden" id="newslettererror">
-                                    <div class="alert alert-danger">
-                                        {{ session('warning') }}
-                                    </div>
-                            @endif --}}
                         </form>
 
 
