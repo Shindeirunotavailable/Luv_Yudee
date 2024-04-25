@@ -533,14 +533,6 @@ $locale = session()->get('locale', 'th');
                                 <iframe id="mapFrame" class="media-map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </section>
-{{-- ================================================================================================================================================================================================================================================================================== --}}
-
-
-
-
-
-
-                        {{-- เอาของpodมาวาง --}}
                         <section class="pt-6 section-pp">
     
                             <h4 class="fw-600 fs-30 text-heading lh-15 pt-3">Rating & Reviews</h4>
