@@ -139,7 +139,7 @@ if(isset($_POST['profileId'])) {
             <div class="modal-body modal-xl">
                 @if (isset($data))
                 @foreach ($data['profiles']->unique('id_profiles') as $item)
-                {{-- {{dd($profileId);}} --}}
+
                 @if ($item->id_profiles == $profileId)
 
                         <div class="pb-10">
