@@ -1,10 +1,13 @@
+<?php
+$locale = session()->get('locale', 'th');
+?>
 <section class="mb0-md md-pb-30 mx20-lg">
     <div class="max-width1460-con position-relative mr-auto ml-auto">
         <div class="row">
             <div class="col-lg-6 aos-init pt-40">
                 <div class="main-title ">
-                    <h2 class="title">From Our Blog</h2>
-                    <p class="par">Aliquam lacinia diam quis lacus euismod</p>
+                    <h2 class="title">{{ GoogleTranslate::trans('รายการแนะนำพิเศษ', $locale) }}</h2>
+                    {{-- <p class="par">Aliquam lacinia diam quis lacus euismod</p> --}}
                 </div>
             </div>
         </div>
@@ -80,3 +83,10 @@
         </div>
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$('.changeLanguage').change(function(event){
+    var url = "{{ route('google.translate.change') }}";
+    window.location.href = url+"?lang="+$(this).val()
+})
+</script>

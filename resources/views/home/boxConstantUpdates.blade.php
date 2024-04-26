@@ -7,8 +7,8 @@ $locale = session()->get('locale', 'th');
             <div class="row">
                 <div class="col-lg-12 m-auto aos-init">
                     <div class="main-title  text-md-center">
-                        <h2 class="title">We have the most listings and constant updates.</h2>
-                        <h2 class="title">So you’ll never miss out.</h2>
+                        <h2 class="title">{{ GoogleTranslate::trans('เรามีรายการอัพเดตอยู่ตลอด', $locale) }}</h2>
+                        {{-- <h2 class="title">So you’ll never miss out.</h2> --}}
                     </div>
                 </div>
             </div>

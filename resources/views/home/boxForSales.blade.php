@@ -91,7 +91,7 @@ $locale = session()->get('locale', 'th');
                                             <div class="p-10">
                                                 <h6 class="card-title"><a href="javascript:void(0)">New Project | 89 Residence</a>
                                                 </h6>
-                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตห้วยขวาง ห้วยขวาง 10310', $locale) }}</p>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตห้วยขวาง 10310', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -132,7 +132,7 @@ $locale = session()->get('locale', 'th');
             
                                             <div class="p-10">
                                                 <h6 class="card-title"><a href="javascript:void(0)">Nice Duplex Room around Sathorn Road</a></h6>
-                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตยานนาวา ช่องนนทรี 10120', $locale) }}</p>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตยานนาวา 10120', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -332,7 +332,7 @@ $locale = session()->get('locale', 'th');
                                             <div class="p-10">
                                                 <h6 class="card-title"><a href="javascript:void(0)">New Project | 89 Residence</a>
                                                 </h6>
-                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตห้วยขวาง ห้วยขวาง 10310', $locale) }}</p>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตห้วยขวาง  10310', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
