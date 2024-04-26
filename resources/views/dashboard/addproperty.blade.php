@@ -26,7 +26,7 @@ $locale = session()->get('locale', 'th');
                                     <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'active' : '' }} font-weight-600" id="nav-media-tab" data-toggle="tab"
                                         data-target="#nav-media" type="button" role="tab" aria-controls="nav-media"
                                         aria-selected="{{ isset($data['property']->property_stage) && $data['property']->property_stage=='2' ? 'true' : 'false' }}">
-                                        {{ GoogleTranslate::trans('2. สื่อ', $locale) }}
+                                        {{ GoogleTranslate::trans('2. มีเดี่ย', $locale) }}
                                     </button>
                                     <button class="nav-link-ap {{ isset($data['property']->property_stage) && $data['property']->property_stage=='3' ? 'active' : '' }} font-weight-600" id="nav-location-tab" data-toggle="tab"
                                         data-target="#nav-location" type="button" role="tab" aria-controls="nav-location"
