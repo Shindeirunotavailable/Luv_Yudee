@@ -165,7 +165,7 @@ $locale = session()->get('locale', 'th');
                                                 <div class="d-flex ">
                                                     <div class="selection">
                                                         <input type="radio" id="any" name="Bedrooms" checked>
-                                                        <label for="any">any</label>
+                                                        <label for="any">{{ GoogleTranslate::trans('เท่าใดก็ได้', $locale) }}</label>
                                                     </div>
                                                     <div class="selection">
                                                         <input type="radio" id="plus1" name="Bedrooms">
@@ -195,7 +195,7 @@ $locale = session()->get('locale', 'th');
                                                 <div class="d-flex ">
                                                     <div class="selection">
                                                         <input type="radio" id="anyBathrooms" name="Bathrooms" checked>
-                                                        <label for="anyBathrooms">any</label>
+                                                        <label for="anyBathrooms">{{ GoogleTranslate::trans('เท่าใดก็ได้', $locale) }}</label>
                                                     </div>
                                                     <div class="selection">
                                                         <input type="radio" id="plus1Bathrooms" name="Bathrooms">

@@ -1,26 +1,29 @@
+<?php
+$locale = session()->get('locale', 'th');
+?>
 <div class="backg-container pt-5 pt-0">    
     <section class="pt-0 mx20-lg">
         <div class="max-width1460-con position-relative mr-auto ml-auto">
             <div class="row wow fadeInUp" data-wow-delay="100ms">
                 <div class="col-lg-6">
                     <div class="main-title-2">
-                        <h2 class="title">Best Properties For Sale</h2>
-                        <p class="par">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
+                        <h2 class="title">{{ GoogleTranslate::trans('อสังหาริมทรัพย์ที่ขาย', $locale) }}</h2>
+                        {{-- <p class="par">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p> --}}
                     </div>
                 </div>
                 <div class="col-lg-6 my-3 pr-4">
                     <div class="d-flex home-icon-st flex-wrap d-sm-flex justify-content-start justify-content-md-end justify-content-lg-end">
                         <a class="d-flex align-items-center dark-color  me-2" href="#">
-                            <i class=" icons fa-solid fa-house" aria-hidden="true"></i> Houses
+                            <i class=" icons fa-solid fa-house" aria-hidden="true"></i>{{ GoogleTranslate::trans('บ้าน', $locale) }}
                         </a>
                         <a class="d-flex align-items-center dark-color  me-2 md-me-2" href="#">
-                            <i class="icons fa-regular fa-building" aria-hidden="true"></i>Apartments
+                            <i class="icons fa-regular fa-building" aria-hidden="true"></i>{{ GoogleTranslate::trans('อพาร์ตเมนต์', $locale) }}
                         </a>
                         <a class="d-flex align-items-center dark-color  me-2 md-me-2" href="#">
-                            <i class="icons fa-solid fa-house-laptop" aria-hidden="true"></i>Office
+                            <i class="icons fa-solid fa-house-laptop" aria-hidden="true"></i>{{ GoogleTranslate::trans('สำนักงาน', $locale) }}
                         </a>
                         <a class="d-flex align-items-center dark-color  md-me-2" href="#">
-                            <i class="icons fa-solid fa-house-flood-water" aria-hidden="true"></i>Villa
+                            <i class="icons fa-solid fa-house-flood-water" aria-hidden="true"></i>{{ GoogleTranslate::trans('วิลล่า', $locale) }}
                         </a>
                     </div>
                 </div>
@@ -38,7 +41,7 @@
                                         <div class="card-body p-0">
                                             <div class="img-block ">
                                                 <div class="block-text text-center">
-                                                    <b class="font-size-13">FEATURED</b>
+                                                    <b class="font-size-13">{{ GoogleTranslate::trans('โดดเด่น', $locale) }}</b>
                                                 </div>
                                                 <div class="text-block text-center">
                                                     <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
@@ -63,7 +66,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -102,7 +105,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -118,7 +121,7 @@
                                         <div class="card-body p-0">
                                             <div class="img-block ">
                                                 <div class="block-text text-center">
-                                                    <b class="font-size-13">FEATURED</b>
+                                                    <b class="font-size-13">{{ GoogleTranslate::trans('โดดเด่น', $locale) }}</b>
                                                 </div>
                                                 <div class="text-block text-center">
                                                     <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
@@ -143,7 +146,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -159,7 +162,7 @@
                                         <div class="card-body p-0">
                                             <div class="img-block ">
                                                 <div class="block-text text-center ">
-                                                    <b class="font-size-13">FEATURED</b>
+                                                    <b class="font-size-13">{{ GoogleTranslate::trans('โดดเด่น', $locale) }}</b>
                                                 </div>
                                                 <div class="text-block text-center">
                                                     <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
@@ -184,7 +187,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -222,7 +225,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -238,7 +241,7 @@
                                         <div class="card-body p-0">
                                             <div class="img-block ">
                                                 <div class="block-text text-center ">
-                                                    <b class="font-size-13">FEATURED</b>
+                                                    <b class="font-size-13">{{ GoogleTranslate::trans('โดดเด่น', $locale) }}</b>
                                                 </div>
                                                 <div class="text-block text-center">
                                                     <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
@@ -263,7 +266,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -279,7 +282,7 @@
                                         <div class="card-body p-0">
                                             <div class="img-block ">
                                                 <div class="block-text text-center">
-                                                    <b class="font-size-13">FEATURED</b>
+                                                    <b class="font-size-13">{{ GoogleTranslate::trans('โดดเด่น', $locale) }}</b>
                                                 </div>
                                                 <div class="text-block text-center">
                                                     <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
@@ -304,7 +307,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -343,7 +346,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -359,7 +362,7 @@
                                         <div class="card-body p-0">
                                             <div class="img-block ">
                                                 <div class="block-text text-center ">
-                                                    <b class="font-size-13">FEATURED</b>
+                                                    <b class="font-size-13">{{ GoogleTranslate::trans('โดดเด่น', $locale) }}</b>
                                                 </div>
                                                 <div class="text-block text-center">
                                                     <a href="javascript:void(0)" class="font-weight-500">฿14,000</a>
@@ -384,7 +387,7 @@
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex ">
                                                 <div class="flex-grow-1">
-                                                    <label class="label-700">For Rent</label>
+                                                    <label class="label-700">{{ GoogleTranslate::trans('ขาย', $locale) }}</label>
                                                 </div>
                                                 <div class="flex-row-reverse">
                                                     <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>
@@ -404,3 +407,9 @@
         </div>
     </section>
 </div>
+<script>
+    $('.changeLanguage').change(function(event){
+        var url = "{{ route('google.translate.change') }}";
+        window.location.href = url+"?lang="+$(this).val()
+    })
+    </script>
