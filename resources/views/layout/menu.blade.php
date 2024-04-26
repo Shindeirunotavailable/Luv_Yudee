@@ -1,3 +1,6 @@
+<?php
+$locale = session()->get('locale', 'th');
+?>
 <header class="header-nav nav-homepage l-header menu-home main-menu ">
     <nav class="nav-con">
         <div class="container nav-con menu_bdrt1">
@@ -14,19 +17,19 @@
                         </div>
                         <ul class="responsive-menu">
                             <li class="v_list dropitem link-li"><a class="list-item"href="{{url("home")}}">
-                                <span class="title menuActive">Home</span>
+                                <span class="title menuActive">{{ GoogleTranslate::trans('หน้าเเรก', $locale) }}</span>
                             </a>
                             </li>
 
                             <li class="v_list dropitem link-li">
                                 {{-- <a class="list-item link-effect" href="{{url("property")}}"> --}}
                                     <a class="list-item link-effect" href="{{url("search_result")}}">
-                                    <span class="title">Property</span>
+                                    <span class="title">{{ GoogleTranslate::trans('รายการ ขาย เช่า', $locale) }}</span>
                                 </a>
                             </li>
                             <li class="v_list dropitem link-li">
                                 <a class="list-item" href="{{url("contact")}}">
-                                    <span class="title">Contact Us</span>
+                                    <span class="title">{{ GoogleTranslate::trans('ติดต่อเรา', $locale) }}</span>
                                 </a>
                             </li>
                         </ul>
@@ -40,26 +43,26 @@
                             <span class="d-xl-block">Login / Register</span>
                         </a> --}}
 
-                    {{-- <div class="pcs_dropdown mx-xl-4">
+                    <div class="pcs_dropdown mx-xl-4">
                         <select class="form-select changeLanguage">
                             <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}>ภาษาไทย</option>
                             <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : ''}}>English</option>
                             <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>China</option>
                         </select>
-                    </div>  --}}
+                    </div> 
                     @if(session('user_name'))
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                                 <span>{{ session('user_name') }}</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="{{ route('logout') }}" class="logout-btn dropdown-item">Logout</a>                              
+                                <a href="{{ route('logout') }}" class="logout-btn dropdown-item">{{ GoogleTranslate::trans('ออกจากระบบ', $locale) }}</a>                              
                             </div>
                         </div>
                     @else
                         <a href="{{ url("login") }}" class="login-info d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#loginSignupModal" role="button">
                             <i class="far fa-user-circle fs-25 mr-2 pb-1"></i>
-                            <span class="d-xl-block">Login / Register</span>
+                            <span class="d-xl-block">{{ GoogleTranslate::trans('เข้าสู่ระบบ / สมัครสมาชิก', $locale) }}</span>
                         </a>
                     @endif
                     
@@ -67,12 +70,12 @@
                     
                         @if(Auth::check() && Auth::user()->Isadmin == 1)
                             <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7" href="{{ url("indexadmin") }}" id="btnAddproperty">
-                                Add Property
+                                {{ GoogleTranslate::trans('ลงประกาศ', $locale) }}
                                 <i class="fa-solid fa-arrow-right fa-lg"></i>
                             </a>
                         @else
                             <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 mx-xl-4 text-a ptr-7" href="{{ url("addproperty") }}" id="btnAddproperty">
-                                Add Property
+                                {{ GoogleTranslate::trans('ลงประกาศ', $locale) }}
                                 <i class="fa-solid fa-arrow-right fa-lg"></i>
                             </a>
                         @endif
@@ -103,7 +106,7 @@
                         <div class="d-flex bd-highlight tab-lets">
                             <a class="p-2 flex-fill bd-highlight"  href="{{url("login")}}"><span class="icon fs-25 far fa-user-circle "></span>
                                 <a class="user-arrow user-btn btn-yuudee add-property rounded-pill mx-2 text-a ptr-7"href="{{url("addproperty")}}">
-                                        Add Property
+                                    {{ GoogleTranslate::trans('ลงประกาศ', $locale) }}
                                         <i class="fa-solid fa-arrow-right fa-lg"></i>
                                 </a>
                             </a>
@@ -128,26 +131,26 @@
                                 <ul class="css-pm">
                                     <li class="menuitem-root submenu-root active css-pw link-li">
                                         <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("home")}}">
-                                            <span class="menu-label css-fotw" >Home</span>
+                                            <span class="menu-label css-fotw" >{{ GoogleTranslate::trans('หน้าเเรก', $locale) }}</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
                                         <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("property")}}">
-                                            <span class="menu-label css-fotw">Property</span>
+                                            <span class="menu-label css-fotw">{{ GoogleTranslate::trans('รายการ ขาย เช่า', $locale) }}</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
                                     </li>
                                     <li class="menuitem-root submenu-root css-pw link-li">
                                         <a class="menu-button" data-testid="menu-button-test-id" tabindex="0" href="{{url("contact")}}">
-                                            <span class="menu-label css-fotw">Contact Us</span>
+                                            <span class="menu-label css-fotw">{{ GoogleTranslate::trans('ติดต่อเรา', $locale) }}</span>
                                             <span class="submenu-expand-icon css-submenu-expand">
                                             </span>
                                         </a>
                                     </li>
-                                    {{-- <li class="menuitem-root submenu-root css-pw link-li">
+                                    <li class="menuitem-root submenu-root css-pw link-li">
                                         <div class="pcs_dropdown menu-button">
                                             <select class="form-select changeLanguage">
                                                 <option value="th" {{ session()->get('locale') == 'th' ? 'selected' : ''}}> ไทย</option>
@@ -155,7 +158,7 @@
                                                 <option value="zh-CN" {{ session()->get('locale') == 'zh-CN' ? 'selected' : ''}}>China</option>
                                             </select>
                                         </div>
-                                    </li> --}}
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -200,3 +203,10 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+$('.changeLanguage').change(function(event){
+    var url = "{{ route('google.translate.change') }}";
+    window.location.href = url+"?lang="+$(this).val()
+})
+</script>
