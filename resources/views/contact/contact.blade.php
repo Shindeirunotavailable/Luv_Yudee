@@ -100,41 +100,41 @@
                 <div class="card-deck text-center pb-30 ">
                     <div class="card cards-effect bg-transparent border-0 pt-30 ">
                         <div class="text-center">
-                            <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
+                            <img src="{{ asset('/assets/images/mai3.png') }}"
                                 class="icon-lg icon-sm icon-xl">
                         </div>
                         <div class="card-body mt-15">
-                            <h3 class="card-title">Paris</h3>
-                            <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
-                            <h6 class="card-title">(315) 905-2321</h6>
+                            <h3 class="card-title">เชียงใหม่</h3>
+                            <p class="card-text">236/105 อาคาร P อำเภอเมืองเชียงใหม่ เชียงใหม่ 50000</p>
+                            <h6 class="card-title">091-545-3939</h6>
                         </div>
-                        <a href="javascript:void(0)" class="text-muted pb-30">
+                        <a href="https://shorturl.asia/mDnFa" class="text-muted pb-30">
                             <span class="text-blue link-effect">open google map. </span></a>
                     </div>
                     <div class="card cards-effect bg-transparent border-0 pt-30 ">
                         <div class="text-center">
-                            <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
+                            <img src="{{ asset('/assets/images/mai2.png') }}"
                                 class="icon-lg icon-sm icon-xl">
                         </div>
                         <div class="card-body mt-15">
-                            <h3 class="card-title">Paris</h3>
-                            <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
-                            <h6 class="card-title">(315) 905-2321</h6>
+                            <h3 class="card-title">กรุงเทพ</h3>
+                            <p class="card-text">703 อาคารรัชฎาสวีท ถนนวงศ์สว่าง แขวงวงศ์สว่าง เขตบางซื่อ กรุงเทพมหานคร 10800                            </p>
+                            <h6 class="card-title">091-545-3939</h6>
                         </div>
-                        <a href="javascript:void(0)" class="text-muted pb-30">
+                        <a href="https://shorturl.asia/mHTYt" class="text-muted pb-30">
                             <span class="text-blue link-effect">open google map. </span></a>
                     </div>
                     <div class="card cards-effect bg-transparent border-0 pt-30 ">
                         <div class="text-center">
-                            <img src="https://cdn-icons-png.flaticon.com/512/185/185326.png"
+                            <img src="{{ asset('/assets/images/mai3.png') }}"
                                 class="icon-lg icon-sm icon-xl">
                         </div>
                         <div class="card-body mt-15">
-                            <h3 class="card-title">Paris</h3>
-                            <p class="card-text">1301 2nd Ave, Seattle, WA 98101</p>
-                            <h6 class="card-title">(315) 905-2321</h6>
+                            <h3 class="card-title">ภูเก็ต</h3>
+                            <p class="card-text">ถนน วิชิตสงคราม ตำบล วิชิต อำเภอกะทู้ ภูเก็ต 83000</p>
+                            <h6 class="card-title">091-545-3939</h6>
                         </div>
-                        <a href="javascript:void(0)" class="text-muted pb-30">
+                        <a href="https://shorturl.asia/ki71N" class="text-muted pb-30">
                             <span class="text-blue link-effect">open google map. </span></a>
                     </div>
                 </div>

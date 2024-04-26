@@ -28,7 +28,7 @@ $locale = session()->get('locale', 'th');
                     </div>
                 </div>
             </div>
-
+            
             {{-- test1 --}}
 
             <div class="row">
@@ -51,8 +51,8 @@ $locale = session()->get('locale', 'th');
                                             </div>
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <h6 class="card-title"><a href="javascript:void(0)">{{ GoogleTranslate::trans('บ้านเดี่ยว ฮาบิเทีย ออร์บิต หทัยราษฎร์', $locale) }}</a></h6>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตคลองสามวา 10510', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -89,9 +89,9 @@ $locale = session()->get('locale', 'th');
                                             </div>
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a>
+                                                <h6 class="card-title"><a href="javascript:void(0)">New Project | 89 Residence</a>
                                                 </h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตห้วยขวาง ห้วยขวาง 10310', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -131,8 +131,8 @@ $locale = session()->get('locale', 'th');
                                             </div>
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <h6 class="card-title"><a href="javascript:void(0)">Nice Duplex Room around Sathorn Road</a></h6>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตยานนาวา ช่องนนทรี 10120', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -172,8 +172,8 @@ $locale = session()->get('locale', 'th');
                                             </div>
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <h6 class="card-title"><a href="javascript:void(0)">{{ GoogleTranslate::trans('Pool Villa บ้านพูลวิลล่า ห้วยใหญ่ ', $locale) }}</a></h6>
+                                                <p class="list-text">{{ GoogleTranslate::trans('ชลบุรี บางละมุง หนองปรือ 20150', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -210,8 +210,8 @@ $locale = session()->get('locale', 'th');
                                             </div>
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <h6 class="card-title"><a href="javascript:void(0)">{{ GoogleTranslate::trans('บ้านเดี่ยว โครงการ The City รามอินทรา', $locale) }}</a></h6>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตสายไหม ออเงิน 10220', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -248,11 +248,11 @@ $locale = session()->get('locale', 'th');
                                                 </div>
                                                 <img src="{{ asset('/assets/images/as-1.jpg') }}" alt="listings"
                                                     class="card-img-top img-sell">
-                                            </div>
+                                            </div>  
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <h6 class="card-title"><a href="javascript:void(0)">Casa Premium On Nut-Wongwaen</a></h6>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตประเวศ ดอกไม้ 10250', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -292,8 +292,8 @@ $locale = session()->get('locale', 'th');
                                             </div>
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a></h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <h6 class="card-title"><a href="javascript:void(0)">{{ GoogleTranslate::trans('บ้านเดี่ยว ฮาบิเทีย ออร์บิต หทัยราษฎร์', $locale) }}</a></h6>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตคลองสามวา 10510', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>
@@ -330,9 +330,9 @@ $locale = session()->get('locale', 'th');
                                             </div>
             
                                             <div class="p-10">
-                                                <h6 class="card-title"><a href="javascript:void(0)">Equestrian Family Home</a>
+                                                <h6 class="card-title"><a href="javascript:void(0)">New Project | 89 Residence</a>
                                                 </h6>
-                                                <p class="list-text">San Diego City, CA, USA</p>
+                                                <p class="list-text">{{ GoogleTranslate::trans('กรุงเทพมหานคร เขตห้วยขวาง ห้วยขวาง 10310', $locale) }}</p>
                                                 <div class="d-flex align-items-center">
                                                     <a href="javascript:void(0)" class="mr-10"><i class="fa-solid fa-bed"></i> 5
                                                         bed</a>

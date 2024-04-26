@@ -1,3 +1,6 @@
+<?php
+$locale = session()->get('locale', 'th');
+?>
 <section class="footer-style1 at-home4 pt-60 pb-0">
     <div class="container">
         <div class="row">
@@ -26,9 +29,9 @@
                     <div class="link-style1 light-style mb-3">
                         <h6 class="fw-700">Sitemap</h6>
                         <ul class="link-list ps-0 pl-0">
-                            <li><a href="{{url("home")}}">Home</a></li>
-                            <li><a href="{{url("property")}}">Property</a></li>
-                            <li><a href="{{url("contact")}}">Contact Us</a></li>
+                            <li><a href="{{url("home")}}">{{ GoogleTranslate::trans('หน้าเเรก', $locale) }}</a></li>
+                            <li><a href="{{url("property")}}">{{ GoogleTranslate::trans('รายการขายเช่า', $locale) }}</a></li>
+                            <li><a href="{{url("contact")}}">{{ GoogleTranslate::trans('ติดต่อเรา', $locale) }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -38,7 +41,7 @@
                     <div class="mailchimp-widget mb-30">
                         <form action="{{ url('/home_email') }}"  method="POST" class="needs-validation" id="home_email">
                             @csrf
-                            <h6 class="title mb-30 fw-700">Sign Up for Our Newsletter</h6>
+                            <h6 class="title mb-30 fw-700">{{ GoogleTranslate::trans('ลงทะเบียนเพื่อรับจดหมายข่าวของเรา', $locale) }}</h6>
                             <div class="mailchimp-style1 at-home4 white-version">
                                 <input type="email" id="home-email" class="form-control" placeholder="Your Email" name="email">
 
@@ -86,3 +89,9 @@
 <div class="scrollToHome" style="cursor: pointer;">
     <i class="fas fa-angle-up"></i>
 </div>
+<script>
+    $('.changeLanguage').change(function(event){
+        var url = "{{ route('google.translate.change') }}";
+        window.location.href = url+"?lang="+$(this).val()
+    })
+    </script>

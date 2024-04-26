@@ -1,3 +1,6 @@
+<?php
+$locale = session()->get('locale', 'th');
+?>
 <section class="mb0-md md-pb-30">
     <div class="backg-container py-5">
         <div class="max-width1460-con position-relative mr-auto ml-auto mx20-lg">
@@ -20,7 +23,7 @@
                             <div class="col-sm-9 t-cen">
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">
                                     <a href="#" class="text-dark hover-secondary">
-                                        <h4 class="fs-20 lh-1625 mb-1">Buy a new home </h4>
+                                        <h4 class="fs-20 lh-1625 mb-1">{{ GoogleTranslate::trans('ซื้อบ้าน', $locale) }}</h4>
                                     </a>
                                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor</p>
@@ -39,7 +42,7 @@
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">
                                     <a href="#"
                                         class="text-dark hover-secondary">
-                                        <h4 class="fs-20 lh-1625 mb-1">Sell a home </h4>
+                                        <h4 class="fs-20 lh-1625 mb-1">{{ GoogleTranslate::trans('ขายบ้าน', $locale) }}</h4>
                                     </a>
                                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor</p>
@@ -58,7 +61,7 @@
                                 <div class="card-body p-0 pl-0 pl-sm-5 pt-5 pt-sm-0">
                                     <a href="#"
                                         class="text-dark hover-secondary">
-                                        <h4 class="fs-20 lh-1625 mb-1">Rent a home </h4>
+                                        <h4 class="fs-20 lh-1625 mb-1">{{ GoogleTranslate::trans('เช่าบ้าน', $locale) }}</h4>
                                     </a>
                                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                         sed do eiusmod tempor</p>
@@ -70,3 +73,9 @@
             </div>
         </div>
 </section>
+<script>
+    $('.changeLanguage').change(function(event){
+        var url = "{{ route('google.translate.change') }}";
+        window.location.href = url+"?lang="+$(this).val()
+    })
+    </script>
