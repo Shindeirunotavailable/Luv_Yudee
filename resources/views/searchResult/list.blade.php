@@ -17,33 +17,33 @@
                         <div class="mb-auto bd-highlight">
                             <h6 class="card-title"><a href="{{ 'property/?id_property=' . $item->id_property }}">{{ isset($item->property_title) ? $item->property_title : ' N/A' }}</h6>
                             <p class="list-text">
-                                @foreach($provinces as $province)
-                                                @if($item->property_provinces == $province->id)
-                                                <a class="text-muted">{{ $province->name_th }}</a>
-                                                @else
-                                                    <a class="text-muted"> N/A</a>
-                                                @endif
-                                                @break
-                                            @endforeach
+                                    @foreach($provinces as $province)
+                                                    @if($item->property_provinces == $province->id)
+                                                    <a class="text-muted">{{ $province->name_th }}</a>
+                                                    @else
+                                                        <a class="text-muted"> N/A</a>
+                                                    @endif
+                                                    @break
+                                                @endforeach
 
-                                            @foreach($amphures as $amphure)
-                                                @if($item->property_amphures == $amphure->id)
-                                                <a class="text-muted">{{ $amphure->name_th }}</a>
-                                                @endif
-                                            @endforeach
+                                                @foreach($amphures as $amphure)
+                                                    @if($item->property_amphures == $amphure->id)
+                                                    <a class="text-muted">{{ $amphure->name_th }}</a>
+                                                    @endif
+                                                @endforeach
 
-                                            @foreach($districts as $district)
-                                                @if($item->property_districts == $district->id)
-                                                <a class="text-muted">{{ $district->name_th }}</a>
+                                                @foreach($districts as $district)
+                                                    @if($item->property_districts == $district->id)
+                                                    <a class="text-muted">{{ $district->name_th }}</a>
 
-                                                @endif
-                                            @endforeach
+                                                    @endif
+                                                @endforeach
 
-                                            @foreach($districts as $district)
-                                                @if($item->property_districts == $district->id)
-                                                <a class="text-muted">{{ $district->zip_code }}</a>
-                                                @endif
-                                            @endforeach
+                                                @foreach($districts as $district)
+                                                    @if($item->property_districts == $district->id)
+                                                    <a class="text-muted">{{ $district->zip_code }}</a>
+                                                    @endif
+                                                @endforeach
                             </p>
                         </div>
                         <div class="bd-highlight pt-30">

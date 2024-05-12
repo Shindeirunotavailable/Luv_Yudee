@@ -60,7 +60,17 @@
                             <div class="card-footer bg-transparent">
                                 <div class="d-flex ">
                                     <div class="flex-grow-1">
-                                        <label class="label-700">For Rent</label>
+                                        <label class="label-700">
+                                            @switch($item->property_type)
+                                            @case(1)
+                                            {{ GoogleTranslate::trans('ขาย', $locale) }}
+                                                @break
+                                            @case(2)
+                                            {{ GoogleTranslate::trans('เช่า', $locale) }}
+                                            @break
+
+                                        @endswitch
+                                    </label>
                                     </div>
                                     <div class="flex-row-reverse">
                                         <i class="fa-regular fa-share-from-square mr-10 blue"aria-hidden="true"></i>

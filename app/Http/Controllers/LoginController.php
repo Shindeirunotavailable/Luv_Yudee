@@ -639,7 +639,6 @@ public function upload(Request $request)
             'amphures' => $amphures,
             'districts' => $districts,
             'pp_amenities' => $pp_amenities,
-
         ]);
 
     }

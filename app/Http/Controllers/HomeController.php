@@ -29,9 +29,9 @@ class HomeController extends Controller
     //     return view("home.home")->with("a",$this->data);
 
     // }
-    public function home(){
-        return view("home.home");
-    }
+    // public function home(){
+    //     return view("home.home");
+    // }
     public function hometest(){
         return view("home.hometest");
     }
@@ -157,6 +157,27 @@ class HomeController extends Controller
             $errorMessages = '';
             return response()->json(['success' => true, 'message' => $errorMessages]); // ส่ง JSON กลับไปและระบุ URL ที่ต้องการ redirect
         }
+    }
+
+
+    public function home()
+    {
+        $blogs = DB::table('pp_properties')
+            ->join('pp_media', 'pp_properties.id_property', '=', 'pp_media.id_property')
+            ->get();
+        $provinces = DB::table('provinces')->get();
+        $amphures = DB::table('amphures')->get();
+        $districts = DB::table('districts')->get();
+        $pp_amenities = DB::table('pp_amenities')->get();
+
+        return view("home.home")->with([
+            'blogs' => $blogs,
+            'provinces' => $provinces,
+            'amphures' => $amphures,
+            'districts' => $districts,
+            'pp_amenities' => $pp_amenities,
+        ]);
+
     }
 }
 
