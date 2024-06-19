@@ -1,14 +1,13 @@
 @extends('layout.master')
 @section('content')
-<?php
-$locale = session()->get('locale', 'th');
-?>
+
     <!-- {{-- ส่วนหัว --}} -->
     <section class="background-grey pt-30 pb-30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>{{ GoogleTranslate::trans('บ้านเพื่อขาย', $locale) }}</h2>
+                    {{-- <h2>{{ GoogleTranslate::trans('บ้านเพื่อขาย', $locale) }}</h2> --}}
+                    <h2>บ้านเพื่อขาย</h2>
                 </div>
             </div>
         </div>
@@ -23,7 +22,7 @@ $locale = session()->get('locale', 'th');
                     <div class="d-flex align-items-center" onclick="toggleSidebar()">
                         <button type="button" class="btn btn-primary mobile" data-bs-toggle="offcanvas">
                             <span> <i class="fa-solid fa-magnifying-glass text-white"></i></span> <b
-                                class="text-white">{{ GoogleTranslate::trans('ค้นหา', $locale) }}</b>
+                                class="text-white">ค้นหา</b>
                         </button>
 
                     </div>
@@ -42,12 +41,12 @@ $locale = session()->get('locale', 'th');
                     <div class="col-12 col-lg-12">
                         <div class=" d-flex justify-content-end">
                             <div class="pcs_dropdown">
-                                <label class="mr-10">{{ GoogleTranslate::trans('เรียงตาม', $locale) }}</label>
+                                <label class="mr-10">เรียงตาม</label>
                                 <select class="form-select">
-                                    <option>{{ GoogleTranslate::trans('ขายดี', $locale) }}</option>
-                                    <option>{{ GoogleTranslate::trans('การจับคู่ที่ดีที่สุด', $locale) }}</option>
-                                    <option>{{ GoogleTranslate::trans('ราคาต่ำ', $locale) }}</option>
-                                    <option>{{ GoogleTranslate::trans('ราคาสูง', $locale) }}</option>
+                                    <option>ขายดี</option>
+                                    <option>การจับคู่ที่ดีที่สุด</option>
+                                    <option>ราคาต่ำ</option>
+                                    <option>ราคาสูง</option>
                                 </select>
                             </div>
                             <label class="ml-10 border-right"></label>
@@ -55,11 +54,11 @@ $locale = session()->get('locale', 'th');
                             <div class="nav" id="nav-tab" role="tablist">
                                 <div class="ml-10 mr-10 link-effect active" id="nav-profile-tab" data-toggle="tab"
                                     data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
-                                    aria-selected="true"> {{ GoogleTranslate::trans('กริด', $locale) }} </div>
+                                    aria-selected="true"> กลุ่ม</div>
                                 <label class="border-right"></label>
                                 <div class="ml-10 link-effect" id="nav-contact-tab" data-toggle="tab"
                                     data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
-                                    aria-selected="false">{{ GoogleTranslate::trans('รายการ', $locale) }} </div>
+                                    aria-selected="false">รายการ </div>
                             </div>
 
                         </div>
@@ -93,5 +92,4 @@ $('.changeLanguage').change(function(event){
     window.location.href = url+"?lang="+$(this).val()
 });
 </script>
-    </section>
 @endsection

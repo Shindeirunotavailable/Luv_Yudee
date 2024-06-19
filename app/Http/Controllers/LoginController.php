@@ -512,6 +512,7 @@ public function verifyEmail($token)
 
 public function upload(Request $request)
 {
+    // dd($request->all());
         $id = Auth::id();
         $username = $request->input('firstName');
         $lastname = $request->input('lastName');

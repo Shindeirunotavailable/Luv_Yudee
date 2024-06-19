@@ -100,6 +100,8 @@ class ProfileController extends Controller
 
 public function upload(Request $request)
 {
+        dd($request->all());
+
         $id = Auth::id();
         $username = $request->input('firstName');
         $lastname = $request->input('lastName');
@@ -157,25 +159,6 @@ public function upload(Request $request)
             'update_by' => $userId,
             'create_by' => $id,
             'update_datetime' => date('Y-m-d H:i:s'),
-        ]);
-    } else {
-        // ถ้าไม่พบข้อมูลในตาราง profiles ให้ทำการเพิ่มข้อมูลใหม่
-        DB::table('profiles')->insert([
-                'name' => $username,
-                'lastname' => $lastname,
-                'phone' => $phone,
-                'mobile' => $mobile,
-                'skype' => $skype,
-                'title' => $title,
-                'website' => $website,
-                'linkedin' => $linkedin,
-                'twitter' => $twitter,
-                'instagram' => $instagram,
-                'pinterest' => $pinterest,
-                'facebook' => $facebook,
-                'update_by' => $userId,
-                'create_by' => $id,
-                'update_datetime' => date('Y-m-d H:i:s'),
         ]);
     }
         // return response()->json(['success' => true, 'message' => 'Testajax']);
